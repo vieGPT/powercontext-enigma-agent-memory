@@ -5,7 +5,7 @@ description: First-installation workflow for PowerContext. Covers the config ini
 tags: [installation, configuration, server, service, verification, scope, workflow]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:43:24.725Z
+    at: 2026-11-07T09:51:35.094Z
 sources:
   - id: openwiki-source-e5ae8b4583f232402e100a61
     resource: repo://src/powercontext/builtin/runtime/readiness.py
@@ -23,6 +23,8 @@ sources:
     resource: repo://src/powercontext/client/client.py
   - id: openwiki-source-f7ab4575aaaa78731fffce99
     resource: repo://src/powercontext/ops/installer.py
+  - id: openwiki-source-1f00aa56ac5d6da6909b04d4
+    resource: repo://src/powercontext/ops/runtime.py
   - id: openwiki-source-f25c1b3c7f796f0c6487a9cb
     resource: repo://src/powercontext/server/app.py
   - id: openwiki-source-bc58b27142b00aeeb91ebfcf
@@ -41,7 +43,7 @@ sources:
     resource: repo://src/powercontext/service/probe.py
   - id: openwiki-source-5f3a6523bc098b86ceaeae39
     resource: repo://tests/test_config_wizard.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:43:24.725Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:51:35.094Z" }
 ---
 
 # Install, Configure, Start and Verify
@@ -109,9 +111,9 @@ powercontext service status
 
 `service install` refuses to install over a listener that does not belong to PowerContext. On the ordinary path, with no maintenance guard on the registration, it registers the definition when it changed (otherwise it enables the existing one), starts the native service when the definition or loaded manager changed or the service is not live, and waits for liveness. A failure after registration is reported as a post-commit error that names the log location ([ServiceController.install](repo://src/powercontext/service/controller.py#L185-L260)). The start-and-wait sequence therefore does not apply to every stopped service: a guarded stop is handled as described below. The CLI prints the environment file path and the token location without printing the token value ([_write_environment_guidance](repo://src/powercontext/service/cli.py#L219-L236)).
 
-An explicitly stopped service stays stopped. `service install` checks the maintenance guard before any start logic. When the guard is `manual_stopped` or `manual_switching`, it recovers any pending definition switch and updates the registration, then returns status without starting the service or waiting for liveness ([maintenance guard branch](repo://src/powercontext/service/controller.py#L205-L215), [_update_manually_stopped_definition](repo://src/powercontext/service/controller.py#L638-L665)). The CLI then reports that the service remains stopped with automatic activation suppressed and tells the operator to run `powercontext service start` when ready, when the manager reports the service inactive or failed ([install CLI](repo://src/powercontext/service/cli.py#L48-L118)). Any other maintenance phase, such as an unfinished migration, makes `install` refuse and direct the operator to finish the migration or use `service start` first. A successful `install` on a stopped service therefore does not mean the service is running.
+An explicitly stopped service stays stopped. `service install` checks the maintenance guard before any start logic. When the guard is `manual_stopped` or `manual_switching`, it recovers any pending definition switch and updates the registration, then returns status without starting the service or waiting for liveness ([maintenance guard branch](repo://src/powercontext/service/controller.py#L205-L215), [_update_manually_stopped_definition](repo://src/powercontext/service/controller.py#L638-L665)). The CLI then reports that the service remains stopped with automatic activation suppressed and tells the operator to run `powercontext service start` when ready, when the manager reports the service inactive or failed ([install CLI](repo://src/powercontext/service/cli.py#L48-L118)). For any other maintenance phase, such as an unfinished migration, `install` refuses and directs the operator to finish the migration or use `service start` first. This refusal applies to a `start_failed` guard too, unless the caller passes `require_ready` (see below); with `require_ready`, only a `start_failed` guard is exempted, and every other non-stopped phase still refuses. A successful `install` on a stopped service therefore does not mean the service is running.
 
-Callers that pass `require_ready` take a different path. The Ops installer and runtime call `install` with that flag ([Ops installer call](repo://src/powercontext/ops/installer.py#L564-L570)), and `install` then delegates to `_install_ready` ([require_ready delegation](repo://src/powercontext/service/controller.py#L227-L235)). That path writes a `start_failed` guard, stops the service, rewrites the definition, starts it, verifies business readiness, and only then clears the guard ([_install_ready](repo://src/powercontext/service/controller.py#L263-L300)). The `powercontext service install` CLI does not set `require_ready`.
+Callers that pass `require_ready` take a different path. The Ops installer and runtime call `install` with that flag ([Ops installer call](repo://src/powercontext/ops/installer.py#L564-L570), [Ops runtime call](repo://src/powercontext/ops/runtime.py#L750-L752)). The `powercontext service install` CLI does not set `require_ready`; it calls `install` with the environment file, login, and observability options ([install CLI](repo://src/powercontext/service/cli.py#L48-L118)). For a `require_ready` call, `install` first runs the listener-conflict check and the maintenance branch above, and delegates to `_install_ready` only after that branch ([require_ready delegation](repo://src/powercontext/service/controller.py#L227-L235)). When the registration and loaded manager are unchanged, the manager was ACTIVE, and no maintenance guard is pending, `_install_ready` takes a no-restart fast path: it probes readiness, rejects a non-live result with an error, checks that the running definition matches, and returns status without rewriting or restarting the service ([fast path](repo://src/powercontext/service/controller.py#L274-L278)). Any other case, including a pending `start_failed` guard, is the rewrite path. It writes a `start_failed` guard, suspends native activation, stops the service, confirms it is stopped, rewrites the definition, starts it through the registered start path, and clears the guard only after business readiness is verified ([rewrite path](repo://src/powercontext/service/controller.py#L282-L291), [start path](repo://src/powercontext/service/controller.py#L800-L821)).
 
 `service status` prints support, registration, definition, manager ownership, manager state, liveness, endpoint, and log location. It exits non-zero unless every field is in its healthy state: supported platform, installed registration, current definition, owned and active manager, and live server ([status CLI](repo://src/powercontext/service/cli.py#L121-L138), [ServiceStatus.ok](repo://src/powercontext/service/model.py#L279-L290)).
 

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:5eb92418787ee7367e6b7099cad6ad2b44068c83a5a0e584e707be98624d39f5",
+  "pageVersion": "sha256:dcf13dc0271f40cfd0416d1764decb346d004f279e4e8c5852d9715e313056da",
   "claims": [
     {
       "id": "claim_5d937b14f32640a89a11fe25d1cc0b49",
@@ -366,7 +366,7 @@
     },
     {
       "id": "claim_45335b1f6d5b4d3c8435716057e148ee",
-      "statement": "When the registration carries a maintenance guard in phase `manual_stopped` or `manual_switching`, `service install` recovers any pending definition switch and updates the stopped registration, then returns status without starting the service or waiting for liveness; any other maintenance phase makes install refuse and direct the operator to finish migration or use `service start`.",
+      "statement": "When the registration carries a maintenance guard in phase `manual_stopped` or `manual_switching`, `service install` recovers any pending definition switch and updates the stopped registration, then returns status without starting the service or waiting for liveness. For a call without `require_ready`, any other maintenance phase, including `start_failed`, makes install refuse and direct the operator to finish migration or use `service start`.",
       "evidence": [
         {
           "resource": "repo://src/powercontext/service/controller.py#L205-L215",
@@ -380,29 +380,65 @@
     },
     {
       "id": "claim_cbe6a701c152493d935da3ebe9b344e0",
-      "statement": "`service install` with `require_ready` (used by the Ops installer and runtime, not the CLI) delegates to `_install_ready`, which writes a `start_failed` guard, stops and rewrites the service, starts it through the registered start path that waits for business readiness, and clears the guard only afterwards.",
+      "statement": "The Ops installer and runtime call `service install` with `require_ready`, while the `powercontext service install` CLI does not set it. A `require_ready` call delegates to `_install_ready` only after the maintenance branch and listener-conflict check; the rewrite path there writes a `start_failed` guard, suspends native activation, stops and rewrites the service, starts it through the registered start path that waits for business readiness, and clears the guard only after readiness is verified.",
       "evidence": [
         {
           "resource": "repo://src/powercontext/ops/installer.py#L564-L570",
           "version": "repo-lines-v1:sha256:546e084d30f996eaccd3da9b69b1aeda6e7c65b0f79031eb95ffddd41e6d5e54:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWQ1ZTU5YWI4ZWYwMWI1NDIwYzg4NDIwMWMwNjM1NWE0ZTEzNTNiZWE3NTIxNGVlNGUyNzZkNGYyZTE5ZmUyMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjVjNTkwYzZlNjRmNmVmMTM4NmQ1ZWZjYTMyNGNlNWNiYWU3ZTYzMzY3OGJjYzM2OTBmZWYzMGVjNzZjZDg0MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWJjNTdlNDc0ZmI2OWEyMzVlMDliYTliNmZhMjdkNGFlMjNiYjdmMjE0YWNmM2I3NzJiYmFkYjZjOTZiZDY4OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZThmYzFkYjc1Y2M5NDlhN2JiMWZlY2NjNjQyYzgyZDg5ZjcyMDA0NTJhMmEyOWFiYjY1MTQ5ZTU2NTQxZDc1MyJ9"
         },
         {
+          "resource": "repo://src/powercontext/ops/runtime.py#L750-L752",
+          "version": "repo-lines-v1:sha256:3b38bdd9a32564650cc281092cc19d1f6fda7f9539ac4b04d808bb826d8491e3:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjk4NzkxNDZjOWQ1NzA4ODMxNjFkYWY3MTk0ZDMwZjgwYzZiNjY3YTE4OGYyYjI0NDE1M2FlMTZkM2QyMGVkNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTUwMzJlOTY0ZDA5MzIzNTFlNWQxODUyNjkyODFiMTcxYTNhMDliMDhiMjg2ZTY2MWVhNDcwMzIzYzgyZWI0ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODg3MWNlNDRiNTAzZThiMzczMTg4NDFlYzI4M2M1YTE2MDhhYjg4NzZjM2E1OWQ5ZDZiOGRlYjVmNzZkN2M2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWM1ZGYwODE1NDk0YmVhNGZkM2U1ZGJhOWI2ZmM2YWU3OWU3MDNkZmRkYTZlZjY2YmM4ZWFlMzlmOWNmMDViOCJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/service/cli.py#L48-L118",
+          "version": "repo-lines-v1:sha256:cf8175f39c3d238d9ec5bc6da982bebebbc6139b50499288e1f5d0e90c7b7b89:eyJzZWxlY3RlZExpbmVDb3VudCI6NzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlOWI2ZmIxZTgwZjBiYmMwZTAwZGIyNWI3NDkzODA4YmEwMmQ4Y2I1NTFmNGQ1ZTY1NmVhMjkxY2QxM2ViNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyYjBjNjcwZDQ1MGFjN2Q5YjY2YTcwNGRhYmU2NGZkMDc3MGM0ZTk1ZjFmYTQyY2VlZDg2M2U1ODUwNzQxZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ2MzYyOTAxZjU1N2Y4Yzg2OGJhN2IzYjgxYzUzMzc3YWQ3MWI5MTIxOWQ5MGZmZTZkYTY0OTczZjc3ZWNkZTgifQ"
+        },
+        {
           "resource": "repo://src/powercontext/service/controller.py#L227-L235",
           "version": "repo-lines-v1:sha256:7709416dd1d4c9309cd74bb43fe07fc430eb360ee1eb8fd6645e39142ad81536:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDZlOTYyYmZlNzk0MTFlOTVkNDFlMzQyZmVmZjY5Zjk2MmQ1NTZhZDk5YmQ5OGVlYTMwNTU0NzRmYmU2ZTM5YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTEwMzQ4MWM1N2QwZjBkYzBmNzZjZDJjYzhiMzYwNGM0ZTgyOTZkYTQxMjJhZGQxOWU4MTc0NWRjN2UzMzFhNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWJhMDBiNjM0YTM3MGVlOWVmY2ZlYjA3ZmExMDdjM2Q5NjA4MTU3OThiYmQ0YWE2NWZlZmEwYTA3OGQ5OTk1NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTRiNzJlMjFmNjc0YTIzZmJjYzE3YjQ1ZmZlOTZhMDMwMTEwOGMxMDZjZGEwMmE0NjFiNjhhM2JhM2EwNzA4YiJ9"
         },
         {
-          "resource": "repo://src/powercontext/service/controller.py#L263-L300",
-          "version": "repo-lines-v1:sha256:38b02544a938f8fd1fa548e167cb0d30a7c5f33273223eff5851409301a6fec8:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3NjRmM2RhYzMwMGM0YmFkMDU5NzQ2MGY1OTA4ZjlhMTA1ZWJmMjA3MGJmMmRlZDAxYzdkMjlkNmM1MDBmZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5ODA0YWE1ODkzNGI2Mzc1ODgyZjIxMWQzMGM2MDdkZDZlM2EyODQ1MzM0MjVlNzA3ZGNiOGFmMDkxOTk2YTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRkN2U1ZWZmZDRjMGZkNmUzMzUyOWJjNzAyMTQ4YTM1ZjFkZWM4ZDljZTI1YzRiMDkwODk2OGM3YWFkMjNmZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk5MWIwM2Q3YjE0MTRmYWQ4YTc4MDEyMzljN2M1NTUwYjcyYTNiMzNmYjllNDBmNzk0NDY0YmQ2ZTczYmYwNWQifQ"
+          "resource": "repo://src/powercontext/service/controller.py#L282-L291",
+          "version": "repo-lines-v1:sha256:4f84294153ce99d2bd634bda8f866a18cb385be26e7a1343703f2690b2bc4e8e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkNDY1ODI5NGZlNzNhZGIyMmRjNzRlOTAwMDA1MjlmM2MzMmYyZThiZmExYmU0YmI5NTFhMzJiODM4YTE2OGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlY2U0NjUzMzJhMDViODFmMzZiZGU5N2NmYmNhMDkwN2QxZTljZWIzNGNhNDlkMzNmODljNDE4MDlmNDgyY2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljNDAxNWM5Y2NiM2Y2NGM1NzAxZGM2OTFiYjY0MjVhMTEyNjg1YzI3MzhmNTkzZjlhODJlNDk1MjhmZmE1MmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxOWE1NGE5ZjA2M2FiNzExMjYyMWU1MmMxNDgwNTQ1NGNmYTg4YmEwYzE5ZWRmM2Q4NmE5NGIyNjY3N2MzODYifQ"
         },
         {
           "resource": "repo://src/powercontext/service/controller.py#L800-L821",
           "version": "repo-lines-v1:sha256:1cdc292c4b63ddfb43e06eeffcc0958fd91ea7c02e1ec40c143d0fd4c1d22ead:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhMTA1YTIxMTM4NTgxYjY5N2ZlOGYzNDQ0NjliMzA4NDZkOTkxNWQ0ZjI5NDAzODlmZTU5MDU3M2IyNmUzNWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlOTRjZDBiNDM2YThmMTQxNzg1MGRlZTI0ZmYwMzcxODBhYjUyZTgzYWQxMjhlZDBkZTU2ZmQ2ODQwZDkzZDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVjMzQ5NzY2MTIxZjdmYWRhNDU4YmE2OTc4Nzk5YjMyNWIyMWUwYzZmNGMyMGY5M2RhNGRhMzgwN2E3YWU3NDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhYjI5M2Y3MjAwMWRlNjk2MzRmZTliNjg3ODA1ODQxZDFkOWUyNzNhZGI1OTAzOTZiYmIxNTczZWExZTQwZmYifQ"
         }
       ]
+    },
+    {
+      "id": "claim_55362d88af6546428600cf194bd50354",
+      "statement": "With `require_ready`, a `start_failed` maintenance guard is exempted from the maintenance refusal so install can proceed to `_install_ready`; every other non-manual-stopped phase still refuses, and the manual_stopped and manual_switching return is unchanged.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/service/controller.py#L205-L215",
+          "version": "repo-lines-v1:sha256:5bb255d1309f444947687fb8fbbd81b7998cd0e76a62f1bbe256c316dac9cae8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1YTczZjUwYzRkZTdmZmVhM2UyODNiMTlkZTBiY2IzOWZiMzZmYjJkOWU1MzNlMGM2M2Y2NDUyMmE1MWRkMDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmMTAwNTM1NWYzNWJhZWYyYTBhYmI5YzIwNmY0M2M1MWI1NzYxYTE1ZWQ4YmU2NTIwODA2NWY0Y2FiMjA3NjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlkOTNkNjhjZjMyZTI3M2I3NTYxMmMzNDRkYTM3NGVmMmU1M2Q2NDExMzZlNGU3Mjk2MWYwZmFmZDM5N2MzZjAifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/service/controller.py#L227-L235",
+          "version": "repo-lines-v1:sha256:7709416dd1d4c9309cd74bb43fe07fc430eb360ee1eb8fd6645e39142ad81536:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDZlOTYyYmZlNzk0MTFlOTVkNDFlMzQyZmVmZjY5Zjk2MmQ1NTZhZDk5YmQ5OGVlYTMwNTU0NzRmYmU2ZTM5YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTEwMzQ4MWM1N2QwZjBkYzBmNzZjZDJjYzhiMzYwNGM0ZTgyOTZkYTQxMjJhZGQxOWU4MTc0NWRjN2UzMzFhNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWJhMDBiNjM0YTM3MGVlOWVmY2ZlYjA3ZmExMDdjM2Q5NjA4MTU3OThiYmQ0YWE2NWZlZmEwYTA3OGQ5OTk1NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTRiNzJlMjFmNjc0YTIzZmJjYzE3YjQ1ZmZlOTZhMDMwMTEwOGMxMDZjZGEwMmE0NjFiNjhhM2JhM2EwNzA4YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5cf1e431111645b3949aa665394f92a1",
+      "statement": "Inside `_install_ready`, when the registration and loaded definitions are unchanged, the manager is ACTIVE and no maintenance guard is pending, the call is a no-restart fast path: it probes readiness, raises an error if the result is not LIVE, checks that the running definition matches, and returns status without rewriting the registration, writing a guard, or restarting the service. Any pending guard (including `start_failed`) or any change forces the rewrite path.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/service/controller.py#L263-L278",
+          "version": "repo-lines-v1:sha256:9592eeba0aee2b681e1b3ad170afe32bfe0024a963f6705cd9c4796d81f2cb55:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3NjRmM2RhYzMwMGM0YmFkMDU5NzQ2MGY1OTA4ZjlhMTA1ZWJmMjA3MGJmMmRlZDAxYzdkMjlkNmM1MDBmZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyNWY2OTNhZjg4ZDk1MmZjMDNlZDA5ZTk2OGM1YzE2OGI5ZGM2YTVjYTFlYjhkZWM1OWVlNTFmNTUxYmZmYzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRkN2U1ZWZmZDRjMGZkNmUzMzUyOWJjNzAyMTQ4YTM1ZjFkZWM4ZDljZTI1YzRiMDkwODk2OGM3YWFkMjNmZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljNDAxNWM5Y2NiM2Y2NGM1NzAxZGM2OTFiYjY0MjVhMTEyNjg1YzI3MzhmNTkzZjlhODJlNDk1MjhmZmE1MmMifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/service/controller.py#L282-L291",
+          "version": "repo-lines-v1:sha256:4f84294153ce99d2bd634bda8f866a18cb385be26e7a1343703f2690b2bc4e8e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkNDY1ODI5NGZlNzNhZGIyMmRjNzRlOTAwMDA1MjlmM2MzMmYyZThiZmExYmU0YmI5NTFhMzJiODM4YTE2OGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlY2U0NjUzMzJhMDViODFmMzZiZGU5N2NmYmNhMDkwN2QxZTljZWIzNGNhNDlkMzNmODljNDE4MDlmNDgyY2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljNDAxNWM5Y2NiM2Y2NGM1NzAxZGM2OTFiYjY0MjVhMTEyNjg1YzI3MzhmNTkzZjlhODJlNDk1MjhmZmE1MmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxOWE1NGE5ZjA2M2FiNzExMjYyMWU1MmMxNDgwNTQ1NGNmYTg4YmEwYzE5ZWRmM2Q4NmE5NGIyNjY3N2MzODYifQ"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T09:43:24.725Z"
+    "at": "2026-11-07T09:51:35.094Z"
   }
 }

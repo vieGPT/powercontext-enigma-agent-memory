@@ -5,7 +5,7 @@ description: Reference for the environment-backed Server (POWERCONTEXT_SERVER_*)
 tags: [configuration, environment-variables, server, client, scope, model-settings, env-file, validation]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:43:24.725Z
+    at: 2026-11-07T09:51:35.094Z
 sources:
   - id: openwiki-source-5f5b95b3d6a215fa02ceb945
     resource: repo://.env.example
@@ -57,7 +57,7 @@ sources:
     resource: repo://src/powercontext/server/configuration.py
   - id: openwiki-source-35901f0dd38fd94b4898b536
     resource: repo://src/powercontext/server/settings.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:43:24.725Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:51:35.094Z" }
 ---
 
 # Configuration Settings Reference
@@ -348,7 +348,7 @@ Each Coding Agent integration reads its own Scope variable. The variables are op
 | `POWERCONTEXT_WORKBUDDY_SCOPE_ID` | WorkBuddy | Read by the WorkBuddy settings ([WorkBuddy settings](repo://integrations/workbuddy/plugins/powercontext/hooks/workbuddy_settings.py#L77-L77)). |
 | `POWERCONTEXT_ZCODE_SCOPE_ID` | ZCode | Read by the ZCode settings ([ZCode settings](repo://integrations/zcode/plugins/powercontext/shared/settings.mjs#L60-L60)). |
 
-`POWERCONTEXT_ZCODE_REMOTE_WORKSPACE` is a ZCode-only switch that turns off local path binding. The ZCode settings loader reads it as a boolean, where `1`, `true`, `yes`, or `on` enable it ([ZCode settings](repo://integrations/zcode/plugins/powercontext/shared/settings.mjs#L59-L59)). When it is on, the ZCode binding keys are empty, so Scope resolution sends no workspace or session key ([binding keys](repo://integrations/zcode/plugins/powercontext/shared/scope.mjs#L56-L57)). A remote workspace therefore needs `POWERCONTEXT_ZCODE_SCOPE_ID`, and resolution fails with `scope_unresolved` without it ([resolve scope](repo://integrations/zcode/plugins/powercontext/shared/scope.mjs#L65-L66)). The scope script refuses `bind` and `clear` with `remote_binding_disabled` ([scope script](repo://integrations/zcode/plugins/powercontext/scripts/scope.mjs#L43-L44)). For plugin installation and configuration, see the [ZCode section of the host adapters page](../integrations/host-adapters.md#zcode). The variable is listed with the other ZCode settings in the [ZCode integration guide](repo://docs/en/docs/integrations/zcode.md#L452-L452).
+`POWERCONTEXT_ZCODE_REMOTE_WORKSPACE` is a ZCode-only switch that turns off local path binding. The ZCode settings loader reads it through the `enabled` helper, which is true for `1`, `true`, `yes`, or `on` after lower-casing the value, so matching is case-insensitive. An unset variable yields `false` ([enabled helper](repo://integrations/zcode/plugins/powercontext/shared/settings.mjs#L27-L28), [remote flag](repo://integrations/zcode/plugins/powercontext/shared/settings.mjs#L59-L59)). When the switch is on, `bindingKeys` returns an empty list before it reads the session or workspace, so Scope resolution sends no workspace or session key ([binding keys](repo://integrations/zcode/plugins/powercontext/shared/scope.mjs#L56-L57)). Resolution then relies on `POWERCONTEXT_ZCODE_SCOPE_ID`, which the settings loader maps to `explicitScopeId` ([explicit Scope mapping](repo://integrations/zcode/plugins/powercontext/shared/settings.mjs#L60-L60)). `resolveScope` throws `scope_unresolved` in remote mode without that explicit ID. Otherwise it posts `explicit_scope_id` and `binding_keys` to `/v1/scope-bindings/resolve` and accepts only a 200 response with a valid `scope_id` ([resolve guard](repo://integrations/zcode/plugins/powercontext/shared/scope.mjs#L65-L66), [request construction](repo://integrations/zcode/plugins/powercontext/shared/scope.mjs#L67-L72)). The scope script accepts `resolve`, `bind`, and `unbind` as commands. `clear` is not accepted and fails earlier with `invalid_arguments` during argument validation. In remote mode, `bind` and `unbind` are rejected with `remote_binding_disabled` by the guard that follows argument validation, while `resolve` is still allowed ([argument validation and remote guard](repo://integrations/zcode/plugins/powercontext/scripts/scope.mjs#L34-L44)). For plugin installation and configuration, see the [ZCode section of the host adapters page](../integrations/host-adapters.md#zcode). The variable is listed with the other ZCode settings in the [ZCode integration guide](repo://docs/en/docs/integrations/zcode.md#L452-L452).
 
 The guided wizard's agent table records `SCOPE_ID` as a consumed setting for each supported agent, with the agent-specific prefix ([agent metadata](repo://src/powercontext/cli/config_wizard_agents.py#L47-L150)). The pydantic-ai adapter treats an unset value as "selects the Server default" ([pydantic-ai README](repo://integrations/pydantic-ai/README.md#L55-L55)).
 

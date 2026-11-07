@@ -5,7 +5,7 @@ description: How generated Experience and Skill proposals become pending Candida
 tags: [experience, skill, candidate, review, lifecycle, export, publication, recurrence]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:43:24.725Z
+    at: 2026-11-07T09:51:35.094Z
 sources:
   - id: openwiki-source-5eecc3e578aca29ff28bcd59
     resource: repo://src/powercontext/builtin/artifacts/experience/incubation.py
@@ -57,7 +57,7 @@ sources:
     resource: repo://src/powercontext/server/authz/models.py
   - id: openwiki-source-06620b4e18ab130732d9ab3c
     resource: repo://tests/builtin/review/test_service.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:43:24.725Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:51:35.094Z" }
 ---
 
 # Experience, Candidate Review and Skill Lifecycle
@@ -236,7 +236,7 @@ The Server also tracks publication state for configured Agent targets. Local pub
 
 - **First publication** creates the publication row at generation 0.
 - **Identical intent** reuses the stored row and does not advance its generation.
-- **Changed intent**, such as a different desired Revision, package digest, or compatibility state, replaces the row through replacement CAS, which checks the expected generation and advances it by one ([intent](repo://src/powercontext/builtin/artifacts/skill/publication.py#L265-L308)).
+- **Changed intent**, such as a different desired Revision, package digest, or compatibility state, replaces the row through replacement CAS. The replacement `UPDATE` matches `expected_generation` in its WHERE clause and writes `generation` as `expected_generation + 1`. If the update does not match exactly one row, a missing row raises `RepositoryNotFoundError` and a stale generation raises `StoredPayloadConflictError` ([intent](repo://src/powercontext/builtin/artifacts/skill/publication.py#L265-L308), [replacement CAS](repo://src/powercontext/builtin/persistence/skill_publications.py#L132-L172)).
 - **Observation** writes the result of the local materialization through observation CAS. It checks the expected generation but does not advance it ([observation CAS](repo://src/powercontext/builtin/persistence/skill_publications.py#L173-L208)).
 
 Unpublish moves the existing directory aside first, advances the publication generation, and restores the directory if the database update fails ([unpublish](repo://src/powercontext/builtin/artifacts/skill/publication.py#L166-L212), [replacement CAS](repo://src/powercontext/builtin/persistence/skill_publications.py#L132-L172)).
