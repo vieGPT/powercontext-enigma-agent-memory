@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:dcf13dc0271f40cfd0416d1764decb346d004f279e4e8c5852d9715e313056da",
+  "pageVersion": "sha256:e435787cd8963dbc77dfaeb99c38cbd07a4044e0a089e749e5c6b3f86399875a",
   "claims": [
     {
       "id": "claim_5d937b14f32640a89a11fe25d1cc0b49",
@@ -380,7 +380,7 @@
     },
     {
       "id": "claim_cbe6a701c152493d935da3ebe9b344e0",
-      "statement": "The Ops installer and runtime call `service install` with `require_ready`, while the `powercontext service install` CLI does not set it. A `require_ready` call delegates to `_install_ready` only after the maintenance branch and listener-conflict check; the rewrite path there writes a `start_failed` guard, suspends native activation, stops and rewrites the service, starts it through the registered start path that waits for business readiness, and clears the guard only after readiness is verified.",
+      "statement": "The Ops installer and runtime call `service install` with `require_ready`, while the `powercontext service install` CLI does not set it. Every install call first runs the initial listener probe (refusing a CONFLICT listener), then the maintenance guard branch (returning early for manual_stopped/manual_switching, refusing other phases except start_failed when require_ready is set), and only then a `require_ready` call delegates to `_install_ready`; its rewrite path writes a `start_failed` guard, suspends native activation, stops and rewrites the service, starts it through the registered start path that waits for business readiness, and clears the guard only after readiness is verified.",
       "evidence": [
         {
           "resource": "repo://src/powercontext/ops/installer.py#L564-L570",
@@ -395,8 +395,8 @@
           "version": "repo-lines-v1:sha256:cf8175f39c3d238d9ec5bc6da982bebebbc6139b50499288e1f5d0e90c7b7b89:eyJzZWxlY3RlZExpbmVDb3VudCI6NzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlOWI2ZmIxZTgwZjBiYmMwZTAwZGIyNWI3NDkzODA4YmEwMmQ4Y2I1NTFmNGQ1ZTY1NmVhMjkxY2QxM2ViNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyYjBjNjcwZDQ1MGFjN2Q5YjY2YTcwNGRhYmU2NGZkMDc3MGM0ZTk1ZjFmYTQyY2VlZDg2M2U1ODUwNzQxZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ2MzYyOTAxZjU1N2Y4Yzg2OGJhN2IzYjgxYzUzMzc3YWQ3MWI5MTIxOWQ5MGZmZTZkYTY0OTczZjc3ZWNkZTgifQ"
         },
         {
-          "resource": "repo://src/powercontext/service/controller.py#L227-L235",
-          "version": "repo-lines-v1:sha256:7709416dd1d4c9309cd74bb43fe07fc430eb360ee1eb8fd6645e39142ad81536:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDZlOTYyYmZlNzk0MTFlOTVkNDFlMzQyZmVmZjY5Zjk2MmQ1NTZhZDk5YmQ5OGVlYTMwNTU0NzRmYmU2ZTM5YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTEwMzQ4MWM1N2QwZjBkYzBmNzZjZDJjYzhiMzYwNGM0ZTgyOTZkYTQxMjJhZGQxOWU4MTc0NWRjN2UzMzFhNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWJhMDBiNjM0YTM3MGVlOWVmY2ZlYjA3ZmExMDdjM2Q5NjA4MTU3OThiYmQ0YWE2NWZlZmEwYTA3OGQ5OTk1NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTRiNzJlMjFmNjc0YTIzZmJjYzE3YjQ1ZmZlOTZhMDMwMTEwOGMxMDZjZGEwMmE0NjFiNjhhM2JhM2EwNzA4YiJ9"
+          "resource": "repo://src/powercontext/service/controller.py#L200-L235",
+          "version": "repo-lines-v1:sha256:bf9e4dca5aa4e734dee78bbef2f75441daaef72b521c1c5de5fb223140dc5609:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2NzliZjk4YjVkMTE5NmIyODNlODMyNTljYTFjY2M0YWEwYmY0NWNhOWM1MjdhZjg5MzkyODEyN2M1MTA1ZDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxMDM0ODFjNTdkMGYwZGMwZjc2Y2QyY2M4YjM2MDRjNGU4Mjk2ZGE0MTIyYWRkMTllODE3NDVkYzdlMzMxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ2ZDAxNWZiYjg1MmUzZTJiNzdmM2JhYjcxMjdmYzY3MTE5Nzc1NGQzZmM3NzJjNTc0ZWI2NzI3YWY1N2VlMTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk0YjcyZTIxZjY3NGEyM2ZiY2MxN2I0NWZmZTk2YTAzMDExMDhjMTA2Y2RhMDJhNDYxYjY4YTNiYTNhMDcwOGIifQ"
         },
         {
           "resource": "repo://src/powercontext/service/controller.py#L282-L291",
@@ -439,6 +439,6 @@
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T09:51:35.094Z"
+    "at": "2026-11-07T10:00:10.628Z"
   }
 }

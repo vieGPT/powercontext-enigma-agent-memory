@@ -5,7 +5,7 @@ description: Reference for the Hermes, OpenClaw, ZCode, OpenCode, Kimi Code, Wor
 tags: [integrations, agent-hosts, cli-setup, hooks, plugins, host-adapters, hermes, openclaw, zcode, opencode, kimi-code, workbuddy, pi, dsh]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:51:35.094Z
+    at: 2026-11-07T10:00:10.628Z
 sources:
   - id: openwiki-source-7a52dd335117116bd8fe79de
     resource: repo://integrations/capabilities.toml
@@ -75,7 +75,7 @@ sources:
     resource: repo://tests/test_opencode_cli.py
   - id: openwiki-source-714a7a9a39f9a75829542a60
     resource: repo://tests/test_pi_cli.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:51:35.094Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T10:00:10.628Z" }
 ---
 
 # Other Host Adapters
@@ -256,12 +256,15 @@ files are not on the machine running ZCode. The loader treats `1`, `true`, `yes`
 enabled; an unset variable is false ([settings loader](repo://integrations/zcode/plugins/powercontext/shared/settings.mjs#L26-L28),
 [flag parsing](repo://integrations/zcode/plugins/powercontext/shared/settings.mjs#L59)). When it is disabled, the
 plugin builds the normal session and workspace binding keys, and the resolve request sends a null explicit Scope ID
-unless `POWERCONTEXT_ZCODE_SCOPE_ID` is set ([binding keys](repo://integrations/zcode/plugins/powercontext/shared/scope.mjs#L55-L58),
+unless `POWERCONTEXT_ZCODE_SCOPE_ID` is set ([binding keys](repo://integrations/zcode/plugins/powercontext/shared/scope.mjs#L56-L63),
 [resolve request body](repo://integrations/zcode/plugins/powercontext/shared/scope.mjs#L67-L69),
 [explicit Scope mapping](repo://integrations/zcode/plugins/powercontext/shared/settings.mjs#L60)).
-When it is enabled, `bindingKeys` returns `[]` at line 57, so no session or workspace key is sent. `resolveScope`
-then requires `POWERCONTEXT_ZCODE_SCOPE_ID` and raises `scope_unresolved` without it
-([required explicit Scope](repo://integrations/zcode/plugins/powercontext/shared/scope.mjs#L64-L66)). The scope
+When it is enabled, `bindingKeys` returns `[]` at line 57, so no session or workspace key is sent. The resolve request
+still carries that empty `binding_keys` array together with the explicit Scope field
+([resolve request body](repo://integrations/zcode/plugins/powercontext/shared/scope.mjs#L67-L69)). `resolveScope`
+then requires an explicit Scope ID, which the loader maps from `POWERCONTEXT_ZCODE_SCOPE_ID`
+([explicit Scope mapping](repo://integrations/zcode/plugins/powercontext/shared/settings.mjs#L60)), and raises
+`scope_unresolved` without it ([required explicit Scope](repo://integrations/zcode/plugins/powercontext/shared/scope.mjs#L65-L66)). The scope
 script validates its arguments first: only `resolve`, `bind`, and `unbind` are accepted, so `clear` fails earlier with
 `invalid_arguments` ([argument validation](repo://integrations/zcode/plugins/powercontext/scripts/scope.mjs#L31-L37)).
 In remote mode, the guard in the same script rejects `bind` and `unbind` with `remote_binding_disabled` before any

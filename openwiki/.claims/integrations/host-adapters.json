@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:d9b08dcff77efd376fbb7b0ffee79fecb3848e7ce79b5fc2c1bff65200eae6eb",
+  "pageVersion": "sha256:5261b28b176ae57671fdb537330dfdbc53a586d5e8ab3941d59b458fdb781e71",
   "claims": [
     {
       "id": "claim_d72f6faf8cc746bc807e6302f4b48852",
@@ -805,8 +805,8 @@
       "statement": "When remote-workspace mode is disabled, ZCode builds session and workspace binding keys normally and the Scope resolve request sends a null explicit Scope ID unless POWERCONTEXT_ZCODE_SCOPE_ID is set.",
       "evidence": [
         {
-          "resource": "repo://integrations/zcode/plugins/powercontext/shared/scope.mjs#L55-L58",
-          "version": "repo-lines-v1:sha256:1a7e82ccee150189f60cac0c2e683393d3051d354f7cc98f539b76f4fbbfffde:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmE4YjIxMWNjNDhlZDQ5MDZjZDNiNGI3NmYzYjU0YjM0YTY0YzA0ZGQ0ZmE5ZDI2ZGMwOWIwY2Y0OWNmNjY3NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjZhNmY4NjdmZDYxN2M0OWUxMzA3OTEwY2I3MDI1ZDk1NDc3ZDI0ZTY1YjkwZWMwODRjMGEwNzFlZjliNzM1MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzlhMzUxMGE3MDJkNGEwZTIxYzU4NGNhMGZjMTIzOWVkODU2M2U4ZWUxNGIzZThjY2NjZTM3ZmU3MTAzNTBmYyJ9"
+          "resource": "repo://integrations/zcode/plugins/powercontext/shared/scope.mjs#L56-L63",
+          "version": "repo-lines-v1:sha256:77b3adc89bbcdf2eb9dddae46f0dc5f19e0944df2be97ab0eeba87aecaa663b9:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2I1Yzg1YmVlNzE1MDg5NTM2MTM0M2IzODhmZDc3MTg3NzMwZjczN2ZmOWYzZWU4YmIwYjY0ODhjNDI2MjU4MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTJiNjJiZWM1NmRkZDFiZjkyNGU0MzhmOWU1NjY0ZWIzN2I3MmQyZmE1ODRjNDYwZGY0YzY1ZTdlODQwZmE5MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTU0YmVjZmEyYWI4MWJjMjAwZWZjOWYyMzI5YmYzMDdmMmE0NmU3YWRhMTZiNWU1YThkYTE3MTMyMzI1MjQyOCJ9"
         },
         {
           "resource": "repo://integrations/zcode/plugins/powercontext/shared/scope.mjs#L67-L69",
@@ -827,8 +827,16 @@
           "version": "repo-lines-v1:sha256:1a7e82ccee150189f60cac0c2e683393d3051d354f7cc98f539b76f4fbbfffde:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmE4YjIxMWNjNDhlZDQ5MDZjZDNiNGI3NmYzYjU0YjM0YTY0YzA0ZGQ0ZmE5ZDI2ZGMwOWIwY2Y0OWNmNjY3NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjZhNmY4NjdmZDYxN2M0OWUxMzA3OTEwY2I3MDI1ZDk1NDc3ZDI0ZTY1YjkwZWMwODRjMGEwNzFlZjliNzM1MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzlhMzUxMGE3MDJkNGEwZTIxYzU4NGNhMGZjMTIzOWVkODU2M2U4ZWUxNGIzZThjY2NjZTM3ZmU3MTAzNTBmYyJ9"
         },
         {
+          "resource": "repo://integrations/zcode/plugins/powercontext/shared/scope.mjs#L56-L69",
+          "version": "repo-lines-v1:sha256:5d05156e9b42899092f602570b3e5979a6cd9596fa2fa628c529b1ebde42ce23:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiNWM4NWJlZTcxNTA4OTUzNjEzNDNiMzg4ZmQ3NzE4NzczMGY3MzdmZjlmM2VlOGJiMGI2NDg4YzQyNjI1ODIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxMzlhYmIyNmEzZjRhNmVlZTQ5ODk0ZmEwNDg5ZWQ5YjA4OWMwM2RkMmQxM2IzMmFhMWEyNmM5OTdjNTY1NjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEyYjYyYmVjNTZkZGQxYmY5MjRlNDM4ZjllNTY2NGViMzdiNzJkMmZhNTg0YzQ2MGRmNGM2NWU3ZTg0MGZhOTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZkZjBkN2FhMjgxM2IyYWU4ODcwZWZmODk3ODgwNjliMjQxN2E1ODZkZjRjYjU1MzY2OWJkY2EzZDBlZDczNzMifQ"
+        },
+        {
           "resource": "repo://integrations/zcode/plugins/powercontext/shared/scope.mjs#L64-L66",
           "version": "repo-lines-v1:sha256:e54becfa2ab81bc200efc9f2329bf307f2a46e7ada16b5e5a8da171323252428:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGE2ZGZjZDljMzQ0OTA4MDQwNmQzOTJhNWE1NzE5ZTY5ZDAzNWM5ZTNkNmJkMWMyMTMxZTNjNWM3OWZjMDQ4ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjM4NDM5ODQwOWQyYjgxNzY2MDEwZDk1YjVmNmNiOWUzMWM3ZTMxM2FhMjAyZjIxMGQ1N2IwNmJiODc0NzE3YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWU3NzgxYjA0YWFkYmViOWEyOWQ4MTE1Y2M5MGRlZTliNWFhMjZjZGU1MjQ2YjZiMTAyNmIyNmJmNTAzZTY0MCJ9"
+        },
+        {
+          "resource": "repo://integrations/zcode/plugins/powercontext/shared/settings.mjs#L60-L60",
+          "version": "repo-lines-v1:sha256:1827102d881ffce8da919682117d5e9a6ced01f683a6be2c87a2da75053dcc84:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTgyNzEwMmQ4ODFmZmNlOGRhOTE5NjgyMTE3ZDVlOWE2Y2VkMDFmNjgzYTZiZTJjODdhMmRhNzUwNTNkY2M4NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTgyNzEwMmQ4ODFmZmNlOGRhOTE5NjgyMTE3ZDVlOWE2Y2VkMDFmNjgzYTZiZTJjODdhMmRhNzUwNTNkY2M4NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzBlN2M0Mzk2NzllZTA2OWQxZjIxMzM4MDc2M2QwN2Q5MWZlOTRmOWJjZmI4ZDVmYzVmN2E0YzVhNzQ1ZTYzOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGY3MzlhMDZjMWNiYjEyNDRlMzM2M2QzOGJjZjlmYTUwY2U4NGZlZDM5OWMyMTkzYTNjN2YwOGQ1OTkxOGIyYSJ9"
         }
       ]
     },
@@ -853,6 +861,6 @@
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T09:51:35.094Z"
+    "at": "2026-11-07T10:00:10.628Z"
   }
 }
