@@ -1,0 +1,384 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:743d83ce9909e577a311a5f4b2cd426810cb2ad28e5c0fc003a9af2adaafe756",
+  "claims": [
+    {
+      "id": "claim_3914c3b51eb541138e389d6a3f88e620",
+      "statement": "The Server database setting is a discriminated union of SQLiteConfig, OceanBaseConfig and SeekDBConfig keyed by kind, and a config without a kind is normalized to the SQLite default.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/config.py#L503-L503",
+          "version": "repo-lines-v1:sha256:1250457fda9f364569d2791032874119fc9e3d5051bba099d2023e48e7cabf7d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTI1MDQ1N2ZkYTlmMzY0NTY5ZDI3OTEwMzI4NzQxMTlmYzllM2Q1MDUxYmJhMDk5ZDIwMjNlNDhlN2NhYmY3ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTI1MDQ1N2ZkYTlmMzY0NTY5ZDI3OTEwMzI4NzQxMTlmYzllM2Q1MDUxYmJhMDk5ZDIwMjNlNDhlN2NhYmY3ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzAwOTZmNWJhZTFiMjFkZTI5ZmY1ZTIzMTVmMmY0ZTM1NWUyYjFlOTM1MWQxY2I1YmJiNTViZDczZDdkNmI1YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGEwNTU2YWU3YzVmN2RhNmY2NWRlYTFlM2QyMmM3Y2QwYjk4NDdlZTgwYTAyNjE2YjZhOGVmMjQxMTRmNmU3YyJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/server/settings.py#L271-L271",
+          "version": "repo-lines-v1:sha256:241a104919ffbc977607c120270e37f6acf7b4aa42ddfbc3413242b17dbcc0e6:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjQxYTEwNDkxOWZmYmM5Nzc2MDdjMTIwMjcwZTM3ZjZhY2Y3YjRhYTQyZGRmYmMzNDEzMjQyYjE3ZGJjYzBlNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjQxYTEwNDkxOWZmYmM5Nzc2MDdjMTIwMjcwZTM3ZjZhY2Y3YjRhYTQyZGRmYmMzNDEzMjQyYjE3ZGJjYzBlNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjRlZmQzMTAxOGQ3YWYxMjQ1M2JmY2U1MWQ4ZWExM2RiMGE2OTkzNjk4ZGRjNTNhM2FhMGFkNTVmMGI2ZjhkNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2VhYmQwYTIwZjk4MDU5MTFkZmIwN2M2OTBjNjY1MThjZTIzZjBiMDA2NWE5YmU0ZWQ4ZWU3YWY3MjJmMDdhNiJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/server/settings.py#L376-L380",
+          "version": "repo-lines-v1:sha256:aafffd09fbb17755000145419ffaa327297b2d16034b39c16493547e4cc7dc08:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODIwYjQ1M2Y1ZTBjOTJkNWY2YzI1MWE1ZWExOTYwZDcyZjNiZDA3OTU2YWU4NTdkYTIwZTMxYTg4YzU1OTY5ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZiMTM3YmQ3ZDliMDYxY2M5YThlNjYwZDg3ZjE5OTUxM2M2MzNhMGU4OGJkYThmMzE3MWMzMTQxN2Y2MzVmOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTY1MzIzY2ZiODhiMTBmYjFhY2I3YWI4NjRhZWU3NDM2ZjZmMjc4ZTM5NzNjMzRiMGI5Zjg3YjYyNTdhZjY4NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2VmZTNhNDc3NDM0ZGU1ZDA4MDVjMTA2YTAzNTg0MzVjZDIwMmE4MjRkZmRlZTVlNjBkOTAxMTAyZGVkMDQ1MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9e3625fbd2e9451d9fbe22f18ce3222c",
+      "statement": "When no database URL is configured, the Server uses a SQLite file at powercontext.db inside the PowerContext data directory, which is POWERCONTEXT_HOME when set and the platform user-data path otherwise.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/paths.py#L24-L40",
+          "version": "repo-lines-v1:sha256:ae2b992ebea4a11dc32c40386ef6fab94793877c012ccd3cb4dfadcfb5cec80a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzZGUyOTM2MWU0ZTgyYTZmZjUzOGUyYTI3MjI4ODY2ZTZhOGI1NzZmMDgzN2NjNzNkOTllMTAxMDRhYzAyNWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmMzc0MzBmNmFlOWY4MjI4MzUzN2UzZDk5YWI0Y2YzMDdkNzVjZDUwMmNjOTA3ZDFmODIzOTNlZDA5ZjgyNjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMwMjQzNDI5YzQyNzk5MjFiOWI1OTVlODBkOGY5MTU2MmU0NmNlM2I4ZjI5MTNjODQxNzA5ODc5MTU1M2VmZTYifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/settings.py#L77-L78",
+          "version": "repo-lines-v1:sha256:51280deb2f891a04613ff2a60910cc07940d427e7faba4e664468cb70370a1da:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWMyMTllMTY5MzgzMmU5YjU1MThlYTZhN2U0OTA1MTMyYmJlNDAwMWQxNDIzZDIxZTYwMGY2NWExNTJlZjMwNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGMxMTVjOTFkZTA1NDEyMWE5ODBmMDQwODRmYTVlODg3N2E2Yzk4NGQ2YTg0MDZkNGQxMDdhZTA4ZmQyMDY4NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmI1ODlhMGQ0N2M3MGY2MzViMTA2MzRkZjkwNzQzMzQwOTI1Y2MwNTAzMTg1NmJlYWJhODI0ZWU4ZWMyY2Y2MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGQ0MWJhZDY0NTU4YzBjMTJkODdiZGVhZTBkYTE2NjIwNTFmYzdmNTBmNDg4MTQ1MmYyMmJkZmY5ZGQwNjNiNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5bd2640ba6fd44bcae7542c6affe6248",
+      "statement": "The default embedded seekDB directory is a seekdb folder inside the same PowerContext data directory, and the default scheduler database is scheduler.db there as well.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/paths.py#L36-L50",
+          "version": "repo-lines-v1:sha256:0ea453ae4c733b272d0d1f8dc628bdc1f4945046f693911f3308500c557b1b54:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0ZmQ4MzE1NTQ4NTJlZTk4ZmE1Y2ZkZWViZWFiMGMzZWY2MmNmMjg0OTZmOTczNzAzMjVjYjhiNDQ0MjVmMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFkNzA5YTYzOGJkMzVlYzRlNGQzNDA1N2NmZDIwNzJmOTkzNDIwZjU5MGMwZjlkNTAyYWQ5ZTU4YzY0MTQ1NWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxOWU2MTAzNGE0NTY5ODllMmY5MjI5OWUwOTY4MDQ2MDU5NWI4N2ZmMmZhNGI5YTQ5ZDRkNzA2ZDljNzg0YjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_64e333202b0a4b668c3456ec5f541f3f",
+      "statement": "The composition root opens SQLiteProfile for a SQLiteConfig, OceanBaseProfile for an OceanBaseConfig and SeekDBProfile for a SeekDBConfig, and raises a configuration error for any other database config.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/composition.py#L1240-L1262",
+          "version": "repo-lines-v1:sha256:68528b565371402e1cadf6b653cb4fe2451e6e4aff56625a2b0483fc68460de0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3NGE1YTYyNjYyN2VhZGNjZGY4OTRmNzEyNzIxNGYwNGFmMjlhNTE5ZTczMGNiMmUxMTA5YTZmNjkzZTNiNTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmMzM2ZDRjOWE1YzUwMTQ2Y2I5Mjk2MDljOTRmYjZiOGRlN2M3M2U3ODhlZmExMWFkMjkwOGY4ODRhODIyNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFkNGNjNDEzMmQ2MGVkMWMzYmY4ZDNmNDM4ZWYzNDg3ZjA0ZTI1OTI2M2E5MjdjYjcwNzhmNjE3NzIwMDBhYzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjliNmJhMWI1MTg3ZTcxNzMxMDU1ZGY1NGQ2NWVhZGIxMmM3YzdlNGJjYTQxNmZhMTFlZDgwZjU1N2M4NGE1YTYifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/composition.py#L1349-L1354",
+          "version": "repo-lines-v1:sha256:e12b19dc3fb1e721da3e831e7ff31918155ea2cfe6bcd58e5a85ca60377140c1:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjgzMDcwMTRmYjZlOWFkNDRkODg3YjhmNmQ0MTAwMDFkNjgxMjRiZjVjNTVhNjQwNmUxODFmMjEzOTQzNjM5ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2Q3Y2FjYjcyZjI0MDdmMDY0ZTAwZTg0NDhlYjQ1ZDA4MGEzZmEzMDhkMDZkYjI2MWRkYTNhZWM1MzcwNDgxMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODY1NmNmZWZkNmYyZmQ0MTNlZmI0NmIxYjU4Yzg4ZGM5ZGQ1NGE4NjllYWZjOGZmODdjOTg4YzljYTAxZjAyYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODAzOTUzOWJlYzNjZjExZWE3YjcyMjFmNmVjNWQzYTNhZjJiNDVhOTk2YjE5ZDhkYTFkZGUxYjI4OTU2ODliNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5a5450fbad88455e9f79a3591e1070b1",
+      "statement": "The SQLite profile accepts only sqlite+aiosqlite URLs, defaults its model URL to in-memory storage, uses a StaticPool for non-persistent URLs, and sets the journal mode to WAL by default during warm-up under a per-file lock.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/sqlite/profile.py#L108-L114",
+          "version": "repo-lines-v1:sha256:a4213c4b8b749acdfc17c53ea8705e754ecb4acd8053fac77b1f0efe4f595695:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTUwMzJlOTY0ZDA5MzIzNTFlNWQxODUyNjkyODFiMTcxYTNhMDliMDhiMjg2ZTY2MWVhNDcwMzIzYzgyZWI0ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2RiMDBkYTMxZTRhMDkxODU4YjVlOWM5NjQ4YzBiYjZmYjE4MGRlNzdkNmYzMWFlYjhkNjc2Y2YyYjcxYTQ5OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDAwNzBjMGE1MDEzY2RlOGZhOWJlY2I1NGVhNTNmYmM0NTEwOTA3NmVlNTFhMDIzNmU4OWQ3OGJhODM1ODc0MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzE0MTcxZTg0NjcwZWQ4Y2IwNzM4OGZkNmJkOTE1MzEwNDhkNWE2ZGQ2NTIzMmQzMTgyZmUzNTU5MGRmNWRlYSJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/sqlite/profile.py#L328-L345",
+          "version": "repo-lines-v1:sha256:b169f3c4e5c9add844dc3f8666bf98b795e584173119da5e19fadb5d59f8333a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzMDMxMDAzMjBlYjJlNjJkOGJkM2U0OTk4YjRjMTI5MGVhNWNjZTUyZjdkZTAzMDcyZDkxMTBmMDc2MzBhMmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyYWI1NmFjMGE4NjliZjgwOWVlZTFiZGRjZTM4OGFmMDc3YzlmYjM2NzI1MjFkYzdmYzk1ZTIwOWExMTc3Y2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlMzgxMDNiZGJkNjQyNTVjN2JjZjNkMDUyNzZlNzM2MDhkNjdmZjhkYmQ3YTczOTE1ZjM5YThhMTBjOTE0OWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlZjAzZTE5YjQ3ODE1MmM1OWJkMjYxNDVmMWM5YzIxMTgzYTE2OTkzMDA2ZmE1OWJhZTljZDc0ZGVkZGYzZWUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/sqlite/profile.py#L50-L72",
+          "version": "repo-lines-v1:sha256:144843fa530c070c0876ea0beee0f68011164fd7aa920b156a2d78e9b82c0028:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5NjA1M2YwNjhjNzg3OTJmZDhiMzc1YThhODY2YTlkNDBmNWQwOTFkOGVkNzExOTY5MzVmNzEwMWVhZWVhMmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzZDAwY2YyNzA5NjRkNDRhMTNkZmFjODc1MmIwOWZjYzQzNWIwZjE5YjMxNmFiY2Y4MWE3YWE2NGJiMTIyZDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViMTMxYjc5MzJmZTI0ZGZmMjkzZDZkNTU5MjAyMTBmYmJhOWFkNWYyNGM2NjM4ZWM1ZWI1NDg2NjhkM2I3M2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgyMjY2Yzc3MDc4MTczNjgzMjYzNDY4Nzg3OGU5YjgyYzkyM2VkZmNkM2M1ZjQzYjgzZmI0NWRlYzg0MTJmNTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a7a279a531cf4d23b7150e1b1e004d1d",
+      "statement": "Embedded seekDB starts a local native instance through pylibseekdb, connects through an async MySQL-dialect socket, defaults to the powercontext database, and refuses to reuse legacy PowerContext tables in the test database unless the operator explicitly selects it.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/bootstrap.py#L28-L28",
+          "version": "repo-lines-v1:sha256:09b9022a58f1412f3564185f1575ff1ee57adc2c5cb495543e98f58616c25203:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDliOTAyMmE1OGYxNDEyZjM1NjQxODVmMTU3NWZmMWVlNTdhZGMyYzVjYjQ5NTU0M2U5OGY1ODYxNmMyNTIwMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDliOTAyMmE1OGYxNDEyZjM1NjQxODVmMTU3NWZmMWVlNTdhZGMyYzVjYjQ5NTU0M2U5OGY1ODYxNmMyNTIwMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzZlZDhkOGVlMjg3NzA1MzZkNTQ2MDhlNDlhNmRjNjI5N2E1MjdkMGE1ZWMwMjM5ZTU2Yzc4NjgxMGIwNmVlYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWQzYjE4OWEzYWI4ZmVmMGJlZTYxN2UwNDc4ZTA0YTBhMmY3NzRiZjk4Nzk0ODdmZmZkYWY4OWZmYWY4MGYzNCJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/seekdb/profile.py#L155-L200",
+          "version": "repo-lines-v1:sha256:c15d6a892343d48515e24c291b552649ccd6441a5f535d4a5599389220637e49:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwMjAyODBkOTlhYTc5N2M1MTdkZjExMjIxY2ZmMDRkYTQzMGQwMzE2NTk5OTYwOWRkNjNlMjlkMmZjNWJjMGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczZTI4OTkwOThjNGMzY2U5MWVlMzRhNTJkMmZiNjE1ZjgxYzI4NTUyMTk3ZTU1MmU3ZDRkYzg4ZjU2NDUzY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU2MDQ0NzZhYzllODM4YWU2M2ZjY2ZjMzgwYWFmZTdkZjEyY2Y4YzdhNjI2YWJiYzcxMDc3MjI4NDZiZGJlNzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY2YmNlMjU3YjRlMGY0OWY1YTBhYzY5OGRiNjRlOTQ5YjQyZjVkNjVjNTYxNDEzNjAwOTBlZjg0ZWRmMTBlMzcifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/seekdb/profile.py#L233-L240",
+          "version": "repo-lines-v1:sha256:bf031c962c45b9ce41280da1519b101180630caba9a8c160eecbf3526b0935ce:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTlkZTgxMWU4MjMyMDZhYzFiNzk5ZmFhOGJlYzM1YWFiZTE5NzhmYzNiODM1ZmZlYjZhM2NkNmYzN2I1ZTkxMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmIyOTJiMmUwZDMxMGRjMjQ2ZWRmYzI4YTMwNzZlMWFiOTgzZDIyMDQ5NWY2MDhiYTk1MmVmNzA0M2JjOGY5MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDJhN2E2NmU1MDRiNGFhMjE1Y2Y3ZTJmMjY0YjVhN2U0YmRmMmRhYjE5OWYxOTJmYmU0OTliNTU0OGI3MmYzNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzllZmQ5ZTE3MmU1MTY0OGNjNjU3ZGJlYTA0NjEzZmI3NzkzZDZmNmNiZWI5MjJmMTZhZWRhNmZkNGExOWY1MSJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/seekdb/profile.py#L255-L282",
+          "version": "repo-lines-v1:sha256:7b074604f84279d46d9972982259433406bca812205bb4bda9b94d7601d1f94a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4ZjA5Njk3MWUxZmYzZWI0MGM3NDU1MGNkZDA1MWEwZTRlZjJkYzg4MzZmYmExNWQ5MTAwY2IwNGYzYzI0NTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0ZGVjMWU4NTY2NWU4NmMxOWY3MGU1NzI4MjFjYmJlZTQzZTI2MmE0YmY2ZjExYTNkOTMyMmU3NDdjODBkNjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwODIwNjNiNWQyMDFhMGJhNmFmNjNmMmY1N2VkNjg2YWQzMmMzMjIyZjQyNmY5NjJjYjI3MGQyNjdjNDY5NDMifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/seekdb/profile.py#L85-L110",
+          "version": "repo-lines-v1:sha256:d19052fec5f82d34433b390a0acb2255273b751d69c72153cc9bf1bb06326f47:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1ZWMwMDlkNjNjNzk3M2EzNWVmYTVhNjBiZDg0YTgyMjQ5MGQ1OTBlNDk3Y2YwM2RiNTZkMjVhN2JiMjhkNjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFlMWM3ZGQwN2VkNjc4MjFmZWIwY2NiZTdhMmVlMzllZjIxZDQ5MTNkY2YzNDNmYzgxN2U5ODY2N2E2NjUxYWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYzYzVjZGJjOTA5MTE5NDVlZjcxOTAyMzZiYzE2YjQ1MjQ4NGJhYTc3OTc2NTRkNzRjMzUyM2E1N2YwYmRmYmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_825415aead5b4920a2c7f8ab0f00ffc2",
+      "statement": "The OceanBase profile requires a mysql+aoceanbase URL with a username, host, explicit port and charset utf8mb4, and it rejects any tenant whose ob_compatibility_mode is not MYSQL, except standalone seekDB identified by its version string.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/oceanbase/profile.py#L239-L252",
+          "version": "repo-lines-v1:sha256:263cc8b836aac22e4c5c74b813fa487c7695c1f7facb0da2af705d0e6194a012:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxZjliODg2YTI5MWJkMTMyZDdkYzdmZjc2ZTk3M2Q5MmNlZjA4MjNjM2FkNmVmYTQ1ZDg1NTFmNTA0ODc1ODUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjNDk4YTViZmMwYjZiNTU5OWZkY2JhMWQzYmU3MTZjNjc5YzllNDlmYTY0ZTE1ZmFjNGQzNDU0MWU5MTM4YjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5YTVjMjQyOTU4NGM1OTA4YjYyN2ZlMGMxODAzMGFlNzM5ZGE5MGZmM2I3NTIxZmU4NjNkZWE5ZTVjZGQ4YjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkzOTRiZTJiMzhjNmNlNGIxODY0MThjZmQ1YmM2NjRmZjkyMjhmZmI5MjhiNTkxMmFkNGI4OTE2ODJjZGZkNjkifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/oceanbase/profile.py#L291-L312",
+          "version": "repo-lines-v1:sha256:2cf0dea2ef1bd47755da58a5a0f91518197b010bf055896e786f8efdf9950724:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJkNjZjMGJlZDliNDlhMThlNTAyODJmNzY2NTRiMDk1MTRlNWZkOGJhYjY1NTNlMWEyMGQ2YmFkMjJjMTdlNjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiYjIzMDY4MzY4NjBiMjI1ZGFlMWI5ZDcyOTJjOGIwNWUyYzU1YWYwYzJjZTEwMTg5YzI1Zjc3ZTFlNTlhODAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAwMDliYjliZjA2ODI5MjVmYzNkYjdjZjkzZTU3YzhlZWNkNGU0ZTJlZmMzZDY5MDY5Njc4YmU4YjE4NzExZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5c1a8bff681a4e3f8390ac83aa1969ce",
+      "statement": "Identity columns are declared with identity_string so that MySQL-family backends use utf8mb4_bin, and the OceanBase profile rejects existing schemas whose identity columns use another collation because create_all does not rewrite collations.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/oceanbase/profile.py#L255-L283",
+          "version": "repo-lines-v1:sha256:968243f3da9a791eecf9a27ea719c4bc4a11b0a5a378b6c18c005c407eccacf0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2MjQ4MjQ0NjczZGIzZWZkZmY5YWZiNWRlZDEyNDQxYTZkMTZjNzhkM2JlMzhlNmRkYjMxYjMyZjNjZDcwYjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1Yzk5ZWFjOTBjNmFiYjc5ZmE1MjIxMWRjNzIwMmUyYjFhMjAwOTMyNWIzYWMzMzE5NmEyYjk3NTFkOWUzY2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ4MzIyMGVmM2VlZDY5YjFhZTg4NjRkYjEzNzEzNjRiNTM1OTUyYThkNGM5NTU2NTY4NTViYmVlNjRhNzQ4M2IifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/tables.py#L67-L80",
+          "version": "repo-lines-v1:sha256:08c0bab86552c9840c84a7044ad01179568a1b02e1839847d1f14c6fce95673a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4ZWNkZDcyNTAyYTM0ZWM1Mzc4MmIxOGZmNmQwNzQyNWE4ZGY4OGUwZmM3MzBmMDRhNjU0YjkzZGZkNTkwZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwYmMxZjg1ZGMwNWQyNDIxZWQ1MGQyZmYyM2FkMGJjNjgxMjI2MDQyZjQ0Nzg5Yjc0YWZjMmE4ZmE0N2FiOTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ0NmMzMzNmMjkzZjA5NjhmZDQ2ODUxNGMzMTAxNmNlZGRkNjViNzIwYzEwZGU4OGU0MmQ1MmUxZTFkY2NmMTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE2ZDgzZWYwYTlhMzZmMmU0N2E0ZTlhNDAzZjlmYjJkNjJmOTMxMGFmNWJjZTAwNDllNzMyOThhNTc2NmQyNDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f80a779047774ee49e5ce27e8b5840b7",
+      "statement": "A database that already contains the pc_schema_revision control table is treated as managed: create_tables performs no DDL on it and raises unsupported_configuration when requested feature tables are missing.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/schema.py#L32-L60",
+          "version": "repo-lines-v1:sha256:06c2e6e20a973309ebdf8f37c01aa3b5b31b5a9746a2f4ba5005330a85e4440b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0ZGNkZTRhODhiMmNiMzk1MDE3ZWE3OWMxYWJlYzE2YmJmMDgxMTQzOTk2Y2NkODI1OWY1YWExYTlmODg5MTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5YzcxNDk3Y2ZjODJlNmZlMGZmZmYwYjA2MjM2NWVmNDk3MTUzODhhNjU0N2I5N2ExMzAwZjdlZWEyOGYwMmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5NWJhZDhmNWExODE4OTk0NzQxNjlkYmQzZjZjZDAyNzA4NjhhNjY4YTYwODQ0MDgyZTJhYjJhOGRjZGQ1ZWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkxMGIxMDA5Mzk4ZTFmYzYxODRhOTljNzZiMjk0YWVhYmEwY2JiZTY3MDUyYjU3ODhiZmM5OTMxMjMwOTYwYjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e49ec0b70535469291c1b53ca51323b8",
+      "statement": "On a managed database, Server startup only validates the processing schema, the current Atomic Memory projection and Topic Memory, while on an unmanaged database startup initializes storage, with SQLite taking BEGIN IMMEDIATE before bootstrap writes.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/composition.py#L1252-L1282",
+          "version": "repo-lines-v1:sha256:36e79bd3777ae0b31fcd4b5744c13e199f5e28f6c0b59b31a0773adb50d7c6ec:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczMmZiMDdlZGQ4ZmNjNWFmNjhkZThmMGEyNDdiMjRlOWUzN2ExMDA4MjJiNjk4NGFmNDczMDc4NjRiYmZiNmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmZjM1YjMzMTc0YjUzNTA4NWEwOTEzZTUyN2NkZmMzZjBjYWE5NzVmMTE3NTVkMDA2OWFlM2QyZTY5N2VjNzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ1M2Y1MmJjYTA3MWQ4N2NlZDljODI3NGExZTc5NjRhOWYzY2M4YTliZDYyZjY3NmU3M2ZhODFhNmMxNWRhMDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg4Njc1ZjAwYTIwOGYzZjllMzY3MWMyOGZhYTkwM2ZjZDZhM2YxYTI2NmRhYjcxNDIxYmJmNWJlMTBiZDNkMWMifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/composition.py#L1357-L1380",
+          "version": "repo-lines-v1:sha256:289d23260b3db207af8c5df681f95db4a58af75b3930870d5e6d02f5b49a0f67:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3YTYzODIzZTI2OWUwZDdmZGY4NTk4ZjBlMDlhMDY1NjY2NmE2ODZlMzRiODMzMmY5N2NlMjRkYTM1ZGFkZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwMDEwNWUwYTY4NTIxYzNkMzMyNjE1MzkwZTg1OWUzOWNmMjQxMjc0YTdkNzgxZDE5NmEzYWRhMDdiMTBmZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwMDkxNGQ4OWMzNjFhYTFiNmJkNjExMzYwMjQyMDJlM2ZlNjA4YWQ3OTVjZGZiYzczOTY3MjI2Y2YzNTFkOTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIwNzAwZTAyZGRjMDFjOTU3ZGI1NDRmODg3YjEyODYxODYwYWYyZmMzNzMxY2Y2MTdjOTliYjc3MWI1Zjc5ZjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_376dccc0d8be4521bf796dc1fc3bf9d7",
+      "statement": "The Server migration chain is a linear sequence of revision files, from the s1300 baseline through s1400, s1401, s1402, v1_4_1_004, v1_4_1_005, v1_4_1_006, v1_5_0_001, v1_5_0_002 and v1_5_0_003, each declaring its down_revision, and Alembic records progress in the pc_schema_revision table.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/migrations/server_resources/env.py#L14-L26",
+          "version": "repo-lines-v1:sha256:b09c61b2ef2276ca800515db4d4da51e04d4678aff3659cab54e1104a5dc86ae:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlNTQwYzQ3Zjg1ZjIyOTJiNmM0YWU0OGVmODM5ZmJkMzVhOGZhNzc5OWQ1ZWU5NTdhMGFiOGU1MGYwYWM4NDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxNjIzODMxNTFkNWFlMDEzMzcwMmQyN2FjODY0MjUwODUzOGQ2MTVmYTViOTZmZWI0MWExMjFjMmQyOTc2MzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/migrations/server_resources/manifest.json#L1-L60",
+          "version": "repo-lines-v1:sha256:ad286eef8e107a296e2a626a7b4aedce867a5d547fe3c5d0c2e0e6739e4a0dc9:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4MzJjNGFjNGIyMWE4MDk2YjMwYjE4M2JlZjcxYThmMjk1ZDJmOGI1YTVhODY2NTM3ODFkZWM0MTQyMzIxMWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIzMGQ5N2NlNGI0N2FiZWYwYjNmZDM1YTUwYzMxYWI1NTcxYjEzZmQ1YjAxMWFkYWE0ZjMzOTMyMjFlOTkwNzgifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/migrations/server_resources/versions/s1400_full_server.py#L17-L30",
+          "version": "repo-lines-v1:sha256:55bd519e18a3a4af8ccabb72de3bf88f8dd39a58cfd8846332edc2566dda0bd7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2MWE5MTEyYTI5MThlMmFiYTAzZTE5YTJmMjIxYTAyN2FiNGI2ZjllOTQ2YTZjMzk4MTRmNTRlMThlMDdkZmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0YzE5NjhjYzJiNDVhYTFiMWJmMTc3YmRmZTJlZGQxNWVmZjFjNTRhNGRmODZkOTcyZmM2ODI5OTkyNmY3YWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxN2I3YTBlNzU4YjMxMThhZmY5YmZlM2QxZjQ0ZGNmNWUyNmE3ZTZlZmQxYTVlMzZiMjQwODFkZjU5NWVkNjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIyZjFlYzczMmY3NWFkY2RmZDk5Zjk5ZGI0NmRmNjcwZmE2YTQ0ZTBlOTgzOTlmMTZhYzI2YmU2YzdmNTUxZGIifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/migrations/server_resources/versions/v1_5_0_001_artifact_storage.py#L15-L29",
+          "version": "repo-lines-v1:sha256:1f896ea43e43a9741c55cb66a6fd202117f325f47331b85620c65adf580bb1cb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2YTlhOWM2NmM1NDEyYmY0MWRlNWNjYWUyODBiMTA4ZWQ0YzIzZDgxNTYwNWE1YzVjYzFmZGUzOTBmOWZhYTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyOTJiOTVlMWVmYTBjYmM1NDk1MmU2YTZkZTIzMmY4OGM2MGJhOTBkZTg4ZDVkNmM3MGViY2I2YjZhYmUwMTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZkMWU0MmNlN2U3NmQ1YzFmYzIxMzZlNWZiMmYwNDA2ZDgxZTk2MDczMDc0ODkxNDFmNWEyMjZkMDkyYWVmZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d10b8c87adf943dcb7399d539ad0e669",
+      "statement": "The s1400 revision rebuilds candidate, profile, Artifact, processing-intent, Dream run and Topic budget tables by copying rows into temporary tables with explicit column lists, and it revokes the prior processing lease by advancing its generation and expiring it.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/migrations/server_resources/versions/s1400_full_server.py#L17-L74",
+          "version": "repo-lines-v1:sha256:acb735bd9a4844bbaec053ca1b9b9c3ad039df5920749009a8e06896cc563c02:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2MWE5MTEyYTI5MThlMmFiYTAzZTE5YTJmMjIxYTAyN2FiNGI2ZjllOTQ2YTZjMzk4MTRmNTRlMThlMDdkZmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxN2I3YTBlNzU4YjMxMThhZmY5YmZlM2QxZjQ0ZGNmNWUyNmE3ZTZlZmQxYTVlMzZiMjQwODFkZjU5NWVkNjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b067d04172ab430db88f87a70a557a55",
+      "statement": "Legacy revision IDs s1300, r1400, s1400, s1401 and s1402 remain the stored identifiers, and the release-style names such as v1_4_1_001 are display aliases that do not create additional executable revisions.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/operate/database-migrations.md#L149-L165",
+          "version": "repo-lines-v1:sha256:d6058ff45244d6c917c32e089935eb336b04aa315f6211f82196f166ad4be533:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg4NDI5YWI5Nzc4ZmI3YzBjYmRmZDI5MWM2ZTFkOWExNDA2NGIyNzdlMjY4ODE0ODVkMzQ4ZjA5Y2QxOGMzMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2ZjFmYTdiNTczMzdhZmJiNjY3NTRmMmVkMWU3ZWI3YzFhZmI4MzBlOWVmZWY1MGIzMzgxMDViZjk0OGJhYzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdiYzg3N2E2YTY2YTQ0YjY0NmFiOWViZGIxOWI5YzlkODgyNWFiMjQ0MGY5ODhhZjNhOTQzZjFmMjNmMWFmZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI4ZTJiZWNlNzk1MTUzOTQ4YWY4MzhjZjExZmQ0Y2Y1MzYzNGIwN2U5ZTRmNDg3MzFhN2UwMzdkOTc0N2E1NTgifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/migrations/revision_names.py#L18-L55",
+          "version": "repo-lines-v1:sha256:9ad1f4bf9c1496b6cdef8bdaf026107ce318f05a7793c334188c82e63c9872ea:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxYWQyOGFkYjRkMTFhMmUxMjUxZmYxNTQ2YjU0ODhjOTQ1YWNiZmFkMzIzNTM2MTllYjUyOGYzMGY0YTI3NTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNhNDM5MmJhMDdmYjE0MDVhMjMxODcxMWNmNTYwMDI3YWU5MmQxNDg3YTMwYmNiZjk5ZTcwMzhlY2ZlZmU4NGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_99cc3e5cd4554f24a319643c1a3db4d2",
+      "statement": "The deployment runner requires an evidence directory for seekDB and OceanBase, requires single-host lock coordination for OceanBase, and accepts only a plain absolute SQLite file URL without credentials, host, port, query or in-memory option.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/migrations/deployment.py#L117-L232",
+          "version": "repo-lines-v1:sha256:3dd250b30844625b3e9d2854226f0f31d398f6da00e8eff08729700915b6d47a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJkN2RkNzhiYWI3OWQ1NzQ0NDU4ZDY2ODljMDY4NTQzNzY1YjJiNmRkOTcyYTBlNTE2MThkZDM4NDBjYTk0N2FlIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIzMGMxZjE4OGYxNDJlZDdhODI0NjgwYjIwNzE3MmM1NTE5YmM2MTRhNDhmZGE3Y2YxNjdlZGI4ZGRmNzk5NTZjIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI5NjgyZTgzZWE1Y2NhYzdkNzY5ZjViYmQ5MmE5MWNlMjg2ZWMyNDBkZTY3NzliYzBmZWZkMzQ1NTcxZTNmZGRlIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_460e8f8b21c8409da56bd4a9528c9ad0",
+      "statement": "Plan is read-only and reports the state, pending revisions and backup availability; apply takes a local OS file lock, rechecks the plan, requires the accepted plan ID and maintenance confirmation, and writes completion evidence only after verification.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/migrations/locking.py#L27-L50",
+          "version": "repo-lines-v1:sha256:3457ecd321df4028ace07bf66ab6a2c2b2a455ed5eb616efaae280e26f50f3ed:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5NTY4NzIzMDA2NDMwN2RhZDYyOWEyMDM1MjY0MDMxOTMzYjBkMzQwYTZlNWYyODVmODNmYzlmMzM3ODliMTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI2MTg1MzcwMTk0Mjg5M2NhNWE2ZDU0MWQxZWNhZTUyY2UxYjNiMmIzYWE0MDdhNTZhMWMwNDI0N2Y5YTg2ZTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYwMTg4ODEwZGJlYzYwNzg0M2U5NzVhZmM4NzQyMjZlZmVmZjY0OTE4MmQ0ZTlmOGEyMTgwYjE2Y2E5NjM0MWUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/migrations/sqlite.py#L139-L190",
+          "version": "repo-lines-v1:sha256:27968cb8d855a8eaec39a938172e129e1c0d1510ca113696481a4303cdb7eb97:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViYzNlODllNzkwMTgxZjE5ZDI0NzlmMDViZTE3ZjA2OGY0NjNmOWQzYjhhN2RhMjg0N2MyMDk3N2Q1NTcxNDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0NDRkY2RkMTZmYWUwZjU4MGY1Yjg5MmEwMDQ0YzkzZTZkMGRlNzNmMDQ4Mzk4NWM5MzU5ZWIyNTc5MWU3YTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIxM2IzNmI3ZDg0Y2FhYjdmMDhiZDYzOWE3ZTRmN2ExNWM3ZmQ1ZThiZDQ2MjczYmYzNmZhNmM2OGNlM2EzMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc3NzkxOWU0MGM3NDgwODRkOWEzZDZkMjU5NmY5OGZjNTg4OTZjN2M3ZWVjNzdjNTBiMTM3MDk3ODFkZDExN2EifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/migrations/sqlite.py#L241-L300",
+          "version": "repo-lines-v1:sha256:3f74f598f7624aa1163fdc57b1fe082fd4c2abf22d19ef00d99f55e677c6be6a:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjNmQwZWU0OGJhODQzMTE3NDBlZTI0YWNkMTYzODhkMmE3Y2UzNzg3MDE4NTkxOTczYWU0ZGNiZTFkOTJiMmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjNzg1Mjk1ZTNkZDZkODZhMDE3YTZjMmNiYWY0ZDM0ZjQ0YjJjMjcwZjhmY2U3YjliNzFkYTExNjRmMjlkZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxN2M4NWVjYzEyYjhkNGQ3NTQ2NmM2NDMwNmViZjZkN2RmNjQ0NjA2MGVlZjUwZGVjZGM4NzRhNmRkMzI3ZjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEzMTIxYjJmOWI1ZDc3ZmI5ZDRiZDYxOTMwMzdlMWYzMWVlNGIwNmI4ZWIyN2U1ZGUwMWE1YjBiZTM1ZWUwN2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_015cb898935a408fb2c95e8bff10bab7",
+      "statement": "Admission of a managed SQLite snapshot accepts only a SQLiteMigrationRunner on the requested target with a separate absolute snapshot path, compares the recovery fingerprint before and after, opens the snapshot read-only, and returns only safe reason codes.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/migrations/sqlite.py#L209-L238",
+          "version": "repo-lines-v1:sha256:fa764958f6996588137eb8245995c3bee7ee9de90b8e9d86c03e57a4e4f84f57:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2E4ZmYwMzM0NTU3MjRkNDcxNTU0MGM4N2QwNmViOGU2N2VhMGExNTRmZmM0NzZlOWFhNWUyMTk0ZDZjMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwODI2ZmUzNTFhYmUwMWViNmU4NmYxZjkzNTQ0YWI5YjBmMzY1YTU3MzhjZjA4MGE0NjlhZTVhMDYyNDE4YTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlmODBmODg2NjQyNDNlNTgxZTZkMjc5YzQ3YWRlN2RkOTE1OTBjNzhkYzdmZTQ2N2RlYzgzYjI1ODg0MjBmNjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhmMzYxYTE3OTk3YjQ1OWVmMjQ1M2ViNzAyZjdmNWE5MWJhM2I1ZDc1OGE5MzIzMmNmNjNhODcxYjgwZTBjYzAifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/database_admission.py#L122-L141",
+          "version": "repo-lines-v1:sha256:84ae79ddfe0e117108d2a98d60bbc315b2bd253d3793fe07758692a9d177891d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiMzk3OTMzYTI0YTgwMWVlOTIzMzI3YmQ2OWEwMTA0OWMwNzc5MTUwMjFjZjJlYzM5ZGRhNGY4MWFhODM3ZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc5MWQzYjcxNzRmZjRiNDEzYTFiNWM4MTBmZGFhMDI2YTdjODY2MDQ5MjllOTFmOWJlYjYyYzA5OGM1MWQ5YWMifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/database_admission.py#L35-L75",
+          "version": "repo-lines-v1:sha256:3688a7f28d5e3a76d5e35031fa62e26c0e68678bef816270be854f33dd9a7d58:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyMzMyMWZjODk3MzJmZmZhMGJhNGFiODg3MWQxZjJjN2RiNmRmZjZjM2YwYzU1Yjk3NmM5YTM3MGEwNThmZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxMmZlMzgyNzkzMDk1MjgyM2JlNWZlMGJlYTkzN2QyNDg3NmNjY2U3OGJhZGVkZjE1MjdlNmQ3YjRiMDc2M2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlM2M3OGIwZTkyNjQzYTEzMzU3ZDgxMjE3NDczYWVkNGQxZjlhNDMzYTJiYjVhN2ZhMmQ2OTY4Y2Q5OTQ3OTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJmNDYyYTdkNmE5NjhjODdjOGE0ZWFmNzA5YWZjZGNiNWEzYWFkZDQ1NDhiNWUwOGE4NDFlZWRmNDg5MDU0NGUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/database_admission.py#L79-L120",
+          "version": "repo-lines-v1:sha256:c1f337a338d907ad4dd4855c358998c41954b13a3f30fe8b589407d8b693e481:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0YTRmYzEwYjM0NGJiOGVmNzUwYzA3MTY4ZGU1MzIxNTFiOTFjNTRlZTdmNDMwZGNhN2Y2ZWQ1M2U5N2MwNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJmNDYyYTdkNmE5NjhjODdjOGE0ZWFmNzA5YWZjZGNiNWEzYWFkZDQ1NDhiNWUwOGE4NDFlZWRmNDg5MDU0NGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcxYjYyZTIyYmRlYjRlMjI5MzJlN2FiMzcxN2I1YWYxZTcxOGNjMjYyYmMzZDFhOWRkMDgwYmEzYWNlYTgxZWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d941ba9e728f4716b2842e89c285e23e",
+      "statement": "AsyncDatabase owns or attaches to one SQLAlchemy engine, repositories receive connections rather than owning the engine, and close drains active transactions before disposing only an owned engine.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/database.py#L283-L315",
+          "version": "repo-lines-v1:sha256:ff8f8aedfaa3ee555c04e2cf2115a7c16563c48fa58b19279e66d6809cc75374:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmMzFhMWRlZTMzNGY3NTMwNTkwZjJhZjRhOGI1ZTJjZmQxNmU2ZDlhMzkxMDk0MDNhZWE2ODNlMmNjMzgwZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4NWMwMjMyMGI2MDRhNWRlMjAxZmZiNGRmYTViOWY4NjE5ODEzZGJkMjA3NzM2YWExNmY4MDk1MTA2NTZlOTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ1ODE2NDVmZDM1NzkwNDhhY2Y5N2UxNmQzMDE4OTMyMjE3NTdkMmViOTI5NTBmZDJkNjEwYjIzZmI1ZTI0OTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVjMzA0M2E4MGUwMzVjYWUwOGI1NjQ0NTFjMDRlNTQzMjkyNTNkM2M2OGZjOWQ0MmVlZWY2YzkxNDA4ZmJkMzcifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/database.py#L80-L120",
+          "version": "repo-lines-v1:sha256:db2eff4f44e7b87e590a26ed077b270b119ddd08d286f299a6cd95586f29adf7:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzZjBhMzgxZDg1YmRmMWUzN2U3ZTMyMjEwNDJkNGMxZWVlZGVlZmM0NzU3YjVmMjY3ZGE3MjI3YzU3ODk2YmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwMzU0MjIyMDlmODU0ODU1NjMzNDUwZTEyMTAxODUzY2RlNGU1ZmI4NDMwMDcwYjkwZWVjMWMwMDQ4YThmOTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM5ZWZkOWUxNzJlNTE2NDhjYzY1N2RiZWEwNDYxM2ZiNzc5M2Q2ZjZjYmViOTIyZjE2YWVkYTZmZDRhMTlmNTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEzYjVlNDZhZTU1OTg5N2NkZDJkNjEwYjM5NjczZTE3NDY5OWYxMjE1YzA1OGI0ZTdkMjgwMTViMWJkNjgwYjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_63b6b5b4717d4d6aba3c7349c4d08b8f",
+      "statement": "Only SQLite busy or locked codes and MySQL-family lock-wait or deadlock codes are classified as rollback-safe transaction contention.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/database.py#L511-L517",
+          "version": "repo-lines-v1:sha256:583f347bbbf65e746c3c3a788da18e2cc95388661c43cccff7798960843dbf30:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzYyZGI2ZGNhNTYzM2Q0YTdmY2I4YmY4M2VhMWUwYjVkNmQyMDFiOTY4ZTIyZDQwOGM0MTc4OTJkNmFhODM2MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFmMDU3N2I4MjQ2ODI0NTBmYTdlOWExMTBiZTQ2ODE1NjA5MTQwMzkxMjkwYjgzMDUzNmE1YzZlYjBhOWMxNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGY1ZWJkZTNkNTVmYWRiOWY5MDkxOGZjOTUyODYwMWEyMDFhNzI0OTg3ZTMyZWY5ZDViOTI0NDI4MjhlZDU2MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_db1fe9073368458bb2bedd2d8bd50c8a",
+      "statement": "Candidate versions are stored in pc_candidate_versions keyed by scope, candidate and version, while pc_candidate_heads holds the mutable status and enforces by check constraint which result columns each pending, approved or rejected state may populate.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/tables.py#L369-L400",
+          "version": "repo-lines-v1:sha256:5ab6939ad221ef8f7b2e1058f0be7325d95f573b80216ad66d3ed090144f7dff:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4ZTAyOTU4OGExNGU0ZDIxOWY3YWZlMDgxNjcyNmI2MmU4YWM2ZGQzY2JlYTk5M2Q3NTQ1NzRlNzcyYjJiZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhZmJhMDUyN2MzOTUzYzRiNmUwZTViNTczOWJhODM2MTJmODA1M2JjZGM5NDY2NzMwMTkzY2QxZDU5MGI0MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5OGIwNjNkOWI0N2U2NTM3OTYyNTU3MmNjZTE5NzY2OWQ1NzY3ZTEyYzE4YmUwNzU2NTJiOGNkOTgxY2U4ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjllYWNjODI5NGYzMWE5NTk5NGVmNjAwOGFiMzg3OGY3NjE0ZTEzZjRmNTA2ZGM2ZWNhMTAzNGM1Njk3ZmMzNzcifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/tables.py#L402-L453",
+          "version": "repo-lines-v1:sha256:36388825e817093083905db0d9d7ae094110842d1def8de7c7ca13eea4043c1c:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmNDE4YWFjNmFiNDU1MDUzZjYyNWU4MTg3ZGY0YTlhYTBiZDRlMDNiYTMyN2Q3ZDk5ZmI3ZjJlY2QwMTYxYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhZmJhMDUyN2MzOTUzYzRiNmUwZTViNTczOWJhODM2MTJmODA1M2JjZGM5NDY2NzMwMTkzY2QxZDU5MGI0MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiODBkNzRjYzMyZmNkYjAyZmMxODY3NDk5MDA5NWE4Y2RmMTc4YTZkMTJkN2FiNmY3YjI0NWNkZGUzMDg4NTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM4NDI5YWUwYTI5Y2RjOWMzZmYyOGQzODIzMTgzNDNkYmM2MzMwYTJlMDg4MTA0YWJmZThmZDkxNWNhZTQ5NDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7c9a3a4894aa43bca395f599bb349cd0",
+      "statement": "Artifact revisions are stored in pc_artifacts keyed by scope, family, artifact and revision, and pc_artifact_heads selects one revision through a composite foreign key while holding lifecycle, replacement and merge pointers.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/tables.py#L194-L206",
+          "version": "repo-lines-v1:sha256:f6ed5db973257b85aa432053a542079daf6554c3abcc6cbaf336639d443bf8a7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5M2JiODRmYmFmNmI0Zjc0ZWM0Zjc3ZDBmODgzZTU3ZTE2MDg5OWY3YTU2MmM5NWZjOGNlY2Q4YjUxNTVmZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhZmJhMDUyN2MzOTUzYzRiNmUwZTViNTczOWJhODM2MTJmODA1M2JjZGM5NDY2NzMwMTkzY2QxZDU5MGI0MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1YjBiMGNmZDZjZmViOTgyODQ2MmEzNTgxNjIzMGYwZjcwYWQ0M2EzMzQ4MWRkN2NmYWNkMGZiMmNiNTEzNmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNlZmQxYjgwZTFlM2ViNDQyNzBhOWI3NWU1YjJhZDAxZmZjZWViNTc1ODhlMDIzZjM3ZTc1YjEzY2E0YWE1YjUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/tables.py#L229-L269",
+          "version": "repo-lines-v1:sha256:7867b8fea70088bd28a430938ea55d3cbf84df87607031556f35e4ee224df9f0:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzNGUwODQ0ZjJiZjdkMmUwMDU5ODhjMzBmZTkxYWE1NmNhNDczN2QyYjhmMjQ4OTBiMWRiYjE5MWE5ZjY0MjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhZmJhMDUyN2MzOTUzYzRiNmUwZTViNTczOWJhODM2MTJmODA1M2JjZGM5NDY2NzMwMTkzY2QxZDU5MGI0MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY0NjgxNzgwNGM5ZmQ0MzQ2ZjAyMTljZDk2YjgwYzk5OWM5ZDQ5MWJmYTU5YzE5ODliMmJjMWZkMTY0ZTBiMTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY3NTIyM2NjMjIyM2E1OGJlZGM0ZjAyMzFiYzdhNWRiYjAwMTY2OWIwOTEzYjRlNGM5YjkxZTlhNGExYzUzZWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3ca062f5b95841449ed569ac5d2d78ef",
+      "statement": "Sources are stored in pc_sources keyed by scope, source type and source id with a per-scope unique journal position, and Artifact lineage links revisions to sources through pc_artifact_lineage_sources.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/tables.py#L175-L184",
+          "version": "repo-lines-v1:sha256:4c5cfe4905ac19017c46fbdae483ec5d88ab0c08ace1387e4179861e13e323ab:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3NmE4OTEzOWFkN2IxOWE1ODhiNjI3MTYyMjhkNjBkZGNjOGFkYzVjMzgxZDQ2OWJiZDAwODMxYWMwYzcyMjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhZmJhMDUyN2MzOTUzYzRiNmUwZTViNTczOWJhODM2MTJmODA1M2JjZGM5NDY2NzMwMTkzY2QxZDU5MGI0MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5OGIwNjNkOWI0N2U2NTM3OTYyNTU3MmNjZTE5NzY2OWQ1NzY3ZTEyYzE4YmUwNzU2NTJiOGNkOTgxY2U4ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhlYzc3NWQ5YjBjY2MwMTkwMjYzNTIzZmVmNjU0MTgyMGU3NDllMDhlMzBlZjAxNWViOGNhZTc0ZTJlMDUxMWUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/tables.py#L271-L297",
+          "version": "repo-lines-v1:sha256:53e1d9b2cadef76f1bb88a1f600f4605eb87ab6c606f18a3544f2ee8e89fb651:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyYjliNDc1NzIyZjJkMDVlZGY3MmZmMTY5ODM5ZmQzZWI4NGY0YmY2NjQ3ZDU0ZDBmMmU3Yjk3ODJkMTkzMDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiODBkNzRjYzMyZmNkYjAyZmMxODY3NDk5MDA5NWE4Y2RmMTc4YTZkMTJkN2FiNmY3YjI0NWNkZGUzMDg4NTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE1MzA4ZWM2YmFhZGJlZThjMzZlNTBlNGJhYTllMGUxNjY4NWE5NjQwMzhlZjk3YTU3OWE1MTBiMmFkYTVkNTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b428702611ee4e5f945729452aadd7a5",
+      "statement": "Processing state is persisted in dirty-set and ownership tables keyed by binding name and scope, including pc_artifact_processing_pending, pc_artifact_processing_intents, pc_artifact_processing_leases and pc_artifact_processing_schema, and these declare no foreign key to pc_scopes.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/tables.py#L517-L535",
+          "version": "repo-lines-v1:sha256:8ab5bb72318fc8d17a434ada59b19e5c0780227fab1fc054f569d50fcb87e5df:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlNGZmZjExMTAyZDAwNmRmZGU2MTI2MWExOWUzZmJiMzVkMTJmNDc5MzcyMzVjZjdkNDU1ODIwN2VlNjIwYTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhZmJhMDUyN2MzOTUzYzRiNmUwZTViNTczOWJhODM2MTJmODA1M2JjZGM5NDY2NzMwMTkzY2QxZDU5MGI0MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlNWIwMTE1MDQ0YmE4MDk5NmZlNjQwNDZkYTQzZTU5ODhlNDE5N2Y2ODRiODE5OTNiNDQwZmQ1NGM3NzUxNTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk5NzMyZGU2NzJkNTE4MWE1ZGM1Yjc4MjE2OWIzMzQ0N2ZiMTJjNjdjNjEzMmMwMDY5MDIzNjY1M2E5NzgwMGMifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/tables.py#L551-L562",
+          "version": "repo-lines-v1:sha256:adccde3ae90f8c2bfe666b1cea3d7b71537b84c0071cbaa0a440d43fde8b7f88:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjYjU3MTk0MmMxOTFmNTY0ODhhNTk3YjI3YjI1ZGMxZDlkNTA1NDNhYTNmYzk1MmE1ZWFiMmNmOTVkMzNkNTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhZmJhMDUyN2MzOTUzYzRiNmUwZTViNTczOWJhODM2MTJmODA1M2JjZGM5NDY2NzMwMTkzY2QxZDU5MGI0MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiODBkNzRjYzMyZmNkYjAyZmMxODY3NDk5MDA5NWE4Y2RmMTc4YTZkMTJkN2FiNmY3YjI0NWNkZGUzMDg4NTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM5OGVhMjY4Y2JlOGJmMDk2NjdkN2NjMzQ5MmFiN2IzZDA4ODdkMjBhYzAxM2YwMmVjOGJlMzRkZWU4Y2RjODMifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/tables.py#L599-L622",
+          "version": "repo-lines-v1:sha256:bca4b3b800917a844dcef0d58caa115df62ebf39e60e19953d1ab51610f27390:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiNDk4OTFkMmZhOTU0NTI5MjJjYWNjMGE1ZTI5NWJkYWM1YjllNjEzZmEyNTcwMWRlYTcxODU5MDI2YmQ3MWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhZmJhMDUyN2MzOTUzYzRiNmUwZTViNTczOWJhODM2MTJmODA1M2JjZGM5NDY2NzMwMTkzY2QxZDU5MGI0MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhmMDBkOTUxYzkwM2ZkZjA4MGZmMjM3ZWM1OTY5NWIyODg1NTJiMTA2OWE4YWJlNTIxMTk3MjY5YTE3YzNlYWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhlZmE2N2FlNTkyZDZlNjY4OGJmNjIzZTMxMDBkYThiN2UzZmQ2Mjg1MWE1MjM2MmU1ODU4YTUxNTI0NTU5ZmEifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/tables.py#L642-L652",
+          "version": "repo-lines-v1:sha256:c439232dfa1d84b23d889eefc2224c65d94e7cecb0031e46b7b11a549fd760dd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzOTc5OGM3Nzc2MzE1OGI4YTZlODY0OTZjNjkyOTIxYjgyZDM0ZTBiZDkyZjEzMDdhN2NjMmEwMjU5MmFiMmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhZmJhMDUyN2MzOTUzYzRiNmUwZTViNTczOWJhODM2MTJmODA1M2JjZGM5NDY2NzMwMTkzY2QxZDU5MGI0MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5MDFlZWIwMjAwMGI0MmU5OGZkNjk1ZGMzMDAyMzkxOTdkYWJlNDMzMGY2NzY2NWRhMDMxZmIyZmIzNDY1MWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1Yjk2MGI3NzMwNmRkY2VmOWRjNzMxY2Q3YzM1MTFiMTg3ZDI0ZTkyYzU1M2YyNjQ2ZWMwNTYxYzdiOTc1ZjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_73487804a0444598bcc28a1361cbdbc6",
+      "statement": "Handoffs have no dedicated table; the relational Handoff backend stores each Handoff lifecycle in the shared Artifact tables through ArtifactRepository.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/handoff.py#L27-L60",
+          "version": "repo-lines-v1:sha256:9d14089429b3516954080865cb7842d1922a042277b4db36110d8771a29fd8c5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlZjVjOTY2YTQwMTc0MTRmNTM2MmNkNjEwZTc2ZGE3YjI2YTQ0N2NlMGRiY2E3Yzk2YzBiNDgxOTBhZTNmZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlZGI0YzE2NTUwYWJhYjUwODU3NGZkYzQ5ZGYzNzUxMDk5ZDg1Mjc0ZDEzM2M1MzFjYzE3YWQ4Yzc0ZjQ4MWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY3MzU4OTJkZDMwMzQ2YjJhYTI3ODNlYmI2OGE3Y2RhY2ZiZGNmY2E4ZmQxM2M5YmM0ZDQ3ODJlNjRmM2Q2NTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJmNTg2NmFjMDFlYmVkOGRhYzdjNDIzMjVjMTFlMzhmMzcyOTM1MTYwM2Y1YmVlMWI0MmNkZTRiNmEwZTc1YWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_05eb81bdd6ad4000ad9596908f766384",
+      "statement": "Ordinary Server startup on managed storage checks readiness without repairing it, and a changed schema or inconsistent projection requires explicit maintenance rather than restart-based repair.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/operate/database-migrations.md#L113-L117",
+          "version": "repo-lines-v1:sha256:68bf1f7439e975b4d83c07dee925b79443314738eb307491aeeee1ec2963ceba:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTE0NTViY2ZmNDQ2MzMxYzViYzVkNjEwZWYxM2NjZTNkMDAwOGE4N2Y2Y2NmN2M5NzRlY2UzYmU5NGI5MjFkOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzRhNDI1ZjRlNzFhMjgzMGFmMmM5YzExNjU2NmQ0NmM0ZjBiMjc3Y2RiM2UzYWE5Mzc1NmFkZGQ5ZmI5ZTU1OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjgzYThlNDZlYTQ1MDUwMzNkMjc1MDgzN2M5MDBhZWQwMzI0MWRhMmY5YzE0ODBlMTgxODI0OTliMTYzNDYyNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWQyMjdkYjJmNjIwOTYxOWM1MDRiODUxMTEzZWE2MDRjZjRhOGMxMTI1MzM3N2FmMWYxNzI5OTA5NDFjNmNiMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_762c0ca7166c42789617f9eb7568023e",
+      "statement": "Focused tests cover read-only commands not creating databases, interruption at each revision boundary, checksum-conflict rejection, backup ordering, OceanBase tenant and seekDB legacy checks, and snapshot admission budget and source-change behavior.",
+      "evidence": [
+        {
+          "resource": "repo://tests/builtin/persistence/test_database_bootstrap.py#L107-L140",
+          "version": "repo-lines-v1:sha256:1d2eac40b975ad93d477a20e115d7350adb923f47a665aa5713063ed5c96f190:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5N2JmZTcyMTNlOGEyNThmZGZjNmE0NjFiZWI3MDRiZDA5MjY3ZDE0NmU1ZTIzMjQ4MTA2Y2Q2NzVkZjhkMTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5ZTZjNDNiYjViNmY3Yzg2Y2IwM2IyNzY2NTBkYTA2ZjA2Yjk4Mjk0NDUyMjBmMWM5YWYwMmIzNmUzZjFmMGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1NmFkODUzZTYwZjYyNjVlYmMxZGQ1MDQ2NmNkY2ZlOTM3MDBiZjQ1MGUwZGEzMmM4Y2YwNTY1OWNjNjYzYjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2NTg0NGQ0NDJkMjA2NTFlYjY5YTM1Y2Y3MzU2MzdiNjAxYmFhMGEzYzYyYzNlMTgzYjZkZTU5YjljNDlkNTAifQ"
+        },
+        {
+          "resource": "repo://tests/builtin/persistence/test_database_migrations.py#L89-L130",
+          "version": "repo-lines-v1:sha256:79b56b856a522fdb2c521058d0de8a7aa6031ec0a86f7d5d617df0cc44c6d8bf:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyMGFmMGQyMmE0MTVhYmMyNDg4NjcyMDE0NTIyODNkY2IwYTY2ZmQ4MzA2M2E5Nzc2NWFlYjY1NjAxNmE1ZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiYTk2ZTJjNTE0M2NlNDQyOWRlNTkyMTI3NTQ2MGY3NDhjM2I1M2M3MmE3MDExNTBiMWQ1N2Q3Y2M4OTNkYzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE2MzExNTJkZjMwZTgyY2I3Y2Q3ZTJjM2JjOWJjZGFiM2I0YWFmZWVlNTQzNzg0YmFlYzgxNjdmZjQxYTg0YTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5MjRmMjQ4ZTlmOGI0OTA4NmY5NmIwZmY3ZDE5ZTIzZWYwOTMyODAzOWY2YjQ4MzlmZDVkOTRhNDkxZmUzM2EifQ"
+        },
+        {
+          "resource": "repo://tests/test_ops_database_admission.py#L49-L80",
+          "version": "repo-lines-v1:sha256:9e5675cc409726f031f5d09cded907655935e122bddf9004f85d8901243a149c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5MmQyMDgzMDA0N2I3OGQzMGE4ODZhOGVjZDBkZGRjM2JiZmVlNDlhZWMyYTYxNGExNjg0NWI4N2EzNDEwNjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2YTBlNjk0N2M4OWMyM2ZjN2I0MGE2YmMzYjAwNTE5YTNlZjI4NWFjYTVjNDgxMjY1ZmQ1OWEyZGJjMTEwYmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyZDM2OTRjZmRkYzQ2OTQ2ZmQxYzc0ZWFmMzFiMjY4NmY0ZTkyY2FhNGRlNmUwNWI0ZmVjZGM3NmY2OGRiYzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIwOTdmNTVkYThlNDk4N2M1MTI3Mzc3MmFhY2Q0ZGFiMTA0Mzk4ZTkzNzIwYzFlZjA3YjJhYmU1YWEyYTNmMTgifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T09:04:09.583Z"
+  }
+}

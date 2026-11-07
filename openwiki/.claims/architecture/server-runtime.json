@@ -1,0 +1,446 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:212f456ebca4acf505b82f4ca647855c188b277e070b029f4ce895d29015b0a2",
+  "claims": [
+    {
+      "id": "claim_46a2210e9c3249ab89ab38d2dc1758ac",
+      "statement": "ServerSettings is a pydantic BaseSettings model that reads POWERCONTEXT_SERVER_-prefixed environment variables with _ as the nested delimiter, so nested groups such as http, auth, and access map to names like POWERCONTEXT_SERVER_HTTP_PORT.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/settings.py#L239-L251",
+          "version": "repo-lines-v1:sha256:8cad0e41d754da47abd1990f86644b40cfd5b3224f63dea15f5d4e7c7aba5d5a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2NDA0NDI2MGFlZTE1NjUyMDNlYzRlYTExM2EyNTA1MGMyMzRlMmRkZTUwZmJlY2RhNTU3MGFlOWE2ZjVjMWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiNTg5ZmEyY2YzNmMxNDk4YWUyOTZhMWIzNWQzODI4YzBkYzEzZmYwOTg5MDU0NjJjODQ5MGIwYTVlM2FmNDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlODIyZTU0NmNmMWFiOTNlYTY1YWFkNGYyYzkyNzVmODJmZGNlMTk0NWExZGQ3NjM5NWI2OTU5MmJlYTFhMTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_78cafd3fe0144b20a3915f52c0b644aa",
+      "statement": "Unset HTTP settings fall back to a loopback TCP listener on 127.0.0.1 port 8000, a 16 MiB request body limit, and 64 concurrent requests.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/settings.py#L114-L123",
+          "version": "repo-lines-v1:sha256:5736c8f5641b606798a4e362e85284f19d05ee6d72e3fe0afed0b403439b0a35:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1ZDg0NTQ4NzY0OGZmOWVlZGYyMTY5ZmI4Mjk3ZmU2ZTFlYTY1YWQxYWFjMjE1YmQ0YzIyYWE5ZjlhMmQ3YzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBkYTI1MWEzMGQyMjZjODVjYmFmYzc4Yzk3NGJjOGZmZDdlYTM3MDAxOWVmNDgyMDk0MTMzZDdmOGU1Nzk1M2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNjODY5YzhmODkxZWFjZTQ5YThiMTQ0ZGE1NmRkMjkwYjQ2ZmM0YmNiMjMxZGVjNDU4MjdhMTcxM2IwZDgwNTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c6e96e637a7e4bebb54d808503925f44",
+      "statement": "Startup refuses a TCP bind to a non-loopback host when no UDS path is configured, the process is not a background-only process without metrics, access mode is disabled, and allow_unauthenticated_non_loopback is false; the error is raised by ServerSettings validation before any runtime resource is opened.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/settings.py#L383-L417",
+          "version": "repo-lines-v1:sha256:66ece5b0484ccc7c4a15dc8194a07b4e316e90c7f05edf8913b32fb265e5678b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwYjhkYjBiOGU2YmE1YzgyNDQzMmMyOGI1ZjcxYzVjMDAwN2NkMzIxYzMxNmNkMzIxNzI2NmM0OTBmMTFkNmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxODQwNGI2OGQ0NmIyYTc1YzA2ZjdhYjY5NDI2YjMwYzNjZDVhMDJhM2NlMDc3M2UwYzM2OTNlMWI0NTBiYTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ1NmY1MDMyZjRiZDhhZDU0Mzc4Njc2NjkwMTZlMWU1ZjY1M2NhNWQzYTA2OGQ4OGYyY2VjNzY0NWM0M2QyNGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlODgyM2UyZDIzODYyOTdhYzgzYTcyZDMzNmMzMjA4MDhjYjM0YWM4MjUzNTY1ZmE0Yzk5YTI0NWJmY2NjZjkifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/transport.py#L31-L50",
+          "version": "repo-lines-v1:sha256:0819f69543afc61420f541a59e202c744588770217e50b9e33bae5d145a50f29:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkZWI5NThkMDc1ODE3YWNhYmIzODVjZjQ2MjI2YmMzMmFiZDc4ODZiNWIwMzIyNDBkNjFjYmQyMjdiNjY0OWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxMDQyNGJkZTNhZDkxZmY4ZGFlYTgxYTRhYTUwNGIyZmU5ZDM3OTIzZjU5Mzc5MTUyZDU0M2Q3YjRkZWFmNzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2ZWZiZWNhMDVkYWJkM2YzMGY2OWVkZjZiY2QzZGVmMGE2ODU0ZjU5ODgxOTg1ZmM1NTE1N2ZhMzMyYzZkOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk1MGJiNjU0YmRhODM5MjRjMGU0MjU3OGJlYWUwYTkyNGI1NjQ1NDExYzliYTk4ZDk1ZGM3NGVjMGZlOGEyZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_69c7d6b5ccdc41fda53a4aeac07a4038",
+      "statement": "When authentication is enabled and no identities file is configured, a non-empty bearer token is required; a missing token raises MissingBearerTokenError, and the identities file branch skips this requirement.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/settings.py#L155-L168",
+          "version": "repo-lines-v1:sha256:613796daa11ed23dcb9b44e8eff2e4b3833dbad493869173881d2345fc3c7497:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhNjFjYTdiYTQxNmNmYjgyNzg0NGQzODI2MDgyYmY3OGIxYWJjMGMxNTgyYjdjZmNmYzk4NDA2ZjMwOTg1NmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZlMjAwYzlkNDFiYmRhNGZkZDQ2MGYwMDRhZjJhN2M2OTAzNmI2NmE0NTU3MDI5MTc2NDY4N2E1ZWMyNDM3NjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBhMjNhYjMwOTc5MGZiNmU2YjczYWRlOTRiZDU1MGJkOTAxZWViNzFhZWQ0Y2NkYWVkZWEyZDMxZDc1ZjRmOTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a4c485781d934e629545644869ae9ed1",
+      "statement": "Provider selection in create_server_app is ordered: disabled access loads no providers and refuses injected ones; enforced access uses an injected provider, then an identities file (multi-identity provider), then a static bearer token; with none of these it raises MissingAuthenticationProviderError.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/factory.py#L560-L582",
+          "version": "repo-lines-v1:sha256:32ac673690f66032d762686ab27f0dd36ac338a61465c38b4265eb4950762588:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4N2RkYmExNTdmMmI2Y2NhNzcwZjA1ZTY2MDdiMjI5YjI3ZGVmZjFjNDNlMmZjZDdiYTUyNjQ3MjkwNjg0YjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxNjYzNWUyMWQxOGNhNDNhODU1NDI3NTI1Y2I5MDhiOTFiZTk3MmNlOTkxNzI0Zjc5OTgyNWM1NjVhMzhjOWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMxYzM4YzhiODA0ZGU0MWQ2Y2JmNmUwMjdiNmZhMGE2Njc1MjIyOWQ3NmYxYWE3OWU1OGVmYjdmZTU0ZDY4MDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwYmYzNmQ3NTFhMTY1MmIyNTc2NDNlNTQxZmRiN2M4Nzg1Y2JjOThiZjI3ODA1YWNlYzAzZWFkMDI2ZjlkNGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_809eaab7d0d5426d94dc1641b477ebc8",
+      "statement": "The CLI translates the bind-policy, missing-bearer-token, and missing-authentication-provider failures into actionable messages naming the concrete environment levers instead of raw validation output.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/cli.py#L898-L899",
+          "version": "repo-lines-v1:sha256:ae7e6add4af17a42233e5fb3fb0289f82d27ab318769bd41e551f79ae0f518fe:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWY4MjllNzg4NTJiNzcwZTFiNDUyMmJhMDE4MWI5MGRlNTM3NTFiMTk4Zjg3MDY0ZWNjOWM5YThlYmQ2YzkzNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2EyYTEwZjUyMWU1ZWM5MzY0MTkyMzI3ZGQzMjlhYmQzMDMyNzI3OWYzNjk1Zjk0MmVhMzdkMDFkN2M4ZjFhMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTk0MGU3MWI2ZjQ1ZmZiNmNjZWEyNjJlZTEyNGU4NjgyNWRmNjljOGRjY2U2MWM0NzYxMjE2NzU2NDE5ZGZkMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmQ2MzE3NWJhNTk4MmQ1ZjRkNjkwN2Q1ZmY5ZGRiNzkyMDlhM2QyOWMzNjc2MjhlYjNkZDkxNTdlOGFlZGRiNiJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/server/cli.py#L940-L951",
+          "version": "repo-lines-v1:sha256:cec2f489c725aad6bb47301102ead8b0458bbc0fce1e234fe4267ad863e06450:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhYWY2ZTcxZjNiZGI4MmI0NTMzNGE1ODE4NTYwNGM4YTFlMDliOWViZDFmYTJkNWNkMDJmYWVlMzkzYjQ0ODEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNiYzE1MjQxZTM4ZmI5ZGUzNzcxZjFiMDc2N2UyZjA1ZTNhMDUyNjk2ODg5OTZjNmM1OGRhNjM5Y2E3ZWMxMzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjMTUxNTc4MTk0YzE5NmE5MTYzOTZjZjZjYjA3ZTdlZWExNDQ0YTBiNDc3OThhOTQ1NDc4NGFiNDJkNjIxMDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjViNGE5YjliYWM0NmZjNzg0MWQ4NjRmZDhmYTQwMzlhMDFlZmJmMTdjNjI3MTQzNDhkNWE2NTc0MzhlMTQzZTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9df88b90a3f64c198542c75d2eaf5a83",
+      "statement": "Enabling POWERCONTEXT_SERVER_AUTH_ENABLED forces access mode to enforced, and an identity map or a source-management manager subject requires enforced access mode.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/settings.py#L383-L400",
+          "version": "repo-lines-v1:sha256:7f67900e4b321890aeffd049d0cd9eca2196dff3a38c914b309ed9c7f2126c16:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwYjhkYjBiOGU2YmE1YzgyNDQzMmMyOGI1ZjcxYzVjMDAwN2NkMzIxYzMxNmNkMzIxNzI2NmM0OTBmMTFkNmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0OTJhYzU4NTk2ZjBlMmIxNzBiMmI4ODcwZjBhNDVjOWVlNmZkZTg5YWRkYzBkZGEzMmMyY2Q2ZGJjMWY4NWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ1NmY1MDMyZjRiZDhhZDU0Mzc4Njc2NjkwMTZlMWU1ZjY1M2NhNWQzYTA2OGQ4OGYyY2VjNzY0NWM0M2QyNGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZjM2FkOWU2OTY1YTE4ZTEyYjVlZDJkMjRmYzBhZmRjYjdiMmMyMDEzYmI3NmM1NDRmZDcwMGU5YjA5NjU1ZDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7156e16d7e884e609559d0fe1ba47847",
+      "statement": "A non-HTTPS public URL is accepted only when it points to loopback, unless allow_insecure_http is true; when public_url is unset this check is skipped.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/settings.py#L349-L362",
+          "version": "repo-lines-v1:sha256:913be98cea05fb1f6fbef21bdfbd631f96e68912fe0c747da2b2982b98a1fe33:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlZjFjZGQwZjU3NDMzY2U1MDc3OTA3MjJlMmY1MWQ5NzM1NmNiZmZhN2IyNGRkN2NhMTM0NDgzMmQ0ZTUyNDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1NjE5YzYwNjk4YjExOTI0YzIyYWViZGFhNzE4YjlhMDY1NGMxMjg4M2Q1ZmUyYTk3MDdkMDY2ZDZkMWYyMzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFhMmI1OTYxMTlmNWMyMWIwYzFiNTcyOWVkMDJlZjM4NjJmOTIzMzJkMDFjMjZjOWI0MjgxNjZiNGIwODBjZDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ff5e9f97c54e4f0b81bc2678824fb500",
+      "statement": "create_server_app refuses the background artifact processing role, so a background-only process cannot expose HTTP or MCP through the factory.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/factory.py#L183-L184",
+          "version": "repo-lines-v1:sha256:2278a8f011f3d5fb0bef6a86c6e7852619d34488214cdba2ab9a8fa878f90c04:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjhjZDhlYWI5NzgzMzk1M2IxYzUzZmJmNTg1ZDBiNzkwMzBhNmEyMmYwNjVmMGM2MTVjNTMzZjUzMjIzZTliZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2NlNzI5OTJlMmZiYzhmMGJjZWVlOTcyMDdjYzBkMDQ2ZjI2YmZiNGYwNDc4MGY0MTM5ZTE2MmUxNTU0YjFjZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzg3ZTYzMjBmZWRkZDg1NjQyZjRmMjk1N2EyZWNlYzkwMDhjZmZmZGI0MjgxZmI4MzY5YjZmNGE3NGM3MTY2ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzUzMjA4YzdjZTAyZjExOWRhODk2ZGYyNGM2NWUxZjllY2NkNmI4NDU1ZWM2ZTIwOWRlNjdhZWVlMjQxNjNiZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_81e2d0a03886468382e26570f540b8c9",
+      "statement": "The FastAPI lifespan opens resources in a fixed order: storage admission in a worker thread, cursor secret resolution, access control when enforced, the built-in runtime, server identity, artifact access restoration, the source gateway, published app state, and finally the readiness monitor and optional deployment task before yielding.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/factory.py#L219-L420",
+          "version": "repo-lines-v1:sha256:4fd4b79b932126f1c19959d3b18973e5c94c45148d8ba68100abf7fb7d1240c3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAyLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJhNDU4YzA3MWQ0NWM2NGRlOTc1ZDYzMjExNTJiMGM5Y2M3ZjBlNjQ2M2JlODIyMzA3MjZjOGIxMGI4MzdjNzc1IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI3Y2UzMTRmMzIzYmVjMTg4NjMwMDE0ZmJhY2JiZjIyY2Y4MjZjY2I2ODgzNzNhMWNmYmM3ODMzM2MxYTZhYzQ3IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI5ODdhMmVhZTVjMDE4MDI5NGQ5NWVkNzNlMWEyZGQ3MjcwMWE0ZTg2MDU0MjA4ZDFjZDc2Y2Y3MzQzMmJmZjJjIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI5Yjc4YzE2ZjA3MDliNzcyYTBiZGFmZjVhNThhNDM4NWJhNzU2OWYxNTA5ZTdiYWUxYTJhMWU3MWFiZjQ4MmNlIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_d730b70a365a4c3e896d3653d4c345ec",
+      "statement": "Storage admission for persistent SQLite plans the migration and applies it only when the database is uninitialized; any other non-ready state stops startup and requires an explicit db-migrate apply, while in-memory SQLite skips the check.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/migrations/server_readiness.py#L123-L160",
+          "version": "repo-lines-v1:sha256:1ef97097641389bb8de6796d06439898f0aad01c31aa04cf89f26451818510ae:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNjNGMxZTUwYjQwNGUzNzdlNjgyMzQ3Mjc5MjhjMzc1NTkwMDQyYzFkMWFmNGU3YjA1MzUwY2YyOTdhYmMwZTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExMTY2YTQwZWU4OTUyNDUwMzJkZjI3OGVhYTNjNjc1ZjQ3YmQyYTM5NTFlNjI0Zjk1NjkzYzY4M2Y0ZmMxNjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmNGY1YmY4ODY4YzMzNmI5OWYxMjIzNWFlYWI0MGFjZWIwYWNiOGI4NzczYzUwMGU4ODZiMjlhN2NjZmU5N2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQzZjI2ZjI1NzZkMWQ2ZDI4N2JiMTdlMzVmNTYxZWM0ZDkzYTQ5YTZlNDg5OGE0MThlMTUxMjZkMDNjNjJhZGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_44b8e3e53e0b421d8ad10534b9eed241",
+      "statement": "Without an explicit CURSOR_SIGNING_SECRET, a persistent SQLite database uses a hidden sidecar key file, other persistent databases use a key in the data directory, and in-memory SQLite uses no cursor secret; key creation is serialized by a lock and published atomically.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/cursor_secret.py#L39-L53",
+          "version": "repo-lines-v1:sha256:bfdb18a1695fe44f178da81cc64562fe40abec93e648951447a53fc261567345:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0ZDZmOWMzM2ViOTI1NmU0Yzg1N2ZhYjQ1OTYxODdhNjRiNTNiYzM2MWRlNTEyMmRmODljMmM0YmNmNDQ4MjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyODJhZDQyYzQyNWFmNjYwNTJjYTY1MGQxMTliNmJlZGM1ZTM0N2M1NDJmZGExMDdhMTRlZjJiYjMzMWE4OTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY4NGU2YmQyOTVjODk0NDg5NmNjN2E2YWE3Y2I1MmM3OGQzNTYyYTM0NjI5YTA3ODAxMWJlMmYyYjA4NGRlZWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_66ec2690ef2647b99db318da5ead5697",
+      "statement": "Shutdown cancels the deployment task, marks readiness not ready and clears runtime-facing app state, then closes the async exit stack, which closes the built-in runtime.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/application.py#L4683-L4728",
+          "version": "repo-lines-v1:sha256:e590260758641b8d309f6a16564ed77dc567c1cf71c7e09e8631ab463727abc0:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmMzFhMWRlZTMzNGY3NTMwNTkwZjJhZjRhOGI1ZTJjZmQxNmU2ZDlhMzkxMDk0MDNhZWE2ODNlMmNjMzgwZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2MTMyM2ZmOGRmMGVkYTM4MTEyYjFkMWU3M2E5OGViYTdiODU5Y2Q5YWIwOWRjNDRmODI3NmQyNDMzNjI5M2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ5NDYyODI2MDI1MTZiMzA1NjRjMmQ0MTFlNWU4YmI4NjBhNzU2ZThmNjY0NWJlM2ZiYThjZjEzOTdiNDFjNzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkNmJlN2JiM2FlY2QzZWUyOGI3OTA3MWVkMjk1YjNlZGVhMmM1M2YwZWQ5OGQzMGQ2Y2Q0OGQyOWYwODQwNTQifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/factory.py#L413-L446",
+          "version": "repo-lines-v1:sha256:d05fbaf49d9d48c4078eadf28caa1545465f21d2314173f9a164d679a2ae2c4f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyZTg2OGU2YTI5MTY3YWUzMmUyYTY5ZmM0ZGI4MWEyZmFkM2I3ZjZlZTVhOWFiODI3MjRlZGExNmIzOTIwNWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYyYzIyODA4MjRhYjc3MDk5MjRlYmU1N2Q5ZjQ5MGZhMzgyOWQwYTAxYmE5ZjBjYmJjZTQxNzVhY2ExZDZjY2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY1ZWJlZjkxMDZkMjQ0ZWU3NWY4ZWViM2JhZTQ1M2NjYTBkNzE1NTJlODBjMjc2NzBlOWRmN2FhZTBhZjVmNDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_586f0293a4884276a1b01fc603ab54b8",
+      "statement": "BuiltinRuntime.close stops accepting new operations, pauses and shuts down the scheduler, waits for active operations to finish, closes the artifact processing supervisor, and unregisters scheduler processors; operations started after closing begin raise a closed-state error.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/application.py#L4683-L4728",
+          "version": "repo-lines-v1:sha256:e590260758641b8d309f6a16564ed77dc567c1cf71c7e09e8631ab463727abc0:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmMzFhMWRlZTMzNGY3NTMwNTkwZjJhZjRhOGI1ZTJjZmQxNmU2ZDlhMzkxMDk0MDNhZWE2ODNlMmNjMzgwZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2MTMyM2ZmOGRmMGVkYTM4MTEyYjFkMWU3M2E5OGViYTdiODU5Y2Q5YWIwOWRjNDRmODI3NmQyNDMzNjI5M2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ5NDYyODI2MDI1MTZiMzA1NjRjMmQ0MTFlNWU4YmI4NjBhNzU2ZThmNjY0NWJlM2ZiYThjZjEzOTdiNDFjNzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkNmJlN2JiM2FlY2QzZWUyOGI3OTA3MWVkMjk1YjNlZGVhMmM1M2YwZWQ5OGQzMGQ2Y2Q0OGQyOWYwODQwNTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_099c92ae0ec7413f8cb83df5c6a875c1",
+      "statement": "The HTTP middleware stack places request identity, resource limits, metrics, access logging, and tracing outside the authentication middleware, so admission and identity headers apply before credentials are checked.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/factory.py#L458-L508",
+          "version": "repo-lines-v1:sha256:5e05ae4dc50b93e7ff69b00972b6c13e0daedc8f09cbd6e30e4d2687d37b1ebe:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwZWRjZmZhYjY5NTQ5ZWI0ODY3YjUzYjgwNWY0NWQyZWRlMzEwNTNiZTliMWRhN2JkODY1MzQxOGY2ZDViOWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdhZWY1YTMwZTBjN2UwYzFlMGQ1OTQxYzA4YzhhYzNmYTUxZWU3OTM3MDk5ZWYwNTYyZTgxMTk1NDY3OWQ0ZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRlYWI2YzQ5ZjMwNTBlZWNmMzBmODRlNTQzYTEwZmY2NzhiM2I2YTNjMmI1YzBjNGI3MjUwZDBlMDVhZTU2NTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMzNzViMzNjMjNiZjY3YTQ5Y2U5Y2UzYTE0N2U0YjgwOGUyMTM3NzQ5ZThhODdlYTQxNzZlODlkNDYyZDRhYjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0280fb578bca4947814dfb8d02de74fe",
+      "statement": "HttpResourceLimitsMiddleware rejects requests with 503 server_overloaded when concurrency is full and with 413 request_too_large when the declared or streamed body exceeds the limit, and replays the buffered body to the downstream app; in-process MCP bridge traffic bypasses it.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/http_limits.py#L26-L78",
+          "version": "repo-lines-v1:sha256:3abdbbda20892bfe8abbd1d5ea23fd8fb87ae7f1504ad82e3f0876758f19785f:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3NjI2Yjk1NTAxZTY3Mzc2YjdmY2ExNjI3NTcxODY4OGJjYzc1YjRjZjQ3NGNjMWRlNTUyMzZiZDY4OTg3NzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4ZTQ1OGY0MzFlMGQ5YzA1ZmNhODVlYjA5OWZjM2ExNTg1NTAxZTM3ZmI5YjFlYTliOTUyNmVkMzRiMzg2ZmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwYzRmOGRhMDFlM2ZmZTc2ZGU5MzZlY2M2Yjc4NTM1ZjQ4OGY2ZWRiNDNjZDYwMjFmYzIxZTI3MWM4MTkzYTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiN2Y5ZjQ5MzUyYmJlZDEzN2RmY2YzM2U2YzM1ZGQxMWNkOWY2ZjNhMzVlMWEzNGViNjNiMWU4YjVhMTdlYTIifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/http_limits.py#L80-L101",
+          "version": "repo-lines-v1:sha256:bc845c0bc3bdeb0bfe91cff2d416ac3508f158cf1711af1a06a74acd176fd2ee:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1YTIyMGIwODE4ZjU5NTdiY2ZmMWU2YTQxYmUwMmVjMmNiZmIwMGRlMWQ4MmE2MjdkM2FjYjU2ZmM0YzY3YjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4NzlhMTAxYjA0NzE2NjI2YmE0YmMyNzkwZjhkYjFmMDA5ZmEyZjhlMzhlMGEyZDQ4YjliZjdhZDkxYmJiM2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMxZGM0MzI3OTlkN2EzMWRmYmFhMzIxZDY3MzQzZDFmZjllNmQ4ZWI0OThkYTU1ODI1MTZjYTc1YTBhZmI4NjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU3OGY0ZDRhYTk0MzU2YjFmMWU4YjQwZDI4MjRkOWI1ZTBmOTg5YmU0MmI1NWE4ZGVjMDg0YmE5NzEwYzhiYzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ea7ed015143a4506804d0b41ef975a11",
+      "statement": "An admitted request keeps its concurrency slot until the final response body or trailers are sent, not merely until the handler returns.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/http_limits.py#L35-L78",
+          "version": "repo-lines-v1:sha256:395d0d933e9d69752893dc6ffdb8d8417d4781288de3245a33a4b96a03056a47:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2OGMzMDFiZTE0NjBiZTMxZjE5NTE3OGU4Y2FhMTJhOGZmMmFhYzE3YjM4ZTEwNTQzNDc0YjQwZjQyZTVjMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4ZTQ1OGY0MzFlMGQ5YzA1ZmNhODVlYjA5OWZjM2ExNTg1NTAxZTM3ZmI5YjFlYTliOTUyNmVkMzRiMzg2ZmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk4NzAxNjY2OTBlOWFlNDMwNGY5NzA5NWY5MGExMzhiM2EzNGZjN2JmMGUzNGRmMWY5MzhjMGQ1NTgzM2NkZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiN2Y5ZjQ5MzUyYmJlZDEzN2RmY2YzM2U2YzM1ZGQxMWNkOWY2ZjNhMzVlMWEzNGViNjNiMWU4YjVhMTdlYTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6c05e175a6b445a787b509c887c9341b",
+      "statement": "AuthenticationMiddleware bypasses authentication for internal bridge calls and for public paths such as health probes, the root, docs, the remote Skill receiver routes, and dashboard session and static assets.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/middleware.py#L115-L121",
+          "version": "repo-lines-v1:sha256:4479d9cc2c8bae2a3921233faa1aa2577720f4d80563fe4bb05c718a89298815:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdlY2I0MjAwMmI0ZjBiMzZjMTYzYmM2NDVkOTQ3NjEzNGU2NjA3NmNiYjY2MTBiZDJjYjQ5MTVkOWI0N2IyNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzBjMWYxODhmMTQyZWQ3YTgyNDY4MGIyMDcxNzJjNTUxOWJjNjE0YTQ4ZmRhN2NmMTY3ZWRiOGRkZjc5OTU2YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2E0MTUxMDE5N2MzZmY0NzdiMDA1MjdkOTI2MjhiYWQwODgxMDI2MjQ4MmViMDk1NWM3ZjRkNjYyYmEyZDExMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzEzZDIxOWZmNGUzZDkzMzUwOWQyYzM4ZGM4YjBjNjNkNTFjNGRmNjcxNDM5NjEzYjcyYTc0MjQ2YWNhYjIwZSJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/server/middleware.py#L35-L42",
+          "version": "repo-lines-v1:sha256:f4fd533053016f8e12a05fd70ef489f86d5121a53036cac676f4d6e6547eae84:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDRjZTZmMjAzYWQ2ZDgxOWNmNGIwODU5MTcxNTI1NzdlMmVjMDZkMTVhZDc2ZjU0MjMyNzQwZGU5ZWJhMzUwNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzc2YzczOGUyYWQ4MDE5NDE0YzU5ZDBkM2FjNDk0N2I5NGE2NWFmNTU3ZjdiOWM5ZWI4N2RjZjQ2ZGMzZDUxMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjNkMWM4OWI3ZDMzYWI2MTA4YjgyZDY0ODZmOGJjMzcyODhkYmMzNjUyNjE2ZWI4MjA1YTBlZWQyMjg3NzRiNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTYxYWM5NDMyMzljYzhjMzFlYmVmZWFiYTgyOWQzMDEzYjFjYTk3NjljMTliOTM2YmRjN2VjOWQ0ODU3ZThmNCJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/server/middleware.py#L56-L57",
+          "version": "repo-lines-v1:sha256:2afdd22a3720b19035a616b43607025e97387cf485b5a715e0db110531fa3a0f:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmY1NjA0MzRiMjZlNTlkZTc5NDY5ZDg0YTQ3ZTcxMzlhM2Y0ZTIxNTQ5MGRkOGZlZmJiNWMxMDJiZTA3MmFlZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGFmYTQyNzc0YmU2ZGE4OWY4YmJmZjc1ZTQ4NmUyOWY4ZTdkMWViZWIyOGQ3MzM5ZGQ3ODAzZTY4YzQzN2E3YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmM5MDQwZGIwNzhjY2EwZDBlNmUyMDQ5YjJiOGFmZjcyZGVmY2Q3M2JmZGU1MmM2NjlmMjkxMDk1NmNhNWMzMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzkyNGE5ZjY3YzI4ZGQxMmNiNzgwODZjNGFmMGRjNTRjOTBmODhhYmI0MjVkOTI1NDI4YWUxNGI5OWUzMGFmMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_efc307b3a68a4e5e85d7b39a01aa5214",
+      "statement": "A rejected credential produces 401 unauthorized with a Bearer challenge, while a provider unavailable error or any other provider exception produces 503 authentication_unavailable; a successful result binds the immutable authentication result and Principal for the request.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/context.py#L54-L62",
+          "version": "repo-lines-v1:sha256:9be10c39e70cfb7b200709cb34ee03f4c317ba3829007519080cbdf7673ff098:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTI1ZDA1MzE5NGE4YzY2MmFiMzI2MGZkN2Y4NmFiZDhmMTBlNGRkZWI4Yzg0YWU4ZjdhZjY4YWRmNGU4NDRlMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2ZiNTI0OGZlZjBhZjg1YzY1N2Y5NjBlMWJmYmMzZGI1NDViMjJlNzIzMmY2OGU2MDRmNmRhZGVlNmIzNmE1ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDJlZmViNjFjMmIyMzljMjFiMTNlYmFjYjI2ZWJjNTE5ZmY5ZGMxMzNmMTIxNDQxM2Y1MTc2NDI2YzNhMmEyNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWNkMzUyODgwOGU2YzllZTNjNDczYzA3ZGQ1ZjRlYmI0NzM4MDk2ZmM3OGNjNWIzYmQ5YzU2MGNlYjUwNzYxNSJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/server/middleware.py#L129-L152",
+          "version": "repo-lines-v1:sha256:28af2a32dc2153b7cb657d95173888236b49bea93c3bd51a8284180584d2d743:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExMGRlYmUyOTI3YTllZGFkYjdiZGI3ZDdkOWU5MDUxZDg2YjZkYzIxNjI5ODM2YWE0N2Y4MjM1YmIxZmI5Y2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJkMDAwNmNkNjVmZmNjMDIzMTM0OWY4YWEyN2E2YzE2N2I3ZWUzNGZkODg0ZWQ2NTNjZmY0MmM0MWE4OGExM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUzMTNmODdjMzA1ZTVmM2Q3NzI5OGEzN2I2NTU2MTEyMzBiYmRmMzRlNmM2MmYwOWZhNzlmNmYwMGE5YjQ3MzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/middleware.py#L55-L113",
+          "version": "repo-lines-v1:sha256:00793d1180d6bcd69aa410f02dfbc490930cf2c5c6d0b346c5b7c3d1bbc0fe90:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2OGMzMDFiZTE0NjBiZTMxZjE5NTE3OGU4Y2FhMTJhOGZmMmFhYzE3YjM4ZTEwNTQzNDc0YjQwZjQyZTVjMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmMDJjMDcwNjcwN2Y5ZmUyZWI0NjlkNmQ5MWMyZmExYTI1NWYxMmIwMjY1MzhiYzBiYjI3NDA0OGVhNWVlNTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYxY2EzMmVjODQ2NDdmZDJlZDNlOGE2M2M0NDlkOWZhNGQ3NmJjMmFjY2E4ZjhkZWYxY2M2NTE3NThjMzFhNzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_08f5f4569a2e4b5daaad9cb82250e3ae",
+      "statement": "The static bearer provider compares the presented token in constant time against one configured token and maps it to a fixed service Principal, while the multi-identity provider reloads a protected identity file on each request and matches SHA-256 token digests, so rotation applies on the next request.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/authentication.py#L132-L198",
+          "version": "repo-lines-v1:sha256:11ea05388499db4e5148248cd05047761481741984ee1f5a4574f69a90c10b5c:eyJzZWxlY3RlZExpbmVDb3VudCI6NjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4ZjI5MzhmNTNmOGEzODIzYTdjODM1ZDZmMWViYmEyNzM5ZWUxNjA5NzVkNTBkMzBhNzBiNjQ5M2QzYjUxNmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlYzJhODcxYTRmNTNhYWJkNzQ2YTBhZjc4MGIxOGEwZDNlYTFkOGNjMmJjMmY1OGE3YmFlMjdlMjhhMzBjNjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5OGIwNjNkOWI0N2U2NTM3OTYyNTU3MmNjZTE5NzY2OWQ1NzY3ZTEyYzE4YmUwNzU2NTJiOGNkOTgxY2U4ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/authentication.py#L94-L130",
+          "version": "repo-lines-v1:sha256:d47afc1d497e38684cae1b281b15c329f9f4205dcc1846bd3df689152bf5319c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3MjY4NDU2MDhhZTkyZWQ1Yzg0NzhiYzQ2OThjZDAxMjYzMzQyNGE1OWNkN2E0ZDYzODkxMDYyMThiZWRkODIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMxZjI0MmQ1ZGVmZDJiYzFmNzA3NjZjOWY0NmViNzA0NzJhNWY4YjAwNDEwMTRiZThjODk3NzM3ODQ0M2IxOTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwZGUxNGQ4ZjQ4M2JhOGRkYWMxZWExMTg0YTY3MzM4YzliZTdkOTM4OGE5ZWFlODdkM2JmNWQ0YzE5YTI1YzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8b50777fb4944a51bd0fe1b2504a0897",
+      "statement": "Authorization is enforced per route: operations with an access requirement receive a dependency that builds the authorization payload, resolves required (action, resource) checks, and calls the access control service, and does nothing when access mode is disabled.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/app.py#L5256-L5306",
+          "version": "repo-lines-v1:sha256:fc30e61186a5ca83a1277a7cf8df6dbf06b652418ce207a6c2410fba942110b9:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3Mjg4MDIyZTg5MjAwMzFiYTliZjI1YjBjYzY0NDY4N2YzY2Y2OWVhODM3NjM4ZjlmNGE3OTc3NzhjZjgxNTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxMjI3MGY1Njc1ODE3MzFmYjM5YmUyM2FkZDM5MzJjYjI4OTZhMjc4NDkyZjY4N2NjNzJhMDljY2ExMzA0ZDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0NWE1MjAzNmQzNjVlYmVjZDlkNjhiZjVlZjE3NWFlNDgxNjAxY2Q3NjVlM2ZlMjU4ZjJkODRiYzc2YTRiZWIifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/app.py#L5309-L5343",
+          "version": "repo-lines-v1:sha256:4f1fea2c235e3ffe131406d2d61982bfba34b1e2a2a47cef4c7c0600d121ed48:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiYjFiNGM0N2M0ZDQwNjljZDY0YWNmZjA2YThmOTdhMDViMTY1YTk5MzUxMjJmODZiNDk0ODhmOTdlYmI5ZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyNTQ3NWM5ODUxNjNjMjllOGUxMzVlMWNiYjQyYjZhNzU1NzA3YmJkM2Y5OGI1ZjQwYzNkZTIxODk2MTIwODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMzNDhjNGIyOTlmZDBlZDA0ZTFlZjJiZGM1YTczODQwMzk5NDg0MzRhMWZiMTFiYWM0NzRkZGQ2ZGI3MWI4ZjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e5945cae02994c87bcd036e379e3edff",
+      "statement": "A denial caused by no matching binding or policy is retried through static scope bootstrap only when the caller may bootstrap that scope; any other denial raises through the standard allow check.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/app.py#L5309-L5343",
+          "version": "repo-lines-v1:sha256:4f1fea2c235e3ffe131406d2d61982bfba34b1e2a2a47cef4c7c0600d121ed48:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiYjFiNGM0N2M0ZDQwNjljZDY0YWNmZjA2YThmOTdhMDViMTY1YTk5MzUxMjJmODZiNDk0ODhmOTdlYmI5ZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyNTQ3NWM5ODUxNjNjMjllOGUxMzVlMWNiYjQyYjZhNzU1NzA3YmJkM2Y5OGI1ZjQwYzNkZTIxODk2MTIwODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMzNDhjNGIyOTlmZDBlZDA0ZTFlZjJiZGM1YTczODQwMzk5NDg0MzRhMWZiMTFiYWM0NzRkZGQ2ZGI3MWI4ZjgifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/authz/service.py#L626-L640",
+          "version": "repo-lines-v1:sha256:55dddde447e9eef9c6846c39cdc01a024e90fd49f4c25fdc98637541280498b9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3ZjliYWNkMmFjN2ZlMjc5ZWZiY2Q1NjI2ODQ4MGI4ZTdlODlkNWMwZTY0Yzc2Y2ZlZmVmY2E0Yjg3ODJiMWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1MGMwMzc4ZjBjMmU3OTYyYjc1OTA1ZTYzZjRhMDZiMGI4NWQzZjM3NGY4ODdmM2QzY2VhYTk3ZDgzZTYzOWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzZGYyYWNmMDZlOGMzZjAzYzcxMzVjNmU4YWM1YTljYTU0MzJhYmUwNmE3NGFjYTBmZGQ5YTUzYTAwOGY5ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI3ZDdmOTU4MzM0Y2ZjMDEyYjZmNTk1YTU3MzMzNjUxYWYzNzBmZWRkZTk1MjQ5YjI0Y2M2NDhiMWYwMTdhOTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_268d5e41f05c41b0b44c28c0f8461691",
+      "statement": "access_control_for_mode fails closed, raising an access-unavailable error when enforced mode has no access control service or an unknown mode is requested.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/authz/service.py#L1791-L1799",
+          "version": "repo-lines-v1:sha256:5637bdda4fdaef93e96a5968bab073bbfe1e414a65dcdf4aa5b140f0a3040461:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmExNjFhYmFmN2VmODgyNzdhYTQ2NzU5NzhmNmVhZTY3ZTk2MTM3MmRhMzI2M2NlYzdiZWUxYWJmNGMyMzhhOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjcwNzg3YzEyOTc4NzVhZmY2YmNjN2IyNzVkNjI0MDYxZjU3NTdiOTM1NmQwNWVjN2QxMTA3YzdjZTA0YjIwOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTM2MThhNWNhNGJjZGE0OTY5YmVjZTEwYTZjMWYxMTIyNDM1ZTAxOWRiMzYxNjMxZjI5NjFiNzFjNjU3ZGU0MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_367faf7c818b404083b801f0f6921b91",
+      "statement": "Every response carries the X-Request-Id header taken from the current request context or the active span, and unexpected exceptions return 500 internal_error while preserving that identity.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/app.py#L1499-L1512",
+          "version": "repo-lines-v1:sha256:368dd47f749dabf22b65127afca0255811734a7ba9686e26fa12fd7cb30a5b38:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1N2FmMTU4ZWI4OGUzYWQ5OWNlYWFlYmJlMmNlMjZlZDdhZWM2OWU5NjNhNjliYWQyNWI4NDQ3ZDIyZTFjYWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjM2RmODBmMjZiNWNjNGI5ZWEzMDA3NzRjNTA1NzVjZGM3YTczYzBlOWVlOGYwZGI4NDdkZmNhZmQxNjkyOTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwNDJkNjVjNGM0MmQ3NGMyYmQ3OTQ4NWFkNDAyYTkxMmIwZmUyNDA1YzFlODU4ODI2ZTRiZjlmYjgxYWEwNjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ2YTQ4NzE1MjlhYjAzMGYwOWYwYjVkNGUzYWU5Y2JlZjg2ZGEyNDc2Y2EyMDYyYjRkNTgyNDZhZmUyOTI2MzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b7a1b87042c74483afe1cc1f41fa28fe",
+      "statement": "The readiness endpoint returns 503 when the runtime is not ready or when the authentication or access provider reports not_ready, and returns 200 otherwise.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/app.py#L1751-L1770",
+          "version": "repo-lines-v1:sha256:ef2c00125e4a2110caecee2fbd51ade48e2af155adb79ec5d4df57a793073de8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1NGQyOTNjYTdkNTM5OTMyNDcwZDgyODMwZTZlNzRjNWY0ODBhYmYxYmQ5NjhlMmVmOWNlOTViNTkyNzNkY2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYxNWMwOTQ1NThlNGI4NTY3MzIyZWI0ZTFkNjNiZDUyY2M1NmViOGUzOGI1YjI1MTEyZTgwOGQwMjkxMjNlMTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3Y2M0ZjgwMDcwN2UxN2ZlOWM4OGNjNDRhZmI0OTY5OGIxZGVhNDVkZjY0N2VjZDdjM2RkZjQyNTUwYWEwM2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cd4365b1b08c4f15846c9497da95665c",
+      "statement": "Scheduled jobs are persisted in a sidecar SQLite job store configured in UTC, while their live processors are held in a process-local registry keyed by the canonical scheduler path and are not persisted; duplicate registration for one key is an error.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/scheduler.py#L126-L142",
+          "version": "repo-lines-v1:sha256:8a7457e271b3358a1e68dc605c1ac763a55f9486b0692b56da888829623f6b62:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5YjFkNzk5ZDE3MTRiN2M1MWJkYzI4NGRiMWNiYWJlMGI3YjhiNmRjMzJiYzJkODc0OTcwNzA5YTQ1NDE5YjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiNWYyNDg2YjdlNTNiMDVlZTgzMTc0NzgwNTM1NzRlZGFhZmJkMjZlNzZkMTRjZGQ5NTExMjg2YjhiZDBkMjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIxMzZmZTIxOTk1YmU0MGU1YWM1MjhhOWIwMzk2MWRjMmJkZjMyZTBjYWU1MDllMzhmM2I3MzU0OGQyOTZlNDYifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/scheduler.py#L74-L93",
+          "version": "repo-lines-v1:sha256:3298f2cf6dcadf3d029fd81ff60f681b5378e2545f522236eb5a1c4a097a82dd:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1MGRkZjRkYTc3NGI0MjUyZGExYWFiYzI0OWUyMzRkNTU5Y2JmZDBhMDQ0YTAzMWMxMmNiNjBjMjhjNmMzMDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEyNjQ5YmQ5ZGZmMjk2YzJmMDYyZDhkOGMxMTU1YWU2ZmFjZjBmNzM0YzIwMzRiODVlYTZhNGM5MzVjODkyOWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyNmFlOGRjNmI5ODZjMjdkY2VmMWU0M2M1ODg0Mzc5Y2FkOTRkYWE2ODljNjc0YjM5NDI0NGY4YTk3ZjlhNjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b2d34c4f7b184712a4891d1289d5b2b1",
+      "statement": "start_scheduler requires at least one positive job interval or profile cron, requires a processor for each configured job, creates the scheduler paused, configures jobs, resumes it, and fully unregisters processors if any step fails.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/application.py#L4581-L4656",
+          "version": "repo-lines-v1:sha256:b48a35e5df3c84e90a3fcf0648164172ea0565479cbd14252afa7af7e366f488:eyJzZWxlY3RlZExpbmVDb3VudCI6NzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2NzgwNDRhYjMzZjg4NjBmN2NjZDk2NmM5ZDViYzExMTdjOTg3ZjZmNDdjNjQ5YjRmY2E4MWQ4NDdlZDNiZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyOWM1MjQ0MzRjMDA5YWFmMGQ3ZmU5ZTJmZmU3MjJiMTcwY2Y4ZWIxYzhjMTU3NWU0ZTNiZDUxZTkyNmM3MWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyNGRlOGRiYzU4YmIyMmRjNDIzNjhlODY3MWMyNmJhOWQ1NGVhZmEzZWE5OWJkYzM2N2ZlZmFiOTJhMzE2OTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjMmY2ZDRjZDFjMzllZmQyMDVjMmY4ZWVhMGM1NWE4ZDUwOTI4NDhjMzljNDFjMjNkYTZjNTMwY2I5MTUwOWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5888174ccb494329ae30ef0fa74abde9",
+      "statement": "Interval scheduler jobs use coalescing, a single concurrent instance, and no misfire grace, and an unset interval removes the existing job.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/scheduler.py#L183-L222",
+          "version": "repo-lines-v1:sha256:c9b0902a8fb211d38cff882ebec801584f88901f0a118d36c49add502d21daa6:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5NWEwYWJiMDEwODY3MWYyNWY0ZDdmM2EyMzIwODMxOTYyODg0ZjFlYzI4MzFlODA3ZmEwMDU0ZmE4MDAwZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQzMjczZDc1OWIyNGMyNTBkYzI4YWVhMzZhNzMxYTQwMDY5NGE4ZjRiODhiZWNlN2YwZjc0MDE4YTc2ZTMzYzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjViNzYwYTFhMGEwZTM4ODJmYWVkZjU1OGQzOTc4ZDZkMjc2YjQ4Yzk3MTc1M2I2NDMxMmNkMTljMmRkMGE1ODkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0775c96991764a5fb52db48e0e612668",
+      "statement": "The profile cron job runs once immediately to catch up missed windows and then follows its cron schedule with a one-day misfire grace.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/scheduler.py#L224-L240",
+          "version": "repo-lines-v1:sha256:f9143e2469fb4fa1d58a88cb2ac3c1d6739eb858b8d3ce14853ba0de1a7a9e64:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNDBiZWE2NmEzY2Y3ODY4MDEyNWFiNGY0MjUyODk0MDUyNWVhN2IzN2M1OWQzMmVlZWUyODA5N2RlNDdlY2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY0YzNhYjQyOGZhMmQ0ZTc4MTdkZTNkMDg0MDMyODZlN2RlZTJhYjU1OGY4MjY0YTFmOTU3NzAxZGFhYzJkY2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0ef58b579b5d48a7810b7e911e5e5724",
+      "statement": "With enforced access, scheduled source-window runs execute as the background Principal, bootstrap the scope, and require SCOPE_CONTRIBUTE before flushing atomic memory.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/factory.py#L620-L636",
+          "version": "repo-lines-v1:sha256:0132edbd5d4949fb84a51f3a626833b6a703a5dbd0f2dd2c52a61904ace11459:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MDMxY2JkNzUwYjFhMTM2Y2EzNWUxOGU1MDAxMzI4ZDYxODE4NTE0NTQ5ZDdkYWQ3Y2I4YzJiYWEwNGZhMjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5YjkzZjY5NWNiMTJmZDEzOTFhYTI4NGVhY2UzMjJlNmRkODMwNzQ5YTlmZGNlZDUwNDJkMTcyNGU3ODkxOTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNlYjVlZDdjYjFiNGQ4MTJmMGQyNDJmZDE1Mjk5N2Q1NzVkMjc3MGVkMmRhNzdjM2I2YzYxOTVjMTY2OTY2MjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkyNGQ1OGQ1NzUzYjFmYTczZDM5NTg3NWUyMDlkMmFjM2Y5ODBlZGY3YjU0MThhMmYzYmM0YmJlYTU4MzQ3NjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9296122b30c94eaeb34333768951d92e",
+      "statement": "The background Principal is ACCESS_BACKGROUND_PRINCIPAL_ID when set, otherwise the legacy static token Principal, and scheduled processing in enforced mode is refused when neither exists.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/factory.py#L743-L760",
+          "version": "repo-lines-v1:sha256:d5eb473c1828e828db7487ff89ab9284b4fa1c634a381a9b25b13c72f26219b3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4YTk0OTdjNzRmNDJjOTg4ZjlhM2RiNTE2YWY0ZTYwNWYyMGFmNzc4OWZjYjcyMjUyODRmNGQ0OWY4MWZkYjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmZDdhMDdhODNkZDE5OTZmYjUxNjg0YjQyYWVjYWY0ZTkwZmI3OGJhNzIzMGU1NDJlZDdiZDAxZDQyMzAxYmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3NGRlNjBlNmIxYzBkNjA1OTlmMWI3NTU5YzA0M2ZiODBlOTFkYTdlZGNlODdjZjM1Y2JmM2U1NzNkY2FlYzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRmNWZmZTM3MDkyYzYzNzk3ZjE3YzYwZTdmYzIzNjUyYmNhZGVhZDBjNjhlM2I3NWY5YmQ0N2Y3ZTBkOGRlN2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b0a2be66d35b4f0b9e1bb59622141fdc",
+      "statement": "The background artifact processing role runs a supervisor loop that stops on SIGINT or SIGTERM, opens access control and the runtime, and serves background metrics only when metrics are enabled, and HTTP serving is never started for that role.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/cli.py#L902-L916",
+          "version": "repo-lines-v1:sha256:ead4aabf822a52ab06936562565a2eb21787a73f57c6c2bd24935be2b7aba8a0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4YTE5MTFkOWMyYmZmNzA2OTU1NjQ4ZmUzZWViNmI2ZGMwZGQ1YzA0ZGI2M2I1MmE3OTkzZjI4M2NhMTIwYzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzNmIzYzE3OTRlYzVkNTk3ZWRiNmQwNDJjNTdmYTVjNzNmZWQwY2VhZjg4NzRiZjA5NDkyODg4OTI3YjY5MWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI3YzgxYjFiZGQyNTAzMjI5ZTE3YWRlZTMzZGZlZGI1Yzk5YmJlYjdjOGQ4ZDg4MDgxYmNiYzhhNmU0YjRkNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJkMjhhZDBiNmNhYTJkZThiODUzOWE1ZjZlOGM4OGNiNDRjMTQ2YTEwMDYwMzE3ZTdjODExOWE3ZmIxMTEwZjMifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/cli.py#L992-L1060",
+          "version": "repo-lines-v1:sha256:0bc3d4d9a55896abb116fd92a34f3ef7c5751ced46bfacd8fcfe55d3d65663b8:eyJzZWxlY3RlZExpbmVDb3VudCI6NjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2NDJlMzg5ODk1MmUyYjk0YTA5MGJmMjgzZTNlY2M2ZmZiNTVhMzhkZTZjZjBhNmQ5ZGQ5OThmNzc1ZDFjZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMTU1ODg4ZmFjOTA3YWNmNTZjY2FlMGQxMjAyNGQ5ZmQ5YjExYjFmY2JlNjFlZmI2MzY2N2U0OWRkNjEyNzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI4YjA3YzlhNDk2Yzk1ZjRjMzQ5MTgxNjk4OTgxNDc5ZjNjZDUwNzUwN2UzNmM4YWM1ZTdhYTA2ODY4ODNiYmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYzNzkwMzcyZDAwMDI3NDFmOGZjOTMzOTE0Y2QzMGIzZTQxNzYzZDUwZTE3MjRiOTgyZTQzYWNiODdiMTJjNzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3a4d9e8f7c5e4b69b2f8f44a4df5a068",
+      "statement": "An HTTP_UDS path is validated before any filesystem change: the platform must be Linux or macOS, the path must be absolute without .. or NUL bytes, and it must fit within 103 filesystem-encoded bytes.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/uds.py#L54-L70",
+          "version": "repo-lines-v1:sha256:5be29707f5b6e45bd3680b56703482d01223f9e808a8c3701eeaa07efc4d5c07:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3OTllMDcyOGE3MTZmNTVmNmExMTRkZDFjY2IzOWQwMmYyM2IzZGUyNjQ1Zjc1ZWE0Y2RlY2U2NDUxZmU0YTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0ZDYyY2U3M2ViZjk0NTRjNDAxNTg4ZjJjNDRhMGYyNGI0MGU1ZDRiZDk1OGMzOGIwNDIwNzZiNmE5ZDcwYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg1ZjhlZGM1YjRiNzgxNmEwOWQ0N2YyZWIxMWNhYjJmNzM2NDdmYmIwZmIzNDQ4YzhjODVhYmVmNDc0YmU0Y2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUwZDhkOGY3NTA0NWFmZTY2MzEwOWJiMzM4MTg5Mjg1ODRlZDgyYjFhNWM0ODUxMWYyYTE5YmIxMTk5Mzg5YTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ca34fd0fa8db4c0eb779ae924ca52c87",
+      "statement": "The Unix socket listener requires a private owned directory and an exclusively flocked lock file, reclaims a stale socket only when its recorded identity matches and no live listener answers, and on shutdown removes the socket only if it is still the same unreplaced identity.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/uds.py#L89-L193",
+          "version": "repo-lines-v1:sha256:257f1d1b636f959a761820c86dd01ac3ff29507cebf8abe785799cc830f8c6cd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI5ZmE0NjA2MTczMmZmMzg3OWFmOTIyOWY0Yjg2YzZlZWY0YjBiYzM2MzM2N2UxOTk4NmQ5ZDc0ZTgyM2U4Yjk3IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIyMzYyNjZlNmZkYzU0OTc3MmI4Y2I1NmZjYjZiMWZhMTEzMTQ0NDE0ZjhkYzhmNzIwMjMxYzFkZDFmN2YyN2JmIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJjMWQ5NDIzZjJiZTgyN2NmYjk4ZjMyNjQwNDRiMDM1YTI1NDdhN2JmNTM2MjZkMWM5M2E2Nzk1MWY4ODA5NTAxIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_1be84b67d37d4491bb88ca449dcfa740",
+      "statement": "When HTTP_UDS is set the CLI serves through the owned Unix socket instead of TCP, optionally wrapping the app with the operator-declared external scheme, and rejects combining --host or --port with a UDS path.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/cli.py#L902-L938",
+          "version": "repo-lines-v1:sha256:5dce2aef2577ad7a1a73be00de6686bcbe66170b77a18fb194fcc2ec60fd87df:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4YTE5MTFkOWMyYmZmNzA2OTU1NjQ4ZmUzZWViNmI2ZGMwZGQ1YzA0ZGI2M2I1MmE3OTkzZjI4M2NhMTIwYzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI3YzgxYjFiZGQyNTAzMjI5ZTE3YWRlZTMzZGZlZGI1Yzk5YmJlYjdjOGQ4ZDg4MDgxYmNiYzhhNmU0YjRkNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE3OWZkOGZmZTY5ZDI5NmRiNTY1ZDdlOWQ3NjVjZDYwOGVkZTNiN2MzNGI3NDRkYjg5MGE1N2I3ZTk2NWJiNjkifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/configuration.py#L200-L245",
+          "version": "repo-lines-v1:sha256:4ea3ed1e9645ee5e2ef1e61c7f3929934c75a6dc8e51122efb373732e11b4b50:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhM2NhZTU4ZTQzNjQ1MDJiYTRhMjUwNGI4MjczYzIxZjljMjJkM2FlN2U4N2ZjZWJjNzliYTVmZmQxNDZlNjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5NDE2ZTA5Zjc4YmEzMTZjMDMyNTY4MjEzYjg1NWVlNzU2ZTQxNTY1ZDkxOGYwOTUxOWM4MWZkNjIwZjQwNjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQzYmQ4Yzk4NTFiNmM1Y2M2YTlmY2U5NjNjODYxZjc1MmNhYWRlMTg5NzU5NDJiODdkY2I2YWVjNzE2ZWU3MzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9dd4d1d33d0b4d6995a41b378fc0b803",
+      "statement": "The managed database admission entry point admits a prepared SQLite snapshot without starting the Server, reads one bounded JSON request from standard input, and returns only short reason codes on failure.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/database_admission.py#L79-L140",
+          "version": "repo-lines-v1:sha256:825495401407a6f47b2ddc4dfdb9eb49be80fa6278cd18ebc907220da1850b9b:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0YTRmYzEwYjM0NGJiOGVmNzUwYzA3MTY4ZGU1MzIxNTFiOTFjNTRlZTdmNDMwZGNhN2Y2ZWQ1M2U5N2MwNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE2MjMzYjNmZmVhMzJhMjNkZjUzMDY1MzQzNDhmMmRlZTc3NmE1YTZmNzRmYjUzMzE3NWRkYzUzOWE4ZmU0NjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJmNDYyYTdkNmE5NjhjODdjOGE0ZWFmNzA5YWZjZGNiNWEzYWFkZDQ1NDhiNWUwOGE4NDFlZWRmNDg5MDU0NGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNkNDEzNDBjYzIzOWExNTljZTliNjAyMmU5ZjYzMjI4MzJlMmVhZDc2Y2FlOWU0NzU0ZDIxMGViOGZiNmQ1ZTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3f25757f508a4f57946dad86c4638d8f",
+      "statement": "The MCP projection calls the Server app in process through an internal transport that propagates the request identifier and marks the call as an internal bridge, so the outer authentication and admission layers do not re-admit it.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/mcp.py#L583-L598",
+          "version": "repo-lines-v1:sha256:3752fcd840d1b6e6af729d697e5cb607a87df9b1b43663bebbb4047b02ac36da:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0ZGE5MzUwMDE5ZGMxZTY2NzQ1MjY0Mzg3MzE2MTk5NzIyNWU5Y2U2MDEwN2FmN2I2NGY4NDBkZGVjZmRhNGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2MGUyZjIwMmYyNTUyMjE3MmEzMjg4MzY3M2JlYzZjMDUyY2UyNGE0YWQwMzYxYmU0YTY1NGY5YzBjYTBiNTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc3NmU3ZGFlOTM4YWM5YWI4NzcxYmNhOTFmNDNhMjY1YWJhYjE5ZWQ0MWQ4OGM3Mjk5NzUwNmVmZTQ1ZGQxYzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2e11721b477b4a8cbc6eb2b4eaed2d36",
+      "statement": "The run command discovers a .env file in the working directory unless --no-env-file is given, lets process environment variables override the file for run, and exits with code 2 on configuration errors.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/cli.py#L830-L900",
+          "version": "repo-lines-v1:sha256:fbdc0d7e6ac8058b21d0d87cfd871ba725cee63b0f48a3e780378bd5db0837dc:eyJzZWxlY3RlZExpbmVDb3VudCI6NzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyMjcxNmRjYTRkNjM4MGUzY2VjYWZhOTg0NjBhZDJkODNkNWNiNWNjZDhkYTIwNWQ3ZjczMTlkZWZjOWFmMDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2MzYyOTAxZjU1N2Y4Yzg2OGJhN2IzYjgxYzUzMzc3YWQ3MWI5MTIxOWQ5MGZmZTZkYTY0OTczZjc3ZWNkZTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwZDAzNTNhN2ViZjEwZWNlYTRkNzM0ZDMzYjhiZTQ1OTIxNTU5YTYzMzMxZmVhNDMwZGE2NTU3MmNhNzY0ZWUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T09:04:09.583Z"
+  }
+}

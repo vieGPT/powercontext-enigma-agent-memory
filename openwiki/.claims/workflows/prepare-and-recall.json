@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:22a2dc72067e094404b524efe50c819946fefbf2b49cab0814b559ca47269b3a",
+  "claims": [
+    {
+      "id": "claim_02e8fa01e23e4249af47fb1d36545330",
+      "statement": "The Codex hook reduces a submitted prompt to a bounded recall query: a prompt within 8192 characters and 8192 UTF-8 bytes is used trimmed, while a longer prompt keeps its tail, cut by character and then by UTF-8 byte without splitting a character.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/prepared_context.py#L26-L30",
+          "version": "repo-lines-v1:sha256:4104a448b996c4e8a87f0856e4b5a5640d8e1d09ea1e0fecdc41b3c8a1f7840b:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWRkYTYxOTdlYjg2Y2NiM2Q2NjkxYjIwNWQ3MDBiNzQxNjNjNjFjMjMyYmFlYzRiMDk1ODFmMjY4NGRkZjRhYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDUwMGJmNmI4Njg4Y2VjM2FkZGUyN2U3ZDg2YjU0NjY4ZjJkMjBjMmQ4YzNiNTVhNGQ5NTI2ZTFjMjJhYzEwMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2FjMWZmNmY5NDM3NWY4OTY5Yzk5NTViYTgxMTIwZjI3ZjZjYWI1NWRiNTBmOWY0ZTk0YmYyMTgyODVkMzcxOSJ9"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/prepared_context.py#L71-L89",
+          "version": "repo-lines-v1:sha256:6b392a8f71d0755bcbf354de20dccb6eaa0d506a54527420f80acf1cf9ff2bac:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4ZWJjNTY1NGRmM2QyYzFmYzU4ZTYwOWI1MzNmNTFhYTkyYzIxNWM1YWNmZTNkMTRhZjJkMjZmN2RlNDQyOWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyOGIyMzg2Njk2ZTdiZGVjZTcxMGQ0MWI3YTg0ODhiMjY3NDEyM2NiNjFhYzI2MTJlNGYwNTYxNDZhZWY2YjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e52a8ecdfb294e7187293bd79d2fe672",
+      "statement": "PrepareContextRequest requires a query of 1 to 8192 characters containing non-whitespace text, and max_bytes defaults to 8000 within a permitted range of 512 to 32768.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/models.py#L329-L346",
+          "version": "repo-lines-v1:sha256:a901231641b7c9b5a3537256bccd149e79db2bebd5ca0d94f2b365ea9ecd1ce9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmMzY1NDc5ZTQ3YzU5YzZlMGZkNmVjODYxNzEwY2Q0OTk0NDJlMjJhMGQ4ZTFkZWI2NzBhMTEwZmIzOGE2YjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2MGFkN2ViMWQ3YzFiMzQ5NjIxNjY5NjM5NDViMzYzYjY0MWE2ZjUwYmU1NTNmMDFmNmM5MWY4YmI4OTRlOGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiNTMwZWRlNGYzZTg4MmQ2ZTg1ZTllNmE3N2JiYTI5NTk5OTk3MWU2NTk5NGU0ZTA0MWJjMDAzYjE1NzhkMmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUyNDk3NWVmYjc5OGRiZmI0ODViMTE4NThkMGZjOGE5Y2Q3NzJlNTA2M2IwMWRkNTZlYjBmNTk1M2I3MTliMmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d9f2c8b7b4d247b4b0d90bb551b67e23",
+      "statement": "The Codex hook calls POST /v1/context/prepare with max_bytes 8000, adds include_code, assembly, or bootstrap_receipt_id only when configured, and never requests include_receipt, so automatic recall receives the four-field envelope.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/recall.py#L236-L258",
+          "version": "repo-lines-v1:sha256:3105ea180dd600ff10d721788e8faa7c6caa344e370729533ec7e3dec362cf24:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyZWYyYjA0NGY5ZTMwZmVlM2EwN2VhMDhkNjI2NTEwODM3M2ZmODY4NTIyMzg4OGU0NjYxNTdiNTFjYWQ4YTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1MWMwYmYxMzlmYzk0M2NlMGEzYmE4MmJiZGIxZGE4M2FlMzYxZjRkODY1M2Q5ODk1ODFmZGUxN2MwNjU0NWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRkMGM3MDQ1YjQwZjVjODIwMWExYjZlNGQwMGQ5MzhhOTg5NDIyM2NjMGI1Mjg3YTdhYjcyYjJlMzgzMjFiYmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk3NGJmYjdjMzJhZjYyYzJjMzVhZDFkNjAxNDE0ZWNlODgwZDAxOWVmMThhZTViODg5ZGQwZjkwY2QxOTAwYzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3415a8e1be604ac1a0affd2cb867f023",
+      "statement": "The HTTP prepare route converts the transport request by dropping scope_id from the body, which selects the Scope, and when access control is configured it requires read permission on the target Scope and every referenced Scope before preparing.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/app.py#L3570-L3599",
+          "version": "repo-lines-v1:sha256:3f3f4d1a56aa445781784b2fe851e7f9c2cd7d7bbbd3496bbf70e38a2bcb033a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwMTZlMjc3NGM5NGY2ZjhhZDE0NGJjMjFiMmNjNTExYTM5OGFiMDZiODkxNGQ3MjZiODA0NmY5YjVmNWMwYzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyNDE5NTgyZTAwM2QxZjQ3NmQ5N2VmMjU4NDA3YmU2NDQ4OTVmM2E1ZWJmMjE4ZDRjZjEwNjM5NjI1NDljY2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1YjE1YTc4OTc0Yjg4MzcwNTM3NWQyMDg3YzA5YWEzZDZlMTQxMjY2YTk3ZThiZWI2MDU2NjFlNzlmZTU4OGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjYjJlZjA2MmZmMjQwMDk1YTEyZTA3Y2M1ZTA1Zjk4Mzc5MWU0OWU3ZWY3NGJjMTZkMjg4NGRlOWRhZWFkNTAifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/mapping.py#L736-L737",
+          "version": "repo-lines-v1:sha256:4b17adb38f3d526129ba75fb04dffcd91c3b44536d52e0335226a2aaaf6525c6:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQyZDk5ZmNhODkwYjkxZDk4ZjI4MTIwMDliYTkzMjg3OWMxMjhlNjYyZTkyNGM1N2YwYmExMzg1MTM4NmVmNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2Y4YzIyYTNkNTBhMGJmNWE4ZTYzYTc1YmYwOTdmYWY4NGE3ZDM2Mjc0ODYzMjhkMjYyOWE1Nzg3YzU3NGM5NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjY0Nzc4NWY5MWU4OTEzZGFhOTMzYmViZWY0MDY3Mzk1YTE4YjBiMWJiNWQwZTk2OGI0NGM0ZjU3ODk4NTA0ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzQ0ZGRjNTAxMGRhNGMyYjgwZjY0MmJjZTkzN2M0MDExNWYzYTkyOTQ1ZTYwODA3NDgwNTk1Mjk4NzM5MTc0OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3af3f39f37524585aa7d248cdbc653af",
+      "statement": "ScopedContextApplication.prepare returns an empty result without recall when assembly is present with an empty sections list and neither include_code nor include_reuse is set, attaching a receipt only when include_receipt is set.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/application.py#L1093-L1128",
+          "version": "repo-lines-v1:sha256:53938fe524f1c5c09c3acdafd9c36e899ea31f30e3775f395e6e8fbf2d78ba1f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzMTVhNzM3Mzk4MzEzMjQwNTgzNTAwNTNiY2M4YTJiMjVmOGYyMGY0NWFmYjliMDk5ZGZhM2RkODk4NDQ5ZTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYmZlOTk2NGQ2OTcyZWRjZWQ3ZGE2NDZiYTBlNTBhYzBiMWRhZDUyYWQwZGJmNzVjNTMyZjRiYjE1YTllZTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU0YWVjYjYzNjZkY2RjOWY3ZTc5ODNhMWFkOTRhNTkyYjhiNTg1NTA4NTU0YWZmNDAyMDYzNmRlNDQxMTU3MjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhZGZmMWYyNTA4ZGFjYThjN2JmNzhlZDA3OTllMGY1MDMxNDQyNGRjMWIxOThlNjZlNWQ1NDFlM2M4OGY4NTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_03b99bec64674d61bab0b13a26d6fa93",
+      "statement": "Reuse across referenced Scopes is unsupported: include_reuse fails with context-reuse-cross-scope-unsupported when the Scope has context references.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/application.py#L1130-L1134",
+          "version": "repo-lines-v1:sha256:17fa668865a02e59112e3afebec0981c708a227fdf05e96d10d33e83f1231e21:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjAwZDYyYzIwMTBiYWQ4YTBkNDVmNmY1NDJlYWFmYmUzNDgyZThjMDFlYWIzMjhlYjk2N2ZhODNiNWQzZWMzNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjRmNTM2YzgxNmNkYmIyMTAyMTY3NTBlMWRjMjU0ZGM4NWJhM2RiOThiODFkYjQxZDU5MzFhODhmM2FlNmIwMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWQ3NTQ0YjY3NmQxNTdmMWEwZWRkYmMzNDA3ODA1ZTgxZTU3OTVlOGJjNWFlMjFjMWY4MjZiYzdjMDhlMzI3ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjgxZGQ4MGJiNDM4YzA3ZTkxN2ZhZTY5YzZlZGM5ZDJhNWI3OTFlNzQ2YWViZGY2MTNmNGM0ODQyZGI1M2VlZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ea8ea493aa404177ba80480c0425a541",
+      "statement": "Without an assembly, preparation recalls Memory, Experience, and Topic Memory; with an assembly it recalls only the families its sections name. Round zero limits Memory candidates to 16, Experience to 8, and Topic Memory to 8 per the builder's candidate limits.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/application.py#L1307-L1360",
+          "version": "repo-lines-v1:sha256:7baa7e8cd66ddcb9d5e65b2f816f7b456252b762c5b392e7519e2d11976aa2b4:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5YjZlZGVjM2UxZjc5NmFmOGQ5ZDAzMmU1MWFkMjVjNjkyYTgwODZiMWE3NDRlMTkwNTY2NDE3NTNjN2Y2OGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxNDgzOTNkZWQzNzdhZjI3ZDQ5NDUyNGEwMGRmNjQzODRhMjExNjU0YjM2ZjE1MjkxN2E1NGY2M2UzMjAwMDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcyZDQ0NTUzZGYyOTYzZmM0MDA3NGY3Njk0Y2M3MjgyOWQ3YWRhYTY4OGNhYmRmMmE5ZmQ1YmQ1YTQ3NTlmZjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdkZjBjZTVkM2M2YTEwYTJjOGY0OGVlZDJhYTRiZjFiOGFlMjU0YWNkYTA1OTFkYThhNzEyMTQ4ZDZhZmIzOTgifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/prepared_context.py#L164-L181",
+          "version": "repo-lines-v1:sha256:a3750aa0cdaf1bc4d5c9164b2fb551d41b0e70a57ad0115aff3e453b1c4d5fa3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3N2EzZWY4MjI1NTZmZmUzN2YzNTY3ZmU1NjFjZmQ2YmFlM2RjZDVjZDBmYWFkMDcyMmY2NTBhZDA4MzdmMjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1YThlNDMyOWU0MTAxYjRiNDljNmQyZjg3MzI2Mjc0OTY0NTdiMzY1NTRkNDFkYTI2ZjI1MGVjM2NhOGIwZWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY5OTliNGIyMWUzMDI0MTNkZDllZTYyOWY4MjgyOWQ2N2I4Njc3NWFlYjgxMzljZTc1NTExM2Y2N2Q5MDQwMWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZjMzI0ZDcyYzhjZTgzYWZmZDY0ZDdjMjFkNGMxNWI3NzY5YzczMmM2OGM0MDdmZWEwNWE2MGZlOTA0NzAzM2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e92589245fc24dd1aed60ec017cef5b8",
+      "statement": "Each preparation shares one query-embedding wait budget, whose default recall_embedding_timeout_seconds is 0.5 seconds and whose configured maximum is 60 seconds; only the time spent waiting on embeddings is charged to it.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/application.py#L496-L510",
+          "version": "repo-lines-v1:sha256:547554f492e76d45ff9e4507e452bf7bdb0f95550423edbf92396a1f1230c7e4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4YTQ4NWNlOTFjMTgwNGZiMDUyNDRiMGY5N2M0YTJiYTU2NWZmNjg3MjhkZDY2ZjY3OWJlOTczYjQxZmIyMGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjMWYwMmZkN2VjMWQ0NjJjMGNiODE4Yjk0OGZmZTRmNzE1YjJjMmM0MzI2MzBjMjMyZGZlMzRkNDI3NDNmYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1M2RiNzdlNDM5ZDM0MTM5NmYwMWQwMGI0M2MxZTFmNGI3NTJiNDk0NTJkNmQ4MWY3OGM4YzVhM2Y5NTJjNWEifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/config.py#L193-L193",
+          "version": "repo-lines-v1:sha256:8128529f4ef45ebe3aee47dd96b6325e4cc5315d08b32394dc7fb08eb90819e2:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODEyODUyOWY0ZWY0NWViZTNhZWU0N2RkOTZiNjMyNWU0Y2M1MzE1ZDA4YjMyMzk0ZGM3ZmIwOGViOTA4MTllMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODEyODUyOWY0ZWY0NWViZTNhZWU0N2RkOTZiNjMyNWU0Y2M1MzE1ZDA4YjMyMzk0ZGM3ZmIwOGViOTA4MTllMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGI1NTFmNTYxY2VjMTY0NWJiOWVjNWUwZWIzYWE3ZWZjYWIwZmQyZGRhMjNiOGUyZTQ4YTQzNWYwYzEyMWYwZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGM4NzQwODM1MTEyOGVhZmExOTAyNzc5YWUzYTY1NWZlMTlhOTI1MTc0YmM2MzY4MjRhNjU1MTQzOWZlODUwZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_345db94a3e5a4273ba43705fe200be87",
+      "statement": "Embedding degradation is folded into one preparation reason in which inference_timeout outranks inference_unavailable; in auto mode, when the embedding times out or is unavailable and FTS is available, Atomic Memory search falls back to text retrieval instead of failing.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/application.py#L477-L494",
+          "version": "repo-lines-v1:sha256:a65286f22d4bffc9b633dd8414b0ca12c13f7790519d497745f4064f0ea079b1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhOTQ0ZTlmNGVjNzQ2OGFjNzBkNWRmOWRkM2VmMzJiOTA5Y2I3ZWU4Zjg1NmM1ZjU0NDY1ZWIwZTk1NDQ3YjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM0ODkyYzRhZWJhZjE1YzFmOGE4NjI3NDJlNGVlMDllZDAwNDE4ZTc2MGYyYWZiMGIyNWVjMGQwMTFjN2RmMmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM5OThmYjRjOWFhZjcxNmViZGZlOWQ1ZTIzM2U4MDIxNTE2NDFlNzc4ZTE1Yjc2NDkxNTk3OTI2N2ZiMGIyMzQifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/atomic_memory.py#L1050-L1066",
+          "version": "repo-lines-v1:sha256:a993ca31c90f5c7e81dec63cbbd97423382256c7d5c799bc3d5efbf7d65f9433:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc5YWFkM2IyM2Q5MDhhOGJhM2QzNDY5Mzg0ZWQ1NmFjNWUxMTIzYjdkMzI4NWUxNTg1ODRmZDcwNDQ0YjBlMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkODNiZjZkYTYwYjhjNTY0MTRiYTU4ZDcwMDAyNjdkMGZiMjgyNjU3MGMzMzYzNzRlOGVhZGIxZDE4YTFhNjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ4ZWVmN2UwZGNhOWI1ODJlNDY5YTk0ZTM4NDg2MWY2MDJmOGNhODM1NGI1ZWY2MDRkNmZlZmEzMGUyMGYxZmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVhMGI4ZTJiOTNhMWM2Y2M5NThjMDM3M2UwYjg4ODJlNzEwNGQ1M2Y4OTQ1MDVhOGVhN2ExMDBlMzMxM2ZjM2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_018cd750c79c4afdb49e172fb0884417",
+      "statement": "The recall-sufficiency gate is a pure, model-free verdict that checks, in order, no-content, budget-floor, rerank-enabled, thin-candidates, thin-families, weak-top-1, weak-lexical, and then sufficient.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/recall_sufficiency.py#L479-L512",
+          "version": "repo-lines-v1:sha256:4405f1474078480cc861058e2c878d7715610024babfb27b713869fd48e3e916:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYTE4OThiNDFjOTc0YmRmNzU4MDI5ZTkyYWEzZjAzYWFlNGJjZGIwMDQ1NmJiOWVlZGRhYzM5MjBiNDY5NWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlNzcwMDY5NGYxZTY3NTlhYjVmOWU1MWYzMDdlYzYxY2FjNmU4OTkzNzM4NTlkYTQwNzM4MjY1YTE4Mzg4MTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwYmM4M2ZlZTgwYmI2YzRhNWRlM2ZiMDRhNDM1MTA0ODY3YzcyNTAyZGIwNzUwNzEzNmM5OWNhZDkyZjdmMDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZmYmZjNDc2MjAzZGM3NzI2ZTA1MTcwNjVjZGM5ODc0MjAxNTU1YjcyNDEwYzZlNGVkYWU5ZDJmOGY2MmQ4MjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_209b4e048b304d328da844733842fb13",
+      "statement": "The gate policy is disabled by default; when enabled, it allows at most recall_gate_max_rounds expansion rounds (default 2, capped at 2) and uses default thresholds of 2 minimum candidates, 0.35 top score, 0.02 top gap, and 0.5 lexical overlap.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/config.py#L177-L185",
+          "version": "repo-lines-v1:sha256:c37d3a2ca013aa11c2feaee9a26d941e373f2ef6c3815c192ceb1cae6b42f011:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmUwNzQwMjMzMmYwYmFiNTQ5YzQ4NmNkOTc2Yzk0NWFlZmIyNWQ2NGFiODRiODRmM2I3Mjk5NjFjNjFhODg2MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDUzMTQ5OTFkZDM2NGY2ZmJhNDYxZWE0YzBkYjEyMGQ4YmJkYzBkYzkzOWE4MGQ4NjU5NTRjY2QyZDYyOWI5NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjJkZTg0YzBjMTgyYmIyZDU4NGU2NDllYWQ0YTdhYmVkYWU4YmU0M2QwNTA0YTcxNzlmMjRmY2M0ZjI3OGJjNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDIwMjBiMWU5NTg3MjNkMzc2YzVlMzJlYjBmNGYxZmFiYjMyYjM5MzdkZGQ5MmVhYThjNWE3NDE4ZDUwODAwZiJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/recall_sufficiency.py#L169-L200",
+          "version": "repo-lines-v1:sha256:9331f6bcdbf6b215c14deb9e3d5a91b006453c903f616f88ab1579a1f208b68b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyNTNiNjllMTU0OTFlNDFhOWI5YjQ5ZjJkZjY3MjNlZmY0MmY4ZWE0Y2Q4YTJmNzE1YmI2NzM2OWFiYjg0ZGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyMGI0NTNmNWUwYzkyZDVmNmMyNTFhNWVhMTk2MGQ3MmYzYmQwNzk1NmFlODU3ZGEyMGUzMWE4OGM1NTk2OWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcwY2UzZjI0YWI0N2MyZjVhOWQzMzdmMzc3ZWQ4NTczZmE1NjU4NDA3NjQwMmYxYWYwNTRhM2RlZDYxOTQ2MmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI3MGQyZGNkMTRkY2UzNzQwYWJlNGE2ZjkxNzQ3OGQzMDNjYzljOTJkMjI4MzllN2ZiMGEzMjhjMzhiZjUxZTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6ea1f69a1db046ea99ac64a5aaf8fd2c",
+      "statement": "Expansion rounds change only the admission floor: round 1 uses a semantic floor of 0.15 and round 2 uses 0.10, and a SearchPlan never sets a limit, search mode, or rerank candidate bound.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/recall_sufficiency.py#L190-L240",
+          "version": "repo-lines-v1:sha256:dc2943ed2ab8833b94ebdc9c50ca29e2812359fb8240a6ceb390c83f51bb7b02:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTFkOTRjMGM5MDBmZWQ1NzdjNmYxYzdmYTFmYzNiZmUxZTlhZmI0MmY2Y2NmZmM5NTI3YzkyMzIwOTI5ZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM3OTVmNDQxYTc2MmMyMDBkYjBkYjM0ZTAwNzE3MzgxN2MwNzIzYTk1YjNhMDVkYTg0YTJiNjAyNmVhMmMzZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM5ZjYwNzQ2YzM1ZTI0OGU2Yjk4NjFhOTUyM2RlZjkyYWM0ZjRhNTYwOGU2MWFjODRjNmNiNGEwYWZjYTNkZjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_710a502c4f18426991d19eb79a1872b8",
+      "statement": "The expansion loop runs while the verdict is insufficient, families remain recoverable, and expansions are below the cap; when still insufficient at the cap, a non-weak-top-1 verdict becomes at-max-rounds, and any error keeps the last committed candidates, records expansion-failed, and lets the preparation succeed.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/application.py#L1607-L1650",
+          "version": "repo-lines-v1:sha256:1e6a02c616d79f6bed7c165c6ccd646a802ba2fc075b14ff8c2a88b628b7856b:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzNDNiNDc1MDkxMDc5MTk5ODRkOTA2ZWViZDQ3ZTU1YzEyMTUwOWFlNjAxMmZjOGVhNDdmNmU0MzFmYTUwNDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4NTU3MzA0MGYyYjdlNTdhN2MwMWIyMjQ0YmJlMWMzYjI5NGM2YmVlZmJlM2VhNDIxYTIxZDQ3OTNhOTgyMzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkNjA5OGY2MjlmZjU2ODkwNGNiMWNlYmM2OGRkODA1MjU3M2QzZDMwMTBlYzVhNzU1ZGNiN2I3M2FlMTA5ZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkZTI3MjE0NzNjZmJkZWJlNTY4NDU0Y2UzMTIwNGMyZGI3MWEyMGE1ZGIxYzkyMWVmNWQxMWNlNDc5MmJiNGQifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/application.py#L1830-L1870",
+          "version": "repo-lines-v1:sha256:c5ae9cca9c2786d0052efc510c0a68f59b68449798a31b59786d5be9eab2248a:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmNGJlMDJjNDYxYjE3NzY5Yjc5NjIxNzFkZTIzNTVkOTI2NWFlN2E1N2MxMDY1NzRiYWMwN2FmZDY1ZGUyNmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1ZWM4ZmU3NjE1MWI1NmE1NWI4NmFhYTRhZWM5MWQ3OTAzMjY0MzI0OWU1OGE2MmQwNDU3NjkyZmJmZGIyZTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM4YjJlYTVmNDZjYmY4ZWFhOWIwYjIyNDVkNjRjMzJkZDQzMjVhMjdlNTk0YzcwZWM4ZTU2ZjQ2NDA1OTE1MDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM5ZWMzNGE4Y2ZiMDVhN2U1NTlmNTVlMWQxZDg0MThlYjU2NmFjYjg2Y2MxMjE5NTM4NTY0MjM0NDIxZjc4MzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_148fba4f2a7140ce96d48b97b3a335ff",
+      "statement": "Before each assessment the Runtime runs a budget probe that reuses the builder's own selection code and reports dropped items, truncated items, and unused bytes; the gate treats the budget as binding only with fitting pressure, which yields a budget-floor sufficient verdict.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/prepared_context.py#L274-L310",
+          "version": "repo-lines-v1:sha256:ca4dd885292633e6d1f301b64d98b8fe19e69ed1071785241711ecda4ff05b44:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIwYjI5MjJkNzJjYzg5YmE1MDZhNDkyMzQwZjc2ZmU0MjMwYmQyOWRkZGQzMDVkNGU0NzZjYjU3MzFhMjEwOTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY0NThkYjNlN2NiNGM5ZTEwZGVkMWRkNzY1NTVjMmYyMzY4M2RiYThmYjU1Mjk5ODdlNTI4ZGNlNjBkZGUwMGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmNDEzYzg0YzFhZTBhODIwZWQxYmQwNWJhNzUzNTM1MWUzNGE5NTExMzk2MzYzMWNiMDg0YmM4Y2Q1NDIwMjAifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/recall_sufficiency.py#L248-L266",
+          "version": "repo-lines-v1:sha256:996d3e99b518f95560ca0b12a72f9e1d20367ac83a4ec093dcbec83c1b184558:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2NWJiZmNjYjk1MTBjNGJkYTFhN2U4ZDgwZmUzZjY4OWM3MDg1ZDY5NmZhNzFlMjY0Y2Y4MzdmMzBjODJhNjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwNTViMTcyM2FkN2Q5NzNlY2RkYTk1YzYxNDhkMmIwMjg3NzZhNzZjZDI4MjQ3NGRiMWY5NDUxNjk2NGFmODciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0NTFhNDM3YjlkYWEwNWM1YWM5NzFmZTY1MmVkNmRiYWU3YTA5NmQ0ZjY0MTJmODUwOWIyMmZlMmYxZTkyOTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE1NzE5NWFmZDA0YzM3NmM0N2M2MzlhNzc0YmEyNjM4OGRmYmJhZTIwYmY0N2M0MmEwZWU1Y2FlNDc5Yzg2YmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_78a86bfb36ed492cb6a93dfcbb4d2cc2",
+      "statement": "The builder raises PreparedContextInvariantError when accumulated candidate lists exceed their family ceilings, which are a guard after the recall loop has already applied those ceilings.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/prepared_context.py#L236-L250",
+          "version": "repo-lines-v1:sha256:dc6b5d931d8c3f0c7e29ab2a3a7fbfbcd41beef56a6f37440466323e0b44b9fa:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzYjlhMGM5N2EzNTNhYjE5NTRiYmQ1YjUyMDFkMTY5MmIyMDIyMjFmOWE0NmI4NDBlZGY2MTY4NDY0YWY2MGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5YTdlMDU2OTAzNTJjM2ZjOTI0NTNhMDY0ZDVmZDg0MTkxMGJlZjY2OGYzNzM3MGUxMDQxMzIxMjZjNDIyMTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgzZDg3MGU4ZjE4MzlmMTE5NDVkOWMyNzA2NGMyOTBmZGQ0OGQ3NzYyNzc1ZmVlMzk5OGI4NmQ5NzI4OGQ4ODAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3ZGJmNDM0NTJlMTAyNjBmMTE3NTAyOTRjMDMwMzdlMjRmZWIyOWFmNThjMDlmOGU2MmJjZWE4MTZlYTliOGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6b8e5ceb714e4586a30f46532c630031",
+      "statement": "On the default path the builder interleaves Memory, Topic Memory, and Experience, keeps at most 8 entries and 2 Experience entries, caps each body at 2000 bytes, and raises an output-budget invariant when the rendered content exceeds max_bytes.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/prepared_context.py#L166-L181",
+          "version": "repo-lines-v1:sha256:93609a11b6380c2df41584949a8f2537caddbdfe21ff6a5324c3eb82a6ac4524:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1YThlNDMyOWU0MTAxYjRiNDljNmQyZjg3MzI2Mjc0OTY0NTdiMzY1NTRkNDFkYTI2ZjI1MGVjM2NhOGIwZWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU3NjA4ZDE2OThlNWRlZjNiNjk1ZmRjZWM2YTcyZjdjYzk0YzU2MWFkNGM3NDQ1NTkzNWU5MThhODI1MDUwMTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZjMzI0ZDcyYzhjZTgzYWZmZDY0ZDdjMjFkNGMxNWI3NzY5YzczMmM2OGM0MDdmZWEwNWE2MGZlOTA0NzAzM2MifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/prepared_context.py#L262-L268",
+          "version": "repo-lines-v1:sha256:24e2f3175b7156efd28a507ab78019a0cfa0cb7ccb38b78389b97fe4145add25:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjY0ODc2ZmNlNzgzOTMxZjk4YmVjYjA1MjllZmNlY2NkMDI2YTYxMmY3N2QyMmVjMDMzMzIzMDQ3ZGRjM2M2ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjMzMWUxMGNmYTJmYTZkYTFiOTNlNGZmYzc2ZjdhNTdmMGU4YjE0YzA4ZjdmN2Q4NWM4ODBkZWU0N2QwNDk0MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmJiMjg4Y2U4ODZmYmVjOTMyNzBjNDMxMmVhZjU5ZjBjYjIzODE0OTEzMDJhMzUyNzU2YWFkMTJmYWE0NjRhNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGUxOTQ1OWU1ODdjZGU1YjAxZTYyN2JlNzYwY2UwM2ViMTMzY2E3MzZkOWU2ODM4ZmE5OTc3MmQ4N2RmNmZmZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_daea3a5a54354415a6c9bfd8d9fc7176",
+      "statement": "Entries that do not fit whole are truncated to the longest prefix that fits, but only down to a minimum of 64 bytes; shorter fits are dropped as below-min-bytes and entries with no fitting truncation are dropped as no-fitting-truncation.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/prepared_context.py#L47-L47",
+          "version": "repo-lines-v1:sha256:49fb68f3f10845f5772fd1fe1ec08d9fb9165c30869a3c9b47976a7649042853:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDlmYjY4ZjNmMTA4NDVmNTc3MmZkMWZlMWVjMDhkOWZiOTE2NWMzMDg2OWEzYzliNDc5NzZhNzY0OTA0Mjg1MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDlmYjY4ZjNmMTA4NDVmNTc3MmZkMWZlMWVjMDhkOWZiOTE2NWMzMDg2OWEzYzliNDc5NzZhNzY0OTA0Mjg1MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWI0YTg4MDAyOGE1NzBmZWUwMWM2ZTU5MDkxYzM0NGM1YTZmMWVjYzMzMWI2ZDdmN2EwNGExZTU3ZDdlYWE4NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmZkYWNmZGU2NGExMjMzOTYwNGRmZWVjNTdhYjQ2MDVkNzVlMzdmNjA0YzQzNzIxZWRlOTgwZjFmOTUyOTZmNiJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/prepared_context.py#L658-L700",
+          "version": "repo-lines-v1:sha256:4d40476604a30d43b3c1982f73ebbd2fe450fe5781484cfaf9331958cdb469e0:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2OTk4ODhkNTg4NzdjNWYwMmUzNTEyOWUxOWI3Mjc2ZmU2YWFlZGRhNjUyMTBhMGIyODEwYTNjNjZkNDlkNmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhOTUxYzYyNmM0Yzk3ZDQ5MDAzZGNiZWY0YmQ4MTc0MjkxY2U1MzcyYWYxZWVhZmY5NDRjOTliMTJiMmJmMjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU2MjRjZWRlZmY0NTczZWVjY2Y0NTQxYmY1YjhkMjBmZmFkNzdmYTJhZDE5YzhkNDAwOGMxZTY3MjcyMDQ2MDcifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/prepared_text.py#L104-L135",
+          "version": "repo-lines-v1:sha256:821642d858f39c23e6fb56db34f65a5c89718280e0b02b0699058a5574f98ed7:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5MjgxYWQ0YWIxMWQ3M2YxOWM5MmQ3MDQ5NjZjZDA1MjUzZjFjMDNhYjkxN2EyNGM4MDI0ODNmZTU5NmYxYWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzOWU5YmUzY2IzNTZiY2EwN2Y5ZGY2YzgzMTkyYjM4OWRhNWQ2MThlODNkYWNmOTk2YmVmYjU5ZGNjYjAxMzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBkMWEzMGMzNTZhNmY4Y2Y4ZDczYzdlMWVkMGZmYzhkNDQ4MzgxNGJlNjA3ODIwMWJlYWY3YTllM2RlYjA5MDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIxMTg4MjU1OTkzYTFiN2Q1MzM5ODg1MWZmN2FmMmZjMTdhYWZhMTI1MjNmOGY0NTdmMzg1MzdiYmQxMWE2ZDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2db48f8a5f974566b9ec487d8d9a584e",
+      "statement": "The PreparedContext envelope has schema, status, content, and content_bytes, with an empty context requiring null content and zero bytes, and a ready context requiring non-blank content whose UTF-8 length equals content_bytes; the Codex hook validates this shape and rejects content above 8000 bytes.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/prepared_context.py#L36-L66",
+          "version": "repo-lines-v1:sha256:c3f1be63adaee87044e3fa09ac0c669a6e482b2d7fe893a7a4012fcbccae4be7:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjNGI3NmIyODhhODU0ZDAyMWI1MDA5YjM5ODU1MzcxODQxNDVkMzhlYThlNTg0ZjVjNWVhNjAzMTExODEyNjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzMzkwNTYwNzA1NDFmYTIyOTkyZDJjNWNlYjQ1MjQ4MzNjMmZhY2MwNGI1OGJiZGQ3NzNlN2ViZDAzM2JlYWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ0YzYxMTA0YjZmOTdiNGNmYTczZjA2NGUzODdiZmE4ZDBhYTczMDZjMzI4ZjkyYWE0NDExMzNkZTg5NzVmM2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIwMmUzYzc0MWM2NmRjNmU1ODBiZjBmNjFjOTFhNGUzZWI0Y2QwYjk1MGVhNDdmMmNjMmJmNGU2YWEyMjRkNTAifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/models.py#L365-L386",
+          "version": "repo-lines-v1:sha256:f123f6ac29160ab63429913dca3a860c72448148f7c50032d203213647f86838:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMzkyMzg4ZmIwMmEwZjcwNTVhZDgyMjJjZDhmZjkzZDdjNjc2YjI1ZmVjNmRhNjZjMGUwYTY4MzI1MTQ5OTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU2NWM5MWQxMGY1NDlmNWEwYzI1YWQwOTc3ODhlZmI1MWRjOTJhNjBhZjMzNDY3YmQ3NDY3OGY1ZjNhMWE4OWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdjNTVkODhiZGE4YzkwY2M3NjY3ZDJiMzdkZTEzMTNmOTU3OTAyNzI5ZDhlYjE2ODllYWEyZmZkZGVkM2QxMzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_41081c6f65c040389b493f6ebb22839e",
+      "statement": "A receipt is attached only when include_receipt is set; if the receipt is incomplete or its serialized form exceeds 8192 bytes, the transport layer drops it and returns the four-field envelope.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/mapping.py#L916-L943",
+          "version": "repo-lines-v1:sha256:5e437101a69356d84092a36cc352f6a45a0b04a5766619a63ac5ea94eb16339e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyOWM1MjQ0MzRjMDA5YWFmMGQ3ZmU5ZTJmZmU3MjJiMTcwY2Y4ZWIxYzhjMTU3NWU0ZTNiZDUxZTkyNmM3MWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4NmNhMzU0OTBlNTkwMzEzYjZlMGNjZjUyZWIzZTIzMjA5YjczMWUwY2IyZGEzODIzZjBhY2JiMTU5OTAyNjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQzYmE1YWJlMzY0ZTM4MjY0OGE1OTM2Yjc1Y2FjZDc5NWExZjQ0OWQ5MmNmOWJlNGY2NDExOTYzM2IyYjczZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFmZWVkZTc5YzhhNDk3ZmVhNWEzN2EyOWQ1OGZhNjIyNzZiMzFhNDQ4NjY5MWM5OWRiMmUzZDc1ZTkwNjJkZDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cfaae373ac51494aa33e51791b603c06",
+      "statement": "With include_reuse the response becomes PreparedContextWithReuse, and the reuse binding attaches to the final selected origins and their observed lifecycle versions rather than to every recalled candidate.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/application.py#L1246-L1268",
+          "version": "repo-lines-v1:sha256:fb63b05c43b20384611be9b11e92b46c0a2563a73351af3e9a125831f240521e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0ODBmY2ExYmNlMzllYzgwM2JlZTEwMWM0NzQxNWM3NDQ4ZjFjZmEwOTc0ZWM3N2I1M2FjZjkyNDY5OWJjNjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkNTFkZDA0M2ZjYjIyZjA5MDQ2MWM5ZWNhNzNmNzU1NTA0ZTBjZTAxNjI1MzE1NGEzNDc5ZjgxYzhiNmZlMjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM3OTY4Njk2N2QzMzAxNjNkYzczNmJhZDM2ZGMzOGM3YTY3YjQyNWU3NGE3OGIzZjhlNjg3YTFhYzE2YjhhNjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyNDAxZjZjMzA3YjllNzQ2ZDliMjgyZGU3NmMxNTEwOTRhMmU4NDQwYTY4MWU1MWQwNjM4YTRjOTgwZDIyYjUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/application.py#L1478-L1500",
+          "version": "repo-lines-v1:sha256:57b49a682009dacf895ce947965c49d615906c9e3ace7a24964ebd14730feee2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4OGQ2YzE5MTVkY2E1MWUyMjQ1NDljOTc2YTZiOTM2ZDBmYTYwYjQ0N2I5ODY5ODQ3NWNjMmFlMWYxODJlYmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0MDVkMjUxNjQ0ZjFjMjk2MGZmZWRlZDVhMmI5NjFiMzJmZjFjNzhjOGNmNTA1ZDFiZDJiMDUzMjllY2UwYzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRhM2JkNGM3OTQ5OWJmMjgyMTg5ZDZhZjFmMzQxM2E5MTUzMmZlZDc2YzQ0Y2NkODA0ZjYxM2I3OGRmNDg5MTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMxZjI4MzNjNWZkNzU3OTM3MThkNjFjZWI3YjVkNjAzNDNjZTA0YjVkN2RhZDZhNDIwNjU1OWJjMGMxOTUzYzcifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/models.py#L415-L425",
+          "version": "repo-lines-v1:sha256:6a83e8e5aeb8d8d073e3479e24c0a70342c683fcb6235f68ff616e9f21dd0bad:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxMmY0YzBjYWIyNTllNGQ5YjQwYzE5ODcyMGNkNDBkNDA1YzJjODNkYzFjMmEyNTUwZDUzOTNhYjJlOTFjYWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk1MTkzN2YzODUyNTA5ZTQxOTkxNGZkYWM4OTYzM2M2ZDI0NDA2ODEzNTI2ZDkxZGVlZWUwZTEzNjVlZGZhNTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMyNmViMDA1MGZmMDAyMjNmM2M2ZmMzNjU3YmFkMTM3YjVkMzE3N2I3MjI2ZjMwODU0NDRmOTdjMjE5MzMwYTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bf0caac60b0c41d1990341ab285d201a",
+      "statement": "Errors raised during recall propagate out of preparation: an Atomic Memory search exception is re-raised after recording a failed search, and the HTTP layer maps inference timeouts and unavailability to 503 with codes inference_timeout and inference_unavailable, while unmapped exceptions become 500 internal_error.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/application.py#L2025-L2040",
+          "version": "repo-lines-v1:sha256:4e274d99ca91f163d0dd1a5b41b7f58d58b054b239aec665fd943cdb45edf76f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmMjNiMTE3Y2RiMmY0NjI4MzYwZTZjMGZmNjMwM2M2ZjBlNjVlNmUxMzllODRkYWIxOGFmOTUyZWZlNDYzODUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiNTdjZTk3OTVmOGI0MjQ3NGY3YmYxZTcyZDgzZWY3OTFkOGYxYmUxYzFlMGRlZDAwYTFlMGEzZmIxZGNjY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU4YTdhYzRjYzAyYzU4YTA2ZmVkMmE3Mjc2ZTg4Y2E5NGY5NWExZDYxYzgxMjY4ZWMzMTdlYzA1NmViM2FiMGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk1NjExZGMxMTkzOGI2MmY1MjIxZjllNzNiMmY1ZDNmZjczY2ZlN2RiMjQyZTQ3YmYxMzE0Njg3OWM0NmVjZDMifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/app.py#L6640-L6710",
+          "version": "repo-lines-v1:sha256:ecac5a991832b287d6e3cfb169819277dc48f5b883b3dc10a379fcde92de303f:eyJzZWxlY3RlZExpbmVDb3VudCI6NzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlNzM2MzJkYzAyODUyNzcxOTY5ZDA1NWI2YzcxYjU1YjRlZDlkM2EyZmMyN2JhZWE0MTExZDhlNTE4NTVhY2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllYTVhNDRlZTBhOWIxMTlmMGRjYzZiMGI5N2QxNjA4N2E2MjIzOTU0YjYxYzk1MDkxMGQyNmNkZTk5ODA3ODciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkxY2EzNGIxMDg5NThmYmQxM2QwYWMxMmY4NzNhOGNiZGI4YTZhMjg3YjIwOWQ1NGQxMGZiZGRiMWRmMzVhNDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYzNWI1OGRiMjAxZTE4OGZiNjU1MWIyYjIzZTIwYjMwMjZiMzUwMjA1YzJiZDk0YmViMzViYjRhOTk2M2JmZmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_692477b2ba5d43ea96707ad4d0df76ac",
+      "statement": "The Codex hook fails open: an HTTP 503 or a timeout or socket error records server_unavailable, a 401 records authentication_failed, a 404 without an error code records version_mismatch, other unexpected responses or invalid envelopes record invalid_response, and an empty response emits an empty event; none of these inject context.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/recall.py#L431-L490",
+          "version": "repo-lines-v1:sha256:1dbe887abe513fc6bc18b8a88c4639e79104e0cc396e388ea0086f4c0a865213:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwNDNmODllMDBmNzFmMmZiOTU0Zjc3NDYzOWY1NWE5NDM5OTJkYzUxYWM1NGViYzgwNmQ1ZWVkYjVhMmU5OGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwZDU4NzBiZWZlYWVhYTdiNTFlMWJiMDRiMjc1MTQ0ZGY1OWE5Yzc2ZWY4MTQ1YzIyNjc0MjJjNGU5ZmIwNzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJjZjk1ZDE0NDIzNWM5ZTgzZDJjZTNiNzkyMWI2YWQ1NjIzNzQ3NTRlMzA1YjZkODg4MDVjMjFiOWY0NTMwY2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFlMjc4NWY5OGRiNDhjMjlmYThkODYzZGVjZjExNzVhNDQ5MzhhYzE2Y2Q5ZTNjMzZhMWNhZWVmNWI0YTBlZjIifQ"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/recall.py#L99-L111",
+          "version": "repo-lines-v1:sha256:8485399b977c70f1f3c1048e4bde4cdc6ada33fc18aaef150617fb43c2f7ed5e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlM2RiYTIyZWYxNDlhMGNlNzM3ZDZiYmQ4NTlmMTRlNzBiY2Y0YTcxZmNmZDAwYmZjMThlMmQ2YTM0ZmEyNGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3OGEyZmQ0NWUxMjIzMTMyM2Q4NTgyZGE0M2U0MjYzMTY3ZmIwYzU4OGEwOTMxNDlmZTgwY2IwMjE3MmFhMDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5ZjkzMDgzYzE5NzEyMWI5ODI3MDBiYThhZmFiZDE3MjJjZjFkM2U3NDA0NTA5ZTgwZWZhMjcyNDdmNjJmMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgxZTRmYzc3MDRhOTgyZGY1YzVlZTUyZjNlNDEwNTNiOWRmZDUxZDRjOWQyZDIxNmM2ZTdiNWViNTEwMDI3OGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1a48dd323c52455c9ef69da9fdbc7e64",
+      "statement": "Topic Memory reuses the Memory query vector when both use the same embedding model and the query fits Topic search limits; otherwise it embeds its own query, and it falls back to FTS when the shared embedding budget is exhausted.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/application.py#L1950-L1966",
+          "version": "repo-lines-v1:sha256:a1aeb2a34b1d9dccc3828e4283c33b4e2d2e58c85e21105192ebb4582e0f1f16:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNTQ2NzAxNDlmN2UyNmVkNjZhN2VjZDVjNTlkOGZhMjNjNjEwNmYyNTg2ZmRhMzUxOGRkODE0NzA5YWQyYzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiNDg0ZmExNTZkOGY3YzQ4M2VlNWJiMWY2NGFiMWVjOGU0YzAzOTE0NzBkOGZlZTA3MmZjYzYyNjE4MjNlZjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUzYTk2NzZhOGI5MmJkMjM5Yjg3OTRiYTNlYWQ1ZGViMDAwZWE4ZGViOThhMGJjM2M3OTBlYWEzZjU2MzMzYmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVjZGRiNjU5ZDM3NWJjODA1NWFkZmMyZGUwMzY0MTUxOTJkOWU4MTdjYzIxY2NkODA4OGEwNjZmYjZiMzNmMjIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T09:04:09.583Z"
+  }
+}

@@ -1,0 +1,478 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:85387e1d8b289ef5521791f780cc562400d553e45a932bbbd442ed463fdae1b2",
+  "claims": [
+    {
+      "id": "claim_2216816d92b9410eb8da30e01994fe00",
+      "statement": "The Rust gateway is an optional executor on the model traffic path that makes no privacy or memory decisions of its own; every allow, block, and withhold verdict comes from PowerContext Core and the gateway only executes them in order.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/README.md#L1-L3",
+          "version": "repo-lines-v1:sha256:50021cf9f02c91c8cb3f2e18f50a006d439461e03467a51e6ea8c7c446a9263f:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzczZTc1ZDYwMjM5YWYxZWQ0M2I4OGVhZmQyM2Q3OGJhMDFhZjI4ZmNmNDUxMzcwZWNmYWQwNTM1NDhmNjdjZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTRmZWFhNWY2YWU3OTU3ZjRkYTAxZjg0YzBhZWFhZGIxZmNmZjZiZGE5NTRkMmYwYzAwZDM5NTFkNzYyYjc4NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDdiZDkwODMwYTMyZjhkN2M1Mzc3YzI1ZmRiNmY4ZDM2YThhNWVjNTExOTdjNjJkODdlMzI3YTc0YjVhOTczMyJ9"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/executor.rs#L144-L158",
+          "version": "repo-lines-v1:sha256:eb378c917bf65cf6877314f59d6fbdd08e672d25e9a4554e6091cb4c399500d6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwYzlmN2Y0MTNmNjAzMDQ5NmM3YTUwMDQ1YjA0MjliMjY4YzI3ZjBhOGUxMTExYWM3M2NkMmMxMzk2YjY2M2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwZjMwYmM4YWU2YmM1ZGQ3YjkxMTRjMjAwZTFhMjQ1ZTcwYTViODZkNjMwNzAxYzgwZjQwMzVjZDQ0N2QyNTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ2YmMwODcwM2U2ZTY5MWYzODFjNjYxOTkyZjI2YjIzNTdhYThiYWY1YzkwODAxZjQ0OWYzMjYwMjI5NjM0YTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1OTc3ZjdjZmRkNzA3NzBlMTMwYjNiMjYzYWViMTgxODFiNTJlYTg3ZjllMGY0YzQ3ZjA2NjU3NmMxODI5NWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_91030c9c9668434588546cf2210eb9ec",
+      "statement": "The gateway README declares the gateway a working prototype verified end to end against a PowerContext Server branch (PR #2264), and it depends on the /v1/context/check contract and include_reuse from #2264.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/README.md#L5-L5",
+          "version": "repo-lines-v1:sha256:1557d54253fafe625369a0d17b8340eb306000f43417649d55f1e5b44c30d096:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTU1N2Q1NDI1M2ZhZmU2MjUzNjlhMGQxN2I4MzQwZWIzMDYwMDBmNDM0MTc2NDlkNTVmMWU1YjQ0YzMwZDA5NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTU1N2Q1NDI1M2ZhZmU2MjUzNjlhMGQxN2I4MzQwZWIzMDYwMDBmNDM0MTc2NDlkNTVmMWU1YjQ0YzMwZDA5NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDljYmZlNWZkOGY5ZDJjZjc0ZjI5ZjgyNjMzMGM2MGUzNWJkYWE4N2JjYTBhYTQzN2ZjNjZiNjkyMDllYmJiZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2Y1NGJmOGE4Y2UyMWVjNGRhMGE5MjUxMTJlODNmN2FkYTcwNzlhMzc4OTMyMTczYjU5ZjdhOWZlNDA1ZWJkZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a17b281b87364716a793a7f440e4c485",
+      "statement": "The executor runs the phases in strict order: check before_send, then send admitted bytes only after an allow, then check before_release on the complete upstream response, then capture and release.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/executor.rs#L206-L290",
+          "version": "repo-lines-v1:sha256:60ba3cc155c638a5f1e9dacba263534e073f91120bbd00ea5805a194161d8ac6:eyJzZWxlY3RlZExpbmVDb3VudCI6ODUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyYjhjZWZmM2M0N2ExMmMxNzNjNjBmNTQ1Y2U1NThhM2EyY2I3Y2I0NzZkMDRmM2QzZDQxYTQ5MjY2MDEzOWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkY2FhM2VkOTgwYWZlMDE2NzQ3Nzk0YjZlZjJhMTUyYjgyYTdkMmZmY2NjN2Y2MTQ4YjM1ZTUyYmQyYTJhMmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAyYjI5ZWQ5MGFlNDQ5Y2NmYzQzOTU1YjU2YmJjMjRlMmEzNmI0NjMzMmIzYzMwZmZjMDU0Yzk3NTQ4MDliZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBkMWY2MDQ1ZWMzYjJkMWM2NTUwOTExYTcxMTFhNjRhNjljZWFmMmE2MzJhZjY2OWE0ZjAyZjc4NzkzYTU4NGUifQ"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/executor.rs#L290-L345",
+          "version": "repo-lines-v1:sha256:2667de9b210b480196517234b13bd4229db043c12e39fcce0782b0dfe598d807:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkY2FhM2VkOTgwYWZlMDE2NzQ3Nzk0YjZlZjJhMTUyYjgyYTdkMmZmY2NjN2Y2MTQ4YjM1ZTUyYmQyYTJhMmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmNmMzMWVmZjgzNTdhMmNkZDFjY2VjYjRiMTk2YTlkY2RkNjE2ZjVkN2VmOTYxMmMwYTFhOWEzY2YxODZmMGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIyOTI3NWQ5YTBkYmYyMjkzN2U1MTc4MTQ5ZjhiM2E4ZjZlNDY3YmUwYTIzOThkNTdkYTQyNmI3MTdhNjQxY2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmYzM3Yzg1YTc1NGY3Y2VlNTQ4N2NhN2ZiM2Y4YTZmYTMzYTAwNjFhNTVmYWIxZDlhZWFhMDg3ZGU0YTMxYjcifQ"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/executor.rs#L377-L405",
+          "version": "repo-lines-v1:sha256:18e726a4c2575dfbe4da74030132c3b56448428cc38b36c43762b07050e2bf21:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkYzJmMGI4ODVlZGEzOWFmYmJiYzc0NjlmNzIwMzhlN2RiZmUxOWI3MWFmZjM4NzZjZjdjNmZmMzBkNGJjZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhYmY4ZDI3OTY1ZGE5NmQ0NmFhZWRmZDlmMGE3NTlhYTlhYjBhNDkxNDYxZDRmNmY3ZGNiZDI0N2MzY2JlOGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQzMDliYzhhZTFjM2Y1YmQ3ZjM4NTdkY2VhMzYwZTE5ZDViYmI3NGIyNzM4ZTBhY2Y1ZWJmYjVlZTg5MDVjYjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA4NTgyMzViMzcyZWZkYjJkYzI2MTFjYTIwOWMxNzVhZTEyNThmZTRkNjljMTU1M2RkZDNjNGRhOWRkYWRjNWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_275a4d362a30464caa02809bf7aaef26",
+      "statement": "The binding returned by Core at before_send is reused as request_binding at before_release, so the release verdict is bound to the exact send-phase admission.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/executor.rs#L296-L306",
+          "version": "repo-lines-v1:sha256:a93abd5628241412b56f827dff2f4f9b88eda79b478c61811b7932375879b6c0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2MzliNTgxMTlmMDIwOWYxM2UyZTdiYWU4MTg0MWFlZjU5ZDc0MDZlMTU1ZjRlYWRkYzNmYzgxZDljOThkZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlNmZmODFmYTY4NWQ1MjNlMzBhODA2MDRhY2I2OGUxZDMxZjE4OWFiY2VmYzM4ZGVkNGU1NzY3MDM3NGJkYTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxYjIxYWJlNmQ2ODRkYjNhNzlmMGIxMWNjZWIxYjM0ZWRhODNlMTQ3MGY4MjRhNDllMTk0NzdhODAwZGQ1NjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ5ODE2NzdkNTExNDI1YWI4Y2RkZjUxNmZlZjYxOTcxMGU1NTYyOThmNDI3OGRlMGFkNWQxZDVmZTkzNDhkYmQifQ"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/executor.rs#L377-L384",
+          "version": "repo-lines-v1:sha256:c550cb8fa3f889e9cd9023517835df33c31df952df3c47ce7ad6e399cb5fd6ab:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGRjMmYwYjg4NWVkYTM5YWZiYmJjNzQ2OWY3MjAzOGU3ZGJmZTE5YjcxYWZmMzg3NmNmN2M2ZmYzMGQ0YmNlYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGQzNGE5ZGY3NzliOTU2NmIwNGFkMmI5ZTZjZGRlM2IxZDVlNmMxYThjOGI5N2FiN2MyOGE3YjEzYTMzYmQ2YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDMwOWJjOGFlMWMzZjViZDdmMzg1N2RjZWEzNjBlMTlkNWJiYjc0YjI3MzhlMGFjZjVlYmZiNWVlODkwNWNiOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTMwMGYxYzQyYjE0NmM2ODQ3MWNiNDQ1YzBmM2VmN2ZmMmIzODQ5Zjc1ZWY0ZGE0NjIxZmQ5MWY0NWI1ZWU5ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8f39ad8eef874d57b17124e90b516e11",
+      "statement": "An allow verdict is accepted only if it has the expected schema, the expected phase, complete coverage, and a non-empty binding; any other allow is a malformed verdict that pauses the gate, so HTTP success alone is never treated as approval.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/executor.rs#L701-L735",
+          "version": "repo-lines-v1:sha256:bbc7707c0a79952a73dfee122fdd05fc011f1464fe72e6a8ef25a3e8ea586fbd:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2ZTBiNGE3N2M1ZDczMGE2NGM1MTg2ZTJjNjUzNTYxNTI4MGVlM2YxYzhlY2MxNTQ1NzNmMWE2YTExMmM5MjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlZjM0MDUyYzQ0MzM1ZmU5NmY3Yjc5OWQyOTM4MTAyMDBmYzI0MTc2N2JjZTc1N2JmNWE2ZDZhZjIyZTYzMDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVhNzMwMmRlOWFiNmNlODVlZjE5ZmMwZjU4NGE1NmMzYTczMzY4MDJiMDZhMDNiMmNmZjRhN2Y3ODYyZGQwNDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwNjE1ODVjYWEwYjE5OGY5N2QxOGY5MWI5Nzk4NmMyNGU0ZDU1NGQ1NmRlNjFlMTM3YmU5ZWEzNWM1ZDkyNDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_56faa6d91e8942b8ba2e88f0a71eb9b9",
+      "statement": "Each send attempt and the release verdict are checked against their valid_until deadline, and a deadline that has passed or cannot be parsed returns admission_expired without sending or releasing content, failing closed.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/executor.rs#L290-L296",
+          "version": "repo-lines-v1:sha256:cf1b07e94c53df9b7aebd1448fbbb53eaa5b6665911deb4516de14e6631c1789:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWRjYWEzZWQ5ODBhZmUwMTY3NDc3OTRiNmVmMmExNTJiODJhN2QyZmZjY2M3ZjYxNDhiMzVlNTJiZDJhMmEyZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTYzOWI1ODExOWYwMjA5ZjEzZTJlN2JhZTgxODQxYWVmNTlkNzQwNmUxNTVmNGVhZGRjM2ZjODFkOWM5OGRmYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjI5Mjc1ZDlhMGRiZjIyOTM3ZTUxNzgxNDlmOGIzYThmNmU0NjdiZTBhMjM5OGQ1N2RhNDI2YjcxN2E2NDFjZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTVjYjk1YTI5NDJkZDc2OTAxM2M0NzM0OGRjNWUyNWViMTUzYmNmZWU4MjY3NzVhNzZlMTgwZGU5ZWEyODY0OCJ9"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/executor.rs#L393-L402",
+          "version": "repo-lines-v1:sha256:fe2f7f49755f6e2a1b63c8112a99e09d0a7eda53010bca2e498067d6eff18db6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4MzAxZGY3ZTRiNTRlNWZhY2RhYmI4NGIwZTMxMTc2ZDVmZWQ5M2EwZGM4NDI0Yzk5MmViNmRjNzRjZWNiYjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0MWZkYTA0MmUyMGMyNDE4YmRiZDhlNzNhYTIyMmQwMmM4NzVhMzRlZDk1M2U3OTQyNjVjZjliNTRhZjhiYzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJkZTBmNDc2ODNjZGM5NDJmZmJjZDI1ZTdlYmI3YWRlMzExNzA3MTA3NjI0NTMzNThjMWEyMjI3NGI4MzJkMDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI2MTRmYzc0YTExZDM5OTQ3NTM2MWU2MWEwY2I4NmVkNzU1NWI3YTg4NGQzYWVlOWQ5MjY0YjMxOTE1MzdhNDYifQ"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/executor.rs#L701-L735",
+          "version": "repo-lines-v1:sha256:bbc7707c0a79952a73dfee122fdd05fc011f1464fe72e6a8ef25a3e8ea586fbd:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2ZTBiNGE3N2M1ZDczMGE2NGM1MTg2ZTJjNjUzNTYxNTI4MGVlM2YxYzhlY2MxNTQ1NzNmMWE2YTExMmM5MjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlZjM0MDUyYzQ0MzM1ZmU5NmY3Yjc5OWQyOTM4MTAyMDBmYzI0MTc2N2JjZTc1N2JmNWE2ZDZhZjIyZTYzMDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVhNzMwMmRlOWFiNmNlODVlZjE5ZmMwZjU4NGE1NmMzYTczMzY4MDJiMDZhMDNiMmNmZjRhN2Y3ODYyZGQwNDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwNjE1ODVjYWEwYjE5OGY5N2QxOGY5MWI5Nzk4NmMyNGU0ZDU1NGQ1NmRlNjFlMTM3YmU5ZWEzNWM1ZDkyNDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a23a5450e9404cc9989fa6143e2300bb",
+      "statement": "The fully rendered request body is measured against the input limit before the before_send check, and a body over the limit is blocked with request_payload_too_large without any Core check.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/executor.rs#L186-L205",
+          "version": "repo-lines-v1:sha256:e0ba581c1e53e3c684d35a298cde61c414206933efb810820c0ca4b5408783d4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNjQ3OWNjMjMwNDQwZmQ0MWU4MjI0MjE4Njc5Njk4NTU5ZDI4OTNiZDY3YjQzODBhZmFiODExYjM4YTU1YWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzYjA1OTc4OTYyMWM0YjJhYTk2NTk3ZGJkNTQ0MWY1MjEwNmU0OWY1YmZiN2FiZjVlNzdjODlhNDQ0M2VjMDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEzYjNhOWZjNDQzOWIyMDY2ZGVlZWY2MDI3M2NiOGIwYWI5MDY2YzRkOTQxZjMxYzM0MzEwODViMDI1YzdkN2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgyNDM3MTY3ZDczYTY4YTkyZWIyNmE0NjkzOWM0OWEzMzg0NDVjYWVkZWQwYTg5ODNjNzVlYzZjZmNkOTZiMzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c25d3475899944cf82078cd9c04df610",
+      "statement": "A release-phase block cancels the upstream request and returns a block outcome, so no upstream content is released to the client.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/executor.rs#L445-L465",
+          "version": "repo-lines-v1:sha256:3c2097bbe320c56d948c3f01dcf9dc4e6439e8e505ef4f1b952f7aec2d798428:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2YjU0ODhmOGJhNmU1MGY3MTg5MTE1YzY3OTU4ZjM4NjBjOWRhNjU5ZjQwOWU5ZWUyMTAwNDcxNDQ1MzMwZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlNzRjM2FjNDE5NmY2ZTg1MjIxNWQ1YmFmN2Q3MWJhYzY3Yzg2OGY4MDhlNDI3MjI1NGVlYTE5MzIyZTk4MjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEyN2UzZDZlYTNmZGE4ZTk5ODQ3YzBlYjMzM2NhN2I0ODEzZjUwNzY0MDZiZDE5OTZiOGFlOTIyNDNiZmYwNjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYzYTZlOTJkNjJmMzQ4ZDdjZTU1MGMyYTI0ZDhjOGJmNzkzMWMyZTNkMDgxZWNhYzg0YjEwOWM4NTkzMWMwYWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_33645950f921477b9b68db09f454f6c5",
+      "statement": "The ingress maps outcomes to client statuses: released passes through upstream status and content type, block returns 403, withhold returns 409, send_indeterminate returns 502, not_sent returns 502, admission_expired returns 409, and gate_paused returns 503.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-app/src/ingress.rs#L624-L700",
+          "version": "repo-lines-v1:sha256:8736c428f180ce5935220d651fb72869cb60bcba9163c1828097bcdcd3861712:eyJzZWxlY3RlZExpbmVDb3VudCI6NzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiODJkOGVhMjM1YTFiMmIzNmExNjc2YTA5ZDEzZDgzYjc0ZTcwZjI5MjdlMWIwZWE5NzYxODMxYWNlMDkxZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjM2IzOGI5MTc0NWEzZjE4MDRmYjUwMjBlY2E0MmQ2NTUzZDMwY2M1OGNlYzE1MWViMGY4YTc5Y2I3ZDUyNGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhkOWViNjk5MWQ4ZWJhMmZjYTlmYjRhMzU0NWQ3MDU5YzgxZDQwY2Q1OGRhODg5N2I5MWIyNjIxNTc5OGQwYTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmNDNhZTIxZTVmNDg1MjQyNWEzZWEyNTVkZjc3NTZiOTNhYTJjNzdiODdhYTU0YWQwM2E5ZDdlOWQ2YzRmMDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c4b648922bd34a8d8a1598ea609e5cc8",
+      "statement": "Core unreachable (GateUnavailable) pauses model traffic by default and returns 503 gate_paused; the gateway passes the request through without memory only when PC_GATEWAY_DEGRADE is set to passthrough and the startup gate allows degradation.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-app/src/ingress.rs#L265-L269",
+          "version": "repo-lines-v1:sha256:64dc6b2078c41de5eecd91c9563a50204caf3c2b5c7f6a626b6644d6f705c85f:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjQ5ZDUzYzhkOTdjZTYzN2ZjZGRkZDFlOGQwMTAyNjQ2ZmJkZDE4OTAyNmMyZTQ2ZWMxMGQwN2E5YjA0NDA1YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWU2NzNhYmQ0NTdhOTdlZWExN2E2MDA2MmViMGZhZWE2YmRmMDk0ODY4Y2M2YjhmOGMwZWJkYTJmNjFlZDQyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjlkNTk4YWY5MTlkZDY5OWY2M2E5Y2ZjNmE2NzJhMTc0NDMxNjA0OGM3NmYzOTQ0MWRlNmFhZjAwYjAzZTQxMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzBmMmExOTlkNGU2ZjczNzE0MWE1ZTRiOTgyM2RjZWVmNTM2YjM4ODgxMDA3ZjZhNjY0N2RiNDYzY2MwYjYwOCJ9"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-app/src/main.rs#L100-L104",
+          "version": "repo-lines-v1:sha256:3b9572bf5b7a89c66d95656d37717e98c756a0518bfa70f6afa691bb68bb4509:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTJhN2NkMmRjY2Y5Y2NmZWVmYmQ4ODk5MzNiMDk1NzBkMzVjZDcyMWI1ODJjYjFiMTBhMjdkNWZkZDA3ZDU1NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWRmNzY4ZDBmZGZiZjE4ZDMxYjQ4NWM4YjkxYzNlYjU1NmY5YTMxM2M4NGE1ZTJjMTMwOTJkZmFjMWM3OWE4NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTZhMmQ4ODI2YTkxMTBmMjgzNzNiMDYxYTRlNzkxMDdmMmRiMzMxOTBkMTJjN2MyNWMxYzBjYjgxNTUyZGQwOSJ9"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/executor.rs#L216-L240",
+          "version": "repo-lines-v1:sha256:135bb72220d8628b9312cdbcedf91af4c49536d70b71a6c564ecdde92945963d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwODlmMTRhZjJkOWYxYWJjNTk3MDM0MjQ4ZmQ0ZjExMGM2MTJjYTM1NTI4YmM0ZDEzMTc4MDgwODgxOWUyMjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3MDcxYjdjMGQwMmY5NjU5MTIyZjJmYzE4MTI4ZWVhMzJjZjI0MDc1M2YyMTgxN2E0YTk0YzVkMTQyMDJiZWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk2ZTUzZWVjOTNmZmI1NWRmZDQzODg2MWQyNmFkYTZkZjEyYTAyNzE4MzViZWJkYzQyZDY3YTM2MDkyYzAyOTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNlNmQ2NTMxMWZmMGFkZTA2ZTc4MjNlNWE1YmNjOGNmODYyOTEzNTM4NDZjMDEzZDdhZmJiOGFmNzFiMjdkNTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_aa29cb61c1ae4b24a3562faed70767e8",
+      "statement": "Degradation is permitted only when Core's capabilities report enforcing=false at startup; a failed or invalid capabilities query leaves degradation disabled, and Core computes enforcing as mode equal to enforcing.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-app/src/main.rs#L118-L129",
+          "version": "repo-lines-v1:sha256:9c77f5afa1fe29b62bdaf635e06cc8c7d7868182fe999b93a0621ac9bda15df7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc5NGQwZTZiYjhjYjczMDhjNTVjYmQ0MjM5ZDA1ZjBjM2FlZTFmMmY4OWQ3YmJjMTEzNGVhN2VkMjkyMDYyZDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0ZjJjOWIwNDI0ZGRjZTA4MTVjZjBlNDVlZjBhOTg3NGZlMTJkZjFkNzkyNmFmNmQzNzljYjNiNjgwYzQ5MzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNkMTM5N2JlOGQzYjcwYTY3ODAwNTMwNTg5NTM2N2VlYzNlNzk4MjAyYWQ3YmM1OTM2NGUyMGM2ZTQ5MWVlZTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEyMmMwZTU4MDU1NThiNTNlMmVmNTc2NjE1NTdiNDljNjAyN2Q3MTQ4MmVmNTliMWMyOGY2NTcxMmI5M2RlYWQifQ"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-app/src/main.rs#L221-L243",
+          "version": "repo-lines-v1:sha256:2b516704c173f2303bce143aef32c54548223029d43593b85f168618876150b2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlM2ViYzU0OWQ1ZGVjY2IzNTFlZWNhNmJhODhlMTY2MjViYzNmYmU4NDEwNzAzMmRlOGEwY2FkZjE2M2E3NzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhN2M3MTQ2NmJiZWI0N2ExNDAyNTBhMWRjMGI3YTExMTU3NDYwZDY1ZTg3YmYwNjZkYThlM2UzNDQyZGMzOGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4MTkwMTBhYjQ3NjhhN2I4MTA0ZjI2Y2FkN2NkZDFmMWI4ZjQ5OGMxYTk4M2Q2ZDRjMDYzYzFiNGU2NTI5MDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxMTRmMjAxNWE2NTc5Njg0YjkzZGU2N2QxYThjYWMzMTVkYjIzMTVmMjA4MmY0Zjk2Nzg4NTgwZmUwMzljYjYifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/factory.py#L927-L927",
+          "version": "repo-lines-v1:sha256:c0ce5dd193c3e0b681f867b7ae7362fbb758152ccfd3918d603da4fa09ca7457:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzBjZTVkZDE5M2MzZTBiNjgxZjg2N2I3YWU3MzYyZmJiNzU4MTUyY2NmZDM5MThkNjAzZGE0ZmEwOWNhNzQ1NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzBjZTVkZDE5M2MzZTBiNjgxZjg2N2I3YWU3MzYyZmJiNzU4MTUyY2NmZDM5MThkNjAzZGE0ZmEwOWNhNzQ1NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmI0MDNkN2I2MTc1M2UwMzNjMmEwZjRkMjA5MjRhNTQ0YTY2MWE3OWMzZjI2NTk3Mzg2YzcwZDI0YzMxMzNiMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGU5ZjY2NWMyMGZkMGE1NDUxYTE2MjVkOWI3NTNhMmI0ZGI4Zjk3YTEwYWRlMjZhNTkxZjE0ZGIzMWJlZTM3MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_cb6cdf6633094e3db8f40ea4ebf88c78",
+      "statement": "Blocked verdicts never degrade and malformed or other gate errors never degrade: degradation applies only to unreachable Core, and any other gate error pauses.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/executor.rs#L216-L256",
+          "version": "repo-lines-v1:sha256:1c2463bc73179a3a3a4914cc16c8bea2a685b4506e7b9690d5e60bf8d6dd7e52:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwODlmMTRhZjJkOWYxYWJjNTk3MDM0MjQ4ZmQ0ZjExMGM2MTJjYTM1NTI4YmM0ZDEzMTc4MDgwODgxOWUyMjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmZWVmNGI1MThlMDgyNzg4NjQ0MmY4M2ZhMGE2MjZlNTg5NjVjMTczN2JlYzgyZTRjMzIxNTNjNjEyMzdlZmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk2ZTUzZWVjOTNmZmI1NWRmZDQzODg2MWQyNmFkYTZkZjEyYTAyNzE4MzViZWJkYzQyZDY3YTM2MDkyYzAyOTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRmOTQwM2M4NDNjZDhiMGJhOTE5OTg0NWIxNWNjMjBmOTE1ODY3MWMzODI3NmUxMGZkMTNmYzM2Mjk5ZWNkMjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0872638ee87640daab5f27dbd22f1290",
+      "statement": "A degraded passthrough sends the pristine request without injected memory, records no capture, and marks the response with the x-pc-degraded header.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-app/src/ingress.rs#L316-L316",
+          "version": "repo-lines-v1:sha256:6791adff6a28a272c1b15c4a3c265fc125fd759d7c4167e0c556fc1389d806ab:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjc5MWFkZmY2YTI4YTI3MmMxYjE1YzRhM2MyNjVmYzEyNWZkNzU5ZDdjNDE2N2UwYzU1NmZjMTM4OWQ4MDZhYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjc5MWFkZmY2YTI4YTI3MmMxYjE1YzRhM2MyNjVmYzEyNWZkNzU5ZDdjNDE2N2UwYzU1NmZjMTM4OWQ4MDZhYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDdkNWRkZjZlMWMyYmIxOGRiY2Q0NjZlMjMxOTIxZjM4NGIxMjI2Yjk3NWZjN2NlNzAzYjE5NzUyNTk2NWZlYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWI0ZGU1NDAxODM4NjNiYTM0NjE1MzNmN2ZiZWNkZTE5Mzk4MTVkMjk5ZmVlZTA1MTMwZWVhZTk2NjQzZjZlYiJ9"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-app/src/ingress.rs#L648-L648",
+          "version": "repo-lines-v1:sha256:b38a1cb97d3bf607c448b1648287e6ba8f2959873c7eebb8315686a46ce3a23d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjM4YTFjYjk3ZDNiZjYwN2M0NDhiMTY0ODI4N2U2YmE4ZjI5NTk4NzNjN2VlYmI4MzE1Njg2YTQ2Y2UzYTIzZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjM4YTFjYjk3ZDNiZjYwN2M0NDhiMTY0ODI4N2U2YmE4ZjI5NTk4NzNjN2VlYmI4MzE1Njg2YTQ2Y2UzYTIzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWQxNGFkZDZiZDUwNjMxNTc1MmU2OTJkOTA0ZTYyODg2ZTgzNzQ1ZDViMzAzNzgxMGVlOTQxNDg0ZDg1Y2NhZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWRiYmE1MmNjNGM4YTQ4YTU5NmMxMDUwNzBjOGU5MzllYzhiMDIzZGVhYjZmMmFlYmI5ZTQzZGRhZTAzNmE1ZCJ9"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/executor.rs#L220-L240",
+          "version": "repo-lines-v1:sha256:8f34fe353ecf60fee990aabea9c58fed8b35c944e5c867de476bcec1e6f0c1b0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllYjY1NDY0M2NmODRhYWY3NmYzZTI3OGJjNzg2N2JjNzMzNmRhYTcxYzVlYjYwMWZjNDczNTQzN2YyMzY2ZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3MDcxYjdjMGQwMmY5NjU5MTIyZjJmYzE4MTI4ZWVhMzJjZjI0MDc1M2YyMTgxN2E0YTk0YzVkMTQyMDJiZWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEyYjg2YTkxZTZkNGU5YjhmYTViZmU4NDI4OTU4Nzc4ZDg4NTAxMjBlNmQ4MDQwNGNmNGViYTVjODllOTg0YjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNlNmQ2NTMxMWZmMGFkZTA2ZTc4MjNlNWE1YmNjOGNmODYyOTEzNTM4NDZjMDEzZDdhZmJiOGFmNzFiMjdkNTAifQ"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/executor.rs#L632-L652",
+          "version": "repo-lines-v1:sha256:d50e26e69411a719074280a8146c9acf592ed1a552a6c8bf9aa57c7c279ac99a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1MzRmYzZjMWQ4OWQxZWE2ZGY4ZTM2ODU5MzcxYzQzMmQ3YzY2N2YyMmI4ZjUxMGI2MjgyOGVlMzgxNTI1MzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxNzcyY2IxOGU0OTliZGE0MWExMDE2NWQ4Mjg1YjhiMTNjMjc1YTc2OTVmODRjNmU0YzgzZGNmZmFjYjgyYjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU0OTZkZmI4NDQ5NThjYWI1OWY1N2VlMDllOTY2Y2Q0ZTM2OTJmZTI2MDA4MzZhYTY5MDQ5NDk5NWNmYzdiMDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_70b5ab570c3e4319b1dfd81b750eaf2b",
+      "statement": "Core's check_context withholds every request with enforcement-not-configured when its inference protection mode is not enforcing, so a reachable non-enforcing Core answers checks with withhold rather than allow.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/context_check.py#L359-L360",
+          "version": "repo-lines-v1:sha256:8b3d291172caafe07fbfe1aee7a9a48c16d556ab325d731287042ba329683aeb:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg1N2RlNGU4MjBkOTk0NzU3NzBmZWI1MTMxMjdkZWIwNzUzZGZmM2VkNGRlYzBhZmE5M2MzNjQ2YmU4NjJmZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWUwZDZiZDg1OTQyYjlkMjVkNzE5MzY0OWZjODJhY2FjNDdmZmRhMTY5OTgwZTBiZTc3MmNiNTk1M2Q0YmRhNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDgzNjQxZjE3MmRkNjBlZTg5ZDFhNzA1OWFjNDY3MDllN2M1ZDA4MWZkNTkzNDE2NmZlNDI1ZDhkOGVlNjk3ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2UzMTU2MWRhZDkxNDhkNDY1OTBhMTMyY2ZhMmFjMDRhZTUzMTAzM2IxOTdhYzBmMGY3ZTRiZWQyMGVlZTJiZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_aa3535f874e143f7b9149cbbdc44033a",
+      "statement": "Retry is limited to attempts confirmed not sent; on NotSent the executor re-runs before_send to obtain a fresh admission before resending, and attempts are capped by PC_GATEWAY_MAX_ATTEMPTS with a default of 2.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-app/src/main.rs#L86-L92",
+          "version": "repo-lines-v1:sha256:3007f088ddbb0623c2b9edff05aabca945b6f84d98e8ff974b52cda3fac67ed8:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzU2YzRiMDA3MjUzMDE5ZDQ3YjU1OGRkOGRlNWExNWEyOGQ3NzM2MWFhY2MzOTE5NzQwNGE1NWZlYzZmOTNmNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjJmMWZiMWQ3NjhjZDlkOTE3MDUzNDM5NDFiMTRlYjM0ZjI4NjY0N2Y3NTUyOGJjY2YwOWIwODliNDI0N2EyZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWY4OTRhNDQ0MmM5ZDk1YjMwNjBmMDRmMWM1YTRjZGE4NTIwNTM3ZmVmN2UwNTg5MjRhYjc2ZDliM2MwMTliMyJ9"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/executor.rs#L318-L345",
+          "version": "repo-lines-v1:sha256:a21d87acfa792b5c9009ae2190cf04024276e7379669cac2b995248097994b71:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiOWVhYzYzNGZlZGQwYTI0NGM1OTE2ZjlhYmJlMTMzOWZlNDE3NWY1MzJlNzNhOTkwOWYyNDRmM2U2NzM0MGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmNmMzMWVmZjgzNTdhMmNkZDFjY2VjYjRiMTk2YTlkY2RkNjE2ZjVkN2VmOTYxMmMwYTFhOWEzY2YxODZmMGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY2ZWI0MDRjMWMyOTQ3ZjZmZmFmNzIyZjMyMTc4ZGU0NzM2YmE2OTlmNGIzODAxY2E3NjM1ZDkxYmNlMjNkYjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmYzM3Yzg1YTc1NGY3Y2VlNTQ4N2NhN2ZiM2Y4YTZmYTMzYTAwNjFhNTVmYWIxZDlhZWFhMDg3ZGU0YTMxYjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3c9ec9736f8c41668f421704ed1b2ac3",
+      "statement": "The reqwest transport reports NotSent only for connect and request-builder failures; timeouts and any failure after the request may have reached the provider are Indeterminate.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-transport/src/reqwest_transport.rs#L75-L97",
+          "version": "repo-lines-v1:sha256:a6df14cc3a4b3eb0cd04918c881c164ed9288832ea0a6f403a8a5369172b5eb7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkMjA5ZDA4NTVkZDRjYTI2NzY3NTg5NjZiZjJjOGU4MDVkMWRlMDQ0YzZhYzQzODYzOTkxMzUwMDkwZGY5MGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzY2Y4NzI1NTY2OGRiMGFlN2VhYTFiOTUwYTM5MjE0NzE2OGJkOWFlYjRkNTZjZmU2MDhjNWU3MTBiNTcyNDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1YmNlZmM4Mjg1MzYwOTViODE5NDEyNzY0YWY5MzkwZjAxNjcxMDdkYWY3NWZlMDE4NzQ1NGRlYTA5YTYxNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEzOGU3YzRhNzVjY2JhODIzMmEzNmFmN2FhODRmNDA1NTU1N2JmMWNiOWZhMWY2NDRiNGU4NzkzMDM2NmM3OGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d8f3ff0c0c42456db347fba86fd177b2",
+      "statement": "An indeterminate send is never retried: a connection lost after handoff or a timeout returns send_indeterminate immediately, because the provider may already have billed the request.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/executor.rs#L310-L322",
+          "version": "repo-lines-v1:sha256:0eaaca8a5bae0105e07efbef466f15dbe952115385721140dc262253938f5cb9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyOTQwZWZhNWIxYzMwNWEyNTU0MjczNzA5NzBjMjk0MDhhYTg1ODAyZThhZjg0Mjg3ZWFhYzg2NWMxNGQ1NmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxZWEyODlmYjI1ODRmYTkxNTUwNDY4NzZkNGQzYzE1NzhjMTNmMjUyMWRmMjJjZThhYjI3ZWMyOTUwZDgzOWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5ODE2NzdkNTExNDI1YWI4Y2RkZjUxNmZlZjYxOTcxMGU1NTYyOThmNDI3OGRlMGFkNWQxZDVmZTkzNDhkYmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhhOTczODFkODNmYjMzNzQ2NjA2OGQyYTBiOGMxYmNiOWRkYTgwYjc4NGMzYmJlMjg0MmRhNjNmNjJjZDVmNjgifQ"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-transport/tests/no_duplicate_send.rs",
+          "version": "repo-file-v1:sha256:649410b20ca630da34a8c1214fe418ba5f497232f53eb386759ca60b1a832759"
+        }
+      ]
+    },
+    {
+      "id": "claim_60ea8567191d4fde81fdce2de6df4b3f",
+      "statement": "Upstream responses are buffered up to a byte cap, and exceeding it returns withheld with response_buffer_limit_exceeded without releasing content or resending the request.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/executor.rs#L310-L316",
+          "version": "repo-lines-v1:sha256:807dde1935e18c87a4efb2af5e6f6b6a28fb1fcb68131e484547392c40e5faeb:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzI5NDBlZmE1YjFjMzA1YTI1NTQyNzM3MDk3MGMyOTQwOGFhODU4MDJlOGFmODQyODdlYWFjODY1YzE0ZDU2ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGRiMzM5YzE3ZDRjYzU0ZTcwYzRmY2ZlY2I2MTFiYjllN2QzNjNmMjViMThlMDkyM2ExZDMwNmNjOTU5MjRlNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDk4MTY3N2Q1MTE0MjVhYjhjZGRmNTE2ZmVmNjE5NzEwZTU1NjI5OGY0Mjc4ZGUwYWQ1ZDFkNWZlOTM0OGRiZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGU5OWY2NzI4ZjI1NzliYzc3NzhjMWZjNWJlNGRmMmQ0ZTY1YWI3ZTk4NzAxNGQ4NWQxMzM2NDc3NzgxYjA2OCJ9"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-transport/src/reqwest_transport.rs#L123-L129",
+          "version": "repo-lines-v1:sha256:85d6151123766c7faea2a516a1386bb5dc0719883bd0e8c47647fe7b3342d13d:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzVjMDMxODZhOGVjYjU4YjlmZmFhNTIyNTcwNTBhNjU5YmE2YjA4M2FkZjg5OTlhNDA5ZTlhMzRkZWU2ZTQ5MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjE2NjQ5NTRjYzA5Y2VkOTliMTkxM2FkNzAxOGIwYTE2MTU3MjljYmU5NjNkODFiZjE4ZmJhM2ZmYjA1NDZlNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjgyYzRhMjc2ZTJlMmE2MmQ3ZTFlYjI1ZGY2YjZlYTgzNjA4ZWFmNGRkNGEzNDVhMDZmMzNkYzEwMmEzYTVhOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2RlZDU3Y2RmNjI4ZTdiY2ZiN2Q3NjYzMmE4ZDcxNDg3MzRjMDQxYmM2NTAyMGRkODk2YmVmMTg4YTdhMjIxNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_47705341dde34fb9a83bab962606c946",
+      "statement": "The Core-facing UDS client retries a request only when the failure happened before any response bytes arrived, which covers stale pooled connections, and never retries rejections or timeouts.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/uds_gate_client.rs#L341-L352",
+          "version": "repo-lines-v1:sha256:0d069e45e8114e4df863821ce62e4a4f0088088fd7c3270ef7a135337a14cfc9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmMTI0OTZjOWFhZjM0OGU0N2FlYjAzMzc4ZTQ5ODI0YmVlODM3MGY1ODRjODUyZTBmYzBiNGQ5MzY2OGYzZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdlNjc3MDAwZWYzNTg4ODhkNTI4OTc1YTQ0Mzc1ZmIxODVlMTNlZDhkNDRjN2ExZDc0Mjc5YmUzYTEzOTM4MTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkOTYwZmE4ZmE0NjhlNGE0N2M1MmQ1ZGJhMWIzMDM3ODM0ODBhMTEyZTQ0YzE1N2I2ZDhlZDMzOWNiMmU5YzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7987d25e9daf48f5b0d76774f93c458d",
+      "statement": "For a request in a conversation, the gateway prepares memory through Core's prepare contract with the last user message as the query, include_reuse enabled, and memory-only assembly; an empty or failed prepare injects nothing and never blocks the request.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/executor.rs#L520-L553",
+          "version": "repo-lines-v1:sha256:526467922e73c1edf3d20d28464e5e8d4aee677575b8648249d64ef8af1672b4:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3ZTZkOWRjOWZjMWI0NTgwOGIyYzFjNGQ0NmIwYzllOWQ0MmEzZmRmZjEyNGM3ZTU2Yjk0ZmI3NjBjOWM4OTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1YjliNjk2NTc2NzNkNmQxNzliYjMwM2M2OTNjODEwMzdiYjYxMDBjY2UzZDFjNDBlMzY5NzkwM2E3M2IwNjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA4YjE3OWViMWEzYTgwZmZmMzM5YjdjODg1YjI2NzIzZTE1MzVlZTc1NTcxYzEzZDM1ZjhmOWYzOGZjZGQzNDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwMzI3ODhlNjI4NDdkNmIxYTk3ZGUzYzRhNzc0OWU4YjQzYzFlMTdmNjFlNGMwNzkxZDc1ZWQ0ZjY2NjUyMWQifQ"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/http_gate_client.rs#L107-L109",
+          "version": "repo-lines-v1:sha256:8ecc7b71f18558e41029b518d625d56e904382f90f8ead38c21c41e42a6ace19:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2Q4Mzg4ODZiMjhlOTBjNjE1ZTRkNjI0OTExOGM0ZTJhZGUxYmI1Y2EzMmE2YTk5MDlkNDM2Yjg3Nzk2ZGViYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTI5NDE4MzZiNmNhZTAyNTFkZTEzZGEwZTllNGYyNzc4Nzg5YTQ4NDkyNGNhNGI1NTdlNGZkMWI3NTljMWJmOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTQxNGM3ZDY2OGU5NDEwNThjM2U2MjMwZDlkY2ViNjdmNDcyY2NmZGNmNDc4NDI2OWJkMjRiYTA2ODEwMDgzMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2f9addb7222d42c396b25f2dea5a3875",
+      "statement": "Injected memory is placed verbatim in the last user message, and the exact UTF-8 byte range is declared in prepared_contexts; Core recomputes the digest of that range against the reuse binding and rejects any mismatch, so the gateway cannot alter injected bytes undetected.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/executor.rs#L559-L620",
+          "version": "repo-lines-v1:sha256:a53c376307764a85aa059eea8bba54bbf129091a33a34624777104d4b29971e2:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3Yzc0NjQ5YzM0MDRlMjBmYWY5MGFlNzE1YzU0ZGZmNzhkMGQ5NTRlZjNmOTc1ZThkOWM5NWU3Njc0YjQ1ZWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg4NjJhZjIyZTU0N2Y2ODkzY2I1MDA5NDQ3MDY4MzM1YzE4N2JkNDk5YzYyZTczZmYwMTU5YWY1MWI1ODNlYjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5NDBmMDU1YTBhZWJjODUyYzg5OTRiNmZjNGRiN2RmNmM3Mjc5YWE2YTgxMDliZTI3ZTM2MWQyMGEzMmU5MzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiNTY1ZjlmODdiZTgzY2Q2YjJjNzJmZGQ4NDc3OTEyOWE0Yjg3ZjIxYmQxY2QxNWEyNmUzNmEzNjExY2ZjNGIifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/context_check.py#L278-L310",
+          "version": "repo-lines-v1:sha256:8f7e6815fa9f975c82f92c8c258081bceb7e68bea435973d9bcdf93b159bbf66:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3MTE1ODlkZTAyMmM5ZDdjYTIxNzhiODVmNWE0ZTE5YmFjMTM4M2VjYzJmZjVhZWJlYWNlN2M5OGIwODNjYjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5MjMyMTlkNzkwNjRiOGQ3NjY1YTBiNjljNzRhNTZhZmVkN2UwZDQ2MjFkYWJlYWI2NWZkNTgzY2Q0ZGUzMTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE2YTY0MTUyZDFlZTE1MjNkYmIxNjQyNGQ5YmE4NGVkN2ZlNWQzNTE4MDMxZmIwMWVhYTFjYWRkYTQ3ODEwZTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0501ff6ec58b4d8fa9234603d9be5925",
+      "statement": "Replay of prepared content happens only for requests with a conversation ID; the same message anchor reuses the exact prepared content and binding without another retrieval, and requests without a conversation prepare independently and inherit no injection.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/executor.rs#L475-L515",
+          "version": "repo-lines-v1:sha256:4282f1a041c9ddf79912de6cd1bba31aebf80a2e41eeff87f5317f1a8e5a915d:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5NmRjMDNiMDdhNDhlYjY1ZjRiNjgwYWUxNWMyZmQ1MTA5ZTkxZjg5YTUxMTU5N2MzZjU5YzgyOWE4YWU1NzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1YzAyZjk5ZjgzNWRjYTNmNTlkNThiMTZiNGY5NzNkMzJlYjc1MDZlNzEzYjhhNGM1YTlhNDQwMDFmOWY2YTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBlNDMwYmFkNWQxZTE4MzEwNjMyOTk3YTQ0YTJiYzM2NjA4Mzc4ZTRhMzcxZDM1NTg0MjNmYjE2NmUwOWE0NjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyZmFkYzYzZjgxZjQ5YWJiMzk2YzA3MzAyNDI3NDI5MDJkZDQ2MjI0OGQxN2NjM2IzMDVhNWU3MDgwYWZlYjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_eebb6bc0b6ce41f8af0164e7e0c35ccc",
+      "statement": "The conversation ID comes from X-PowerContext-Conversation-ID first, then from Claude Code, OpenCode, or Codex session headers, and each source carries a distinct prefix so identifiers from different sources cannot collide.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-app/src/ingress.rs#L465-L488",
+          "version": "repo-lines-v1:sha256:328c67828fef6fc78d8054a36b51fcd73cb80821c886ef618fafab8f838f8bf5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkYmVhYTFmN2YxODIyMDBhNTY5NTg3OTFkYjVhNjMwNGI3YmMzNDJkYzlkMjc0MTI3MTZjMzk2MjYzNmUxMDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwMjljNWUzNTM3NGI1YTY4NGRkMzZjZTc2YWI1ZGFhOGMyMjlmMWZjNjkxMmYzMWZlNjg4MGQ4NTEyMTg4OWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmZDI2YzAzOGVkOTEwZGFkODVmNjM5YTllNTM0YzU2ZTIyZjMxZWFlNWY1MmQ0MzVkZDQ4MmRmNjg2YjRmNjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiNzcwYmI5ZGUyMTFkZWJkNjE0ODI3YTI0YTE3NmRlYTE5NzU5NTRlODExMmNlYjExODU2NjhlM2RlNzMxZmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f247ce01af304c15a45ea5d7dd18cefc",
+      "statement": "When Core withholds with context-refresh-required, the gateway clears that conversation's replay entry and re-prepares once from the pristine request, so a stale reuse dependency is refreshed instead of being passed to the client.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/executor.rs#L255-L276",
+          "version": "repo-lines-v1:sha256:392d9290edcc2ac49bbec2a5a21cd3336e2733e587042c1cc863a024e8b3596a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmMmE1OTVjYTU3Mzk1M2I1MzZiOGFjOWFlMDNhODQwZmM1MTczMWQzY2NmZTY3MjVlN2NmMmZkNmVjNjk3NTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0MzcxNGEwNDRiMjdmYjY5YjI5NzQzNDg1YmI2NmMwNGRiZWE1MDdjMWM0OTdjNzQyNTY2YWYyNGVmZjQ0NTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3YWNlYTc3MGRkYTk3NDEyYWQ2NDAyZGY3Y2E4OTliOWY4OGY4ZGE1MjdhMjI2MGY1Y2Q4NjQwNmU1ZGVkZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk3YWNlYTc3MGRkYTk3NDEyYWQ2NDAyZGY3Y2E4OTliOWY4OGY4ZGE1MjdhMjI2MGY1Y2Q4NjQwNmU1ZGVkZDYifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/context_check.py#L389-L391",
+          "version": "repo-lines-v1:sha256:9b66a9a58ebe23ce4af3c7f1d8b8bb3c9cf491cae190e3b3e6f00c62fc9bca8f:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTAyNTRmZDgzZGJlMDRhYWY1YzYxNDdkOTlhYmVmMjJjMDY4ZTVlZjJhNWZjZTM3Nzc4ODUxMjU4MDIzMDFmNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODU3MzAwZTM3N2YzNzJlNjQyODlhOGFhYmYyNTAwMzgzMGVmZDIzMzY4NzZjZmQ4MzMxMjVjMjU4NzNkNGFkYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWRkOWQyNzY2ZDZlN2JjYTJhZWQ2ZWYyOTVhN2M1ZWMyYzljNDdhYzk3MDI5ZjJkNDY0OWY5NDA1OTg2NDhkMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTI3MjBmZjU0ODE4MmMyZWZiOTYzMTA1ODEyZTUwODdmMGE3NmRhMDIxMzA2YTQ5NGYyYmNjYjAyMTkwZmU1MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6c67045dcd3944a583d84d67bb2504c7",
+      "statement": "Injection scope defaults to conversations only in a combined deployment and to off in a standalone deployment; on and off are explicit, and any unrecognized value disables injection.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-app/src/ingress.rs#L444-L451",
+          "version": "repo-lines-v1:sha256:c056f10215d6cb5dd4751228e28ca50596bd635530446c1725c8021d11db6881:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmRhNGU5NmIxZjdmYTA0MTllZjkyY2I3NTU5MDBlZTg5YzYwZGUxM2VjOTdlOTI4OGYzOWViYzE4MWE3YWEzZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTNlNmI5NWQ3YTllMDdhNmY2YzA5ODQzYjE4YjU0OGNiMGQ1NTA2ZWE0ZGU5YTk1NzIzM2VhNGZjYjg3OThiMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDM1MjU4OWQ4MzlmYjIwNDE1YmRlZGE3NmY5ZjcxZWVkYzczYTk4YzIzYjFkODAxNWJkYzZlOTM2NWFkMmNhZSJ9"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-app/src/main.rs#L264-L280",
+          "version": "repo-lines-v1:sha256:65aa85064bd21e31b08d55cc1127c1e9ce57bda40135d13c7c1c9b8a96cf41f2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjNTQ3YmJiMjVmODMzODdhZTRhNTJhZmEzYTQ2MjYxYjlmNzAyNzAyNjZlNGM0MjgyZjU1ZTdjNTQ2NTZhNTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1Y2Y1ZmMyM2YyYTZkMjNjM2VhNTFlNzJmNWU4OTZjNzU1NWZiYWEwNWNkNWIxZWExODJiZjk2MThhOGU4MWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhMTllNmE1MjYzOGQyZWNjOWE1YjdlNTllN2NmYTY1ZTY3YWUyMTZlNTBiNWQ4MmNiYTkxZWVhMmU4MTM0MjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczYmUzMzQ2MWI0MThkNTg0YTY1NDA3M2Y3YTNlODk4ZWNmNDRjMTg3NWVhY2FjMjlmY2RlYjg2Y2ZhYzJmNDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4da9482efc764453b12bf5370a9b8041",
+      "statement": "When sedimentation is enabled, each terminal user turn is captured once after its response passes the release gate, using a deterministic source ID from scope, conversation, and pre-injection messages; a conflicting duplicate (409) is recorded as sediment_duplicate, and a failed capture never blocks the release.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/executor.rs#L420-L441",
+          "version": "repo-lines-v1:sha256:3cf39b75f717d6f82bdbcef2ea4392956b3e152feea711f314f21294de92665e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiZDBiODNlNGZlZjZmNzJlMWYxNDBiYWIxMjUwODgxNGU2M2YwNzNlMWJiMWJmM2M4MmMyNzFkMzAyZjdlNDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4YWExNWM1ZTlhOWI4MzZjYzU2ZDQ5ZjI1ZmUxMzVkZjUzYjI1N2ViY2IyYmU5ZTY4ZmYzNzdlZDM1YmMxYzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkNWRlYjQ4YThiYzQwOTlmNDgwN2JkZmMzNDNhNThkZmYzOGM5YWY5ZjIzZDQyODkwYWFlY2ZkMjY1ZTZjODQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEyN2UzZDZlYTNmZGE4ZTk5ODQ3YzBlYjMzM2NhN2I0ODEzZjUwNzY0MDZiZDE5OTZiOGFlOTIyNDNiZmYwNjAifQ"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/executor.rs#L785-L800",
+          "version": "repo-lines-v1:sha256:f567c9c078f812c7623a4cbb9821f6e218aac0265483c20dd809ab55f432e576:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmMzZmOTU4YjBlN2M0MDlhOGEyNjM3YzI5MjlkY2Q1ZTgzNWM2Y2RiZDNjOWEzZTg3N2Q0NDEzYjM1ZmE0ZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJkYWI0ZjFlNWM1MjkwZmRjMmJhYzc4MDMyOGE3NzAyZWVmYjljMWQ5NTZhOTNmZDA3MGU0MWI4MDgzYmQyZDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdhY2ViZDY3MGI0NzU3MTc1NTI1OWFhY2MxYzA0YzBkMGQ3MTM4NGZmMTg3YWViMWY0MGU3NDcxZTcyOGRlYTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ2N2FkZjVmYWZmMjJhZThkYjFjYWMwMjAyNDkyMDhlNGU0ODVlODY1YmQ5NWU4NjA4NjNjZGIxNmU4NWZlMmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3a8a0045fac6416abe82d0ccf728f478",
+      "statement": "The upstream request is always non-streaming; a streaming client receives the released or degraded response replayed as Responses SSE events only after the release gate has passed, and error statuses are returned as plain JSON.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-app/src/ingress.rs#L295-L320",
+          "version": "repo-lines-v1:sha256:c17deecb2da4520d85d55cb5fe9573d7010cb99c1802896094ae0d1602eefe13:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ5NDcwZTZmYmZiOGE1ZTJmZGU5Y2U1ZTJkMDE1MmUzY2RkZjMxMDI0YzE4OWNlYjg4Y2I4MDZlNTk0MzJhMmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3YWUzNzQ0NWRkNjE2Nzc5MzgzYWNhZmVhZjNhZTQ3YTEzOGQwMWQ3NmUxNGYzYzRkN2IzZWE4YjFiYTc0MTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmNzJjZDRhYmQ1Mzk2YjM2Mjc0MDU3Y2MwZGE2NWNhMzkyNDlmMDc5OTkwZTI0MGU0YzhkZDQ4M2ZiNDQ5NzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZjZmU0MWJkZjEzNjJiYzU3ZmM2YzBhNDlkZGMxOGFhZTQ3NzM5ZmEwNzQ5YzkzNDJmMGM1MmZlMTdmYjIzZGQifQ"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-app/src/ingress.rs#L600-L615",
+          "version": "repo-lines-v1:sha256:4895b79f48df84eec9231683c2020281f9a8f3e8c9f838c0b96e405df6028511:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxY2IxMGQ0YWU2YTg5ODY1NmJiOGE5OGRlNDA2ODkwZTY2MTk5ZWU3MGUzZmEyYWQ1N2YxMzYxYzY3NGNjMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4ZWJhYzg2OTE5YzI5MDMyMDE4NDI2YTIwMDVmMTY0NmQwNjU0NGQyZWY3OWFjMjliMmI3NTUwN2ZlZmExM2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ3ZDkzYmYzYWE2NWU0ZDExMmYxOTk2YTdjMWY2ZmM5MDI1OTVlNzhkMDFiNzcxMWEzZjIwOTY0MjQ4OTAxZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ1ZTYxZTUzNWNiZGI3YTNjMGMwZTc1NDYyOWEwMmJjNTIwNDgyOWNlZWZiNWUyZjEyZmRiNDZhYTg4ODhkZWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7a87bec3f5eb4d7fa8f2fa9013b1a23a",
+      "statement": "In the combined deployment, selected by PC_GATEWAY_CORE_UDS, the gateway owns the public port, reverse-proxies non-gateway routes to Core over a Unix socket, and talks to Core over that socket; in the standalone deployment it talks to Core over HTTP and serves only /gateway/v1 and /healthz, returning 404 for other routes.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-app/src/link.rs#L30-L40",
+          "version": "repo-lines-v1:sha256:db260acc644a73ab86ef5d853e63676cc4689db64bb8806918c34df00566ba57:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiYWUwNmMwYWE1MmRjOGExZGFhM2FjYTBkNGMwNTZhNzkxNDIxZGIxMmIxNmI0ZTMyMmQxYWVkNTY0NzMzNTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAzY2Q5Y2RiZjM5ZmQxMDM2ZWM3OTYyNmQ3NzcyYTkzYzExODQ1NzkwMjE2ZDc1NGY0ODU5MDI0NjgzMGRiYzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4MGU4ZmIwMjY4Mzk2MmFmNDNiMTg5YmZlODVhMGJiYjJjMDQwZjZhZWU1ZTZiMzliYThjYmVlNDI2NDY4MjcifQ"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-app/src/main.rs#L205-L214",
+          "version": "repo-lines-v1:sha256:1cd82606c6eb91d04337436d961ad878b7f0ffc8e71046cc8299417afe5f9fd7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxZDA5ZTE0MGZiYWY1ZDU2NmY5NzYyMTZlMjRmN2Q2NzI2Y2I4ZGFjMmE5YzkwMGJhZGYwOTFmMjdlNzY3ZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlNzA2YWViZjRlZmQ4ZmU0MmM0MDc4ZTNkMzYyZWI1ZTczZjQ4NjU4NWU0YTUxZjI3MGVkZGViYjU3MzA2MTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY5ZWVjZTQ2MjE0MzZjNjRhOWQwNTcyNzQwOTA3MWNiOTNlOWQ1ZjliYTZkMTJhYTBhODI3MWU0ZDQxNzdkZDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwZGZiYjAzMzIzNGQ4OWUzN2I1ZWQwYTY1OGFjZTVmZDk2NjBkNTA0MGQ3NTQ0YjlkZGI2Njc3NjBkOGUyZjIifQ"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-app/src/proxy.rs#L100-L115",
+          "version": "repo-lines-v1:sha256:f8c9e72d1cb9bff213dc0b0206cb929a411cc24f140d3e03b106f4e4c67eccfd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyNjIwM2YwZDNhZjI5ZmQxNzExYjRjZjViN2U5N2I5M2Y3ZTRiMjQ5MTk4MjZlNGM1YWI3MjJiYzg3ZDk1NWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkOWUxMjU0NjQyNTU3NmQzZGVhZThjOWI5ZGJmMTI4ZDVkNmRkYWY1ZDdmZTg1NzkzNDkyN2RlZmZhM2I5ZGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA2MTVlYzQ4MDhjZGQ1NTAwOWM2NGE4NWQ0MmI3ZjgxNjExODIzOGU3ZmY1NGY0MWRjMTIwOGFlYTdlYTc5ZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgxMjY5NzNjYzEwMjMwODlmNTg2MzBkOTJiMTYxYzU5N2UxN2Y2NzRhOWRlZjRlM2M3OWYyMzliZTVhZTZiZmMifQ"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-app/src/proxy.rs#L44-L75",
+          "version": "repo-lines-v1:sha256:eab3755cc7d092b25c3a49f1beb3a8707d382dd527e4a1e5aa7bf317a1cf644f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkMjgzYTA0ZjE5MzcwMjFjOWM5NzQ1OWNlMWYxOWRmODE3NWI4ZGVlZDNjNTQ2OGVhMTRkMjJlOTk5MGRjZGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MjJjNDJjZDE5YzZkMDNkODA4YzQ1MjcyMDU1MjgyNWI3ZWExYzViNDkxYjIxODUxMWNhYzc0MTVjZjlkOWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZlZDFmN2ZkMTgxOWU0N2I4MjdiYTQzY2YyZmYyMmUwM2Q3NjQ4MDg1ODI3YmE3MDU1YWE1NDgxMzNlMGRmMzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI0YTM2NWE5MGVjMTFlOTA0MzI3NTJjZjkzNzZlYzVlZDM2YjgwYmE1ZThlNjg1NGZjZjk4OTcwZDMwNDQ0NjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a9ac70123e56447aa33c9e411d700ada",
+      "statement": "Core calls use the same GateClient operations in both deployment forms: check to /v1/context/check, prepare to /v1/context/prepare, and capture to /v1/sources/content, with the HTTP client using a 10-second request timeout and no redirects.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/gate_client.rs#L20-L58",
+          "version": "repo-lines-v1:sha256:9d420eb6fc819cdc42e0e990e40a63812c27bc1480a101000d360d901dabf52f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFhYjJiNzQ1MzhiOTkxMWEzOGI3MGU5OWNhZDYwYTBkZGNlNDUwOGE4YWNmZDEwMzI4MDI4NDEwZGVkNDE0YTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/http_gate_client.rs#L40-L60",
+          "version": "repo-lines-v1:sha256:ad0062efdee7b781d70d02d5b9fa8c5ddaf73744cb720a4fd348bfe4f5597a05:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkNzI0M2Q5ZDQ0MjgyOTgyYTk0YzkxN2I4MTRlYzkxNzliZjgyYTdhMDQ2YTg5YzkxYmNhYjIxMDc4YWZhMjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhNGY3MWIyNWIxZTMyOTM0ZmQwNGFjNTExYjhlMDQ2YzM1YTgwMjkzNmM2MDJmYzEzZDBlZWYwYzMxNTlhOWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA2ZjVjODdmMWFmNzFlMjkxMDU1M2U0YTVjYjVjYWNjYWUwNzFkYTRjZjc2NGQyMjBjYWIxZTU0ZWU1ZDM3NWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5YzdiOTZkMjNmYjQyNDU5ODgwMWI5NjIyMTNlYTA4MWMxMGQxOTY2ZDFmYWIxNTAxYjI2YzFjOWJmODQwNGIifQ"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/http_gate_client.rs#L80-L116",
+          "version": "repo-lines-v1:sha256:e0c78f3cff7c276dcd30096b1d65b6073743df3c49f884c0ae25f3d90668dd1b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljNWJmMzhkNWJkNWUyY2FmZDg3NDI4ZDI3NDA0NTVkMTU2OTNmMTkyMDQzZjc4MzhlOWJhNGYzNTE4YjRjOTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4cad470e5dad41a6ba0cd0750b786fa9",
+      "statement": "The model input limit is the minimum of the Core payload capacity, the 1 MiB Core parser ceiling, and PC_GATEWAY_MAX_BODY_BYTES, and if startup capabilities cannot be obtained or are incompatible the model routes stay paused until restart.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-app/src/main.rs#L118-L128",
+          "version": "repo-lines-v1:sha256:7bdef98f5658147467b2bc556b101b3de68c472d0b589cffe75cf4c87ad95cef:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc5NGQwZTZiYjhjYjczMDhjNTVjYmQ0MjM5ZDA1ZjBjM2FlZTFmMmY4OWQ3YmJjMTEzNGVhN2VkMjkyMDYyZDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlOWIwNzY0ZDc2NGViOGFiYWM0ZmRjZThlZGY5NGYwNjYyMWNiNTdmZGUzMTFhNzNmY2ZkNzk4NmY1MThjYzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNkMTM5N2JlOGQzYjcwYTY3ODAwNTMwNTg5NTM2N2VlYzNlNzk4MjAyYWQ3YmM1OTM2NGUyMGM2ZTQ5MWVlZTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhODNiZWY0YjQ4MzYyNGJiNDA5N2YxOTcyNTU3YmUxOGEyZWVmNzhlY2Q2NGNiMDliNjk2ZjQ2MGEyMDlmZWEifQ"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-app/src/main.rs#L221-L243",
+          "version": "repo-lines-v1:sha256:2b516704c173f2303bce143aef32c54548223029d43593b85f168618876150b2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlM2ViYzU0OWQ1ZGVjY2IzNTFlZWNhNmJhODhlMTY2MjViYzNmYmU4NDEwNzAzMmRlOGEwY2FkZjE2M2E3NzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhN2M3MTQ2NmJiZWI0N2ExNDAyNTBhMWRjMGI3YTExMTU3NDYwZDY1ZTg3YmYwNjZkYThlM2UzNDQyZGMzOGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4MTkwMTBhYjQ3NjhhN2I4MTA0ZjI2Y2FkN2NkZDFmMWI4ZjQ5OGMxYTk4M2Q2ZDRjMDYzYzFiNGU2NTI5MDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxMTRmMjAxNWE2NTc5Njg0YjkzZGU2N2QxYThjYWMzMTVkYjIzMTVmMjA4MmY0Zjk2Nzg4NTgwZmUwMzljYjYifQ"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-types/src/check.rs#L17-L23",
+          "version": "repo-lines-v1:sha256:7297c77bf96358e5bd022158bb6572a5edb4fd2f8dd8a5d1e06df61b5937cb13:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzk1NzIyOWNmYmRlYjlkOTQ2N2UxMTUzNjJlYmZlOGE2NjNiNjVlM2VjMzIzNjhmYjg4YzAyMTBhM2ViOTE3OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTA4ZTNkNjIyNTI1M2IyY2IwZTYzNDA0YmIxYWRmNmVjMTZjY2FlN2ZhMGEwZDU4M2NkYmJiZTg3MTI4NWJkNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmZjMGE3YzQ5YjUzMTUwNjVjNDkzMDRiNDZkMzAzYzY0Y2M0Yjc1ODNkMGY3Y2FiYTEwNGFhZjFmNDJiOTkxNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d56410743f2b4101a275b9330f3df724",
+      "statement": "Middleware rejects model request bodies declared over the limit with 413 using Content-Length, applies a non-queuing concurrency limit that returns 503 when full, and exempts the health probe.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-app/src/middleware/resource_limits.rs#L60-L110",
+          "version": "repo-lines-v1:sha256:012f266fd19fe93d71f875d2adbef346c77dfa42fb5e5768040c1545d36c2d14:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE2YjljYzgwMWI2YzJmMDZhZjk5NTgyNmE1N2I0NzdmYTkwOTZlOGY2NmZmN2JhZTk3YWY1MjRjNTNhMWQ2YTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI3MWRlZDFiOTgxNzAyOGJlOTYyNTYzMTc4MDIyNjIwYzAyMjI2MmUyYTlkMmQ3N2M2MzdhODUwODEzMTc0ZWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxYWIxMzViMWE1ZTI3MTM0ZTUzNzMxNzYwM2IyMTgxYjA5OTRjZjViYmE5NGIyMzcyNTRiMGVmNzU5ZWIxNjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY4ZWU2NjVhYjc3NzkyOTBmMTQ2MjJhYjUwZTQ3OWViMzAyNTMxYzk3MGFjZTBhYTVhMzkxZTdkZGNhYzUwOTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a30e793de34e418e998f6db89127d65c",
+      "statement": "Upstream and Core credentials come only from server-side environment variables, and the header set forwarded in check payloads strips authorization, x-api-key, and cookie so provider credentials never enter Core payloads.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/README.md",
+          "version": "repo-file-v1:sha256:d52cc9b1c011239b413654a9ba131f2b0ce46fb63a4cb5dd68017cf2cdaff2cc"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/executor.rs#L685-L697",
+          "version": "repo-lines-v1:sha256:c67eb759ded57e9b6a74590b69f47d6947cb177114985e4252956ff79ceea673:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxNDQ3ZWYwOWQ1YWRiOGJkZWFjOTk1MmQyOWRjZWQ4MTU4OGFhODZkOGY0OWI2MDcxOGRiN2U4YzMxZjZmOWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVhNzMwMmRlOWFiNmNlODVlZjE5ZmMwZjU4NGE1NmMzYTczMzY4MDJiMDZhMDNiMmNmZjRhN2Y3ODYyZGQwNDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c34a206eea684613a46395ff0f2ada45",
+      "statement": "The evidence sink records body-free facts only, such as attempt counts, not-sent reasons, usage completeness, cache tokens, and time to first token, and never request or response bodies.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/README.md#L32-L32",
+          "version": "repo-lines-v1:sha256:4668f7f80d57b2fb1ec72cd81bb52680dbabb35547145356faef89e25b8601c8:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDY2OGY3ZjgwZDU3YjJmYjFlYzcyY2Q4MWJiNTI2ODBkYmFiYjM1NTQ3MTQ1MzU2ZmFlZjg5ZTI1Yjg2MDFjOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDY2OGY3ZjgwZDU3YjJmYjFlYzcyY2Q4MWJiNTI2ODBkYmFiYjM1NTQ3MTQ1MzU2ZmFlZjg5ZTI1Yjg2MDFjOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjhiOTM1ZmNhMmE4M2QxMmQ2OTYwYzExMWNmN2Y3YzBjMGYxMmVhOTRhNjNhZTZjMGI3ZGRkNGM5ZTc3MTIxNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGRlZjg1NzYzNGU3MWZiMmIzNzA2YTFiNjhkY2E0OGI3YjhkMWJjNWZkMjBlZjI1NzEzMmFkNGY1ZDA1ZmZlOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a5cf432f859843f7bf8706a7759456a3",
+      "statement": "The Core client, upstream transport, and middleware chain are extension points: the executor depends only on the GateClient trait, the upstream path accepts only AdmittedSend values through the Transport trait, and new middleware is added to a chain composed in main.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-app/src/main.rs#L176-L192",
+          "version": "repo-lines-v1:sha256:d4044d2c7920e1f605ec51637e2210055d65926d73c39dd88fd191bb2e06c968:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlOGIyNDY4MTQ2NDdkYzcxYjQyNjk3MWZkMjEyYzQ1YjUxNTNmZWE1MjNmZjllZGNlZTdkNGI4ZTQ4NzU0MDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdhMWU3YzA3M2JiNTI1OTA4YmIzOGQxZTMwMGViNWY2NWY5M2JiM2EyNWI3YjAyNGIxM2VlOThjMmE4OTE1ZTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMxYWY4MGUxNGZkYmM4MGQxMGVkNzE3NzVkMWQxMjdlMjEzMGE2YjI0MjU0Y2IxNTRjOWNhYWViMzhhNGQ0MDQifQ"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/gate_client.rs#L20-L58",
+          "version": "repo-lines-v1:sha256:9d420eb6fc819cdc42e0e990e40a63812c27bc1480a101000d360d901dabf52f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFhYjJiNzQ1MzhiOTkxMWEzOGI3MGU5OWNhZDYwYTBkZGNlNDUwOGE4YWNmZDEwMzI4MDI4NDEwZGVkNDE0YTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-transport/src/sender.rs#L36-L83",
+          "version": "repo-lines-v1:sha256:9c8f7bf51729b4b0b35dcffddd51fabdd0afa5be2a5665b0eddb879881bea2e5:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1Njk5NWE0NjU5ODdmOGI3Y2VmYzdkMTNlZjZkMTA4YmE4YWI4NmQ4YTEzYmNkZTU5OWI1ZTkyYjA4NzA5MTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIxNTEyOWY3NzQ4NzRjNmU0YWFmMWMzNzQ2YzQ0MDE4YmUxZjVjNDUxYzJjNjM2NGRiMzBlYTY3NmI5MWI2MmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T09:04:09.583Z"
+  }
+}

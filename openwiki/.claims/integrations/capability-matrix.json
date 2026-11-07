@@ -1,0 +1,438 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:e80991c85dbbed2498948800843178f28ac873e7c1be3ca08f5ca0ae5300df17",
+  "claims": [
+    {
+      "id": "claim_d47c1eb835b6497288db6b8ecbe8ab6c",
+      "statement": "integrations/capabilities.toml is a schema_version 2 manifest, and its header requires every integrations/*/ directory to be either declared as an integration or listed in directory_exclusions; the exclusions are cindy, agent-plugin, and opendal, each with a recorded reason.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/capabilities.toml#L15-L21",
+          "version": "repo-lines-v1:sha256:0fa4e5a0a79050389b2ffe0db2b784ac95da0599ee3227f1fd75a4e7168db7ad:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTJlODVjM2EzZDRhNzAzODgzNjYyOWFjMTAwYTNjNjQ3NDQ5ZTA5MzMwOTM4N2UwNGIxYzdjN2U1MTUxY2EyOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWNlNmQ1ZDVjZGFkYzIyNmM0MjllYmI4ODI3YjM1ZjViZTg4MzJmMTE0NWYwZTgzNWJjOTNkY2E4YjFiZDBkNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmQxZTQyY2U3ZTc2ZDVjMWZjMjEzNmU1ZmIyZjA0MDZkODFlOTYwNzMwNzQ4OTE0MWY1YTIyNmQwOTJhZWZlMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWQ0MDE5NjM2OGNjNTkwNmRhODFiZmYyNTRjNDNmYjk3MGJkZTY1MmEyMDlkNTQzNzIzZGVhOWRmYzUxODYzZiJ9"
+        },
+        {
+          "resource": "repo://scripts/integration_manifest.py#L274-L284",
+          "version": "repo-lines-v1:sha256:ef87726d0e206e8a49e7be4de657ffd6aa8bb7e448ee88c28063a38ed6d46afb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjMmIwZjBlNWQxYWE1Y2EwZDUwMjRlNzlmMWJlZGFmYTZhNjZlNmRkNWExM2NlYjdhMmEwZjY0MjQ4M2NiN2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlZjFjZGQwZjU3NDMzY2U1MDc3OTA3MjJlMmY1MWQ5NzM1NmNiZmZhN2IyNGRkN2NhMTM0NDgzMmQ0ZTUyNDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzNzgwNmM0ODMxYTg1ZDJiYWUwNjk4NDRlYmYzN2FjZmE0MzIzNDFkOTM1OWU3MmJiOWE4YWNmNTg5NjlhZjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhOTlkZTdlZTc5MDIzZmUzMjYyMTFjYTVjY2U2MjQ5NzZjOTdlM2UwMGJlYmZiNjUwYmFlMGEzN2VhNTlkNGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0c62d13b27fa4d9397679f201aa44e52",
+      "statement": "The directory coverage gate reports directories present but undeclared, declared integrations whose directory is absent, and excluded directories that are absent; it also requires both en and zh integration documentation pages for every integration whose kind is not waived, and lists those pages as evidence for non-unsupported integrations.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/integration_manifest.py#L435-L460",
+          "version": "repo-lines-v1:sha256:48996694e152f8ce67bead0addf44351240adb1f435bf588a79fbd8acf450c1f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiOTk5NWQ5ZjgzYmUwMWE5YjYwMWY0NTJlNTBhMzEzNzhiOGI2MTU0NzkyNDQyMmYyMWJiZTJiMmRmYzdkNjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyMzJlMTI2OTQxNmExYzUzM2M5ODMyZjJkMmYzZWVkNDQxODg3ZTg3YWQ5N2Q3NjAzYmU5ZGY2ZDU0M2FlYzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzYTA2YzliYzNkY2Q4NTdiNDA0ODcyNTliNzNmYjE2ZTA5ZDFjMzVhNzZjOTYzMzJkOWUyOTYzMzIyMzVkNzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE1YWU3MjUyNGJmZDc1MDllYmU5YWI2YmUyYjA1MjVlMGRlY2U5OTkxZDliMjZiZDM1NjNmZjYzZjM3ZTNmNjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5a0f6d81c8db4ba6a3a08a07bc947d54",
+      "statement": "documentation_waivers exempts only the evaluation_harness kind from per-host documentation pages, because evaluation harnesses document operation in their own README and the shared evaluation guide; Bub is the declared evaluation harness.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/capabilities.toml#L1109-L1119",
+          "version": "repo-lines-v1:sha256:cca3c2d2a1d3d314910527c1e1789b21236c130b5cd738ba08c8f022eb019e5c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3MWNmYzM0MDA2N2Q0M2M4ZWY0NTMwZWY2NWQxYTRmODgwMmQwNWRjNzgwNzY3ZDM2YWU2ZDE4NTAxMjc5ZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE1NWFjMjliNTliM2RhNjBkOGZkMmZkNGY3ZTZhYzczNDk1ZDk1M2Y2MWZlNzdhZGUyZDkwNTdiNWZmODE2MzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiZTY3MTY2ZGMyYjlmMTA0OThkZjRkM2YxYzVlYzhlMjZlNmVmYzY0YmRjZGQ1MjA2ZTY2ODk4Mzc3YWQ4YzIifQ"
+        },
+        {
+          "resource": "repo://integrations/capabilities.toml#L23-L25",
+          "version": "repo-lines-v1:sha256:7e1992116df8f7af7a5c53d23395547f2be93b5491e80552419d0b3b61f35732:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWM4OTRhMWI2N2MzZDU3YWYwOTU1NzU1M2NjZWFjNTUxMmU5M2MwZDFkZTczODA0ZmM4NmU4YjU2NzM1OTVkYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmM1ZTE0NmY2NzYwNmM3MmMyOWVjMmQ1MTNhMjg5ZTIzZmU5NGY0ZDZkYzlkNzFkM2U5ZmZmMDA3NWEyMDY3YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjVlYTQwZmZiNTU3YmJlYWQyNjViYzg0MmMzOTM1MDgwYzIzMzRhYTA0NDM1NjBkNDg2OGIxZjFjZmQ0Y2NjMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWJlNjk0ZTM0NDFmMDA5YjQ4MTE1NGRjNGZkZmQ2ZWExZTg2YTE1YTgwNDBhMDVkYmYwZmRhMmI4MWE3YjA0OSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_628d520ec6fd46bcbe8d6aec0deadb8a",
+      "statement": "IntegrationCapability is a closed enumeration of 19 identifiers, and its documented contract is that a capability describes user-observable behavior and is never an authorization grant; candidate_review permits listing and reading candidates only and does not imply approval, rejection, or revision authority.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/integration_manifest.py#L48-L74",
+          "version": "repo-lines-v1:sha256:990a3e72c14277ae40430ce2966bded1dd291ce04ceddf2a8d28de277788e3d9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViODk2MWQzYWM0M2U1ODc3YzA2MmFlMDU5MjQ2NDA0ZWYyMjg0Mzk1ZDhlMDQ3ZmFmYTc2MTEzZDk5ODIxNTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU3ZjVjYzExYmIyZGU1YTQwYzg5ZWU3OGRjZjg0ODAyZWMwZGM3NjQwY2MyNWY1YjMxOWZlNjMyOWZiODJkODIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM5NzM3NzUxOGVkM2U5NDBhOTNjYTczNTI3YzJjMDQxYjkzMmQ2OTJlZmQwNDQwNTFhYmJiOWZlYzNmMGZiZTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7f7574cef2e64cceabb62b638e0a93db",
+      "statement": "Support profiles are derived, not declared: minimal requires memory_read, memory_write, source_capture, and context_injection; recommended adds work_contract, handoff, acknowledge, and task_outcome; full adds experience_read_or_generate, skill_read_or_generate, candidate_review, and external_skill; an implemented agent_host must declare exactly its derived profiles, and only agent_host integrations may declare profiles or lifecycle.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/integration_manifest.py#L114-L135",
+          "version": "repo-lines-v1:sha256:3276949aca58cee381d1df5017a92f53eba98e182c540a9d4cbe58ba3c15519a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5MDg5N2YwZDUzMWZiYTU0YzQ4OWU2MGFmMWY1ODg1OTRmN2JhYmQyZWNlMTNmZTNkYzFjMTZmMTFiYmJkYzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxMDY4NmU3MzQxYWJjM2IwODc3NzcxZTE0YmM3N2RmMDQxZjczNmJjMjI4MzZlNjI4NzU5ZWY5NzBjM2E1Y2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg1NTIzZDI4ZDgxMmY5MmFkYmJiZGI3YjFkMGNjNDcwNDdkMTU4NWFjNzQ2ZTFlMjljNDQyY2I1NjYyMGRiMjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYzNjdjOGE4OWY2NGYwZDAyOTMzZDkwYjgxOWQxZjk5OGIzOGQzMjExMGMwZTE2MjVlOThiMDFjNGUzMWFkZjUifQ"
+        },
+        {
+          "resource": "repo://scripts/integration_manifest.py#L285-L398",
+          "version": "repo-lines-v1:sha256:8523c06ec689cc3d2e794af8c3ac6d92f117ae3be173db3c8d9099b595ce1bec:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJmZDNiOTYyMDlkZDc2MThkMTZlNDlhYmJjMWUzMGJlOTU0YjhiODcyNzZlMjU4ZWMyYjc5M2I4ODA1NDgyOWJiIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIwOTQ1YTI4YmU4ODY5NjYxZTljODEzNWU3OWE2OTA4ZDVjNTIzYTBhYTY1ZjQyMTA1MjViN2U3MzA5NDU2MDBmIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJmYWYzMDJlOTVmOTU4NzE2YjM3NzVjNDNlMzM3YThlYTAxNmFiNjc4ZjdkM2FhYTVmNWZhNjZiMmVhNGU5MGU0In0"
+        },
+        {
+          "resource": "repo://scripts/integration_manifest.py#L410-L418",
+          "version": "repo-lines-v1:sha256:b6c90e2a0b21e0c930983080f4d47107d608373762fdc95e2db8c2da3ecbee1a:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDA0ZTdmZTBkZWI5YjIxMzFjYjgxYzU2ZjlkYzYxNzUyNGViNmRiYjliYWJmMTViNjZhNTkzNDNlOGU2MDZjMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjFkNGE0Y2ZjY2FjNmNiMzFmNjU2MTk0NjhhMmRkZDYyMjVkMWYzNTA5Y2RiMjdlZGM0ZWRlOTI5YzcxMTk3MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGNjNGE3ZDFjYzc5NmFiYTNlNDY3MjMzMjdmNTE3ZTlmODExOTgyZDI1MGYwNzAyOTg2ZTRiNTc2NGFkOTU4OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDNmYmZiNGZjMzgwNGUyNzI2YzZiOTVmNmEzM2E3OTMxNGJjZTQ2MmM4NDQ5NjcwMTUzYjFhNWRlZGUzOWI0MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_96517a94771f40e5980b21d840387720",
+      "statement": "Implemented integrations (released, master_only, experimental) must declare complete implementation, documentation, and test evidence, at least one toolset, and no proposal or rationale pointer; their declared capabilities must equal the union of capabilities of the tools in their referenced toolsets.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/integration_manifest.py#L114-L140",
+          "version": "repo-lines-v1:sha256:9b32d1bc48b661271bb6a4c343e68a1944ead8b09aee53a2b35e6dde16a7bb53:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5MDg5N2YwZDUzMWZiYTU0YzQ4OWU2MGFmMWY1ODg1OTRmN2JhYmQyZWNlMTNmZTNkYzFjMTZmMTFiYmJkYzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzOGQzOGNlZjIyMjZlZTkwZWFiZjM4MDA2ZmFhNmU2Y2E4Y2FkZWI1ZWI5OTJhODZkNWQ0MDJiNDcyNDQ4YzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg1NTIzZDI4ZDgxMmY5MmFkYmJiZGI3YjFkMGNjNDcwNDdkMTU4NWFjNzQ2ZTFlMjljNDQyY2I1NjYyMGRiMjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI1YzZjZmUyNzZjZjY4NTE1NzhhNWJiZTZiNTMyNjk3MTY3NDQ2ZjIyYzk5Y2JkYzlhOGNkYjIwYjk4YjQ0MGIifQ"
+        },
+        {
+          "resource": "repo://scripts/integration_manifest.py#L285-L330",
+          "version": "repo-lines-v1:sha256:9282437f4ade89cdb610a2085e087f51dc24202acf763200347fe27b9dba0dde:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkM2I5NjIwOWRkNzYxOGQxNmU0OWFiYmMxZTMwYmU5NTRiOGI4NzI3NmUyNThlYzJiNzkzYjg4MDU0ODI5YmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhYjIxODQwZTU3MzM4MDMwYjRkMTg1ODY1MTE1ZDdhMTg2MDAyMTBiNDBkZjM3ZDM3ZjlkNGQ2MDEzNDYxMTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5NDVhMjhiZTg4Njk2NjFlOWM4MTM1ZTc5YTY5MDhkNWM1MjNhMGFhNjVmNDIxMDUyNWI3ZTczMDk0NTYwMGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk1NDlkMDdkNmRmMDY5NjUyNTY3OTAxZDQ1NjY3MzRlOTRlOTlkYmI0NzM1MzE0ZTBkZTg1NGMwNjA0N2NhMzcifQ"
+        },
+        {
+          "resource": "repo://scripts/integration_manifest.py#L399-L408",
+          "version": "repo-lines-v1:sha256:77a178bf29e23c721c7021a87b0e150efdd3c892e54d50154bb36f873e90db33:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0ZGI5ODRjYWU4NGUwNDYwNzllMTkzNWU0ZTgzYWNlYzY1ZGNlODI2NzUyNDZlYmZlOTA3ODM4M2MyNWRmYjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiNTMwZWRlNGYzZTg4MmQ2ZTg1ZTllNmE3N2JiYTI5NTk5OTk3MWU2NTk5NGU0ZTA0MWJjMDAzYjE1NzhkMmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVkZmRmZDhjYzQ3MTNmNzRhMzViYzBhYjNhN2JkNmFiYzk5OGFkODBmNjFkMjA1YjIyZjlmYjE2NDAwYTQ0MWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_58f377b637f144a19d4f0afb2e73ae66",
+      "statement": "A released integration must declare a release_tag, and the release gate fails when git rev-parse cannot resolve refs/tags/<release_tag>; no declared integration is released at this commit, since all implemented entries are master_only or experimental.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/capabilities.toml#L940-L1334",
+          "version": "repo-lines-v1:sha256:a95fc119fcbd0079c4abc1a00f15c2deaed35935339aa4ef215c5a4de2d55a2d:eyJzZWxlY3RlZExpbmVDb3VudCI6Mzk1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI2NzFjZmMzNDAwNjdkNDNjOGVmNDUzMGVmNjVkMWE0Zjg4MDJkMDVkYzc4MDc2N2QzNmFlNmQxODUwMTI3OWYzIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJhNmM2NDM2YjRmNGNmYjY4OTU5OTFjM2MyNzQ4OGE5ZjBmY2Q3ZmI3MzE0YjJjMjI3ZTc0MmQzNjAzZWJiZTE1IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJmMGI4ZTBkMzRjOGZiMWI5YzJmZGFiM2ZlZDg4YmY2YTlhOTU0MTZlZTM4ZDUzNTJjNjU3N2U4NDc5MGNmNmYxIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        },
+        {
+          "resource": "repo://scripts/integration_manifest.py#L533-L547",
+          "version": "repo-lines-v1:sha256:a31f1753a73d1eb804fa495e726a09be2a129a977101e8a38cdf418c4c0da3e3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhYjk0ZjMxODM0ODFjZmUyY2Q2OWJkNjlkOWUxNGJmODgwNDZmNGQ4MjllZDE0OTk1OGFkYTk2OTJiYTVjZGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyMzJlMTI2OTQxNmExYzUzM2M5ODMyZjJkMmYzZWVkNDQxODg3ZTg3YWQ5N2Q3NjAzYmU5ZGY2ZDU0M2FlYzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdhMDdiNjdjZmI3YjEzMWE1ZmNjYzgwNTY3Mzc3YTY5MzJmNzM5MTM3MjgwZDgyODU2ZDgxZGQ3OGMxYzdlZTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ1NTJlOWM3NjliM2U2YTZlNTRlZjEwYWNhZjk3YmE5MzNmYmQwNTRlYzFkNzRhMDU0N2IzOTNiYjEyNDMwYWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_18b2d8f0ffcb405b9e5660232dfd7a02",
+      "statement": "A proposed integration needs a proposal pointer that is a GitHub issue or pull request URL or an rfcs/ Markdown file, and cannot declare toolsets, profiles, a release tag, or rationale; an unsupported integration needs a docs/ rationale pointer and cannot declare capabilities, profiles, toolsets, or evidence.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/integration_manifest.py#L285-L330",
+          "version": "repo-lines-v1:sha256:9282437f4ade89cdb610a2085e087f51dc24202acf763200347fe27b9dba0dde:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkM2I5NjIwOWRkNzYxOGQxNmU0OWFiYmMxZTMwYmU5NTRiOGI4NzI3NmUyNThlYzJiNzkzYjg4MDU0ODI5YmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhYjIxODQwZTU3MzM4MDMwYjRkMTg1ODY1MTE1ZDdhMTg2MDAyMTBiNDBkZjM3ZDM3ZjlkNGQ2MDEzNDYxMTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5NDVhMjhiZTg4Njk2NjFlOWM4MTM1ZTc5YTY5MDhkNWM1MjNhMGFhNjVmNDIxMDUyNWI3ZTczMDk0NTYwMGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk1NDlkMDdkNmRmMDY5NjUyNTY3OTAxZDQ1NjY3MzRlOTRlOTlkYmI0NzM1MzE0ZTBkZTg1NGMwNjA0N2NhMzcifQ"
+        },
+        {
+          "resource": "repo://scripts/integration_manifest.py#L463-L530",
+          "version": "repo-lines-v1:sha256:8f01fe18148526f953cb4d1d42a0083160b300880bae0cd1f62bbd8ee2010547:eyJzZWxlY3RlZExpbmVDb3VudCI6NjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4ODJjNGI3YWMzZjg4NTk1NGYyM2Y3MDgxMzg0MjRhZmZkODhiYzNkNTM0OGRiNWQ5YmRmMmNjMjU5NjlhNzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhMDE3NGQ4NDM1ZmMwNTFjYzFiYmIzZTk5ZGM3MzQwNzE4NmQ2MDg5NTg2YmY2MmNjOTczZDQ2NWRlZjI3YmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3YThmNmNhOWM3MmY4Njc2YzU5ZmI1MmE5ZmE1ZmMzOGI3ODIxZGU3MmJmNWRhOTQyMmYyMzE5Y2FkMmYxYjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIzNTBmZGYwZjdjNTYxZDI1ODg2Yzg5M2Q1MWNiNWE0ZGYzOWYxN2JhNWZkOTY1OTNlNzBjZjAyNmM3MmZhYjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_836667f01b0146d89526ba78b7dda8ab",
+      "statement": "Each tool exposure must have either capabilities or a non_profile_reason but not both, tool identifiers must be unique within a toolset, and every declared toolset must be referenced by at least one integration.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/integration_manifest.py#L209-L248",
+          "version": "repo-lines-v1:sha256:35e949adb4364679ad24a58527f58a839463d2c4d3197ffb736ecd064f5431f0:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExYjJiZTQ2OWI5ODJkMTA2Njc2NWM1NWY5ZjBhYThkMjdkNjA0MGI0NjVhMjBiZWYwZDhmYjU5NGNkY2JmZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmMTM3NGE1ZjI1M2FmN2Y1NjQzZWEyNTk1YzE2ZTYzOGIxMmIyMzUyMTczNDM2ZDkwZWU1ZDA4ZjE0YmI3Y2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2NTllZTMyODQ0N2IxZjU3NTUwOTQ1ZGRlNzgyOWNjNzUwOTZkYzI1OWFhYWZhNWJjOGM3YTU2NDcxNzYyNWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNkNjc0YjBjNmE2MTZlN2U2ZTkxZTIwYjA3YjZhMDM0ZTlmN2NmYzM0MWUwZjZkZGNiMGI5NTAyODVjZWFjNDUifQ"
+        },
+        {
+          "resource": "repo://scripts/integration_manifest.py#L393-L397",
+          "version": "repo-lines-v1:sha256:4cef499205f5b6df93a6955f5a56c2a94daa363788ee132602da272c5c7c7119:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjdlMjQ3M2UyOTFmMjU5YWRiZDYxYmExMzIyNzgwZjc2NTBjMTMzYTcyZTA3MmFhNDZjN2RmMzhmOTMxMmFjYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2JlYWQ0ZDkyMWQyZGJmMDUxZDlhOTc0YjgzMDUwODFkMDYyYTk4ZTFjNjI5OGNlOWNmZGQzMTEzZjI0YTZiZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWNjOGU0NzA5MGMzMzYxYjA2YzhhMTc4ZWQwZDE2NjczZDc5ZjEwMTkzZDM0MzZlMDlhZTBiZGFhYmY0YWIxMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c4ff8012fceb420f9562676efc4d0de3",
+      "statement": "Every toolset names a ToolSurfaceProbe; tool_surface_errors runs the probe and reports drift when the probed identifiers differ from the declared tool identifiers, and a probe with no implementation branch raises an unimplemented tool surface probe error.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/integration_manifest.py#L550-L566",
+          "version": "repo-lines-v1:sha256:f321ae4cbd3a26e99463a38d5acbbd987538cd61170caba3c15c65529df0f8ae:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjN2E5YzY0MDM2NDkzZDNlYzE0OWQ1OTE0NWIyYmExNjgwMzVhY2U4ZWE5NDZhMmRhN2MzZTY0NmY0ZDg3ZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyMzJlMTI2OTQxNmExYzUzM2M5ODMyZjJkMmYzZWVkNDQxODg3ZTg3YWQ5N2Q3NjAzYmU5ZGY2ZDU0M2FlYzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3YThmNmNhOWM3MmY4Njc2YzU5ZmI1MmE5ZmE1ZmMzOGI3ODIxZGU3MmJmNWRhOTQyMmYyMzE5Y2FkMmYxYjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMyNDg4NDQ3YTVjYWUzNWU0NTI2ZGFhNWQ3MzQ5OTBkNzljZGE5OWY2YTJiMWJiNjBhNDBkZGJjNzFhZTNiMDYifQ"
+        },
+        {
+          "resource": "repo://scripts/integration_manifest.py#L569-L575",
+          "version": "repo-lines-v1:sha256:d0767cc85bd7782b98df9c8167b9b7c68acab239d33b0e708a22b1b9704e8497:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzkyYjkwOTBhODQ5YzA5YjVlZGM2NGU1OWI2YTQzMmYzZGIzNjA4YjU5NDY4NmQzY2E1MTIyYjEyMTc2YzgxZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTRhYTc5ZGNjOWYxM2E5OTA2Y2M4ZDZmMWU2Yjg1MzE4ZjE5Y2MzNGQyYWViZDMzZWI5ZmMxZmIxNGZlYjJiZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDdhOGY2Y2E5YzcyZjg2NzZjNTlmYjUyYTlmYTVmYzM4Yjc4MjFkZTcyYmY1ZGE5NDIyZjIzMTljYWQyZjFiNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzg3NzkzYjIzZWVhOGEwMTgyN2I0ZTM5ZTY5NTFhZmQxYjk1M2I2NDIyYjg0MzE4MzNkNDk4ODhiNzQ1NGEzYSJ9"
+        },
+        {
+          "resource": "repo://scripts/integration_manifest.py#L686-L691",
+          "version": "repo-lines-v1:sha256:b532f596d8bc678cbcd8cb0ebcf6feb74e20da3758af43e66c025b48fe61860b:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODJkMDZkNWE0YzlmNDViNGNkYTMzOWMyYWM3ZGY0ODg3MjU4NmVjM2NhZTVlYTQ0MTU0ZjQzMWQ5NWU2OTc3NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjJiZWQzMDgwNjIwYjA4YWJiYzFmN2U4ZjQzMGUyYTMxNjg0YzBhM2IwYjcxYTVjNjU4YTg1NDNlMDBiMzhlZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDZhM2NjMjIxYTgyMjQxMTBjZGM0MjA2ZWEzZDAzMDliZWMxYWRjZmI4ZjJkN2MxYzg4OTc4YTA1YzUzZWRhZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWU4YTU1OGRjNmZlOGFmZDE4NmMxNmEyMTQ5M2ZjNDA0YWEyYjQ3M2I4ZDkyNzAxOWY5YzFhOGE1MmY4MzkxNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d7b147adb63348a1aab77e443c7a51c8",
+      "statement": "The server_mcp probe obtains the tool catalog by opening a FastMCP client to the Server's MCP server created with handoff_report_enabled=True, so the declared server-mcp tool list must match the full catalog including opt-in reporting tools.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/integration_manifest.py#L569-L575",
+          "version": "repo-lines-v1:sha256:d0767cc85bd7782b98df9c8167b9b7c68acab239d33b0e708a22b1b9704e8497:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzkyYjkwOTBhODQ5YzA5YjVlZGM2NGU1OWI2YTQzMmYzZGIzNjA4YjU5NDY4NmQzY2E1MTIyYjEyMTc2YzgxZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTRhYTc5ZGNjOWYxM2E5OTA2Y2M4ZDZmMWU2Yjg1MzE4ZjE5Y2MzNGQyYWViZDMzZWI5ZmMxZmIxNGZlYjJiZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDdhOGY2Y2E5YzcyZjg2NzZjNTlmYjUyYTlmYTVmYzM4Yjc4MjFkZTcyYmY1ZGE5NDIyZjIzMTljYWQyZjFiNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzg3NzkzYjIzZWVhOGEwMTgyN2I0ZTM5ZTY5NTFhZmQxYjk1M2I2NDIyYjg0MzE4MzNkNDk4ODhiNzQ1NGEzYSJ9"
+        },
+        {
+          "resource": "repo://scripts/mcp_catalog.py#L30-L37",
+          "version": "repo-lines-v1:sha256:af35c22c206b1683dbc21bf04e084a8c7a8bacde1c21d39ec24edcf58e3cbb20:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTkxMmI2ZDcxOGYyNzBmYjFhNjliMWIxYzA0Y2EwNDdlODhkZGM4MWEwMzFmNmExOGQ2NmIwNDBjNmRmMDU5YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzA4M2Y2YjEwYjNiY2EzYzQ0YTRkNGRjZWM2M2NiMzM0NjhmZGQyNThhNjVlMjljYTgwNTdkNzIzMjBjYTk0ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGJhNjQ4YzE2MjdkODlmMzlhNDA1NWRkMDk1NmNmMGVlNDJiNmJkYmNiNGViN2ZlYjYxN2EyZDIzOTY3MTRjMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1c0204c305a94be198516d881b9a3b09",
+      "statement": "The json_prompt_hook probe counts a host's UserPromptSubmit or other hook event as complete only when the registered command resolves to a script inside the plugin root and the script contains the required markers; otherwise the event is reported as an incomplete identifier, which the gate treats as drift.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/integration_manifest.py#L769-L804",
+          "version": "repo-lines-v1:sha256:556370b6179f7b25d6d7d49fa9ae3505f1f816e9d72272af922908f381c7edef:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5NmIxNWViOThmZjZjZmIyMjg4YWFjYWFjMDAzNWU4NTE1Y2QyZWU1NDE4N2I5NWI4MmQ2ZmRmYjY0YThlNzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUzNWE4NGZlNWE5MTRhZTg1ZDVmY2Q1MjFmY2M3NWFhOGYzMjNlNjg5OTQ2MzhjNmI3ZjIxYTQyMjJkM2FmMTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMyM2ZkZDQ1ZjBhYjUyMDM0MjdiN2IwNGIxYjE5OWZlZGZlZWY5NmU0OWI3YjdlODQ3MzQwNDhhMjcxNTczNGMifQ"
+        },
+        {
+          "resource": "repo://scripts/integration_manifest.py#L838-L850",
+          "version": "repo-lines-v1:sha256:0960ce0db0c02ac6838b2a183d038c7fba0e84925c2a0cb0923e41aa498fe6b7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1Y2VmNDQ5NTQxMzUyMDYwNDQ2M2ZhZWI2N2JjYjczMjFiMzIyYWExZmZjNmFhYjFlMzI1NjcxN2NiOTM3OGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3MjIzMTA2ZmQ4NzQyYjcwZWEyMzNmOWRjMzU5ZjRiMDJiYmIwNjliNzI4M2VlZjc2MjQ5OTUxNmJkN2I5YzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZlZmMxYTllOTM5OWRlMWM4ODY3N2NhNTIzODFmYzU5NGI2MTY5ODliNzgxMTY3MjBjZTA5ZjZhYWQzZDIzYWEifQ"
+        },
+        {
+          "resource": "repo://scripts/integration_manifest.py#L958-L962",
+          "version": "repo-lines-v1:sha256:4b383c5d873c890075739724f99f9b0b668df0127ed11b7654f5f97d7c2ebff3:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWNhMTU5MjJkOTUxYmVlMThkZDM5MTIzZGVmOWM5NmZhMGNiNzAxNWVmNmI3MzAwNTczNGUyYWU2ZGQ5YzRkMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODBhN2Y1YTllMjQ4MWNhZmIyN2JhZmQ1YjRiMTYwMmNlODJjNDQxMGU4ZjMwNDZmMjJkOTMwNjBmOGRlZjFmMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzk5ODM3YWVmMjA2MjE0MDExMDQyNjMzODJkNTc1ZThmMjcxZTIwNDEyYTcxMWY2NjU1YjIwNTUxYzRmNDgwZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGNkOWM1YjdhZjU1YWVlNDY2MTkwYjNlZDhiODJiZGYxODM2OTlkZjU5NGUyNDgzYjFmNzczN2Y0NjRkZGIxZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bf7594d69093424d836810af56c56745",
+      "statement": "Most tool surface probes verify marker strings or extracted identifiers in checked-in source, such as TypeScript registrations, Python decorators, and YAML provider entries, so a passing probe shows the expected surface is present in source, not that a host executes it at runtime.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/integration_manifest.py#L569-L691",
+          "version": "repo-lines-v1:sha256:a0071bdd870061fd6125267851e60e220b8cc80b90f55208e2fbab073f556c29:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI3OTJiOTA5MGE4NDljMDliNWVkYzY0ZTU5YjZhNDMyZjNkYjM2MDhiNTk0Njg2ZDNjYTUxMjJiMTIxNzZjODFlIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI2MmJlZDMwODA2MjBiMDhhYmJjMWY3ZThmNDMwZTJhMzE2ODRjMGEzYjBiNzFhNWM2NThhODU0M2UwMGIzOGVkIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJkN2E4ZjZjYTljNzJmODY3NmM1OWZiNTJhOWZhNWZjMzhiNzgyMWRlNzJiZjVkYTk0MjJmMjMxOWNhZDJmMWI3IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIxZThhNTU4ZGM2ZmU4YWZkMTg2YzE2YTIxNDkzZmM0MDRhYTJiNDczYjhkOTI3MDE5ZjljMWE4YTUyZjgzOTE1In0"
+        },
+        {
+          "resource": "repo://scripts/integration_manifest.py#L724-L742",
+          "version": "repo-lines-v1:sha256:ebd0393e3c46b2d8588631bf1d7e34b419ba66e31c116c78225761e91efb5337:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmOGI0OTMxMTU1MjJmMDY3N2UxYWM0OGQ4OTM5NWVlNDM5NTE3MTVmMTE2ZTI0Yjg2ZTkyOTIzNjgxYmY3YmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdlOGE5YmUzNjI3MmIyOWJmMWEyMmNmNWI5MzVkMWViZTRlMGQ3OGM1YWNhNGU0NjU4MGEyNTYyZDE0ZWJiZjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxODIyYzNlZTFiZTU4ZDc4NjIwMTY0ZGI1ZDBmMWIzNjFlYzJiOTdiM2ZiNzFjMmI4ZWJlMzlkNjExMDlhZWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e3f87e29965745bca25bfc5b5b0668a0",
+      "statement": "For the Codex, Claude Code, WorkBuddy, and ZCode server-mcp integrations, the tool surface gate also requires their packaged .mcp.json to reference both /mcp and powercontext.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/integration_manifest.py#L1006-L1024",
+          "version": "repo-lines-v1:sha256:c6c04cac12d0046532d8622e681eca20c2fe362a012319b75c08c5c0e9ec4c39:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhlM2YwNWM0MGI0ZjEwM2M1ODM3ZmYzOWQ0M2NlY2JhMGMzOThlNmVhMDRjM2Q3NjQ4MTBkNjFkZTRmODM0YTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3MjljOTJmYTg0NTk4MjM4YTgzZGM3NWRkN2VlN2VkYzEzMTNlYTdkNjM2YTliN2RlYzUzMDlkYThlNjZiZjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwMzk5MDZkMmYyMmZkNDQ4MGM0NjQ4ZjUxNmJlOWZmZDFiZGI5OTBmNDZjYmVkYWNlYmNkMTJiZDhmYTY0ZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiNzc1YmUzNzdmOGQ1YWVmOGVhMDNjMWJjMTI5NWI3MmNmYWQ3OTQ2ZGNiNzM4YjQwZTM5M2EwY2VkMjM0MjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e3c23dedc66942d89d2e9c5d35420cfe",
+      "statement": "A pre-compaction lifecycle has mode unsupported, best_effort, or required_capable; unsupported cannot declare a surface, opt-in, evidence, or pre_compaction_capture, best_effort requires pre_compaction_capture, source_capture, and flush_or_checkpoint plus a surface exposed by a toolset, and required_capable additionally requires an explicit opt-in surface and complete evidence.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/integration_manifest.py#L168-L193",
+          "version": "repo-lines-v1:sha256:d6d10e3b11cfbf4437fae13f6fcf049bcaee9e3af7a8e63e0b41a74d34986bef:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1MTUzODE1ZDJiYTA1ZjM3N2UxZTdhODg2ZThhMWQ1ZDEwMjkxYmU2MmNmNDJiZjE2ZWJhMDFlMjBhYjU1NDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyYWIwOTBiY2QxNjIwZmE2MmVhZWUxNTdhNzRmY2E2MzVhYTI5ZTEyY2JmZmQ2MThiNTc5MmQ4N2JjMDNhM2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBiMWM1NGExODBlNTIwNDMyOWEzZWI0MWRiM2M5YzAwMjRhZDRjMzk5MjYzMzQwN2M3ZDRiYzBjMWM3NDRmOGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUwZTdkZGRlMjViNDVkNTA2NDc2NGMzNDVkMTk3NjdkZDQ2YmM0ZTk1ZGQ2MGVlYmQ2ZDQzZjcwNWY1ZTRkMDcifQ"
+        },
+        {
+          "resource": "repo://scripts/integration_manifest.py#L285-L398",
+          "version": "repo-lines-v1:sha256:8523c06ec689cc3d2e794af8c3ac6d92f117ae3be173db3c8d9099b595ce1bec:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJmZDNiOTYyMDlkZDc2MThkMTZlNDlhYmJjMWUzMGJlOTU0YjhiODcyNzZlMjU4ZWMyYjc5M2I4ODA1NDgyOWJiIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIwOTQ1YTI4YmU4ODY5NjYxZTljODEzNWU3OWE2OTA4ZDVjNTIzYTBhYTY1ZjQyMTA1MjViN2U3MzA5NDU2MDBmIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJmYWYzMDJlOTVmOTU4NzE2YjM3NzVjNDNlMzM3YThlYTAxNmFiNjc4ZjdkM2FhYTVmNWZhNjZiMmVhNGU5MGU0In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_b9681e86ef9c460996313d5b337aa16f",
+      "statement": "At this commit OpenClaw (before_compaction) and Pi (session_before_compact) are the only best_effort pre-compaction integrations, and every other declared agent host is unsupported; no integration uses required_capable.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/capabilities.toml#L1029-L1047",
+          "version": "repo-lines-v1:sha256:4c8370e6d7c087be2f2d74eb3b9982433117d362354d9449271d315cd4e64903:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3MWNmYzM0MDA2N2Q0M2M4ZWY0NTMwZWY2NWQxYTRmODgwMmQwNWRjNzgwNzY3ZDM2YWU2ZDE4NTAxMjc5ZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0NGQ2OWFiNGVkNWE5YjZiMzRmYzQ2Zjg0MmM4ZjAxYTVmZDVmNjdkY2UwMDBjOTc1NDllNDdjMzkxOGIwZjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1MzJkZWUwNTZlMGZjZDg2NTBmZGQ2NmRjYWNjYTU4Y2VkNWQ0ZGI5YTJiZTZiYzlmNjJhMWE2NDgyNDY1NTkifQ"
+        },
+        {
+          "resource": "repo://integrations/capabilities.toml#L996-L1014",
+          "version": "repo-lines-v1:sha256:8069e8e891019e6dbce10d9e7e5432ccd92fe95b878204995d9bf34c6811d3c6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3MWNmYzM0MDA2N2Q0M2M4ZWY0NTMwZWY2NWQxYTRmODgwMmQwNWRjNzgwNzY3ZDM2YWU2ZDE4NTAxMjc5ZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVkYTFiMzAyYjZmZDczODRlNGQzN2IzMmIyYTc3MzQyNzg1Y2NhODMxYTI4NjgyM2FhZGJlYWU0NzY2ZGZiZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiODhiNTBkZDI0OGVhNTcxNjExNmMxNTZiMTg1OTE3NzI2NzIyNGYxYmRmNTFlYTkzYTI5NjA3YzJjZTUwMWMifQ"
+        },
+        {
+          "resource": "repo://tests/test_integration_manifest.py#L155-L185",
+          "version": "repo-lines-v1:sha256:9fa01811defcf51ab44f1cc76e178b70072895a5fcd83530f7e2584df92a1c0c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMThmNDc0MzJmMmNjZjI3YzIwOTRkOTExZTQzMzI1YzAzM2M4ZDhmNTI3ODJiYTQwNDgwYjEwOGZkMzUyNGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0ZGRmNGNiZWU5YTM4OWJjMzQ2OGI3NzFlNmYxOWM2Y2U5NjcxYjY4MzhlNWQzOGUwNWI0ZGFlN2ZmN2IzOWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlMWY4ZWM3YjA4ZDkyMjQ2YzkyZmE1NmQ3MjdmOTc5MzlkNjEwYmJmY2IxNmEwYjMyMjkxZmVjNjA3NjIxZjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRjNWMxZDY1ZGU5YmJiZTQ0OTZmMTMwOTI0NmQ4M2M1MjZmZGY1OGU2OGEyYTAyYjUyMzYwYWI4YWI3N2NjODAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_65798e7cb3aa4ea4bd26bbe14007c956",
+      "statement": "The manifest declares 16 integrations: 11 agent_host entries (nine master_only hosts Codex, Claude Code, DSH, Hermes, OpenClaw, OpenCode, Pi, WorkBuddy, and ZCode, plus experimental kimi-code and minimax), four framework adapters (experimental pydantic-ai and dify, master_only langchain and langgraph), and one evaluation harness (master_only bub).",
+      "evidence": [
+        {
+          "resource": "repo://integrations/capabilities.toml#L1308-L1334",
+          "version": "repo-lines-v1:sha256:52bf3a2f2bafd7b8e05ebee026c65e3acb424f484acb27b61295d251c52a3ef2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3MWNmYzM0MDA2N2Q0M2M4ZWY0NTMwZWY2NWQxYTRmODgwMmQwNWRjNzgwNzY3ZDM2YWU2ZDE4NTAxMjc5ZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2YzY0MzZiNGY0Y2ZiNjg5NTk5MWMzYzI3NDg4YTlmMGZjZDdmYjczMTRiMmMyMjdlNzQyZDM2MDNlYmJlMTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUxZWY4NmQzMmI2MzQ3NDc1YjRlYjE5ZTExZGVhZTBkOTNiZDA3NDExMzAxOGZhZjgyMGJmMWZmMTNjZGU5ZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://integrations/capabilities.toml#L940-L1130",
+          "version": "repo-lines-v1:sha256:47de9ec8a03b4b0df85df0b875bf287422b8cce8935734a61a19c21579ec875d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTkxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI2NzFjZmMzNDAwNjdkNDNjOGVmNDUzMGVmNjVkMWE0Zjg4MDJkMDVkYzc4MDc2N2QzNmFlNmQxODUwMTI3OWYzIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJmMGI4ZTBkMzRjOGZiMWI5YzJmZGFiM2ZlZDg4YmY2YTlhOTU0MTZlZTM4ZDUzNTJjNjU3N2U4NDc5MGNmNmYxIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI2N2MxM2ZlMDM2MjU2YjdmZjczNzRhNzVhNzdjYzRhZjA3MDFiZTIxZWRiYTdkZjM5NThjYWE0OWYxZjMyNjlhIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_ba6de8463c694c1ca97982bd19312efe",
+      "statement": "The minimax integration declares no support profiles although it is experimental, because its declared capabilities omit context_injection, so its derived minimal profile is empty.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/capabilities.toml#L1322-L1334",
+          "version": "repo-lines-v1:sha256:5e867d3642c38ac8162c6baf5f337c11b0bbc23ae0c3fdd28e79342cbda1aa47:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3MWNmYzM0MDA2N2Q0M2M4ZWY0NTMwZWY2NWQxYTRmODgwMmQwNWRjNzgwNzY3ZDM2YWU2ZDE4NTAxMjc5ZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2YzY0MzZiNGY0Y2ZiNjg5NTk5MWMzYzI3NDg4YTlmMGZjZDdmYjczMTRiMmMyMjdlNzQyZDM2MDNlYmJlMTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJjYWViODg1MDliNWFmNzkzYjNmZWE0NTE1YTRhN2ExYzJlMWU1ZDQ3OWY4MzgyM2NjYWFiNDc1NzBlMWY0MTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://scripts/integration_manifest.py#L410-L418",
+          "version": "repo-lines-v1:sha256:b6c90e2a0b21e0c930983080f4d47107d608373762fdc95e2db8c2da3ecbee1a:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDA0ZTdmZTBkZWI5YjIxMzFjYjgxYzU2ZjlkYzYxNzUyNGViNmRiYjliYWJmMTViNjZhNTkzNDNlOGU2MDZjMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjFkNGE0Y2ZjY2FjNmNiMzFmNjU2MTk0NjhhMmRkZDYyMjVkMWYzNTA5Y2RiMjdlZGM0ZWRlOTI5YzcxMTk3MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGNjNGE3ZDFjYzc5NmFiYTNlNDY3MjMzMjdmNTE3ZTlmODExOTgyZDI1MGYwNzAyOTg2ZTRiNTc2NGFkOTU4OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDNmYmZiNGZjMzgwNGUyNzI2YzZiOTVmNmEzM2E3OTMxNGJjZTQ2MmM4NDQ5NjcwMTUzYjFhNWRlZGUzOWI0MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d9deb6aaf5f34ed8b2fa5e21458724bb",
+      "statement": "render_integration_capability_reference produces an English and a Chinese matrix page with the availability definitions, the profile and pre-compaction explanations, and a table of ID, Kind, Availability, Profiles, Pre-compaction mode, Public surface, and Capabilities for every declared integration.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/integration_manifest.py#L1054-L1140",
+          "version": "repo-lines-v1:sha256:dc9c88bfef0db5bdf5ea0cc986988ffdcef75689cdf79df420f755b665568941:eyJzZWxlY3RlZExpbmVDb3VudCI6ODcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlY2U1NmJmMmNmNzZhYjA1OTJmYzJhZWIzYjVmZGMxOGZlNzljNzBkMDhiN2Q2ZWRlNDliYjEyMThmYWI5YWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNTIyYzZhNTZlNDIyZWQyZTdhZDYzYzdkZGEyOWE4ODA5Y2MyODY2ZjgxODJiZmJlNTY3YTc1NTYyYjVkY2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5ZjkzMDgzYzE5NzEyMWI5ODI3MDBiYThhZmFiZDE3MjJjZjFkM2U3NDA0NTA5ZTgwZWZhMjcyNDdmNjJmMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljMTJkOTk4ZDA3YjkwNTY1Mjc2ODYwMTEyMzc5ZThkMTczOTkyYjQ1ZDE4MjY3NzM4MDQ1ZTcxYjFjODRmMTAifQ"
+        },
+        {
+          "resource": "repo://scripts/integration_manifest.py#L424-L427",
+          "version": "repo-lines-v1:sha256:9c441bf80b614b5963e215416bab5a2adceb212058950624a3d96fe7709780ee:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzA0MDM1N2IzMDVhNDk5OTI4YjEwYzA1ZGFkMzhlMTgzODVkY2U3M2QxNjgwNmRlMWJkNTI0M2VkZDUxNmZjZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTM3YzE5ZmQxZjY1NzI5OTk3NjUyYzU3OGYwZGNiNTRmZjU3ODFmMWY0NTA4OTU1ZDQwZDU3ZGVhMWJmNTZmNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGEzYWVlYWQwYjJiMDM3NWEzNTVkNWY2Y2JlNGU3MTRhYTJlODhlOGM1ZGJiOTUwZTYxM2M1NDEyYjgzZTZlOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_91f1aec64f7e4e31be5ec503b5e3dc5c",
+      "statement": "scripts/generate_integration_manifest_docs.py runs the directory, evidence, release tag, and tool surface gates before rendering, raises without writing when any gate fails, writes the en and zh matrix pages, and with --check fails when a checked-in page differs from the rendered output.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/generate_integration_manifest_docs.py#L26-L69",
+          "version": "repo-lines-v1:sha256:f81b3201d0a65eb153bc1fcaf91019f1556acf38eeb6820ced68681d2c633686:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwZTBmZWE4MzdkNmYyODJlMzJkZWRhMzAzOGFjMGNjNzMwYWQyMmQzNzYwZTY3ZDA1MzBmYzE2NjYyNDI1ZWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4ZTk5MjMyY2QzYTMwOWY1MGNiZDZmNjYyMTI3ZWVhYWZjZTFmNzM2MjkyZGVmYjExM2Q5ODFhMjBjN2Q4NTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIzOTE4ZmIxOTUxNTk4NmZkY2FlYmUwMzkzYTYwNGViMWMzNGY1NmM0YzQwNGUwZWZhMWJkYjdiNzNhNDU3NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f1936c6e34f14197b70cf573cf0b51d5",
+      "statement": "The Makefile exposes integration-manifest-docs to regenerate the matrix pages, integration-manifest-docs-check to verify them, and integration-manifest-check to run the docs check and the integration manifest tests; the aggregate check target includes integration-manifest-check.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L22-L22",
+          "version": "repo-lines-v1:sha256:421400429108700a55676bdc0989eb51aa1c43114a03a6479209012fd959a413:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDIxNDAwNDI5MTA4NzAwYTU1Njc2YmRjMDk4OWViNTFhYTFjNDMxMTRhMDNhNjQ3OTIwOTAxMmZkOTU5YTQxMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDIxNDAwNDI5MTA4NzAwYTU1Njc2YmRjMDk4OWViNTFhYTFjNDMxMTRhMDNhNjQ3OTIwOTAxMmZkOTU5YTQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTE5NmEzYjdhYTMwMTljNWUxYjA4ODY5MGMxYTRiOGM5MDk3Nzc5MTMyNTYzMmFmZWQzMDZmZDMxZTI5ODViZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTUxZGEzMDZkNTVlZDEyMjRlZDI3NzllZmIxODRlZjk0NmIyNDNhYmIwYzlkNzA1MWY4YTUwNjcxZTlmNzc0MSJ9"
+        },
+        {
+          "resource": "repo://Makefile#L295-L305",
+          "version": "repo-lines-v1:sha256:144f44103cf70197262ad89001f83cc423499c69d2db5469a5b556eb7b189277:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3NmZjYzVmMzVkMzQ1OWQyNjZhN2IzODMzMzZlZjFlZGNiZDZiN2U2MGYyMWU0ZDA5ZjNkMWQ1NjMxYWQ5NjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3MjNiOWJjMTI0ODgwYTRkYTcyYTRiMDY0ZmYzN2ZjZDAxOWNiYjQ3MDgxNDUwODc4MjMyNGFmZjhjZTM1NzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY0NWIzMTJiODE2M2MyMTA4ODM0MDdiNTQ2ZjVjNWYzMjg3YzNjY2RmY2FmY2U3YjU3MDI1Nzc4NmJiYWRkMWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiODExN2UxZTYzYTAyZTI2ZmVhNDU4MTU0ZWIxZjgzY2ZhYzFlMWNjMGI4ZDBkMTlhZTg2ZDdjZTY1ZGZjY2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_80548ac2d08647aa90c2ddce438a05fe",
+      "statement": "The generated capability matrix pages at docs/en/docs/integrations/capabilities.md and docs/zh/docs/integrations/capabilities.md must not be hand-edited: they are rewritten by the generator and compared byte-for-byte by the check target and the matrix currency test, and the rendered output carries no in-file generated banner.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/generate_integration_manifest_docs.py#L43-L69",
+          "version": "repo-lines-v1:sha256:2a877495140398506cce86d0429a3628c3292c11d6e2c58e0dd239380c0f402f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlYTgxMmQzZDViNjY3NWRhNWQ0NTYwNWJiOTA0ZWRkMWQ1YzUxZjc0NDBjZjgzY2Q0MTE1ZjdkY2MwZmRmZDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4ZTk5MjMyY2QzYTMwOWY1MGNiZDZmNjYyMTI3ZWVhYWZjZTFmNzM2MjkyZGVmYjExM2Q5ODFhMjBjN2Q4NTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE4ZDM2OWJjZmJkZDVkOGU4NGZmZmJiMWNiY2FkOGJhZDgxNWYyMWE2Y2U0Y2I0MDZlZGE3Yzk5YWMzMDllNTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://scripts/integration_manifest.py#L1054-L1066",
+          "version": "repo-lines-v1:sha256:e4a3e1ec3edb761b91c40585b8c80f63939e0dd7ca2244006a4a49b78e642955:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlY2U1NmJmMmNmNzZhYjA1OTJmYzJhZWIzYjVmZGMxOGZlNzljNzBkMDhiN2Q2ZWRlNDliYjEyMThmYWI5YWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhMWQyMDEwZmEyMTZmZmJlYWMxZjRiYjllNjQxZDBmOWJmOTIwODdiODFkZTZlMTljNjk0NTJlZTU3YzJhZjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5ZjkzMDgzYzE5NzEyMWI5ODI3MDBiYThhZmFiZDE3MjJjZjFkM2U3NDA0NTA5ZTgwZWZhMjcyNDdmNjJmMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg2NjMzNDUwY2M0N2E0NzFlMzFiYmU0OTVkZmE1MDgyMDIyNjM0MmI0YTAwY2QwMDE3NGVkNzMyMzBmMDIwZjgifQ"
+        },
+        {
+          "resource": "repo://tests/test_integration_manifest.py#L257-L262",
+          "version": "repo-lines-v1:sha256:f8fc0890b9dd112ef3746099644cfa31b4dc54435795fa5696ea82613ef5117c:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ3ZmFmZDY0MTRiODc5NDQxOThjZjlkNjcyMmU4MGRhYmI5ZjFiYTJiOTVhMGVjNjhjZWQwOGI3NzMzNTJjYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzBjMWYxODhmMTQyZWQ3YTgyNDY4MGIyMDcxNzJjNTUxOWJjNjE0YTQ4ZmRhN2NmMTY3ZWRiOGRkZjc5OTU2YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2NjMTRjOGUxNWU2ZDhkZDJjMWRjYjlmOTFmODE5MjIyYjJiZThmODk4YjA3YjVjMGZkNWFmMjdkYzkzMWZlNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjIxODhlMTk5NmU0MjQ5NDU1MjVjNDhhNzc2YmZjMGI2ZTgxYzhlOWYxMjcwZmJmMDNiYzMyMGJiYjM4NjFiOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6e0682c1bdac4f2fa1bcfe5d310f16d1",
+      "statement": "integrations/kimi-code/plugins/powercontext/profiles.json is generated by scripts/generate_kimi_profiles.py, which must be rerun when the Server MCP catalog or server-mcp capability assignments change; its --check mode fails when the file is stale, and no Makefile target invokes it.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/kimi-code/plugins/powercontext/profiles.json#L1-L12",
+          "version": "repo-lines-v1:sha256:259e2eed99f34f588b74e22347e0cfedd551f527038a05c0630d06d9768a114f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1NzRhNDM1MDFhOWFmMGJhY2RiZDMwM2ViNWMxZjMxNmM0NDgwZWQ3OTljYjU5NjFmYzIzYTY1MTNkZDAxMDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQyMzE0YTViODQ0NDA0N2ZlOTNlNmM1N2UxNjBmZjk3YTNiNWM4YThhNDY1MTM3MDY2NWIxOWU2NmNlMWE3NmQifQ"
+        },
+        {
+          "resource": "repo://scripts/generate_kimi_profiles.py#L1-L61",
+          "version": "repo-lines-v1:sha256:8642cb5daf263e2ef987c380f8de62d5f399e771b1b1a4698f75e39365684ded:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2ZjAwM2E2YTljM2ZhMWYzYjU2YzcxODVkZmY3YmM4ZjdiOGM4ZmY1MDU2YmI2OWJmOWFjZGFlZWQzNTc4MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyYTIwMTZlZWQ4YTQ0MmM5YWRhYTllZjg4YTkxYjExOThlNDdlNThkMzlkMzhmMTYwMDVlYzZkNzczOTViMWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_631a3759aacf4dcdbf39a546c23bf157",
+      "statement": "In the Kimi profile generator, the minimal profile is a fixed three-tool list, recommended and full are computed from server-mcp tools whose capabilities intersect the profile capability set (excluding get_handoff_report), and the full profile adds approve_candidate, reject_candidate, and revise_candidate explicitly.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/generate_kimi_profiles.py#L31-L50",
+          "version": "repo-lines-v1:sha256:433b458865cb721d4bcc2950b6593e9b943ed95bccb998ddce0fe1da933c7624:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0ZTYxYzI4YmE2MjkxNDIyMjY2YmI3Y2FkNTRhOWJkNmU0OWRmMzJiOTllMmQzYWY3OWZkNjU3MmY0Mzc3NjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM5Zjc3ZGVhYWUxYTEzZjg0ZDM5ZjMzNWYxZGYxNTU3MThmNWM2OTRmNzFmODg3ZGIyNDRmOTU5ZDY3ODNiNzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwZDNlYjFjYWZiNDRiZmUyOTM2YmQzMDZlZmYyOGRmOTJiMjA2NWUxNWY1MWU4YjJlNDRiYzBmOWFkOWNhMmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_daadd589877f4a79963931f14eddb543",
+      "statement": "The HOST_GUIDANCE mapping in guidance.py holds only distribution facts for each host: package roots, recognition source files, and an optional package name; supported capabilities are read from capabilities.toml, not from this mapping.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/cli/guidance.py#L34-L101",
+          "version": "repo-lines-v1:sha256:480188253f23cd33945dbae93a38c84fc270dcbabe0ee205d7f5bdc55387904b:eyJzZWxlY3RlZExpbmVDb3VudCI6NjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZiNmYxNzYwNGMzM2FhZjY4MjZkZTJiOTIwMmY4ZDU3OTcyY2M2YTBmMzdkYTFlNjlmNTMxNWUzYzQ3MTExNDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjYjFhNWFmZjIxZmJjNTRmZjI4Zjg5ZGRkMGI1NWQyYjYxOGM1NmIwMTFkZTYxNmVhMjQ3ZDE4OWE2ODVjZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjllOGNkMTI4ODVmMTdmZmVjYWQzMmQ5MGVkYTdlMTRkMDQzNGMyMzFlM2JjZTFlZDUwOGJkMTIyOWYzZDljMjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_22d1283347bb48009075cfaae52055e8",
+      "statement": "Guidance refresh owns only the text between the POWERCONTEXT-GUIDANCE START and END markers; malformed or duplicated markers, and unmarked non-empty content, abort the refresh, and every merge is planned before any file is written.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/cli/guidance.py#L157-L183",
+          "version": "repo-lines-v1:sha256:eeb25eb467fc2043c7b23a841180dc944307aa7bac9247103aad3445666da081:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhlN2Y0MTFhN2U2YThjNmZlZDNiY2YwNDY5NGM5YzFjNWVkMTgyODQzOGIxNDcyYWRhNzY0YjU0YTJmN2U0ZjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3N2NjYWEyOGE3YjMyZjgwZTIwNDc5YTE2OGI5MWVkYmYxMTQyOWQ2MDQyNjU4NzNlNjUwYjk1YWQ4NmMwMjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA0MjU1Y2QzMmVlY2ViMWU1YzRmYmE2N2ZiZWE3NTRjNjQyODdjMTI5MWRkMWYxNTllZGVmYzk3ODk3MDUwMmYifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/cli/guidance.py#L240-L299",
+          "version": "repo-lines-v1:sha256:2b54bf436d832c4447704a8ec0de84221431ce2f0e6f99ae856a81370b75c168:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhOTA2NDY1YjQwYWFiZTIwMDJhZjFlNjAxNzJjZWU2YWYyMDU5NTgzYjEzZTc5ZTNkYmYyYTg2YTU5ZmFmODQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlmMzA2MjFmNWVkNmJjM2U4MzY0YTEzYzE4ZDIzYmY5ODc5MWQyNjkwMTMzYjViYjY5YWYwNTIyZjg2MjNjMmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkwMTQ0NDQyNzE3OWUxNjFhMmQxY2Q2OGQwMzBhMzk0NGRlMmUwZDc3ZGQ2Nzk5ZjMxZDNjMmY4MTE4MDc1ZTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6dd1920894554949a8444d6638efc366",
+      "statement": "The installers() catalog maps exactly the 11 setup targets, and the matrix test requires that set to equal the set of declared agent_host identifiers, so framework adapters and the evaluation harness are not setup targets.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/cli/installation.py#L119-L137",
+          "version": "repo-lines-v1:sha256:0ebf3875774ae85f218e127a6aec46a48c18a3bf9ff583de2dab67e4e4d6c539:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0NGZjNzA0NTAzMWM3ZTA2YWJmNDgzMDU5YjQzOGMxMTg1YTlmYTQzZDNhY2M3ODVlZjlhYzhhZjMzM2U0OGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2YzhjNGM0MWE2ZjY0NzM4Y2MwODZjYjE0ZWM3YjU2ODQzYTkzNjkxYjZiY2UyYzhlMjRkYzc2NzI4ZTk5YWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNlMDU2OWQ2NWM2MTJhYjEyODFjMTE2ZDAxNDFjYWVmMjhiNjUwNjUxNmY3Mjc1NTliZjFkN2M1ODMwNjJjZGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhkMTNiZDdkZTI4NmM0MTk1OTBlMDkxMWM4MzZlYjM5NjBhOTUzNmZlZTkwOTJkZWYzZjVmZmJlMjk4OWY4NTMifQ"
+        },
+        {
+          "resource": "repo://tests/test_integration_manifest.py#L40-L53",
+          "version": "repo-lines-v1:sha256:ff3623b626cd2219e58802b21264a1689276cc9ca31c8172c23241ce36a4d3fa:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmYzFlZjVhMGM0YmI2ZGQxMmIwNGNhM2ZjZWYxNjY0M2UxYzM4YjEyMjM2OGJiMzdkYjk1OGI3ZTM2MDU4YzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyMGQzZTBiOTg4ZGZkMmM3OGQ4OTRjY2FhMjM2ZWYzMzgxZjIxODQxYmQyNGViZmM0NzZjNmJiNThlNmVkODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5MDUxNzZhYjJiZGQ1ZDIzMmM3YzA2NDYyZDlkNzI5YjlmM2NjNGQ2N2I0YmExZWZmZmVhNGQyMTRhOWZkMjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3e31c1bed1f94b199c005380f1bb801a",
+      "statement": "The pi-tools toolset maps pc_review_approve, pc_review_reject, and pc_review_revise to the candidate_review capability, so the Pi full profile counts candidate decision operations, which contradicts the documented rule that candidate_review never grants decision authority and the server-mcp and Hermes toolsets' non-profile classification of the same operations.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/capabilities.toml#L193-L196",
+          "version": "repo-lines-v1:sha256:50d077d994f17210f5e022b4947f28cebd4ea2b7601d41dc0d34aac38902f028:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWNhZGI1ZjQ2ZTk1ZDVkOWUyYjVhMmRjY2Y1MGFkMTllMDJjNzQzYzllODk3MThlYzU5M2UxYWE5YWRhNjBiMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTU2YmE5YzdhOTFhZmNhNTdlYjU4ODhmYjAxNWY2OWZhNTA3NDRjZTdmYTA0ODI4NThmMzgzNjM0Zjk4MjRjOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDYyMWE0MGIzNzgxNzU3NGE2NzJjZjM4ZTkzZTE5NjJlNjdmMjhlNzQ0ZTg4ZTBjNzRkMGZhZDJjMDNmZDlmMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDZiYzhjN2E1ZTVjNWJkNGM1ZDZiNjU4MWIyMGNiZjE2ZTU2MmMzNmE4Y2FmNDk3ZWNhNzAzYTMxYzRhMmY3ZSJ9"
+        },
+        {
+          "resource": "repo://integrations/capabilities.toml#L842-L850",
+          "version": "repo-lines-v1:sha256:892d8e310bc582eb9a213fd776bcc987de04809a10007a192a21787717ac3a72:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTg4YTYzYmJhZDgyZGM1ZmMwMDliNjk2MDE4YzgwMTY2Njk3NTEyNjU5ODE4YWQ5N2MxMTM1ZGI0MDhhMDU3YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjQ5NDQyZjNhZjM1Y2YzM2I3MGNmYjhjMTZlOWQ0YmU4MjgxNWM3ODhiMGNiOTRlZGFlZDBjYjU5MzczMzFlYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjVkYmY1NTIwODg1NzAzNWFiOGNhODg3ZGQ2NTE3MjY0NTQyMzgwNjQ2MjM2MGNlNjgyNzVmNDYyNjM2NWFjNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmQxNTRkZmVmNzM0MmQ2MTU0Y2Q2MTM2NzczMjYxZTQwZTQxNzZmNjBmZWZhNmExNTZkODMyNGIzNTE1NzFmMSJ9"
+        },
+        {
+          "resource": "repo://integrations/pi/plugins/powercontext/src/guidance.ts#L29-L29",
+          "version": "repo-lines-v1:sha256:9ec65271f355df43cf51db2fc371889708d365983aa9c6f4083aacff0496525d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWVjNjUyNzFmMzU1ZGY0M2NmNTFkYjJmYzM3MTg4OTcwOGQzNjU5ODNhYTljNmY0MDgzYWFjZmYwNDk2NTI1ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWVjNjUyNzFmMzU1ZGY0M2NmNTFkYjJmYzM3MTg4OTcwOGQzNjU5ODNhYTljNmY0MDgzYWFjZmYwNDk2NTI1ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzVkZDAyMzQ2ODRkMzMwMGViNGUyMzI3OTVmMTRkOWQ1ZDQ1YjczZTU5YTNhYzE3ZjJlOTA1ODRkMzgxYmM3ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTQ0OThjNTRiNmFjMjU1OTk3YmUxOGUzNDZmMTAwYjNiZWU4YjY3ZmFiMTAzYzVlYmJhYmY4MjE1YjY1NjVkMiJ9"
+        },
+        {
+          "resource": "repo://scripts/integration_manifest.py#L48-L53",
+          "version": "repo-lines-v1:sha256:c72f05a6b6882bfdec34062dfe1ca92c007f73a83af95b1dd3e0cc77ee8bfe3d:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWI4OTYxZDNhYzQzZTU4NzdjMDYyYWUwNTkyNDY0MDRlZjIyODQzOTVkOGUwNDdmYWZhNzYxMTNkOTk4MjE1OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZhNzE1MjU3MmVlODRmMTA5MDZjNzRiOWYyYTkyNDM0ZGRhYjBlM2M0MjgxM2IwNGU1OTdlZmNlYzk1MWIyNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTdmNWNjMTFiYjJkZTVhNDBjODllZTc4ZGNmODQ4MDJlYzBkYzc2NDBjYzI1ZjViMzE5ZmU2MzI5ZmI4MmQ4MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzVhMmEwNTVhNDUxMTRhZGI3OWIyZGQ1ZTJjYTQ2MDQzOGIyZGFjMWUwM2Q5M2Y1YjQ1YzU4YWRmZDM1OWFmZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6a1730e436db41d0b6ee5f5802947a27",
+      "statement": "The Codex doctor required-tool list in system.py is hand-maintained with a comment asking maintainers to keep it aligned with capability-bearing server-mcp tools, while the doctor test derives the Codex server-mcp tool set from capabilities.toml and checks that doctor requires each one.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/cli/system.py#L58-L63",
+          "version": "repo-lines-v1:sha256:ab5b4739f96b4f2bbbe7901e96024470b2ae321e333aa3b44540bcbf7604e67e:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGFhNmZlYzFmZThiMjJkZjFiYzVlYjMxNmNhMjViNzdhMWU1MDg0YWRiOWE5MTE4NDdhMGM4NTY5OGI3MjAzMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjFiZmE3ZDlhMWQ4ODgyZTdiY2ZkMjhiNDE5OWQyNTI5ZDJmZTZjY2VkZGRkZjI2ZjI3MDM1OWRjZjVjMTgyMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGUxNWI2ZDFiNDlmMjYyZmJjYzQ3ZGZlZWM2MGJkYTY3OWYyMDNhMWQzNWQzNzFiMjQxYmQ0OGFjMjNiODU2NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTQxN2NlYmFiZjgxOGIyZWU2NjIyNjdmZjJmZjIzM2FhZWU3MWE2Y2QwZDFiMGU3YWJlNWE1Nzg4NjY0YmIzYyJ9"
+        },
+        {
+          "resource": "repo://tests/test_system_cli.py#L233-L247",
+          "version": "repo-lines-v1:sha256:47c77f39bf00437f9e6c343cc0bad390e700edce4c780e77d2b5ef112c5c9eda:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1MzM0YTZhMmU3MTdmMjg2NTk4YTQwZDIxYjlkMjkyNTZlZmRmODYyOTA5Y2NjMmVkYjg2YzRlMzRhNWE2N2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIzNmZmZTM5NjJlZDZkYzRlMjYxMTNjMTE2YzUwZGYyOTkxZWZkMzgwZTA2MjkyNWNkOTUzZmU2Mzk3ZjA4MjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg4MDg5ZTUwYWQ0ZWIyMzdmYzdiOTcxYTM5YTEzODhmOWI5ZmFjYTBiOTI3YmYxOTRhMmM2ZjQwNDJiNzgwNTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f03c87e7c91a43eabec8c5fb39bd8836",
+      "statement": "tests/test_cli_capabilities.py tests the Server capabilities command's extraction diagnostic output, not the integration capability matrix; the matrix is covered by tests/test_integration_manifest.py.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_cli_capabilities.py#L1-L60",
+          "version": "repo-lines-v1:sha256:283e8bb6e1bc59b0fa71c1ae406c006edbb93313fdfa4e406454842b5f5de0af:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2ZjAwM2E2YTljM2ZhMWYzYjU2YzcxODVkZmY3YmM4ZjdiOGM4ZmY1MDU2YmI2OWJmOWFjZGFlZWQzNTc4MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjYTVjNzM0ODRhNWQyZjM4YWVkMzQxYWY2MTM1MjM3NGMwY2I0ODE2NTkyYWMzMmFjMWVhZmNkNWU1OGFlNzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk0ZGM3ZGVmZDY4YzA4YWQ5MmQ1NjY0NzVjMjg3YmU5NmNkMWEwY2JmY2Y5OTBkZWEyNzQ3MTY2MzE0M2UxNGEifQ"
+        },
+        {
+          "resource": "repo://tests/test_integration_manifest.py#L1-L60",
+          "version": "repo-lines-v1:sha256:2d56364674f5a13eab287962fa80f88b4460757014771ae5d89ca92ae9fbcf6b:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2ZjAwM2E2YTljM2ZhMWYzYjU2YzcxODVkZmY3YmM4ZjdiOGM4ZmY1MDU2YmI2OWJmOWFjZGFlZWQzNTc4MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyYzM3NDIwNjkzYTQ0N2ExM2YzOTc2NDNhZDZjNWM1Mzc5ODE2ZjYzYzMxMGUyN2U3NzgyODMyOGQ5YTAwMjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhmNWUyZWQzYjY3ZTJmMzAzNWMwODIzZDgwYWVmODhmZmRmNzE5NDJmMzYyZmM3MWM1MzQwZTA4NjkxNDgxZjYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T09:04:09.583Z"
+  }
+}

@@ -1,0 +1,466 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:136b3952690731af877e9d4fe3be1f8c40aad28a4685d33a1fb004b63e62bf3d",
+  "claims": [
+    {
+      "id": "claim_620c7ee854e04a13b2f4c65540f23644",
+      "statement": "The PowerContext Codex plugin is a thin client of a running PowerContext Server: it embeds no storage and does not start the Server; hooks and MCP both call the Server over HTTP.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/README.md#L1-L12",
+          "version": "repo-lines-v1:sha256:9853889d51b6f708514a566a48fce9a1a206576c06d1f11e6bc4f1bf16fc39a6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1N2U2ODMzODY5ZjNmMzg3MWM4OTU5OTIxOWEwN2M0MDM0YzJkZjI4ZDcyMTFkMjE5NGNkNWY0NWViYzY3ZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2MjQxODZiZjQ3N2RjYjI0NjE0MGM4OWM4MTI0ODNmMDYzMGVjMzczMmMzMjhkZDAzODhiYjFiYmMyZWJmOTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI4YWIyZWY3N2FjZGMyYzU1OWM1OTMyMDNkMjU1MDg5NjlkNmQ5MGY2N2JiMGNmZTZlZjIyZDE3MTcwNWEwYjgifQ"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/README.md#L1-L10",
+          "version": "repo-lines-v1:sha256:ad40653206e0f7f3f9315ffe8a36c3906719e4484b4468bebf55428abf3e12a6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmYjJhNjg2ODdlMGVkYzBlM2M5YmNiMmYzNGE1YjliM2VhZTk3YTU5NzI0MjdlNmJkNTU4NjE0NWE3MWQxYWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1MzNmMTRlZDUwMWFjOGZiZGRlYzAwYWUwZTYwYWZjNjY0NjkzZmM5YWY3NTNjMThhOTdlODM3YmM1N2EyZDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ4Zjc3NDY4NjFmOWRjNTMwYmU0NjRjNGIwYzBhYzQ5NGJmOTIyYzAyYTA3MTU4ZTY2OGY1MmIwMmYyN2YzZTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c2a0d96db00d43d486692f08fa8e8b93",
+      "statement": "The plugin declares exactly four hooks in hooks.json: SessionStart with matcher startup|resume|clear|compact|fork and timeout 10 running session_binding.py; PreToolUse with matcher mcp__powercontext__.* and timeout 10 running bind_tools.py; UserPromptSubmit with no matcher and timeout 10 running recall.py; and Stop with no matcher and timeout 10 running token_savings.py.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/hooks.json#L1-L55",
+          "version": "repo-lines-v1:sha256:275ebf316f8e140f97353f3e98ee486d68db38e50cc2798f4e2c453952371c92:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_af04328186be4e2ebf10132600bc1aa5",
+      "statement": "The installed MCP entry is a single HTTP server named powercontext at http://127.0.0.1:8000/mcp/ marked required false, whose Authorization header is sourced from the POWERCONTEXT_CODEX_AUTHORIZATION environment variable; the settings loader rejects any MCP configuration that defines other servers or a different header source.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/.mcp.json#L1-L12",
+          "version": "repo-lines-v1:sha256:4e0bc09e95feeca5da5aa1a85458374849d23f900fde7a63683fc5e12c658cc7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/settings.py#L1-L120",
+          "version": "repo-lines-v1:sha256:e04f8c1bf2e16c40780992153405f31d61411ee515eb9c95ba2a5da2a0f9f5bd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIzNmYwMDNhNmE5YzNmYTFmM2I1NmM3MTg1ZGZmN2JjOGY3YjhjOGZmNTA1NmJiNjliZjlhY2RhZWVkMzU3ODAyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJjNDAxODhlNWQ4YTRkM2ZlNTNmYTI0MDViYTdhZjc4NjFkNDUyOWRkN2ZiMDg3YzU0OWUyYWI0YjdlM2NiNmU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_db42f5609892471585e4e3ead6ef7d84",
+      "statement": "Hook settings take the Server URL only from the plugin's .mcp.json file, not from a URL environment variable, so the hooks and the native MCP client always use the same endpoint; setup rewrites that URL in the installed plugin cache.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/settings.py#L150-L185",
+          "version": "repo-lines-v1:sha256:9aeba6c7d92b292edb73763fa3d32e624c3b30a29e23b9ea879eb2e0b21dc25c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2MjM5Y2YwN2NjMjYyZWRiMWRjMjYwMjk2MzQ1NmY1OGE0YmJkNjUzNjQ2YmY1OGRmMDM3NWYyMGZiZGZlZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkNDA3Njc0YjlhNTM3M2MyNzIzYjQyYmRlN2ZiODZjZmExZjYzMDg0OGYzNWVlNGY4NTA3OTliMDBkZWQxNjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY2YjgxNDI2OGQ1MWE4YThiZjU4ODcxMWU2OTU0MDM0YzM5NzY4ZThiY2Y5ZWU3Y2RhYmE5NmM1YzM2OTRmM2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBjNWRlOWYxODA1OWY0NGMxZTRkMmIzY2U5MWIyMTdhYjZiNDgwNTMwN2EwODU2NDdiZjkyZWQ5MDI0ZjZmNWUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/cli/system.py#L344-L381",
+          "version": "repo-lines-v1:sha256:8eb7c299b628838f3ce2a4c807137e2c0e874acf223e578e42f38fae29040b90:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0ZjRlODdmY2VhOGQyMWU4ZGZhZjYwNzUwYTkzNDRkNGUzOGU2MWIyNmMyYzgwZTAyODZiYmU5YjIzMWYxMWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiNDcwYjQ2YmJiN2FiNGE1N2E2OThlODhlZDE5M2JiMjRlNDI0ZmU2YmU2MzUzMDNhMTZlZGFmMGRmYjEyMGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ba1391e3e58844c4b456b2ec4a254657",
+      "statement": "A Codex Session is bound to one Scope by sending the Server an explicit Scope (if configured) and ordered binding keys (a session key and a workspace key) to POST /v1/scope-bindings/resolve; the plugin never derives a Scope ID from a path, remote, or branch.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/scripts/scope_binding.py#L127-L162",
+          "version": "repo-lines-v1:sha256:9c79cf92a8776b24153679797bc9e0ee486dcda2d1777913436fd9e0882e609f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxYTRkOWY1YzQ0ZGU1YWU4ZWEwNjFlNWQ1MDYxZTkxYmI3ZWJlZmZjZmNlMTQwM2IxM2FhMGQ3ZjdhMzg1NTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3MjIzMTA2ZmQ4NzQyYjcwZWEyMzNmOWRjMzU5ZjRiMDJiYmIwNjliNzI4M2VlZjc2MjQ5OTUxNmJkN2I5YzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNkNWM4NmJmMGYzM2NjZWQ0ZGQwYzliNGE1N2EwMzJkNzBlYzAzM2VlMDc5MDY5NmQ2ZjMzZDQ0YmVlZTk4ZGMifQ"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/scripts/scope_binding.py#L208-L229",
+          "version": "repo-lines-v1:sha256:ae9371ad9a1e6c346bb4d098e9ca6630a749458ab1e6f7c737632f7a2872adc6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1ODA0Mzg5NTU3MTA3YTI5M2U3NzA3YWRlMWQ0MDA4NWY1NjdjYjQxZTZmZDg1MWMyMDdmMTk1ODViZWUyMDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhhNWE2NDljZjRlOWY3ZDVhOTUzMjgyMjJjMjdmMmE2YjNhYTBlYzYwODQ3YTIyYjJhYjFiMmExMmFjNjVkNGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhMTZhZDBlYWNlYTM2ZjUxZWI5YzUxNGJhNDQ3Y2QyMTdiODAzZjRjOTg0YTQ5N2JlZjVjZjg5Yjk4OWNjOWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6ae2b134b23445548c0b09d71f763a78",
+      "statement": "The workspace binding key is the SHA-256 of the Git root path (falling back to the working directory when Git is unavailable), and the session binding key uses the Codex session identifier; both are lookup inputs only.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/scripts/scope_binding.py#L216-L229",
+          "version": "repo-lines-v1:sha256:c8eaf802c198a8887f5babe704c0f22f45ef596da99967faa0ae9039cc2d7484:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzYjRlMmE2ZWJkMmI0NjU4Mzg1M2Y2MGVlYjIzZmE5MWQzNzJhYTU2NjMzMDFiY2IxOGNkYWQ4YmY3Y2MyOTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhhMmI3ZDVjNDlkOTZhNGU4ZjliMDExMDVhNTU3NzE5YThmZGU0Y2QzM2Y5N2EyZTYzNzg5ZGNkNjNlMWUyMWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhMTZhZDBlYWNlYTM2ZjUxZWI5YzUxNGJhNDQ3Y2QyMTdiODAzZjRjOTg0YTQ5N2JlZjVjZjg5Yjk4OWNjOWQifQ"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/scripts/scope_binding.py#L353-L368",
+          "version": "repo-lines-v1:sha256:964deb73a7e2b6bde3d78cec575b1a762adc1e5aeda574bc91d0bcbb7f69405a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwYmIzMGRmODFhZTE3NzU5ZTc1ZDM1MmE0ZjFlNDA1NmUwZjk2ZjU1ZDg2N2ZkNmM0NzcwZDg5ODRlY2QzNzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3YWY4ZGU5N2JmZWU2NWU3ZDcxMGNiZDdiZDIwYWQ4NGJhMDM4MzBhMGM2YTllZmNhM2E3YTMzMzBiN2FkOWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjMTEyMGMzNGY5ODBmNjU0NzkyNWNlMWQyYTVlODhmYjgyNzBmNzY5MmM4MjgzOTM4NmIyNDQ4ZjUzNGUxMzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA3ZGJmOGE0M2ZlMTViMWIxMjFkOTM0NDRlZTZmZTU5ZjllYWQ4N2UxNmY5ZTMyNmVkMGJlYmMyOWFkNzEwMTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1382716c332c41c2882d92ba02708c1e",
+      "statement": "When an explicit Scope is configured, the resolution is not persisted as a Session binding; otherwise a resolved Scope is written to the Server as the session binding with PUT /v1/scope-bindings, which fixes the Scope for the rest of the Session.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/session_binding.py#L183-L228",
+          "version": "repo-lines-v1:sha256:cfcdbc5c863a4f01d6da4d280d2e7ec760a0ef4f391b859d2b61afdba8ecb566:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3ODAyOWY2MDY3NWI5ZWE3MzMwOTQ2ODk3N2RiZDA2MjIzZmJlYzQxNzBlMTY5ZTdlNWIwY2Q2NjY2YWQzMDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA1NzIyYjhjNGYyODMxYTA4YTZmZjE2OGQxNjUxMTRiNmZkYmFjZjk4NDIxNTM2NjI3NzY5M2JkY2IzYmQwMjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZlYWRiY2ZmZGQ4MWEyYjYxYmQ1ODBkZGQ0NjA3ZTljYTNlZDBkYTg1YTRhZGZjN2Q2ODMzNGIyOTAxZDRhZjUifQ"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/scripts/scope_binding.py#L127-L162",
+          "version": "repo-lines-v1:sha256:9c79cf92a8776b24153679797bc9e0ee486dcda2d1777913436fd9e0882e609f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxYTRkOWY1YzQ0ZGU1YWU4ZWEwNjFlNWQ1MDYxZTkxYmI3ZWJlZmZjZmNlMTQwM2IxM2FhMGQ3ZjdhMzg1NTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3MjIzMTA2ZmQ4NzQyYjcwZWEyMzNmOWRjMzU5ZjRiMDJiYmIwNjliNzI4M2VlZjc2MjQ5OTUxNmJkN2I5YzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNkNWM4NmJmMGYzM2NjZWQ0ZGQwYzliNGE1N2EwMzJkNzBlYzAzM2VlMDc5MDY5NmQ2ZjMzZDQ0YmVlZTk4ZGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_92ad8afb87b7482ea1822e4d8b2892f9",
+      "statement": "The scope_binding.py command-line entry point (--bind-scope and --clear-scope) manages only the workspace binding; it does not create a Scope, and an existing Session binding keeps its Scope.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/README.md#L14-L20",
+          "version": "repo-lines-v1:sha256:82464f9712e0931d23c4c2c2774f1ce733e7a285a1cab020ef2c4c5b3532cbfb:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmNlOTIzYzExYjAwMzVmN2VmYzY3NzZiN2U4NzZlNDc4ZTIwNGQyODczMWE5M2RmMTI1NDdkMmQ1ZGMxZDE4MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2M0OWViMWVmNGJiODRhZTdkODMxMTIyYzI5ZDJlMzEyYzk1ZjA5NjdkNmI3NDRmZWU1NmMwN2ZhZmRmMDI0YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjdmNGYyNzdmNjI3ZGNmNzlkMGQzNjRjZmUwZGM5Njg3NDcxNDYzZjAwNWRlMDg3NjI1MGQ0YTQ5MDU4OTQ1YiJ9"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/scripts/scope_binding.py#L371-L390",
+          "version": "repo-lines-v1:sha256:a3d840fa2936d60b60b310c807ef85a60ec4017d8d90a826409dfc6dad3ea0d9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiM2FhNzIzMDEyYWY3OTIxYTY2NjMyODU5ZDZkN2IyZDU0ZWY4NDJkYzEwOTY0NTZkNmNjMWUyMTEwOWZmYTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiNjRlOTIwMDBhMTljYTM4NTkzYTRlNmEwYmFjNzcwOTZkMWU5ODY5NDlhM2I2MjgyNmI3Y2VhNGY3M2Q5ZTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkwOTUyMDQ5ZGQ1MjIzMDBhNjM2NDYxMzUwZmY4MGVhMzQ5NmYwMmRhNjcwYWY1ODY4YzFlODcwNTM3OWUwMWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_70fa324ec67443e4b1bfeb2699738ad6",
+      "statement": "The UserPromptSubmit hook handles each prompt in a fixed order: resolve the Scope, consume the saved bootstrap receipt, scrub secrets, prepare recall context, and then capture the prompt; recall and capture are independent, so failure in one does not suppress the other.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/recall.py#L125-L200",
+          "version": "repo-lines-v1:sha256:fbad92f528b4f197f01abe62e1dcf1b591086793d16c1aec93eb4e38313982ba:eyJzZWxlY3RlZExpbmVDb3VudCI6NzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyMjE0YjIyYjNlYzcyMTdiZDUxZWJhNzJkZTg3OTRkNTZmMGY5ODk2Zjk1ZDljNWJiMWE1MmE5MDJmNmVkOTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1ZDE0ZDQ4OTU0MzBjYmI1MmNiYzVkN2M0ZDQ0NjVhZTExYTcyZDdmMjM0NTM5Nzc4MDY1OGNhNzljYWNmNzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdhOGQ1MDRlMjllNWUxNTEyMTM4MDUyOTNiYTk5MjEwNWZlZjY1ODU1NDAyYjA3YjZhYzVmMjkyNzkzMGRmZTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3a70ce44249a4fdeb0581fc0dd4a1582",
+      "statement": "Automatic recall calls POST /v1/context/prepare once per prompt with the bound scope_id and a max_bytes budget of 8000, and the hook injects the validated content unchanged with no second selection; the Runtime owns final selection, rendering, and citations.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/recall.py#L246-L268",
+          "version": "repo-lines-v1:sha256:a9500cc5c969aaade51bb1cd3775c752d501d940173d2a41b70b89f49ad80c79:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlYzE4YjMyNGEzZjU5OWQyY2Q0NWZmODE4MGE0NjM1YzI5Y2M4ZmQ2ZjhlNDU1Y2YxODM2NmZiZDA0MTAyNzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzZGYyYWNmMDZlOGMzZjAzYzcxMzVjNmU4YWM1YTljYTU0MzJhYmUwNmE3NGFjYTBmZGQ5YTUzYTAwOGY5ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY0MjM0MmY5NTM4MzFiYzkwYzZlYWMyYjBiMGQ3NWY5NDA3MjU4ZTE5M2E4NzRhNDE3Yzk1ZDE3NjZiN2Y1ZmEifQ"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/recall.py#L431-L494",
+          "version": "repo-lines-v1:sha256:eb33b25bc1c7f7ac34b3f5f24eecf2ee55786c580eba0db935e3ae6bf022a77c:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwNDNmODllMDBmNzFmMmZiOTU0Zjc3NDYzOWY1NWE5NDM5OTJkYzUxYWM1NGViYzgwNmQ1ZWVkYjVhMmU5OGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJjZjk1ZDE0NDIzNWM5ZTgzZDJjZTNiNzkyMWI2YWQ1NjIzNzQ3NTRlMzA1YjZkODg4MDVjMjFiOWY0NTMwY2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNkMTRhMjRiZDMzZmI4ODUwYzU1ZDNjZTA4M2RiNmQwZjAxOGZhZDRjMzhlNDQ1MGFmYTBjNTU1MmRlMTIzNGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_763ba3b02ebd4a538261fa780dc23a3b",
+      "statement": "The prepared-context response must match powercontext.prepared-context.v1 exactly: four keys, the schema string, a ready status with a non-blank content string whose UTF-8 length equals content_bytes and does not exceed 8000 bytes, and an empty status that carries no content; any other shape is rejected.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/prepared_context.py#L1-L89",
+          "version": "repo-lines-v1:sha256:879bda4d03c337ae8f9dac79ebdc146763b1b1e082cc02756cd40e64ca43d30f:eyJzZWxlY3RlZExpbmVDb3VudCI6ODksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2ZjAwM2E2YTljM2ZhMWYzYjU2YzcxODVkZmY3YmM4ZjdiOGM4ZmY1MDU2YmI2OWJmOWFjZGFlZWQzNTc4MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyOGIyMzg2Njk2ZTdiZGVjZTcxMGQ0MWI3YTg0ODhiMjY3NDEyM2NiNjFhYzI2MTJlNGYwNTYxNDZhZWY2YjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2d0a9d3c59f54439aeb916e6c19525a1",
+      "statement": "The recall query is bounded before sending: a prompt within 8,192 characters and 8,192 UTF-8 bytes is sent as submitted, while a longer prompt keeps its most recent text, cut by character and then by UTF-8 byte, so recall narrows rather than fails.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/prepared_context.py#L50-L89",
+          "version": "repo-lines-v1:sha256:dbd44abe46d7daf1f58b7199467b8a58d2525d257adc79432c492f6f51fd7a0d:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmOWE0NjhmMWQzYTI5NmQ5MGIwMjBkOGY1ZjYwYzEzYjgzMzBjMTk4ZmRlNDRhZTZhNTc4ZDY2YmNjMWFmZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyOGIyMzg2Njk2ZTdiZGVjZTcxMGQ0MWI3YTg0ODhiMjY3NDEyM2NiNjFhYzI2MTJlNGYwNTYxNDZhZWY2YjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI5MmZjMWYyNTc0ZGQ4NDU1MjhlNGIwZTg1ODZlMjRjNDYyNTI3MGYyNzEzMGM5YzllMmE3OWY5NWEwYzM5M2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_137f9ef148a94d8e82bf40451460e3b1",
+      "statement": "Each prompt is captured as a Source with POST /v1/sources/content, using a source_id derived from the SHA-256 of scope, session, turn, and prompt, with metadata origin codex and event user_prompt_submit; capture is skipped for prompts longer than 200,000 characters.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/recall.py#L202-L245",
+          "version": "repo-lines-v1:sha256:8c451704f45725ad9d0d7d71618de2d3494b69749d5352b15937bd47941da14b:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE3YTFhNWZkNGIxOGM1MWU1N2JiMTM4YjZkNzBjZjRmMjE0YmJmNjFhYjFlODlmOTdhMTYxNzU5Y2ViODdmYjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA1NzIyYjhjNGYyODMxYTA4YTZmZjE2OGQxNjUxMTRiNmZkYmFjZjk4NDIxNTM2NjI3NzY5M2JkY2IzYmQwMjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYzZjI5YWY4ZDI0ZGQ3ZDdmNjAyYzI1YWQwODlmOGM2MmVhMDNkYzhiYjBjZjVjYjRjYWFmYmE4NzJkZDdmNzUifQ"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/recall.py#L270-L303",
+          "version": "repo-lines-v1:sha256:ed84e7a0599ab5cea773b987b62fdb076ff945dd40c9b2d84eeba1b4e267d18a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2MzgyNTBkOTA0ZjdiMDFjMTNhODUzZDlhNjRjM2YwYjE5NDhiNjg0ZGIyMDA1MjFhNDEyMWI4ZjA2NzlmMGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMzMzRmOWM5NTMxMzVlZmUzNzc4NjgxODFlODU2MGRjNzY3MzFiODUyYzg2YTk0MzNkNTE2ZjUzOTBhZDg5YzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ac1b5228bfad4b77aa0b7e877dbb9e25",
+      "statement": "When secret scrubbing changes the prompt, the hook skips capture and records a skipped event with reason sensitive_content, while recall still runs with the scrubbed query; the unscrubbed prompt is never captured.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/prompt_privacy.py",
+          "version": "repo-file-v1:sha256:1675232185f6d65b2c56c6d88a7318a172689d91e556c786f9876995bd1bc862"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/recall.py#L125-L200",
+          "version": "repo-lines-v1:sha256:fbad92f528b4f197f01abe62e1dcf1b591086793d16c1aec93eb4e38313982ba:eyJzZWxlY3RlZExpbmVDb3VudCI6NzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyMjE0YjIyYjNlYzcyMTdiZDUxZWJhNzJkZTg3OTRkNTZmMGY5ODk2Zjk1ZDljNWJiMWE1MmE5MDJmNmVkOTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1ZDE0ZDQ4OTU0MzBjYmI1MmNiYzVkN2M0ZDQ0NjVhZTExYTcyZDdmMjM0NTM5Nzc4MDY1OGNhNzljYWNmNzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdhOGQ1MDRlMjllNWUxNTEyMTM4MDUyOTNiYTk5MjEwNWZlZjY1ODU1NDAyYjA3YjZhYzVmMjkyNzkzMGRmZTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_831526a03f3b4878b8b6c6ed6fd859df",
+      "statement": "Flush-on-capture is disabled by default; when enabled, the hook calls POST /v1/memory/flush at most flush_max_calls times until the returned cursor reaches the captured Source position.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/recall.py#L305-L324",
+          "version": "repo-lines-v1:sha256:7869a4a8724f0ecc367f46f4b3afb3c10585ed4528718077c75c991031fb2c08:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5M2ZiMWUzOTk1ZDM5NTY1MGNjOWJjNzI3MzU0MWQ5NDQ5NzM1NzE0ZWM2OTAyYjRiMjMyYWMzNWU2NGVkMjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQyNmZiNDZkYzRmZDI3MzJhZjQ5MGIyYmQyNWQ0YTIwNjk2NjU1MTNhN2EwZWE4NzM0ZTZlN2FhN2Y5OWQwNWIifQ"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/settings.py#L100-L125",
+          "version": "repo-lines-v1:sha256:4044f99819188fd84b452faac9450073dbe2f7df1fef0c249bc111f9ceb3c1de:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYwMDRlOTAwYmM5NGE0MzQwMTQ3YWFkOGRhZWY3NmU1ZDAwYTliODI2ZGYwOTk5Y2IwNTgyMWNkZGVmOGExYzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEzZmFlNDkxYjNiZTRmNDljMmI2NzE5MTc0ZWZhYmIzOWZkMTZlOWFhMDc3Y2QxZmVkNzBlYzJkZDhkZDVhMGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_74704b14614c45c6a9df7c710bbd09cc",
+      "statement": "When both prompt recall and prompt capture are disabled, the UserPromptSubmit hook sends no request and adds no context; this is the documented configuration for turns that already pass through the PowerContext gateway.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/integrations/codex.md#L330-L350",
+          "version": "repo-lines-v1:sha256:1185c607658dc48e33e1bdcaf25828818d65650f7761708f4621288b0177401d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhYTViMDYyNTk1YmFjYzQzYmIxM2U2MGNhZTU1ZTc4MTAxMjczNzNiMDg5NTUwNzMyNGM1Yzc2YjBjZmI0MDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwMjlmNjgxODczNzFjODQ2NjE5OGVhYmYyZDJjNDhlOTZjZjI3ZmExY2ZjM2FiNWYwMzI3MzU0M2M5Zjg2NTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjYmNkYmE5MDVjZTcwNjhjM2MxYzYyOTRlYzIxOWVjMzQ5NTJmYzU0NWQ1ZGRkNjg0MWQ1N2Y0NjhkNTU3YmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM4ZjRhNGRhZmEyODIyMDc1YzdhN2Y3NjFkYjRhYmM2MGIzMGMxMzdiNzY3NjQ2ZThhZjkwNGJjNThmZDMxNGEifQ"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/recall.py#L125-L140",
+          "version": "repo-lines-v1:sha256:2539471610d51c34a90555a99011dcd8496bb1cbbf7e19e7a8ffba95c8324b83:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyMjE0YjIyYjNlYzcyMTdiZDUxZWJhNzJkZTg3OTRkNTZmMGY5ODk2Zjk1ZDljNWJiMWE1MmE5MDJmNmVkOTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1Yjk0ZjEyNmZkMDg0YWQwYWZmNDQ2MmM1YmYyNDFjMDg2ZDYyMjE5ZTU3NDYwMjk2MTU5ZTI2NTA5NzdlNWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1ZDE0ZDQ4OTU0MzBjYmI1MmNiYzVkN2M0ZDQ0NjVhZTExYTcyZDdmMjM0NTM5Nzc4MDY1OGNhNzljYWNmNzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5ZWEzNTMzMzAyNjU5MmU4MzkyOWE3NjM1OGUwNzI1OGZiMzkxMWUzMTc1MjM1MjM2NmI2ZTdjZGZiMTIwNWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e4606447df1642349d1d198f30a426a9",
+      "statement": "SessionStart with a recognized lifecycle (startup, resume, clear, compact, restore, fork) and bootstrap enabled posts POST /v1/context/bootstrap, validates the powercontext.bootstrap-context.v1 response with a sha256 package digest, records an injected delivery receipt before writing SessionStart additionalContext, and posts a failed receipt and injects nothing if delivery cannot be recorded.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/bootstrap_context.py#L1-L80",
+          "version": "repo-lines-v1:sha256:3792f48c258b8c17cd8c6c25c4b60eb4aad465916d0b67f3d462b1cdf5152960:eyJzZWxlY3RlZExpbmVDb3VudCI6ODAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2ZjAwM2E2YTljM2ZhMWYzYjU2YzcxODVkZmY3YmM4ZjdiOGM4ZmY1MDU2YmI2OWJmOWFjZGFlZWQzNTc4MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5ZTYyYWUzM2RhZjAzOTc4NzQ4YjljYTc1MTczN2EyNWMxZDc1NjFlOGJlZmRjOTFhZmM3YzdiYTQ5YTY4MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxNDI4OTM4MzI4ZjJlYWZjNjZlYjA5YmZhYTExZjg0MjYxMDExNWE2ZGFhNzA3YjUwYjkyM2U2Njg5ZGU3MmIifQ"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/session_binding.py#L95-L181",
+          "version": "repo-lines-v1:sha256:2b2c19bca2ff4770e80f875a0cfefef26d564fe9f6a7e19a74dd9e477a91ee52:eyJzZWxlY3RlZExpbmVDb3VudCI6ODcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyMjE0YjIyYjNlYzcyMTdiZDUxZWJhNzJkZTg3OTRkNTZmMGY5ODk2Zjk1ZDljNWJiMWE1MmE5MDJmNmVkOTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQzZDM1NTk2MzJlM2Y3ZTgwYzg0NTRlN2EyZjE5ZTk3ODgzNjI2MDA1OGFjMzFkYjc5YTg5NDM3ZGVjNjZlNTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAyNWFmZDM5YzA4MjZlYzgwMGEwNGQyNjU5MGI1YThjNmJjYjg5MjBkMzFlZWNhYmU2NGI1ZjE3Yzg1ZDExY2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f4fbb6d75b5b406b988c63a0fbabf28e",
+      "statement": "Bootstrap context is disabled by default and is enabled only by POWERCONTEXT_CODEX_BOOTSTRAP_CONTEXT=true; its byte limit defaults to 4096 and must be between 512 and 8192, and the lifecycle hook still persists the Session binding even when bootstrap is off or the source is not a recognized lifecycle.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/session_binding.py#L95-L120",
+          "version": "repo-lines-v1:sha256:6dab8b3acdf86ce9ccaa3cf075c5f780bf7a30239b054c37903880ada8a9b19e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyMjE0YjIyYjNlYzcyMTdiZDUxZWJhNzJkZTg3OTRkNTZmMGY5ODk2Zjk1ZDljNWJiMWE1MmE5MDJmNmVkOTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwNGViZDU0NDJmNjhjNmUxNTg4NWJjZGNhZGI1YjBkOTA0NmFjM2QxNTAyN2Q3NTI1YmFiZWRlZmFlYmViYmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQzZDM1NTk2MzJlM2Y3ZTgwYzg0NTRlN2EyZjE5ZTk3ODgzNjI2MDA1OGFjMzFkYjc5YTg5NDM3ZGVjNjZlNTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjExNzMwODY4OTYyZWU1OTQyOGNmZmQzNWYzZjA0MzZiZTVlMDBmMmQ1MWRmOWRmY2Q2NTkzNTVmYzVkNTY4MGYifQ"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/settings.py#L100-L125",
+          "version": "repo-lines-v1:sha256:4044f99819188fd84b452faac9450073dbe2f7df1fef0c249bc111f9ceb3c1de:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYwMDRlOTAwYmM5NGE0MzQwMTQ3YWFkOGRhZWY3NmU1ZDAwYTliODI2ZGYwOTk5Y2IwNTgyMWNkZGVmOGExYzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEzZmFlNDkxYjNiZTRmNDljMmI2NzE5MTc0ZWZhYmIzOWZkMTZlOWFhMDc3Y2QxZmVkNzBlYzJkZDhkZDVhMGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_39ec934928f54d30a6d2af75e582933e",
+      "statement": "The saved bootstrap receipt is a hashed, owner-only local state file that stores only the Scope identifier and the receipt identifier; the first ordinary recall sends the receipt only when it matches the current Scope, and failures before a new package is established clear any stale receipt.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/bootstrap_state.py#L1-L60",
+          "version": "repo-lines-v1:sha256:8edebd7c227b48b58b561f74be08577869db3322a515eb4fc6cb7f037cc8e24d:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2ZjAwM2E2YTljM2ZhMWYzYjU2YzcxODVkZmY3YmM4ZjdiOGM4ZmY1MDU2YmI2OWJmOWFjZGFlZWQzNTc4MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhMzlmMmY1YjQ3YjVkMmNiNTNkMzU3Y2E0MDU4MTlmYWJkNGNmMGRkNzY0ZTAxMDg2MWUzZGJkYmYwZWJmZTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM0OTI2NzM5NDRjN2ZjZDZiNTk3NjYzMDNkNjA2M2E2YjA2ZDJjNjU2MDY1ZWUwOWUwYmVjY2JlNWVmY2EyMjAifQ"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/recall.py#L125-L140",
+          "version": "repo-lines-v1:sha256:2539471610d51c34a90555a99011dcd8496bb1cbbf7e19e7a8ffba95c8324b83:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyMjE0YjIyYjNlYzcyMTdiZDUxZWJhNzJkZTg3OTRkNTZmMGY5ODk2Zjk1ZDljNWJiMWE1MmE5MDJmNmVkOTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1Yjk0ZjEyNmZkMDg0YWQwYWZmNDQ2MmM1YmYyNDFjMDg2ZDYyMjE5ZTU3NDYwMjk2MTU5ZTI2NTA5NzdlNWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1ZDE0ZDQ4OTU0MzBjYmI1MmNiYzVkN2M0ZDQ0NjVhZTExYTcyZDdmMjM0NTM5Nzc4MDY1OGNhNzljYWNmNzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5ZWEzNTMzMzAyNjU5MmU4MzkyOWE3NjM1OGUwNzI1OGZiMzkxMWUzMTc1MjM1MjM2NmI2ZTdjZGZiMTIwNWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5071250364db4d10af5e424f7ed1b331",
+      "statement": "The PreToolUse hook (bind_tools.py) runs only for MCP tools prefixed mcp__powercontext__; it replaces the key of session-control operations with the Session binding key, injects the resolved scope_id into current data-plane operations, injects an exact selection into get_handoff_report and get_stats, and returns no decision for unlisted tool names.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/bind_tools.py#L126-L181",
+          "version": "repo-lines-v1:sha256:b259d6bf06dac1895b59c67f5cc7d540e092b19bebfc664213d00f244d9d486c:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyMjE0YjIyYjNlYzcyMTdiZDUxZWJhNzJkZTg3OTRkNTZmMGY5ODk2Zjk1ZDljNWJiMWE1MmE5MDJmNmVkOTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE2MjMzYjNmZmVhMzJhMjNkZjUzMDY1MzQzNDhmMmRlZTc3NmE1YTZmNzRmYjUzMzE3NWRkYzUzOWE4ZmU0NjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ0Y2U0OTA0NmRjNjU2MGRmMThmYjBiYmEzZmIxMzNiNjc5ZDIwYTExMTI2MDZhNmJmMjE0YjFhOTNhYTZhZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE1NjVkMGEzOGUyYzQ0ZTJiY2ExNjBiYmM2M2JhYzZjY2M0ZjQ4NWUwODYxYTAwMjczMzZkZDk3YzBmNmM2NzMifQ"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/bind_tools.py#L40-L125",
+          "version": "repo-lines-v1:sha256:e446780b957ee849b05ef7ee517b3f09154f9241f11cbc6317b120f1c4121f57:eyJzZWxlY3RlZExpbmVDb3VudCI6ODYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjN2NhYzhhODYwNjY2ZDM3Yjc2MTNmNDMwYjg4NTk5YWVkNjA5Njk1NGRmMWFjMTljYjM3NGE2YWU2OWYxNTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk5ODlmMzgwMzFjOWVlYTU4NjcwNjU0NTlmZDhmNTczNzJhMzYwZTFkM2RkZDA1NGZmNDI0YjI2NDRmZGFkNjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_87815eda43614096afe57b50bcae4edd",
+      "statement": "When PreToolUse cannot bind a Scope, it returns a deny decision whose reason names authentication failure (HTTP 401, with a re-run setup hint) or authorization denial (HTTP 403) and otherwise a generic binding failure, so Agent input cannot choose a Scope.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/bind_tools.py#L199-L225",
+          "version": "repo-lines-v1:sha256:6d02ee5e36bdbf2c4feabb88ef6fe24a633737a165dafc79a6b39c927de0f7a7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmOTZkMDFiMDE1NTE0NTY3NDQ0MzExNWEwYzE0MzU5NDhkNmE2ZjNlZGUxZGQ0NWExMmNlMzk0OTE2MWUwMjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0ODZmZjVjZjkzNjNiNDQyOTMzNjgwM2IyYzk2MGU3M2RhOGM0N2ZhMGM2ZjY3NjU4ZDE0YjMyM2NkMjJkMzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUyYWUxZTEzZmNlYjgxNjZjN2Q1ZTA3NGVlMzdiYzMzNmU4N2VhNGQ3MzE5MWJiMDU0ZjM2ZGFlZGZlYTMyMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiNjRlOTIwMDBhMTljYTM4NTkzYTRlNmEwYmFjNzcwOTZkMWU5ODY5NDlhM2I2MjgyNmI3Y2VhNGY3M2Q5ZTkifQ"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/bind_tools.py#L28-L40",
+          "version": "repo-lines-v1:sha256:e2916b097b236bc30b90051898f3cb164db10be8d6d36bfb50b03102e587da87:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5NDg4NTY2NzRlZDI5NjRlMDU0YzIwNWMwM2E0ODA1NWQ2YjUwMTk3NTg2OWQyMWM4NGFiYWY2NGFjMzhkZDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlM2Y4ZTYyYjU4YTdiOGVlMjkyOTAwMmQzNzcyZGEzZjcxM2ExNDQwNGYzYjkxYTZkODdiMDM5YjQyNzhjMGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgyNjM2OWNjNDhmMDljMjk4M2M3OTJkYWI5ZTcwNjZkNTlkMWU4MTQ1NzNkYWRjM2U4YTk2ZWU3ZWMxZjQ4MmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2ec6855bbb294815885eb99e67a701a6",
+      "statement": "The Stop hook resolves the Scope and loads POST /v1/stats windows for today and 30d, then writes continue true with a compact savings message; its HTTP budget is capped at 8 seconds below the 10-second host deadline, and a window without comparable preparations renders as no data rather than as a measured zero.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/token_savings.py#L1-L120",
+          "version": "repo-lines-v1:sha256:d40e14921d0a0c8ec47f831993283f89a2df0a547dc3339a90155a567a0d5bd7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJkNjgyY2JkYjRjOGIwNzUxOGJmNDg2YzU4OTkwZmMzOTE3ODNhYTIwYTkxNmJmYjI3YWQyMTFlYjFkNWMzNjQyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwOTljM2QzNGZmYjk5YmQ5NDM0YmNjNmE0NjY1YTkyN2QxMzE2M2Q4ZDg1NmRkZGQ5YzU0OTZlOTRhOWQ0Y2ZkIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIxNzNlOWIyZDk2YzVhODBhYjM4NjI1YzBkM2Y3MDVlOGY1ZWRkMzJmNWFlY2Y3ZDk2YzRiYzhjOGI4OGEyZGI1In0"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/token_savings.py#L120-L200",
+          "version": "repo-lines-v1:sha256:4da7e5eed75eb7662b316850fb6c3389d467947968bceb18a06e60e2fdd1f65c:eyJzZWxlY3RlZExpbmVDb3VudCI6ODEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5OWMzZDM0ZmZiOTliZDk0MzRiY2M2YTQ2NjVhOTI3ZDEzMTYzZDhkODU2ZGRkZDljNTQ5NmU5NGE5ZDRjZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4ODg5MWYyNjBkYjhkYWVhNjhlYWM5ZTE0N2QxNWIxOWNlYWNhNDE4M2JmNzQxMTYwZTVkMDA0YzY5ZDhmNGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRhZDEzNjYxMTBiMjRhZDkzOTVjYjBiM2Y2NTA5YTc3MTcxZjM0YTMwYzg1OTk1YzAxZThiN2Q4NjZhMjc2NjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg3YjNmYjBmYTA2ZWNkY2UxYWFhOGM2NDQzNzM0MjBjOTI1ZjVkOTdlZDEzMWIzNjE4ZWI3MDAxOTVjNDNjYTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b3c302e5d4a4421fa8e98631b9a058a0",
+      "statement": "Hooks fail open and emit only content-free JSON diagnostics: in UserPromptSubmit they go in the top-level systemMessage beside any hookSpecificOutput context, each failure outcome is emitted at most once per invocation, and the outcome is throttled for 60 seconds across hook processes through a locked state file.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/diagnostics.py#L1-L110",
+          "version": "repo-lines-v1:sha256:7750c32b65c514e17c013fc16a49fa899edfed7e4940236e372dbc8e214984b3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIzNmYwMDNhNmE5YzNmYTFmM2I1NmM3MTg1ZGZmN2JjOGY3YjhjOGZmNTA1NmJiNjliZjlhY2RhZWVkMzU3ODAyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIzMGUyYTQ2NTAwOTVmYTk1ZDBlMmJiNDFiMmRiMjkwOTRkMzQwNGQyOGNlMTIzMzllYzg4YmI0YjVjNWJlOGY2IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/recall.py#L546-L585",
+          "version": "repo-lines-v1:sha256:51c824f6ef8f7fe20565d50dc3fbb96164da70faf766b7120f0b97e5b6cb19cc:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1ZmJhOWQ0MDE5MWZmNDc4NDgwYWE5MTdmMDIwNmI1N2NjMWQyNTY0ZTNkMjBlN2FiNmNhZTlhMDc4YWJhN2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiNWRiYjQ5MTI2OWJiZjU1Y2Q0MjZhMDc3N2Q1NGY2Y2ZmZjJmYWE1NjZmNzVkNmUyMGMzN2JjYTNjYjZjMjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBhZTBlYjNkMmUyZmMyOGEzZjE4ZGFmMjdhNGM5MGRlZDYyYjE2Y2JiNTAzMjQzNjQ5MmNjOTIzMzk5MTg2YjAifQ"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/recall.py#L622-L636",
+          "version": "repo-lines-v1:sha256:e1a19d5459745d8b1bb81246bfec685bc3e3a87f8056dee43f2e78666f167658:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwOGU3NzZmMTljNGU4MGMyY2Q4NGNiYzkxNzIzZDMyYzY3YWE2ZjkwNDBjMjg1ZjQ5YTNkOWI5YWE2YzE3NzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2MGE4Zjc5MjE5M2EyYTIxOGEwMTBmYTkxNDVkZTUwNzJjNGJhNzYxZjkyM2FlNDg1M2UyOTgyNGIwNmQ0MDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzZGYyYWNmMDZlOGMzZjAzYzcxMzVjNmU4YWM1YTljYTU0MzJhYmUwNmE3NGFjYTBmZGQ5YTUzYTAwOGY5ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhY2I0ZDk1NjEyNjQyNWQwNjhhNDVhYjZjMDA5MjY2OTk5MjllYmU0MjE0ZDZlMzgzYmIxZGFkNzUwNzQ2YTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4477730192ef40d0865b980e15596a83",
+      "statement": "Server unavailability (connection failure, timeout, expired deadline, or HTTP 503) is reported as server_unavailable with the recovery hint powercontext doctor; the hook returns no context and never blocks the Codex turn, and each HTTP request and the whole hook are bounded by a per-request and a shared deadline.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/recall.py#L344-L385",
+          "version": "repo-lines-v1:sha256:16de0e336f7ffca7aa0bc04a9a6954f37d3b8a0854aa29fa8a3e1258bd7d48fa:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyOTE1NzlkM2MzYzM5N2Q1NzVlOWM1NzlmMTNjNjdkYTE3YTY4OTc1NDNhMTU0MzNhNzMwZmY3M2EwNjE4YWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc1MTU0OGZkZWEwNWM2YzY1NTVlNzBhYTBlMzU2ZmVkOTdiMWJiZjdiYTVkNDYxNDk0OTIyYzY4NGM0YWY4MGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhYjE1YzA1MTRmNDhkYTJmZmZkZWM0MmI2MWE0MjUxODFiMTAyYTE0YzJmMmM0MzNlOGNjMTM4MjRlODhlYjkifQ"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/recall.py#L99-L109",
+          "version": "repo-lines-v1:sha256:f60c53abc0b42115d8d3ddcc1209745c4502685ff120fda0264e1d3cb09fafe9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlM2RiYTIyZWYxNDlhMGNlNzM3ZDZiYmQ4NTlmMTRlNzBiY2Y0YTcxZmNmZDAwYmZjMThlMmQ2YTM0ZmEyNGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5ZjkzMDgzYzE5NzEyMWI5ODI3MDBiYThhZmFiZDE3MjJjZjFkM2U3NDA0NTA5ZTgwZWZhMjcyNDdmNjJmMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRhZWRlN2I5YzdiMjYxZGQ3MWZhMzZhNmQ0N2IxOWI1Yzg1NzhkNmRkN2ZiZTE2MTAxNjQxNmI0ZTYwODU2NDAifQ"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/scripts/scope_binding.py#L100-L125",
+          "version": "repo-lines-v1:sha256:aef340ceea92d8f1bc6b00389c1d1bf3e765a4b32181ee19cef1c2fd88201d08:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmNmJhMjQ1NjBlMDdlN2Y0NzNkOTlhYTQyZDAwMWNkNjg1ZDk5NzAwN2U2NGI2ODVlZGU3MDRkNGQzZjg0NzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5MjZhNzdiN2E2OTdiM2FmNzA1NzVjMjYxNzAxMGE0YTU1MzgxYjhhMGQ4NDQ2MWY3YTJiNTdiNTQxY2ZiMTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA3MTkyNjJjNzdkMDEzZTNiMDEzMzY2MzZiOWJhYWM5ODhiM2NhYThiZDk5NTc4ODBkZjY4NWU0YmQxMDlkYTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3b4e5b2bc367499e8b600fe62c2057bc",
+      "statement": "An invalid response (non-object JSON, a body that fails the prepared-context or bootstrap contract, or a response over 1 MiB or a redirect) is reported as invalid_response and injects nothing.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/prepared_context.py#L1-L89",
+          "version": "repo-lines-v1:sha256:879bda4d03c337ae8f9dac79ebdc146763b1b1e082cc02756cd40e64ca43d30f:eyJzZWxlY3RlZExpbmVDb3VudCI6ODksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2ZjAwM2E2YTljM2ZhMWYzYjU2YzcxODVkZmY3YmM4ZjdiOGM4ZmY1MDU2YmI2OWJmOWFjZGFlZWQzNTc4MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyOGIyMzg2Njk2ZTdiZGVjZTcxMGQ0MWI3YTg0ODhiMjY3NDEyM2NiNjFhYzI2MTJlNGYwNTYxNDZhZWY2YjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/recall.py#L393-L413",
+          "version": "repo-lines-v1:sha256:c14ad0bf446012e98f441342cc34fb1131e27456df182689f8c32c0225505943:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlOGU2M2IxMmIzNDEzNTc5MDRhYmQyNDFjZDQ3ODY5ZWQwNzU4NTZmZTNhZjJhNGU2OTJjZDFhNzEyMjhhOGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE1YmVhYWE2YWRmZmU3ODYzMmIyZDljMGJmNDVkMzlmOTE1ZDUyNzY1YzUxYmU0MjMxYzE4OWNiMGJjOGQ3MDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2OTcxMDdiNTA3Yzg4ZjZkZDZhM2RlYjViZTMxMWM5MDg2MWE1NWJkZjI3YjlkYjE0ZjlkZTkwNmM0YjMzZDIifQ"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/scripts/scope_binding.py#L90-L99",
+          "version": "repo-lines-v1:sha256:0b86eb34264de7bdafb598dc2858e77b859d37b48d202ef3366b9de819fad156:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzMGZmZTVhY2Y1NGYzMzNjZDUwZDBjMDIyOTdkNzZhNmZjYmNhMDg1OTI4OTJmMTQxMGJhNmYzOWRlOGQyNDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhMTgxOGE5MzgzZDFiZDFkZDE5M2JmNDk1NDJkMzdhZGE4YzgxMTdiNDRjYTRlYzcxYjM5NDVhMTFhNzViZTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRmMDQ0NTM4ZWY0MGVlOGI0ZjUwNzExOTRlNmI1YTU2Yzk3OGVmZGFiOTM5OTNjZDUxOTYxOGIxOWM2ODE2NzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dee0a772d81d4ad08e2c89649018fc13",
+      "statement": "The recall path classifies HTTP 404 on a compatibility path without an error code as version_mismatch, while 401 maps to authentication_failed, 503 to server_unavailable, and 404, 409, or 422 on the operation's own path to invalid_response; SessionStart maps any 404 to version_mismatch and 403 to authorization_denied, and the Stop path maps other statuses to invalid_response.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/recall.py#L99-L109",
+          "version": "repo-lines-v1:sha256:f60c53abc0b42115d8d3ddcc1209745c4502685ff120fda0264e1d3cb09fafe9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlM2RiYTIyZWYxNDlhMGNlNzM3ZDZiYmQ4NTlmMTRlNzBiY2Y0YTcxZmNmZDAwYmZjMThlMmQ2YTM0ZmEyNGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5ZjkzMDgzYzE5NzEyMWI5ODI3MDBiYThhZmFiZDE3MjJjZjFkM2U3NDA0NTA5ZTgwZWZhMjcyNDdmNjJmMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRhZWRlN2I5YzdiMjYxZGQ3MWZhMzZhNmQ0N2IxOWI1Yzg1NzhkNmRkN2ZiZTE2MTAxNjQxNmI0ZTYwODU2NDAifQ"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/session_binding.py#L342-L358",
+          "version": "repo-lines-v1:sha256:3230523aaae3c1383f8cd80163e6d958456a707fb2a905d7bce500c2fdcd0ff9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyYmUwZWY2NWJjYzdkOGU1YzExOWNiZGU5YmU3MDA4OTk0ZDMzMTZiMDlmZmY3ZWMxNTZkOTI2NmE3OTdhY2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhOWM5NmM1MjhjYjRhZTkzYjNmZjI2MTM5NjA5OGIyYzVlMzIwMTE3Y2RmOWFjN2M0NTY2NzFjN2E3Y2RjMjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUxYjU0NTM2MDQ0NjMyZDNiNjRiODc3MjZjNTFlOTBiMGQ0YzhlNWI5ZGY1YzRmOTZlZTVmOTU5YzE3YTUzNjcifQ"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/hooks/token_savings.py#L200-L240",
+          "version": "repo-lines-v1:sha256:f5f0d743c7e0c416922defb9786c98646529a744b1c65258dc283873596413df:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4ODg5MWYyNjBkYjhkYWVhNjhlYWM5ZTE0N2QxNWIxOWNlYWNhNDE4M2JmNzQxMTYwZTVkMDA0YzY5ZDhmNGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY1NDRjNTYzYzFiODkxZTAwMmM3Yjg2Nzg0NmExMTAwNmU0NzcwYzIxNzc2ZTRlZjBiODA1OTM5YzA4NDlmZTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhOWFmOTdhOWQ0MWU1ZTgzZDdlMjRlNzM4NmY5Y2ExNDVhZTIwMjIxYjQ5ZDYyN2E2NDg3YTM1ZDBhMWJlN2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_476ad91b024b4e5493019d622d0e114d",
+      "statement": "Codex runs plugin hooks only after the user trusts them through /hooks; the plugin code contains no trust check, and until trust is granted recall, capture, bootstrap, and scope binding do not run even when MCP tools are connected.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/integrations/codex.md#L26-L45",
+          "version": "repo-lines-v1:sha256:8f07558f3820867aa6de7d9adad671c18e54c76ad9bd23ca15c988ab298a576e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIyODI3MDA3MmZmNmYwYWM1MGY2NzFhODEwMTUwYzA4ZmZkYjg2ZjU2ZmYwM2Q2YTg1ZWU5YmU1YjA0MjMyYmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRmY2M4YTg0OWY2MjEwZTgyOTlmMWVhN2RmYTBlZTBmOGI3YzU0ODcyZDUzZjAwYjJiYWI2ZGQ0Yzg0MDgzMjUifQ"
+        },
+        {
+          "resource": "repo://docs/en/docs/workflows/codex-workflow.md#L160-L165",
+          "version": "repo-lines-v1:sha256:708536152c582ef9d6797546bb76ddd6856adce289c800595938d03d147145e1:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdjMDZjNTYxZDVjMzI3MzQzNjg1MjY4YTQ2YjMzOTFmMzk5OGVlZTg5MGQyYmU1MWYwZDIxY2M0YTUzYWU2ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGY3YjFjZjEyYWYwYTdiMWI0ZTJlYzRkNjIzOTIzMmNhNTNhYmFkNTYwMTcwZTA0YTc2ODU5NTE2OGQyZGNjMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDkzOTcyZThjMDViYmY5OTU4NGU3YjcxNWQxYmUwNzc4ZDIwYTEwY2VlYjE1NjRlZjI2MWYzMWYwYTg5Mzk2MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjI3MjdlM2M1OGE3N2ZmYTAxYjYzOTE4ZDk2Y2M2OWUxNmJhY2RhZmJiY2ZhNjRjN2E1YzZiNzM5ODY1N2Q0MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fc10582193554b4c9527b116bdb973c1",
+      "statement": "powercontext setup codex installs the plugin through the Codex CLI, rewrites the installed plugin cache .mcp.json with the chosen URL and an http_headers_helper that reads the credential file by absolute path, and saves the credential; on Windows it also mirrors the credential into the user environment for Codex Desktop.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/cli/system.py#L1294-L1340",
+          "version": "repo-lines-v1:sha256:e869ca66e289a3053fd901e0ce6455102ca616c295c9872fe4e8f2e5ba0b171c:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyODgyZTg1MmY3NjA5ODNlNzMwODg5ZjczYWI2NzZkN2EyMjM3YWFlMzk4MDE3ODY2YTI0NDE1MDljMDljYzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzYzIzNGYzZGQ1MTdiODA1YTlkZmEyMzA3NjRhYzYyMmJkNjNmN2VjMDAyZjBhMGJhODBjZTVkODFhZGEyNjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI1NWY1YmUxODJiMjExZWE2NWJmNGQzZTgwOTJkZTJmMzE4ZDhhMGIyYWIxNzRmYTViMzRhMjRhODc4NzcxN2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg2MDk1NWQ2MGI5OTQyNGUwYTA5NWViZjg5OGI3MjcyMWZhMjBlN2JlZTlhYTk1ZDhhMWFhYzI1NzU1N2Y1MTUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/cli/system.py#L344-L381",
+          "version": "repo-lines-v1:sha256:8eb7c299b628838f3ce2a4c807137e2c0e874acf223e578e42f38fae29040b90:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0ZjRlODdmY2VhOGQyMWU4ZGZhZjYwNzUwYTkzNDRkNGUzOGU2MWIyNmMyYzgwZTAyODZiYmU5YjIzMWYxMWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiNDcwYjQ2YmJiN2FiNGE1N2E2OThlODhlZDE5M2JiMjRlNDI0ZmU2YmU2MzUzMDNhMTZlZGFmMGRmYjEyMGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_901e52bb8fc94b1cbe4b2cca70eebd07",
+      "statement": "Stored credentials are used only when their URL matches the effective MCP endpoint, are not symlinks, have no group or other permissions on POSIX, and contain a well-formed Bearer header; an explicit POWERCONTEXT_CODEX_AUTHORIZATION overrides the stored credential without changing it.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/mcp_headers.py#L1-L41",
+          "version": "repo-lines-v1:sha256:f7906bffa02e58fa32243b97fc83e676c14b2d21ec5691e82b1f6260274ec757:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2ZjAwM2E2YTljM2ZhMWYzYjU2YzcxODVkZmY3YmM4ZjdiOGM4ZmY1MDU2YmI2OWJmOWFjZGFlZWQzNTc4MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiNjRlOTIwMDBhMTljYTM4NTkzYTRlNmEwYmFjNzcwOTZkMWU5ODY5NDlhM2I2MjgyNmI3Y2VhNGY3M2Q5ZTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/settings.py#L176-L230",
+          "version": "repo-lines-v1:sha256:858473a3822228419e7b11b3346fd5a3a71c9170b0abd4380325c757f53d6b9b:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwMmM1MGI2OTg3MDliNzMzZDJkNDQ1MWYwMjJjMWRlNDE2MTc4MzM1ZTRhYjFjM2NiMzgwZTRlNjkwNmRkYmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkYTVjNjZlMTdiMTQ1Mzk3ODM0YjhjODU0ZGM0MTkzZTIxMjUxODBhODk5NmExNGMzMTg4MzMyNmIyZWZiY2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmODlmYzI5MjE3Y2U3NmVjZjE5OTAzM2ZiZDFhNDllMWI2ODkyMjYxNjliYzU0YTBmM2ZiZTg5NzczYWI5MjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRkNWViZjNmM2JhNjdhNzc0NjY3ZTM2ZjA3NmE0MDg3M2NmZTIxMDEyYjM2ODkxZjVhYWVjOGEwMzBhMjMxZjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b8ea9a1110c74ff5a20d10c949a96fe6",
+      "statement": "powercontext doctor codex verifies the Codex CLI on PATH, the enabled plugin entry, the native MCP entry with its environment-backed Authorization header, the host authorization state, and a native MCP discovery probe that requires remember_memory and search_memory; missing other full-profile tools produce a degraded mcp_full_profile result.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/cli/system.py#L1340-L1496",
+          "version": "repo-lines-v1:sha256:ce64d1f6ab43333c4ba7c0448cb842a3128aa37b06dbee147656031118face24:eyJzZWxlY3RlZExpbmVDb3VudCI6MTU3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI0M2MyMzRmM2RkNTE3YjgwNWE5ZGZhMjMwNzY0YWM2MjJiZDYzZjdlYzAwMmYwYTBiYTgwY2U1ZDgxYWRhMjY3IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIyOTk0ZjdjN2E0ZGVlODFiNzk5ZjY0ZDEyN2Y5ZTU4ZDk0NzY5MDZhMjc4OTczZTJhOGNkYzA3N2NlZWFhYjUyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJmNmY4OWE0MDg1ZjljZDYxOTNhNzVjODdlM2YwOTFmM2RhN2VhZGQ4YzRjODBjYjIyMDRmNDQ4OGQwNDQ0M2NmIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI5NDcwMjZlZmYzNDQ2ZDU4NThmMzcxZDkwYTlkNTc2ZjI1YWY5MTY5ZTE2OWQ2ZjNiZjk3ODIwZDMzMjQ1OTdiIn0"
+        },
+        {
+          "resource": "repo://src/powercontext/cli/system.py#L60-L60",
+          "version": "repo-lines-v1:sha256:48da069d67e7fd12c55bb6f01529766250a6ff98649be055613ec5e921bc3b8d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDhkYTA2OWQ2N2U3ZmQxMmM1NWJiNmYwMTUyOTc2NjI1MGE2ZmY5ODY0OWJlMDU1NjEzZWM1ZTkyMWJjM2I4ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDhkYTA2OWQ2N2U3ZmQxMmM1NWJiNmYwMTUyOTc2NjI1MGE2ZmY5ODY0OWJlMDU1NjEzZWM1ZTkyMWJjM2I4ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWJmODliOTkwODU5OTlhNzIxNWFkZmNlZGFhMzFhYWIyNzAzNWI5NTM3MTFjM2RlNGNmNzNjNjlmY2EyOTJmMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2UwNzZhNWM3MDRiMTU5YmFjNWViYzBiNzMzNjgxODRiZDAxZWFjZjRiZjQ2YjI0MjdmNTJiNTY0MWQ2ZmYyZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_85a850d3961f4e10bc99e07c571083a3",
+      "statement": "Doctor does not verify hook trust, hook execution, model readiness, or write authorization; its Codex checks cover the CLI, plugin, MCP configuration, authorization, and MCP tool discovery only.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/integrations/codex.md#L60-L75",
+          "version": "repo-lines-v1:sha256:53c634e4c9d440d6c6ed015e4e70daf35ac44976d814087c563cbb56940236b1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxMTUzYjBjMjNlNjlmNzIxYzBhZDhmY2U5NjEzNGZjYjg5MzQwMjBiZTQ2NjljZTlkOTQ3Mjk2MWUwYjFjYmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI4ZDViNDk2ZGI0YjFhMTZiNDk1NWQ5M2E0Y2I0NzYzOGQ0N2U3MGM4MDI4Nzg0NzNiNmQyYzAxNjM5YmMwMjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhjMjQ3YTAyMWNlNTMzMDE1YTgyYTg3Yzg2Zjg2NDM5OGQ2MTZiNDA0N2JmZGIyNzUyOGM5YmRmMTA3MDY0ZTEifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/cli/system.py#L1340-L1496",
+          "version": "repo-lines-v1:sha256:ce64d1f6ab43333c4ba7c0448cb842a3128aa37b06dbee147656031118face24:eyJzZWxlY3RlZExpbmVDb3VudCI6MTU3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI0M2MyMzRmM2RkNTE3YjgwNWE5ZGZhMjMwNzY0YWM2MjJiZDYzZjdlYzAwMmYwYTBiYTgwY2U1ZDgxYWRhMjY3IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIyOTk0ZjdjN2E0ZGVlODFiNzk5ZjY0ZDEyN2Y5ZTU4ZDk0NzY5MDZhMjc4OTczZTJhOGNkYzA3N2NlZWFhYjUyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJmNmY4OWE0MDg1ZjljZDYxOTNhNzVjODdlM2YwOTFmM2RhN2VhZGQ4YzRjODBjYjIyMDRmNDQ4OGQwNDQ0M2NmIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI5NDcwMjZlZmYzNDQ2ZDU4NThmMzcxZDkwYTlkNTc2ZjI1YWY5MTY5ZTE2OWQ2ZjNiZjk3ODIwZDMzMjQ1OTdiIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_ba91c72f8b7342728c8ebc5ada959d03",
+      "statement": "The focused tests for this integration live in tests/codex_plugin and cover the hook declarations, prepare and capture contracts, failure classification, bootstrap receipts, scope binding deadlines, and the Stop savings message.",
+      "evidence": [
+        {
+          "resource": "repo://tests/codex_plugin/test_bootstrap.py#L81-L115",
+          "version": "repo-lines-v1:sha256:08f5b9145965bd9d6f294017ad3acfceebab6241f22dded362ce96c8537e95a9:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwNDc0ZThmZThlZjJjNDk4OGY1OWI1NzVlNzRkYTBlODUzZmQyM2Y1NzE0OTY1ZmQxMGRmYWVlYTYzODgyNzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ5MjcyNGRhNTIyNGZhMWNkOGY4NmQ1MmExNjk2YThkYTA1YWY5YTg3MWQwZjU5MGRmYTNhZDQ4YjRmZWNlMDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI5ZWUxOTMyODRlODJmYjc2YWY0ZjRmNTgzZTQzZjA1MDdiNWYxMzJiMTY0ZTZkMzUyM2JhZmI5NGMwYzdiMWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZkY2M0YzJmNTk0YzM4YjcxMDFiODdiMzEzODlhOTgyNmJiZGQwZmNjYTBiOGU0ZmExYTM2ZWVhZDk4MjY3ODcifQ"
+        },
+        {
+          "resource": "repo://tests/codex_plugin/test_contract.py#L1-L60",
+          "version": "repo-lines-v1:sha256:a81001137ae5d98c5fff6751c8e7d8ca5057475a805ae6fda3335afa44e7007b:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2ZjAwM2E2YTljM2ZhMWYzYjU2YzcxODVkZmY3YmM4ZjdiOGM4ZmY1MDU2YmI2OWJmOWFjZGFlZWQzNTc4MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiODRkMzhmZWM4MGQ1M2ZiZDVhNDA4Y2EzMzFhN2FjMDY2MWNhYTQwNjcxMjI4MTA4MGE4MjM0N2M1ZWE3MTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZkOWRlYjE3MjVkMjFmMzdmMjUwNjFkYTA0NmMzZjlkYzAxNWMzNTA5NjYyOWIyODY0YTgwMGM2ZGI1YTdiMTQifQ"
+        },
+        {
+          "resource": "repo://tests/codex_plugin/test_recall.py#L93-L140",
+          "version": "repo-lines-v1:sha256:42e1a243ca9c7b98451dc5662b907f40a53e4e41dc947cca006c4c7352e8c7eb:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiMTk5NDI5MzA2ZWM4NjQxMTcxYWE4MGIyN2FmY2ZlZjAzMGEyNDY0NjY4YzZmYzUwMzBiMzNmM2Q5ZDNkZDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY2NThkNzE2OTQ0ZTg4OGFjNjBjZjlhYjkxMzUzMDMzYjIyZjM4NWMzYTkxN2RiNTQ1NmFhZDIyNTdjYTUwZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEyMjI1MzdlOTdiOGRmNWUxZDhjN2FkZWMwMTMxNDEwNTJhMjdlOWQ3NDliYTdmMTUxYWY3Mzk5NzFiYzMxYmIifQ"
+        },
+        {
+          "resource": "repo://tests/codex_plugin/test_scope_binding.py#L1-L60",
+          "version": "repo-lines-v1:sha256:ba46f24a67efc49d11c7f26c537dc866ce838b5c84acf88ccd9ce41eaa4e655e:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2ZjAwM2E2YTljM2ZhMWYzYjU2YzcxODVkZmY3YmM4ZjdiOGM4ZmY1MDU2YmI2OWJmOWFjZGFlZWQzNTc4MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmNjA3ODI4ZDQxZDU5YjhjM2Y0YmZmOWQ0ZWQyZDRkODYyMzRlOGZmOGE4M2U5OTQ4OGYyMjhjNWQzMzMzZWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5MDQwMDhmNWZhYTVhOTg0NjlhMDFlMmY3OGZlNzMzYTYxMGIzMDdkMTNmZjMwNWE1MGYwYTFjZDRiNDRmNTMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T09:04:09.583Z"
+  }
+}

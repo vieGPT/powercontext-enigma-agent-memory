@@ -1,0 +1,420 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:13b57162fb70c1e775c948517f6692695e4fa200a5509eec47c65c344e7a6bc7",
+  "claims": [
+    {
+      "id": "claim_1eaa241289ae4cba9a99ae2923cab175",
+      "statement": "`powercontext doctor` exits with code 1 unless its overall diagnostic status is `ok`, and the overall status takes the worst of the check statuses in the order failed, degraded, skipped, ok.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/cli/system.py#L1003-L1008",
+          "version": "repo-lines-v1:sha256:060139e53ac9f54915e452b325564355e895163d0294784d919a9f004921683d:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmI2NmEwNGI5OTFkNDIwMzhlNjUwOTA4NGY0ZDk4MTRmYjk3MGZmNDVjMzlhMjc5NzAyNjY2YjYzZjhkYzU0YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmFkNjc5ZDcxMTBhZjVjY2U2OGZlM2Y2OTM4MjBkZTg1ZWQwY2Y4MzYyNDJjYTEzMDBmOGJmNDQ5MjJlNDU4OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGJiMTM3ZmNhZDc1NWJmNDE3ZTE5ODFkMTQ0NWFhY2RkN2Q3OWRhOTA1ZTYxZjhiNTMwMWI4MjM2N2E2MGQ0MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmIxYWUxYzRhM2Y2ZWEyMzUwZThjYTZjYTBhN2U0YTA1MTczOTQ3NmYyMjRhZDY0YWZlNTI5OGE2ZDM1YWM2MCJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/cli/system.py#L270-L342",
+          "version": "repo-lines-v1:sha256:d591906a73d3513f6ab2d000d98f2bd1c176a7aac5a6235d7b0df127c3d7255e:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFjMTZkY2FhNmQzYzk3ZmU0NWI0ZmE1MGEwODVkMGU0ZTk2ODg0MjAwODU1N2E1ZDlmMWE0NTBlMTczZDgwNTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyZDkzMGU4YTZkZDQwMmE4NDFkY2Q3NzA3N2NhYzVmOWMxZGM1Y2I4MTQzODQ3NWZlMWNkODczOTM4OWEyOGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhhYTM2N2I1MWNjNzY5YmI2NGNlMDllN2RlMmIwZjBjMTViMjlhNmVhNjFlYWI5MzIzZGQwZWY2Y2JkYzUwMWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_64eaa4ef2b674b46974711b2dc2e4014",
+      "statement": "Doctor's Server diagnostics check liveness at /health/live first and mark readiness `skipped` when liveness fails; when liveness passes, readiness HTTP 200 with `ready` is `ok`, HTTP 200 with `degraded` is `degraded`, and any other readiness result is `failed`.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/cli/system.py#L392-L431",
+          "version": "repo-lines-v1:sha256:e398851891e232f65f13d06b0c776776ab08dd00cb4bce9b49427209fd5702a4:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2M2Q5ZGFkYmVhMjQ2NGQ2NGM0MDllZWFlOGVjYTQzNjdkZDQwNTQxM2M3ZGRhZDdlZTRiY2VjYjFhZjY3MmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhlNmUwZjBiMDVlYmUyMmUzMTZjNDA5MTE3MWUxMGM3MjljMDdiMzk4N2EwY2Y2Nzg3ODMwYWIyZTg4ZTM0ZjkifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/cli/system.py#L953-L975",
+          "version": "repo-lines-v1:sha256:a0eee704d45da831f6199d7948dbd60a5bc2e5ab60dca826d87d37b7d7aa6516:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0Y2JhMjMyMWUwYWViZmRkZTNlY2VmNjg4ZTc4NTkzNzk3OTYyNGZiZTA5MTRjMzhiYTE1NWQwODBmMTJjOTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg3YzYyZjMxZGE1ZWRkZmMwNzllNjQ1NmU5Y2I2M2RlMWM4MDlhNjlhZmM5OGZjYmM4YzJkODk5Yjc1MGU3ZTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d80d7b1e27f242b18ffa3da5023a0567",
+      "statement": "The `/health/live` endpoint returns a `HealthResponse` with status `ok` and performs no dependency checks.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/app.py#L1747-L1748",
+          "version": "repo-lines-v1:sha256:158e9e24d6a7345cd137bb97bdf4e640e4c2c82a9428c3cb9f655670c4af9b52:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjliMzdmNDA0YTliOTVmOGNhMTc2YzBiMjlkMWZmZGY5MmQ4ODA4YWFhMDZlMTgzYjZmNmNkM2JmMDZlNDkwOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODk4ZTdkMmJlZjY0ZDJkYjQ5M2JkNDA0M2YyOWRkNTllOWM4MmE1NzlhM2M5M2EyOGI1NDQxNzU3YjAxMmRiYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGNjNGE3ZDFjYzc5NmFiYTNlNDY3MjMzMjdmNTE3ZTlmODExOTgyZDI1MGYwNzAyOTg2ZTRiNTc2NGFkOTU4OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmFmZDFkYzU2YTMyNGUwZGE1ZmM2YTA0OWY3OGMxYzZjN2FmYTY0NTc0NjQ5MWMyNTEyYzMxZTUyZWI4YTNjMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6c20737e5f824826b762290ba370efd2",
+      "statement": "The Runtime readiness aggregate is `not_ready` when any blocking dependency check is not `ready`, `degraded` when all blocking checks are ready but a non-blocking check is not, and `ready` only when every check is `ready`.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/readiness.py#L180-L195",
+          "version": "repo-lines-v1:sha256:c09783ac2ab9ae297286db56d748c81990830763e8941d19a8b0d48f0e8b9890:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmZDBiZTJkNDJiMmU0N2JjNWM0YjIwNTY5YzViN2IyZGU3YzFjODNlMzBiMmM0N2NmZWRmNWJmNjFmOWZiMjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2NTljZmUzZDllNjM1OGEwNmVjODBhYmQwZWQ3ZmI0NTI3YmM0MGY5OTU3MTBjMWU2ZTE1YTI0MzlhNTM2ZjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRlYWI2YzQ5ZjMwNTBlZWNmMzBmODRlNTQzYTEwZmY2NzhiM2I2YTNjMmI1YzBjNGI3MjUwZDBlMDVhZTU2NTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2ZDc0NTRmNjBhNDA4YWM5ZDJlZmQ3ZmFjZmM0YjY4ZGQ1MjVjNzgwYTI2MGVlNjFiNzA1YjVhNTk4NTM5YjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_62e3b11da2ea4f2bbbad01b34aed6953",
+      "statement": "A dependency probe reports `ready` on success, `timeout` on a timeout, `misconfigured` for an InferenceConfigurationError with only the stable redacted code and detail exposed, and `unavailable` for any other exception.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/readiness.py#L255-L283",
+          "version": "repo-lines-v1:sha256:e805d51f5687110468ce57c05c35432f435e35e801ed5c2cc955d0816eb7177d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiNzQ4ODEzMGE0YTcxYzQzMDQ3ZDQ2NDdmYjU2MTFmZGYwOWU1YTg0YTEwOGQwZDhlYzU0NDdmYzZiZDM2ZTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlYzQ3YTc1ZDQ2Y2I4ZTBjY2NjMWUzYWE1MDFlNjQ0MjU3YTkwMmFlMTE5NjYyY2U1ZDczMjlkNGQ2MTFkYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYxYTQzNjlhMjUwYmY4NjIwYmQ3ZTljMDhiOTRlODU1NDVmYzViZDY2YTk1OTQxNDgxNTVmMGFjYThjZTQzZWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE4ODc1NTNmNjJiNGMyNzQzNDU5MTJlMjU3ZGZmYzUyYTIwMzY1YWMwMzIxMWM5NWU1YThjNDJjM2ZjYTdjZWEifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/readiness.py#L37-L44",
+          "version": "repo-lines-v1:sha256:5c3096e703594349b4636f1215ed8cff634a39c9d88a0ff766e7332943b5bb06:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjNmZjZlMTAxNzAyZjQyMmM4NjBhY2E2ZDJhN2QxNDhiNmI4MDk3YTJkYjI5YTliMGE5MjVjMDNlYzFiM2ZkNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTZiMDZlM2E5MjBlMDI4YTYxNWE0YzFiOTcyNWMyZWRjZDZjMDc0ZDBlNGI3NmYwODU0YmJiNTJhZWQ1N2E2MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjY4NmNmMWI5MWU4NWJkOGE2YzYzZDdmODMxZDU0ZDliOWJlMGYyMWEwMGFkYmM4MDcyNGZiODAxY2IzZWUzNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d772a69a68e346019d4f710251029061",
+      "statement": "The database dependency is a blocking readiness probe that calls the database ping, while generation, rerank, decision and embedding inference probes are non-blocking and are registered only when configured.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/composition.py#L747-L765",
+          "version": "repo-lines-v1:sha256:adada2d926e757aecfb9f8a3b424f69ed61516ff1eb0c4d740ba94823bbe7fe4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4NDc0M2FiOTg0MDYxMmJjZTBiNGJhMmNjY2JmZGMyMDg5ZjcwODEwMTAxNjFiNDg1NmUyM2Q3YWI1ZjdkM2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2NDdmYjVkM2NhYWU0NWIwNWE4MDlmZmMxYzE2YmM0MjFjNTBkYjgyZGFiZTIxZDQ0N2ZhNTU4YWIxYzUzMjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIwODJiMzk3Y2I4MmRiNDc1YmY0NjM0MDY1ZjRiYzNiYzM0ODdlYTUyZjQ3MzRiNmJlZDlhMmQ4MDA5ZGE4ZGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM0ZTM0NjkwNTQ0NzNjNjM2MGNjNWRhNDU0YmI3MDdlN2YyMzcyNDU3Yzc4ODJhMDljNzEzYjBlNGNlNDZhYWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a8ce9c332c504d78876f22544a2709cd",
+      "statement": "A CachedReadinessProbe retains a result for 300 seconds, but retains `timeout` and `unavailable` results for only 30 seconds, and concurrent refreshes are collapsed into one probe run under a lock.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/readiness.py#L211-L251",
+          "version": "repo-lines-v1:sha256:3323865b8922df8b294b1f0755425fdf86f8cb88386ee09367b182ad8791275f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwY2JiYTllY2ExMTM3MzM0YTFiZTJjYjRjYjVkNDc5NDIxMmI3MjE4YWY3ZTFkMGEwMDYwZDc3ODk4YzEwMTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmNTUyMjFlNjJmMmRjYzU3ZGUxODE2OTYwZWZkM2IyZWExYjE2Y2RmYzA1NjNhYTcxN2RkNzAxNTZjMDAxZDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM0MDI1YmNjYTFjMWM3MTBhMzY1Y2E0ODA2MDFjZjBkYzk3NjljOGQ4MDNhYjdmOTc5NmIwZGM0ZmM3N2ZlYTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxYTQzNjlhMjUwYmY4NjIwYmQ3ZTljMDhiOTRlODU1NDVmYzViZDY2YTk1OTQxNDgxNTVmMGFjYThjZTQzZWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9d54b44c75694f38808d1ce756a19591",
+      "statement": "Runtime readiness reports `not_ready` whenever the artifact-processing Supervisor reports `degraded`, and its checks include `runtime`, `artifact_processing_supervisor`, and one `artifact_processing.<family>` entry per processing family.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/application.py#L4551-L4575",
+          "version": "repo-lines-v1:sha256:110d06d865ae28c6b822f90e5db1310cd9f5a9aa5068ae9952f9f4c5e8e6bce9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmMmVjYzBkODUxYmNlNTg2YzY1N2JlMGE5ZTljYTdiYTdlZTU1NmViNjQ4MzRmMzJmMDhmMWU4ZDExN2Y4YjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkZWJiNGMwNjFjODllMzgxM2FiNDM1MjU2YTdjOTU1Y2NmNWM1NjUzOGNjY2MzODVlYTdlZDlhMjZlNDc4NDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2YmE5NDFkMDc5NDFkOTA4OTIzNzNhMTVmOWEyNTRmNGIxOTQ5ZWU0M2FkYTc5Njk1NmUyOTdhNzQ3ZmMzYTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxMWEwMWI5MzU4NzM1NThiNzc3ZGJhOTM2MmFhYWY0YzE4ZjJlNWNmMTViOTY2Y2ExYWM4MWYxOGMyYTZlMjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_77d99d3dc7804edd8825fddbb70f728e",
+      "statement": "The `/health/ready` route returns HTTP 503 with `not_ready` when the Runtime is `not_ready` or when the authentication or access provider check is `not_ready`, and returns HTTP 200 for both `ready` and `degraded`.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/app.py#L1751-L1770",
+          "version": "repo-lines-v1:sha256:ef2c00125e4a2110caecee2fbd51ade48e2af155adb79ec5d4df57a793073de8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1NGQyOTNjYTdkNTM5OTMyNDcwZDgyODMwZTZlNzRjNWY0ODBhYmYxYmQ5NjhlMmVmOWNlOTViNTkyNzNkY2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYxNWMwOTQ1NThlNGI4NTY3MzIyZWI0ZTFkNjNiZDUyY2M1NmViOGUzOGI1YjI1MTEyZTgwOGQwMjkxMjNlMTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3Y2M0ZjgwMDcwN2UxN2ZlOWM4OGNjNDRhZmI0OTY5OGIxZGVhNDVkZjY0N2VjZDdjM2RkZjQyNTUwYWEwM2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6902dd9035e14e8baeb25f99484cd205",
+      "statement": "When no Runtime is bound the readiness observer reports `not_ready` with the check `runtime: not_ready`, and when the runtime readiness call raises it reports `not_ready` with the check `runtime: unavailable`.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/factory.py#L785-L799",
+          "version": "repo-lines-v1:sha256:98dd41c83cceb666db09a52896e154b20ae93856f4afed4eae85ceff0991f4d0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzNDY4YjBlNzdiYWI3M2U2NTRkYTFiNmZhYjRkYmRjYzlmMzUyYmM2MmRkYmZlMjI3Y2VmM2NkNjViZGNlN2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlOGU3MWMwZDg4YmU0NTQxZDkzMjhjZThhZjAwMzk4YTlhNGEyZTRlNmQwODNlNDc1MzAwYTQyMWZkYjM1YzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYzZTAxOWMyOTdjNTdlNjU0MTY1MWE0Yzk2YmM1ZGZmOTk5YjgxMDcyMWM0NWQ1ZWVlY2Y1NmQyMzlmNWYwZWMifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/factory.py#L834-L846",
+          "version": "repo-lines-v1:sha256:f7acc8531fb17aa5fc488905585d5e2c991cf4289536b63df5011b457ff10f59:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxYjYyMmRjOTY3MjMxMTY2NTQwNjViMjI2MjU5MTNiOWFkYjM4MTY0NjM3ZjgyODlmMjcyYTk4N2ViNzk0MDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5ODA5M2Q2MmI0YjdiZDNiOTA4YTAzMGEzMjQ5ODhmNmRiNmE0ZWU2ZDQ2OTMyNzg1MGVlZWMzMDE5NWJjYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM0OTc1MzkzODg4ZWQ4Yjg0NmY1MDA0MWJkMzdkYTY4ZWM0MWJkYzcwMTNiNTlmYjUyMzdmN2RkMzc4ZjQyNWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEyYTI4NzAyNjVkYTEyOWYzNTI0NDc1ODk4YjM1NTYyMzJhMDZhOGZiMzcwMTI3ZGE1ZTI2ZTIyZTM0NjFiZTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_01b798126e6c44b08e6d6f13b52a126a",
+      "statement": "The Server re-runs its readiness observer every 30 seconds in a background monitor and publishes the readiness aggregate, including access and authentication checks, to metrics.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/factory.py#L800-L832",
+          "version": "repo-lines-v1:sha256:ea4ea32b918f791d9c15c2393a26e2d3bbfa087306a6fee20009572e6af9396a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE3YWRkYWRmNWE5OWFkMTMyOWIyM2Y4NzA2MmFmOGUxODdhNzc5MjY3YWU1NzBjMjRmZGI5ZjY3MDhiZjUwM2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkOWM0YmM3YmM4MDc2YWU4NWRhNTlmODNlZjY0NjdhNGQyMjU3ZTA5ZGVlZjAyOTRmMTEwOTE0ZDUxOTE3NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUxZDNkYWZlM2U2M2M4Y2IyNWRlMGM3OGJlZGM5NTUxZTZlYTQ5YTJiMDc3NjdmMGY4YmRmNjJkN2NkNjFmYzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRhNTZkOTdiYmU4ZmEyMTQ1ZjY5ZTQyZjA5ZmZhMGZkMjAzNzBkNWQ1MTI1MjA2ZmZjYzlhOTAyZDhhMGMwMzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_500992c6e01e45ce8ed36efbed2b4f4e",
+      "statement": "A personal service is `ok` only when support is supported, registration is installed, the definition is current, manager ownership is owned, the manager is active, and the Server liveness is live.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/service/model.py#L280-L289",
+          "version": "repo-lines-v1:sha256:5d0482ca21e1d3ee3773dcce30c6e3c8a6c70aec3993f810337609747b38f009:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzZDAwY2YyNzA5NjRkNDRhMTNkZmFjODc1MmIwOWZjYzQzNWIwZjE5YjMxNmFiY2Y4MWE3YWE2NGJiMTIyZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE4MjkxNzUzODRmMDk0NWRlODI1MWJhN2EwMGRkMTAxMWVhMGZhZTgzNzZiYmNiYmZhMTQyZjkyZWNkNTc1MTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJlYjg4NDQ1YTFmN2I5MjViZjI0MjFkNGMxNzdmYjBmN2VkZDYyOGZmMGI4YjQ3NGJhOGY1OTc2Y2UzZDMzYTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_85219662f37248edb87655d7e352f1fb",
+      "statement": "`powercontext service status` exits with code 1 when the service status is not `ok`, and reports registration, definition, manager ownership, manager state and liveness.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/service/cli.py#L121-L136",
+          "version": "repo-lines-v1:sha256:14bbe33c632a03ecdc7f2b61c631fe6a8e0870b2d759b9bfa9e5d31fad8d766f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0NDhiZGVjZGIwZmVhZDY4M2YwY2I4NjVkNmM5YThiZDcyYTMxNzZhYThjOWY5YWM2ZWU5ZWU3ODhkYjY1NTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyZGQ5MWIyZGU1MDdkOTE3NWFjZmRiOGVkN2QwYTJiMzkwNmQ5MWU1NDVlZDM4NTdmMzRhMDNiYjRmMmQ1NmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljOGRjYTVlNTJiOTczMDlkOTA1ZmYxNjdiN2EwNDQ4OWRkZmEyMmM4MDRiNTExZDc0Njc1ODNmZWUyNjU2NTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJiM2I2NTQyMmNiNDA0Njc2NmQzOTUxOTRhNGZjNTA0MTdjMjAxOWI0ODU1Mjc2ZGMyOWViM2RkMThjZDE5MjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a1cf6936baae49ae84d9ffe211483bd6",
+      "statement": "The service readiness probe reports a registered endpoint as unreachable when the process is not live, when readiness returns HTTP 503 or a `not_ready` body, and as a conflict when the listener returns an invalid liveness or readiness contract; a `degraded` body is reported as live with the readiness value.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/service/probe.py#L80-L106",
+          "version": "repo-lines-v1:sha256:ba8ca47f83cf108809af03079094ae1fb4179f4bbe297f87f24ba3602719add8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkNmJhMDJjYzdhYzAyNjVkOThiN2EwZjViZDMxODFkNjI4ZGRlMjdjNjRmOGVjMDk3NDBhYTU3ODQwMTI3NjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjZjI3MGZjZmMyN2E1MWY5OGQyMDE0ZTE5MzM2YjllODlhMDk2MWYxNDA4MjEwNWU0NzA4NTQyMjgyZTllYjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkMDNmZTBjNTc0ZWU5MTgxMmI3MTkwOTc1YTcxYWZkMTQ3MGRmNWVjYTU1MWY1YTE5ODk4M2RhMTg0YzlhOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyNDJmNDIyNzUzZDliZTA2ZDVjYWE3NjJiMWM2YTA1M2NiMjVkNzljYTdiMzVkZGYxNjI0MTZlYzc3OWM3ZjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_597b11e20be1416fa242cc030dcb6a59",
+      "statement": "Service lifecycle mutations are serialized by an in-process lock and an OS service lock, and a second concurrent mutation that cannot acquire the lock within the timeout is rejected.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/service/controller.py#L150-L170",
+          "version": "repo-lines-v1:sha256:dc46aff7a3c89b23a5d92b168431aaf71d67d9e526f70d2274aadfc7917d6711:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkOThlMWU2NGZmMjI2YjU3NWIzNmMzMWRiMGRhMWM4NmE4ODcwYzEzM2I3ZGY2ZGM4YjAzYjgyYTI5YzdjZDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmNGE1MmI4NTMyODMxMzc5YTlmNTExNTI0ZTI0N2M1NzkzYjA4ODVkNWIxZDA5ZDNhYTQ1YTQ3NDFlZGFjNTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjZmZiNzU4N2U4YzdjNDUzNThjZTRlYjFkOWVjOGI2ZGQwMTE0NzA1YjFjMDgwOThhY2NjZjRiYTc1YjRmMTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg1ZDgxODhiZDUzYWQzMWE5YmU0YmI5MmU2MzUxZDBmYjA2YWExODUwMGYzZGQ4MGU4Mzk5NmZlZjIwMWI1OTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dd0d18d1f18b4f7481dc91be5e237c67",
+      "statement": "The artifact-processing Supervisor reports `degraded` only while it holds leadership and at least one processing family is degraded, and reports `disabled` when no family is registered.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/artifact_processing.py#L587-L594",
+          "version": "repo-lines-v1:sha256:0655b2cf31b2ff72f496fa26cb1130dcc41d64f2342d9ab66f1ce4d3227c2d86:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODYzYTlmNDVjOTliYWU0NDY4NzMzMjNmZGY5MDkwZjU3MTMxM2JhZWQyNTg1MzUyYmU0MWQyMTJlMmRiOTc1NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjNkMDBjZjI3MDk2NGQ0NGExM2RmYWM4NzUyYjA5ZmNjNDM1YjBmMTliMzE2YWJjZjgxYTdhYTY0YmIxMjJkNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDBjZGQ1MWU1MWZkMDBjOTM1N2E2ZGE4ODIyY2U5NjRiNzI0MmVkNjRmZGJjOWZmZmZkMDNhYjU0NWFmY2M0ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzk0ZjhmMWQ1MzNhODVhNzE4NWZhZmVkNmRlOTY1OTI0N2M2MmMxMzgwOTRjZTU1NGUyZDk1YjRjNTVjYjQ2YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7abbd402477246d7bcdab6ff5d8c09ef",
+      "statement": "A failed processing scope discovery marks its family degraded and schedules the next discovery one tick later, and a successful discovery clears the degraded flag.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/artifact_processing.py#L889-L906",
+          "version": "repo-lines-v1:sha256:337655bcd0f2b612d72d776b414dbd2258c72f6f8a3b28ebaa1f17da09fe2247:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxMmYwZTc5ZWVhNDJkNTIwNDgzMTFjNWI0NGI4ZjNjMTBkMTNiOGY4Yjc4NDRjYzQ2NDgxMmQyNmMyNmIzNTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwNjk2ZjQxZjM2MDBhYjRkNjU2N2MyNjY2M2E4ZTQ1OTVjNDM1NzYxNjQzZWVlYjZjZTk2YzViZWQ1ZGU5NzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUyZWEyOTYxMDc4MTYzNGY4Nzg3N2I4MmUxZTFhMzI4NTdjOTM2N2JjYzFkOTAzMmQwMzQ3YjczNmVlMGI2NTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVlNTg3ODAwNTYzNDIxMjU2NjkxYTk2YzUyNTljZjY2ODI4ZWU3OTIzZTFjZDVjOTM0MTIzYTI3YmYyMzhjYjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_af98bb6b0e664cd195e17d0b7ca97684",
+      "statement": "The scheduler observes each Scope as running, queued (waiting_capacity or waiting_dispatch), retry_wait (retry_backoff), blocked (policy_block), or idle, and reports the next check time for scheduled and retrying Scopes.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/artifact_processing.py#L676-L700",
+          "version": "repo-lines-v1:sha256:494e99cde211ab8e1b2fc2b1be495612cc648f34e5420a60015b3f94779394ce:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkYzY3N2MzNTlmNDhiZWQ5OGQ0MmQwNTA1N2U5NmZiYjMzNTRlMTNlYjE0MWM4YTJhYjg2MTk2ZDg1YTZiOWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxNjE4MTY4YjlhY2Q3NWY4MDJkMDNjYzExYWVjM2M4NGIwYzc2ZmUxMTViMDQxNjgyY2QxODE3ZTFlMDUwYzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkNjM4ZWY4MDI4YTIxYWFhNDE1ZDNkMmNiMmUxMjE1ZDcxODhhMzU3YzRlYWQ3MGYxMTQ4NmJmYWZlMmYyMGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwYmZiY2M3ZDEwNGU5ZDEzNGVjYjFiMTI1NjRlZDExYzI3YTk5ZGJjYjRiYWIxZmNmMzY5NzUyZjQ5YzYzNzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_97215841f88748978193e3fbbea82f51",
+      "statement": "Artifact processing uses a 30-second base retry backoff capped at 1800 seconds, a 2-second discovery timeout, and a default Worker timeout of 600 seconds per binding.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/artifact_processing.py#L120-L131",
+          "version": "repo-lines-v1:sha256:977fad4f293b4fad3d7eccc1916c7b28dc4643196a87eadaab19a4d73f999f3f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZDE5YWMxMjU0OGUwNWYyZjJhZjI3MmIzMGQ3ZGFjYzc2YTcwODE4ODlkZGJmYjFmNWYyZGFlOTIzNDFlZWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIxMDZjYWQwNzhkNjY1YmM4ZDk3MTQ4N2JlMTdmMjYyM2VjMGNiN2Y4YWZlOTJiNTIzOWU2Mzg4ZTdlM2UzYzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiYjZhMGEzYjJiMzE0YWQzM2E2NjMyNjVmNzZmMGQyM2U2OGVkM2QyOGU1MTYxODA2MDA5YWRmNGNhZjc5MTUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/artifact_processing.py#L90-L103",
+          "version": "repo-lines-v1:sha256:3c13cdd23bb45d482162fab097c137d5b354fa520eae97145ead9fa2e0acb713:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkNTVjODcwMTA4MjhhOWI3ZWFiNDA1YWIxMzliOGU0Nzg2MDE0MDQ4MWIyMDkyMjYzMjQwNWNiZDk5NTQxNzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxODllMTA3OTE5OGVhYWUwOTMwYjMwMTI0NDM2MjJiZGJiODQ5N2VhMDU3NjVlNWQwODlmNWQ5NmEwMmIxNjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU2OWNhMmZhODM0NjM0MTA1ODJiNzkyMjI2NjVjZWU5ZDg3OTljM2VlYjg1MDA1OTc2ZGZjYmQ2YmIyNDgyMTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjExMTdkYWNkYzViZDAxN2JlNjVkNmE1OWQyMzc5MWY0MTFhNDEwMDNhMWQ1NDJjYzYxMGZiOGUxNTg4ZWE1ZGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0e6fcd8b1835414494bf039e16bc1591",
+      "statement": "Retries are admitted to the ready queue only after their deadline has passed, only when the Scope is neither running nor queued, and only within a bounded per-channel allowance.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/artifact_processing.py#L1088-L1099",
+          "version": "repo-lines-v1:sha256:893848c5d721388358ef873370a61f2935401cf6b645cc0284d45ac4d1aa1021:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwYWU2YTI0NDA2MTI5MzVkZTVlMTg1MTYxZmVjZTcyNmNlNTNmNTExOThkOTNjZWFhNmVkMjExNzFlOGU2MzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1YWNlZjU3YjExNjljM2RkMjZhNTRmZWU4MDljZmVjODYyYWI3ZmQwNzI2ZDQxNTJjODNhYmFmZjJlNTk3YmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNiMzJlYWM2NjExN2ViOTIxM2FmNjFlZjhmNTYwMmM5OWMzMGQ3ODA3OTAzODc0YmVhNjNkY2E3NjU4ZWMwNzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgwMGU2Y2U2OGY5OTcyYzVjMzk3NmU2MmFmMWU2OGM5YjVhYjI0MGMyYWZjYThmNGVjYjZjY2ZlMzFlNzdiYjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_51a312b792aa4548be17f18a9a28888b",
+      "statement": "Topic Memory processing status is `blocked` when a retained block is observed, `idle` when the source cursor has reached the head with no processing target, and `pending` otherwise.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/topic_memory_recovery.py#L39-L80",
+          "version": "repo-lines-v1:sha256:26a8c6e5755c7d1c8975d0b67f1408abca8742b07a0ef7fb9a487b78f0769502:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5OGFkMjgwNTVlYmE2MGI1YWY4NmRjN2NjNjdiNDA0NjE5Yzg5M2NhMWQ4ZTIxMWZhODM0ODZjNDNlODdmODQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiMmRlYTFkMzhhZjgzNzlmNzRkMmY0ODAzNGJlYTQ3N2UyMTE4MTAzMDM0YjkyNWU2YTU1MDEyYzMxZTQ2YzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIzZGZkMDNlMmQ4Zjc0NmQ4ZDM5MDRlYTk3NWQ2ZDk3ODlkZTY3NDA0OTAzZDRhYTRjNmZkMDQ0YmIzOTdhMzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_117e7f8f240a431c83a47f1e2dfbf48a",
+      "statement": "A Topic Memory block is recorded only when the frontier's work budget is exhausted and work exists beyond the cursor, and a repeated observation for the same attempt returns the existing block instead of creating another.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/topic_memory_recovery.py#L50-L120",
+          "version": "repo-lines-v1:sha256:63dc6d63d178ab012c2e832154967751440910010db5ffc9485ba93bbac74cea:eyJzZWxlY3RlZExpbmVDb3VudCI6NzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5NzA5MTY3MjJiNzQzYTYzZDBjMzUyOWI5NmNlNTIzNTQ5ODM0OTU3MTZjYzJiYWIyODAwZTU5NmFhMGFjYzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1NjFjOWUyYjRmOTM2ZmI4MGEzMDJjMGY3ZDZiNGE0ODljYTJkZTU1NzFjY2M1YTJkZDA2NDc0NGIxYzU1MjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5OGIwNjNkOWI0N2U2NTM3OTYyNTU3MmNjZTE5NzY2OWQ1NzY3ZTEyYzE4YmUwNzU2NTJiOGNkOTgxY2U4ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwMjAxZjgzYTljZGZhYzRhOTM2YWRjMjcxZDYwOTg0MmQxYzE3MGQxODZkYWM4MDA3OTkxZWFlYWExY2M2NmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_163a581b7b7149e1b5050be667505db1",
+      "statement": "Topic Memory work budgets are capped at 3 attempts, 512 provider requests and 64,000,000 tokens per frontier, and three rejection codes (related_history_limit, invalid_topic_placeholder, invalid_topic_coordination_content) are recoverable and do not end the frontier by themselves.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/topic_memory_budget.py#L41-L58",
+          "version": "repo-lines-v1:sha256:bf1e0a21583c6b20ea3b9e9a0c1b96b480ca2486eceb436e9484e1fc24a31b69:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkM2NiZDRjMDU3ODlkYjYwYWJiZThmNmVlYjk4MDM2N2NiOTRiNTIwYzBhN2Y2YjA0MTFiZDExN2E2MzNkZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNlYTM0OGVmYWVjMzVlNGM1NDJkYzM3M2YwNmU4MmRhOGVjNDEwZDYyYjc0ZWU1OTNjOTBlM2NhNTkwNGE0NTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0ZTU1MDNhZjZhYWU1ZTkyNzFkZmI0MzY2NDQzOGFmNmI2ZTVkNWNhOGQyNjI5ZjBhZTBlYjRlYTQ2ZTY1ZjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c842e528605f4a318b1efc84b834b37c",
+      "statement": "The exhausted reason is the recorded non-recoverable rejection code if any, otherwise the recurring rejection or window_attempt_limit at the attempt ceiling, or window_provider_budget_exceeded at the request or token ceiling.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/topic_memory_budget.py#L60-L80",
+          "version": "repo-lines-v1:sha256:87570bf2564af38a6e5e3a2d572cb5f0dd3e2cf86effa64d42c7b2473b1b3293:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5NmU1MTJkMGM2MmJiYTdmOGM3MmY3MGE1NGYzNWZiMzM1YjA0MTU4ZTExNzAzMWNhNTliYjU4OTc4MjVkNWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2MDJlZGY5M2FmNDQ5ZGYxNTNiOWNlM2E2NTdmMjQ4MGEyY2I2ZjFlYjk2MjViOTA0NTRkMjUxZGMwMGI3ZDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYzNjdjOGE4OWY2NGYwZDAyOTMzZDkwYjgxOWQxZjk5OGIzOGQzMjExMGMwZTE2MjVlOThiMDFjNGUzMWFkZjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNkYzYzZDZlYzA4NWI4NjFiNjA2ZTZlZTQ0ZDQzODcwZjlhNzcwNGU2OTFjZjQzZDhiMzhiMWFjNjg5MzI0NzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_498f1323a587403aa975d5d95b2ca562",
+      "statement": "Retrying a Topic Memory block returns the existing block unchanged when it was already retried, refuses with a conflict when the attempt, cursor or recorded code no longer matches the block or no pending target is available, and otherwise deletes the exhausted budget row, requests a pending flush, creates an intent and records retried_at.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/topic_memory_recovery.py#L161-L214",
+          "version": "repo-lines-v1:sha256:78de347dcbf35e97365a52ce7b9208635434ee762d654cbf2eab73f8f1c1da12:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyZmM1YjczYjYwMjY1MjEyODkxYTFkMTNkYmQyNzEzNmZiMmZkY2RhMmYzZDAyNzExOTE2Y2QxOGMyNGZmYWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2NGI2YTM5NTQwZDY2NzEwNDgwMGE2NDUzMTM2ZThkMDhkOTg0OTdmMzcyMzBhM2UyYTVjYzQ3M2Q1MmI4MmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI5NjI5NzhkMWJmZDM2YjUwNzM4NjA5ZWMxMzNhNDNlNDRhZWJiMTk3OWRkN2NlZjExMTg4MWIxMzU0NTE0MTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU4NWVmOGNhNGFlYThkMzA5OTc3YWJlY2QxMmZlYThlZTRjOTQzNWRkYjY0MDIyMzM1MzgwNjYwNDdjYTQzNTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6b47926843bb42b2a9aec0d6b14c8b23",
+      "statement": "The runtime Topic Memory retry fails as unavailable when processing is not configured unless the block was already retried, and after an accepted retry it wakes the Supervisor for the Topic Memory binding, logging but not undoing the acceptance if the wake fails.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/application.py#L4051-L4085",
+          "version": "repo-lines-v1:sha256:80b095996c98e444e1234d06fc336d66d58b2193001b99f2224ef8e467fd530f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkYTc1MzQ5NGRjMTUzMTMzNjc3MTdhNjFjZDViODk5YWUwNDEyMjNmZjFjNDcxZjk4ODM4Y2Q0OGMwZmMxOGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5N2UwZTQxM2JjNDgyMTgwYzgyNjAyNDFiMjcxZjk3N2RmMDEyMDhiNjkxMWMxZTgxNWI0NGJmN2IzYzJjYzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVkZGNmMjhiYmE0YTcxNjJhMDY0ZThjMGYwMDRiMDNmMzI3YTJjMGQyMWFmMTRmYjU0ODNlMWRmNjA5OTcwNTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhNzg0N2MyNjM5MjFkNjY5MTM3OTg1ZmFiMDU1MjQyOGY2N2Y1YzM2NDk5MGIzNzczNzIyMmNjMTI5NWRkZTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2d1ce080afd844a78e25dfc71b5f71f9",
+      "statement": "The Topic Memory processing HTTP operations are POST /v1/topic-memory/processing/status, POST /v1/topic-memory/processing/blocks/get and POST /v1/topic-memory/processing/retry, and retry declares 200 for accepted and duplicate acceptance plus 404, 409, 422, 503 and 500 error responses.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/http/_generated/operations.py#L1769-L1843",
+          "version": "repo-lines-v1:sha256:94636f6bb3034a687a823996923488affb4c0ebfec6920b818fef8f50b9177fc:eyJzZWxlY3RlZExpbmVDb3VudCI6NzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhN2NhZTE5MTRkODNjZDIzZTFiNThmOGI3N2Y0ZDVhNzI2ZmI5ZTdmOWEwYzJjZWU1ZTZjNDM3Y2YzZTg1MDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc5ZDZlNDM3ZTY3ZTY1NzU0NmU1NTFlYTdhYzUzZjMyMDdiM2E4OTZkYmUyMmQwOTAxNGU4NmI2OTU1YjJhNGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE2ODg4NTgzMTdiNWVhYzIwODMwOGM0N2M0NmFjOTM1Njg1MmUzYzcwNTE3NTgwYjdmNDA2ZjRhN2Y2MTAwYzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkN2IzMzNkMmI2ZmFkYTQwYTIxODI0MDhhOTAyMzgzMDNkZjA1MzZjYTllMDhiMDU5MjkwNjA0Njg3NDBmYTIifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/app.py#L1644-L1644",
+          "version": "repo-lines-v1:sha256:96231a47483ef8f7dcb36153798f3ae378fcdbd95a82df6bc26e117e6692d3c6:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTYyMzFhNDc0ODNlZjhmN2RjYjM2MTUzNzk4ZjNhZTM3OGZjZGJkOTVhODJkZjZiYzI2ZTExN2U2NjkyZDNjNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTYyMzFhNDc0ODNlZjhmN2RjYjM2MTUzNzk4ZjNhZTM3OGZjZGJkOTVhODJkZjZiYzI2ZTExN2U2NjkyZDNjNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDc3ZDRkMDY0NmEwNDM0NjE1ZDA4Yjk4MTZmMzNkOTMwNmI0ODYzNThlYzJlYjQ1ZDllNzI0OTc1YjNhYjExMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTU1YzEyZDc5NzRmY2Y2ODU3OGEzMjRiOGMwYzM2OGNjYjkyZjhjMGJkOGU5MTRhOWYyNzUzNzlmMmVhZGU5ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bf3da42949654c93b76476626946505b",
+      "statement": "Bootstrap of the processing schema raises ProcessingSchemaNotReadyError for legacy processing columns, missing processing tables, or existing processing data that requires an offline migration, and it must run before any API, domain initializer or Worker writes.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/processing_migration.py#L100-L102",
+          "version": "repo-lines-v1:sha256:b96cc1e966822f75e9b45a075045c40d80e2b61278707506b6d306a9b40c726e:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDZiNjJjOGYwNWMzZmUzNTI3ODdjZTg4OWIwYTM4MjM0NTkyNDViNGFlOTYxMjJiODViZjU4YTMxNmM2YTc4NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDk3YTE1NDgzNmMzYmJlMDE3ZjMzOThkMGQ3YTY4OTQzZjc1ZGM2ZTI1YjE0MjcyMjNhMmZiYTAwZDIzYWFiYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmI4NTlkZTAzZWRiZDgxZDE2MTgwOWFjMWIzYzUxZWE4YjVmYzkxZDgzZmM3NGZjYzQwZDY1ZGM0YmY5MTE3OCJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/processing_migration.py#L154-L186",
+          "version": "repo-lines-v1:sha256:cc540f8f5837377217242057eab975611b9a371f5d446794ef845af50873c3ea:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxMTlkZjBkM2IzYTliNjkyY2YxNjc5YThjYWFkOTZhZWY4YWI5NTJmY2RhY2E2ODY1NDkzODQ3YTQ3MDNmNDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1ZWJmY2M2MTU5MzZjYWE0OGExMjUxYjFlYmQ4YzAzMWJhZjcyMjRlYWY4NGRhZGU1NWI2MmMyYzhjOWQ4NjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBlMjJiNmFkNzdjMjI5NGM1ZjZjNjQ2NjJhYjI5ZjJkMzY0N2M5Njg2MGRkYTcwMTJhNDkwMmU3NmFkNDFmYjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8a64b6810df14a269138c5c9edf92deb",
+      "statement": "The processing-migrate command offers plan, apply and verify actions, refuses apply without the maintenance confirmation flag, and accepts a stable migration ID and a batch size from 1 to 10000.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/cli.py#L132-L160",
+          "version": "repo-lines-v1:sha256:4787a1270f4062f0efc8b94b7959ad9d002db39512e4767d4191c9ad6b4ef30a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiMWYyMDljOWQxZjBlY2UwZWVkMzQxZTYxMDIxYTk0NWNmMTk4ODAwYWZhNWU5NGMyNjJkZDIyZDlhMjViOTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkYjdiODNjZDhjMGM4MGJjMmJjMzgxNWM0MGFlMWMwMGZkODUwMzkxNjA5N2YyNzExNWY0NTVlYTc4YzZiYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM2ZjM5ZWI1ZDU2M2NlOGQ3YWNjY2UxMmE5NGQ0NmNmZWNiNWRiOTYxZWZkZTEyZDM1M2U2NDJkMTkxYTFiODIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcyMTc1NWM1NThmYWMwZjMxNmQ2ZDdiMGEwNzkzYzdhNGE0ZWEyNTRlZjAyNGU5NjEyODM3ZTI4MDdmNDgwMzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b560158481ff451d987fd701983d297b",
+      "statement": "A database that already contains the Server identity table but no pc_schema_revision table is rejected by the processing migration with migration_required, which requires the registered full Server upgrade to be completed before partial maintenance.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/cli.py#L233-L258",
+          "version": "repo-lines-v1:sha256:50cf7638edeb81a81032768dfb49b7d8e2b01150ed24c05a3f76c9e154ee7f18:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhMzcxYmEwNzU4YTU3YTY0YWEzM2I1MGEyMjhiNDFjZDUzYzk2MWU1NGFiNDZiMTAwZTUwMGM4YWU5ZTM3YTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5N2M3MTI0N2FmM2NkMWVkZjU1NWE3ZDEwNzU5MzE1N2Y2ZGMyYTIyYWYwZGU4MmU3Nzc0YWJmMTBmOGFkZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRjMzczYzhhNzg4MzY5NWY4NDg2MmEwYTY2Y2E4ZmEyYjU4ZjNhYWZhZjU0Y2UwOTljMWM3ZTFjMzZjNGQ0NDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_356be76f0d75409f9c1dc47148ed281d",
+      "statement": "The db-migrate group provides status, verify, plan and apply, where status inspects the schema version without creating a database or control tables and verify does not assert Server or cluster readiness.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/database_migration.py#L85-L154",
+          "version": "repo-lines-v1:sha256:f48c85b361bb08ac141c18d90dafaea13f70f78687551469b845297186e98817:eyJzZWxlY3RlZExpbmVDb3VudCI6NzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0NDhiZGVjZGIwZmVhZDY4M2YwY2I4NjVkNmM5YThiZDcyYTMxNzZhYThjOWY5YWM2ZWU5ZWU3ODhkYjY1NTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxZTU2NGZiYjBmYjVhOTc2MGU3MjllYTFlYWQ2NmU5NGQyZjU2NzE4ZTQxODBjZGEyNTQzYWVjY2ZlZWM3N2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjMzUxOTk3Y2RhMjhiZmNhMTc3OTZmNmE4YWY4MzRmN2FjYmE3YzY5MjU0ZTA3NTU2MTM4MTUyNjMwMzIxNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVjZWVjOGIwOGUzMjU4NDczNGQyMDcwNmRlYjllZWVjOWE5NTQ3NzhjNzQ3NWY0ZjVmZThmZDVjMjkxMjIyMzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8045efbc2dbe4e5fb17f6624a510b504",
+      "statement": "The Topic Memory recovery migration is a versioned offline conversion that uses a frozen schema resource to convert work budgets and retained retry evidence, and it does not verify other domain tables, which are covered by the database recovery point.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/migrations/topic_memory_recovery.py#L1-L20",
+          "version": "repo-lines-v1:sha256:75f08055d7cb290d8852a63619923848614d4006dbe11f9aa88dd3c696930649:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2ZjAwM2E2YTljM2ZhMWYzYjU2YzcxODVkZmY3YmM4ZjdiOGM4ZmY1MDU2YmI2OWJmOWFjZGFlZWQzNTc4MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEwOWEyMWYzNTdiYjY1MWEzNzkyMzY5YjI4MDgwN2VkODQzZGVjZTgyYjliOTY3N2M1NjhjYWZmMmVhMGJkNDgifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/topic_memory_recovery_schema.py#L33-L33",
+          "version": "repo-lines-v1:sha256:bd84e9852087658724bc8660fc15fdd43a12ce7955653c56ddc5223ac18bfb4c:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmQ4NGU5ODUyMDg3NjU4NzI0YmM4NjYwZmMxNWZkZDQzYTEyY2U3OTU1NjUzYzU2ZGRjNTIyM2FjMThiZmI0YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmQ4NGU5ODUyMDg3NjU4NzI0YmM4NjYwZmMxNWZkZDQzYTEyY2U3OTU1NjUzYzU2ZGRjNTIyM2FjMThiZmI0YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWUwN2E5Njg4MGYwNTljNmIwNjc0ZDIzYTAwOGUzZWFmNWQ0ZmI3Y2UzNWUyMWQ1ODI1MzMwNWM5YzkyY2FiNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWM5NTI5Mzk4OGQyZTA1N2E5YjA2MWFjNTcxMGZmODAwZTk0ZDE5YmQ4OWFiZDJmZGQ1MTVhZjE3OWVlNTA0NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_08b42324207b49db92d6baa81d936381",
+      "statement": "The Ops protocol supports the operations register, start, stop, restart, remove_registration, config_apply, install and repair, and its requests are inspect, config_validate, preflight, apply, resume, operation_status and cancel; an apply without an authorization whose plan_id matches the approved plan is rejected with authorization_required.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/ops/protocol.py#L228-L231",
+          "version": "repo-lines-v1:sha256:b683f164f5666a8196f52b97848899c386fb2fa6a27afb8b0a3f58c1c1b70237:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTQyNTViMWFjMjVkOTczYmY1NjVhMjQ4Mjc1M2JjODM2MDc1MmY4ODg2MjZlMWJlOGUwYWUxNjMzZTdjMGJkZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWVmZTc5ZjFjYjgxYWE0MzZlMWRjODJlYWRjMzdkOTBiZmFmZDY2N2RmNmIyYjcxMzY1ZjE2OTFjZmYxNTg1OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmVjZjljNmIyNWJkYjlmNWZhMDk2MDQ4YTI1MDliOWJjMDkwOTg2MmU3OWY2YWJkNWE3NTI0OGRlZGE5ZmViMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/ops/protocol.py#L26-L36",
+          "version": "repo-lines-v1:sha256:bad769a3320779fd86401f87cd2609d2781d2ba5dc04d11e518e2ea05d724e76:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1YjM5MTVmYmIyZTRiNGI4MWQ4YjFlNzE5MzQzNTJhODVmMmI5MzVmODk5ZmVhZThlMTJlODMyZGUxYzFjZjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1NGMyZWRkYjI0YTQ2NWRkMTA5MzkxMDE5MzhhYjk4Mzg3YWYxYTcyMmNkYTQ0ZWVmM2Q2NTFhNGNmNmEzYTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzMjZkZTVjODU2MmU1MDlhMjNhYWFiMzhjYTRhZmY4YzQ4ZjdmMGI1OGU4M2U1ZGJmZWZhMThhODZkMTJmZjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a70685857d7b4a51a9c73c903569178c",
+      "statement": "Ops operation status reports finished, interrupted or unknown execution states, and an operator must query operation_status before repeating an interrupted mutation because a present executor PID is not proof the executor is still running.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/operate/local-server-ops.md",
+          "version": "repo-file-v1:sha256:135990f8e7c034267e1afc5630338f295a6da0e3e114a483a0892ac28f40acbc"
+        }
+      ]
+    },
+    {
+      "id": "claim_c926aa435e0a4a7ba51696ca0fff0bdb",
+      "statement": "Starting a Server with an OceanBase identity column that uses a case-insensitive collation is refused, and the recovery procedure requires exporting data without DDL into a new empty database created by the current release, importing in ordered layers, and never altering identity columns in place.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/operate/troubleshoot.md",
+          "version": "repo-file-v1:sha256:31351a6cab386f2beb4cc8fcd222b9746e4971ad26bd50fa10b9aa9b54069900"
+        }
+      ]
+    },
+    {
+      "id": "claim_d5cacbd7f71445288968f3d0319be9e0",
+      "statement": "Automation must read the top-level `status` of `powercontext --json ready` because a degraded readiness response with HTTP 200 still exits 0, and `powercontext capabilities` reports Memory extraction as disabled when the Server has no generation model.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/operate/troubleshoot.md",
+          "version": "repo-file-v1:sha256:31351a6cab386f2beb4cc8fcd222b9746e4971ad26bd50fa10b9aa9b54069900"
+        }
+      ]
+    },
+    {
+      "id": "claim_5528a17cab104cdcb9f343f1fc9d3e8a",
+      "statement": "Focused tests cover readiness snapshots distinguishing disabled, unobserved and observed states, cached probe refresh behavior, bounded probe failure outcomes, and cancellation preservation, and cover service runtime repair guarding interruption and not clearing database maintenance.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_runtime_readiness_observations.py#L30-L146",
+          "version": "repo-lines-v1:sha256:45aa84cc0a1baeb8c89d33960405501f7cb86964b1f8d2fa80049f98bda69969:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIzNGZjYTg5ZTBlNWFmODE0ZTI4MTlhZmUzYTQ0NWMyNzhkMDU2NTQwNjE0NjkxYmY2NTU2MDQ3YTg0ZmQwOTExIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJhOThiMDYzZDliNDdlNjUzNzk2MjU1NzJjY2UxOTc2NjlkNTc2N2UxMmMxOGJlMDc1NjUyYjhjZDk4MWNlOGQ1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJjYTYxNWI0YmI3MWUwZTNjMzVkMmU2YmM3MTc4YzA2YTc0ODgwMzlkZjYwZjk0OTA3N2M0Zjc5YzlkZmQ2NjdhIn0"
+        },
+        {
+          "resource": "repo://tests/test_service_runtime_repair.py#L32-L96",
+          "version": "repo-lines-v1:sha256:fc424ac921ac83f813003e376c2e3e7fd9de12bd8adf8505e93069b2a45361d6:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlNTQxM2RkZjhhN2FhNGRhNWQ4MmI2NDA3Mjk5ZWNkYWYwNTIwYWY3OTM0NGEwOGYzMWI1NjMyOTc3MGQ2MTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEyYjFjMTM4YjU0NWQ1OWFjN2I3ZTlhYjE3MWYxNThlMzBkOWQ2YTQ5NzYwN2Y0YTcyZWQwZjNkNTA2NmRjMjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg5MDFlN2I3YTU0MWFiZDNmOWMxNmY0YTA3NDI4MDc2NjI1ZWRmNmZjYWEzOWJjYWVkYmQ5MWM1ZGU0NWQ1NDUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T09:04:09.583Z"
+  }
+}

@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:38353a365ca0fc790b80848f9322ac829069578d8064de68378b07edfb541e3b",
+  "claims": [
+    {
+      "id": "claim_266ab3cac9a041f2a4f224412641a349",
+      "statement": "The Server and service command groups load only when their declared requirements are installed; the CLI root registers command providers from the powercontext.cli entry-point group and rejects duplicate command names, so a cli-only install does not expose server or service commands.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/cli/app.py#L28-L60",
+          "version": "repo-lines-v1:sha256:41348ac54fd37cee07d0faed8e107ee16143c89f3ff3e80761409b80ba798448:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwZTJhNDY1MDA5NWZhOTVkMGUyYmI0MWIyZGIyOTA5NGQzNDA0ZDI4Y2UxMjMzOWVjODhiYjRiNWM1YmU4ZjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdhODNiNzQ4ZTllMDJlZGQ1MzM1NTA5YWRjY2RiN2MyY2M1ZDUyNjBhODkzMTc2ZTYzYzVhN2YyYzIwODNjY2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdlZWQ1NTI1NzhlOTRlYTUxOTM4YzVmMzlkNDBlN2QxOTQ4Yzk4OTFhOTY5ZGUyYWQ1NTljNGEyMDE3MDkzZmUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/cli/app.py#L95-L140",
+          "version": "repo-lines-v1:sha256:e7fbcf725d1f13ad11a80a4256afe35e4d73b8dca2305bf9ca644f42cac1dca1:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyNmQ2OGQ5YjUyMjFlYjU5NGVmOGJjN2JmZTNhYzVhNjM2ZjA2MjlmNmU1ZGNmNmE5NWEyMGZmMThhZDdmMzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjZTFlODk1OTNkZGJhYjgzNTgwZWVhNTQyYmY2MjdkNjIyOWNjYTk3Y2NjYjhiNTIwODZiYjAxOGVlOGQ2ZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczNjU0MGM3NmExNWFiYmM3N2Q3MzhkODgyYjFmMDQ2MTQ5MTlkNjAzMmNmNGM3YTBhZTgwZWVjNTNiZTRiY2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_efa239ee03c04bbab09c5866a95961ed",
+      "statement": "powercontext config init runs an interactive wizard that writes two files only after explicit confirmation, a symlink-safe environment file and a .env.next-steps.md guide, and does not start the Server, migrate databases, create Scopes, or install plugins.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/cli/config_wizard.py#L1161-L1185",
+          "version": "repo-lines-v1:sha256:000a76f7761d5b0b23f3e62303be2aec8d48f0c3cc09b2c76d08b2dfe0b60a99:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1MzA0ZmM4OTY5MjI2YTc3MWZmMDgzYzEyYjliZTg2ZmEwNDcyNGJlZmE3ODhmNzE3ZmIxZWRmZGQ1YzMwNjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkYmQ2ZGFiZmExMzAwOTQ3OTRkM2U4YjU0NzAzMDQzZmQ2ODcwZDBkYjE3MjM5YTNiMTljMjgwNjZiNDVmYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiYjU5MmUxNzAyNGJlMmMzMGMwMDBlOGQ4ZjQ1NWRmODg1ZjZkMjA2MmYyMjI4N2I0YTM0OGQyZDZkMjg4YTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRhMjI0ZjQ0Njg1YTE1YzYyNjQ1N2M0ZjllZTI5MTRmNmIxOWNkYTM0YTJhZTAzYjM1OTZiYTQ3MzE1ODBmNjQifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/cli/config_wizard.py#L1283-L1290",
+          "version": "repo-lines-v1:sha256:bc03747c037599800c34aebf754896c2ff3caf0ea95175ea7b72dddfa13348fd:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODM0NTM5YzQyNzE2ZTQ4ODcwNGIxMGI0YmQzZjlkZGEwZjQyOWVjYjkxM2U0ZDQ5ZmZlNzg0OGJiYmQ3MjQzYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmY0ZDY3MTY5NWQyNWE1MTlmMWYyYWQyYjIxMWJlZmZiNmI3MjI2YThmZTgyMjlkZjAyYzM5NzlkYzBhMTM5ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGU4M2MyZmQ5NDRiMTQxOTQwZWU3NzRmN2RiYjFmY2IyYjFhNWU3NTlhYjE4OTZjOGRiNTVlNTVkYjFmZTZlZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODQwMjk1Mjc1MDRjMDc4ODc1MjRjZDUzZjQ5MTQ0Nzg3YzYwNWVkNjMxMDhkODQ5YTE0ZGFhYTk2ZjExMDcwMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_54d1290ff497439caca1ad336720d957",
+      "statement": "Environment files are written atomically with mode 0600, and an existing file is preserved as a timestamped .bak backup, also mode 0600, before replacement.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/cli/config.py#L716-L735",
+          "version": "repo-lines-v1:sha256:16029c5ef76a4ccecd05b8b29530b3756e92b3e85770068e38dedfa954dcc880:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjZWJjY2U2OTg1M2Q2NWFhY2EyN2FjZjQ4OTU2NWI2ZTAzMzU3ZDc2ZGY0MmY0MzgxM2RhNzg1Yzc2MDQ2NTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzMmQ5ZDJmMDJhZmExYzJjMTlkZGMwZTZhZjU3ZWQwNjU4NjdlNDdjOGU2OThlMTRiNDVlZWM5MzQ4MmEyOGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVjNzY3Mjc1OTM3MmZjNzcwOGMwOGJlOWFjNGZkYjAzZTZiY2ViNTgxOWUyZjQ1YmJhY2EwN2U1YmVkNWFiYzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1c76a34f7a964577ba29abc415d553cb",
+      "statement": "Base generated configuration sets the Server listener to 127.0.0.1 on port 8000, enables MCP at /mcp, disables the Dashboard and access enforcement, and points the client at http://127.0.0.1:8000 with a 10 second timeout, while the wizard suggests port 17429 for a fresh local setup.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/cli/config.py#L183-L200",
+          "version": "repo-lines-v1:sha256:af0a44af2612bcb97d72ec5d4a7763039f01d13d6a80b786518a500580f362c0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4ZTY2ODU0MGFhMjNmMTc4NWQzMTYwNjkyNTlkZmY2NTM2OTRmMzJmNTI4Nzk5NDJkZTIwOGE2NWNkZWJkOGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzM2FmMzQ2YjllZjU1OGNiODQxNzY4MWMyNTBlYjZlNDQyNDI1YmM0MTk2ZDEwZjQwOWNiM2E0YjhkYjMzOTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiNjY2MThkNDI4MTMxNjE0YjU3NTQxNWU3ZTEzNzM1ZjE4YTdmMjAzZGM2YTk4YzYwMTk0ZmIwZDhlY2EzOTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5MjAwZGFlNjY0Zjk5NGJiMmFhNmRkMjkwNDIzOWJkZTU2MmRmNDY1ODc4NjlhZjA5MjhmOGFiNjYwMjIxN2MifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/cli/config_wizard.py#L40-L60",
+          "version": "repo-lines-v1:sha256:fc415bc7ead34d4b5fc1d1003959d09d84912c190c85db955ae69cc91f5f3e4a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhZmJhMDUyN2MzOTUzYzRiNmUwZTViNTczOWJhODM2MTJmODA1M2JjZGM5NDY2NzMwMTkzY2QxZDU5MGI0MDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmODMzNmNlOGIxNTRiYjY2MTE4MzY2N2EwNzk2Njk4NmUyOWY0OWYyZmVjOWY4NzViOGJjMDBlZjc4N2FlZWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZmMzdkYjcxMTIyMWY2MmU5ODRkZTMzYjY0YWYwMTgxZmJmZWIxNjA4ZjhlYTVhODA2NzY0OTcyODkzZjEyMGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2NTllNjA2NzMwYjQxOWE2YTNlMDllYjJkNzg3ZjY4OTM5MWU4NDI5NmY2MTNjOTgxNGNhNGIzMDIzM2UwN2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_084278b3fe2f438d872b408fe23cb3a0",
+      "statement": "Server settings use the POWERCONTEXT_SERVER_ prefix with a single-level nested delimiter, so POWERCONTEXT_SERVER_HTTP_PORT maps to the http.port field, which defaults to 8000 and must be between 1 and 65535.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/settings.py#L114-L124",
+          "version": "repo-lines-v1:sha256:4e948566b091f964528083217b56176a93c041b6ab94b3e3da22c94571a9fc4d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1ZDg0NTQ4NzY0OGZmOWVlZGYyMTY5ZmI4Mjk3ZmU2ZTFlYTY1YWQxYWFjMjE1YmQ0YzIyYWE5ZjlhMmQ3YzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyOTcxMTVlMmM4MWE4OTJlNjJhNjA1MGFmNDkxMTIzNTNhOWRhMmYxYzU0ZTYzMjM0ZjQ5Mzg3MmEwZDc4ZTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBkYTI1MWEzMGQyMjZjODVjYmFmYzc4Yzk3NGJjOGZmZDdlYTM3MDAxOWVmNDgyMDk0MTMzZDdmOGU1Nzk1M2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhZDA4YTU1MjU0ZDBkMGYwNTc3NGU2MDEwZmVlMmIwZGE1Zjc4ZDYyNWY5ZjVjZTkyZTUzZjFjMzAwNTM5ZjYifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/settings.py#L237-L250",
+          "version": "repo-lines-v1:sha256:bdd6d51b0bcde3908b972f4bd2829b18f8e7d7390c68ca78ddb8a16041e03961:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVmZWE0MTk0MDc4ZDJiNGFkZDNjZTBmYjk1MTMyOGJiNTEyMWViODlhOTEzYTNjOTdhMTcxYjdmODllMGI1M2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYxMzAxMDM3NTQ2ZDQ5MmRjZjgwZDA3ZGE4MzdmYTM2ZDEwMTEzMTM2MzEzYjc3MTg4Y2MxYjhkYTRhOGI4YTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_840e294d4e4b45fbbc9a8a4345ad6aa5",
+      "statement": "The Server refuses to bind an unauthenticated listener to a non-loopback host unless POWERCONTEXT_SERVER_ALLOW_UNAUTHENTICATED_NON_LOOPBACK is true or access is enforced; enforced access without a token, a token with disabled access, and an enforced Dashboard without a token are rejected at configuration validation.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/cli.py#L60-L75",
+          "version": "repo-lines-v1:sha256:6936581ffadc811a2b2f3f5d52123817441566e0747748b461b2deccea85f4f2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxZTU0OTJjZjFkYjI0MjAxYWRiMDg3ZGIyZTU1NTliMjQzMjZjYjVmYzNkOGEyN2VhYzRhNTI2YWExZjUyNTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxZDc0NDA1YTczOTQ0NDMzOTlhOWNkYmQyZThkMDM3OWM2ZjZiYzM2MGJkN2Y2Zjk4YjIwYjI3YWZkMGY2NjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiM2FjMWYxYTJiNTRiYTZjMDJkMDYxZjk4MzFjZjk1NzYxY2UzYTgxMWYxMDgwYzRjMTdlNTA2NzA0Mjg1ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM0MDM0NDJiOGQwZjE0OGE0MDdmNWM0N2ViOTAwNjQxM2ZlMTc0NDgyODJiNjI0NGQ5ZDE5OGQ5ZjhjMTkwMjAifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/settings.py#L380-L420",
+          "version": "repo-lines-v1:sha256:b4eef71d7439d29d3f698cfa858c22882ca333817494faa758b5287e01a1b731:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2YjEzN2JkN2Q5YjA2MWNjOWE4ZTY2MGQ4N2YxOTk1MTNjNjMzYTBlODhiZGE4ZjMxNzFjMzE0MTdmNjM1ZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MDMyZTk2NGQwOTMyMzUxZTVkMTg1MjY5MjgxYjE3MWEzYTA5YjA4YjI4NmU2NjFlYTQ3MDMyM2M4MmViNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhZmUxOTFjMzQyMGJmOWZmM2RmOGZhMTE2NGE4ZTIwOWFkZjRmMzllNmViZGM2MTU4ODQ4NDI4NzhiYzA4YmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiNTMwZWRlNGYzZTg4MmQ2ZTg1ZTllNmE3N2JiYTI5NTk5OTk3MWU2NTk5NGU0ZTA0MWJjMDAzYjE1NzhkMmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e8e94edde3a04b318eef4531947d9719",
+      "statement": "The client settings model defaults the Server URL to http://127.0.0.1:8000 and rejects plaintext non-loopback Server URLs unless insecure HTTP is explicitly allowed.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/client/settings.py#L20-L57",
+          "version": "repo-lines-v1:sha256:2320d318fc82756f49abf110ba0672d6f0c14a25925ddb37e8f0090185e5cae1:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkOTJlYmU0OGE1ZmIzMGQ2MTUwMzkwMzIyNmIzMWM0MGIyMDBhOGY4OGIwNWE3OTA2Y2JiOWIxMzA5NjE3Y2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY3OGFjZGNjNWU0MjA4NDNhMzVlY2UwMzFkZGJmMWJmYjYyOWFiOGUyN2Q1YjNlZDA4MmVhY2Y4M2QzYmMyNWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_50f7a4d748b8476aa0ba92372ab5a196",
+      "statement": "The readiness probe treats HTTP 200 with status ready as OK, HTTP 200 with status degraded as DEGRADED, and any other result as FAILED, so a degraded readiness result is never reported as a full success.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/cli/system.py#L931-L1010",
+          "version": "repo-lines-v1:sha256:86b93a27020490f2bec7b4407cc0f82776af6f6a227fbe9edc316ab46bb8acc2:eyJzZWxlY3RlZExpbmVDb3VudCI6ODAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmY2U2NGZlM2I1OTY4ZDdkMTliYmZiNTkyOGEyMGM2YzEzN2I5NWFhYjU2NzY4ODcxZDk0MTkwNGU1NjQ1Y2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmNGU5NmI1M2FlZTY4YzRkNzE1ZWNlZGQxYzhlNmYwYmI1MzYyYjZhMjIxYzhjZjgzZWFjNDFiMTZiMTA4ZGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ0YmZjMjFkMTBiOWRlYWMyZDJkODFkNDgzY2UyMjMyZDg0MzliZTI3ZDdjODI5Y2FiNjM3NTJjNmJhNmI1ZjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6be7d327b9f8439993e67e5d99a64ac7",
+      "statement": "The doctor command without agent arguments reports the overall result as OK only when every diagnostic is OK, and exits non-zero for FAILED, DEGRADED or SKIPPED results.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/cli/system.py#L1000-L1010",
+          "version": "repo-lines-v1:sha256:b76be8b05b8049b7d89cad3e2433e974ee4fdcde6e27a1a5f43d5a2f7de7bbb5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1MjczYTBkMTg2N2E5YmZjMWQ2NDAzNTc3MDkwZTIwOTc3M2FlYTk0ZTgzZGJlZDhiNDEzM2JiYTRhODIxNjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkMjBlZDNjNWM5M2RjY2M2YTc2ZjFlNzViMGVkNjdiZDE5Mjc0ZDkwNTBhOGMyOTQyMmIzZDIyOTdlMmUzZGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ0YmZjMjFkMTBiOWRlYWMyZDJkODFkNDgzY2UyMjMyZDg0MzliZTI3ZDdjODI5Y2FiNjM3NTJjNmJhNmI1ZjMifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/cli/system.py#L270-L300",
+          "version": "repo-lines-v1:sha256:4df22725982db29ef2e09b22e22b436e00325175f71b87a70b84a254d8b21498:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFjMTZkY2FhNmQzYzk3ZmU0NWI0ZmE1MGEwODVkMGU0ZTk2ODg0MjAwODU1N2E1ZDlmMWE0NTBlMTczZDgwNTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyZDkzMGU4YTZkZDQwMmE4NDFkY2Q3NzA3N2NhYzVmOWMxZGM1Y2I4MTQzODQ3NWZlMWNkODczOTM4OWEyOGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyZTc3YTA4NTdmMTA4M2Q3MWIxZmQwNzJkM2MyNjlhM2JjZDZkODUyYzYwYWQ5YWFlMDc4ZDg3MGVlMzVhYzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_79190259a87e4ec0b094b6d70219707a",
+      "statement": "The client commands ready, live, capabilities and the Scope create command are registered on the CLI root; scope create requires a title and summary and returns the Server-issued opaque scope_id, never the planned title.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/client/cli.py#L2323-L2354",
+          "version": "repo-lines-v1:sha256:80b6c36b23ca0395008b3583bac2748d7efd40d553960486e96938cdaa1a3870:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmMTE5ZDlmODdkYjc5Y2MzYjhjMTJiZjIwNjJjOWJjZmRkZWZlOTQyZDMxNzJiNThhNjRlMWIyYjRjMzZiOTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2OGUxYTc1N2QxZDQ0OTM0ZmNiNzk4NzNmODU5NzQzNzUyNzcxZjM3NzYxNTM3NzU0ZGRmOGQ4NTZjNmJjNjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjExMTY1MzUxNTAxZWUzMzMyYzYzZGY0M2YxZTA0YzlhYjE0YzVkMjZlNDljODM5NjdkMmI3YWI1NmRiMzA0NGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/client/cli.py#L392-L420",
+          "version": "repo-lines-v1:sha256:817f5a98706e59e084a71c857a6bbb9030aab670016769027a6bbca229941073:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkY2Q5NTgzOGRiMDJlODA2ZmVhNTJiNDdjOTRlZjVkZGY0YmI2Y2NjMWMwNGE4N2UxNjc1MGVhZWJiY2I2OGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0MTcwYWNiMzFkNjU0NmY1NWM0YWM3MTM3MTU3MmUxY2NkMDYwMmIxNGE2YjI2ODA2NmM5Y2FiZDEzNzUzZWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRhNTI4ZmZlMDI2MGNkZTNlNzZiZTkwODJiMGIyMzI2NGZhY2VlYzMyNzFmNzFjY2E2MDIyYTUzMjc5NWJlNzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3ZTA4MGNhY2ZhNmI3NjkxZWExNmQ0MTc2ZTc4NGRkZDQwOTQxZTdiNDNkNmM2MDQ2NTcxODhmNjM2NTc3ZDUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/app.py#L2445-L2470",
+          "version": "repo-lines-v1:sha256:af1a9ccb1bdf5e2b7fb39ded33920f597abbb3bf93a22c2de58ded4fcd847e1e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNjY2JiMjliZDNkMDBhZWM0YjIyNmVkMzIzMzI3MGI3ZTNiNjcxODMyNmY0YzM4YWQwYjJlZGY2NzViZDlmZjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE4YjRkNjMzYWIzZDJiZTFlOWRjMDhiNDgzMjJkMDMwMjQ2NjBiZTZmZDRkZmU2ODBjOWI4YTMzOGY5NTJmMmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_df0f143e645c497eb64414ed7ed39fc2",
+      "statement": "Generated Agent Scope bindings use the POWERCONTEXT_<AGENT>_SCOPE_ID variables, such as POWERCONTEXT_CODEX_SCOPE_ID and POWERCONTEXT_CLAUDE_SCOPE_ID, which must hold a real returned Scope ID.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/get-started/quickstart.md#L80-L100",
+          "version": "repo-lines-v1:sha256:41688a1f2fbc9b8d00f52b96b627fcb8e95aa1b37537f9768c589bd56df98e63:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyMzFhNzkxOTNlMTc4NzBkNWQ5ZGE3NDE0MTQ4YTljNzhmNzA5NjgyNTBjZTJhYTRmZjJiYWQxN2FjMGYzMTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1MjUyYWU0NGQ0YWE2M2RhMDJkODUyNDFhMzhhOWFiYjFhNjgxOWMxZGE1MGFkNmQwMjQyZjQyOGY3Y2JiZTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhNmFlNDM2OGJiMDJmZDQ4NmRiNTlkOGFiNDFjZDUwMzExNWYxZDRhNDc4YjM4NzhhNDJlNmRhYTMyYzAxODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwYjQ5ZjEzOTcyMDk3ZTZkY2JkZjJjYTA3YjY3OWYxZDIzZThiYWY2OTY3ZWUyNGM5Yzk4NGU0NjVlMjljNGQifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/cli/config.py#L163-L170",
+          "version": "repo-lines-v1:sha256:974b4967261a781b2680e9b352761453fdf7e43fba41f22c9235c8dee997104a:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjJmMjIyMTMyMGQ2MTFkYTYxYzYwMzQ4NjE0NzQzNGMxM2I4Yzk3NjYzYTg1MTAxYmJmNmY2MzNiMDJiNWVlMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzAyYzQxNGI1NGNmODZkZmI0ZjkwZGZlN2Q3YmRiZmE2NjZiN2RkZGQzMmYxMjg2ZjIzMGE1YjUzMjQxODE4YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzZmZjg2YjYzZDY3ODFjNmNiNzEzOWRhMTM0ZjNjOGQ1YmNlZjAwMjQ4MmRkZTk4MzFiZGZjNzMyMTg4YTIzMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWFjMzJjZTU1ZTRlOTZkOTcwMDlkZGNmMjE4NWNiYjMxYzI0NmRjNWM0MGQyYTk4YjliOTc2YWJhNzVlZWViMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_94bcd14fd2b54fd9b04fc11dd2ce5c50",
+      "statement": "Setup resolves one connection URL per Agent and reuses it for the plugin's MCP and Hook configuration, and the setup command installs the plugin at a release ref before configuring its connection.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/cli/installation.py#L146-L197",
+          "version": "repo-lines-v1:sha256:74440b97314db0556cfb9867f53884a1cd81cbbdb883125f89bac4c9f98e630b:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwOTc2MGM1ODI5MGIyZTUzZjNmMzdhZjUzMmEwZTJjZDNkZTZlMzkxODYxODcwMTRmMjMzYzliMzU4MGE4MmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxYTE3NjBhNjdkZjQ2NmQwODllYWJmZmFmM2I3MDQxYzdmYTUyYjlkNmUzMDNlMzc0NTU4YWNjNTRkMTk2MWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/cli/system.py#L190-L230",
+          "version": "repo-lines-v1:sha256:0cb0ebc2e83ea322070b711007f1ab4e351207794872be40e4cf972a87a7d61a:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwNjM5MTQzZDY2NjdhZjMwYjYxZTAzYzViNzNiZmFhOGQwMGQzN2Q2ZTYxYjNiZjU2ZGE5ZWFlYjE4NDQ0ZDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjMjIyNWRhMzdiNjhkZjlkYTU0ZDhiYzQyNjVmZTFmNjk2ZmExM2I0MjhiNGM1MmI1ZWZkNzFlZmE1YzljMGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg3NDAxODE5YTMwZTQ1MmU3OGM5ODUyODJjMjJlZDMxNWJkMzk2MDFjNmQwZWZmZWI4ZDQ5MTU4NGYyMGQ4NzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYzNGNmZTYwOTE3MWZmNDk4Y2RjMjQyOWQ4OTNlZTc1Y2IyYmI0ODkyYzU0Mjg0MmZjZmZiYzIyYTcwMjhkYTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_93eb11c9ffd84f1bb7d37f3e5c9d45e2",
+      "statement": "The Server runs without any Generation or Embedding model by default, since those inference settings default to unset; explicit Memory save and recall work without them, while automatic processing requires a Generation model.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/composition.py#L2036-L2039",
+          "version": "repo-lines-v1:sha256:81c2f93ece6b0b647553d93b78432b80e83684ccbb907e206c028803f45c0ce0:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2MxOWU2MTAwMDdmNTBkNzYzODIwNDZmMGE3NTA2MTJiZmQ1MGJkMTZjYzI5OGNkOTAzNTI5OGQ4MGYzZDhiNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzhmMjQ0YzU2ZmIxMDY1N2QyNjY4ZWI4MzU0ZDA3NGE0MGNjNjNhNGFlNThiYjUyMjgyN2IzNGE5YzU0YzQ3NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjE1NWZiMjVlYjkxMTRlNWE1NzViZjNjY2NjODczZTU5NDU5NjUyYjIzNTVjNjhhOTBhYTJhZWJmMDllYjQ0MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2U3NTBlMDNlMDg1NGM1ZDFjZDZhZmU3YjU2MzlkNmFmNThmMWYxNDgzNjhjNzJhZWMxNTI4ZmNjOGRlNjYyOSJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/config.py#L321-L345",
+          "version": "repo-lines-v1:sha256:faedf2793c72969caa8d4d7a57b974af62ec6668aa6170a1a2ab8a0ef4c05f25:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViM2Y4YWNjMmI1ZDBiMjY3NWVkOGI2MTU0ZDE2OWNlZjI0ODY1ZjdlN2EwMjYwMWUyMTQ0MDdlNzczZGMzOTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzZTE5MTQ4NzEzZWI3MTE2ZjVmYzJkOTMwZTczZmRiNjk0MmYxYjAzYzZlYmUxYjk2YzEzNmJjMzUzM2ZhOTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI5ZDBkOWYyZjZlYzdlODgwZWIzNjEyMWQ4YzRhYjkyMWExZGM4MzZjYTI1YzVjMWNiN2FlNmUyOGFmODdkZjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdhZDkyNzBhNDJkNjUyMDU3MTEzMTViMDI2YzIyYzQwYzU2ZmJkOTlhOGYwYjIyOTVjZmQzN2Y5ZWVjYjlkNDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_22de065162bd44df88a8b99a186355f0",
+      "statement": "Scheduled Memory and Experience pipelines are off unless their schedule settings are set, and the Server refuses to start a scheduled pipeline when no Generation model is configured.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/composition.py#L2036-L2039",
+          "version": "repo-lines-v1:sha256:81c2f93ece6b0b647553d93b78432b80e83684ccbb907e206c028803f45c0ce0:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2MxOWU2MTAwMDdmNTBkNzYzODIwNDZmMGE3NTA2MTJiZmQ1MGJkMTZjYzI5OGNkOTAzNTI5OGQ4MGYzZDhiNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzhmMjQ0YzU2ZmIxMDY1N2QyNjY4ZWI4MzU0ZDA3NGE0MGNjNjNhNGFlNThiYjUyMjgyN2IzNGE5YzU0YzQ3NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjE1NWZiMjVlYjkxMTRlNWE1NzViZjNjY2NjODczZTU5NDU5NjUyYjIzNTVjNjhhOTBhYTJhZWJmMDllYjQ0MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2U3NTBlMDNlMDg1NGM1ZDFjZDZhZmU3YjU2MzlkNmFmNThmMWYxNDgzNjhjNzJhZWMxNTI4ZmNjOGRlNjYyOSJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/config.py#L248-L264",
+          "version": "repo-lines-v1:sha256:36e541204f05a7c02f5bdaa040654018174eae11e9882b696e9857ec766f3c96:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzN2Q1ZDJjNjUwNDFjOTcwZTE4YTk1N2ViNzc3ZjFiNDE3ZjUzNTJhNDhhYWRmYmVlNmNlMTQzOTI2YTkyZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxNzhhYjYzMjM3NWVkNDkwNGZiMzEwYzIwYWMxOWNhYjkyMDYzYzNhNmU5MGJjOTc1YzYwMjc5Y2VmYTVjM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZjMDUxZjJiMjEyZGY1YThhYzMxYWRiOGNhYmRmZDQ0ZTczNmI4MWJkNDkyZmIzN2JiNDU1ZWE5NzgyY2VhMTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc5NGIxMGI0NmU3MDVjNDQyNzYwM2QwNzU3NzgwYmRlMmYxZTUzNzhmOWJmYmQ4YTdhOTQzODU2OWMwZDgzNjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6c7f68abebe6489797418d42c4416540",
+      "statement": "The recommended processing schedules (memory 60 seconds, topic-memory 300 seconds, experience 900 seconds, Profile cron 0 2 * * * in Asia/Shanghai) are setup-tool recommendations and do not change runtime defaults, which remain disabled.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/processing_registry.py#L36-L45",
+          "version": "repo-lines-v1:sha256:09a9521648373875defec871b5d192a72a1f9643b2ec5dd2b14c4939cb87ceac:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwMTliM2RhODE0OGQ3Zjc1OTM5N2JlYmFlNDc4ZDE4MmQ5ZjhiZDAwNjgzMjQ4OWFlNWEyZmQ3Njc3Mjg0MWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY5ZGQ5OWVkNjQzZWJmM2ZmZmNhYmU2MWUzOTg4YTQyMWYzYzNjZWUzZWRiYjJjMzgyN2QxNDBkMDAyYzk1NjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBhMzg3NGIzYzZjYzQyMjZkYTVmMzcwODMxOWUzNGI0Y2ZkNzc4ZTNlYTY0MTZlNmRiZTY2OWM2YTU5NWZkZDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3ec0d9ed0292414ab9f90c4d82baa374",
+      "statement": "The Server personal service install command registers the current user's Server, keeps an explicit stop in place, and reports where the environment file and the token are stored without printing the token value.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/service/cli.py#L195-L218",
+          "version": "repo-lines-v1:sha256:d2447fe94217fc3d166320f7820c5da08dec914afbe1fcdea30fb6cc26488f1d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiNGZjN2E5MDA0N2RlZWZjNzBlNmIwN2MzZWQ5NmUzNjMyYTg1Nzg3ODYzYWM0OGJhYTNmMWIxOGRiMGI2MTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljOGRjYTVlNTJiOTczMDlkOTA1ZmYxNjdiN2EwNDQ4OWRkZmEyMmM4MDRiNTExZDc0Njc1ODNmZWUyNjU2NTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwNWM0MWNhZDY0MTk4MDgyMDg1NGU2ODY4MWQ5MTQxMTE2MDNhOTk0ZDQyYmE0ZjIzNzQ0NDg3Y2M2ZWFkY2QifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/service/cli.py#L39-L110",
+          "version": "repo-lines-v1:sha256:245133042d3024352f17b966e8c3dbc7ecec6cf0dbaa088f60ef6e901ae9f053:eyJzZWxlY3RlZExpbmVDb3VudCI6NzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1Y2QwZGQ5NjZiNzIwYjViMzhlOTliOTBmNDg0OWVlZWM0M2NhOWY2Y2JjMmYzZjYxMzk5ODFlOWMzZTRiZjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlYjBkMGYyNWI2NDE1ZTZhMDFlZGUwMDUyNzNjYWFiM2QwNTNlZTVhMzYyODFhNWEwNGViZTRhYmY0MTg5NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEzZDg0ZTY2MGE4YzRjMmM0MGY1OGY2N2U3ZDM5MDNmNmM0MjA2ZGZhZWIzMjNiODc3ODYxNzcwNWQwODEwNmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZjY2YxNGE0MGQ5MDQwZTUyZjRiNTdiY2YyZWM0NWMwYzkzM2E2ZWM4OGM2YjhmZmM4MmE4OWMwNDVlYmQ2MWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_181c474167f245df94b106ec7c4665b7",
+      "statement": "Codex capture and recall depend on hook trust: until the user grants trust for the PowerContext hooks, SessionStart does not resolve the Scope and UserPromptSubmit does not run, so automatic capture and recall do not happen.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/get-started/quickstart.md#L80-L100",
+          "version": "repo-lines-v1:sha256:41688a1f2fbc9b8d00f52b96b627fcb8e95aa1b37537f9768c589bd56df98e63:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyMzFhNzkxOTNlMTc4NzBkNWQ5ZGE3NDE0MTQ4YTljNzhmNzA5NjgyNTBjZTJhYTRmZjJiYWQxN2FjMGYzMTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1MjUyYWU0NGQ0YWE2M2RhMDJkODUyNDFhMzhhOWFiYjFhNjgxOWMxZGE1MGFkNmQwMjQyZjQyOGY3Y2JiZTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhNmFlNDM2OGJiMDJmZDQ4NmRiNTlkOGFiNDFjZDUwMzExNWYxZDRhNDc4YjM4NzhhNDJlNmRhYTMyYzAxODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwYjQ5ZjEzOTcyMDk3ZTZkY2JkZjJjYTA3YjY3OWYxZDIzZThiYWY2OTY3ZWUyNGM5Yzk4NGU0NjVlMjljNGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_43e30ac5142e4ece94cf7e8e5619ca79",
+      "statement": "A doctor codex success verifies installation, connection and MCP tool coverage only, and it does not verify Hook execution or successful memory processing; full memory verification requires a Source, a processed Topic Memory and a cross-session recall with citation.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/get-started/quickstart.md#L100-L140",
+          "version": "repo-lines-v1:sha256:4801c8e47bc6dfd1ff3e5f7a9f77d0a1c55719d344261bfefec695b0fe2aae12:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1MjUyYWU0NGQ0YWE2M2RhMDJkODUyNDFhMzhhOWFiYjFhNjgxOWMxZGE1MGFkNmQwMjQyZjQyOGY3Y2JiZTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2ZTRhNWFiNDEyZTk5YTdkNTA2YWVhMmM1ZjVhZmZjMDk5NTdiYWIyMWVmNzNmZThkN2YzOWZmMTU4OTIzZDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0NDUyNDRjMDcxMWZiMzNmNjUzMjExMTAyMjM2NjlkNDY2NGY0ZDQ1ZTgzZDk3YzU4MjExNmFlZjJjOGVlMzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4fdace5428554b95be19b2fccb463cb7",
+      "statement": "The Docker image binds 0.0.0.0 inside the container and sets the non-loopback opt-in by default, so the published host address must be kept on loopback unless bearer authentication and a TLS boundary are configured, and its health check uses GET /health/ready.",
+      "evidence": [
+        {
+          "resource": "repo://docker/README.md#L1-L58",
+          "version": "repo-lines-v1:sha256:bf48b8261d9b13bdb3640ba8091817c1a21a8912301e55c14d3d6ef1e3ec91a5:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4MDNlNDJiMGU4MTk5Zjk5ODk4N2QyMGI4ODljMDE0NzMyMTkyYTA4NWFmNjIyMjVjYWNkZjJhZjZkYzMwMmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkMjEwOTQ5NTIzZDYxM2Y0N2YzZmJhNGUwZTAyOTA0Y2E5ZWUwYWJhMzc3YTI1NTE3NDkyOGY2OGFjNjIxOTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T09:04:09.583Z"
+  }
+}

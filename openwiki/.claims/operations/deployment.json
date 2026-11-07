@@ -1,0 +1,388 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:a02ef469d04264420b43124645a1ea468342a07eedc881940100eb9c6628dce7",
+  "claims": [
+    {
+      "id": "claim_17de156c8ffa40c88f8fac1e7d5b4b98",
+      "statement": "The personal service CLI exposes install (with --env-file, --observability, and --start-on-login/--no-start-on-login), status (with --json), start, stop, restart, and uninstall; --no-start-on-login is accepted only on Windows and exits with code 2 elsewhere.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/service/cli.py",
+          "version": "repo-file-v1:sha256:5c7ceb4e10739c7ece6fbc385d3957936aa02d5c98e9b059f00c0b5d1a2d7c49"
+        }
+      ]
+    },
+    {
+      "id": "claim_47dfb5afd6f64586b6c1251c2c651efe",
+      "statement": "Personal service installation rejects any Server configuration that uses a Unix domain socket and any non-loopback HTTP bind, even when authentication is enabled, before writing a native registration.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/service/controller.py",
+          "version": "repo-file-v1:sha256:b7c00d488958357f90aa8f49483edd126b0215a372d694fd6f56ec1e407ae48a"
+        },
+        {
+          "resource": "repo://src/powercontext/service/launcher.py",
+          "version": "repo-file-v1:sha256:0ca418059c09e7ba0b37519547b5352b164892417b34642bf02e8e0d9cf01c22"
+        },
+        {
+          "resource": "repo://tests/test_service.py",
+          "version": "repo-file-v1:sha256:d17eabe98a62adf6dbf86e1a94008d3ff6101940ca18274372e9a9d6f55662b8"
+        }
+      ]
+    },
+    {
+      "id": "claim_95377a3d278a404fa132f51697d06ec5",
+      "statement": "The native adapter is selected by platform: systemd --user on Linux, a per-user LaunchAgent on macOS, and a current-user Task Scheduler task on Windows; any other platform gets an UnsupportedAdapter.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/service/adapters/__init__.py",
+          "version": "repo-file-v1:sha256:fc5762c12eda7c7c1b0611131648069677ef9b9194587f2f6114bc0ffa3f29ac"
+        },
+        {
+          "resource": "repo://src/powercontext/service/adapters/base.py",
+          "version": "repo-file-v1:sha256:77244e7625f5103d77b7c6203a4cc297dbc942056511e7cf975ce33017e73704"
+        }
+      ]
+    },
+    {
+      "id": "claim_b759f57e9e694dbfb8a5b291f97117f1",
+      "statement": "The systemd unit runs with Restart=on-failure, RestartSec=5s, a start limit of 3 per 60 seconds, and logs to the user journal read through journalctl --user; stop suppression uses a ConditionPathExists drop-in keyed to the maintenance guard file.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/service/adapters/systemd.py",
+          "version": "repo-file-v1:sha256:d8d926abda82e43ccf9a42ae29b91c65b577cf32c183e3cb7d2c69dac9b402ff"
+        }
+      ]
+    },
+    {
+      "id": "claim_6e1b58a63dfb44529d427675fa27d6c5",
+      "statement": "The launchd LaunchAgent (label com.oceanbase.powercontext) writes stdout and stderr to the data directory logs folder, uses RunAtLoad with a retry token for KeepAlive, and is suspended by a persistent disable override.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/service/adapters/launchd.py",
+          "version": "repo-file-v1:sha256:e80b415ef2b80334b0d3fd2a159239eaa4d3ec463fe1fffe530266dfbbeaae84"
+        }
+      ]
+    },
+    {
+      "id": "claim_55d298fe07e3476ca0a9f8df5baa090e",
+      "statement": "The Windows Task Scheduler task runs with an InteractiveToken and LeastPrivilege, adds a LogonTrigger only when login auto-start is requested, restarts on failure up to 3 times at 1-minute intervals, and requires pythonw.exe and a non-service interactive user.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/service/adapters/windows.py",
+          "version": "repo-file-v1:sha256:dd1f27fa623765ae48c17c035174b43e9c5d4566e1faa790d1e9c0d7ee5d7a0d"
+        },
+        {
+          "resource": "repo://src/powercontext/service/controller.py",
+          "version": "repo-file-v1:sha256:b7c00d488958357f90aa8f49483edd126b0215a372d694fd6f56ec1e407ae48a"
+        }
+      ]
+    },
+    {
+      "id": "claim_3982a76b3b3448519d55fc3b8ed7ce38",
+      "statement": "The native definition persists only the absolute env-file path and its identity metadata, and the launcher reloads the file on each start and refuses to run when its identity no longer matches the registration.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/service/controller.py",
+          "version": "repo-file-v1:sha256:b7c00d488958357f90aa8f49483edd126b0215a372d694fd6f56ec1e407ae48a"
+        },
+        {
+          "resource": "repo://src/powercontext/service/launcher.py",
+          "version": "repo-file-v1:sha256:0ca418059c09e7ba0b37519547b5352b164892417b34642bf02e8e0d9cf01c22"
+        },
+        {
+          "resource": "repo://src/powercontext/service/model.py",
+          "version": "repo-file-v1:sha256:e995007b7cf139ac263cb180c55b5a23fa78231836d0d9919a90441f229ebc6c"
+        }
+      ]
+    },
+    {
+      "id": "claim_afe79d1c56314d5facca673d0e4c1d0c",
+      "statement": "Without an explicit env file, service install refuses inherited POWERCONTEXT_HOME and POWERCONTEXT_SERVER_* variables rather than baking them into the registration.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/service/controller.py",
+          "version": "repo-file-v1:sha256:b7c00d488958357f90aa8f49483edd126b0215a372d694fd6f56ec1e407ae48a"
+        }
+      ]
+    },
+    {
+      "id": "claim_bf42c520554b4117a041e0147532bb71",
+      "statement": "When the platform has no supported native manager, the install and lifecycle commands fail with the adapter's support detail before changing native state; the CLI prints no substitute command, so the documented fallback is to run powercontext server run under an operator-controlled supervisor.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/operate/deploy-server.md",
+          "version": "repo-file-v1:sha256:db991b2fbe6bdd3f94618297e9768f92e99524d1c125732228a1f0b9f74aaf8d"
+        },
+        {
+          "resource": "repo://src/powercontext/service/adapters/base.py",
+          "version": "repo-file-v1:sha256:77244e7625f5103d77b7c6203a4cc297dbc942056511e7cf975ce33017e73704"
+        },
+        {
+          "resource": "repo://src/powercontext/service/adapters/systemd.py",
+          "version": "repo-file-v1:sha256:d8d926abda82e43ccf9a42ae29b91c65b577cf32c183e3cb7d2c69dac9b402ff"
+        },
+        {
+          "resource": "repo://src/powercontext/service/controller.py",
+          "version": "repo-file-v1:sha256:b7c00d488958357f90aa8f49483edd126b0215a372d694fd6f56ec1e407ae48a"
+        }
+      ]
+    },
+    {
+      "id": "claim_51a63693cd8c40bcbbe440323fa174dd",
+      "statement": "Stop writes a durable maintenance guard and suspends native activation before stopping the process, and start clears the guard only after liveness and readiness pass; a failed start restores the guard and stops the process again.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/service/adapters/launchd.py",
+          "version": "repo-file-v1:sha256:e80b415ef2b80334b0d3fd2a159239eaa4d3ec463fe1fffe530266dfbbeaae84"
+        },
+        {
+          "resource": "repo://src/powercontext/service/controller.py",
+          "version": "repo-file-v1:sha256:b7c00d488958357f90aa8f49483edd126b0215a372d694fd6f56ec1e407ae48a"
+        }
+      ]
+    },
+    {
+      "id": "claim_1f664b05e5ca40c0906d5f1272965d67",
+      "statement": "Restart is implemented as stop followed by start, and migrations are not performed by service lifecycle commands.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/service/cli.py",
+          "version": "repo-file-v1:sha256:5c7ceb4e10739c7ece6fbc385d3957936aa02d5c98e9b059f00c0b5d1a2d7c49"
+        },
+        {
+          "resource": "repo://src/powercontext/service/controller.py",
+          "version": "repo-file-v1:sha256:b7c00d488958357f90aa8f49483edd126b0215a372d694fd6f56ec1e407ae48a"
+        }
+      ]
+    },
+    {
+      "id": "claim_20012fde49ed4b5b93d5607921b0436f",
+      "statement": "Liveness is probed with GET /health/live, requiring a JSON status of ok and a PowerContext request-ID header, and readiness with GET /health/ready; a 503 or not_ready result is reported as unreachable, while a foreign response on the endpoint is reported as a conflict.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/service/probe.py",
+          "version": "repo-file-v1:sha256:535e79304637f7301d4ae985abe8c9e3f24251897dbc9b09742ac752abf8dfa7"
+        }
+      ]
+    },
+    {
+      "id": "claim_6df0a66bf4514df5bfdef72d7b9e44c9",
+      "statement": "Uninstall stops and disables the native job, removes the owned registration artifact, and reloads the manager without deleting Server data, configuration, or logs.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/operate/deploy-server.md",
+          "version": "repo-file-v1:sha256:db991b2fbe6bdd3f94618297e9768f92e99524d1c125732228a1f0b9f74aaf8d"
+        },
+        {
+          "resource": "repo://src/powercontext/service/controller.py",
+          "version": "repo-file-v1:sha256:b7c00d488958357f90aa8f49483edd126b0215a372d694fd6f56ec1e407ae48a"
+        }
+      ]
+    },
+    {
+      "id": "claim_16c3d53dc0bf48829777d81b45e7db26",
+      "statement": "The Server refuses to start on a non-loopback TCP bind when access is disabled, unless ALLOW_UNAUTHENTICATED_NON_LOOPBACK is true; a UDS listener and a background-only role without metrics are exempt from this guard.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/settings.py",
+          "version": "repo-file-v1:sha256:6606f33648f705c1a4767b04764896fd8638f8306dea444a6305c0aa2669abfb"
+        }
+      ]
+    },
+    {
+      "id": "claim_a098ef5f3ab348a4b8fea478146910ba",
+      "statement": "With enforced access, the Server requires a bearer token; the health and readiness endpoints are public, while API, MCP, metrics, and OpenAPI require authentication, and an enabled Dashboard under enforced access fails startup without a token.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/operate/deploy-server.md",
+          "version": "repo-file-v1:sha256:db991b2fbe6bdd3f94618297e9768f92e99524d1c125732228a1f0b9f74aaf8d"
+        },
+        {
+          "resource": "repo://src/powercontext/server/factory.py",
+          "version": "repo-file-v1:sha256:1fe30aac5890d040c61d284ba44e9c3fc357fd5ffd6d0150ca15c1838139de5b"
+        },
+        {
+          "resource": "repo://src/powercontext/server/middleware.py",
+          "version": "repo-file-v1:sha256:d94ebfa7227971bc3bf5eb58a8849a3dc6180522a3a9a962fd599201c0bceef0"
+        },
+        {
+          "resource": "repo://src/powercontext/server/settings.py",
+          "version": "repo-file-v1:sha256:6606f33648f705c1a4767b04764896fd8638f8306dea444a6305c0aa2669abfb"
+        }
+      ]
+    },
+    {
+      "id": "claim_d078e1a19952425ca64fd21457f363a6",
+      "statement": "The Unix domain socket listener requires an absolute path of at most 103 bytes, a parent directory owned by the Server user with no group or other access, an owner-only socket, and a lock file that makes stale-socket reclamation conditional on identity and a failed connection attempt; other files or live sockets cause startup to fail.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/operate/deploy-server.md",
+          "version": "repo-file-v1:sha256:db991b2fbe6bdd3f94618297e9768f92e99524d1c125732228a1f0b9f74aaf8d"
+        },
+        {
+          "resource": "repo://src/powercontext/server/uds.py",
+          "version": "repo-file-v1:sha256:d452ae51ae7b830b5d411b359cedd08f3f563307070e18cca027d3c4f25bc91d"
+        }
+      ]
+    },
+    {
+      "id": "claim_a2cdde72b3d04ecd8a16e8c74bbd5448",
+      "statement": "The Server exposes UDS for the all and api roles, and it rejects UDS when combined with explicit TCP host or port options; the personal service and the background role do not support it.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/operate/deploy-server.md",
+          "version": "repo-file-v1:sha256:db991b2fbe6bdd3f94618297e9768f92e99524d1c125732228a1f0b9f74aaf8d"
+        },
+        {
+          "resource": "repo://src/powercontext/server/cli.py",
+          "version": "repo-file-v1:sha256:f7736bea44e9582be609e1c83b17e3a4bbe042e769b34eba28af2a5bdc6f5544"
+        },
+        {
+          "resource": "repo://src/powercontext/service/controller.py",
+          "version": "repo-file-v1:sha256:b7c00d488958357f90aa8f49483edd126b0215a372d694fd6f56ec1e407ae48a"
+        }
+      ]
+    },
+    {
+      "id": "claim_d6fb529f65ba44328edb8e7a72562037",
+      "statement": "The Docker image builds in two stages with a pinned uv, verifies the installed package version against POWERCONTEXT_VERSION, runs as UID and GID 10001, stores data under /data, binds 0.0.0.0:8000, and uses powercontext server run as its default command.",
+      "evidence": [
+        {
+          "resource": "repo://docker/Dockerfile",
+          "version": "repo-file-v1:sha256:63e4a581170ce7a2c69afbbd089369b01624c79b58f47abd9057367269dd8cba"
+        }
+      ]
+    },
+    {
+      "id": "claim_0598acda8b714b9ab06fa185fba9bc06",
+      "statement": "The Docker image sets POWERCONTEXT_SERVER_ALLOW_UNAUTHENTICATED_NON_LOOPBACK=true so the documented docker run starts out of the box, and a contract test verifies that the Dockerfile environment lets the documented server run start.",
+      "evidence": [
+        {
+          "resource": "repo://docker/Dockerfile",
+          "version": "repo-file-v1:sha256:63e4a581170ce7a2c69afbbd089369b01624c79b58f47abd9057367269dd8cba"
+        },
+        {
+          "resource": "repo://tests/test_docker_contract.py",
+          "version": "repo-file-v1:sha256:ebb8036a5333922ffc4fa8fa79cbf550d758a0e87eb8e3190d47906fb9b7bfbe"
+        }
+      ]
+    },
+    {
+      "id": "claim_641647bb7d0142538247440375fc801f",
+      "statement": "The Docker HEALTHCHECK polls GET /health/ready every 30 seconds; a runtime or database failure yields HTTP 503 not_ready, while a configured inference failure yields degraded with HTTP 200.",
+      "evidence": [
+        {
+          "resource": "repo://docker/Dockerfile",
+          "version": "repo-file-v1:sha256:63e4a581170ce7a2c69afbbd089369b01624c79b58f47abd9057367269dd8cba"
+        },
+        {
+          "resource": "repo://docker/README.md",
+          "version": "repo-file-v1:sha256:bf48b8261d9b13bdb3640ba8091817c1a21a8912301e55c14d3d6ef1e3ec91a5"
+        }
+      ]
+    },
+    {
+      "id": "claim_2936af0dd5b24831ae8e7999f0dd44e6",
+      "statement": "The Helm chart renders separate api and background Deployments from one template, with the Service selecting only the api component, and each role is set through POWERCONTEXT_SERVER_RUNTIME_ARTIFACT_PROCESSING_ROLE.",
+      "evidence": [
+        {
+          "resource": "repo://deploy/helm/powercontext/templates/deployments.yaml",
+          "version": "repo-file-v1:sha256:5c342a70157de4778cbd4eeccca62946be484838713980f3d683f6200db0f24d"
+        },
+        {
+          "resource": "repo://tests/test_helm_chart.py",
+          "version": "repo-file-v1:sha256:f4ddf76389d3ddb2f545a0c09a7173f789d5b08602f47d1f0cfe36e2256be2b9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f854e1067ca449cb9ddb7e0838683c75",
+      "statement": "The Helm chart fixes enforced access, authentication enabled, ALLOW_UNAUTHENTICATED_NON_LOOPBACK set to false, OceanBase as the database, and secrets read by key from an existing Secret, and it rejects an unpinned image tag, the sqlite database kind, and ingress enabled without a host.",
+      "evidence": [
+        {
+          "resource": "repo://deploy/helm/powercontext/templates/_helpers.tpl",
+          "version": "repo-file-v1:sha256:a4646fd2b742712c6d32d8bced8e1bbbe9a2ebc280ffb11317d321fbb6966251"
+        },
+        {
+          "resource": "repo://deploy/helm/powercontext/templates/deployments.yaml",
+          "version": "repo-file-v1:sha256:5c342a70157de4778cbd4eeccca62946be484838713980f3d683f6200db0f24d"
+        },
+        {
+          "resource": "repo://tests/test_helm_chart.py",
+          "version": "repo-file-v1:sha256:f4ddf76389d3ddb2f545a0c09a7173f789d5b08602f47d1f0cfe36e2256be2b9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e84804a9ab5d4c85a42f44044db53430",
+      "statement": "The Helm chart's background Deployment has no ports and no readiness probe, so Kubernetes Pod readiness does not establish background processing health; background.maxWorkers is a legacy alias for the Topic Memory worker quota.",
+      "evidence": [
+        {
+          "resource": "repo://deploy/helm/powercontext/templates/deployments.yaml",
+          "version": "repo-file-v1:sha256:5c342a70157de4778cbd4eeccca62946be484838713980f3d683f6200db0f24d"
+        },
+        {
+          "resource": "repo://deploy/helm/powercontext/values.yaml",
+          "version": "repo-file-v1:sha256:c40e271dcac56d7dd875b866fcf6c7d95d9380564c62f7c63cc1d7ecb4b71edc"
+        },
+        {
+          "resource": "repo://docs/en/docs/operate/kubernetes.md",
+          "version": "repo-file-v1:sha256:116cec036b79c2cce13d16bab23e1fe7e219ebc4e73e81572ec4890433587eca"
+        }
+      ]
+    },
+    {
+      "id": "claim_00cec68872b54bc5aaaeb56f4b59f9dc",
+      "statement": "The Helm chart does not run database migrations; operators must initialize OceanBase with the target image's full migration before the first install, and the acceptance profile is intended only for an isolated namespace with a disposable database.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/operate/kubernetes.md",
+          "version": "repo-file-v1:sha256:116cec036b79c2cce13d16bab23e1fe7e219ebc4e73e81572ec4890433587eca"
+        },
+        {
+          "resource": "repo://tests/test_helm_chart.py",
+          "version": "repo-file-v1:sha256:f4ddf76389d3ddb2f545a0c09a7173f789d5b08602f47d1f0cfe36e2256be2b9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5847dd0e1f5944b3b9c4aaa09ecd52f4",
+      "statement": "Remote clients accept loopback HTTP by default and reject other HTTP URLs unless an explicit insecure opt-in is set; the opt-in permits only plaintext HTTP and does not disable certificate checks or add authentication.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/operate/connect-remote-server.md",
+          "version": "repo-file-v1:sha256:4e85e8d15d0a6dbd34f99055126fb5858127c7907c7955473bafaed751e39dcd"
+        }
+      ]
+    },
+    {
+      "id": "claim_a1abeec0b5c24be4be5e5a02d8c3a397",
+      "statement": "The built-in Server command serves plain HTTP with no TLS options, so remote deployments terminate HTTPS at a reverse proxy or private network boundary.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/operate/deploy-server.md",
+          "version": "repo-file-v1:sha256:db991b2fbe6bdd3f94618297e9768f92e99524d1c125732228a1f0b9f74aaf8d"
+        },
+        {
+          "resource": "repo://src/powercontext/server/cli.py",
+          "version": "repo-file-v1:sha256:f7736bea44e9582be609e1c83b17e3a4bbe042e769b34eba28af2a5bdc6f5544"
+        }
+      ]
+    },
+    {
+      "id": "claim_be1f22c62c044d16818b4de425c79072",
+      "statement": "Gateway deployment uses either combined mode through PC_GATEWAY_CORE_UDS or standalone mode through PC_GATEWAY_CORE_BASE; injection in the standalone mode requires PC_GATEWAY_INJECTION=on, and the gateway body and concurrency defaults are 16 MiB and 64 per call class.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/operate/deploy-server.md",
+          "version": "repo-file-v1:sha256:db991b2fbe6bdd3f94618297e9768f92e99524d1c125732228a1f0b9f74aaf8d"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T09:04:09.583Z"
+  }
+}

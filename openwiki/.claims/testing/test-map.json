@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c90546a78b7c35df72b611e02f258428a48d5258ee30059c07ae20319d49dfcb",
+  "claims": [
+    {
+      "id": "claim_c6edbc5207fb4ccd84f4f61c0746d4d3",
+      "statement": "make test runs the whole pytest tree in parallel with doctest modules enabled, and runs the serial Hook-deadline file tests/e2e/test_zcode_service_chain.py afterwards with no workers so unrelated parallel work cannot starve its deadlines.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L44-L55",
+          "version": "repo-lines-v1:sha256:6b89f9f64a8922446242f48b22ada1affabee5a7e325b84cf2e0f457b4e14908:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxYmI4NzNmOTY4MWFjMTgzODNjZDAyYzU2NjY0YWQzZjQxNjlkNTI1ZTBiNjk5ZmEwNzI2MDA1ZmZjYzgzMzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUxMjcwZTI0ZjQ3ZTdmNDFlNDMzMDE1MDlhZGRmZjVjZDRmNTUwM2RkNzIzM2M2MzQ4OTE3ZjdhMDA5ZWYwNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxMGE2ZmY1NTI3ODFiOTc5ZDYwZDVlYzJmYzExNDUzOTA1Y2UwN2MwZTBlYjQ2NmY1NWFhNDEzMDY2OWUxYmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7ec37fbe838c403f8a86d161ea3e0c31",
+      "statement": "make unit-test excludes tests/e2e, while make e2e-test runs only tests/e2e (CLI to client SDK to Server scenarios), with the same serial Hook-deadline file handled separately.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L57-L64",
+          "version": "repo-lines-v1:sha256:261ab1b0c40689d033ff003b92493951b41ca837d500ea30f479ec791e04eb90:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDgyYTUzZjQyMjUwNzc4MTczODIzNWUxZmJjODkyZWExYzhlMmRmMmZkMDA0YzllOGYzNTQ2MTkzZjg4Mjg5YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGE3NWIzNzVjNWU0NzhmNmIxY2ExZmM3NWZmMzFlZGU1OWEwMmNlZmE4ZmJmYjEyMzM4ZmNkN2QzODk0NDRlYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTdlODc1NGIxZTZjMmE4MzlkODQxYjU5ZjY3ZWQwOTViOGMwNDY1NTVhMzM5NDkzYTU1ODlhZDg3OTZiMjdlMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjFjZmM4ZTg0Y2E0ODllMDgwYzc1ODM0OTkyYmFmOThkYmM5YjY2ZDU5NmNlZjA4OWYwMWRmNmE0YWI3NjQ2ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0a2fc44c688247d294bed623d84430c7",
+      "statement": "make contract-test first verifies that generated Python API code and JavaScript operation tables match openapi/powercontext.yaml, then runs the API contract, JavaScript operation, and desktop contract tests.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L153-L171",
+          "version": "repo-lines-v1:sha256:f68f5a1456a760e5ff8409a92253650bd9eb131be6af59f66d569172607ac7af:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkMDgyYjA4ZmUyOTdiZjg4M2M0MzQ0ZWZkYmYwYWIwN2I0NDE2Yzg5NmZkYjdiOTQ5NDU2ZjcxYTVmNjk5M2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiYjgwMWM0ODA0NGZjMjJiM2U2NWI0MzZkNDIwMjk5ZWU2MTQxNTUwMzgzMjgyZjVlZGNiNjcyNzQzZTk3YTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBiOWZmY2E1Nzk4N2EwOTQwOGEzYWM1ZjBmNTY5MWY0MjU3MzIzYzliNTY5ZGNmM2I5ZThkNjM1ZTdiZTkzMDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRkZTIyOTVlNDBkY2Q1YjJiNGRiZjcxZjdmYzU3MjNlZTY4Mjc0MzFkMzBhNjBkMTgxOGUxMGYzZDcyYTcyZjQifQ"
+        },
+        {
+          "resource": "repo://tests/test_api_contract.py#L188-L193",
+          "version": "repo-lines-v1:sha256:4c23885125c6d40b26cd97f4230f4f90b313ea09e87026ab8426d73a34bcb545:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWM1NzQ4NWQ5ZTNmNjgxMDUyNTc5N2YxNjUwNWI2ODYwYjg3YzczNTJiNjcwOGEyYjE2ZTcyM2QxYWRhODdhNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWEzOGQyNjgxMTE5MjVhZjI1OTExYmU4MTE4NTAxOTY0YjBkNTUyYjI3YzM0ZTUxNDFiNTQyNDViYzZlOTQ2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGI4OTdkNWViMGRjZTAwMDUyZjgyYTE5YmU0MmQ2YTk0MTdhOGQwOTM3OTM4ODRhYzhlNmZmZTJjNzQ5YzZkMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_aaf50051193f4cca9be1c64f61eced66",
+      "statement": "tox runs each of py311 through py314 by syncing the locked environment, running pytest with doctest modules over tests with coverage, and then running ty check.",
+      "evidence": [
+        {
+          "resource": "repo://tox.ini#L1-L21",
+          "version": "repo-lines-v1:sha256:e233b4bd838ab734ab1bfc037bd4ea7bc6098ad46daf8c61c99a99ea51baf398:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwYWI3NjVkOWU2MGJmN2U3MGQ1ZDU4NzU4NDNiZjdmZjMxMWIwOGYyZjBmNzZiOTc0ODc3NzQxZTc0MDJiZDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzMWY2ZDcyMmI4YTNjMTZlNGRlNDFjNTA5NjZmMGU3MzM1MTBmMmVlZDE3ZjYzYTE1Y2M1NzBkYzE0ZWMwMDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_315d92058bab4b4e8030b6fedc0b00b5",
+      "statement": "pyproject.toml sets default pytest collection to the tests tree and the atomic extraction evaluation tests, and registers opt-in markers for native services, real end-to-end runs, ZCode host acceptance, live ZCode models, and cross-host acceptance.",
+      "evidence": [
+        {
+          "resource": "repo://pyproject.toml#L270-L278",
+          "version": "repo-lines-v1:sha256:45e19785a44526f1a9f0729d6ed286fffb9e730619c2c9fe8b41062abef96836:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODY3NmU2NDE0NjVhNjU1MWU5ZTljZmZkN2ZhYTFlNmE0MmY5YjcyNDgwOTgxM2M5MDNkN2VkY2I1MmYzMDA2ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGZiOTMxMDAxYzkyZDAyYjE0NmY0ZGQzZDYwMTNlMDRkYjRlOTE0YzA4ZDQwODE2N2Y4M2FmMTUzNWQyNTQ2YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjYxNWI1YzAyOTE0OWQ0ZGJlODhlM2RmNzhhZDVkY2Q5NTZhMmEzZDY4MjBmYjE5MjMzYTU1NDk0YTg3ZDExYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWY4OGUxYmYxMWViMWVjOTBlMmI4YmQ1OGFlZThlODI2MjgyZjYwZTJmNGRhMmJiY2MwMDRjMjllNTQ4ZTdiOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_025ce484577f4aab8aabd2e4ad221c2b",
+      "statement": "The root conftest isolates each test from developer PowerContext server and client environment variables, per-user client settings, and host home directories unless real end-to-end mode is requested, and it keeps localhost reachable without proxies.",
+      "evidence": [
+        {
+          "resource": "repo://tests/conftest.py#L60-L77",
+          "version": "repo-lines-v1:sha256:c4642b9e8929338f193dec5d36a6b846a10fb69545893f4bc57d73ad30d64408:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmMDg2NmY0MDExZTU4NWZmYzA5MDkyZWRmMDgzMmUxN2I1MmY0YzkwYzRjYTBiNDJkY2ZhMDUwZmEzNzViNWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2MmFhMTgwMDdhODYyODIyNGU2NDVkZGIyNTMxMzcyOGUzY2ZhMzQyOTE0ZTY0YTlhYTdhMWUwZTFjYWE5OGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMyNGZjMmQxYjJmYmE0NWRlNTczNWVlYjM5MzIxMTNkZTRkOWNhYjJiMDdiYThhYWFkYjVhMDU2MmJhNTU4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzZjUyMTNiYWM0NDkxODk2ZmJhZmQ0OTI4ZjM5MWZlMWViMWRiOGNlMWU1NjU4NDdhZDNkOTc1NmQ1ODY5ZGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ad716c53d367407090fc0618b2765d5f",
+      "statement": "The root conftest deselects ZCode host acceptance and cross-host acceptance tests unless their marker or file is explicitly selected, and fails explicit selections that lack prerequisites instead of silently passing them.",
+      "evidence": [
+        {
+          "resource": "repo://tests/conftest.py#L154-L188",
+          "version": "repo-lines-v1:sha256:3d647f2d496be16165c7204aa0a0a8295db7ba3c660780c1e442606ae5b0693c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0OWZiMjQ4ZjE0YjgzOGE1YzU3ZTA1NjI4ZTJkNjRmOGNiZmM3NTYxNDhlZjQyNDcwYTgxYzI0ZTRjNDQzODkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3M2U5ZGM4N2JkNTI3ZWYzYWJmNjE3Yjg4YzFmZTcxMTBmYzY1NThlNjgzNWI4MjkyNmM2MDI1MWJkOGNhY2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_772a0eefe6fe4b4796e1baf5a97e8d80",
+      "statement": "Collection skips tests/e2e/real_experience_skill and the release upgrade suite and the Alembic migration env.py unless --run-real-e2e is set; release upgrade suites run only through the artifact gate.",
+      "evidence": [
+        {
+          "resource": "repo://tests/conftest.py#L190-L207",
+          "version": "repo-lines-v1:sha256:f920ba186a5bc3ea31c3d733f370ccecc6572fef2f3dbf1374c38dfe4803cdd7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4ZDJiZGM2OTIyMzc2NGRiMGE1ODFlMTk3MWI0MzFiODVhNDVlNTFhZjI5YTZhZGZmNzZiNGQ1ZmRmYzFkMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2YTZlYmM2MjUwNzc0ZWM3NGY3ZjZiN2VlZjk2MjJiNTA5N2M4ZWU1YTRmYTUyODQ3NTg5MGMwNDFlYTcyMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZkOGMyM2UzNjg2Y2UyOTNmOWUxZjU2MmNhYjRmNTllZjgxOTFkNzMyYmVjMGJiZWE5ODE3M2UwOTg5NzkzODMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e9c97e2ab3e043c0aac7bd9c1e449d99",
+      "statement": "make real-e2e-test runs the real Codex Experience and Skill tests only with --run-real-e2e and configurable mode, timeout, and env-file options.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L83-L88",
+          "version": "repo-lines-v1:sha256:3015e5ff0f3e5c6ee4a076c3cbb13a5096c1bf5f3d02ebe1af422b912f9ffb54:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzAwOTliNDljZmMyNzE5ODk0M2Q3YzhiNWQwYzBkN2IyYTYxMmUzZTYwMmZmODg1OGIxYjVhNTc4YjQ1MTVjZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmYyMDFkYzJjZjE2NTg2NWQyZTNjZTEzOTY5YzhkMDRlNWUzNTY2NzcxZjRkMGUxNWU1MDM4MjI3Zjg0ZWY2ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjk3NjY0MzdkNmVkMjBiYjgzNGZmODc3MWE0ZmJjYjkzNGViY2VjNGNjM2U5Yjk2MmVmOTE0NWVlODg3MTFiZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTkwZjk3NDc2YTQ4ZDNlNDNlNDViZWUwNWNkNjZkZWY0NzcwODgwMTgwN2M3YWI1ZGViYTY1NTAwNzkxN2QzMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3f9c87999d6b448c87c202a318af7ed0",
+      "statement": "The hook characterization suite runs installed copies of the Claude Code and Codex plugin hooks with each host's invocation style against a scripted Server, records requests and stdout, stderr, exit status, and files, and compares them with recorded expectations; it is skipped on Windows because it records POSIX file modes.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_hook_characterization.py#L14-L30",
+          "version": "repo-lines-v1:sha256:1e5fe04e268d415b76f96f8e15e7e98e7492c90600388b596a5833bf84873256:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzMDNlY2RkNGE0ZDEwZjE5YzczZmQ0MmZkMTI0MzdmZDMzNTRhODI2ODE2MDVkYTUyNTVhOTdhMzkwNjhkYmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxNjIzODMxNTFkNWFlMDEzMzcwMmQyN2FjODY0MjUwODUzOGQ2MTVmYTViOTZmZWI0MWExMjFjMmQyOTc2MzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1YjZlODcwNmI0MzA0N2YyYTZkYjY3ZjEzMjYzODU5NTYwNGU2N2YzNjk2Njg3NmNlMDE1OGYwMDUzZTZiZDEifQ"
+        },
+        {
+          "resource": "repo://tests/test_hook_characterization.py#L81-L91",
+          "version": "repo-lines-v1:sha256:180eeb5dfb813aa4c92631810d1155920ab462ebf634fb04777b2d7cdabee001:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxYzUyMjM3YzlhODE0NzgyNjYzZGViN2FiNTVkYmFkNTYwN2RhMWJlZTRhMmIzN2IyNTM4NDc4ZGJhM2ViZmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0MzliN2Q5YTQwMDg2ZmMwZDVhNzYzOGFlYTE2NzVkNTNhNGQ4ZWNhZDFjZjNhMzQ0MjNiNzc0MmQ5YTQ4MzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYTMxY2YyZjRlNzhlN2UzMmE5YzFlYTgxMTgwYTk3OGU2NmQ3MmMwZWRkOWVkMTQ3ODg0M2RiZTI0YWIwNzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyMzEwZWUyMjYxN2YwMjNmY2NiOGIxOTM2MzUxZjQ3NjgyNjk5YmZhNjQ2NThmOWI5NGIyN2Q4YmJiMTVkOTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_51a2d50fe8124ce0a2e555089a829457",
+      "statement": "The integration conformance fixture defines the ten required pending-Source delivery cases, and its Python test requires exactly those IDs and restricts required_mode_fail_closed to required_capable mode with host_continues set to false.",
+      "evidence": [
+        {
+          "resource": "repo://tests/integration_conformance/cases.json#L1-L60",
+          "version": "repo-lines-v1:sha256:fc1145f024d922cb90162cdcccd00344951393bfc7030734d2dbdd03c5a95cd6:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZiNjFhYWM3NmIyZjc4ODA3NDM5MGE4OGFhMGRlYzU1OGQwZjJhNTJmMWY2MjYwNGI5NTg0YWMyZDI3N2M5M2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI5ZTRiZTI4NzdmMzE5MGM0MzE0YTJhNGZiMWE0OTE0ODk4MjM3M2Y2NmIxYzIzYjVmMGMyMDc0ZTMzMzRlZjQifQ"
+        },
+        {
+          "resource": "repo://tests/integration_conformance/test_cases.py#L20-L48",
+          "version": "repo-lines-v1:sha256:d00240af4e6d25b5b2decb7c32cc190d8e7ff532c7cb2cd3088d7df9eaff8323:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyNTdlOGE2MDFhMWFhN2MzYWRkZWZlYjQzOGFlYjIzNzI0ZDZiODQ5MWUwZTI4OGI3MDEwZDRmNTNlNjYzNWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1ZGQ2ZjY5YTcwMTYwNDVhMDY4MDUwMzRlZTYzMjY4NThhNzVjODQ2ZTZmZTI4NzQwOTExMjcyZmI4ODY3ZDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYxNjdjZmI3MWZjYmRhYjcxMDdkOWE1ZTU2ZDA4ZDhlNDgxNWZkYTIyODZjMGEwMDcyYzg2ZjhkZGFkYzI3NTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_295e134a426c49b7b1407c215f430efd",
+      "statement": "The same integration conformance JSON is consumed by the Pi flush spec and the OpenClaw lifecycle test, so a change to a case's expectations affects Python fixture validation and JavaScript plugin behavior tests together.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/openclaw/plugins/memory-powercontext/src/lifecycle.test.ts#L35-L40",
+          "version": "repo-lines-v1:sha256:56f70df8a46445230f9d31a20b06ed1e4cc02da0bbe8ff83af6e2bde17af572f:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWJjNzdiODRhNjQyOWY3YmQxM2E5OWVmOGRhODZjYmE2MGYzNTgzYmMzMmE2Y2RiMGRhYzI0MGUzM2UyYzEzMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWJiOTVkMGZhOTAwZDk3OWY4ZWM3MDc0NWRiNjQxNTk4NDYxMTUyNTg5MWE0MDE0NjE3NGQ4NTcxMDIyOTZiMCJ9"
+        },
+        {
+          "resource": "repo://integrations/pi/plugins/powercontext/tests/flush.spec.ts#L27-L37",
+          "version": "repo-lines-v1:sha256:e2fbcbf188c6cf64104038fb49d108b9d9ec22ee11d7872ce6ee0ab640660511:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhNWZkOTBiNjE4NDJhZjdkYTViYWQ1OGZlM2I2MGFhMTNmY2E3YmEyZjgzNWQ5MDM2Y2U4M2ExOTkzNTg3ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1NjFhNDA4NDhiN2Q3OGZmYTdiZTA3MGVkYjc0OGUzZjhkNGFjOTAxOTZmYTgyZjRjZGMxOTMwYWIxOWQ1NTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0MDRkZTI5ZDY3YzBkNzEzZjEzZmE1YTUyMWYxZjEzZTcyOGZiYjU4Nzk4YjExZGY2M2U0Y2MwYzM0N2M2ZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU2YjczODIyMmM0MTBjZjJkNDIwZmE2YzhhMjMxZWY5NjU5NzcyY2QxNTMxZWUwMzUxMDY0ZDUzNjE2MTY2MzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e0e19dc1e3c6400196161d8c2c055b15",
+      "statement": "The access control suite checks that receipt commit proof is separate from identity reservation, that logical artifact shares are read-only across all versions, that memory shares target one logical entry, and that administration roles do not become content writers.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_access_control.py#L62-L118",
+          "version": "repo-lines-v1:sha256:cb973687ac3ca56521036605ae75a45a22965cd375c4644bc44802018612df94:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4OWE4MTc5ZjlmMGZkYTg0N2Y5MzUzMTdkYzIzMmRmM2IwZjQ3MzI2M2UyZDIwNDkyYmZmZjJjNmE2Njk1ZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4YzY0NDlkYjhiOWIwNzNkODYwN2RlOTc3YjcyMzRmNDZmOWEwMWVmY2Y3Y2ZmZjUwYWJjZWZmNjYwMWRhMjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNjNDUxOWZlMTM5MzVlZWI2OWExNTBhNTNmODFmNTNiZmY3OGI5YTYxNjdiZmExOTBiYWU5N2JkMjVhMTVjM2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyZmNhOTc0Njg1NDM1NzFkZWEzNzdmNTcxN2VlMjk2ZDNkZjdhNGM4NDExMTQxMDhkNDk4MDU5YTUwOTEyMmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_060cc83f8f104ee984dace4d25170fca",
+      "statement": "The topic memory server suite checks the public topic-memory HTTP shapes, maps missing or cross-scope values to not-found, returns 503 for flush when the processing capability is missing, redacts production provider context in fallback failures, and keeps failure logs and spans consistent without private error text.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_topic_memory_server.py#L143-L214",
+          "version": "repo-lines-v1:sha256:b9fd1cee2b8a5704c2c8b6fdd8b844779a1af6d9a763d3a32d13054fc2136700:eyJzZWxlY3RlZExpbmVDb3VudCI6NzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc5ZmE4ZDcyNzg3YjA2OTUzNzZmMmY3YjM1M2Y4ZjllN2U0ZGRkMDIxOTliYTJkOWE0MjdlZjQ3MmM1NDQyZDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxYjYzOTc2MjkzYmM1MzAyZjVmYzk0ODUyOWNjZWJlYTcxMTFmMzAwZWUzYzA4ODJhZjEwZjM0OTEyMDJiNTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5ZTNmNGVhYzJjYWY3NjE1MWI1MWY2MzIwODg3MjQzN2ViMTZjZGE5M2ExMDYyZTg5ODlkMGFiM2E3NjQxYWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBlYTliM2Y5MTk3Njc5NmRjN2M4YWRmOGRkOTI0YjBjZjJhZWNkOWIzOWQ4MzdkNjFmMzU5MjIyN2RkZDVhYzQifQ"
+        },
+        {
+          "resource": "repo://tests/test_topic_memory_server.py#L294-L300",
+          "version": "repo-lines-v1:sha256:77c444a651d34c73933cd491d83c2dc7225df4f9084d94eb07886bc895a84126:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDY2ODAxMjdiOWJkZTMyM2IxZTI4OTM1NDQ3NjdkMzcwNTExOTVlYjM1YzZmMTUxYzY1YzMzYmRjNzYxOTk0MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTg0MTY5ZjJjNDc1ZDMzMzdkZGMzMjFkNmY0NGEzNzczODdkMzE5ZDkyZjA5NTE2YTFjNTAxOTEzNTQwMzgzNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTdlNWQwZTIwYWZhOTNjMGJkMGM4NzVlY2UxNzUxOTA4MmVlZjkxZWRkZTFkNWZmZjBiYjg0NzljMzE0MjEyNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_dd7d76b9fdb9448699ae93cac23b00c0",
+      "statement": "The handoff report suite checks that handoff report scope selection reuses common scope selection, that Markdown reports keep scope organization and exact addresses, and that the statement count does not grow with the number of scopes.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_handoff_report.py#L157-L170",
+          "version": "repo-lines-v1:sha256:91dc4dd0f6be6e872384d699e04576b0c6b265be5233fd435407dcff04566893:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmOThhYzdiODhkYjkyNWNhZmUxYzNiNjYxMDVkNDMzYzI5NDAxMWE1NjQ1NTZkNDQxMTE0M2M3YjM3ZjE0NGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5YWJjZjRjOWQxYjYzYjAwNjQ0YTFlZTY1ZWI1ZWU4NGFlNTM0ZmFkY2RmZmE4MzJkNzk3YWI4OTljODhkMmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyZTlkYWNiNzY2ODA1OWEzZmRiMmUxMWVkYjg1OTE5MzYwZDRlY2UzNTc3MzdkYTgwMzMzMGQxZWNmMDBkMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3ODQ4ZTRiMWVhN2YwNjkzYTE3YmZmMmJkODliNzgzNzMzYTM3NmFhNWZlOTU0MTMzZmY1YjI5YjYwNmI2NzMifQ"
+        },
+        {
+          "resource": "repo://tests/test_handoff_report.py#L27-L60",
+          "version": "repo-lines-v1:sha256:3f62f833083b0e3715d847c0e20d7ffa260d58b432efdbc0e276ce7d6710581d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViMzYyNmJjYzBiYjZiOWM5OTc1ZWNjNTI2YTdiOGY3OGJiOGVlNmNiNmExYTU3MDA5MjRjYWU4YmM1ZDEyMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwNzc1NDVlMGJiZDYzYzYyYzFkY2Q3MzU5OGQ0YTEzMDAzMTQ4ZDIxZjNjZTVlNDcyNWJkNzNiYjJkZTcyZDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQwZDAwMGY2Yzc1NGIwYWNkMTU3M2ZkZmE4YmIxOWRlMjA0NDQ3MGY2YmFlOTNlZjZmY2IxZDBlMzNkNTQ1NzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjliNTdmNzAwZGNjNTRjNzFlOTI0NDgxYjUyOWRkZTZlMGUyMjgzNzIyZjAxNTFlOTFiMzEwYzJlYzQyZmZhN2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5e19ac1ef6c3441a9ffa78210e57ff90",
+      "statement": "The integration manifest suite checks that agent-host integrations in the manifest match the setup installer catalog and that integration directories, evidence paths, and tool surfaces are consistent; make integration-manifest-check runs it after the generated capability docs check.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L303-L305",
+          "version": "repo-lines-v1:sha256:e0f1036ddcc7d90c4df7cfe2ecda5cfba3b067a5b8ba7913259b31fa1b1d636a:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjgyZWU4MzBlZTNjOGQ0MTBlOTUyZmMwYzJlNjg3MThjMTkzZDUyZjBjMWNmYjlhYjllZGJlYjM5M2IzMjkwMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDcyM2I5YmMxMjQ4ODBhNGRhNzJhNGIwNjRmZjM3ZmNkMDE5Y2JiNDcwODE0NTA4NzgyMzI0YWZmOGNlMzU3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzI4Mjg4MzNiMGFkOGFlOTNmMWI1N2Q0MjI2NzI5ZWI3NDJiZDNlODc2YjBmM2ZiZTMzNmVhYzY0NjE1MGRjYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGI4MTE3ZTFlNjNhMDJlMjZmZWE0NTgxNTRlYjFmODNjZmFjMWUxY2MwYjhkMGQxOWFlODZkN2NlNjVkZmNjYiJ9"
+        },
+        {
+          "resource": "repo://tests/test_integration_manifest.py#L28-L45",
+          "version": "repo-lines-v1:sha256:9340cc56b4b462ee139c2c0355209f88f632c1f5c412a6cb7da2bff33cd9ac5c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3NmYzOTU2OTEyMmMxNGQxYTAzMjA5YTM0OGFkZTA0YjgwMjk4NTI0YzQyZGJhMTIyNzgxOWRjYzlmMGZiMjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0Y2E1YTdmNDI1NTk0ZWMwMWUzMDhhZWJhNmVhZWM4NDdhMTg5MTI1YjA2Y2JiNzE0NDQyYjE2ZjMxODZhODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0Nzc2ZTk2MWNlODc5YjEwNDZmNGQ3M2Y1NzIyNDhlMWI5NzVkOTJkMzYxNWI1YWUzN2U4NTA2ODA4NDMxM2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_944573d15f914111a87410460f33385c",
+      "statement": "The Python adapter compatibility suite runs the LangChain, LangGraph, and Pydantic AI settings in isolated interpreters with and without the core text-assembly API, and requires a clear validation error when context_assembly is used without that API.",
+      "evidence": [
+        {
+          "resource": "repo://tests/integrations/test_python_adapter_compatibility.py#L17-L73",
+          "version": "repo-lines-v1:sha256:caf86ef54dd9f96cd3aa8672911be9019187a2664355f7873edc4fb7e9172e2b:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzODRiZmRiMmRmMzgwYjY1NTdjYzdhNzFkMTY4OTE0MTViY2NhYTg3Njk5NDA2ZTIzNmY3NTJjNjQxNTM4OWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhZjI1MDgyNzY0N2YwYjAzMWZlYjFjZDg5ZmZhNTkyMTRhNTFjNmVkNjJiZWMwM2VmODk0YmM5OTNlYTNkNmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk0MTk3ODQ5MDlkODU2YjIyYWVlNTgwNzlkMjYwMTU3ODg3NDYwNWZjZjg4Njg0NmUwZTZjYzdiOGIwZjI5YmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_aceab215d0084265b4399f42a4e20f3f",
+      "statement": "The migration_backend fixture runs database migration scenarios on SQLite by default, runs seekdb only when POWERCONTEXT_TEST_MIGRATION_SEEKDB is 1, and runs OceanBase only when POWERCONTEXT_TEST_MIGRATION_OCEANBASE_URL is set; the OceanBase path refuses URLs without an explicit management database and verifies a real OceanBase identity before creating a per-test database.",
+      "evidence": [
+        {
+          "resource": "repo://tests/e2e/conftest.py#L30-L108",
+          "version": "repo-lines-v1:sha256:7475e4e5279ccd0a211717890871555e107c907f100cae3afbc6c78e77abc3fe:eyJzZWxlY3RlZExpbmVDb3VudCI6NzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkNGI2ZTFlZTgxNmQ5ZGQzZWE4ZDAxMzAxOTc5Mjk3MzQ0ZDAyMzZlZmJhOTY5ZDhjZDQ5OWVmN2U0OGNjNWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0ZGU2NDIzM2Q5OGI5MmU1N2UyNDc4YWU0YzMyZDRiNWYyODg0Yjg3OTY0MDBkZThkZjFjNDdiYTlkZGMyNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYyYjBjMjE4YTIwNDBlOTQzNTNhN2Q0MzdjOTFjNWQ0ZTg2M2M1MGY2MGM0NmQzYzM1NDhkM2JlY2I5NTM0OWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2b08459320394f7fbeeb856aee829ae4",
+      "statement": "The Codex plugin test suite loads plugin scripts by file path from integrations/codex/plugins/powercontext and isolates Codex home, diagnostic state, and bootstrap state per test.",
+      "evidence": [
+        {
+          "resource": "repo://tests/codex_plugin/conftest.py#L22-L62",
+          "version": "repo-lines-v1:sha256:776133de97687de9ae58d2ca57f266513a8100ad983489e8bbe1414a4ee7fb17:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ODc4Yjc1YjZkOTQxYjhhMDU3ODhkMWNlYTM5YTNiZmIxMjA3Yzk3MTVmYjA2OGJlMjQzYjUwOWVlYzMzYTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI1Y2Q2ZTQzZjY1MTIzZTk0YjRhZGQ5NWJiMTRmOWFjODQxZTFjZDk2OWYzMWEwNzE0YWEwYzNiM2M3YjI3YTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEyOTNhYzVkZDMzOWEzZDY4NDQ5NDkxZDgxYTZlNDI0MGJmYzJlZmMxMWEyMDJhZGFjNGUxN2M5ZjNiYmM5MTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9e217bdb27014ed9924a2bd116ab1731",
+      "statement": "make js-test rebuilds the DeepSeek Harness plugin and fails if the committed generated operations or build output differ, before running its unit and e2e tests; the OpenCode target similarly fails on a committed bundle diff.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L173-L182",
+          "version": "repo-lines-v1:sha256:8b0602a4c3f935f1acf2b0cd56eebb546397db08f4010a01c1d74815217ca7de:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3ZWE4OWJjZmQzNTEyNWU2NGJjMzQ4ZTQ4OTliOGVmYTMwYWRhMTYxYmJlMWFkYzI5Y2IzMDY2YTc0ZjQ2MWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhMzU0ZTFmYTNhNDYzNmEyYTFkY2QxNGQ3NWVjYTFhYWJjN2U0YWU3OTEwMTJjNjE0ZGQxZjYwYThkN2FmZDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImExZGRkOWFlMGM3NjcwMjQ2MGRhOTQwYWQzY2Q2MDAzNGUzNjFlZDJkODgwMWUyMDU2MTBiOGVhMzg3OGZiOTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjMGRmZDVlNjJiMTFjOTlkZDM2ZDllOTdhYjA1ZDM0NzJhYmQ3YmJjOTI1YmNjYzhiM2VlYzc5ZDBiNzI3NDkifQ"
+        },
+        {
+          "resource": "repo://Makefile#L212-L218",
+          "version": "repo-lines-v1:sha256:3be651e4f919a8899e4c582d74f30ea9a7de39f14deb63bda1d297ce5f37cd97:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTczZjZhYzM4NGRjZGRlNDBiNjAxNjkwNzgzMzJmYTNkNGRiMjk1NDNmZTUxZTFkZDNkNDg2NGJjMjczMjRiNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmQ2NWE5YzlmZjI1MThmMGIxMDU3YWE1YWFkZDgwNzkyZTY0NzA0ODk1OTI2Yjc0ZTJhOTE2ZDQ2MzZmMThlMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDNhMDE2YWY5MDE2NjJhNTI2ZDUyOTVhOWEzNDM1ODUzOWFjYmY5MzI1NjlkODMwYzdhOGFiYzBkY2I0ODY4ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTM3MDY5YTdiNjg4Yjk0MWY5ODZlYmFkMDBiMzYyMDEwZjEzNGE0NWU3ZjM3OTgzYjAzOTc0NmY3NjM0MzJmZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_96b6c668d9d947a0b8c857315e6f1fb6",
+      "statement": "The release upgrade gate's required mode executes its cases but cannot publish as a supported release, and release notes cannot omit the support limit.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_upgrade_release_gate.py#L94-L110",
+          "version": "repo-lines-v1:sha256:2e849db297cce063f4e81a8f84d434064bf80f598006b6eaf6268b8d9e178a42:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzYzEzYzY4MWY2YWVlMzU3ZTBiN2E1NGIzOWM2Y2M4ZGYwNGVmOGIxMGI0YTkxM2ZkOTk0NjRmZDRkOTU0NGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRmMGIxZWM3YTMzNDAzMmY0MTdmZGZmNTUxYWQxMjg4NTk1NTMzMGE4MWYxMGEwNTc3ZDk0N2U3MjRlMDVhODQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk3MTJkNDg0NjdhYWJmNGZjMmIxNDc2NWUxNzEwYmZjZTk2ZTFlMWI1YTJiY2FmYjk1OTZjZjQyNzZiMGRmZjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_804a6864b01e4fc3be410ce0dcfb1d8d",
+      "statement": "make check aggregates version, upgrade-policy, workflow-action, integration-manifest, and integration-guidance checks, and the workflow-actions-check target also runs prek, the lock file check, and ty.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L21-L40",
+          "version": "repo-lines-v1:sha256:8dd43eafbe6287af233b6c209be9c3d1ced407d4642cfe4a8e3c7b6669de7e00:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiZjIzOWYwMWI0MjE3MDAxNGRlYTQ0YmM3NmJkNDIyNDMxZGM3Mzk2NWQwNDNjMWEwZDM3Njc2NjcwOGY3ODMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzMDYwMTJhNTA3YjkzNzVhODdlYzE5NzkzNWI5YTFkYTQzZTkwMzRmZTJiZWNmMzQwNjE0ZmVhNjY4ZDFhZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIwNWVmYzFhYzYwY2YyMDM5M2FiMzM0NTEyZGJjODY5MjhmNjFlNDY0MGI5NGE4MjdhZGY0NDhlMTUwNjUzMGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUxMjcwZTI0ZjQ3ZTdmNDFlNDMzMDE1MDlhZGRmZjVjZDRmNTUwM2RkNzIzM2M2MzQ4OTE3ZjdhMDA5ZWYwNTkifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T09:04:09.583Z"
+  }
+}

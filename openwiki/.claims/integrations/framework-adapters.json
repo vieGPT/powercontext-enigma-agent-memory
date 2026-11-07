@@ -1,0 +1,430 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:984a4af4859cef194494bca524594c7c2d9cde9bc06def273f3efc16cfb0277c",
+  "claims": [
+    {
+      "id": "claim_0f5933f5b2c6443b8d1cb09fcae08974",
+      "statement": "PowerContextMiddleware recalls context before every model call by sending the latest human message to POST /v1/context/prepare via PowerContextClient.prepare_context, and it appends the returned content only to the current ModelRequest system message, so recalled text never enters agent state or a checkpointer.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/langchain/src/powercontext_langchain/middleware.py#L133-L160",
+          "version": "repo-lines-v1:sha256:de28c08200974057404f5b6fc11cc82c6ab411dd79d4eb25ddd2d5b51c1d2d37:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1ODM2YWE0MzU3ZmUzMzU3NWUzOTAzMTZiMGNlYWI4ZjZiYmY4YTUyNjg1NzIxNjY2MjQyMjkwZGJiN2I3MjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4N2FlZWM3YWQwNGM4OTUwOTY2YmI1MDhiMzkwOGI5ZWQ1YTM2NDE3ZGExNzhjMjBiYmI4NzhkZGViOTU2NDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczNzJiZTlkZDI3YzZmNGE5M2Q5NDI3M2QwMjJhZTE1YjI1MjkyZjVlZDVkZjUxZDQ4N2MwZjNmNmMxZTM1MzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiYTNkOGNmZjdiN2EwYWFjNDUwZDQyNTFjMWUzNzU3ZDZlNDQ5ZjU5MjMzMGFhMGE4ZWYxNTA5Nzc3ZTgzMjIifQ"
+        },
+        {
+          "resource": "repo://integrations/langchain/src/powercontext_langchain/middleware.py#L68-L82",
+          "version": "repo-lines-v1:sha256:96e923effee90cdca69dd2ae6bcf8059852396e1553dd461fd5e205fa57ce770:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyNzFhMGExMzM4YjZlODZjZGFiNjVjNjliODU0NzgxNzIxNWJkYjA0M2MxMDY3ZGM0MTU4MmUwMjE1ZWVmZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzMDFkMzI0NDA3NTMzNDJmNjc3ODMxMWQyZDg5ZGM5YTE5NWY4YmQ3YzA4OGRkZTUzOWMyZDgzZGJjYjNiZjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI2YzZlNjU0OTBiMGJjYzE0ZTBhYTY4OWEzN2Y0NDRkMzMyYTUzOGVmZTA2ZWRkYTQ4ZDU5ZmE1MDE3NTYwNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmMGQyNzhjOTI3ZjBlMTVhMWNiYjY1NzMwMGE5ZTM3MDM3N2IzZTJlYWU5ZDUyMTQ2YjU3NzY3ODcxZWU1OWUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/http/_generated/operations.py#L1326-L1334",
+          "version": "repo-lines-v1:sha256:4fd345bd51219d69bd8325d53b05c697e78d3a87b80017731bb6e7f2f02153fd:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2MzOTdlYWI3OWViYzNjYTRkYTkzMmU0ODU0M2M4ZTlkMGE0ZGFjN2RhZGYwZDk3ZGRjNTE3ZDJlNDlkMDlmNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDcyMGVhODc4NzcyMzMzMWEyNjBiYjMyZWYxOTcxZDk2ZTJjMTUyMGEwOTQ1MTZkZjI3MDA0YWU2OWU1MTFkMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTY4ODg1ODMxN2I1ZWFjMjA4MzA4YzQ3YzQ2YWM5MzU2ODUyZTNjNzA1MTc1ODBiN2Y0MDZmNGE3ZjYxMDBjNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmQ3MWJkYmMwYjA0NmQ3ZTljMGJlNzJkYTE0YWJmYWZhMTE3NDE2YTZjMGU3NmI5NjQ4NTgyMzNmNDk3YjM4NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_62d4ea9d47e1460ab0e12130ec969505",
+      "statement": "LangChain completed-turn capture is disabled by default; when auto_capture is enabled, after_agent and aafter_agent capture the latest user message and final assistant text (or serialized structured response) through capture_content_source with a source ID that is the SHA-256 of scope, user text, and assistant text, and skip the turn when the final AI message still carries tool calls.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/langchain/src/powercontext_langchain/middleware.py#L101-L131",
+          "version": "repo-lines-v1:sha256:d5f4692dc8f415d3990a2f796bfb024e1df8bc56c4a5280445e6cfa121331315:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjMzdiYTQ3YTM1ZjQzYTg4NGE1Y2FhOThiNmMzZjBiZTZmOWY5ODgwOWVhNWQ5ZjMxZTllZmM3NDc2MDQ3NDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlN2M5NTdiY2I0NGZiNjczYzk4YjAwNTBhNzVkMzgwODJkYjgxZDkxOGRlMzEzYTNmMDdjMTIzNTMwNmQ3ZWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJjZWVjYzI0NTc3MjI2YjIxYjkyZDM5YzQ0NzkzMmYzOGMzZWUzZGY4Yzk3NTNjMDYyYzhkYjEyNGUyZjVjM2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwNDMwNmU2YWIyMTA3ZTZjYTliN2YzZmMyNjQzM2ZjNjE2ZGM0MjYwYWEyZjUyODBjNWMxNzJhOTZhOGRmNzAifQ"
+        },
+        {
+          "resource": "repo://integrations/langchain/src/powercontext_langchain/middleware.py#L162-L185",
+          "version": "repo-lines-v1:sha256:a85c05ceed0de19f82247915af38e2dfa5ed4c04ae997251046a9c18dfeed81b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4OGMwMzRkZTEyNTI1ZTk1MTY4OWE0NWFkMmYwNmNhOWI4MTRlNjFlZmU2ZjNhZDhmNzU0MzdjNDZlYjAzMDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjZTUyMjkyMTVmOGRlOTcwMDYxNzEyMTFlMzkyZWYzZGU0ZWFjN2EzMzczNzM3NmVhMmYzYjA2NWU2ODI0OGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY2YzBhMzg1NzQwZTI2MjFlM2ZiMzk1NTBjZDNhYjZmNTg5NGNkMDZjM2Y3ZGJjNmZkNmM5NWVjZTY1MGUxZjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYzZGQ5MTAyMjYwYWU0ZWU4YjRkNzk1NTdjYzJlODNjNGJmZGI2NmI2MTlkNTI5MzhhNGQwY2NjNmUyMzFjYTAifQ"
+        },
+        {
+          "resource": "repo://integrations/langchain/src/powercontext_langchain/middleware.py#L234-L266",
+          "version": "repo-lines-v1:sha256:fe6fe4cb8c728087904cfe7a0d9ff7a09500c7264f3cb73d7f166b34f09abd0a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmNzliNWE2ODM4OGI3YjI1NmVhNmQ5NTBiMzEwYTE5NmE2MmZjMzJjOGU3Y2FhNGE0MzkyYzk3ZmQxZTM0MTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5OTRhYWI5ODM1MTNiM2E4Zjg5N2M3MTA4ZjgzOTQ3ZTFmZTdkYjJkMjgxYzdmZTI0OTZiYTgwZTgwNTFkNTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlNGQ1YTY2MTVmMzczNGRjOGI5OTk5OWI3NGI2ODIyMmQxZWE4MWUwN2FhMTUxNWVlNTNkOGJlNDExNGI4YTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwMGIwMmI3OGNjOGY2ZDE4ODgwOTY2ZDVjOTBhOTk3NzgyMjNmYTc4YzQ4NzU3MDlhZGNmZTM0ZDMzOTVhZjYifQ"
+        },
+        {
+          "resource": "repo://integrations/langchain/src/powercontext_langchain/middleware.py#L288-L296",
+          "version": "repo-lines-v1:sha256:b1ff904893bb7c07f4861bd4b135e92f99810f18245f7e34abe025295b3299ee:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTJlY2FhMDNlYjhkMzA3NWEwZTZhOGUyODgyNDJiMzUxZDUzNGVlYTZmNTVhN2NhZDU2MWRiMmZhZWE3ZDE2YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjY2ZjM1YTBiMzYzYWU2N2YyZWMwMTg3MGQxNjUyZjVlNDliZTQ5MjJjNGZjOTdjMWI3YjQ3YmI1ZTg1NjExMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGNjNGE3ZDFjYzc5NmFiYTNlNDY3MjMzMjdmNTE3ZTlmODExOTgyZDI1MGYwNzAyOTg2ZTRiNTc2NGFkOTU4OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0260f2f08f34487392b8d5f180c73f8b",
+      "statement": "LangChain recall and capture are fail-open: validation errors, ClientError, and unexpected exceptions are handled without raising into the agent, and the first HTTP 401 or 403 per operation is logged once at error level naming the POWERCONTEXT_LANGCHAIN_TOKEN configuration.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/langchain/src/powercontext_langchain/middleware.py#L133-L160",
+          "version": "repo-lines-v1:sha256:de28c08200974057404f5b6fc11cc82c6ab411dd79d4eb25ddd2d5b51c1d2d37:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1ODM2YWE0MzU3ZmUzMzU3NWUzOTAzMTZiMGNlYWI4ZjZiYmY4YTUyNjg1NzIxNjY2MjQyMjkwZGJiN2I3MjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4N2FlZWM3YWQwNGM4OTUwOTY2YmI1MDhiMzkwOGI5ZWQ1YTM2NDE3ZGExNzhjMjBiYmI4NzhkZGViOTU2NDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczNzJiZTlkZDI3YzZmNGE5M2Q5NDI3M2QwMjJhZTE1YjI1MjkyZjVlZDVkZjUxZDQ4N2MwZjNmNmMxZTM1MzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiYTNkOGNmZjdiN2EwYWFjNDUwZDQyNTFjMWUzNzU3ZDZlNDQ5ZjU5MjMzMGFhMGE4ZWYxNTA5Nzc3ZTgzMjIifQ"
+        },
+        {
+          "resource": "repo://integrations/langchain/src/powercontext_langchain/middleware.py#L202-L216",
+          "version": "repo-lines-v1:sha256:f483b60c14953308edb9fce8e714775c02102074dce095276820a1a65d0d9ab1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmYzJhZTU5MDlhZTA4MjNhZTc1OTUwYmM3NWI2MjZjMDI0YTAyNDlkZmMyMDYxMzQzNTVmNDhlMzA2MzA2NDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5NWMxNGM3ZTUxNDU5ZDI5MjMwMzIxODU2NzY2MzcyNzA5MjM1NTZlOGNkN2FmOTg3YjBhNTU5M2MyYzE3MTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRkNmM0NTMxODJkNmViMmY0N2RhZDM0MGIwMDQ3MWRhYmIwY2FmMjE4MzU0NTQ3ODg1NTEzYWJmYTFhOGYyYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY5N2VhZTQ1NzY3NmMyZDUwM2IwMmM0MmY3NGUwNDc2NzUxZjE1MTI0NjRlYTMzMzdiYWFlN2IxMWUwODU1MmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_24a776bfd47e4bc79ab19747d2fe1cbc",
+      "statement": "The LangChain synchronous hooks run the async operation with asyncio.run only when no event loop is running; inside a running loop they log one warning and skip the operation, directing callers to ainvoke or astream.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/langchain/src/powercontext_langchain/middleware.py#L187-L200",
+          "version": "repo-lines-v1:sha256:f91c2c237ac1e0a494ae9fddbd3bbbdc627c9a4310a0adcc8daf43eb285087e2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3NmExYjNmYzU1ZWUyZGM1OTQzZTg1NjFhNTlkNDNiMzc2NTg4ODZkZWM1NDk3YTYzZjAyZmE3MmVmMjhjNGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlN2M5NTdiY2I0NGZiNjczYzk4YjAwNTBhNzVkMzgwODJkYjgxZDkxOGRlMzEzYTNmMDdjMTIzNTMwNmQ3ZWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM5MTk2M2RlYzAxZDM2NWJmZjNkNzIyZDRjZGY4NDdiYTU3OGY1YjZmZTMyNzEzZGViN2M5Y2QwNzA5YTI2NTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJiNDZjODc3MTg4OGYzMzBlZTBkMTA2MDYxODRhYTg3NjE3MDZkOWYwMDA4YzJmZmQ0OTYwYWRkMDBkMzYzODYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_12a6a1c552914ab4a24d14a6a3bbb608",
+      "statement": "LangChain and LangGraph configuration overlay per-invocation PowerContextScope values on POWERCONTEXT_LANGCHAIN_* or POWERCONTEXT_LANGGRAPH_* settings, with base URL defaulting to http://127.0.0.1:8000, timeout 10 seconds, and max_bytes bounded to 512 through 32768 with default 8000.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/langchain/src/powercontext_langchain/client.py#L51-L81",
+          "version": "repo-lines-v1:sha256:5620a8757f53e819ab52f60e3f61d66dd44ccd9f0b81d712d073f584d055eb6e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2MjU3ODRiZDAxNjYxMjFkMWQ0MTVkMzRhM2RkMTI3OTkxMWFiZWQyYmQwNjFkNTNlMDEzMTQzMTA2YWZhNmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlN2M5NTdiY2I0NGZiNjczYzk4YjAwNTBhNzVkMzgwODJkYjgxZDkxOGRlMzEzYTNmMDdjMTIzNTMwNmQ3ZWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmMDE5NzgyY2M2ODYxZmNkYTFkMDJhOGU5YzMzMjBkZWI1MjU3ZTNiYjU2ODBiODM5ZTU2OWJjYjg1ZTVjYzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBjNjE1YzU2YjljZmFiMWNkODc3YjA1NmIzMWY0YzU1MTliZDY2OGYyM2Q0MTA0NTdhNTAwZDY2MjM0OTkyNmYifQ"
+        },
+        {
+          "resource": "repo://integrations/langchain/src/powercontext_langchain/settings.py#L24-L61",
+          "version": "repo-lines-v1:sha256:61b69676a78ac39c9329d285fd2f091a5aeb0b2d5aca41faf6e58c0b5877178f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxYzVhZWI1YmMwNjg0MDRhYTVmNGI1NTAxNzQ0YzMxYmUyMmQ4NWY2NTQ4ZGFmMGJiNzVlNjkxMDgzMjJjNjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2YzQ1ZWUxMjAxZDdjMDc1NzQwN2IzOGU2YmJlYmM3MjUyZDk4OTBkOWEyNjFlMzE0MDZlOWE3OWExZGMwNzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYxMDVkZTgyYjIyN2JkNWNkMzUxYTkzN2YwY2E5MDMxOTkxMzVhMDYwNjU5MzBjNjhkMzcxZWFmODE0ZjM2MjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://integrations/langgraph/src/powercontext_langgraph/settings.py#L24-L61",
+          "version": "repo-lines-v1:sha256:7e77375979568d8117d5fe586017b31437fdddc5cb031ed5a039fdff297fc1be:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxMTFiNThiYjY4OGFiZTMyZDQ3OGE4Mzk0ZGRlM2M5YWIzNjNiYzZlYTExMGRhM2NlZmY3YmJlZjBmZGQyZDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlM2NmY2ViMzNlMDExZjliNjk1MDg4ZTBiM2FhODNiMTYwM2Q2OWRiNGRjNjU4MDNhYTgzNjM1M2U4MWIwZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZmNDM2MDg0NDczNmYzNTMwZTg0MDc5ZmRkYjYxOTYzMDJmODg5Y2MwNDg4NTY2MTQ0YmYyMzkzNzVmNGRiYTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9cd91c02a08a43d69bacdbec2862ddc7",
+      "statement": "The LangChain and LangGraph client helpers borrow a context-variable shared httpx.AsyncClient installed by shared_http_client when present, and otherwise create a per-operation PowerContextClient with the configured timeout; the shared client is not trusted for plaintext non-loopback HTTP unless trust_transport_security is set.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/langchain/src/powercontext_langchain/client.py#L95-L134",
+          "version": "repo-lines-v1:sha256:49e4eb3b40cf903c4d1c7a7ef2e7a89e0ef277d92c0597e536cb6c027553ffdb:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlNDUxYzkzMTU3MDgwZTAwNWFiMzU4OTM5MjZjZWI0NDE4ZTZmZGI5YTcxMDNhOTRkODkxNzk4Mjg5NzYzOWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ODc2ZjM2ZWUxYjk0Y2IyYzQ0OWMwODY2NmY5NWUxOTI2MGYyNDExNjVhNjgzY2EwMDFmYjAwNzU1ZTY0MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNlMzY2MmM3NzVmZDE3OGMzZDhkZDMxZjhmNTZjOTQxZjUxNzQwMjhiNDE2ZWQzNzk4MWZiM2E4NWZjNGEwNjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://integrations/langgraph/src/powercontext_langgraph/client.py#L104-L147",
+          "version": "repo-lines-v1:sha256:3b9243c51a9fc0e3b150914b078b68cd23bb9a5afae3ba06b4783460d40799ba:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlNDUxYzkzMTU3MDgwZTAwNWFiMzU4OTM5MjZjZWI0NDE4ZTZmZGI5YTcxMDNhOTRkODkxNzk4Mjg5NzYzOWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ODc2ZjM2ZWUxYjk0Y2IyYzQ0OWMwODY2NmY5NWUxOTI2MGYyNDExNjVhNjgzY2EwMDFmYjAwNzU1ZTY0MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNlMzY2MmM3NzVmZDE3OGMzZDhkZDMxZjhmNTZjOTQxZjUxNzQwMjhiNDE2ZWQzNzk4MWZiM2E4NWZjNGEwNjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3d9b32dde4aa438c9987771e76e548b1",
+      "statement": "The LangGraph PowerContextRecall pre_model_hook returns a complete llm_input_messages list consisting of one leading untrusted-evidence SystemMessage followed by the unchanged run messages, and never writes recalled content into the persisted messages channel.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/langgraph/src/powercontext_langgraph/recall.py#L45-L76",
+          "version": "repo-lines-v1:sha256:82fe5aac63185118c95b7f914df4af8744832c2c3ac12f8479620d4e1d6fb8ff:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwMjUyZjUwOTg2Zjc2NDYxNGVjOGJhOWQ4NGE4ZTdjMjIwNGQxZTJhMTVlNjdjYjMzZDJjYmQxYzViNzBiNzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjNDkwYzFkOWRjNmM3ZjZjM2FiNzkzZWU2YmVmZmQxYzcyNGU4ZWI3YmU1YTAyMDcwYTAzYmY0ZTIzNDIyYmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkMDk2NzYwZDFjNzc4NjA5ZDk3YTdlYTk3Y2I4YzRlNjA5Mjk4YTI0ZGM4NTZkODIwMTIyN2Y1Zjg3YzJjNjEifQ"
+        },
+        {
+          "resource": "repo://integrations/langgraph/src/powercontext_langgraph/recall.py#L77-L92",
+          "version": "repo-lines-v1:sha256:2677d134273e2bec13c895a8510f5d62e2bfa55251a120fc34eb8dc102472cb5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhM2I4N2U2ZDU4MWIwNWIxYTAwMjMyOWI1MWIwYjFiZWJmNGFjYTY4YWE1ZWE3Y2JlNjcxZjNiOGY3YTUxMWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIwMjJiOWI2ZDJjY2Q1YWJlN2IzMDJhYjQ2MGZlNjgwMGRkMjIzZDU0ODAyMTc5YWI3ZmNlNzFkY2Y2ZmQ1MmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZjN2NiY2Y1ODRjYzI5NjU4ZTJlNmM0OTViMjUyYmE0ZDJiNmRmMTZlZDk0YTYzNzUyN2U2MWExZmJlZmM4ZGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6295bdc2a15a42c8899b73997eaf7573",
+      "statement": "PowerContextRecall caches prepared context per human turn, keyed by scope ID, human message identifier or text, and a digest of max_bytes and assembly; the cache holds at most 64 entries, evicting the oldest, so a tool-calling loop re-supplies the same context without re-querying the Server.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/langgraph/src/powercontext_langgraph/recall.py#L108-L160",
+          "version": "repo-lines-v1:sha256:4d4d4b9105be8410d584fde93f825a7809ecee63ace66ff94f1d89a2e3242adc:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxZWE4MGUzMmE4MGY2ZTYxODU3Y2UxMzNkMDY5YjcwNDliY2NjYTY3MjdhNGQwZjZmMmY0ZjI5MjU1ZmFjOTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5N2I0N2JiODFjZTkzY2JhNjdhZmMwODY5OGE4MGNmYTA5M2E4NjY3ZTljOWY5NjUzMzc4MThkNjU3OGQxODUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiNzY3YWYxYzAyMzUxNzBlYmJmMmRkMGUwZTNkNDk5YmYyZjQxM2M0YzM5YWI1Zjc4MTg0NzFlMTNkNGE1M2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU3NzA3N2RhNTc2M2QzMGM5ZmRmZWZlZjdjNWIzMDFhYjYxYTc3Yzg1YjhhNTRiODVjY2QyZDI0YWEwN2ViZGUifQ"
+        },
+        {
+          "resource": "repo://integrations/langgraph/src/powercontext_langgraph/recall.py#L186-L199",
+          "version": "repo-lines-v1:sha256:306a65beccf61db71c464c615f3ad2a6c59df24eb28748c3dc9d54995e82bb80:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhNDUyY2E0NzM2ZTNhMTY1NTU5NjM0NzljNzVmNzI4N2E4ZTk5YzlmN2RhNWE5ODQ2NTUzZTYxZmFiMjg0MTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTYwMGE3M2QyZTAyZjM1MmI5MGZlZjFkOGQ2MzgxMWJhNGE4ZWUwYzFiZWFhN2FlNDY1OGYzNmFhMmUxOTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlNGQ1YTY2MTVmMzczNGRjOGI5OTk5OWI3NGI2ODIyMmQxZWE4MWUwN2FhMTUxNWVlNTNkOGJlNDExNGI4YTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f9012610d88b4782a157c5933051e505",
+      "statement": "The LangGraph Memory tools powercontext_search, powercontext_remember, and powercontext_context return error or unavailable text rather than raising on ValidationError, ClientError, or other exceptions, so a model can retry instead of mistaking a failure for an empty result.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/langgraph/src/powercontext_langgraph/tools.py#L129-L148",
+          "version": "repo-lines-v1:sha256:fecd5879ca22e511c0e62ee9e43cf3f01e9049bd0e799940593f4db26ddd808a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1NDJmOTNmYjA1OTZhZmIwNzUyMDEyMGQyNzU0YjQ3NjliZDU1YTUzZWUzYTQ1M2EwMGY5NzhhMDFhZTVhYjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5NDQyNmUxOWJjNGU2MjM0NDFkMzg2OWZhMzEyYjBlNTg3MzAwZjM3NjU4YzJlYzRiOWQ2NWY4NWE1OGQwNWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwMjc0ZTE0NmFlNWFkMjIyZTQxMGIwYmVhODNlMWZlMWI4MmFkZDNkN2I2OWMyYjE1MzZkYmVjOTIzYjM4NjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://integrations/langgraph/src/powercontext_langgraph/tools.py#L52-L127",
+          "version": "repo-lines-v1:sha256:ca4b42f300011ef913c223a83a009891dc2d0944ab011b12b9af568ef9698cd4:eyJzZWxlY3RlZExpbmVDb3VudCI6NzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5Zjg4MTEyYjUzOTJiNWQwMDBhZTg2YTU5OWEzMmQ2NWFhYmQ5ZjA3ODE1NmI4OGQ1ZmFlMGE1NDBjYzg2NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjliNTAzOWE4NDdhMTAxMDE5OGI0NzQzMTA1OGQ4MjA1NjBhZDY1N2FhNzUwZmYzY2ZhOTg4ZWZjNWM5NWE0MzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmODFhZjY1Nzc2NjYxYTY3NTliN2EwZmZjYzFmMDk5MTIxYTAxN2NlYTQyZDg1NDQ0Mzc4MGRmNzk2NGJmZjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_13cb7e68b02f41d69ffe836181d2cc2b",
+      "statement": "The LangGraph runtime scope is read from langgraph get_runtime(PowerContextScope); when called outside a runnable context, without a graph runtime, or with a non-PowerContextScope context, current_scope returns None and the adapter falls back to environment settings.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/langgraph/src/powercontext_langgraph/runtime.py#L24-L39",
+          "version": "repo-lines-v1:sha256:d11e930a63156e5fd1f1fa06a32bea6291640219e96a0c9154c689982721f7eb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkOGQ5NDIzNWMyYjY5YjM5Y2RlNTQ5M2MwYmZiYjUzZWU5ZjE5MDliYjQ1ODU3ZmQ0YzMwYzlkYjc1ZmI5NmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI3MGQzN2Y4MzU1OGZmNzE3MmQ0ZDZlN2QwMDYyYjM1NmQzODRhZDQzYWEzNDlhMDk0Y2U2YzE0MzRkNzQwOGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkMDA2NWNiY2RmODk3MmNjMWZhMzVhNzdmNzU3YjgxNjQ0MTNmMDEyYTFiODg1ZDM0OTZkNTNiZDI3MzViMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_987218dd82194f00bdc444a0116ff735",
+      "statement": "The Pydantic AI PowerContext capability injects recalled context at most once per run: before_model_request skips preparation when run state already records injection or the request already carries a run-scoped context marker, strips earlier PowerContext context blocks, and otherwise prepends one run-scoped SystemPromptPart with the untrusted-evidence prefix.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/pydantic-ai/src/powercontext_pydantic_ai/capability.py#L115-L152",
+          "version": "repo-lines-v1:sha256:6560b16b193fdd82c412b5298a13475cfb36154af77ff0640dfecd10d2c8431c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExMzY5ZTgxZmE0ZmU1Y2IwZWJiZTQwMjI0MDNiZGEwYzliMWJkMjFiOTY2MzIwYTJlYWQ1Y2E0Njg2ZGYzNTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzYzg2ODk2ZDQyNGExNGU0NzQ5NjdhNWFlMDZjYzg5YWNlZmVhMzNiYzI1MWU1NzI1MzdmOTQ2ZjQ4YjM0ZTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdlOGViMWRlOWNmNzk2ZDNkMWRkNTA0MmFhZTVhNjYxNzlmM2Y3MmQ1OGVkYzgzODY5YWI5ZmY4OTFhZWUzNzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVmNjY1NDgwNDk4MzY1NTZhZDZkNWZlNGZhYTUyNGQ0ODNhMjZhY2Q5MDczMDExMTE1ODMxNWRmZDEwMzNkOWYifQ"
+        },
+        {
+          "resource": "repo://integrations/pydantic-ai/src/powercontext_pydantic_ai/capability.py#L218-L236",
+          "version": "repo-lines-v1:sha256:f3e7422cc3f696642a6427222dbf43dcdb29416410fd9981668d9a49c6efc557:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhZTRmYjg0YzQ1OWJiMzAxMjY4NmM2NWZkODI5YmJlZGIyMzViOTZjNTNlNjQzMzZkNjdmNDI3MGQ3YzgzMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllZWU2NzUwNTljODBmZmY4ZjBkYzVmZmU5MDhjMTc5MTM4ZjNmN2ViOTIyZWE1ODAxODRiMDRhYzA5MzM5ZTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0MGI2YmIwZjg5MjY5MGRiOTM0NzRjNDU2MWRiYzA0Yjg0OWY1NTc2NzEwOWMzYTdjY2VjYjE2OTg3ZmI1YTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhiNWJmYWJmYjZiZGFlZjg2NDgwMTA0MGQ4MDdhZjZlN2U1ZTM4NThkZWMzYTI5MTljYzIyNjRlZWJhMzIzN2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_82bf87615adf4c178fff96682d68a1b9",
+      "statement": "Pydantic AI event capture is opt-in through capture_events, defaults to false, and posts sequenced run events with schema powercontext.pydantic-ai-capture-event/v1 to /v1/sources/content; a checkpoint flush runs every capture_checkpoint_every captures and after_run flushes the remaining Source positions.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/pydantic-ai/src/powercontext_pydantic_ai/capability.py#L155-L203",
+          "version": "repo-lines-v1:sha256:108386801bcae94e851b1c5c97e167ff797fde7181eb7124c7e23d6635486813:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjODcyYzgzMmZhZjQ1N2UwMGVjODYyODZkOWI2OTU3OWZiMDc5ZWU0N2I3ZmU2Mjg0ZTNjNTI2YjA2OTRjYTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdiNGMxZjhiZjYzMTc5M2VjNWI5MzA5ZTc4M2FhZmYyNDY5N2E3NWU0Y2EyYjA5Nzg5ZjNkOGE5MDYxNGUyYmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUwNDhmNGZmODNmYjQ3YmU1YjAzYWFiOTFhYmU0ZDBhYmZiN2FlYjIyZjYwMmMxYzY0MWIwZDg5MDM3ZTQzZjIifQ"
+        },
+        {
+          "resource": "repo://integrations/pydantic-ai/src/powercontext_pydantic_ai/capability.py#L205-L216",
+          "version": "repo-lines-v1:sha256:bee40269acff6b2d0d4e6da9dd2d31b3f419d1d91555addbb737fb857737c24d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmNWM4NjRhYWM5OGYyNDc5NDVmODUwOTI1OTEyOWU5MTdiODk0ODc2YTA0MjRjM2E0MGY1NjllNTZlZTQ1MWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3MmY5Njk1Yzc0NjdjNzQ3NzNjOWNlN2ZjNDI5YzVkMGQwZTQ4N2YzYzUxZDE1ZDY2NjhhM2QyNDA3MmJiOTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5NjE5Yjc0ZTRjMmIxM2YzYWVjMjE2Nzk1OGI4NzM1YTMyOTJlZWU2NjBiMDdlZTNhYzg1ZWMzMWY3MzhiNjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmM2MwMTg3ZDMyNGVhY2EzY2YwOTBjNTU5YTM2NDAzNTlkY2FiZmI1ODQxYTM3ZjQyZjgzZjk2NjVkNDYwZWYifQ"
+        },
+        {
+          "resource": "repo://integrations/pydantic-ai/src/powercontext_pydantic_ai/capability.py#L238-L292",
+          "version": "repo-lines-v1:sha256:3581bab37309a6ad0ee7bb82fce6d21d90ba1bd83e0b28963d221fb4c25c9150:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4NzczYmM1NDI3MmUyOTY2YWFkMmI4MGViZDQzZjkyZGU4NzA1MjlhZWU2MWFiZGJlNGFjYzgxN2JhYzJhZTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmM2JkOWFjNjFjNWNiNDk1MDFkZTVmYzZmNGZhNGJiYWMzMDkzMjgwNDA4ZjM3NjQxODAxY2RiYjY0Yzk1ZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc4NWNlMDhjMzU1OThiMTFmMTdiYjZjNDIwNjM1OGRkNTVmMmE4NzM3ZWZlMWU2YWFlZTRkZDAwYjg1MzQwNTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2YTEyMGRlMmM2NWVjNzBhZWQ5MjExNWNmYzE3NDViNDFhZTFhZTViMDMwMDYyZjMxZTUxMGM3YTVjNDljNjIifQ"
+        },
+        {
+          "resource": "repo://integrations/pydantic-ai/src/powercontext_pydantic_ai/settings.py#L28-L50",
+          "version": "repo-lines-v1:sha256:22175f2cb75f95d54ab19f5539d29cc52c94904d044ff0c3d2828fc425e813fb:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxYzVhZWI1YmMwNjg0MDRhYTVmNGI1NTAxNzQ0YzMxYmUyMmQ4NWY2NTQ4ZGFmMGJiNzVlNjkxMDgzMjJjNjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3MjA1ZGNiYzNlYTVlNzEwMWY0NWJjNjMwMTE0MjhjNWMyMTYyN2ZjNGY2YWJkOWU5YWRmNDNlNmMxZWQwMTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjNTJkOWQyZTJhZjUzNjE2YTIzYjQyNTc4ZWY3ZjI5MDJhZGMwNTViNDUyMDg1MDg1ZDFlMDAwODI3MTkzMDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ5M2ZiZmZhZjdiZDdmOWI3ZjU2ZDBiNDVlYjVmZjIyOWMxZjQ1NTVlMjg0YjNkMDJiMTY1YTc3NDg4Nzk4YmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9d60206da4144070b9a2f58a9b7fa495",
+      "statement": "The Pydantic AI flush loop calls POST /v1/memory/flush repeatedly until the server cursor reaches the captured position, and stops early without raising if the cursor makes no progress; flush failures are logged and fail open.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/pydantic-ai/src/powercontext_pydantic_ai/capability.py#L294-L335",
+          "version": "repo-lines-v1:sha256:ca2dbf4eb14222982359ad9f9c4766ba3a9228f40bbe29a62339fe48638467ad:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiNThkODQ5M2EwMzAwNWRhMDQ1ODAzOGE1NTYyZWM2ZGUwMTNmMTgwMzI0NTdhZjM3NTVmMzRkODU3MzdiYzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmODAyMmRmYzA2MjFhOThjZjhiNjQ5MDAxM2EyMmEyOWQxNDdmYjRlZmYyY2RmMjhmNzVmYzE2YWQ5MTUzNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE2Y2E4ZDI2MTAxOWM4NTA2NzUwY2I0NjQ3YzRhZGQ3MTAxMWUyZWU1YjE3MjlkMzY1MmJjYzY0Y2Y2Yjk1NDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQzNWU3NTViNDM4MGE1NGE3NjRlMDZjMmI3NjhiZTJjNjFjMjFiZjAzYTQxOTkyZDM4ZmI4NjAxNzM1ZTBjYWUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/http/_generated/operations.py#L1903-L1911",
+          "version": "repo-lines-v1:sha256:124658238acb27e9006fa3a6c1c456d6f8b696d8dc11b233fa5aae8819d52577:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzcwMGVlZTQwMTc1OWQ4N2FiMWI4ZjRmOGQ1MTZjMTQ4OWM1NjgwZDUxZGQ5MWI4YTlmMTkyYzJiN2U2NDY3NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDcyMGVhODc4NzcyMzMzMWEyNjBiYjMyZWYxOTcxZDk2ZTJjMTUyMGEwOTQ1MTZkZjI3MDA0YWU2OWU1MTFkMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTY4ODg1ODMxN2I1ZWFjMjA4MzA4YzQ3YzQ2YWM5MzU2ODUyZTNjNzA1MTc1ODBiN2Y0MDZmNGE3ZjYxMDBjNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjcwZTAyOWI5MDI3YjBmYTU1ODVjNGMxZjM0ZThkZmY2MGQxMGI0YWFmNzhkOTg2Njg5YjMxMWM4NDBiOTc4MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3abd9908c20140e98ed043c62de47169",
+      "statement": "The Pydantic AI PowerContextToolset creates one PowerContextClient per run in __aenter__ and resolves the Scope once through resolve_scope_binding, closing the client if resolution fails; an explicit scope callback or string takes precedence over the settings scope, and a missing explicit scope falls back to the Server default.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/pydantic-ai/src/powercontext_pydantic_ai/scope.py#L24-L62",
+          "version": "repo-lines-v1:sha256:20df5e4480bb06a2f9b7400e9c162f248d45f261b9c175030d63dc5aff5d0254:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYjI4YmVlNWI4ZTRkZjYyZjk2YjNlMzM5MjFhYWYxNjg1ZmIzZTFkOTcyMzNmZDhjNjQyZWI5ZGFlY2ZlM2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyMTI3MTViZWM1OWE0NDFmMTY4MmZmYjUyZTg5YmZhZDk5NzdmNTBmZmY3YWQzZjhhMWQxOTFkZGMzMDhkNDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkN2I3ZTI4NzMzMDYwY2I1YjMwZTNiNTFkY2FlYWM3YzM5NTRkYjM2Mjc4NzQ0YjZhYmVhOTFhY2E1M2NkZTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://integrations/pydantic-ai/src/powercontext_pydantic_ai/toolset.py#L146-L171",
+          "version": "repo-lines-v1:sha256:df29f77c1ab1e6759d9ad1195706749578cc2e10f7aebf371cb71bc9ea40ab68:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkMTYwZWFjNDA1NmEyY2QxNjM1ZTFiN2Y1NDA2ZjlmMDNlMTBhYjkyNTYzMDM3MDM0NDE0N2ZkNDkxMGQ4MmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyYWIwOTBiY2QxNjIwZmE2MmVhZWUxNTdhNzRmY2E2MzVhYTI5ZTEyY2JmZmQ2MThiNTc5MmQ4N2JjMDNhM2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhhZmU0YTdmZWIzYzVlN2ZiOGNjZjcwZmE3NzIzNDkxYWMzOTgwOWRmZjE4YWVmMmFiODE1YzExZjc2MzM0YTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwOTFjYjA0Yzk5ZDAzN2MwMjllZTllNzYzNjA0NGYzMDQyMjQzOWVmYjRmODAxZjNmOWY0NDUwZTM5ZWUxNGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ad0eab12c51145d2b620a76ccb69f84c",
+      "statement": "In the Pydantic AI toolset, a ClientError raised by a Memory tool is converted to ModelRetry so the model can retry, while recall, capture, and flush failures in the capability stay fail-open and are logged only at debug level, with the first 401 or 403 reported once as a configuration warning.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/pydantic-ai/src/powercontext_pydantic_ai/toolset.py#L239-L252",
+          "version": "repo-lines-v1:sha256:19b8c0b77c3c1b03dd41c5f4879cf292d0737750033bcd233f15b22986b0f141:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyMTU4ZWFlNzBkMGM2ZjQ5MzI0ZjkxN2ZhNzM4MTlhZDRlMmNjYTBhYjFlNjNkMjRkOWExMzRiYWIxODMzZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFlNDE5MmNmODU5ZmNhMzIyOTAyMzExOWRmMWZlN2I3OWI1ODg2M2ExZWRkMTQwZjk0NDI1YTMyMzg1OGE5MjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ0NjJiYWUwZTU4ZmZlZmY3ZTE1OTVhYmY2MjZkNzk1MmIzODRhMWNkMTg5MGFkYWU0NjBhZTkyNTc0YjA3NWMifQ"
+        },
+        {
+          "resource": "repo://integrations/pydantic-ai/src/powercontext_pydantic_ai/toolset.py#L55-L77",
+          "version": "repo-lines-v1:sha256:9737b1db729e4701a71cb46f32d7f76d3d8badbcdde20e8593b6b4d90e49bc1d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4MWFhZDk0Zjc0Zjk0NGYyMmIwYmYxZTU5ZTQxOTgwNmE5YzkzYWY0YTBhZmExODYwZjgxYTFiNGQ5MWI5Y2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwYzUwNjIwMzBmNzhkOWMxYTg3MDEzMGVhYTk4ODU2NWZmNmZkNjc5Y2I1ZWU3OTE5N2ViYTQxMWZkZGJmMDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI3NTgwZWIzNjEzMjg0M2Y1MGM3N2IxOWYyYTA4ZmY2NTE3NGJjNDI3NWY4NWE0NjIwNDM1N2Y1NDBiMjA3NzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0NDA3OTMxY2Q5YmJlNWJmMjVmOGM5ZWNiMGFmY2RlNzI5YWY5MDRhNjRmZGY0MDFkYTI5YmJiMGVjNmRmZDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_51583971b8d048b0926a2b6cd13f81a0",
+      "statement": "Pydantic AI settings reject base URLs with credentials, query strings, fragments, or non-HTTP(S) schemes, reject tokens that include a Bearer scheme or whitespace, and bound capture_checkpoint_every to 1 through 100 and capture_max_bytes to 512 through 32768.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/pydantic-ai/src/powercontext_pydantic_ai/settings.py#L28-L108",
+          "version": "repo-lines-v1:sha256:ee29c0ed7654308e3556d6195a4158c27455cf394eb95f75b3ab41a859465d87:eyJzZWxlY3RlZExpbmVDb3VudCI6ODEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxYzVhZWI1YmMwNjg0MDRhYTVmNGI1NTAxNzQ0YzMxYmUyMmQ4NWY2NTQ4ZGFmMGJiNzVlNjkxMDgzMjJjNjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2NGExYTQ3NTM2NjAxYTdkMTUwMmYwNThlNjVmYmM1NTY1OTYxMWUwZmQ5ODQ2ZTU4ZDI5NGQ4MjMyNTdlZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjNTJkOWQyZTJhZjUzNjE2YTIzYjQyNTc4ZWY3ZjI5MDJhZGMwNTViNDUyMDg1MDg1ZDFlMDAwODI3MTkzMDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b98a1f67c0a543de8d79721b7d5f4961",
+      "statement": "The Dify plugin resolves the target Scope before each tool call: it sends explicit_scope_id when a scope_id is configured, otherwise a binding with integration dify and kind configured-scope with allow_default false, and rejects a response whose Scope differs from the configured ID.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dify/plugin/powercontext_dify/client.py#L276-L291",
+          "version": "repo-lines-v1:sha256:6134d7103fa011f9d49751fc1f1668b8678ec5bb65b069052b3d3c74403346bb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3Yzc3NmU2ZTFiZWY3YjkyZDlmZDVjMjEyMzVhODU3Y2IyZTIzYjZkYWRmMDZmN2VhZWM2ZDlmYmNmM2QyNjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyNzVmYTJiNDFiNmYzYjBkNzZlNGVkNjg4MjJhNzc2ODAwYTFhYzU1ZjU5ZmIxM2Y1MmU2MTg5ODdmZTQ1MTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjliYjU2NTdiOGIzNTYwMTRlNmYyOWFkYWMwMzI1NTAxYTdkY2RjZjc5ODQ3OTRiMDMyNjc0ZTVmNGNlZDRkMmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRlYmE5MDM5MmJjNGVlOTVmMTE0Nzg2NmM3YzdiYzYyOTg1ODI2N2MxMWExMDgwYTA0MGMxYzcxY2IwMGY4YTEifQ"
+        },
+        {
+          "resource": "repo://integrations/dify/plugin/powercontext_dify/client.py#L96-L157",
+          "version": "repo-lines-v1:sha256:d2d094fd51fee5e3665454a94ea8f076d49db2b0cfefa78a36421e980c2f41ec:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZiNjVjYTE1OTA4MTk4ZGFhNzM4MDNjZGJmNDQ0YWRmZmI5ZGFlM2Y1NTExZDk5MWM4NzM2YzE5ZDEwMDVkMDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3YTUwZDM3MGMwYTJkNTNmZGYyZjhhODIwMTdhNTlkOWEwNWFiNDk3NmQ2MDkxMTEzYmQ2ZjUxMTI5ODQzOTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3Y2ZiMzQ0OWYzZDYwZjllYjc0MmMwODc0YjA2NThkNWI5ZGViMDAyYTNkYjliZmZhOTBiYTU4MThkMmZhOTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJmZDliNTA2ZDZjZWRkZmZlZTZmYmVmNzk0ZmRmMDQ2OTZkNzIzNWYxZjUxOGRiZjhkMjM5NjE1ZGM1M2EwNmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc410972d3a54314a4e8b2a79e94d34c",
+      "statement": "The Dify Connection requires exactly one of scope_id or binding_external_id, a non-empty token, an HTTP or HTTPS URL without credentials, and plaintext HTTP only for loopback hosts or when allow_insecure_http is set; max_bytes is bounded to 512 through 32768.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dify/plugin/powercontext_dify/client.py#L96-L157",
+          "version": "repo-lines-v1:sha256:d2d094fd51fee5e3665454a94ea8f076d49db2b0cfefa78a36421e980c2f41ec:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZiNjVjYTE1OTA4MTk4ZGFhNzM4MDNjZGJmNDQ0YWRmZmI5ZGFlM2Y1NTExZDk5MWM4NzM2YzE5ZDEwMDVkMDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3YTUwZDM3MGMwYTJkNTNmZGYyZjhhODIwMTdhNTlkOWEwNWFiNDk3NmQ2MDkxMTEzYmQ2ZjUxMTI5ODQzOTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3Y2ZiMzQ0OWYzZDYwZjllYjc0MmMwODc0YjA2NThkNWI5ZGViMDAyYTNkYjliZmZhOTBiYTU4MThkMmZhOTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJmZDliNTA2ZDZjZWRkZmZlZTZmYmVmNzk0ZmRmMDQ2OTZkNzIzNWYxZjUxOGRiZjhkMjM5NjE1ZGM1M2EwNmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ce0f47ad6ab648658dd95c1ccaa84bc4",
+      "statement": "The Dify Client sends requests through an httpx client with trust_env disabled and redirects disabled, limits each response body to 4 MiB, validates the JSON response against the bundled contract for its status, and reports a failed write as unknown rather than error when its outcome cannot be confirmed.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dify/plugin/powercontext_dify/client.py#L159-L275",
+          "version": "repo-lines-v1:sha256:b39aade64f62a87c393683f5c2b7b2e88f7bbb2d270d67d416b955483c5dbd67:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI5MjFlZTdkMTMxMDM4YmI2ZTI4NmE3ZDA4MzhhYjJhMDZjZWM4YWVmNGRmZGZiNWYxYmQzZWMwZDEzODg4NmU2IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI3Y2JkZDYzZGM2MzNjOWQ0YjE3ZDQ0MDIwMjdkYWY1YjQ2OGQyMTYxZjI1NzcxMTIyYWQxOTQxMTExNjI2YWJmIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI5NGViMzljN2E5NDUzMThkZTE5YjI0YzA0YmFjOGM4Y2I2NTJjZDBhZWUzOGQ3OGZlNGYzZjg3ZDk1ZjNhYzZjIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_0cc5cc548e344a689ffb543e7f3805a4",
+      "statement": "Each Dify model-facing tool strips the plugin-controlled parameters scope_id, max_bytes, and assembly from the model surface, injects them itself, rejects unknown parameters, and rejects secret-looking content before a capture write, setting metadata origin dify.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dify/plugin/powercontext_dify/policy.py#L1-L30",
+          "version": "repo-lines-v1:sha256:407af5b2a2917dbada89600f5182c1079097c06f4386c2428500f1e76f88cee9:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2ZjAwM2E2YTljM2ZhMWYzYjU2YzcxODVkZmY3YmM4ZjdiOGM4ZmY1MDU2YmI2OWJmOWFjZGFlZWQzNTc4MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhZmJhMDUyN2MzOTUzYzRiNmUwZTViNTczOWJhODM2MTJmODA1M2JjZGM5NDY2NzMwMTkzY2QxZDU5MGI0MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://integrations/dify/plugin/powercontext_dify/tool.py#L59-L137",
+          "version": "repo-lines-v1:sha256:f4c3aee4ae81634fc06ca568e73b63c90c3da49fb027d7c2707dd0b9a6f0b88d:eyJzZWxlY3RlZExpbmVDb3VudCI6NzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MGE0OTkwMmJmMDg5MjkxMzY1NjZmN2FmMDBkZDU0NWRmOGVlMThlMDM2MGFkMjcxNzRmM2FjODFhZTgxNTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM2NmZkMWNmNzY2NGZiMzdlNDIxYmRkYWFlODk0NjliZDhiNGFjODFhZmY2MjhjMzc3ODAxOTU4N2YyOTQ4NWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0ZjE5MzdkYzRjNmY3MTQwNTEyODlmNzQzZDY0ZjM2ZmRhYTc5MTI0ZDM5MTU1OWIzOGE3ZTdkNjgwZjdkODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhN2FmOGJmYTVjMGE3NTk2ZTU3M2Q4NGE2NzkxNzgzYTE4MjE2YTNjMzRmNDRlM2UzM2ZiZTZlNDk4YjBmOWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_334b53781c8f4ff3aef52ea50432fac1",
+      "statement": "The Cindy will-user-message hook rewrites the user message with prepared context only when recall returns ready content, the message has no existing PowerContext markers, and the combined text is within 16,000 characters; otherwise it sends an allow verdict, and the Ghost always allows the message after its 2.2-second local timeout.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/cindy/plugins/powercontext-hooks/main.js#L70-L104",
+          "version": "repo-lines-v1:sha256:56648e6e6b66e0ac401c8feb890fd917ac56d0ed0f62eec18995bce3df58721e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkOWUxMjU0NjQyNTU3NmQzZGVhZThjOWI5ZGJmMTI4ZDVkNmRkYWY1ZDdmZTg1NzkzNDkyN2RlZmZhM2I5ZGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwMjFkMmQ2OGQzYWYzNjg4YWM2MTJmMjIyYTg5ODNkNTUxNTQyN2ZmYjJkMDNjNjA0ZTY2ODM3ODUxY2ViZTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlNjNmYmY0YTRmNjAzODNkYjZmZWM0YzhjMjBjMWRiZWRlMmI4OGU0MWY5YTljNDM1Y2NkZDQ2YTI2NDRkYmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM4ZGE0OTgwZjE4MmUzOTBkNWU4NTQxNWI2MzU1ODRkM2NkNjFmYWY4ZDEyNzBlN2NlNWI0NjgwNDM0Mzc3NDUifQ"
+        },
+        {
+          "resource": "repo://integrations/cindy/src/worker.ts#L151-L252",
+          "version": "repo-lines-v1:sha256:b261b5703614ba3ea56c7f31d6e78a7ac99c81257e064112ab51c089640deca4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAyLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJhNWZhZDQ2ZjQ4Nzk2NWRiYzI3NWQ1ZDhmNTQ4OWQ1OTBlNzJmYmM0MDg2MzcxNGRhNDliMDA0NDIxNzc0NjQxIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJiMjM1MjU4OWMzNGQzYzYwNjg1OTMxYjZlY2M0ZDUwOTkxYTdjNTZjOGZiYTI4OTQxMTQ2NTc2OTAyNzJjYWMzIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJkMmY3YjIyNWZjMDAyMDgyMTgzOWZiMDNkODAxMzMxM2U1OGZiYzkyMDY1NTM1MzhkNjg2MjZkOGZjMDRhMjI0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MSwiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_2d5471d15470448f9d227e6d10b684d1",
+      "statement": "The Cindy hook worker captures the original user prompt as a Source with an ID derived from scope, session, hook ID, and text, skipping capture when the text exceeds the source limit or capture_prompts is false, and reporting a non-2xx refusal as rejected and a missing confirmation as unknown.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/cindy/src/worker.ts#L151-L252",
+          "version": "repo-lines-v1:sha256:b261b5703614ba3ea56c7f31d6e78a7ac99c81257e064112ab51c089640deca4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAyLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJhNWZhZDQ2ZjQ4Nzk2NWRiYzI3NWQ1ZDhmNTQ4OWQ1OTBlNzJmYmM0MDg2MzcxNGRhNDliMDA0NDIxNzc0NjQxIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJiMjM1MjU4OWMzNGQzYzYwNjg1OTMxYjZlY2M0ZDUwOTkxYTdjNTZjOGZiYTI4OTQxMTQ2NTc2OTAyNzJjYWMzIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJkMmY3YjIyNWZjMDAyMDgyMTgzOWZiMDNkODAxMzMxM2U1OGZiYzkyMDY1NTM1MzhkNjg2MjZkOGZjMDRhMjI0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MSwiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_d5537e9c6da14dd2b18f50bf1046275d",
+      "statement": "Cindy read tools resolve the session binding on every invocation and support only resolve_scope, prepare_context, and search_memory; they never capture or write to Memory, and the status tool answers from the last recorded hook outcome without any Server request.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/cindy/plugins/powercontext-hooks/main.js#L24-L38",
+          "version": "repo-lines-v1:sha256:a9a0c4dd4b946323dab961674e559f53c7b1ef697c130c226cff3d68fbc20c56:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2OGQ5MzhkYmVmOThmNTdlYjE2MTQwOTA2OGEyNTM2YzZhODllZDEwOTc3MTM0OTQxNjI5ODExYWI0OGY2MWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwYmYwMmQxYjFlMzYyNmZkMDQ2MmI1YmM1ZjJjZjM2MDYzMDVkMzQyY2U1NjE0NmEyY2YxMTAwYzJlYmE1YTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM1NmQ5MGQwMmY4MzE5ODgzYmUyZDhlN2UzM2Y3MjQ3Y2UzNTFhZWUwYTYxMjk3YzA0YmE0MzQ4OTlhMTgwZWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY5NzhiYWRiY2NhOWU2YjdmZjgxODE2NGU2OGIzNThjOTU4YWNhZjFhN2Q2YTU5NWM4Y2JjNGQ4ZmFlOTMwNmYifQ"
+        },
+        {
+          "resource": "repo://integrations/cindy/src/worker.ts#L105-L149",
+          "version": "repo-lines-v1:sha256:c3af49dfb666a5a8707005d9198fa8f5c24f23e891c3d9979996393cd7cb2a2a:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2MGY4ZTU2YzAyMDFlZjAwYzg2MDZkOGI2YzUwMzJjZWI0NTY2OTU4OWJmOGNlYjA3OWZkMGY2MzI2NDgwNTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjllNDAxNTY4M2E4NzAxMTVjNGY3Y2QwMTQyNTQzYTVmZmZkNTM3NDljZjE0MzcyN2I3NzQyMTI3Mjc4ZTYyZjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcyYmFmY2E5NzJlZGU3N2ZmZDcwNzk2YzI2ZjAxYmIyNWEzNDNlNTdlNTAwZTI1M2FkMDkwOGE0OTdmNDA5ZWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e2b0302a1bf0472e90e47c6271a0b5fa",
+      "statement": "The MiniMax integration is a native plugin installed by powercontext setup minimax, with a streamable-http MCP entry that must point to a literal URL ending in /mcp; the plugin does not capture conversations, and the MCP session is owned by the MiniMax host.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/integrations/minimax.md#L1-L18",
+          "version": "repo-lines-v1:sha256:549a9b7faaf7f2489f7cb88cb25a5bae039dbc0858b889107b113127485b6c2f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1MmQ3MTExMDNkNTBhNDM3ODMwYzZmYmNkMDRmYjRiYWI0OWEwZjgyZjZkMjZkMWM3OTFjNmU4NDg4ZGQwOTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk3YzQzNDRjNGM5ZDM5OWU0YjQ5NTA2MTQwMjNjZTllZTQ1YTk0ZTA0MDNlYTVkOWVjMjNkMDljZWYzODM2MjYifQ"
+        },
+        {
+          "resource": "repo://integrations/minimax/plugins/powercontext/powercontext.mcp.json#L1-L9",
+          "version": "repo-lines-v1:sha256:407267220a0b7a31e419def09baad99c2de136bcb2497f2e9751886f9e07d175:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZmYjA4ZmRhMWFjYjk1N2I2MTE2YmQzNzgxMWExZmU0MWEwMTYxMWMwNjMxZWRiZjc4NmQ2ODg5YTI3YTU1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/cli/minimax.py#L169-L203",
+          "version": "repo-lines-v1:sha256:780f81d01f2a13c993f8faea986fc1e66b74d422bc539a722ee182d672742ea2:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5N2EzMjNlZTAzY2EyMjhkMWU3NGI4Yjc4ZGZkYWY2NzkyYmEyM2E5NTBiZjBkMzVhODc5MTE5ZDJlOTRhYjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllMmFkOTIzYmEzY2E4MDY0NmEzNmE2MWY0ZmMxOWYwYjk3NTc2ZDBmMGM5ZTI2NzExODlmNzRkODNhMjc2ODIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU0ZTk3MWUzOGY4OTYyZTlkNDY5N2ViOWI2NjUwMzcwMmM0ZWUxYzVkMDUxODM0MjVlNTRjNGI3OGM5NWZjNjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiOGYxZDhjNTEyNTA5MTMxNzEwZDMxNTAwMmNjNDAwYjE0YjAyMTYwNDU0NjI0OGE3MzczNzNlMTg3OGUyNDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_be32111e2261471e8c2dd1c7bdc48e83",
+      "statement": "The MiniMax installer validates the native manifest and its resources before writing, refuses to overwrite user-owned or unmanaged files, stages the new plugin tree, and publishes it together with an installation record of managed file hashes.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/cli/minimax.py#L274-L345",
+          "version": "repo-lines-v1:sha256:ddc75b041e9da2afbba9ddb961d48116a16fa825d76e98519c72aeb4f6390c80:eyJzZWxlY3RlZExpbmVDb3VudCI6NzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlNzZmMDA5Njg2OTFiYmViZThlMmM3MjY2Yjc1NDcxZTE3ZTExNzliZDYxZWNjNzU5ZDdkMDJmNzU4MDkyODIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkODBkOWRlYjVkOGI5MjgyZmFhNWExYjdlMWU3ZjE3MzBkODcyMWI2MDYxYTZlYTkxZGRhNTM1MTI0YTNkNGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5NTFhODc4MGU5ODhmZGVmNjhlOWNkN2VkMGEwMTkwYTFiN2QzOTc0Y2FiNWU5ZjllYTFiOWE5MGZhYmRmNDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczMWJlNmRlNWVlODkyYTZjYjE0MTIxMjgzZDZlYjM5YTdiNTY2N2NmNjgwYzg1ZDVjODYwMmM1ZGI1YjI4OTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_50c4ac73a06c477ba3dfd84844ec96ff",
+      "statement": "The OpenDAL CLI runs one RemoteConnectorWorker pass per invocation with a PowerContextClient that reads POWERCONTEXT_TOKEN from the environment, requires --scope-id, --binding-id, --service, and --source-namespace, and exits 0 only when the run status is COMPLETE.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/opendal/src/powercontext_connector_opendal/cli.py#L31-L75",
+          "version": "repo-lines-v1:sha256:3cf7e3989a26c2523d7be53d56365343485b526d16a1a0e2a8f1a917fe18c344:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlZmJmZTA3ZjQ0ZDFlMGZjZmFhMmVkNzFjNjEzODk4ZGMwYTc5YWFlNjI0ODNkNTgxNzVlYmQxODRmZDU1NDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5YzUxMjE3NGZkYTc3OTNmMzAzZTUwYWJkODExNTkyMWUxNDcxMDVlZGM1YjgzNTcxYzcyNjI0MGY2OGRiYzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI2YzY5NmUyMzZlZTkyNTJhMDk1ZTY0YzNlZmUyOGZkMjc5OTYxOGE2MWE4M2ViYmFiZWM4YzUwOGU1NjYwNzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhhMTU1OGI5YzcwNDgwOGY4OTE5Mjg3Mjg1MDg4MTNlOGFjZTY2MTY0YmMxNzAyOGY0NDg4MzI2ZDhhMmVlMzEifQ"
+        },
+        {
+          "resource": "repo://integrations/opendal/src/powercontext_connector_opendal/cli.py#L88-L101",
+          "version": "repo-lines-v1:sha256:587781b52fdf9a208d90fcfe0239a0f4542831c89ebdbfb3d73569fb784f6a0b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5OWZiN2E2ZWE2MTA3Nzg0NTc5ZmQzNDVlNmMzYTdlNTMxNTJiNjIzZjA2M2RiNjAzNDUyNzg3ZWQyN2Y3ODkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyNGYwOGE3Y2M2NGUyMDBlMTRlZDEyZWVkMTViMGJhNzA0YTNkMTEzZjk3N2RhNmNmNTJjN2JhZTM3ODVhYTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzMmU2OTIyNTE4NDY1ZGVlOTg3MGU3NjAxNjU0YWVkZWI4OThiODQ5ZmJmNmMzZjA0OGM4YzE5MmY3M2JmMGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c8a7d30e8f314de3a313058f4329a991",
+      "statement": "The OpenDAL connector performs a full scan that selects files by glob patterns, rejects files larger than max_file_size (default 256 KiB) and non-UTF-8 content, records a failed item when a read raises, and submits only files whose sha256 digest differs from the previous checkpoint; it refuses scans selecting more than max_files files.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/opendal/src/powercontext_connector_opendal/connector.py#L157-L226",
+          "version": "repo-lines-v1:sha256:c01da71460956cd33d1213ce48c6a3b7e5119f4d57070894c6385f986b6a3d83:eyJzZWxlY3RlZExpbmVDb3VudCI6NzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxOWE2Y2NkNzE1NjU0OWQ1YjRjNWY1ZTQ4ODI1OWExNTkxNGUyNTA1NDYwOGQwNTBkZDkwYzJmNjI3NWRhYTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkOGE5ZTljMzI1MjgyMGM2NWE4MTY1MjBiOGRiNDkzMjI4MDg0OWVjOGM3ZDJlYjYyNzJhZmRmZWJlMDU5YzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3OTc1NjE1NGMyNzMxNDlmNzNmNGI1YWIwMzEzNTY1OTFkNzY4MzI4MTNkNzk5NTMwYjFmMGQwOTg5MTEwNjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU3NjViZDI4MDg3NDhjOWZkZTkzMDkwMWY2MmJmYmMzMWUyY2I2NTk4MzllMzQ3YmVkNjRkOWRhN2U4YWExZDYifQ"
+        },
+        {
+          "resource": "repo://integrations/opendal/src/powercontext_connector_opendal/connector.py#L229-L245",
+          "version": "repo-lines-v1:sha256:7d94d32c7df026e8929dd37de10dc3fee26c6d102c0f955abab4165aee8d8943:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkOGE5ZTljMzI1MjgyMGM2NWE4MTY1MjBiOGRiNDkzMjI4MDg0OWVjOGM3ZDJlYjYyNzJhZmRmZWJlMDU5YzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3Mjc5YWM2ZTZlNDFhMTU2ZmUxYjIxMjkwYjRlN2QwYzBiNTI4Y2NmZmUyNmEwN2E2MDRkNWE3Yzk5ZmY4Y2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE3MjYxMmU4ZTZjYzdmMzE4YTIxZDRkODYxYjY2MDczMmFhN2UyZDE1NTk5MDViY2RlN2VkYWE0YzAyYTllODUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUyNWMyZTY0Y2NmMjQ0NzQzNzRjOTRhYWY2NWI1YjQxODU2YmM2YmNjODM2MWNhZmUzZDI0ODM5NjA1NzYxOTAifQ"
+        },
+        {
+          "resource": "repo://integrations/opendal/src/powercontext_connector_opendal/connector.py#L51-L52",
+          "version": "repo-lines-v1:sha256:aaa4794ff6855e14b1d2bea7681000fbf0f2a0db9d7ed3696efccc7f7ef967f4:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWZiOTA2MmZmNGM1YTk5ODEyMDgwZTUzZGY2MWI1MmYzZWJkNzNlYjI0YTg4NTM3Nzk4NTYzMzUwYTVhNjBhYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTIwMGM3NWEyMjc1OTc5MjA4NTJjZTJmMTEyYWRmMjk0ZDBmZWM1OTI5M2U2YjJkMGMzYzA1NzcwNWI2N2I3ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzNhOGUyMTRmYjlkODQ0NTc2ODUxOGQyZDFlZTJkMzQyN2U3YmI3ZGQzZmY1NTk0YzU5MjM2NGVmMWExZjZhOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bb5f17363ddb48799e8a5f0141e1fa5a",
+      "statement": "ConnectorLifecycle commits the proposed OpenDAL checkpoint only when the run status is COMPLETE, the checkpoint changed, and no item was rejected or failed; the save is a compare-and-swap against the previous checkpoint, and a run with rejected or failed items is reported as INCOMPLETE.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/sources/connectors.py#L256-L300",
+          "version": "repo-lines-v1:sha256:862894d88b0ccba5e4e588f88c607572ebb2e75706703a7ad9c74edaaebac0a5:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzMTgzOWNmN2VjOTVlOTk3YjNlNTMxZDQ2NmUyOWY4NzRhNjNlODIyYjExYmZmYmE1NGQ3ZDk0ODU2NzczYWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwMDMxODhiYmI1ZTFmN2Q3Mzg4ZGFlNzQ2ZmViZTFlZTZkOWY5NDhjY2I5M2ZmYTViYjQ3NjIxNDZlY2VkMzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwMWFlMzJkZGM4M2Y4NDc2YzAzYzY3OTNmYTRhMWEwODA5NTlmNGFhNzBlMDU2NjZjYjYxMTc2NzVmZjBhNTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyMTQzMDJmNWFlMmI5ZjNiOWMyZDEyNjE2YjQwM2M4MzgxODc0OTEyMGY2MjhmZDY0NGJmY2JmYTM5MTI2ZmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b3b1c229925d41778fbff930e6a73c71",
+      "statement": "The OpenDAL docs state a 2 MiB per-file default, but the connector code default is 256 KiB, so the code value governs behavior.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/workflows/ingest-text-files-with-opendal.md#L88-L92",
+          "version": "repo-lines-v1:sha256:0574168529c41463be48c501cbbf793eea5294aa01e83f4336969d82428ba1e5:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGQxZmUxMDUwMmE3NTBlZWU3ZjMxODE2NTM5ZTJjYjhjMDkwZTFiNWNiNmZkZjhjZGVjZjI0YmQ0OWM0OTYxMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjFlY2RjOWExN2VmZjRjM2Q1ZTE2OTc4OTEyZWExMzA0ZDE2YWVkZGQxOGM5MzYwNDdhMGIzZTE5M2Q4YTliOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTYzNjFhZTk4MmVlOGQ1ZDQ2NzU0ZjY5YWUzZDM4YmYyODlkMWJkZDc2Yjg5ZjMyMGEwODc4YWU5MzdmMTZjNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGExOGQyMzQ1NTRlNDc2NDc2ZWQ5YTM0NGYwYzdhZThjNTQ0ZDc2ZGZiZjQzZWY1ODExMDYwNzYzMjA0YjMwZCJ9"
+        },
+        {
+          "resource": "repo://integrations/opendal/src/powercontext_connector_opendal/connector.py#L51-L51",
+          "version": "repo-lines-v1:sha256:5fb9062ff4c5a99812080e53df61b52f3ebd73eb24a88537798563350a5a60aa:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWZiOTA2MmZmNGM1YTk5ODEyMDgwZTUzZGY2MWI1MmYzZWJkNzNlYjI0YTg4NTM3Nzk4NTYzMzUwYTVhNjBhYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWZiOTA2MmZmNGM1YTk5ODEyMDgwZTUzZGY2MWI1MmYzZWJkNzNlYjI0YTg4NTM3Nzk4NTYzMzUwYTVhNjBhYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTIwMGM3NWEyMjc1OTc5MjA4NTJjZTJmMTEyYWRmMjk0ZDBmZWM1OTI5M2U2YjJkMGMzYzA1NzcwNWI2N2I3ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjNmNjIxNTc0OTQ5YWU2NjMwYzBmYzM1MjNkZDRhYmVjYzA3NGExNzRiOGU1NDVlOGNkNTI1ZTZhYjcyMDQ4ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_53bba334a77f4ab68ba79796eb7f1e06",
+      "statement": "Every Python adapter reaches the Server through the shared PowerContextClient, which refuses plaintext HTTP to a non-loopback host unless the caller explicitly allows insecure HTTP or supplies a caller-owned transport marked as trusted; saved consent does not transfer to a different endpoint.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/client/client.py#L360-L420",
+          "version": "repo-lines-v1:sha256:6122de01bb8249b5edfc60e937c42f72a4e22f7b9af46cca4426821958732ef8:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmMDZiNmVjYjIxYzkzM2NmZDUxOGQyNjJkYTM2MWMyOGQwNDA1Mzc3OWMzOTAxMDdiYTljZTZlZGNmMjUyYzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI1YmQxODYwMTc1ZTEzZDEwYTJhYzQ4NGQyMWQxYWExOWE5ZTBhZmQ1Y2QwZWEzZmEzNGUwNTMwZTJjZTY2MzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0ZWQ0ZjU4OWQwM2JkNWNiYmI4YzZhODIzMjAxZTYzNzExOTMwNDdiOWE0Y2I1ODkxZDMzYzU4YzZiY2NkYzcifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/client/transport_policy.py#L150-L237",
+          "version": "repo-lines-v1:sha256:16fa36e08e6f4c941b056479a17cfe21788ceeaf6555c6b92a919ada4c820a75:eyJzZWxlY3RlZExpbmVDb3VudCI6ODgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxYmQ1OWJhZjEwOThhZTk2ZmQ3ODY0ZjM2ZTg4MjJjNTExMWFlMGZkNzBmNmFiODI2MzZmZWUyZTg1ZjRhYjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5NDE2ZTA5Zjc4YmEzMTZjMDMyNTY4MjEzYjg1NWVlNzU2ZTQxNTY1ZDkxOGYwOTUxOWM4MWZkNjIwZjQwNjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA4YjA4OGI4NzE4Y2U3ZDgwZGRjYmFlODU1MjhiMDEwNGY2NTIxNTJiMDM1OTBlN2ZhZmNjMGIyMzAxZGE5M2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T09:04:09.583Z"
+  }
+}

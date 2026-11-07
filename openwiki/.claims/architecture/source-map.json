@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:cd0ac79af40bca32ecd4d26c1f650385632a04826f1a09dda416c5868b55424f",
+  "claims": [
+    {
+      "id": "claim_b156e62f6b9447398a6fb919c77aa919",
+      "statement": "openapi/powercontext.yaml is the source of truth for the HTTP API contract; the Python files under src/powercontext/http/_generated (models.py, operations.py, schema.py) are generated from it by scripts/generate_api.py and must not be hand-edited, but regenerated with make api-generate.",
+      "evidence": [
+        {
+          "resource": "repo://AGENTS.md",
+          "version": "repo-file-v1:sha256:0175b3d01358871dc7061feafd8a722576c428a2e37b6a92a29e5592cb45b07c"
+        },
+        {
+          "resource": "repo://Makefile",
+          "version": "repo-file-v1:sha256:4345584b645b9240b2015bbcbe7ed5ee650ba6aaf9bc7e0597e3b2c382120f09"
+        },
+        {
+          "resource": "repo://scripts/generate_api.py",
+          "version": "repo-file-v1:sha256:533cf6b9ba4f8ae697ca3b7ec723da49fc32b339ef34353317288fc643db88ad"
+        },
+        {
+          "resource": "repo://src/powercontext/http/_generated/models.py",
+          "version": "repo-file-v1:sha256:5918f065b96ca7f4042bbfba20e9da1596a9e29cdc3b95687488b8436bc8632b"
+        },
+        {
+          "resource": "repo://src/powercontext/http/_generated/operations.py",
+          "version": "repo-file-v1:sha256:c7cbbb037faa7b9b43755b3a589fb230242c1f22c34c0c6c9128d93fc3e9cb9d"
+        },
+        {
+          "resource": "repo://src/powercontext/http/_generated/schema.py",
+          "version": "repo-file-v1:sha256:6fb9287c372e11d9ebde20c4f945b2557e280defd217e3a15ff6216f1b783299"
+        }
+      ]
+    },
+    {
+      "id": "claim_723ce0b0a3f54f5d931a0ab366b5507c",
+      "statement": "Generated API drift is a gate: scripts/generate_api.py --check fails with a regenerate instruction, make version-check runs api-generate-check and js-api-generate-check, and make check depends on version-check, so stale generated code fails the main quality gate.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile",
+          "version": "repo-file-v1:sha256:4345584b645b9240b2015bbcbe7ed5ee650ba6aaf9bc7e0597e3b2c382120f09"
+        },
+        {
+          "resource": "repo://scripts/generate_api.py",
+          "version": "repo-file-v1:sha256:533cf6b9ba4f8ae697ca3b7ec723da49fc32b339ef34353317288fc643db88ad"
+        }
+      ]
+    },
+    {
+      "id": "claim_b5b4ee0bc1ed408592b0d16178280a04",
+      "statement": "The TypeScript operation tables are generated from the OpenAPI contract by scripts/generate_js_operations.py into operations.generated.ts for the DSH, OpenCode, and Pi integrations, and into mcp-operations.generated.ts for DSH; the js-test and opencode-test targets fail through git diff when committed generated output is stale.",
+      "evidence": [
+        {
+          "resource": "repo://.gitattributes",
+          "version": "repo-file-v1:sha256:00c5bc1ba8cbb5eec43468bc724c6f700907db448d76a34fd7377de217128b8e"
+        },
+        {
+          "resource": "repo://Makefile",
+          "version": "repo-file-v1:sha256:4345584b645b9240b2015bbcbe7ed5ee650ba6aaf9bc7e0597e3b2c382120f09"
+        },
+        {
+          "resource": "repo://scripts/generate_js_operations.py",
+          "version": "repo-file-v1:sha256:dcfc3361722de7cbf7ab30b79c38662123a42f07ebff13185130f1cb1653c666"
+        }
+      ]
+    },
+    {
+      "id": "claim_578fdb5ae4b94534a146cd0ea293e8d7",
+      "statement": "integrations/capabilities.toml is the declared integration contract: scripts/integration_manifest.py requires every integrations/ directory to be declared or explicitly excluded, checks the per-locale integration documentation pointers, and validates declared tool surfaces, while scripts/generate_integration_manifest_docs.py writes the en and zh capabilities.md pages from it.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile",
+          "version": "repo-file-v1:sha256:4345584b645b9240b2015bbcbe7ed5ee650ba6aaf9bc7e0597e3b2c382120f09"
+        },
+        {
+          "resource": "repo://integrations/capabilities.toml",
+          "version": "repo-file-v1:sha256:22c8a6083631425f45ec22877fc207d7f815fb85bd911be7844709fcc2b6ee54"
+        },
+        {
+          "resource": "repo://scripts/generate_integration_manifest_docs.py",
+          "version": "repo-file-v1:sha256:dee39106519bf3afe19f1d03122b0c642d425d8cdee45363ba3be15e18725a51"
+        },
+        {
+          "resource": "repo://scripts/integration_manifest.py",
+          "version": "repo-file-v1:sha256:19300937f925650c5da76d75b4deabc5599192895aa8a64a72958cfb2081f696"
+        }
+      ]
+    },
+    {
+      "id": "claim_803651e85e8c40a791c53a9002ee512e",
+      "statement": "The per-host powercontext-project-context skill copies are derived: scripts/integration_guidance_skills.py copies the shared agent-plugin skill into each native host package and retains only each host's references/host.md, and make integration-guidance-check verifies those copies without modifying files.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile",
+          "version": "repo-file-v1:sha256:4345584b645b9240b2015bbcbe7ed5ee650ba6aaf9bc7e0597e3b2c382120f09"
+        },
+        {
+          "resource": "repo://scripts/integration_guidance_skills.py",
+          "version": "repo-file-v1:sha256:5e29223e9a633eeb0274b8760585f4264bfe52fb3bca0f9ba6b1923c052882d8"
+        },
+        {
+          "resource": "repo://src/powercontext/cli/guidance.py",
+          "version": "repo-file-v1:sha256:f582cdc2240d30f7a7ff57eb46ece686f702f8ed797bd08044517ea88d5f57f8"
+        }
+      ]
+    },
+    {
+      "id": "claim_7f026f33f9124b4480e8d42ccf1dffca",
+      "statement": "The Dify plugin contract declaration (powercontext_dify/contract.json) is produced by integrations/dify/generate_contract.py, and make dify-test verifies it with the generator's --check mode.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile",
+          "version": "repo-file-v1:sha256:4345584b645b9240b2015bbcbe7ed5ee650ba6aaf9bc7e0597e3b2c382120f09"
+        },
+        {
+          "resource": "repo://integrations/dify/generate_contract.py",
+          "version": "repo-file-v1:sha256:a02058da549fa6bd4ba75e02a889e1d7501f4703ef5bdd3e2f71c2cd0b6c806f"
+        }
+      ]
+    },
+    {
+      "id": "claim_59602c91297742dbb662e7c16d5d9c99",
+      "statement": "The Server composes its ASGI application in create_server_app, which mounts every route using the generated operation objects and serves the runtime OpenAPI document from the generated OPENAPI_SCHEMA, so the served contract is the generated one.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/app.py",
+          "version": "repo-file-v1:sha256:328bb6ab6c30df815f5e03f276888572ff08afe28287059aadd7fec041cc02f8"
+        },
+        {
+          "resource": "repo://src/powercontext/server/factory.py",
+          "version": "repo-file-v1:sha256:1fe30aac5890d040c61d284ba44e9c3fc357fd5ffd6d0150ca15c1838139de5b"
+        }
+      ]
+    },
+    {
+      "id": "claim_6629849e7fb34bf094f2758fb5a1e0e9",
+      "statement": "The top-level powercontext package re-exports the stable client types, and its PowerContext facade binds Sources, Artifacts, and triggers as three explicitly selected component groups without owning their lifecycle.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/__init__.py",
+          "version": "repo-file-v1:sha256:50e917ec68a1b639ba87dcf922a90ba7531cfd0c21b87b5e50024ac267c0b812"
+        },
+        {
+          "resource": "repo://src/powercontext/context.py",
+          "version": "repo-file-v1:sha256:c230a7333b49078ffa55d391e6bd39695ffacc8589b14e8889265c98ed6a26b8"
+        }
+      ]
+    },
+    {
+      "id": "claim_ac7cecee474f41fc90d8f7b722980b62",
+      "statement": "Installed commands are declared in pyproject.toml: powercontext maps to powercontext.cli.app:main, powercontext-ops maps to powercontext.ops.__main__:main, and the powercontext.cli entry-point group registers the code, config, doctor, observability, service, server, setup, and archive subcommands.",
+      "evidence": [
+        {
+          "resource": "repo://pyproject.toml",
+          "version": "repo-file-v1:sha256:ea8d0e09f895dc5d5a491ade6941b6f08f7a4eb3752a7335a9cb1d5694e0c7bc"
+        }
+      ]
+    },
+    {
+      "id": "claim_539c1b9bd041465d8bd4ede44b926a51",
+      "statement": "The built-in runtime is the domain composition root: open_builtin_runtime in builtin/runtime/composition.py is shared by the Server factory and the server CLI, and the project rules require domain behavior to stay in the owning runtime or Artifact service while transport and host adapters only translate.",
+      "evidence": [
+        {
+          "resource": "repo://AGENTS.md",
+          "version": "repo-file-v1:sha256:0175b3d01358871dc7061feafd8a722576c428a2e37b6a92a29e5592cb45b07c"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/composition.py",
+          "version": "repo-file-v1:sha256:d9ecd59d6dcd20d8dc1ecdd0f6bb46ef3b1e8003ab45eed5b2bf6e28a9546ebd"
+        },
+        {
+          "resource": "repo://src/powercontext/server/cli.py",
+          "version": "repo-file-v1:sha256:f7736bea44e9582be609e1c83b17e3a4bbe042e769b34eba28af2a5bdc6f5544"
+        },
+        {
+          "resource": "repo://src/powercontext/server/factory.py",
+          "version": "repo-file-v1:sha256:1fe30aac5890d040c61d284ba44e9c3fc357fd5ffd6d0150ca15c1838139de5b"
+        }
+      ]
+    },
+    {
+      "id": "claim_5e73797e073e4a0caffec7e841bc4f00",
+      "statement": "Network transport safety is centralized in src/powercontext/transport.py: plaintext HTTP is accepted by default only for loopback hosts, and the same policy is intended for the Client SDK, the CLI, and agent integrations, while an unauthenticated Server must not bind to a routable address without its separate opt-in.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/transport.py",
+          "version": "repo-file-v1:sha256:9bcee8df9f01985182b69a62b83c4f3e8297752185624654de4c3f2c33c96335"
+        }
+      ]
+    },
+    {
+      "id": "claim_da7e4860c2944a1eaa4928e57df30d98",
+      "statement": "The Docker image is a two-stage uv build that installs the cli, server, and tracing-otlp extras from the frozen lock file, requires the POWERCONTEXT_VERSION build argument, runs as a non-root powercontext user with /data as POWERCONTEXT_HOME, exposes port 8000, defaults to 'powercontext server run', and health-checks /health/ready.",
+      "evidence": [
+        {
+          "resource": "repo://docker/Dockerfile",
+          "version": "repo-file-v1:sha256:63e4a581170ce7a2c69afbbd089369b01624c79b58f47abd9057367269dd8cba"
+        },
+        {
+          "resource": "repo://docker/README.md",
+          "version": "repo-file-v1:sha256:bf48b8261d9b13bdb3640ba8091817c1a21a8912301e55c14d3d6ef1e3ec91a5"
+        }
+      ]
+    },
+    {
+      "id": "claim_5b448eddb9374fff900ba75f835d9002",
+      "statement": "The Helm chart deploys the same application image as two Deployments, api and background, each running 'server run' against an external OceanBase database with a Recreate rollout; it does not support SQLite or embedded seekdb, and database initialization via server db-migrate must happen before the first install.",
+      "evidence": [
+        {
+          "resource": "repo://deploy/helm/powercontext/README.md",
+          "version": "repo-file-v1:sha256:c790697666b7608cf3dc3c34231bd1312e786fb2ca35912ca70e3020c341b653"
+        },
+        {
+          "resource": "repo://deploy/helm/powercontext/templates/deployments.yaml",
+          "version": "repo-file-v1:sha256:5c342a70157de4778cbd4eeccca62946be484838713980f3d683f6200db0f24d"
+        }
+      ]
+    },
+    {
+      "id": "claim_6708bbdfdb024a5eb6e4e72fbc9f71df",
+      "statement": "The reference observability stack in deploy/observability is a demonstration with generated local secrets and a real Server started by run-host.py, and its verify.py checks stored traces, logs, and metrics; a receiver port or healthy container alone is not accepted as evidence.",
+      "evidence": [
+        {
+          "resource": "repo://deploy/observability/README.md",
+          "version": "repo-file-v1:sha256:117c229a5598013c250b8b82698b3578cae40cab6c5a8a2fd33d3073d764d42c"
+        }
+      ]
+    },
+    {
+      "id": "claim_33039aa4e69d47ec84f9d94421538550",
+      "statement": "The personal service bootstrap in src/powercontext_service_bootstrap/__main__.py applies a persisted bounded retry budget to each launch attempt before importing the PowerContext service launcher, and the launchd adapter invokes this bootstrap module with the retry arguments.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/service/adapters/launchd.py",
+          "version": "repo-file-v1:sha256:e80b415ef2b80334b0d3fd2a159239eaa4d3ec463fe1fffe530266dfbbeaae84"
+        },
+        {
+          "resource": "repo://src/powercontext_service_bootstrap/__main__.py",
+          "version": "repo-file-v1:sha256:68002a4411867b00b314283550e0966ac409b9819048e8250d0d639a2ae9794e"
+        }
+      ]
+    },
+    {
+      "id": "claim_2f0c3b651cf847768e48a696edc9e822",
+      "statement": "The ops entry point powercontext-ops runs one bounded JSON request per independent process, requiring either a private operator target-binding file or a private producer catalog file.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/ops/__main__.py",
+          "version": "repo-file-v1:sha256:c25006802db68e66c2f5607100612e03c091797b49e25c59805c198c20fe9476"
+        }
+      ]
+    },
+    {
+      "id": "claim_b843a1daa5954bf59063fa82176073ce",
+      "statement": "The gateway under gateway/ is an optional Rust workspace of seven crates; pc-gateway-core holds the two-phase gate executor state machine, pc-gateway-app is the thin binary, and the gateway does not own policy because every allow, block, or refuse decision comes from PowerContext Core.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/Cargo.toml",
+          "version": "repo-file-v1:sha256:bec42dcd21bab146eabe45a6f5b41cfdbbee118cf2edb7abb85c92031e327b70"
+        },
+        {
+          "resource": "repo://gateway/README.md",
+          "version": "repo-file-v1:sha256:d52cc9b1c011239b413654a9ba131f2b0ce46fb63a4cb5dd68017cf2cdaff2cc"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-app/src/main.rs",
+          "version": "repo-file-v1:sha256:18389cc38b548da4dc93df2cf38337d22bfedc64851eb9ada237cc6b41d298cc"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-core/src/lib.rs",
+          "version": "repo-file-v1:sha256:5eacb570e32fb7f62366d3d3cbafaf112baa95c655e0c312c03a6d26569ec261"
+        }
+      ]
+    },
+    {
+      "id": "claim_438d1b96470b41a2a81bcf90f0735774",
+      "statement": "The gateway supports two deployment forms selected by environment: combined mode uses PC_GATEWAY_CORE_UDS and reverse-proxies non-/gateway traffic to Core over a Unix socket, while standalone mode uses PC_GATEWAY_CORE_BASE to reach a remote Core directly.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/README.md",
+          "version": "repo-file-v1:sha256:d52cc9b1c011239b413654a9ba131f2b0ce46fb63a4cb5dd68017cf2cdaff2cc"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-app/src/main.rs",
+          "version": "repo-file-v1:sha256:18389cc38b548da4dc93df2cf38337d22bfedc64851eb9ada237cc6b41d298cc"
+        }
+      ]
+    },
+    {
+      "id": "claim_27a50cd28c7e4df791ff9e0d2412a999",
+      "statement": "Host integrations under integrations/ are thin clients for a running PowerContext Server and do not embed storage; the Codex plugin, for example, reaches the Server through hooks and Streamable HTTP MCP.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/codex/plugins/powercontext/README.md",
+          "version": "repo-file-v1:sha256:0818dbcdba015f0c0bee5abfec324919ed96375b19c7a284ff2b7b181b538d30"
+        }
+      ]
+    },
+    {
+      "id": "claim_2d31d1da79374f9f914c8e20c6c577c2",
+      "statement": "Release references are synchronized by scripts/release_version.py (including the OpenAPI info.version), and make version-bump then regenerates the API code, while distribution versions still come from Git tags.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile",
+          "version": "repo-file-v1:sha256:4345584b645b9240b2015bbcbe7ed5ee650ba6aaf9bc7e0597e3b2c382120f09"
+        },
+        {
+          "resource": "repo://scripts/release_version.py",
+          "version": "repo-file-v1:sha256:5a4f0a383918171ae7cba698a739b80eb1dcd6fcb763af4b9316b5eda6db6550"
+        }
+      ]
+    },
+    {
+      "id": "claim_7815c1db50ca4c6889e0940b20016f36",
+      "statement": "Focused contract tests guard the generated and declared surfaces: tests/test_api_contract.py, tests/test_js_operations.py, and tests/test_desktop_contract.py run under make contract-test after the drift checks, and tests/test_integration_manifest.py runs under make integration-manifest-check.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile",
+          "version": "repo-file-v1:sha256:4345584b645b9240b2015bbcbe7ed5ee650ba6aaf9bc7e0597e3b2c382120f09"
+        },
+        {
+          "resource": "repo://tests/test_api_contract.py",
+          "version": "repo-file-v1:sha256:2d9486327aa55c89a129a0ab28d3871ce3dd9cc841a0861bbc7e652e9b3df084"
+        },
+        {
+          "resource": "repo://tests/test_integration_manifest.py",
+          "version": "repo-file-v1:sha256:749cfb3ed6afdfa023c095411e6c8ffa5e4d12fb920d77e5729dc61c96f5fbb9"
+        },
+        {
+          "resource": "repo://tests/test_js_operations.py",
+          "version": "repo-file-v1:sha256:eadbb8c796075382667b8a558010a8f1304561daf7148a4bbfea99a993b14df9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T09:04:09.583Z"
+  }
+}

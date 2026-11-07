@@ -1,0 +1,400 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:6fc67f2a9c299366b41721ba77632ada0412fa148dd665459cc0310528f4d395",
+  "claims": [
+    {
+      "id": "claim_5e269770c3854d79b1efcf15b5419014",
+      "statement": "The built-in Artifact families are atomic-memory, experience, skill, handoff, profile, prompt, and topic-memory; each concrete Artifact type declares its family identifier as a class-level value.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/artifacts/atomic_memory/models.py#L116-L122",
+          "version": "repo-lines-v1:sha256:51e3dce4d0f5d2254963e6582cfe970846954e779ca3c99f7d2a5296365408a6:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGRjYWY2NTBkNjVlMTE4ZGIzYmEwYTQwNThkYWNmMDA0M2YwZjY3NDU2NjhkNmM0MzllMGJjYWIwMjFkMTgyNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGRjYWY2NTBkNjVlMTE4ZGIzYmEwYTQwNThkYWNmMDA0M2YwZjY3NDU2NjhkNmM0MzllMGJjYWIwMjFkMTgyNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjg3MTIxZTcxYmRhYjhlMzQ1YzQ4ZDNkYzU0ZjBkNDc2ZGJlZmJhNGY2ZGUwNTUxOWRiNWQ1NTk3Nzc0YWM2YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTRiNjUyMjA1MDZlZDViNjY0ZjY4Yjk4ZGZkZTQ3ODA2YTM4MjA1NmE4Zjc4MDFkYzBmODg0NDI0ZTM5NTg1MyJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/artifacts/experience/models.py#L97-L103",
+          "version": "repo-lines-v1:sha256:c27d835c36d94878006e46b2bd19d080272b81cf177c169fccac7b301369d66b:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2YyMzJkNmJmZjdjYjgzMjgzYzgxYmI3OTIxYWEzYzQwZDIxNzY2M2FkMWY0MTM3MWQwZDUwNWUwZWZkYjk3NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2YyMzJkNmJmZjdjYjgzMjgzYzgxYmI3OTIxYWEzYzQwZDIxNzY2M2FkMWY0MTM3MWQwZDUwNWUwZWZkYjk3NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTQ1MDc3OWEzN2UzYzc0YTE2NWRiMmFjNDYwOGEwOTUyNWM1MmJiMTQ4MDBiNDdkMWFkNTYwMzNiYTY5NDY3OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2IyMzY3YmQwZGYwYTYyZGZjM2QxMjE5OTFiMjk4ZmU0ZTljM2QzMjY3NTJlNjk4NTU5NDNiNmNmNGIyNDgzZCJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/artifacts/handoff/models.py#L318-L325",
+          "version": "repo-lines-v1:sha256:4d2161e9802793cf99990f154cf8e9905bb9a4cb2a463b7bab0619a58ee4eca2:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2FiNTc0NTE1YmRkOTZhOWYxNzljMDJlYzFlZWJmNDlmMmE1OTQxZWMyYzZmZWYxNDkzMmExZDczNmMyOTRiMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2FiNTc0NTE1YmRkOTZhOWYxNzljMDJlYzFlZWJmNDlmMmE1OTQxZWMyYzZmZWYxNDkzMmExZDczNmMyOTRiMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTUyMTBiZmYxNjExYjI2Yjk0ZDk1NDJmNTA4NjJlY2RmNzhjNTJjYWY4ZmMzYTliODZmNzA5YWMzZWFjMTRhMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjIwY2ZjYTg1NzIzYWExOTc0OWRiYmFjZGUzNTVhYjcwODRkMWIyYzE1MzZjMzcxN2E1Nzk0NjFjMzc2NjlkMyJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/artifacts/profile/models.py#L31-L32",
+          "version": "repo-lines-v1:sha256:ec55ad5b2c3c2371a4b10eaf52d64a31c2d4d208ec7acb72674b4f8a48e0a097:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWZjMDFiOTcxNTY0Yzk5MTA1NTJhMzMxMWI2NWM0YmUzMDY5NjNmZWE0MDQ0Y2VlNjZlMTQyNTEwMjIzODAzOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGNlY2E5ZTAxMzliZWRhYmNiZjdkMTQ3NGQ2NjIyYjliMDA0YjE0ZmMwNzVjYTFhZTMzNTA2OGY0ZTk4MzM0ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjMyZjM2ZDcwMGYwZGE5MTIwMzJhMzY0ZjU0MGNjYWEwNjRlMGNjMzNlNzAxZjM1MTc5NDVhNjljYzQ3Mzg1ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmJmYTYwZGQ3YThhMmQ4NDliZjQ1NjE1MDRmN2JkMmEzMzg2ZGYzYWIwNTZkYTAwYjllYzZmOWY5MDM0OTVhNyJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/artifacts/prompt/models.py#L114-L114",
+          "version": "repo-lines-v1:sha256:4c3de1bff3427d785442064eee5468cdb5c0bf6e1afcce56e27d8aff0b5f39c2:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGMzZGUxYmZmMzQyN2Q3ODU0NDIwNjRlZWU1NDY4Y2RiNWMwYmY2ZTFhZmNjZTU2ZTI3ZDhhZmYwYjVmMzljMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGMzZGUxYmZmMzQyN2Q3ODU0NDIwNjRlZWU1NDY4Y2RiNWMwYmY2ZTFhZmNjZTU2ZTI3ZDhhZmYwYjVmMzljMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGQwZWQ1MzJjOTg1ODFlZmM2ZjAwMzNkMDY2MjAyMTc5YWFjZWQ5NDkzYTY1MWU2ZjE3YTRmZTYzZTY5MWQ4MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjIwY2ZjYTg1NzIzYWExOTc0OWRiYmFjZGUzNTVhYjcwODRkMWIyYzE1MzZjMzcxN2E1Nzk0NjFjMzc2NjlkMyJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/artifacts/skill/models.py#L121-L127",
+          "version": "repo-lines-v1:sha256:6830f66714e5217513db0a904d13fbed9871976efc176fb36ac0bb55dcd4c3f7:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzY3NmIxMDM4MmY0OTc1OTdjODMzYjA0NGMyNjdhYmNmN2Y0ZWE4YWM5ODY0ZTBkNjBhZmZkYTFhZjYyNzllOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzY3NmIxMDM4MmY0OTc1OTdjODMzYjA0NGMyNjdhYmNmN2Y0ZWE4YWM5ODY0ZTBkNjBhZmZkYTFhZjYyNzllOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDU4ZWI3OGU2NzU4MWZiODkxOWQxZGFkY2NkZTc1MDVkODlkN2FhNTRiYzhlYjIzNDE2Y2Y4N2Y4MTYxN2I5ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2IyMzY3YmQwZGYwYTYyZGZjM2QxMjE5OTFiMjk4ZmU0ZTljM2QzMjY3NTJlNjk4NTU5NDNiNmNmNGIyNDgzZCJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/artifacts/topic_memory/models.py#L64-L70",
+          "version": "repo-lines-v1:sha256:d9eafd2c8be6b1833e040284b39ebe198617f9901aa4a296a80bef2a4b3ec27a:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDZmNDZjN2FmOTI3MjJmNzAyMTM3NjhmNTY1NjhiN2Q3MGEzMzBkMWQ0MWViM2YxNmJkMGMzMzA5NTMyMzhmYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDZmNDZjN2FmOTI3MjJmNzAyMTM3NjhmNTY1NjhiN2Q3MGEzMzBkMWQ0MWViM2YxNmJkMGMzMzA5NTMyMzhmYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGZiMWI0ZGExMjQ1YzdmZmFjMmZhNzJlMDRmMDhjMDlhNzI1Zjk2Nzk0ZWNjMzdiNDM2MWIwYzQ3MWQzNTE0NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2Y5YzU5NjNkN2U5ODg5YWI0ZTBjODU3MGU2ZjY4ZTMyZDI1NjM3ODBmNzgyOGQ1ZDlhMTM1MGE5NGIwNGRhOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ab4909b2a79b408f96d67c5510ee9924",
+      "statement": "The legacy memory family is not a writable or referenceable Artifact family: ArtifactRef rejects family memory, and collection Create and Replace operations for memory are rejected before any write.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/artifacts/models.py#L37-L37",
+          "version": "repo-lines-v1:sha256:6273c9b47ad2246df06aebc67b75d4c3cd1565e723e01290d4afd935adc75509:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjI3M2M5YjQ3YWQyMjQ2ZGYwNmFlYmM2N2I3NWQ0YzNjZDE1NjVlNzIzZTAxMjkwZDRhZmQ5MzVhZGM3NTUwOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjI3M2M5YjQ3YWQyMjQ2ZGYwNmFlYmM2N2I3NWQ0YzNjZDE1NjVlNzIzZTAxMjkwZDRhZmQ5MzVhZGM3NTUwOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDBkNzZlMWRjOTBjNjFlNzA5NzM5ZjE1NzY0ZTAwYmNhZmRhY2ZjMWE1MjlhZGI0MDg0MThiOWFjOWQzZjMyNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTkwZWY5MzZhMTU4MjU4MjFiMTI3MWYzZWRlYjIyOTI2OTczMDljOWQ3MjI1MjMzNjYxNGY2MWZlNDg0MzQyMyJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/artifacts/models.py#L45-L61",
+          "version": "repo-lines-v1:sha256:b14e47ee9274e1c302946dfbcff075b6c32ce19a4d86654147af7eac3b9b14c1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5YWU0ZWEwMzFhNTRjZGVkNjgyMWJjYWMzMjE3NTllNDVlZmViNzY0MGZhYjNhNjc2NzRlNzNiZGM0NzI3ODMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjNTJmNmIwMTg2YzJmNzNmYzI0ZWNmZjdjMTFmYWMyZjZlNzVkZDZkMzkwNDYwNjE5ZDkzY2Y3OGQzNmI5NzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5ZGM3NTU1MzIyZWNlNzFiNDExNTlkZWJmYTg5ZTE0ZGQzOGIwYWU3Yjc1ZGFmOGU2Y2FmNjdmNGI3MDQyNDkifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/records.py#L354-L362",
+          "version": "repo-lines-v1:sha256:09a1909e4ca625b400db147a0ee95380c7e67807b1102391167cd372a0b13a5f:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODQwY2NjMmI4NjBlZmZhZDkwZWMyNzBiZWVlZjIwNzBiNzJhMDRiZGZiODA2Y2QyZjI4Yzk1MmZiMjA3YjljOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDVhYjEwODk1ZDFlOTUxMDY5NGViNmRlMmJmNTY4YmQzMmExMTM3YjYzNDdkMDkxMDI5MTg2NWI5YjQ5NzAxMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjUxNmViM2Q1ZTgyNDJhZWUwYzk0MTUxODMwZjc3M2MzNzRjOTdjZDA1YTE5MTUwOGVjZjE4MWU2NjA3ODIyMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDMwZWE1NzQ2N2VjN2Q5YTlkOWJhZjYwY2EwN2MxYWQxOTcyNDViNWNiODAxYzczMDI4Zjk4NTU5ZTBjZTljNCJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/server/app.py#L3289-L3296",
+          "version": "repo-lines-v1:sha256:5c3640e6fc168f801df49682a251ff6e1897763b49d0b54a4292f0d0a8e8dc41:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODI0MzFjN2RlMTYzZGRjZjAyN2FkMjEwNDMxNWIzNWI3MzY3MjJkNDVhNmJlNWQwYWRhMzg1ZjdmZWIzZGFhNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGNjMjRlZTE2ZGVlNmJmZjI3YThkZDg1NDBmNjM3MjU4MjVlZThiOGFiODhlM2QxYmZkYzU2NDc1ODllYWJlZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTMwYjE0YjcyNjA3OTVjNmNlYjBmMTUzMGM0NTU3YWRmODdiODcwNmM5ZDA4ODUwMTZkMjk1NWVlNmUxODBkNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTVmODY0NTAyYTRmNWYzZDU4ZDlmNmFkNTcwNjljOWNkNzUzNDg3ODhkNjRlNDk1YzUxMWViOWQyNzVkYmQ5YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1d71b2c9d5b34cc0af488cab932c4ae3",
+      "statement": "Creating an Artifact with the legacy memory family returns 422 with the error code legacy_memory_operation_unsupported and lists Atomic Memory alternatives.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/app.py#L6250-L6300",
+          "version": "repo-lines-v1:sha256:8b4614ad40c140d3feeebcadc5bbd6f7f1ef76d9e92e5f1cb236f19a4ba61c08:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlOWFlY2MyMWFmODg4ZDE3MzJjYWEyNjhjN2IyMGNlYTkzNTAwZmI0ZjIwYmViNmNjODY2YWEwNTU1MzU0ZTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1MDhiMmEzOGZiYzE1M2VlZTgwZDNkMDc3MmQ3MDY3NGU5MzM1ZGI3NTBhZmZmNGI4OWE4ZmM4YjA3ZTI1ZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBlYmFmZDBiODY1MzUxYWJhOWQ3NzFiZGViMTg0ZDlmNGZkMzFhNjEzNzRkZDVhYmZjMDdlYWMyMDQyZmFiMTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlkMjBmMDIzYmNiNTk0ZDI4OGFjYjhkNTkwODk2YWE5OWNmM2ViYjgzYzgxNTc3YjRmMWQzYWQ1Yjg0NjcwNTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b93490729911440682a592a94393e24d",
+      "statement": "ArtifactRef identifies one exact revision by family, artifact_id, and an integer revision of at least 1, and rejects memory_citations in lineage in favor of Atomic Memory revision citations.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/artifacts/models.py#L119-L132",
+          "version": "repo-lines-v1:sha256:79b7d10cf1dad0c81c915b3e387ad339badd4e531de64f802904fb9478a49386:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2NmEzNzVhYzg3MmM2ZjNlNDM3NTI4YjhhNjcyNzI5NDdhMTMxZjJmMzU3NDNkZWRmZWQ4YWU5OGYzM2FlMDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgzMTM3ZGMyMjNlZmM2MWQ5Nzk4NjRiN2JjMDc4ZDExZjE2ZWI5NzJjZDRjMTI2OWRiMzE1OWY5ZDczZTgzYjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhZGE1MTZjOWEyMGM5NzQyNWEyNmVmZjdlN2Q4M2ZjYTg2ZGY3NzdlM2ViMmUyMjkwOWJhZDAzODc1ZDQyMDUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/artifacts/models.py#L37-L42",
+          "version": "repo-lines-v1:sha256:c848ae157ba0c8fdcf2e5f7b3e11645a8ae71daaa30f74d9344bfa91100e859b:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjI3M2M5YjQ3YWQyMjQ2ZGYwNmFlYmM2N2I3NWQ0YzNjZDE1NjVlNzIzZTAxMjkwZDRhZmQ5MzVhZGM3NTUwOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjBmOWRjMzhlYzdhNGQwNmEyMzc1ZDFlOTZlYmYzNmU0NjNiMDM4MjEyYWM2MDNhNTY3MjY2Nzk2Nzc5ZTUzNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDBkNzZlMWRjOTBjNjFlNzA5NzM5ZjE1NzY0ZTAwYmNhZmRhY2ZjMWE1MjlhZGI0MDg0MThiOWFjOWQzZjMyNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjllZTE5MzI4NGU4MmZiNzZhZjRmNGY1ODNlNDNmMDUwN2I1ZjEzMmIxNjRlNmQzNTIzYmFmYjk0YzBjN2IxZSJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/artifacts/models.py#L45-L61",
+          "version": "repo-lines-v1:sha256:b14e47ee9274e1c302946dfbcff075b6c32ce19a4d86654147af7eac3b9b14c1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5YWU0ZWEwMzFhNTRjZGVkNjgyMWJjYWMzMjE3NTllNDVlZmViNzY0MGZhYjNhNjc2NzRlNzNiZGM0NzI3ODMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjNTJmNmIwMTg2YzJmNzNmYzI0ZWNmZjdjMTFmYWMyZjZlNzVkZDZkMzkwNDYwNjE5ZDkzY2Y3OGQzNmI5NzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5ZGM3NTU1MzIyZWNlNzFiNDExNTlkZWJmYTg5ZTE0ZGQzOGIwYWU3Yjc1ZGFmOGU2Y2FmNjdmNGI3MDQyNDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b93cb1546eee48a88bf1fbaa61ba9e1d",
+      "statement": "Each Artifact revision is an immutable stored body keyed by scope, family, artifact_id, and revision; the current revision is tracked separately in a head row that advances only by compare-and-set on the previous revision, and a stale advance raises RevisionConflictError.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/artifacts.py#L340-L368",
+          "version": "repo-lines-v1:sha256:96e2295929c9479419721767562801ac97ce7284f1338a5b88ebef8ea3f3aee6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhYzA1ZmMzMGRhZDRlODFiODEwZGU5NDI1YTZhOTYyZGRkNTk1ODFhNmY3OTVmMDExNWMxNDhmYjlkM2IwY2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0MGM1ZTBlNDg2NmYwMDg1MDNmN2UwMGQ1NDg2NDcxNDFkNWI0MDk0YTU5MWQ2ZTJhM2Y4NDhhNjQxMjRlNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5M2E4NjhiMTU0NzEzZjQzODIzM2YzMGQ3YzgzOTE1ZDQ0OGUxZjk3ZjU4ZDFmMzZjNGQyNTdiZDhkZDI0NmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY2ZjE4YjgwYzkxNmQ2ODkxMzY0OTBhMTFmZWZlNmI2OWQ2MmI1ZTA0ZDkxOTNkMzFjY2E5MzAxZmQ5ZjY0YWYifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/artifacts.py#L370-L460",
+          "version": "repo-lines-v1:sha256:2c21084cd943ac616a3c369c9d4721b5e664b19aa43bbf19b9adc9c74cd17a42:eyJzZWxlY3RlZExpbmVDb3VudCI6OTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0NzgzOGVkMWMwYTQ1NTY1MTk4ZmE2MjIwMDJmZTE1NmRjNDNjZWEwYjJlNjQzNTE3MDg4MTI2YjIyOWNiMDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVkMGM1YzEyYzRkMTNmMzM1YTAwOTJmM2M0ODI1YzM5MGRkN2YwYzk1NjE1YmNjNzljZjQzOTE2OWE5ZDg1YWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImExZjc0NzVjMDMzZTQyZTQ1MTUzZGNjMjhkNTdlOGY5MzZhZWM1ZDJmZTBjMDljODIyZmRhMDQ3MjQ2NTIyMzIifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/artifacts.py#L800-L845",
+          "version": "repo-lines-v1:sha256:6bc05fa56b433f1a2e782e0440eeba971480db5189af8bfb514e1c4183707dbd:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3MzEzNmU2ZWEyNDZjZDViZjA2OWQ3ZGJkNzhmZTg3YjI3MjgxODhjNzNkYjY4YjA4MDdlZmYwNDgyZGU3YTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjNjlhZjBhMzcyNGE3NmQ2NDQ4MDFjZjRiMDIxYTk5YWQzMDdjOGYwODUxMjZjOTUyZDgyN2U4ODZhNDYwNTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZkYjVhZWZlYjJmODdlMjY3MjJlMjAxMDkxMmNjNzMzNjlmMDc1N2RkZDUxZWE3ZTNlMDk4Y2MwNzg3YmM1MmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d9429400e4174b5fae5e42fa7e48f811",
+      "statement": "Revision lineage is stored per revision as direct source evidence, upstream Artifact references, and publication source and digest for copied Artifacts, and it is loaded with each revision rather than being rewritten by later revisions.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/artifacts/models.py#L119-L132",
+          "version": "repo-lines-v1:sha256:79b7d10cf1dad0c81c915b3e387ad339badd4e531de64f802904fb9478a49386:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2NmEzNzVhYzg3MmM2ZjNlNDM3NTI4YjhhNjcyNzI5NDdhMTMxZjJmMzU3NDNkZWRmZWQ4YWU5OGYzM2FlMDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgzMTM3ZGMyMjNlZmM2MWQ5Nzk4NjRiN2JjMDc4ZDExZjE2ZWI5NzJjZDRjMTI2OWRiMzE1OWY5ZDczZTgzYjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhZGE1MTZjOWEyMGM5NzQyNWEyNmVmZjdlN2Q4M2ZjYTg2ZGY3NzdlM2ViMmUyMjkwOWJhZDAzODc1ZDQyMDUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/artifacts.py#L765-L797",
+          "version": "repo-lines-v1:sha256:248e2e023f725ac9301d1aea6fa8768eef4fbdb96d656fae455f3e1250203ae8:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViNzNlY2IwODU5NjE0MjRhMTM5NWVhZGU2MzBiNjQ2NTUwYTRlNGJlM2ZmMWQ1NmNmOTYzZDY1NmU2ODE1NTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0ZDAxMTQ1NDc0ODY0NDk0NmM0YjU1MjM1NGM0MWZkYzNlOTVhM2IxYjIxZGNjNGVlYzhkY2EzMzM5Yjg3NWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRkNWM5OWZlNzc5Nzc0NjRhN2YyNGRmZjc1NWNmMjUwZjY4ZjJjMTFjOWQxMGIzNmY5ZmU2NmNhMGZiYTA5NWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFjNGI2ZGEzNTBiNDg4ZDM4NjMxZmNhYTZhNzdhYzNlNTA3NGUxMmYzMThkOWFkNTYxYmI0NTAxMTBhN2Q3NGMifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/artifacts.py#L960-L1000",
+          "version": "repo-lines-v1:sha256:a59b7e82bfafab5591f44c02c793c677a7861e786af9524dada48665d2c9d57f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5NmJlNDM3MTVmZTFlYzYzMmZjMDhkOGEwNWU2YWEzYmNlNGViM2Q5MWM4Zjc0Y2FiYTMzYjAxNjViODg1NzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MzZmZGYzOGFmMDJkMjY2MGFjZTcyZDUyMzNkMzM3ZjM0MzMzYzVmYTBjYjZkZDQ0NDViNWMzMDdjMGVkMzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU2M2Y2MDdiYzBmYTgyMTA0Nzk0MjM0MjMzMDQyNTVkMjE3NTZiYWVjZDVhNmQ2NWMzMjI5OWZlYzNiMjk1NWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI0YTY0MzM2MjYzOGJlODJjOTM2ZmEyYmIzNjEwNzQ1MzBlYWRhNmMwMjUwOGU3ZTU0MWVhMTdhNjE1YmVjN2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9474bcf8ccae460ca1fd88f5811784c7",
+      "statement": "The read contract (ArtifactCatalog exposing get, latest, and revisions) is separated from the write contract (ArtifactStore exposing add and revise), so reads do not own writes.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/artifacts/protocols.py#L24-L51",
+          "version": "repo-lines-v1:sha256:38689ff4f8f13eac4d39a6bcbf654112a2c164bd64f52b7695d54a3b7ceeec79:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkZjgzMTkyMGJmOGUxYTUxOTk3NzkxZDY1ODIzYmVkMmQyNjE2OTAwOGY3NzA1OTM4MGU4ZjliZjMzNzYzYjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhYzhlOGI0N2Y2ZDA3NjEzNDczY2IxMDljMmJhOTk2N2NmYTE4Zjg5OGY0NDk3MzA1NTc1ZDVlYmJiMzk4ZDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg2OTVhMTM4NDRhMGNlZWMwOTU3YjA1NmRkYWYwYjg5MDY0ZmE4ODMwOTY1MjM2NGY4NzAzNWE3ZjU3YTY1NDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3NjI3NThkYmMwNGJiMmE0MGIzNWI2NjA2NTM2NzM3MTIzNjQ1ZDVkNDMyNTljMmI2NzA1ZDVlOTZlYTBmYzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a05cbbbe06da4545a4cc911a76eb5b8a",
+      "statement": "Create (POST /v1/scopes/{scope_id}/artifacts) uses a family-discriminated request union and creates Revision 1; the response sets Location and an ETag of the form revision:1.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/http/_generated/models.py#L6482-L6510",
+          "version": "repo-lines-v1:sha256:80ab15a70715fdd24009308daea2af6eeba2cda178af0fe536f24c2e31efdcf0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4MmI0MDRjMTI0ZWRiMzhkMTBjZTA3OTYwZWNhOGIzMmZmOGI0ZTYyMDc1ODE5NDUwOWMyM2Y0M2Q2NGFiNWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzZWZlMDZiY2UyOTg1MTY5MDQzNWE1Nzc5MDljM2E3MDc4MDQzZjA0M2Q3ZDdmZjI3ZmFhZjA3NzA0NTY5ZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI3OWVmNDMxMjg3MjVmMmQzYjczY2UxZTJmODY3MDZhMmE3NGFmYzhiMzk2YTQ1MjJlMGE2M2MxNzQ0MTY1NTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBhNDE5Y2QxZWY4YTYzMTk4ZTIzNTNmODAyOWU5NmFiOTFhMzQxZTM0OTZjMmZmYzk3YjQ1YmY5YjYyZDJhYzIifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/app.py#L2888-L2912",
+          "version": "repo-lines-v1:sha256:29341c632331b3aa6efe217b7b2f7c15c75a849c2eebb6cf9e86b40d64fd8962:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhZTBmOGE5MjM2OGI2MDZiOTJjZTRmOTI0NjQ2NDI5NTc0YzdkM2MzZGI4OGE1NmM1YWMyM2RjYTgzYTQ0MTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4YmVlZWJmZWY3ODViZDlmMGVmZDc1OTcwYzk3ZDFlMTY3OTNkY2E3NmYwZTIyN2NmOGExNWI2NzUzNzUzMTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczMDMyNWY5ODBiNGFiZTBhNWJmZGViMmQzZWI5MzQ4NzZkM2EwNDMzMjU2NDQ0NzJjMTM2Y2NhMDJiOWE4MGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5NTUyNzM2ZTMzZjJhOTg2OTZjMWEyNmExYzUyZWVmZjFiNmJkMGQ4NjAwNTRiZDAzZmIyZDUzZmYyNTcxZWEifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/app.py#L3445-L3446",
+          "version": "repo-lines-v1:sha256:78f74d6c77eee4d26e0de4df892f84142bf088d9c07dd468660252100f1f538b:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTM2MGJmYjVjMjZmMTRiYTY1MWEzMzc1ZTJjMTJiMGZkZGVlZTMwYTM4MDY4ZjcxMGNjNTNjZGMyOTYyODcxOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTI5MGRjNGY2NzExNzk5YzA4ODZlM2RlY2QxNjNlZTE3ZTg1YThiMTVkMWU1Mzg0NWY5OTRjMWI0ZWM0OTM4ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjNmMGI3ZWVjZDIzZWRjYmQzYmI5ZjI2MTJkNDI2NDkxYWQ5NThmYzA2ZTAyYzhiMTc0ZmEwZWIzMGU5NzEzMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGRlYTkwYmMzMWYwMzExNTBkZDFkNDQ5MzYwYTMxMjUxYmM4YTQzZTlmMmJkNTc0Yjk1ZjQ5ODQyYjA1NTU5YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7e4c65eab03d488ab872951e1ff1fb92",
+      "statement": "Create does not accept a client-chosen Artifact ID: the server generates the ID for most families, Prompt uses its registered prompt_key, and Handoff and Profile use fixed singleton identities; prompt_key is rejected for non-Prompt Creates.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/artifacts/profile/models.py#L31-L32",
+          "version": "repo-lines-v1:sha256:ec55ad5b2c3c2371a4b10eaf52d64a31c2d4d208ec7acb72674b4f8a48e0a097:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWZjMDFiOTcxNTY0Yzk5MTA1NTJhMzMxMWI2NWM0YmUzMDY5NjNmZWE0MDQ0Y2VlNjZlMTQyNTEwMjIzODAzOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGNlY2E5ZTAxMzliZWRhYmNiZjdkMTQ3NGQ2NjIyYjliMDA0YjE0ZmMwNzVjYTFhZTMzNTA2OGY0ZTk4MzM0ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjMyZjM2ZDcwMGYwZGE5MTIwMzJhMzY0ZjU0MGNjYWEwNjRlMGNjMzNlNzAxZjM1MTc5NDVhNjljYzQ3Mzg1ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmJmYTYwZGQ3YThhMmQ4NDliZjQ1NjE1MDRmN2JkMmEzMzg2ZGYzYWIwNTZkYTAwYjllYzZmOWY5MDM0OTVhNyJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/family_management.py#L186-L200",
+          "version": "repo-lines-v1:sha256:e4a105b37eb2e6552ab4bfa66cafadb6b93776177e0a0e158d467916f2f33635:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1NjljYjA5MjgwZWUwNzgxOTQ1ZTQ4ZDQwNDFiZDJkZmFhZTY5MWFkMmVhYmY1ZDNjYmEwODQ2YzcyMTZjYWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3YzZkNmJlZDc1N2RkOGMwM2FmM2U1ZWQxMDQ0YmQ0MDE0MDlhMjVjYTVlNDU0N2RkODMyZDliMzdhMmFkZjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwNjZkOTJkMDZiODgxY2FmOTRiM2NjOTZjZDFhYzk0NmM0NTgxODU0ZTFjZmJmOTkwMzFhNzFjMDI3NTA5NzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyZDQ2MTM0N2NhMTcyYjczMGRiOTQxN2YzODU0Mjg4YjBjNTAwZjFlMmI4ZTlkZmI4OTk4ODAyMDA2MmFlOGYifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/family_management.py#L357-L372",
+          "version": "repo-lines-v1:sha256:a1195a9bea44a14633eae347bee5bc13a14d5f007946eb90812aeb8e55062fa3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3OGM3OGFjNGFkNDE2YjQ3MjRkOWE5OGU3ZTZmOTk5YjY3Njc0ODkyYzI1OGZlYWEzMmJhODQ1MzVmNDU0YjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmMDExZGEyYzBmNGNkYzg3Mjk3OWUxMTBjNzBhMGQ5OGNkYjI2NDdmYWNjYzkyMDY5M2E0MTdkMjVkNWJmOGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkxM2I3ZmU3NjA5OTQwMzQyYTVlYjJkYjk1ZjU0ZDhmZTVmODNiN2EwYWFkMTkxMDU3MGIzOTBkYTVmNjk4ZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ2MTM3MzQ0NjY0ZmNiOWRjNzg3YjU1ODM3OTY0MDU3ZWNmMjJhMzkyMzczNzAwMDkwOTY1OWUxMmUxZDM4NGYifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/records.py#L1061-L1064",
+          "version": "repo-lines-v1:sha256:32f92982fe58db8d3d5cfdc34741de9e9262c394151c696743a7502dd789c2a5:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzI4M2EzYTg1YmFiOWU4YTRmYWY5NTA3ZTA0NTJlZGE5NDI5ODUzNzgwMDAxZGQ2MmU1OTRiNDA1MWU5MDI4NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjg1ODhhYTY3NzY0NTllY2Q2YmM2ZTQzZWY4NGFmNzE5ZGQwYTU0YTBkZjQyYWVhZTkyZmRiYzMwYjA0MWVkMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2I4N2MxYjEzYmRlNjMwNmVhMGVhYWFmOTViY2I2ZDg3ZDE0OTg2ZWU0MGFkNTQxMzM4MzBkNjVmZDA3ZGE3YiJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/records.py#L354-L405",
+          "version": "repo-lines-v1:sha256:18f16313c9ade2ccbd20c4e610de2b439764a89d49adfe9660da2419c13d8edf:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0MGNjYzJiODYwZWZmYWQ5MGVjMjcwYmVlZWYyMDcwYjcyYTA0YmRmYjgwNmNkMmYyOGM5NTJmYjIwN2I5YzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI1MTZlYjNkNWU4MjQyYWVlMGM5NDE1MTgzMGY3NzNjMzc0Yzk3Y2QwNWExOTE1MDhlY2YxODFlNjYwNzgyMjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlNmYwOGViMjhmYWI4Zjk0YzlmZjI5M2JkOWY0NDUyYjUzODNlNzc5NjMzZGNkNjQ0ZDM1OGNjYWIxNDUwODAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4caaf42c8f654d23a365fcc1ece2c32f",
+      "statement": "Replace (PUT /v1/scopes/{scope_id}/artifacts/{family}/{artifact_id}) requires an If-Match header: a missing header returns 428 precondition_required, and a value that does not equal the current head's revision ETag returns 412 revision_conflict; the head is checked again inside the write transaction.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/records.py#L710-L800",
+          "version": "repo-lines-v1:sha256:9e5a1614e154a610b44fee07fa704c1b1c69a62fd5a3916809555d68d5dabcb3:eyJzZWxlY3RlZExpbmVDb3VudCI6OTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmZDRjNzMzYTBhOWNjZmNjNzg0ZWNkZTZiOTE3NTRkOGZhNjliOTc5ZjFmZWZhMTJhMzMwNWY2MTNlZmFiYzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlYTVhZDM4YjgxNDI3MzM3ZGMzZDdlMzQ3NDQ1ZDU4MWMwNWRiOWQxZGJhZjI0NTY0YzA2ODA0YTllMjU3NzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEyNDE4NDk0NTlkMzhlY2U5OTgwZTY4NDkxYjRkOWJkY2FjYmI4MWMwMjViMjZhNzIyM2U5NjVhM2VhMjhiYjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhhNmE1YjVjNzdhZGY1NmIwZTU0ZTA5OWU3ZTU4OWE4OTQyYmQ5N2ZlOTVkZGExYzViMDhjN2YwNDU4OTY0YzUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/app.py#L3289-L3318",
+          "version": "repo-lines-v1:sha256:2f650476cf37727640697c177fd92d4f0754816ef839ccb3c755d15ce645acb4:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNDMxYzdkZTE2M2RkY2YwMjdhZDIxMDQzMTViMzViNzM2NzIyZDQ1YTZiZTVkMGFkYTM4NWY3ZmViM2RhYTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwMWI3YzZmZDFlMzQxODM0ZWY1ZTNhMDI1MTQ5ZWMyMzZhNTFlMzU5YTJjNjBmNmVlM2VlNDNmMGEwZmYzZGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEzMGIxNGI3MjYwNzk1YzZjZWIwZjE1MzBjNDU1N2FkZjg3Yjg3MDZjOWQwODg1MDE2ZDI5NTVlZTZlMTgwZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBkNmVlYmJjMGEyZWQ5OWFmMGQzYTFmNTg2NzI5M2MxOGQ3MGNkYTQ4ZTc0OTcyMzRiYmFiNzk4MTM1YmZkMTkifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/app.py#L3449-L3452",
+          "version": "repo-lines-v1:sha256:651b91bda0eeafb262e60310f3fa82cd3fd273a01c556fee19567bf00d04fb46:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjFjNmU3OWMwMDVkODRmMzRkZWU5MTJkOWMxNDZhYjQ1ZGNmN2M0OWYyYWE1MjAzNzFiYzA1ZmM3ODRlNWZlOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTkzYTEzMDYyZjEwZWU0ZjEyMThkOTNlMzdhNmY4MWQzNDZmZjExZWM3ZTU1ZGQ1NDJlMmQyZDJlZjA3MTFmMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTBhNWQxYTJkNzk0ZDdiNjA5MzU1YjY0Y2U0ZWNiNGRiNWU0YWIxZDZlZDhiMzRjMTk1ZjNkMGM2OThhY2MyMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDBlMjc0NWM3YzE2YTk2M2EwNDBmNDQyMjk3NjlhYWU1ZWNhMTQ1YzY4MGZkNDBkYTliOTZlY2IzMjlkMzJjYyJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/server/app.py#L6412-L6434",
+          "version": "repo-lines-v1:sha256:2e94b4d64720b68c5955ff91e34da80c37e09488c1438dd8a1a73822b22ea937:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiNWYyMDUwZGM0MTQwZDNlODQ1M2NlNTJjMTQxNThiOTViZjc3ZmEzYWU1NDQ0YmY3ZjBmNzFjYmJkNTAxM2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5OTI5NGNhNjlhNTRmZTRiZmM0NjgxMWVhMTIzYTFiNzhlYzU2YWU1NjU5OWEyYmRmN2JkMjllNzNkMjJlYWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3MDE0OWUwNjlhZDY3ZWNjZjQ3MzY0NmZmMWM3NTAwNTBkMzI5ZDExMDAxOGRjNTc2Njg3OGVhZmExZDYwN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkzNWZjNTQwZTBmMzhkZDI0NDJhNDc1NzQwMjQyYTRjYTEwMGU2MGQ2M2UwNjYwZWViZTk1NGJhYWQ5NDBmNWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3fc5e4e38e87473fbb48111469a2311c",
+      "statement": "Handoff is a Scope singleton: its Create uses the configured Handoff artifact ID (default handoff), returns 409 artifact_already_exists with use_replace set when the singleton already exists, and its Replace must target that configured singleton.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/family_management.py#L357-L470",
+          "version": "repo-lines-v1:sha256:93eaf9974f88a5ce669a2503b6dc67269dcc9fab9990c86d21331ebe26e5e337:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIzNzhjNzhhYzRhZDQxNmI0NzI0ZDlhOThlN2U2Zjk5OWI2NzY3NDg5MmMyNThmZWFhMzJiYTg0NTM1ZjQ1NGI2IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJjMTNhMDk3MjE0MjQ2MTEzOGYzMGFmZDA1ZGQ3NjlkNTljZmYwNjMyODgzZjQ0ZGExY2VlODhiNDdiMzQ4NmVjIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI5MTNiN2ZlNzYwOTk0MDM0MmE1ZWIyZGI5NWY1NGQ4ZmU1ZjgzYjdhMGFhZDE5MTA1NzBiMzkwZGE1ZjY5OGVlIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJmYzQ3NDE1OWI5NjMxNTU5YmI4ZWY1NDAzOTMyMDdjOThhOTU4YmExZDBkMDg2Njc5YjFiZjVmMTc1OWEwNGUyIn0"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/records.py#L208-L216",
+          "version": "repo-lines-v1:sha256:c68bb2c289a475119488d437128f252f1bf3001554e1d7666ef4b0d21f96fc02:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzIzNGFmZjViNGUwOTAxMDVmNjZmYzg0YzM4ZWYzMWRiYjQ1YTI4NzZkN2MyMjY4ZTY2OTQ3NWQ0Y2Q1NDBhYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWU4YmJhNDgzMDhkN2FlYzJmNjgwMzQxOGZiZTU1YzZjOGQ0MzE5ZTI2OGZiNThhMWE0Yzg4YWQ3NzEyNzUwNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODgxNjk3YWE1MTg2ODYzZjdmYTdkYjc0ODc5NGE3NDRmY2Y3MDFlMmI4MDU0YjljYzc1OWM3MzkyMDllYTg5MCJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/relational.py#L516-L516",
+          "version": "repo-lines-v1:sha256:21b7efff3da591297f5351b89d7e9acdd5dd53ad29494b4be4379a2733c5b6ae:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjFiN2VmZmYzZGE1OTEyOTdmNTM1MWI4OWQ3ZTlhY2RkNWRkNTNhZDI5NDk0YjRiZTQzNzlhMjczM2M1YjZhZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjFiN2VmZmYzZGE1OTEyOTdmNTM1MWI4OWQ3ZTlhY2RkNWRkNTNhZDI5NDk0YjRiZTQzNzlhMjczM2M1YjZhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjFiNjljMjRjNzkyZjg0NGQxNTQzNTM2YmZmMTZlODY0OGUzOGUzZjQ1MzZiZTg1MmIxNjRjMmFkODkxZjYxNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTZmMTllMDFmNTZlYWM2NmJiOWJmZGFkOGZlYjgzODQ2MzU0YzhlYjQwMjZmMTVjZWI4MjM5ZmRlMDEwODllOCJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/server/app.py#L6451-L6461",
+          "version": "repo-lines-v1:sha256:b36562c5112231fb1a8747f5f22bca5891d84770e4507ddfffa92fc843705e9e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4OTBjYzNjYWNiNGE2ZjJmMGJmNWVmMzgwNzlmNDRkODdmNTZmNjY3NzM3YTc2Y2YwNjY0NDJlMjY0ZGY5MmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg4ZTM1ZGViY2Q4NTE3M2MyMjczNjcwMzQ2YzQ1N2QxYzA2OTcxMjhiYTdmMTFjZDQ5ZDQ2ZThiNzkxMDhmMjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUyZTMzNGNkYWViYjMzNzk3NTQ4ODk3NTU0MDIzNTdjZDk2YjE0MWEzYTBjYWE2NzE2N2M2OTBmMTcwNzczM2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1e6f531879ee41899da85bb962a7f2d1",
+      "statement": "A StableHandle key must match the pattern of lowercase ASCII letters and digits separated by single hyphens and be at most 128 characters; family and key are validated on the handle bind and resolve routes.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/artifacts/models.py#L64-L93",
+          "version": "repo-lines-v1:sha256:0a8607f2324f35bba633a4388e647e96866fe92f1d4196d6e62c5f92b2a3c4ae:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzMDI2MDU3YTFlM2Q5MThhNWUxOTJmYjhjMDIxNzgzMDdlZjU5NTk4ZTlkZDYzYjBiN2VkNjI0NjdkMjhiZGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0YmI3NDk0YWU1ZTc0NmU4MTdkM2QwNmI5ZTYzZjIzYzY2MGVkMzAzMTQ1NTRkYzFlYmNjMGFmYThhOWE1ZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFmODkzNDQ3ZjNhYWI0MWY3MzQ0MGNkOTdlMTdiMzU3MDc0MTZhYjdkZjMxZTg0NjA4YTQxOWEzMGFhMzNkODYifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/limits.py#L38-L38",
+          "version": "repo-lines-v1:sha256:3af4408935a641bc012228cd035f8a295fb73d67cb7210ec5fe87ffdc82ef122:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2FmNDQwODkzNWE2NDFiYzAxMjIyOGNkMDM1ZjhhMjk1ZmI3M2Q2N2NiNzIxMGVjNWZlODdmZmRjODJlZjEyMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2FmNDQwODkzNWE2NDFiYzAxMjIyOGNkMDM1ZjhhMjk1ZmI3M2Q2N2NiNzIxMGVjNWZlODdmZmRjODJlZjEyMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzU3ZGVmY2Y1NjE0NTMyZDkyNTVkNmQ5MjExY2U5NmIxNTMxNzZjYzEwMTRiOWJkOGMyN2YyNzlhYjAxY2RjMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/server/app.py#L2915-L2945",
+          "version": "repo-lines-v1:sha256:a8952c3484e2ff5d8ce4feb791797405c6c8e41093f0bc1d9db00e70f3f4306b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhNGYwZDA4OTVkODFiNWEyNWJkZWQ2MjY1ODAxOWI4NjQ1OWI3MTRhMGQ4NjQzY2NhYmFhYjYyYTI3MDY0ZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0OWI4OGFhMGRkY2ExMzgxZDE2MGUyZTc5MTJmODE1MDk3NDc2Y2IzZDdjMGJhYTFkOTE4MGY3YTBhODc0YWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU4YmJlMzE3OWFmYTI5NDhiYzVjOTUwNWFiOGM0OTEyMDE0NThlM2Q5ZmIwOGFkMTE5Njk0MGRjYWRmMGViMDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY1MWZjNGZkMGJkYmQ3MmI5Yjg0Zjk2YmM2NDcxYTRiNjhhNDMxMWFkMjExMjJkNTFhYWE5OWU1ZWYzNzE4M2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_05e77fe44c8949528cbbef19781a1549",
+      "statement": "Handle bindings are permanent and keyed by (scope_id, family, handle_key): the repository offers only bind and resolve, re-binding the same target returns the existing binding, and binding a different target raises a conflict mapped to HTTP 409 with error code idempotency_conflict.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/artifact_handles.py#L107-L117",
+          "version": "repo-lines-v1:sha256:8816757bfdf4a55de548dada176621a18f8c967005ef5615b7bf8498b5eabae6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2ZjZjNDQ3M2ZkMTllNDExNTMwZDU5ZDc1ZDIwZjg2YTJhNDNkMDgwNzkwMTgxZmMxOGQ0ODQwZjJjYjc5NTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxZmMwODM2NDY3MGVjMWFmZTM1ZWRmYTVmZDc4MjYwZjM2YWEzNDhjNjAxMjc5YjQyNDJkNDQ1MjU1MDM1NjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY2YTJkZjMzNjQ2YTE5YjE3ZTI2ZDg3N2JlMzA4NTE3Y2JlNjlhMmRlNzA3NDA0MDg3NTdjNTViMzUwOTE2YzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/artifact_handles.py#L36-L73",
+          "version": "repo-lines-v1:sha256:bb933f887fa96957db3905594313b954ad592b87ff287de7acb591111841b387:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0NGIwZTE4ZDY0MDUyMTA0MGU5ZTQ4ODMzMWQ3OTBhMmJjNWUyYmZjN2RkY2NlOWNlODBlMjBhMTJiZTJjZDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEyY2U4N2UyODMyZDYwMGMxM2YzNTM2MzA1ZGRlOTk0NGVkMGViZDAzNzM3YjU0N2I2MzA5M2ZkMGU1NDljNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyZmY4ZWNjN2VhYWQwYWQwZmU2ZjhmZjk0MjFiZjhhODFmYTUxODhjZWJkMTRhM2Q4ZGY1MjZlYmI2ZjViYjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUyNWI0ZmE3ZTgwM2JkOTViMzMxMzY2MGEwMDM1MGY0OTg2NTQ0NWQ4NzM3ZjE0ODMxODQ4OGUwNjI3NGYzMzIifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/records.py#L170-L181",
+          "version": "repo-lines-v1:sha256:b6c2e8aab33eea67f9bbaa3f1d2d262620465ba8b6724700c2e608a1091f1a00:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5ZDA5NzM0ZjQzZTY0YjNlNDk5YTg1NGMwNzQ4NzZjODdkYjdmMThkN2JjNDc4MmM0ZGUzZjFiNGQ0NDUwZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5NzFiZDBiNDZlYTRkNmE4NTZkMjQ5NzQwZDRjYzYzN2NlMjc3NzVkMTZkM2Y4Nzk1OTM1MDlhNGI5Yjk4ZjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1ZjkwY2ZkZmU2YTVhMjdkMmY2YjhlNDNkYTMwY2IxZTA3ZGIzZTdiOGRkYzc5YzBkNzkwZWNiYjU5Nzk4YjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjMTdkY2JmODIyOWU1OGE1NTZlNWYzZTk2NmRmNGRjMDNlNjVhOWRhOTc2MTFjNmVkZDlmNWYwYTU4ZjUwNWMifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/app.py#L6412-L6465",
+          "version": "repo-lines-v1:sha256:7fa7f8bfedf574015805d72497c153379ad6253c11670b753a651a395e08fb13:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiNWYyMDUwZGM0MTQwZDNlODQ1M2NlNTJjMTQxNThiOTViZjc3ZmEzYWU1NDQ0YmY3ZjBmNzFjYmJkNTAxM2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0MGJkYjkwZGVjMGNhMDJmYjhkODdkMzQxNTJhNDc2MThhYjI1YmMzZWE1ZWUzMzllNDMyZWI1NGQ3ZjFlNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3MDE0OWUwNjlhZDY3ZWNjZjQ3MzY0NmZmMWM3NTAwNTBkMzI5ZDExMDAxOGRjNTc2Njg3OGVhZmExZDYwN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVmZTM1OWQ4NmNhY2RkYWJkOTY3Y2IxMzY5MzEyZDk5M2E2MzkwZGJiZDhjZWEwZWRjMDA3MmY1YWFhOWI1MTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9f2b5d7be3c046c7a5ec3ce03fdaf58d",
+      "statement": "Binding a handle requires the handle family to match the target family and the target revision to exist in the Scope; a missing target returns not found and resolving an unbound handle returns not found.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/artifact_handles.py#L36-L53",
+          "version": "repo-lines-v1:sha256:991514eb3609b31cc6cf73c04663a38cfa318527c61b769236c76be2fdb69b0e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0NGIwZTE4ZDY0MDUyMTA0MGU5ZTQ4ODMzMWQ3OTBhMmJjNWUyYmZjN2RkY2NlOWNlODBlMjBhMTJiZTJjZDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0ZjRlYmE2ODY4ZmZhZWQ0MzcwMTA5M2QzNDUxMDIwYWRhNDRjY2JkZmVkMTRmMmY3NzgzMWUyYzU4MGM5NGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyZmY4ZWNjN2VhYWQwYWQwZmU2ZjhmZjk0MjFiZjhhODFmYTUxODhjZWJkMTRhM2Q4ZGY1MjZlYmI2ZjViYjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY1ZjM3NzhjNzYxMWQ2OWFlZjY4MjdkMjkwNmU2OWYwMzFmOWU0MWRhMDQ2OTg1M2Q0ODkxNDcwNDdkNDc2NTkifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/artifact_handles.py#L75-L82",
+          "version": "repo-lines-v1:sha256:9103254702903d097ddcf783f2e7124d7a00ce84b70e676a69566768d52f3b0c:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmM2NWZiZmY2NGU2OWJkNjg0YTFkMDQ3ZWExYmY4YWMzMWFkNTczOWZlZjRhYTU1YWJjOTQ5MDhiNDU0ZWNjZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODcwZTBiMTFiNDAwZGIzNTE0MTM3N2I3OTYzMTQ5NDQ0MWYyNmZiMTMwMzMzOTA4YTJiOTBmZWEwMTJkMmZjOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTE1NzFmNjBhMDM2MDNkMWNjMjgwMDI0NWU3ZDkyOGIzNGQ4YTliYmNkYTY1YTFjNDJhMDA1YjI5ODVjZmI2NSJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/records.py#L170-L181",
+          "version": "repo-lines-v1:sha256:b6c2e8aab33eea67f9bbaa3f1d2d262620465ba8b6724700c2e608a1091f1a00:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5ZDA5NzM0ZjQzZTY0YjNlNDk5YTg1NGMwNzQ4NzZjODdkYjdmMThkN2JjNDc4MmM0ZGUzZjFiNGQ0NDUwZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5NzFiZDBiNDZlYTRkNmE4NTZkMjQ5NzQwZDRjYzYzN2NlMjc3NzVkMTZkM2Y4Nzk1OTM1MDlhNGI5Yjk4ZjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1ZjkwY2ZkZmU2YTVhMjdkMmY2YjhlNDNkYTMwY2IxZTA3ZGIzZTdiOGRkYzc5YzBkNzkwZWNiYjU5Nzk4YjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjMTdkY2JmODIyOWU1OGE1NTZlNWYzZTk2NmRmNGRjMDNlNjVhOWRhOTc2MTFjNmVkZDlmNWYwYTU4ZjUwNWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_32354ec202f24bb695be56b5d1617f79",
+      "statement": "Concurrent handle binders resolve through the database unique constraint: the losing transaction re-reads the committed binding and succeeds only when the committed target equals the requested one.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/artifact_handles.py#L36-L73",
+          "version": "repo-lines-v1:sha256:bb933f887fa96957db3905594313b954ad592b87ff287de7acb591111841b387:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0NGIwZTE4ZDY0MDUyMTA0MGU5ZTQ4ODMzMWQ3OTBhMmJjNWUyYmZjN2RkY2NlOWNlODBlMjBhMTJiZTJjZDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEyY2U4N2UyODMyZDYwMGMxM2YzNTM2MzA1ZGRlOTk0NGVkMGViZDAzNzM3YjU0N2I2MzA5M2ZkMGU1NDljNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyZmY4ZWNjN2VhYWQwYWQwZmU2ZjhmZjk0MjFiZjhhODFmYTUxODhjZWJkMTRhM2Q4ZGY1MjZlYmI2ZjViYjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUyNWI0ZmE3ZTgwM2JkOTViMzMxMzY2MGEwMDM1MGY0OTg2NTQ0NWQ4NzM3ZjE0ODMxODQ4OGUwNjI3NGYzMzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f19895d1160847e797b0a67ab76f9007",
+      "statement": "Candidate approval, not direct Create, is the publication path for generated Experience and Skill proposals: approval checks expected_version and then creates a new Artifact under a generated ID when no target exists, or revises the target when one exists.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/review/service.py#L658-L664",
+          "version": "repo-lines-v1:sha256:2468df122be05349fa59e8e3b563843e697f454017bba2e8dd806ff3f61b4a91:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzYwYmE0ZjY3ZTcwOTI0YjE0NTQ3MjkwYzI5MTU0YWQxZmY1ZDI4MDVhZmIxYzlmMmQ1ZjM1MDhhMmZkNjk0YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTU4NjY5Y2M1YzYzZWIxNTU0OThmZDY2MjU5ZWEzZWVjNmI0MGYwNWYwN2Q3NjZjZjZiZjQxNzA4ZTVkNDgyYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmY3MzBlMzhiYTYwNDYzN2E1OGE2ODI3YzU1ODFiNzI1Nzc5Mzc5MGQ2OTdmNjgyYTY0YWUwMWYxNjJlZjM2NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTExNjU1MzczMDNhYzdiYzgyMDBmODNkNmM4NGI0YWQ3NzM1MGQzNGQ0YjQ5YmZkMTA3MDNhMTYxNWNkOTYyMCJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/review/service.py#L700-L740",
+          "version": "repo-lines-v1:sha256:82c1dbee7acf0e0c6483109674dcad39d13b9dfe439df82f17aa91fab19f4d92:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc5ZDgzNDAyYzU3ZWI2MjAzZTRiYjI4ODgxNGIyZDAxOWE4ZTU1M2JlZjUwMjRmZGVmNDNiZjc1NTViOTRkYjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhOThjYTJmMWJiOTNkZGZjMzMyZDg1YmZkODc3N2VhYmFiMjk2NDNjMTBiYjUwYTUzNmEwMGFmZTA0NWE0MTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdhN2QxNjIwODk5NjljMTk3NjJkMjliMDhlMmQyODAyNGQwMTUxMDliMmRjOWU2M2ZiYzNkMzI0YmM0NDEzZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg2ZjkxNGE2ZGM3NDEyOWU1M2I4MDNhYTg0YWFhMDdmOGE2ZWFlMmQ4ODliMGM0OGJiODU2MGQ1ZTM0Mzc1ODgifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/review/service.py#L721-L735",
+          "version": "repo-lines-v1:sha256:8f79e8a18b05497d6660407c173314767ebc14ed19d5cbfd25edc23078b436dd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE2MTM4ZTljOGFjZjNlNzJkZjUyNWQwNTczNWFkNTRhM2RhZTY3YTk3NDlmMWU1ZmFjNzRhNzMwZDIzMzQzNGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2NDJkY2M1OTBkNzY5ZjNiNjdlMTZhZjQ5ZTZiYmU3NmVkY2JjNWYzOGNmZDM2MTZkNWU3ZTA3NjQwZmNlZDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyYzMyMGUwMTY2YTM0MDM1M2Y4NDNlZWQ1ZTYzZTJhMDJjMWRlN2U2YWVlNWFiOWRmMmE4Y2QwZGM4ODQyYjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmYzFkYjZmMmZlNzc3MDEzNTU0ZGJmZTg1ZTY0M2E4MDAwOTlmZTU0Y2FjMjFiYmFmYzU3NWQzYzAzZmQ2MGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_23bb75f507b94e25882833e1bbb1537c",
+      "statement": "Profile writes coordinate the Profile policy row and mark the Profile source window dirty before creating or replacing the Profile revision, and restoration by revision requires the restored content to match the historical revision.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/artifacts/profile/management.py#L40-L90",
+          "version": "repo-lines-v1:sha256:ee051dabd31b5d94052a3ab3c39228a7f82aaa39cc45d0d3adf62fcbf62112be:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1MDFkNTRhOGRjNDhmNWQwOWU2ZjBlYTk4ZjVkZTE0YzkxY2NiY2E5YTQxNTZjNDMzNWQxZmM2MTc5OWIyODciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkMzRhOWRmNzc5Yjk1NjZiMDRhZDJiOWU2Y2RkZTNiMWQ1ZTZjMWE4YzhiOTdhYjdjMjhhN2IxM2EzM2JkNmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdkMDg2YTkwZTc0NGU1ZDdjNmZmMzliNGNjNDUyMGZmODI4ZjNkOTg2NGRmOGZmZTZkMTg3MmUzODRhOGM1YjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEyMzJmMzkwNGZiNWMwZTUyOGU1Yzc1N2E0NjY2M2UxZWQxZGU2MTQ3YTlmODJlZDU4ZjdmMzgzYTc0NzMzODYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0fcc3df666cb488998d46358faf31fc5",
+      "statement": "Prompt writes validate the content against the registered Prompt operation and publish through the Artifact compare-and-set path, so an invalid Prompt is rejected before any revision is stored.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/family_management.py#L186-L260",
+          "version": "repo-lines-v1:sha256:1fe811e6cc508ca427f158c7d853cd6d03981eecad50af6f01f70e5e65416ad7:eyJzZWxlY3RlZExpbmVDb3VudCI6NzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1NjljYjA5MjgwZWUwNzgxOTQ1ZTQ4ZDQwNDFiZDJkZmFhZTY5MWFkMmVhYmY1ZDNjYmEwODQ2YzcyMTZjYWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3ZTAzNTdkMjQyNWMwMTZmZDVkMjc5NjYxNDU2N2JjZDIwZWY0MGJlM2I4ZmZjZjM1YjMwNjYyOTk1ZWE0ZjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwNjZkOTJkMDZiODgxY2FmOTRiM2NjOTZjZDFhYzk0NmM0NTgxODU0ZTFjZmJmOTkwMzFhNzFjMDI3NTA5NzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhhYzYxNjNkMDA0NzZhNzczODY4NjYxODU3ODk4OTkzMTdiOTcwYjZmMzJkODY4NWNkNDQyNjI0YmZiMDFhZmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_19ff987a12fb45019b306b427fc126bf",
+      "statement": "Atomic Memory Create and Replace are delegated to the Atomic Memory domain writer; Replace compares the caller's ETag with the current revision and passes the expected revision into the prepared command.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/family_management.py#L520-L575",
+          "version": "repo-lines-v1:sha256:aea705fa17effd2f4beca56c2f15a75283c86523e524e851b913451a1ef0a8b0:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkNjg5Nzc0ZTVjNzQ2MWFkNzY4ZDQyMjM2YmMyNWM0ZDJjNzVmODgyYWE1Zjc1ZDk1MDk2NGFiNzg0YTU0NTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwMDEwNWUwYTY4NTIxYzNkMzMyNjE1MzkwZTg1OWUzOWNmMjQxMjc0YTdkNzgxZDE5NmEzYWRhMDdiMTBmZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwZTEyMTJkYWJlYzcyNmNmMTIyMDkwMWU0ZDljYjExYTJiNDM3ZWJiNzc3Y2NhMWFiMDYyNTVkYzk0ZmNmZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjliMGMwM2UzMWFiYzg4NjIzNjljM2I3MDM4NGZmZjM1M2Y4YjBmN2RiZDNkOGE2MzQ1ODQyNmMyNzQxMmQyMDMifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/records.py#L710-L760",
+          "version": "repo-lines-v1:sha256:18ede74be6f00fae4d431d09e9d65e9f2ec6d410b081acab76a0dde605fdd88d:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmZDRjNzMzYTBhOWNjZmNjNzg0ZWNkZTZiOTE3NTRkOGZhNjliOTc5ZjFmZWZhMTJhMzMwNWY2MTNlZmFiYzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwNTdlY2E2N2NjMGY2MTcwOTlkNmFmOTgxNTUxYTU0ODMzYzYwOGZiZmFkN2FkOWVlMjNmOWY4MTE5ZGQ2Y2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEyNDE4NDk0NTlkMzhlY2U5OTgwZTY4NDkxYjRkOWJkY2FjYmI4MWMwMjViMjZhNzIyM2U5NjVhM2VhMjhiYjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhZGU4MGI1M2I4MmYxYmI0OGMxM2ZhMTkxNzE1MzhlMDNlNWQ4MzFmYzVkZTkyOGMzZDk3Yzg1NTdhZGVkOWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_792d8d131c514c1ebd7e42b2da053abe",
+      "statement": "Topic Memory content is subject to admission checks that reject recognizable placeholder output and coordination-only text and expect supplied content to be supported by cited evidence or the revised history.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/artifacts/topic_memory/admission.py#L175-L230",
+          "version": "repo-lines-v1:sha256:4de5f5d628d8658239f096e0c67a5b384544d4667d6c6af41233d19a1e1899e2:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI3M2ZjNmYxNGExNzZmZWRkMzgxOGJjYzdmMjQ1MDUxN2IyNWM5OWMyOWYzNzUzMTI2YWM5NjdmY2MzOTUyZWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3ODFlZWE2OGU2Y2U5MGZjNTY5M2I4OTY2ZmRmM2NlNWYwMDljMTFjYzQ0OTAwNWQ3NzkzNjY2ZjUwNjcxZGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b6ba6765c9284e499b7fce047d4a48ab",
+      "statement": "Tags attach to the logical identity (family and artifact_id) rather than to a revision, so they survive content revisions and Server restarts and do not change lineage or embeddings.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/workflows/manage-artifact-tags.md#L1-L30",
+          "version": "repo-lines-v1:sha256:39ae4f122c36979e964b016bffaa3bfd44233fdc6131042220c5340bc9402378:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1MmQ3MTExMDNkNTBhNDM3ODMwYzZmYmNkMDRmYjRiYWI0OWEwZjgyZjZkMjZkMWM3OTFjNmU4NDg4ZGQwOTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhYjliYzA0ZTlkNTdjYTg3YzY0NzVmMjhhOTgxOGE4ZWE2ZGZjNzI0ZTIxNTI2MGQzYjI5NWNiN2RlZmMwMDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI5MGExY2E2ZGQ3ZTBmMDY0NjhmZjkwNTMxZjcxZjdjMTVlYmY0NzgzOTA4MjQxZmVhYWVjZmEzNGE1ODAwOTEifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/tags.py#L70-L100",
+          "version": "repo-lines-v1:sha256:927b871a1667a30ad77db4d45b2b4b3a532469aee4212600b654f682b8e607a7:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlNzY4Y2M2ODEwZWIxMTFmOTQ1NjM4MTQ0MzFhNWFiOTJhYTY3YTBkYzI1MGJkNzIyNzJjMzVlMzMzNDZhNGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ1MTZjMDJmMjJjN2I0ZWY2MzUzOWI5N2QxZGQ2MGNmYzhlMWVkNjlhNDFiMDRmNDc3YmIyNGQ1NGYzMTQ5Y2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ5OWJiYjI1YTZlZGZkMjZmZWFmMGI2OTA4MmY0NzYyMGVkZWI4ZDJhNzk2MzBhNzk0YjA1YmI5MDhiNzUwYzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_91a33c2957f24132803abdfe985ad0a5",
+      "statement": "Tag labels are normalized to NFC with case folding for matching, reject control, surrogate, and unassigned characters, and are limited to 64 code points per label, 32 labels per target, and 16 labels per filter; normalized duplicates are rejected atomically.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/workflows/manage-artifact-tags.md#L60-L80",
+          "version": "repo-lines-v1:sha256:a6f47e1c14c778a40b0e9e3c028aec79687e2da2103d2bbf0ed6fb8135a61b07:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0NGM0MjVmZjMwNzE5Yzc3YTJmOTQxMTczODBmZmI4NzYzNzcyZWNiN2M3M2Y1YTBmYzg4NGRmNjBiNDJjN2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3MjkwMTQyYzFmZjVlYzJjZjViMzBhZmRjNDE5MjE5MDNkYjBhY2U1OTYwYmJlNDc5YTRkOWI2YWVjMzhiZDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE4ODkwODE0NDRiMDcyZTY2MWRmNDBiNTIzYWQ2NWEyNWRlYzEzNjZlYTMxMjZlOGE0YjQ2YTY4M2M5MDRkY2UifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/tags.py#L40-L65",
+          "version": "repo-lines-v1:sha256:93c81901a5161e4cd3237b63eb2bcd06a88cd5cb2e360fb076fff0e336b32c4a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZiZGQzZjdiNjI5MzFjYzZhNDVjMjI3Y2I1ZjEyOGY4ZjAzMmEyOTVjNmRkNWZiYmFjNmQ2NWM0N2EwYjUzZDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyMGExMGVjNTYyYjJhNjNlOTgwMWE3M2QyMTFjZDc1YThlNDJhYWE2OTE0M2IzY2Q3NzQxMWU2MWZkNzBjNjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMxYWY3NjM3NzMyODAwMzYyYzhkMDllZWEzOTg4NjI0YWY4MmFlNTA4ZGE1ZWQwZTg0ODBlYTEzMTBhZGRhMmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_418a538ee94d48abb98db2f4c3257ae5",
+      "statement": "The tag ETag is independent of the revision ETag: tag replacement requires the tag set's ETag in If-Match, and a missing precondition returns 428.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/workflows/manage-artifact-tags.md#L90-L100",
+          "version": "repo-lines-v1:sha256:8f0e175083d16f69337b0615e4b3c8c1d04103f6088abadda79c7a260e985846:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExNTRiZGJjMjkxZjRiOTQwODJiOWRmYTk4MmRiNmFmM2IwYWM2YWI4NWQxNmYxMTIxNjg0ZWIxMjM4Y2Q5NjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzOTFiMjhiODliMmM2ZDBjZjBjYWUwMGI0NzgzYjQwZGFjMTk2ZTNlNWFkNzRiZjJmOWYzMjEwYTI5YjFkMDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBiNDE2M2NiMzY0MjA2MGFlMzE3YmY3OGM5YjYyZmUyNGZlMzcxYmVlNGFjZWUwNmE1ZGI3NDQwZDhlMTc3YWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA2YTVkN2Q4YmQ4NmUyNjEyN2VhNDdiNzQzNjM1ZTMyYjE0ZjliZGU4ODM4NjNkZWJlYWNjNjVjYWFlMjhjN2UifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/tags.py#L70-L100",
+          "version": "repo-lines-v1:sha256:927b871a1667a30ad77db4d45b2b4b3a532469aee4212600b654f682b8e607a7:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlNzY4Y2M2ODEwZWIxMTFmOTQ1NjM4MTQ0MzFhNWFiOTJhYTY3YTBkYzI1MGJkNzIyNzJjMzVlMzMzNDZhNGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ1MTZjMDJmMjJjN2I0ZWY2MzUzOWI5N2QxZGQ2MGNmYzhlMWVkNjlhNDFiMDRmNDc3YmIyNGQ1NGYzMTQ5Y2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ5OWJiYjI1YTZlZGZkMjZmZWFmMGI2OTA4MmY0NzYyMGVkZWI4ZDJhNzk2MzBhNzk0YjA1YmI5MDhiNzUwYzkifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T09:04:09.583Z"
+  }
+}

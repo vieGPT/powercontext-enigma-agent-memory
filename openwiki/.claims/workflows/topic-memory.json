@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:672c63186a18be4679304bc729bb57945cb256fa42f1f70127fbcd48f50700a1",
+  "claims": [
+    {
+      "id": "claim_823f1056ce2548aba50f236b2ad482b2",
+      "statement": "A flush request returns idle without new work when the Topic cursor is already at or beyond the Source journal head; otherwise it durably upserts a pending flush generation and requests an invocation intent in the same transaction before the supervisor is woken.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/processing.py#L179-L205",
+          "version": "repo-lines-v1:sha256:08536198b107dadd884a7d6a8ec4efce24e9f710d03b8ed5da70e0638186c7a8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwNzY0MmRiZmJjNjIwYjVmMzVjYTY1YzUwMzUwM2MxODU0ODdhNmQ5MDc4MTNiZGE0ZjNhNTRlN2YzOTM3NGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1ZTk5YTAyOGM3MGViMWFmY2ZhMTMxMzhiM2IxNGUwZThmZWYxZDkwMTI3NDA2M2VkYjI5MmY0YmZlMGUxMGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI5NjAzNmViYTY2MmI0MGUwNTBjNDI0YTJlZjIwNDRiNmQ1NTY0YzVlMmM0YzE3OTk1YmVlZTExYzFhZTA3MDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI2MjhkY2ZlM2VlODMxMWE0YzIwNWE4OGRjOTE2YzlkYzhjZjBkNGFjYTExMTM5YjRkMDdiNmFhY2JlOGYyMjIifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/application.py#L4078-L4100",
+          "version": "repo-lines-v1:sha256:5203dae8ab10d6f5017adf5bf4dee348659a4814a2349453cba10e56084955b4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwOTg1OThkMDY2ZTM3OGQyZWQzYjk2NGMwMWZjNDUxY2QyMzhkOTgzOTFlOWFlZTYwNjViMTY1MGQ0YmM4MzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmOGNjMGYwNjBmZmZhZDI5OGJkMDUzZjdjOGU2OTZkZDRlMDQ3MjFlZjUzNDQ5OWVkNDEyMmFlYzAxY2UxODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ3ODY1Njk4NDNlMTRlMDY0NzVkNjY4YWRlZDQyNmE0NjEwNTY0OWI4YTc1NjM2ZThkZmQ3MDdkMjA5N2RmM2MifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/relational.py#L1017-L1031",
+          "version": "repo-lines-v1:sha256:f612f0746eb022720da15f3da9edd3ea2e14758f30736920f62317621cb94e2f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0ZjI1ZTczZDgxMmNlNmJmNTAxMTUyY2I4MTY1NjNiMDk3NmI5ZDAyM2M2NTQ2ZjdjMzcwMzVlODlhZGQ0OTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxNmM3MGE1YmZlNzRhMTI2MzAzYmFmZjZiM2ZhNzJjZGMyMjJmNTQ2NmQzNTg3ZmVlNWM0YjVmYzU3Y2MxNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU3NTM1ZWJjM2Q0ODcxMjE0Njc2YmFjMjk2NzIyY2Q3NTI3ZmU0Y2M1YjEzMGM5NmU3ZTQ3MDIwZjIyNTA4MzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImViZTU4ZDI3NjJlMWY3NjY4MjdmMTliMDEyYzZiZWVmYzRmODc3YTRiMzk3ZWUxYTc1ZGY5MTljN2IyMWFhOTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f5d6f02984924e8cacd05cf1363b0ea7",
+      "statement": "Automatic Topic Memory admission is driven by dirty marks: Source capture and processing discovery mark the binding dirty when the Source head is ahead of the cursor, and the optional topic_memory_schedule_seconds must be positive when set.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/sources.py#L240-L260",
+          "version": "repo-lines-v1:sha256:a6de734d54d41ea46f59a9cbc23d750927ab26b5bf77f864b6fabf42fc44d93a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlNDFmNGRlNzY5NjE4Y2UyOTAxZjMxMTgxNjk1NjM4MjVkZDU5Y2U0NDlkZmRkMmNiOTc4OGQ0OGQyNTUwODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxZWNlOTg1ZGY1YjFhMjQzZDAyMTg0MDcyNmUzZWZjYjVkZThlNTNhMDEzOTIyM2EwYjdiNDM1N2I2MWM5ZTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlMTJmMmQwZDkwZjAyMmY4ZGEyZTZkMmI4YmM2ZWNhNmQ5OTczN2FkNTZiNTNiZWJlOGM3Njg3NTVkNGZjNDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0NGU4NzcwYjU5OGRkZWY3Yzg0NzUxYjI3OWZmMzU3YTMxMDhmM2NhNzU4ZDlmMTc1NGMwMzIyODBlYWJlMTcifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/composition.py#L1018-L1030",
+          "version": "repo-lines-v1:sha256:358bb9d93da19a261d925c74593a1f5145bdaa9a2f49de8ac43ed5eaf544f895:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzNjNhZTJjZGUyNGVlYmY2ZTAyYWI1NzY2Mzc4ZTliOGM1ZDU4NzE1NTVmYzU3N2ZkMWM2ZjljZmMyMDdhMDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE1ZjRhYjhjZmFhYjg4ZjY5NTFhOGY0YTM2ZTNmMzEyNTM0YjI2OTY5NDI3ZDE3Yjk0NTU4NTViYTk2OWY0NmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiMzZhYTRmNDg4ZDY4NjJhYzVlYzE0ODg0MzExZmVjNzllNzNiMjZmMDA1YzA4NjY5OGQxYjhhNGE4OTg2ZDkifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/config.py#L258-L268",
+          "version": "repo-lines-v1:sha256:69970eb3493a1c94a5134770bf8e5402d4bff6b27ed7552a0827ce0b6ef9d746:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjNjU1MmU5ZWQ2NzQxNjdiNGJhYjM1NTA4MmY5YjU3NzAwYmUzZjkxZjg4NjIwYWU1ODc1M2FhMjUwNTc2MmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjZTI2NDA4YmM5NWJhNTY3Njk5NjBjZGI1MWRiZTcyODc4MmJmZGU3YmJhMjk3ZTYxOTJjMmYwZmVhNzVlNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmZDIyM2ZlODA1MThlMTU2YTE5YmM1NGFkMGVkYWU4YjdmMTdkYWRlMTQ2ZTM5NGUyNjBiZWQxZDMyMDJhZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0MDZlOThmNDMzYjM3ZmYwOTk2NTFmOGYzZDkwOGZjYzgzMmM5ZTI3NGYyYjFiNTg0YzNkYzZmNDNkZGNjMjkifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/processing_discovery.py#L38-L75",
+          "version": "repo-lines-v1:sha256:c6927c4fe6642e7dd04586125625b38d2bfc9094a017332f98a43d1175597abc:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwYmZhMjljMTMxNTRlNzE1ZGVlMzc1ZGM3NjQ2Njc3MjdlYjJiZjM4OGIxMzg4M2RkNTNjMTE2MGY5YjMyZjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5OWFmZWUyNTgwMTVlZTczN2EwNGU1YmRkN2VlZjM1YjZlMGYyODRmNTZmMmExYWQ5Y2UwODg3YTlhYjViZjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxYjcwMGQyMTc3MTYzMGQzOGQ1M2VkNmM1MDhlY2I2ZTljMjk1NzViZmEwMzU1ZGE4OTE2YzRiODVjOWNmMDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMwMzM4NDg1YTE1MjFjNmYxNjc3OTI5ZmIyOTZhNTkwM2M1MTU3ODFjYmYwOTE1NGRiNzU1NGViYWZlYTNlMzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_badc54beb1964bf3a0c4cdeba86decf2",
+      "statement": "A Topic Memory Worker claims a target at the current Source head under the lease fence and the Source head lock, refusing unaccepted or replayed invocations, and a newer request never extends an active target.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/topic_memory_scope.py#L95-L230",
+          "version": "repo-lines-v1:sha256:73bdded2280aed679dbad6de03ff78b4eda8e6d36280551a8e26aa3a37e800e3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTM2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJhMjg4OTNmMGYxZDEyZTBhMWVjZjk3ZmI4NzVlZTgzMzgxYTBmZTQyZGExN2M4MGNmNzM3Yzg2YzdmZmNiMGM2IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJiYmY4MGM1MmE3NjdiOTZkN2Q5ODIwMmU2ZDY3NTAzYjQ3ZmI4NDU1NzRlYjdiYmVmYWZlODkyNzA5NzgzN2M2IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI4Y2M0YTdkMWNjNzk2YWJhM2U0NjcyMzMyN2Y1MTdlOWY4MTE5ODJkMjUwZjA3MDI5ODZlNGI1NzY0YWQ5NTg5IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIwNjkwZjcwNWYwMDlmZThjYzQxYzg5Y2MzYWQ1NjA4N2JhOGU2NDg3ZWI3NjIyZGE1OGEzZDE3NGY3ZDUzYzcxIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_4a96079f7c3f40549a40bf9ace60b39b",
+      "statement": "Each Topic processing window contains at most 100 contiguous Sources, and the window selector chooses the largest prefix whose Probe request fits 80 percent of the configured context window.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/topic_memory_processing.py#L141-L142",
+          "version": "repo-lines-v1:sha256:91ea2a6fae123cca979e3ed21ab61beaa1f983026df5a11a57ea436f1fd89eb4:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWZjYjlkY2RhMTc2ZTNiMWNjODgyNmY5ZDJkMGU0OTUyY2Q3YjMzYTljMTY1Yjg5OTc0YTUzOWZmYzMxYTc4OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTE5YzljZWZiMDMzNzhhZGNjZTk4ZjY4YWZlODY4YWY0YjEzZjExODFjY2MzMTJkZjhjMDQwYjAwMDhkM2ZkMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmU4OTNiZDVhZWRmNDc1ODY2ZDhkYWU0NWQ3YWU2OTE5MzlmMmRkZTFjZjQxMmRlZjRhYWZmOTI5NTQwMjI2NyJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/topic_memory_processing.py#L257-L312",
+          "version": "repo-lines-v1:sha256:0165d8b647b1d3acf2ed649079b6b12c07bef133ac9c6c8fd50bb2742603383f:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjNWQzZDQ5NDI3OGQwN2JkZDhhYjdjYjc0YjZkMDM2OWMwMmFmNWFiNzM1MmQzYTYzNWI1MGQ4NGIyOTg5OGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAzYWZlNzIyNmUxNTJkNzQ2YjQyOGE3ZmFhZjJmNDI3NWVhYWJlYmNmYmI5Y2YzODdlYjg1YWFjZTdlMWNiNGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1NWRjY2IyMmExYmZmNGNlZjNhMWRkNWRjOTY5MmRhMmQ3NjIyNDA4ZjQyMzYzNzU5ZDZjY2M0NTM0NTRjMzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bbd902295a2a43b2b3eb0889eb49e75f",
+      "statement": "Publication of a window is a single database transaction that requires the lease fence, locks the Source head, requires the cursor position and generation to match the assignment, revalidates the exact Source window, saves the cursor with a generation check, and writes the revisions and new Topics before commit.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/topic_memory_processing.py#L313-L452",
+          "version": "repo-lines-v1:sha256:4983095eb882364113a0d33f64daf5f4d2f100d36a9e95cd914fcb8e992aa389:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJhNjE1NzZhY2UzODY2MDA2NjhjYWMxNzBjODI4ZTBiMTZiYmE5ZTBjZDJmNTUwYWY1Mzc4NWE4YmZjZDA3ZDhmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJkOTdkMjIwYjJmNTI0OTFjNjc0N2JmNDc3YjU2OGM1NjM5OWNjZTBmY2IyNzhmOTc4MWUyODM5ZjNjMDY0OWJiIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlMGQ2ZGU3MTc4NTJmYWMwOTE5NzFhYzI4OGIyOTkyODYyYTE3NjE2NzI0MWQ0NjViYjI2NmIxNzFjODQ0NjM1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_ec1ec345f4f54d4a8eea310204b15e6b",
+      "statement": "A proposal that fails content admission (numbered placeholder bodies or internal coordination boilerplate) fails the whole window, leaving the cursor, heads, and search projections unchanged, and the rejection code is recorded on the work budget row.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/artifacts/topic_memory/admission.py#L196-L230",
+          "version": "repo-lines-v1:sha256:1ff807d09a335d4ee35fbb63bd5437f26345ff9c82c4304969593f7cff118ab5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3ODFlZWE2OGU2Y2U5MGZjNTY5M2I4OTY2ZmRmM2NlNWYwMDljMTFjYzQ0OTAwNWQ3NzkzNjY2ZjUwNjcxZGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1NWU0YmNiNGVlZGE4NTQ1YjcyMzFlYzQxMDliZTdiYmMyYjRlZmQwMzgyMzVmNjNjNTdkODI0YjM1MjFmMjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/topic_memory_processing.py#L1262-L1300",
+          "version": "repo-lines-v1:sha256:ef3c208de398ba659c48da2d11e02bebbd53d4d50825ea883ec0a81c185ca17e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxZTE5OGQwZDZkY2M4M2IzZWRmYTMyMGYzZDMxZDU3MWE3YWU1NWQ4N2I5Y2ZlZTBhZDE0NzU2MWM2ZjgyMjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwMzc5MTk3Y2EzYjI3YmM0YWVlYmNkZjYxMTVjY2QzNWVhMDliMGEzN2QwZTEwYjNlZjk3NTI5ZTg3ZDk4MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIyOWI5NmY2MTM5ZTBhZmM4OThjNTQ5YTI1MDRhMDExNDRkZmFkOTIwOTVjOTMxOWI1M2FhZmZkMDZkYmE0NDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhNGE5NjVhMDcwYzk0NTdhNTNhYTQwZTc2YzgwOWRiZDI4MTg2YzM4NTAzYmMyYmY5ZTJmNjAxODY3NmQyMmIifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/topic_memory_processing.py#L520-L560",
+          "version": "repo-lines-v1:sha256:ef211fd917772de0d4e649669daafecaf6f971a721b864bed1aadfa52e32014a:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2OGQxNGIwMmUzMWFkNDY5NTY1NDY1NDM1MWU3ZjA2ODJmYzJmY2Q1YWNmYWIwZDY2ODAyNDcxYjllMzdhNDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhYzAyN2Y5ZTNlN2MwNzI4MTczYzAzNjgyMzllMGRmNDAxYjcyN2MyMWMxNDc3ODI0ZDIyMmZhYzIwYWI0YTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhmZmIxMzNkNTA4ZDJkZTAyMWMwYWJiNmE2MDAzMzdhNDQ1YmEyZDEzYTI3M2Y4NDkwNDVhMDI5YzAyMzg2NTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3ZmY2OTY2YTYzZWMyMTg1YzI1OWU4ZjgyZTcwMzg4MTU3MzQ2ZDcyMjZlZGMyYTJmZjdkNjJmOTMxZTQ3YWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dd77635ee1004fc8a3a31b8a6d62c4ba",
+      "statement": "The durable Topic work budget is keyed by Scope, binding, and source_after, and it allows at most 3 attempts, 512 provider requests, and 64,000,000 tokens per unadvanced frontier; charges are committed before model I/O and failed work is not refunded.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/topic_memory_budget.py#L144-L240",
+          "version": "repo-lines-v1:sha256:3d9149c4f8aa96d6eae08ffefd4fb0ae9d9cc6ac18a00218c8894e4df137a715:eyJzZWxlY3RlZExpbmVDb3VudCI6OTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzMjBjMTMzN2E0ODlkNjExYTA5ZjExMDgxOTZiYzE1M2M4NDcwNDdmZjFiMGIxNWVkYjQ4NTE0MTUwMTExODYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhZGY0ZWU5ZjhkYjRlNTg3YmMwZjA2YjQwNTA5MmQwMGFlNTM4ZWRhNDk2NTBhNzkxNTcyNGU3OTY4YTkxMDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIzMjA1ZTljOTMzZTM5MmI2YTA5OTk0NzU3NzRiZGViOGQ1MGI5OTQ1NzE4ZmRjODA4MTg0NDU5ZDQ0ZWU2NTkifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/topic_memory_budget.py#L28-L85",
+          "version": "repo-lines-v1:sha256:48c030bb802d0172cdb01d040b0920ba6e12ffc2549006d7594122de886868d0:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkNTM4OWIzNTdiYzUzMDViYTM2YjY2M2YyYWU3MDEwOWFlOTE5YmI5YmY1YzE2MDU4YWMwNDMxNTFkY2EzMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhZmZhZGMzZWVmNmNiMGIxYmRmOTU1OTVjYjQ5ZGNkMWVkZmU1MTQyMjNmMTEzOWVhYmQ1OTlmOTJmOGNhOWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRlYTNjNjBlMzVjZDVmYzhlYTQ5M2JjYjNlMmE1MjVkZDQ4NzI2NjEwZTJjNWZjYTliMDg0YTkwMmI4NDVjMTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjliNjZkN2YzNTg2MTY2NDAwMDRmYmVlZjIzOWNlYmNlYjgwZTM3NGY5YWFlYWQ4OWZmZGJmMDA5M2I5YjA1ODQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_38682e78e2e849dda86a64df76bb0046",
+      "statement": "Recorded rejection codes outside the recoverable set end the frontier immediately, while related_history_limit, invalid_topic_placeholder, and invalid_topic_coordination_content are recoverable: they stay on the row for diagnosis and keep spending the attempt and provider ceilings.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/topic_memory_budget.py#L46-L85",
+          "version": "repo-lines-v1:sha256:8c357b308fe42b7412b86b2356a2365b6a4b6380309c410c86e2ccc1213c17a3:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhYmMxYjZiZmRiNjI0OGJiMmI5OTYyMjU2ZmJkNmQzZDdkOTAwMTZlMDA1NjM4OGE1MWM3MWFlY2Y1MTdhOWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhZmZhZGMzZWVmNmNiMGIxYmRmOTU1OTVjYjQ5ZGNkMWVkZmU1MTQyMjNmMTEzOWVhYmQ1OTlmOTJmOGNhOWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZlNDg5MzNmMzE3OGI2MGQ1ODg1MGNkMzUyZWEzMmM5MDUyNDZkZGY3NGM4MmFjNzY5ZDdmMzE4N2M3M2QzNjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjliNjZkN2YzNTg2MTY2NDAwMDRmYmVlZjIzOWNlYmNlYjgwZTM3NGY5YWFlYWQ4OWZmZGJmMDA5M2I5YjA1ODQifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/topic_memory_processing.py#L140-L152",
+          "version": "repo-lines-v1:sha256:1be7b792b2fa539654e2708cc1fde8a0fea172ade223b4b09bf2838f5131e295:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViMDg3MGQzMGNkZTUwZDdjMTAzZmZkNzYxMmNkNWZlMTE5MTBlZDgwODczOTQzZjVlNzE1MmUzMDIxNTg1YmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmYzI2ZWVlYjZmNGFhZjI1ZjllNjgyNWY2YjVmYTZjMjNiNmJjMWVkY2I2ZDU0MmU3YjljNDI3YTliYzc2MmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiZWUyYzg0MDMxOWQyYTIzZjcyMGQ4NDk3MzBmMTZlNmUzZTJhNmVmN2FhNTAxZDNmYmJhMzNkODAzZGEyZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmYmNmYTJhZDk2ZjdiZmEwMWNlYTI1ODgzODE0MDYyMTllNTVhMjRmMWM1ZDVmODU3ZGQwZGQzZGNhMjRhNTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1b90e3c859d54e058287b6bb31459efb",
+      "statement": "When the budget is exhausted, reserve and begin commit the terminal marker before raising the exhaustion code, and the Worker guard refuses to read or project input for an exhausted frontier, so the frontier is blocked without model work.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/topic_memory_budget.py#L196-L316",
+          "version": "repo-lines-v1:sha256:41534b412fcd10b45105fbc50e07974a68c7916c27139a4ec4024080d3c90815:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI0MzNiOTA4YzQzYThmMGU0YjM1Y2UyZWMwMmI4NjllMWZmZDNhM2JhYmU2ODY2OGU5NTdjOTA2OTI4YTQ0MGYwIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI4ZjlmNTAzNDBhOGJlNGU4NjllMmMxODVjNjg2NDVhYjUyYTQ3MTZiY2QxMjc3MGQwYmY2NjA5MzRmNWI1MWEzIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIxYzQ5YTdmODVhZDk4OWYxZDBmNTVmZWY3MDg1ZDQ0OThiN2E4YzQwYWM2MjhiZTRmNTFkZDg1OGU0MDIzNjQyIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_b47f05c056d24e9baf58c71accbdf790",
+      "statement": "Before any structured model call, each stage input must fit its token limit and the stage reserves its maximum request count and token capacity from the durable budget; exceeding a related-history cap raises related_history_limit.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/artifacts/topic_memory/generation.py#L28-L32",
+          "version": "repo-lines-v1:sha256:1aca96a070ba3bc84e2b943a0e48df50a62642c4c3ee9aa0cf1083ffdc1b45f4:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNlODM3NmI2ZjUzMDQxN2EwNTA3YzEyOGFlYzE0NjkyMTFmNjlkODdkOTc0YjIwMGU4MzZkMTY1M2YwN2ZhZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTY1YmNhNDg1OGM2YjIyYmJjZWI4YzdhNjA4ZDc4MTQ4NjQ3YzI1Y2UzMTU4YzYyNzk1ZmYzZjI3MzBiZTNjYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTliZDgzN2IwZmZmYjY2MzhiYTA3ZTcwMmY3YWI5MDc2OWFkOGVmOTU0YmM3MTkzYjc1NDI5ZjkzZDFkZTcwYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2FjMTc2NTNkN2IyZTkzM2UxM2U3MWE4ODNlZmQ5ZDhlMTEyMGEyODg3MzU2YzYyNjI5NzIxNjAzMDE2OTU3ZCJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/topic_memory_processing.py#L1036-L1135",
+          "version": "repo-lines-v1:sha256:59b6a2eecbc0c5d57186c62376a55e4f85c1d70a0bba4fcabb70e9d771683f59:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJjMTE3ZmFiNjE5YmJmZjBmN2FkYzk4ZmY4NTE3MWZiOGQ1ZDY5Yzg1NTFmMGQwYTVjM2ZmNzc2Y2Y5M2U2NjIxIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIyNDdkODVmMDE2ZjA1ODhmNDE3N2Q1MjQyMTNjZTI3MzUwMmZlNzdhMjk5YzU5MzQ3YTgzOTY1NjdjNjI2ZDc3IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJiYTc0Nzk0MjhiYzg5ZWU5MjRjMWE4ZjI1N2E5ODAxNjI0ZDU2NWI0ZjUyMDA4N2I5MDlmZjAwOWViYWY3ODEwIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI2YzU2NThhYjhkMTM0MmU1NTJhZjgzZGU2Yjc5MWI3YjAzYWQyZWJkZjA1NzRkYjQ2MzZmNmU4MzVkNWZjODNlIn0"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/topic_memory_processing.py#L555-L600",
+          "version": "repo-lines-v1:sha256:4954af2fc29403a188ec1597bf77a76c91d8294643c5a660bb2aaa74a1e7f6fa:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4N2UxOGIzMjQ5YTI4YTNkY2E1OTliYTM0N2FlMGRiNzZlM2FmYWFhMDUxZjBmZWYzZGVlNGMxNTI3NWEyNmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlN2JjZDM2ZWY1M2I0NDUyM2U2NWU5OGQxOTQ0OTkzZTBmZjE3NDZmNTUzNmMxYTUxMTc0NmYzZTAxZTc1NmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVhNDU1NjJkODE3NmQ3M2Q2NTY4MWZiNmE0ZjVjZjAxYWQ3M2YzMGIzYmUwYWEwMTg4MWNjZGY3MDNjN2I4ZTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjMmQwMzc2M2VkYjNmNGEwMTUyMjk5MWM4ZmI4NmM5NmQ0ZTU2NWUzYTY0NTg1ZTU5YTQyMTg4ZTE2MGRmMTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f47c3c1c148e49bfa2837f64b3474672",
+      "statement": "An exhausted Topic frontier is observed as a block that stops Worker launches only for that Scope, and the block keeps its attempt counters, error code, and target until an explicit retry; other Scopes continue processing.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/topic_memory_recovery.py#L50-L115",
+          "version": "repo-lines-v1:sha256:227e366e933eac34df4c9be023ebe369ec145d7d1a3f344578766c3a672d4392:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5NzA5MTY3MjJiNzQzYTYzZDBjMzUyOWI5NmNlNTIzNTQ5ODM0OTU3MTZjYzJiYWIyODAwZTU5NmFhMGFjYzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlNzcwMDY5NGYxZTY3NTlhYjVmOWU1MWYzMDdlYzYxY2FjNmU4OTkzNzM4NTlkYTQwNzM4MjY1YTE4Mzg4MTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5OGIwNjNkOWI0N2U2NTM3OTYyNTU3MmNjZTE5NzY2OWQ1NzY3ZTEyYzE4YmUwNzU2NTJiOGNkOTgxY2U4ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4ZDlhNDI3N2UwOTk1YWRkMjMzMDkxYTdjYjM1N2I0NGJjOTkwODdkYzg1MGRkYzA2ZGFiMTE0NjAyZGYwMzcifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/topic_memory_scope.py#L120-L170",
+          "version": "repo-lines-v1:sha256:646c01eb734a06a47b7986d60bb0d4b6f936bab502391184cc5cefb771a7847e:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwNjUyNGRhMWVkNzljYjU3NjZiMDU4NGE4MWU5NGYxODgzNWQ0ZTlhY2ZhMDJkODYwNDgyNTA1YTcxNWVkM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjYmE1ZWQ2NGFiNDc1MzdhNDRlODVmZjgzMTczN2IzZjc4NGUzODljYWMwZmE3ZWMzNTZlNDcyZThhYWY0N2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMzYmU1MjgyMDIzZjk1MDNhYmU3ZDBiOGI2ZjkzMmUyZjA0ZmEzZDE5MDhjNzZhNDQ0MTg1ZWRjMmRmOWM5YWEifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/topic_memory_scope.py#L55-L95",
+          "version": "repo-lines-v1:sha256:b5b9f841736b0ed748ebc676543eb6542e3646f6a9d2b44f50f6c7339fbd06fd:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc0ZmNhYjFhZWEzOGFiZTgwODMyZTUzYzhkMTgwNjU1NmJiYzViMmJlMTkwZmUzZjVhZjdhYmY4NThkN2Q1OTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyODg5M2YwZjFkMTJlMGExZWNmOTdmYjg3NWVlODMzODFhMGZlNDJkYTE3YzgwY2Y3MzdjODZjN2ZmY2IwYzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkNTBiOTQ2NDNmYmRhMzc3Y2U4ZTFkZDE3ZjI2MTdmMjg3NTJjZjFjMThhZTdiNTYxYTkzOTdkZmFkMTMzZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjExOWQ0YjAzMmZkZTJlZThjY2I0ZDhhZWI2MjQ2MDRiMzQ3MWQxYzkwNzcyZjNlODVlNTQwODVmNjc2YWI5NmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_918276a6465041628a3c7c14e818568d",
+      "statement": "Topic recovery status reports blocked when a block exists, idle when the cursor has reached the Source head with no target, and pending otherwise.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/topic_memory_recovery.py#L35-L84",
+          "version": "repo-lines-v1:sha256:f138e2cad2c6af115489594464b86cdd5592da942463972c49d974fc4d5088ba:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1ZjE4ODgwMWQ4NmExMTY5MTcxYjg0ZDFiNDJlOTQ1MjYxMDU2YjE5NjU1ZWJmN2M1ZGE5MTczZGQ2MmVkMDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyZjE2ZDhlNTM2Mjg2ZGM4MWI2NjAzZWExZGUzYzI5YWI5NzRmNzgxZjJjODA4MTBkYzlmMDE4MDM2YTcwZmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5OGIwNjNkOWI0N2U2NTM3OTYyNTU3MmNjZTE5NzY2OWQ1NzY3ZTEyYzE4YmUwNzU2NTJiOGNkOTgxY2U4ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_05d437cc05d94f64ae7d2d69701fa7ad",
+      "statement": "Retrying a block deletes the exhausted budget row for the current attempt, requests a new pending flush and intent, and stamps retried_at and the new request generation; an already retried block is returned unchanged and a block that no longer owns the frontier raises a conflict.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/topic_memory_recovery.py#L161-L200",
+          "version": "repo-lines-v1:sha256:275fdc748294f692f857165036bba07da2e66ecb5c06cfc299890ae1b054f244:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyZmM1YjczYjYwMjY1MjEyODkxYTFkMTNkYmQyNzEzNmZiMmZkY2RhMmYzZDAyNzExOTE2Y2QxOGMyNGZmYWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiNjM0ZDk5YzFkMTA2ZWZiMjFiNjQ3MjViOTE4YjhkMjJlZTljMjZhMzAzNWU4MDgwYmY1MzZkZmU4NDYyMmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI5NjI5NzhkMWJmZDM2YjUwNzM4NjA5ZWMxMzNhNDNlNDRhZWJiMTk3OWRkN2NlZjExMTg4MWIxMzU0NTE0MTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY0ZTVhYjNlYjkyMzFmNTVlNzZmZmE1NGM4NDUyYmZiYjdhNmFjMjYyN2NmN2IyMmJiNjE0ZGNiZWQ3MGVhZTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_61d3f91990404a9eac1410e40dedfc08",
+      "statement": "A Topic revision is immutable; the current head is changed only by a compare-and-swap publish_revision that also replaces the complete active projection, and an exact revision remains readable after the head advances.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/topic_memory.py#L316-L335",
+          "version": "repo-lines-v1:sha256:af8d085d7f45704766f02ebbc8e1efbb296189d5018bb271542072599af257af:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0NTllMzk4Mjc4ZDg2ZmZhZTY1NzllOGJlM2JhMzMyMWRiODMwNTI5NDA3M2YxNmY4ZjE3MjliNzk0YTljYzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwMzFkNDJkNzdkMTFjYzc1Nzk4Mjc4NjVjZmE5OWMzNTNmZTZlMzkzZmZjNjdkMjlmNzg2MWI2YTIzNzFiZjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhNGJjMzk0OTMzOTFkYmRhNmU1MTk2NjRlZGMxZjhhYTg3NjRmZTkxNDkxNjUzODlhYjkyMjQzZGViNzU2NzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3MjlhNmEyMTNlODdlMDA1ZmM3YmY1OTEyYzM5ZDMyYTNiYTJiYmM5ZjI3OWVlZGE5ZWU5NWNiYmY3OWYwZGEifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/topic_memory.py#L375-L420",
+          "version": "repo-lines-v1:sha256:457134ebd0cf951e260285c351199036a3f4027286f0e755b6cac232f0aa52fb:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlMjI1MGExZmQ5ODViOWY2YmQyYTA1OTdhYmE0YmVlODE4YTlhMWJiMDBjYTk2MjA3YmExNjc4NTg1N2RhMzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjZjU5MTFhOTg5NGZhMDhkMjMyYWU2NjE1YWFiZWY3NDk2NjFhNTNmYzIzZDlkNTQxNzIyOWRkZGRmY2ZlOTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgwMmZiOTE0ZmUyMTJmZDJhZjg0ODVhMjEyYTczZjk1NGFkZThhOGU1ZWJkMDAzMWNlYTllZjg2NTQ2NjZkZWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzODFkYmRkN2VjNGMyMDAzMTE0ZTc0MWQ3Y2ExNDczMWUwNmYzMjYzY2QwZDMwN2MyNWI4NTM1MGQ3YmNjMzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dc3fd195acf84aa79251904af0456bd8",
+      "statement": "Topic Memory initialization fails closed when a head lacks a publication, an active row is not the head, a head is not active, or a head has no active chunks.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/topic_memory.py#L101-L140",
+          "version": "repo-lines-v1:sha256:a0e56bca92b2aa301f716a2afe961a86524cc6852c511298df62bdea75ed0b52:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0MDMyYTY3NWQ3OWE4MDZkZWEyMzI5ZDdkOWI1YzhlZDdkOTM2NjhmZTBkMWEyODBlZTQxNGVlNGQ3ZTJkMjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3ODg2MTdlMTUyMjRkOWIyZWM5MjQ5YWZkZmRkMDAwODBhNGE2Y2U1Yzk3YzE0ZmNjOTY1MTBhZWRhMDFiZTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlYmEyZDRhMzNjOTcwMjcyYzA0ZGM3MDNkZDMwNmJmNGJkZWM2MzNkZjI3YjY3ODBiNDRiNzQ5OTE4ZjRmYWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6e6d39f449814798b721baa4e1ad87ad",
+      "statement": "Dedicated Topic search plans its mode from the request and capabilities, rejects a vector or hybrid search whose embedding profile differs from the index profile, and falls back to FTS with an inference_unavailable or inference_timeout reason when an embedding cannot be obtained and fallback is allowed.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/artifacts/topic_memory/search.py#L117-L160",
+          "version": "repo-lines-v1:sha256:de639e6068d043c4c0adbe02a295ba10b2d061531336b8a3948509cb939b4c10:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViZDhjOTBiOGE0NzMzOTcyMmEzN2VmOGE2NjkyOWQ1MmRkOTU1ODJkMDRmNjg3MGFkNTFjYzMyZWQ3OGFjZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyZjBmNzhkN2Y1ZTg3OGY4OTNjZTUyNDE3OWU1NWI4ZDc5MjhhNzA4ZjRmYWQwMTFkZGUwMmIxNDJhM2FmODMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRhNzljMDU1N2Y4YzdhODRmZDhkZjI0MzVkMTk1MmM1ZGYxYWUxMGZlZTQ3OTJkYTNlMTMwNWI0OWUzZWUwN2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmYzNjMGNmMWFlZTFlMzA5N2NlMDhhYjk0MzBhN2VmOWQ4ZWJlMzk4OGRjMTk0NmEwNDJlMzY4MzM0MDFjOTAifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/topic_memory_search.py#L47-L210",
+          "version": "repo-lines-v1:sha256:d6480368eb49c5ef86cf2f579459aa560a92b04408507398718ce0512ec06502:eyJzZWxlY3RlZExpbmVDb3VudCI6MTY0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwMjRiMjY3M2ZiZjBhZTZiMzQxNTdhNGM0OTZkYTI2YTFkNjAxOWRhZjQ4MDM4NjI0YTI0YWRkZjVkMWIwMjUzIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI2Yzk0ODA0MTliODQ1YWQxNDdmZmY5NDliNDdkYjAyODEwZjlmMDMzZGZkODJjNTk1YzhlOTlhOWNkZmRjMzk2IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI2MjAwOTdlNGFhNTAwNjhiYTE1N2Y5YTI3MzlmYWQ4Njk5NWUxZTBjZGNjZGFkYzU4OTdjMjAzNGM3NGQzZWZhIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJjZGJlNWJjOTQxMzQwN2E0ZTJhNGY1YzNlNmQ1NWE4OTQ1NzE3YjY5NzBmNmVjZGFkOTI4NzNlNzU1ZjI5MDcyIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_11eb26824c8543b99f4ea372be284762",
+      "statement": "Topic channel sets are fixed by mode: fts uses topic_fts and detail_fts, vector uses topic_vector and detail_vector, and hybrid uses all four channels.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/artifacts/topic_memory/search.py#L35-L39",
+          "version": "repo-lines-v1:sha256:388ea5de1ec10565298119963a12223d9e42e6ea6d2f70d3ffc0e8316b1e4f88:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODQ3YTQzZDgxMzdlODc2ZTJlZjgyOTdlYjA0MDBiODJiYTViNzE0OTExZDFkOGM1MDA5Zjc5Nzk2YjI5MmRkMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTkwY2FiNDMyNmE1MTNjOWI1YjIxNjljMzJjZGEzOGZiYzdjMzE3OTJlNGFmNjhiMjZkNDQ3ZmM1ZWY5OWY0OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzFlNDI0NjAwMjVkY2QxNjc2ZWYzODYzN2M5MzVhYTQzMmQ5Y2U5NmRlZTUzZDlmYjdmNTg3Yzg0Yjk0Y2RjMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_31190da57d0e431d95cc9bcce444a686",
+      "statement": "The RRF parameters are rank_constant with default 60 and minimum 1, and weights, a map from enabled channel name to a finite non-negative number; a missing weight defaults to 1.0 for an enabled channel, and unknown keys or a zero total positive weight are rejected.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/artifacts/fusion.py#L43-L50",
+          "version": "repo-lines-v1:sha256:b4bf907a288c885e92258707e7f56e0b4892b448885eb385debdec11b453492b:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmI1YjU1NjM4MGNhNTY1OTg3OTU1ODQyMTMwOTAyMTVkYWJkODg2YzBmMTVmYzg3OGQxMmZiMTEwNGRlY2I5ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2YyMzUyMmVhMzFjMWE4OWJkMzQwOTJhNGMwMzBjZDZhODQ3YjQ3MzQwYzk5Y2JiN2ZmZTg4MmQ3NGZlYWQ2NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWZjNzY4M2E5ZjgwODNjMDZmMWU0ZTY4M2MzZjUwZWU3MzU0MGU3Y2ZhMWE4ZjQzMTZhNWU2NjZhYmMxNGQxMyJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/artifacts/topic_memory/fusion.py#L67-L135",
+          "version": "repo-lines-v1:sha256:1d76971ab7b59f732a27997004daf64c5ae3aef06edee03b6cede5a1f5091b77:eyJzZWxlY3RlZExpbmVDb3VudCI6NjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1Y2NmNDlkNDczOWRlZDI5MGVjNzBiZTRkOWE3ZjUzYzgyMjc5YTQ5YzZlZjVhYTNhMjJhYjk2YzUwOGQ3MmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxNDI5NzgyODA5OTAxZWFhYjRhMDExNDIyZDgwMWQ1MWQ2ODI5ODQwNjE2YTMzMzZjODFlZGJlOWRmM2FhNGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyODI1MWUwMDgzN2YxMzc3YmIzZGNiMWVmMDkyNGQ2ODdhNjk3NDE4YzU0OGNhYzljOTYwMmRlODAzYzFhZmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlMTFhMzIzMTljNGI3NTM3NTNjY2EwODNiZDE5ZWEzYjQyYmQ1MGMyZGE1YzgyNjcxZDYyODUxMjY0NGM2NGMifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/artifacts/topic_memory/search.py#L77-L101",
+          "version": "repo-lines-v1:sha256:774033b2ffc38881364aa35fd52515e18fa2152f655ec9dd1abb1047b3e089c7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZiNWRkMGJiMjc5YTM2ZDg3YmQ0MzcxYWY0N2E3MzNhMjljYWNlY2MwM2M1NjNmYjA4ZDVjMWJlYmViZjY1ODAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4OTMzZjU3MzM4YzY3Mzk1Zjc2ZTZlYmYyYzIyYTFiYjU3YWRhODljNTQxNWNjNzIyNmEwYzVjZWE1M2QxMDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE0YjhmN2FlMjhjMzM4ZmQxN2VlMmI0YWUwM2Y1NGJiMzg1ZDE2M2M4YzVlOTBkNzBmMTJjNWZhZTU0YWJlMzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_70ab1b520ecc428195181668439745cf",
+      "statement": "Normalized RRF retrieval score is the sum of w divided by (rank_constant plus rank) over channels containing a candidate, divided by the sum of w divided by (rank_constant plus 1) over every enabled positive-weight channel, so empty enabled channels still count toward the denominator.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/workflows/search-fusion.md",
+          "version": "repo-file-v1:sha256:6b89e006ad9bee8fc261805fec08708113f0cb13010ba0084f05afe150cc5f0c"
+        },
+        {
+          "resource": "repo://src/powercontext/artifacts/fusion.py#L169-L195",
+          "version": "repo-lines-v1:sha256:2207064b394dda153cd49af20be87b62215950d277bea781fc9d599683df32db:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkNzA1ODY0MGE3OTdhYzA2MzM4MGNiYmY2NGE0OTI4NjgzMjQzMWZkNTM2MWI0NTcyNDI5OTI3YzNiMWM3ZGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjZmY5NTg2NDg0NzQ4OGZlOWRiOWY5MjE5OWE0NmViMzZiMWE2MTliMDhkZTY4ODAzZTBmNGI2ZTc1ODg5YTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMyM2ZkODZkOGY0MjFlN2YyNzM3NjZmYmRhOGIwYTkxZjBhZjc2ZGMwZmM3ODM2M2RiY2UxYmJhMWE0NWM4ZTAifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/artifacts/fusion.py#L83-L130",
+          "version": "repo-lines-v1:sha256:d9140d8845a91d7f697947ef82bacd8919a4d87fa96128cba23814b55749498c:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmNGMyZWM1ZmI4YzczZTg0YmY2MmQ3ZDE5NWJmNzZiZDVjZTU1Nzc4NTM3Njk5NTg0MTgyMzM0ZTQ3YmVlMjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdiZDA0ZjMzZDcyNjM3MTVmMWQwNzE1ZDM3ODhkN2RjZjUzMzQ0MjdmNmVhMzE0ZWZhN2Y4MjI4OTE2ZWJkNWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ1ZjhhMzRmYWExOGM3ZTM3Nzk2NTZmODA1MzE4ZTM0YjQ0YmFmN2Q0Mjc3YjY2ZGNiZDc3ZGIxZTQ1NWNiMmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_244c3d70ba38448f8be4de399e16263b",
+      "statement": "Topic fusion orders equal fused scores by UTF-8 artifact ID and then by descending revision, and it keeps the first occurrence of each artifact identity within each channel while preserving rank gaps.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/artifacts/topic_memory/fusion.py#L67-L135",
+          "version": "repo-lines-v1:sha256:1d76971ab7b59f732a27997004daf64c5ae3aef06edee03b6cede5a1f5091b77:eyJzZWxlY3RlZExpbmVDb3VudCI6NjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1Y2NmNDlkNDczOWRlZDI5MGVjNzBiZTRkOWE3ZjUzYzgyMjc5YTQ5YzZlZjVhYTNhMjJhYjk2YzUwOGQ3MmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxNDI5NzgyODA5OTAxZWFhYjRhMDExNDIyZDgwMWQ1MWQ2ODI5ODQwNjE2YTMzMzZjODFlZGJlOWRmM2FhNGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyODI1MWUwMDgzN2YxMzc3YmIzZGNiMWVmMDkyNGQ2ODdhNjk3NDE4YzU0OGNhYzljOTYwMmRlODAzYzFhZmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlMTFhMzIzMTljNGI3NTM3NTNjY2EwODNiZDE5ZWEzYjQyYmQ1MGMyZGE1YzgyNjcxZDYyODUxMjY0NGM2NGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_08d1e9e2cdcd4fa792df5a995a3229ed",
+      "statement": "Topic Memory processing is covered by focused tests for recovery CLI identity and diagnostics, and for public HTTP shapes, rejection of caller-selected search modes, 503 mapping when processing is unavailable, and fail-closed composed runtime behavior.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_topic_memory_recovery_cli.py#L25-L100",
+          "version": "repo-lines-v1:sha256:2c3c7da9a60577cd2ffed6c886e6475b9c4043eb4098a4bedbb560f1df54419e:eyJzZWxlY3RlZExpbmVDb3VudCI6NzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYjI4YmVlNWI4ZTRkZjYyZjk2YjNlMzM5MjFhYWYxNjg1ZmIzZTFkOTcyMzNmZDhjNjQyZWI5ZGFlY2ZlM2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwMzUyM2Y0NzVkZGYzNTgxZjJkZGVkOGZlMTlmMDBiMDNlZmQ1ZTYzOTY0OTNiZjEwMDJlYjM4YmQ5NjA1ZjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwMDcwOTE2NTM1Zjc2MmVhMTU2MWRjYTAyOGYyNzFhZWZiNjhhY2ZjYTY3YjAwMWNiYWYwZGQ2MDM0ZDVlYzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhZWVmZDlmMzRkNjNkZGY2MzNhYjVhZDc1MjJkY2RlOTFlOTY1ZTNlOTAyNjMzY2I0YmM1ZTU1NTgzYzU1MGMifQ"
+        },
+        {
+          "resource": "repo://tests/test_topic_memory_server.py#L143-L215",
+          "version": "repo-lines-v1:sha256:0817f3a777d1d8dce5c54d9c22b08018f4b93024bd6d995bc52c63f0eeed4550:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc5ZmE4ZDcyNzg3YjA2OTUzNzZmMmY3YjM1M2Y4ZjllN2U0ZGRkMDIxOTliYTJkOWE0MjdlZjQ3MmM1NDQyZDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4ZGQ2NzJjMWExYTJlYjM3ZWZmOTk3NzVjODQ0MDJhMGJjYzFkZmQxZDVkMWE2MWMxMjdmNzYwZDcyMjNhOTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5ZTNmNGVhYzJjYWY3NjE1MWI1MWY2MzIwODg3MjQzN2ViMTZjZGE5M2ExMDYyZTg5ODlkMGFiM2E3NjQxYWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIzM2Q1MzJhMDBlN2Q5YzhiNmU3YWZlMjMzMTgxZjExNjA1MjIyM2QxMzAzNmJiYTQ0YzFkYzdhZmI1YWI5YmMifQ"
+        },
+        {
+          "resource": "repo://tests/test_topic_memory_server.py#L338-L372",
+          "version": "repo-lines-v1:sha256:1092e00b7b46f8d06047250b613b2ff28d0eabf7eec62ae334d8a715847dbd6d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyZWQ5OWRhZGNlMDljMzRlMjNlNDJkNTc0ODQ2NTgwM2UwN2JlNDdiMmY2YzI5YTc0MmFjNzUzNWFiNzIxYmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljYzYyM2MyMWQ3MzQzYjIzNGVmODhmNTQ4N2IyNGMyNjAxYjkwNmI0ZmM5ODMxMWJjMGQ2ZGY2YWJjYzZiYzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiZTc0ZDYxMjY3MDE2Y2JiZDA0OWE2YTlmMzllZjkyMzE2MzFjNWY3YzUzYWUwN2E3ZjBmNmJiMDZmNWQyNWUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T09:04:09.583Z"
+  }
+}

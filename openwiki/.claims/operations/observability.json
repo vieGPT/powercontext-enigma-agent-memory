@@ -1,0 +1,724 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:0df9d70df9794f2da8b6d6a571d06b6c8a6cf8e9daa5d812c90359f4ccf50e81",
+  "claims": [
+    {
+      "id": "claim_b0754ba03de44cfebfec264112e33805",
+      "statement": "ServerMetrics gives each Server instance its own Prometheus CollectorRegistry and declares transport, application, retrieval, artifact-read, Topic Memory, runtime, readiness, processing and model-usage instruments, all named with the powercontext_server_ prefix.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/metrics.py#L204-L350",
+          "version": "repo-lines-v1:sha256:e8a21a6f8023fb9fcd2a27f3d53199ee7a019a2527172c7b3a6a881a60f1dec8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQ3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJiZDM4ZjBiMzdhMWE3OTZhNzA3ZWRhODBjNWI2MTYzMTAzNzRlMmE3NDUyYjU2NmYzMDNmYTNjODYxM2I2NmJmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIzMWEwYmNlMjI0Y2I5Nzc1NTk1Y2RmNmJhN2UzZTM2MDI3N2JkYzY1ZDJjMmVmNjRhNGRmZTQxOGU1M2MzYTE0IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJmMDM5ZjhkNTUzMWZhYWY1ZWE1MmUzZjAwZDY5ODZjYzBkMzM0YjJkNWEwNTJhNDQ3ZDBmMGFlOTQ0YmJjOTE3IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI2OTUxZjdhNmZiYzE3MjdmYTRjYjZjNTI3OWVjNDM3MDdiMWMxNmU0MmQ2NGRmOTQzNjQ2MWJlMmRkOTBmYTZlIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_a39fd9888c5b4b7098669e821f72c919",
+      "statement": "The /metrics endpoint is a FastAPI route whose handler, when access control is configured, requires the server.observe action before rendering; each scrape calls refresh_runtime so the published snapshot is rebuilt from passive Runtime state.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/factory.py#L134-L153",
+          "version": "repo-lines-v1:sha256:b9421a47a5b9f8c5b18853c4fb073110d841dd9bbaf29b24b41ce3571a7bdb28:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhYjY4N2VkYThhNmE1MGZmYTA3NTliZDJmOGY1ZWQ3NTM0ODFiNzQ1OTlhZWU0ODE1ODU2NWNkNmRkY2IxZDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MDMyZTk2NGQwOTMyMzUxZTVkMTg1MjY5MjgxYjE3MWEzYTA5YjA4YjI4NmU2NjFlYTQ3MDMyM2M4MmViNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxMDMwMjc0MDMzOTJiZWQxZDJlYTE4NmM0MzVhYzBlNDcyZjNkNGYyMGU5Nzk5Nzg5ZWE4NjQxYzIyMDc3NTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwZmVhNzgzZGUxOGI2ZjA3ZDA5MWMxYjY0Y2I5ODYzMTk4MzNlNTRiZDRmNDkzNGJjODI4NTEyZmZjYjRmMGIifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/metrics.py#L452-L468",
+          "version": "repo-lines-v1:sha256:7b6dd67aa79240638dd951a4ba9a020f7ef42c4dbfef0559e94ba3fdb107ae86:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2MmUxNWRlNTdmOGJhNjMxMDg3NmQyMTg2MmFkNzUzNjU3OGNiNjYyZTI3MWYzMmFjZTAwNmUyNmNiZTZiZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRjZjNhMzQwMDdlOWJlMDA0OTMyZmZlMTMwZDIzMmQ3NGQwMDZiZTZkOWQxMWU3YzYzOGM5MWQxYzYyNGEyMzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY0ZmQ4MGQ2N2Y2MTFlODUxM2IzYTcxNjM3OWYyOWJkMTkyM2QyMTZjOGVlNjg2YWJhOGFiZTNlZTdhODY2NjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_31483c839e6446b68c0cef4f7160af99",
+      "statement": "The /metrics route and the HTTP metrics middleware are added only when metrics are enabled; with metrics disabled the background role does not start its metrics listener.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/background_metrics.py#L36-L46",
+          "version": "repo-lines-v1:sha256:ffc39e35d8f3bd5939116c7233a63485d15b222f6376275762c88cb7acf49254:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAxMGMxYWM5Mjk2ZDYzM2IxMzc0NTlkOWQ3ZjdkODIyYjBhZTdhN2YxZmQ5YmU4MGYwMjM3YTcwZjY0ZjljNzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiZWQzM2IxNzJjNGE3OGY4NjE5NzkwMzYzMDllMDFiMjg5OTQ4Nzg3ZTQyNTMzYzIwZGU2MTRlNTRhODI1NzQifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/factory.py#L476-L491",
+          "version": "repo-lines-v1:sha256:5ed71cd07f644c55c9cbf7cfe43d7934c3804a03512011a23fb717b97906032d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmMjkyYzU2ZTA4YWY5OGE4ZTI4YWU0NjQ2NTlhOWM5Mjk1ODI4NGVkNWQ1NTY3MTc0NGZhYTdhNDgxM2FmNjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmNDI2NDJkZWNkOWQ0NmY0MWNkYWE1OWM3N2YzYzI1MmZmZjgyNjQ1NmNjZmYyZjY3ZWJmOGM5Njg0YWFiMTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwZDkxY2ZkN2ZmOWY0YjZlM2NiNTU2N2M1MGUxYWFiNWZlODI1YjhhYWFmZTg5YmJjNTViZjA3MzY4NTA0YzYifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/settings.py#L222-L231",
+          "version": "repo-lines-v1:sha256:ebb82f943cf2ccb78a839acaaca7c75db121b1a50d9005904a4702c5caa9a927:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3M2FmZDljZmFlMjk1ZDE1YTQ5OThmYWMzZDQzMzliNDNiYzE2MzAzNmJjZDZjZDg2NWZiMjlkOGUzY2QzMmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzMGJhYTJkMjM0NWM0ZDcyOTQxZWIwNjIyMjVkYWE0ZTkzOGExODRkNWU0NjZjOGMzYWJiODczZmU5M2ZkNzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIxYWIxYzVjN2RmNzEyMDA3MWJmNzdjMjExY2IxY2Y1ODMyY2MyYWY2MzY4MjkzNWRiMDQ2NzE4NTc3YmUwYWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f2cbcec8f488403695dbcf8ac3cb25af",
+      "statement": "refresh_runtime stages processing counts and the passive operational snapshot together; if the build fails it keeps the previously published observation and increments powercontext_server_metrics_collection_failures_total.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/metrics.py#L452-L468",
+          "version": "repo-lines-v1:sha256:7b6dd67aa79240638dd951a4ba9a020f7ef42c4dbfef0559e94ba3fdb107ae86:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2MmUxNWRlNTdmOGJhNjMxMDg3NmQyMTg2MmFkNzUzNjU3OGNiNjYyZTI3MWYzMmFjZTAwNmUyNmNiZTZiZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRjZjNhMzQwMDdlOWJlMDA0OTMyZmZlMTMwZDIzMmQ3NGQwMDZiZTZkOWQxMWU3YzYzOGM5MWQxYzYyNGEyMzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY0ZmQ4MGQ2N2Y2MTFlODUxM2IzYTcxNjM3OWYyOWJkMTkyM2QyMTZjOGVlNjg2YWJhOGFiZTNlZTdhODY2NjEifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/operational_metrics.py#L116-L145",
+          "version": "repo-lines-v1:sha256:c4aa71c74d8fe1eb4b6bf5cf52ebebcd44406197d9b378e8bdc7c5e8bf866367:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlMjM5NjhiZDgzNzQzMTMzNTQxZDdmOTFkNWJmNjFmZTJjMjk2ZTIxZGU5NDI1MjE5Yzc3MjE4YWE2YTE5Y2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ0N2VkODU1ZjBkYmQ4NDg2M2FjOTA1NDZkMDE2ZDY3OWU5ODhkYzE4OTYwZjAzOTQzNjhhODFjNmVmNDQzYWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwMzM0NTY4YTI4YTM3OWYyNTYxZDcxMzZhMzcwOTIwZTVhYWUzNDQxMmMzODMxZmU3MDQ1MmU1ZmVlOGU0MWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_81bf89da18164bc29bb7a13d4005c587",
+      "statement": "The operational collector copies existing readiness and Supervisor snapshots and never probes a dependency, invokes a model or waits for a worker during collection; a publish replaces the whole snapshot atomically.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/operational_metrics.py#L111-L145",
+          "version": "repo-lines-v1:sha256:8c67afc935af28facb32ae56e3ff0492fbd260335ccec0dcb1e10f750466371d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1MDg0MGUwZjAxZjNjYjU2NjhiYTM5YWYwZTMyZWM0YTFjNTY2Mzc5ZDU0NTg5ZTM1YmE5ZTU0MzJmYTVkMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViZTI5NDlkYWI0MzI3ZmY1MWNhOTc0NWFlODRkMzQ3NzA1MWUyMGQ5YTQzMDc0NTBlMWM5OGU4OTk0YzVkMmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwMzM0NTY4YTI4YTM3OWYyNTYxZDcxMzZhMzcwOTIwZTVhYWUzNDQxMmMzODMxZmU3MDQ1MmU1ZmVlOGU0MWQifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/operational_metrics.py#L146-L175",
+          "version": "repo-lines-v1:sha256:5b4849ea42775f3f71285731f02ebdd1618ed06aec4eb5113376731639b72d04:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2NmJlZTc2NTgxNzg1YjE1YzNmZDgxMDk1MGZjNTRlZWQyMzgwNjBiYmJiODhlYmU0ZjRhYzZjNzM5MDgyNmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE2M2UwZjUyNTI4MmQzYTkwYjFjOGYwNjgxMjY0ZDEyOWRiZTA3NTA0NjJjNTgxNzk2NmUzNzJjNmZjMDIwOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczZTU2NzE1NDA0NmVlYTFjNmNiNGYzMzJjZWFjNzZjMGU5NjU4N2ZlOTk3MDYyNDkzNmM5NDBlZWI5MDI5YTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5a7c96a3c58445aaa52305821423d669",
+      "statement": "Readiness and dependency states are exported as one-hot gauges over fixed state vocabularies, only allowlisted dependency names are exported, and an absent observation is not exported as a healthy zero.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/metrics.py#L403-L418",
+          "version": "repo-lines-v1:sha256:a1f6e97e276ff6c643c8475ba13868a2096f156ed7896dffc23004bcd650404e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkMTlkMjU5ZjNmMGVmOGNjNTNiZjQwMTcxN2YzMDFkYzk4MGIxZjk3MzE1NTA4MjFjYzY2Yzg4ZDc2MmE4ZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc3OGNhZGE0YzQ4YzhiMTE5ZTEwMjExNGEwZDM1NDBmYjIwNzJhZDdlYzJkOTFjMzkyZGUyZWJiMzA3ZDkzZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQyOTM5NDgxOTUxY2I2OWEzMzAxYWE1OTk1YTE3NWFkODc0YjJkMzZlYzQ0M2VhYmZkYjQwZTMxZDM5MmIzNjcifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/operational_metrics.py#L180-L231",
+          "version": "repo-lines-v1:sha256:a6151ae4f7c1dbc9d852935aec292c9def8741efbb1e83804db870d147b66a76:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjNDUyMjgzZDFhZGE5YTQ3YTMwNTU4N2FiZDc1ZWU4MzdkMGRmNWEzYjgxNWU1YmFjNGUyNTQxNGU2YmQ4OTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmMmVlZjIzYzA0NjljOGNjZjk5Mjk3MGQ4MWE0MmZkMWNlMWU0MTVhMzRiNjA3MWVlZjBjYjc3NGU2MjE2NzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwNDJkNDI4MmNjNGFkYjk2YjViMmI4ZWU1YTQ4YWRlOWEzZGZlZmU4NjVhODM3MjA4MmE1OGZkMzVjOTBkNTcifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/operational_metrics.py#L72-L86",
+          "version": "repo-lines-v1:sha256:71429dcbf8fe735f6e8b3efd48a152109e3084ba1da7cbd5e7b896e4e5da739b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkYmNkODVmNDMyNTAzOTIxMTg1MzUyZjNiNDQzMmUyYmUwNGI4ZWJmNzE2ZjJkZGMxNzBhNTAxMmNmNjBhMmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5OGIwNjNkOWI0N2U2NTM3OTYyNTU3MmNjZTE5NzY2OWQ1NzY3ZTEyYzE4YmUwNzU2NTJiOGNkOTgxY2U4ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU2ZjEzYmUyODBkODhiMmQxNDg2ZTA0MjhjZjdmODg1MDU5NjEyZjE1N2IzMDYyNDQyZDVhODk0M2Q5NzkzYmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_377bc69d5c364bda9db7602ab095bb3c",
+      "statement": "Freshness timestamps are kept separate: the telemetry collection timestamp is 0 before the first collection, readiness observation timestamps are distinct from actual dependency probe timestamps, and probe timestamps are not updated by cache hits.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/operate/observability.md#L184-L261",
+          "version": "repo-lines-v1:sha256:38c40a840d621bea2d7812573fe402e7fc2b54ceed1831b1c78840d8e96ef4d4:eyJzZWxlY3RlZExpbmVDb3VudCI6NzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5MWM2YmQ3YWY5OGJkMDJiMzFkZjc2MWQ0OTBhNWZkMDg4Y2ZkZDQ4YjhmMGY3ODdmNjM4MGRmOTYxZTQ1ZGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxMmY2OTEwZjliZmU1ZDA5Y2M5NWYzYzBjMzIzZWVmMDM5NjMwODVhMjJiNjViYzg1ZDcxOTg4OTJkN2UzZTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg0NzM0MTgwMmU3NGZkYTg3ODlhNmMwOThlYjI3MjBjNDE5OTBhYWQ5NGJiNWM1Njk4ZjUyMmI2MTdhZTI3ZTgifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/operational_metrics.py#L146-L175",
+          "version": "repo-lines-v1:sha256:5b4849ea42775f3f71285731f02ebdd1618ed06aec4eb5113376731639b72d04:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2NmJlZTc2NTgxNzg1YjE1YzNmZDgxMDk1MGZjNTRlZWQyMzgwNjBiYmJiODhlYmU0ZjRhYzZjNzM5MDgyNmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE2M2UwZjUyNTI4MmQzYTkwYjFjOGYwNjgxMjY0ZDEyOWRiZTA3NTA0NjJjNTgxNzk2NmUzNzJjNmZjMDIwOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczZTU2NzE1NDA0NmVlYTFjNmNiNGYzMzJjZWFjNzZjMGU5NjU4N2ZlOTk3MDYyNDkzNmM5NDBlZWI5MDI5YTcifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/operational_metrics.py#L180-L231",
+          "version": "repo-lines-v1:sha256:a6151ae4f7c1dbc9d852935aec292c9def8741efbb1e83804db870d147b66a76:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjNDUyMjgzZDFhZGE5YTQ3YTMwNTU4N2FiZDc1ZWU4MzdkMGRmNWEzYjgxNWU1YmFjNGUyNTQxNGU2YmQ4OTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmMmVlZjIzYzA0NjljOGNjZjk5Mjk3MGQ4MWE0MmZkMWNlMWU0MTVhMzRiNjA3MWVlZjBjYjc3NGU2MjE2NzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwNDJkNDI4MmNjNGFkYjk2YjViMmI4ZWU1YTQ4YWRlOWEzZGZlZmU4NjVhODM3MjA4MmE1OGZkMzVjOTBkNTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_74c57a39193b4964b0f5e9d439d1f5b5",
+      "statement": "Processing family labels are admitted only when they match a lowercase hyphenated pattern within MAX_ARTIFACT_FAMILY_LENGTH, and processing outcomes are restricted to a fixed vocabulary before being observed.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/metrics.py#L135-L170",
+          "version": "repo-lines-v1:sha256:5a6b55806d71ac09148755ac2ca3cacae935a0535aeaba42806536c3773f7caf:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhZDViZTNlYzcyOGU3MDYxYmIzZWE3Y2ViNGE2MjZlNjdkMzdmMzJhNzk3YTQ0M2I2ZDQ4NDg3N2I0NzkxOGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5OGIwNjNkOWI0N2U2NTM3OTYyNTU3MmNjZTE5NzY2OWQ1NzY3ZTEyYzE4YmUwNzU2NTJiOGNkOTgxY2U4ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ0ODc1MWIwZGQwZmI4MzUwNWI1NGU1NjM3ODgyMjRiMGFkMTE1OWY1M2NkMDVmMjdjNDkyMjlkYzEzOTQ3ZWUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/metrics.py#L419-L428",
+          "version": "repo-lines-v1:sha256:690429091640737ed440fd52a76ef4c530097240587f448ff0f82503027ca01e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxMWI4NTIzYzNhODRhYjE3NWZhYWQwNDYwM2I3NTc4ZWM0ZjIwYzc5M2VmYzYwYjQyOTM1ZDllMGNlOTcyYzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkZGRhNGRjZTFiNWVhNDExMWFlOWQyY2FiNDZiNmM2NjE4MjQyN2M1YWNhOGQxMGRjNDljYjkxY2QyZDMwNDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY2YjliN2Y2NzQwMTViNjAyNzliMDJlOTA3MTUyNTMwYjcyZDY0YWE0YTBmOGRmNWI5ODg5YzY0MDQwMThmZjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ2NmIzNzdhMjYyMThlNDU4MTI3MGViMDI1MGJlYjM5YjRlM2E5ZTU2OTAzNmUwNDhkYWFjOWVjNmI0ODljZGMifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/operational_metrics.py#L176-L179",
+          "version": "repo-lines-v1:sha256:a4b8d251568f0f5ca68bd6d9144a6b4de04511ea39b63cdf1724cc78da8a6ab2:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzE2YjA3NmM4ZGI2YWFkY2QzNTRkYWRhMDEyMWU5OWE3ODNhNGU2ZTQzYjIzNzM5OWQwMGNhNWE1MmRmMGEyZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmRhOTgxZGM0Y2IyZmU2ZDk1OGI1Zjg3YzgyOGE4ZWM2ZGI4Njk0M2YzNjYxMDA2ZTFkZjlkMmY0OTE2YmMxMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDk0ZmE5NmE4Nzg3ZTE1NjJiMWQ3ZDk5OTg5N2E5NTYzZmM1ODc3NTI0OWQwNDkyMWY3MGQ4MTIzNTkzYWJhYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e8427b03889f467c819c073086b89906",
+      "statement": "Exemplars are attached to application and transport duration histograms only when tracing is enabled with a tracer and the current span is sampled; the exemplar carries the trace_id and is never a metric label.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/factory.py#L203-L207",
+          "version": "repo-lines-v1:sha256:1f71f66029a74f778a94ebf2e612dd7540a39b892b0c4f764ce737c6732add54:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTQ4OWNmOTNhOTEzMTc1OGRiZjRiZTg1OWU5NTUxNjg0NTM2YjA5Y2MzNTYzNmEyYmRjMDkzNzZmZDQ0ZGNlZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTkwOWE1M2E2MThkMDI4ZTFkMzAwMGMwYTdhYmNlZWNiZTVmYjM3ZjRlNTExZWZlNDY2NDNmYWQ2ZTY2ODcyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODE1M2JjYTM2N2M0MDg0NzhiMTRmMjFhZTBiNjQ4YTU1YTBkN2E4MzFkZjljYTk4MzhmODk2ZWY5MmE4YmNjYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWFiZmI2NTA5NDBiNTE5ZjA4OWUwNWNjYzMwNTA2MDE5MGIwN2U4OTBiMTBhZGQ2MGEwMzYyMWM3MzU0ZTIyNyJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/server/metrics.py#L505-L519",
+          "version": "repo-lines-v1:sha256:ff3ef4bed8801b0d8127553245145922ac1d06dfcaae15838e7484fba54a7595:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyYmJhZDc2MjQ0MzdhM2JhN2ZlNmM5YzliYTZlOTI2OTI5OGE0Nzg5ZDQ2MzhhOTE1YzM5MjJiZTJkMzIzMzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0NmMwOTk3MTQzMGIwYzg0ZTRjN2E1Mjc1ZjQ1NDRmZDgzMzYxZjQ3NjQ0NjllYjk4NDI1ZGU2OTM0NzVmZWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQyZWZiNzI3NjgwZmYyOTdlYmRkMDJlNTY0ZGMyMzNlNjUyOGVlZjAzZmNhY2RiMDgxMzRhYzA5YzRiMGE5NTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d4cde58984624bc0b9c561bcc15733d0",
+      "statement": "HttpMetricsMiddleware labels each external HTTP request by its declared operation identifier or the value unmatched, skips the health, /metrics and MCP paths and internal bridge calls, and records success only when the body completed with a status below 400.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/factory.py#L486-L491",
+          "version": "repo-lines-v1:sha256:42d92416537cc6331453b03549ae4a864e747bcce543ea67900f43f69649a76d:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODA3NGE1ZTU2MjdkNjNiNGM0N2Q5MmI3NTA4MmI4MjFiM2FiYjAyZmE2M2U3ZTEzMjBmYzYwYTZjZTk1ZjdkYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmYyOTJjNTZlMDhhZjk4YThlMjhhZTQ2NDY1OWE5YzkyOTU4Mjg0ZWQ1ZDU1NjcxNzQ0ZmFhN2E0ODEzYWY2MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTgyYjMxNjZiYzdjYjIyYmZlY2QwNDg3MDNkMjZiZTAwODI5YWI5ODI5M2VkZjQ4MWNlZGM4M2FlNjE3YWEwOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDBkOTFjZmQ3ZmY5ZjRiNmUzY2I1NTY3YzUwZTFhYWI1ZmU4MjViOGFhYWZlODliYmM1NWJmMDczNjg1MDRjNiJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/server/metrics.py#L566-L613",
+          "version": "repo-lines-v1:sha256:10a6f55273e1d44a35ff55b2a7e23f97862587ce08bc59caae7607678daec239:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5YmRjNjM3ZTZhNWIzNmMyZDIxOGZmZDRjN2NiMmQzMjZkZmE4ZWIwODFjM2QzYjkzYmRkOTQ0NjNkNjI4YmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYyMGZhZWIyODdhNjUxMzBmZTgzMTYwYWJkMGZiOTA3YjRhNGY0NzU0Mjc2ZTEyM2IzMWJkMTllZjI3MjY0MTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxYTEwMTRmNjM3MTM0YzNmNzYyNDI1ZWEwYTJjNGVkOGIzYjYyMjE0ODkzNGI0M2EwMGQxZTY2NjEwY2FjMDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_59e37c32de3544c6a8a4d602b56be70b",
+      "statement": "powercontext_server_http_responses_total records the actual status only after the ASGI send of response headers succeeds, counting statuses from 200 to 599, and it is separate from the transport outcome counter.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/metrics.py#L520-L565",
+          "version": "repo-lines-v1:sha256:7cedf9ade8527e280efa708062907db5bf82132435f99f82034a68f3b65876b2:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzMmNhNzI5ZmZiYWQ4YWViZDBiMWIxZmY0MGRlYmZlNGJiZWEzZDg1NTRmYmZmZDg2MWMzOWQ0N2U2Y2IxNGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJmM2VmNDRmNjhlMzk3ZWI4MzBmMDM5ZjdkYmZjNTgwMDU3YTI3ODRkMGU0OWUxNjMxMzk1MWVmMjQwZGFkZmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d96c566088b84b68b3a983da0a4a6399",
+      "statement": "The background role serves only /metrics and /health/live on its own listener, bound to the configured HTTP host and to metrics.background_port, whose default is 8001, and it exposes no business API routes.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/background_metrics.py#L36-L60",
+          "version": "repo-lines-v1:sha256:fd540fbf0871c3b73df6d155a07ff38ef5e952adb8c0352106980537530c68bc:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3YjdjYTVlNmQ1MGY5ZDcyM2IwYTAyOTgwNGIxNTRlY2U5MmMxYjg2NjZmZDBmMDJmMDU2NWE5MWNiNTY4NGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAxMGMxYWM5Mjk2ZDYzM2IxMzc0NTlkOWQ3ZjdkODIyYjBhZTdhN2YxZmQ5YmU4MGYwMjM3YTcwZjY0ZjljNzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwNDZhNjIyOTdiYmU2OWRkMzEyNDRmZjE1Y2Q5YzYyNWMxMzViZTg5ZTEyYTFkMzNlZGQxNjlhY2FiMjk0OWQifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/factory.py#L946-L968",
+          "version": "repo-lines-v1:sha256:f0b20cfa17c63e34edbfa9440d89b8d26b59880dda3236d2f663b6166ce6ef7b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5ZjJlMjg2ZTlmYjZhYjI2YTZlYzhjZGIwNzRiNmUxNmE1MWUzMmU3NDFlZWI2NTUwYTdhOTAzZGE2MTNhMWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkNjdiNDY2Mzc4NzVjM2JiN2Y5MDNiMWRiODczNGI0YTI5NjY4NWRmNGRiZTY2YTRmNmNlZjdmZGM0MTE2M2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQzZDE3MWRlNzU0MzFhMDIxYTBkOTRmYTc2ZmFiZjBkNzEzOWM4OThjMWEwYjQ0YjQzY2E2MDkwM2ZhMWI4NDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/settings.py#L222-L231",
+          "version": "repo-lines-v1:sha256:ebb82f943cf2ccb78a839acaaca7c75db121b1a50d9005904a4702c5caa9a927:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3M2FmZDljZmFlMjk1ZDE1YTQ5OThmYWMzZDQzMzliNDNiYzE2MzAzNmJjZDZjZDg2NWZiMjlkOGUzY2QzMmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzMGJhYTJkMjM0NWM0ZDcyOTQxZWIwNjIyMjVkYWE0ZTkzOGExODRkNWU0NjZjOGMzYWJiODczZmU5M2ZkNzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIxYWIxYzVjN2RmNzEyMDA3MWJmNzdjMjExY2IxY2Y1ODMyY2MyYWY2MzY4MjkzNWRiMDQ2NzE4NTc3YmUwYWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2f330ea5f979450babf411d83bf8ce8b",
+      "statement": "Provider call metrics use the powercontext_server_provider_ prefix, exclude readiness probes, and keep provider URLs, credentials and content out of labels.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/operate/observability.md#L363-L421",
+          "version": "repo-lines-v1:sha256:0eccc014e1e10aa59c1e90ff0212a03cbc9d0272db4af727d2b2bef978996332:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkMmIwYTRmMjBiNDlmNTcxMmMxNDM1MGMwYzVhZjJhMjZhNzIzNzc2ZDc1NWU2Y2VhOGQ0YTdlNTA2YTgyODYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI1ZjQ4MDNmOWEwYjBiZWE4MzgzNTM2NTdjYzk3NjdlNGUyZjA3NmM1NzgyNDI2MjFlNTJkZjNkOWE3MmE2YzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjViMzJiNjFmZmNkNDc5ODkyYzNiMmM4ZjcwMjQ3NDc2ZGQxYWE4YjZlYzcyMWFlNGQxNzA1YWRiZWNkOWIyYjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_34b10b87f063457abc85509593ff30a5",
+      "statement": "When tracing is disabled, configure_server_tracing builds a TracerProvider with a ParentBased ALWAYS_OFF sampler, creates no exporter, does not install a global tracer provider and leaves inference instrumentation unset, so spans have valid contexts but are not recorded.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/tracing.py#L474-L494",
+          "version": "repo-lines-v1:sha256:b8ab1124d56359a08cb9be3c8b4a9595d283262c98b00edd75395a3fed7b6d69:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxZjQ3M2E1N2E4NWY2MDFjMmM2OWM2NDA2OWZiOTU3YzkyY2QwNTRjMmVhMDk1ZjczODRjZDhhODI3MGZjMzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMyMTQzMDJmNWFlMmI5ZjNiOWMyZDEyNjE2YjQwM2M4MzgxODc0OTEyMGY2MjhmZDY0NGJmY2JmYTM5MTI2ZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE2MmZlZDUxZWExNGVjMzkyNTZiMjc3YTA2YmExNjgzMDZkOTljNTE4YzVjNTM1NjI1YjkxNDNlMzRiZjQ3MzUifQ"
+        },
+        {
+          "resource": "repo://tests/test_server_tracing.py#L127-L146",
+          "version": "repo-lines-v1:sha256:4d76291df700ae36e4c74bfab874949b9d745ada653b49a4e5b11fca2023f33c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwMTlkZGFiM2RjMTJmZGM1YmViNWEwMzU4YzgxY2UyNDRmNDU5NTRkNTFjOWEwYmFhZTQ5M2IwNTFkMzVlZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwMjIwZTkzMjJlZDRlNzRhMDM5MjQ3OTNhOGQ4NzM5YWFmNjVlYjk4NzI5N2E1ODM5NGUwOWI2MmU3OGJhNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRlOTg5ZWIxZjE3YTBmZmQ0MWJhOGQ5ZTUzNzgyMmU2NTJmMjVhN2E4MGZhMWY1ZDIzNWZiMDI2ZDdmNWU4YjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d751309a65cb4935bd501d85603a269d",
+      "statement": "When tracing is enabled but the OTLP HTTP span exporter cannot be imported, configuration raises a RuntimeError whose message names the powercontext[server,tracing-otlp] extra, so the Server does not silently continue without export.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/tracing.py#L46-L52",
+          "version": "repo-lines-v1:sha256:593f5af35a5b2d5fce2d20731c56254cd49736d48e7afb1d00caa3add23970bb:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFmYmEwNTI3YzM5NTNjNGI2ZTBlNWI1NzM5YmE4MzYxMmY4MDUzYmNkYzk0NjY3MzAxOTNjZDFkNTkwYjQwOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWU3OTQxMTIyZjFlYzYwMGM5YTZmYWExZDkyYmVlYjI3YmRlOGQ2ZDg0YmEyNmYxYzA5NzI3ZWQ5MTVkYTA3YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGVjNTIzM2Y3MTQ4NTNiNWIyYWRjYzAyZWM1YWQ1N2EwNzRjNWM3NDlmYWY4M2Y0ODViYTU2ZmJjNGZmOThkNCJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/server/tracing.py#L474-L487",
+          "version": "repo-lines-v1:sha256:050f7a4f82ee78c012030fae70d90dff9c599eec90f77a92cfcca60c01f4a1fa:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxZjQ3M2E1N2E4NWY2MDFjMmM2OWM2NDA2OWZiOTU3YzkyY2QwNTRjMmVhMDk1ZjczODRjZDhhODI3MGZjMzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzNGQ0NzUwMjhhNjFmMzZjZDE4N2EzOWMxNWU4NWRjM2NjZjIxYTg2NTc2ZmExNGM5NDYwNzMzZjExNzY0MTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMyMTQzMDJmNWFlMmI5ZjNiOWMyZDEyNjE2YjQwM2M4MzgxODc0OTEyMGY2MjhmZDY0NGJmY2JmYTM5MTI2ZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4NTJlYzNlMmFhOGE3MmRhOGI4OWZmM2UzNDQzNjU5Mzc2MzA4NDNlYTkyMjRiNmJiZWQ1M2Q4YzVmZWE5YjkifQ"
+        },
+        {
+          "resource": "repo://tests/test_server_tracing.py#L554-L559",
+          "version": "repo-lines-v1:sha256:b0e56bbe67718df15a29cd781ca9f2efb8c99cb142966ced78745ed2aff4a5c5:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGI2ZDg2NWFlOTZhNDVlMzJmZmU0NjAwNmEyN2M2OGEyYjRiYjM4ZjVlZTU1MWY2OGNmYTc2OWQ4MzYwOWJlYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTI5ODljYWUyNjc0OGI5MTRiMjRlZGQ2NDVkNzAyYzEzYWExY2VmYmMyMWM5ZmY1NDcxNTFjZjhiNmQ0OTY3MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWZlYTA0ODA0ZmIxMzMwOGZiMTkzYTI4OGFhNjk2ZjA2YjA1ZjAwNDliZmE5MjY5NDMwZjhiNzg5M2U3NjBhZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_570f577a5fb7470da44113fac5533876",
+      "statement": "When tracing is enabled, the span exporter is constructed without an endpoint argument and attached through a BatchSpanProcessor; the source does not check OTEL_EXPORTER_OTLP_ENDPOINT, so the destination comes from standard OpenTelemetry environment configuration.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/operate/trace-with-phoenix.md#L104-L110",
+          "version": "repo-lines-v1:sha256:e730350584de8e028c0b0e171e88ed0c98e314eea13c051025085e476064302b:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzJmYTAzM2ExNDg5OGYyNmZhZjVmN2EyYzNkZDBmOTFjMDdmMGRiMGFmNDU5YWFlMjAxZTBiNWUxY2M4NzM2OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2Y0NGVjZGViZjJhYjVjMDk5ZmFhN2M2MjM1ZDRiYTdlZjIyNjY1ZTRmM2E5YjZhNTdhMTQ4MDZkM2E4Yzg1YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTQ1ZDYwZmQxOTJmZTcxM2VlOTJhNWI1YzRjMzY1NzM0YmM4MGMzMGRiYjVhZmI3OTc3NjNmY2Q2ZjlhYWZhZiJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/server/tracing.py#L474-L494",
+          "version": "repo-lines-v1:sha256:b8ab1124d56359a08cb9be3c8b4a9595d283262c98b00edd75395a3fed7b6d69:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxZjQ3M2E1N2E4NWY2MDFjMmM2OWM2NDA2OWZiOTU3YzkyY2QwNTRjMmVhMDk1ZjczODRjZDhhODI3MGZjMzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMyMTQzMDJmNWFlMmI5ZjNiOWMyZDEyNjE2YjQwM2M4MzgxODc0OTEyMGY2MjhmZDY0NGJmY2JmYTM5MTI2ZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE2MmZlZDUxZWExNGVjMzkyNTZiMjc3YTA2YmExNjgzMDZkOTljNTE4YzVjNTM1NjI1YjkxNDNlMzRiZjQ3MzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0378d111d0854995ba2eef8b9612545f",
+      "statement": "The foreground Server configures tracing before building the application and shuts the tracing provider down in a finally block after serving stops, and it drains server logging after that.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/cli.py#L904-L938",
+          "version": "repo-lines-v1:sha256:ad49f544b390ef9958346669a81d0848d9bd4fb8fe63fd043c18dd69cf91d735:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwZDAzNTNhN2ViZjEwZWNlYTRkNzM0ZDMzYjhiZTQ1OTIxNTU5YTYzMzMxZmVhNDMwZGE2NTU3MmNhNzY0ZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE3OWZkOGZmZTY5ZDI5NmRiNTY1ZDdlOWQ3NjVjZDYwOGVkZTNiN2MzNGI3NDRkYjg5MGE1N2I3ZTk2NWJiNjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3218fa773cf6413791c846a6a10c2f4c",
+      "statement": "HttpTracingMiddleware opens a SERVER span from incoming W3C trace context for external HTTP requests and sets the outcome to success for statuses below 400 and to failure otherwise, while passing internal bridge calls and health, metrics and MCP paths through untraced.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/tracing.py#L373-L432",
+          "version": "repo-lines-v1:sha256:f984d3d5ad62588472d97fb2ebea27e49f7b2e8fc3b095374cd56575534a1eaa:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ5Zjg1NjlmNzZjODFiMTI1YWViZGFiNzY3MzM2NDRhMzg1N2I1Njk0N2M4OWY4OWUzYWE1OGNhZjBmNWFkNzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjMzEwNWQ3MTI2MTFhOTFmMDYxOWI0YmNkYjllNjIyMDkzMTk2MGQwMjc4MDlkNDE1M2IxZWM4ODEzOWQzMDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzMTU3NmJjZmU0MGM2NjkyZmE3YTM1OWU0OTNjMzZkZTQwOWY0MjI4YzE5MGE1YWMzYzJhZDY3NDcxNzRiYTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwNzZlMjEwZTM0NzI2MGY3YjI3ZGQzMDExODY5MzVkYjE4OGMwZDhkYzdmZDdiMDVkNmE5ZTk0YjY4ZmQ2NDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6c56ae206a3d4fa8b240a27239f7b1a0",
+      "statement": "The request ID that clients receive is the ingress span ID formatted as sixteen lowercase hex digits, and a server-generated ID of the same shape is used when no valid span exists.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/tracing.py#L519-L525",
+          "version": "repo-lines-v1:sha256:598a401e8f87a108c76979ccd55d2a96f55a0eeb1c591d2e8a48a740f11885c5:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTdiMGJmNzMxNDAwNmQyNjlkYzEzNjgwMjllMThjMmM1MTgyZGVkZDUxZGZkOTVlY2MwZDUxYjUzMTkxMmQwYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTMzNTk4NDI5OTExZGIzYjFiYjdmMDE5YTY3M2M2ZDY3MzM2NDU4MTcyNTE5ODM2YWM0ODkyNTU5YTExODliNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzE2MzUyNzNiYWFhZGVmN2E2YWZiNDEzOTU0MTQ2NjRkMTZlMzZlNzM1OGQ5Zjc3NWZhMzA4MWE0ZjZkMTJiNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c9456be0c6914ba9b5fd5706fb611085",
+      "statement": "McpTracingMiddleware creates a SERVER span named MCP followed by the MCP method for each logical MCP request, sets powercontext.transport to mcp, and binds the request ID for the duration of the call.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/tracing.py#L432-L473",
+          "version": "repo-lines-v1:sha256:f0afbb5f241de331e9a5ff7b626e336354e10a38e817b72d2a8a5a1b89eecceb:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjMzEwNWQ3MTI2MTFhOTFmMDYxOWI0YmNkYjllNjIyMDkzMTk2MGQwMjc4MDlkNDE1M2IxZWM4ODEzOWQzMDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzZGYyYWNmMDZlOGMzZjAzYzcxMzVjNmU4YWM1YTljYTU0MzJhYmUwNmE3NGFjYTBmZGQ5YTUzYTAwOGY5ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNmNGU4NDUyZDZiYTkxYzQxMDBmZTAzNjU1OGM3OTVhNTFhNjU0NzViNzc0NDMzYTRmNzIwZWYxNmVkYTM2MTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_842494e2715d4a2081452c139e0b6c07",
+      "statement": "A Runtime stage span finishes with cancelled on cancellation, with failure on other exceptions unless its outcome was already blocked or cancelled, and with success when no explicit outcome was set.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/tracing.py#L182-L210",
+          "version": "repo-lines-v1:sha256:66822624d2b9fb6f74febf73ef29a779a3622d6d8c45a0bb24cdf02ce95b1968:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1NjdlYTcxNTM5ZmEwOTRhYmNlNmU3MWU3ZGFlYTllZjQyMTg5YmQ3ZmE5MjExOTZiN2VlYjFkMzY4YmQ5M2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1NjdlYTcxNTM5ZmEwOTRhYmNlNmU3MWU3ZGFlYTllZjQyMTg5YmQ3ZmE5MjExOTZiN2VlYjFkMzY4YmQ5M2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhkYmYzNzk1MzdmNzk1NzAzN2IyN2M4Y2VjOGYyZjAzOWJjNmY5ZDZlOTlhOGNhMTAzOGY3ZTE3NTU1NTZhZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM4OTk0MTY2MDZlMDAxY2M1NTQ2OTYwY2MwN2Q1YjIyMmVjMGYyOTQ1NGMyYzg4MDJjNmI5NmM1MTcyMTIzZTYifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/tracing.py#L339-L372",
+          "version": "repo-lines-v1:sha256:ba149d38b2a42040282bac11115b21393ed47b92e9aac15b6a50a83400e2135f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkNTQwYTdhMjQxYTA3ODU5MmRhZDY0NTc3ZTczOTQ1MmUxZDk2NjUzYzExZDg3MzRhMTY3MjljMTM5NTgyOWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1MDk4ODRlNzVjNjMxMTNkOTBmZGM1MDZhOGJkYjc2ZjY3YTA2OGI4ZTc2YzE4OGFjZTU1OWFlZDY0YWE1NzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4MWQwZWMwZTE1ODU4MGY2MTI4ZDMxY2U4MTg5ZWYyNmRhNzlhMDNhMDY3NmIwZGY4NGNlYmYyNjgyZDI1NzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2c8c24d274cf4052a8c2b219789d85dd",
+      "statement": "A background activation starts as an independent trace root: an empty context is attached before the root span starts, so child spans cannot join an ambient HTTP or MCP trace.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/tracing.py#L210-L250",
+          "version": "repo-lines-v1:sha256:bed0523ffad453310d14b4c9bb005e92b2d308f8b55f5141fa0ded66942b8860:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1NjdlYTcxNTM5ZmEwOTRhYmNlNmU3MWU3ZGFlYTllZjQyMTg5YmQ3ZmE5MjExOTZiN2VlYjFkMzY4YmQ5M2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1NjdlYTcxNTM5ZmEwOTRhYmNlNmU3MWU3ZGFlYTllZjQyMTg5YmQ3ZmE5MjExOTZiN2VlYjFkMzY4YmQ5M2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2MzM4NmY5YThhZTllMzY4MzI2MzNiM2VhOTdlY2Y3OGU5NzM3NmE1MWEyZjcyMTM2NmNlMTBmZTg5OTY0N2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYzZGRhNzE3YTg1ZTJhZTY1NzI1YzliNDA0OTk0YzQxMTA5ZTE0NDlhYWYxMTc2OWFlZGIyNzE1NWFlNjBiYmQifQ"
+        },
+        {
+          "resource": "repo://tests/test_server_tracing.py#L472-L497",
+          "version": "repo-lines-v1:sha256:4d4ab52c5963b013054bc753203a752f47fe206223182d56668b365193ff6f07:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhNjQyMDViMzE3MTBiMWEzNDQzMTBkODkwZDBmYTAzNzdjZDk5ZDY0MDI3ZDg5MDY0NjFiZTdkOGNjNzY2MTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljYzYyM2MyMWQ3MzQzYjIzNGVmODhmNTQ4N2IyNGMyNjAxYjkwNmI0ZmM5ODMxMWJjMGQ2ZGY2YWJjYzZiYzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI1N2YyN2VlZTc3OTRiOWIyZGM4OTQ5NTM3ZGMxMDJmNzFiNmUwYTI3ZjljYTU3NjNkZGJhNDY5MGQzYzVlZTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a27d1548aacb4730974321917b1f7a38",
+      "statement": "Inference instrumentation is configured with include_content, include_binary_content and include_model_request_parameters all set to False, so prompts, responses, Memory content and vectors are excluded from spans.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/tracing.py#L496-L517",
+          "version": "repo-lines-v1:sha256:b6952b64afea62499fc69e4844beb2aaaf47bc64042f76c4fc976400141bc22d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRjMzZjODBjNTlhNzI4NTMwZjNiOGY0NWIyMGI2MWYxODIxMWU0ZGE5NTAwMjA5ZGMzNmQ0ODFhYTMwYjdkYmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjMjU5OWY0MTQxOTdjODZjYzA4YThlM2Q1MTFjMjU5MzBhZjBjYmM1YjE3MjlmOWE0OGJjYTNkZmQ5NTZjNjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMzZDg2ZTZjNjRmNzQ0M2Q1NDE1ZDgxNGJiYTY3Y2U1YzI2MDRmMzQxMDcyYzdjMDMxZjlkMTNlYTgzMmZlMWIifQ"
+        },
+        {
+          "resource": "repo://tests/test_server_tracing.py#L148-L157",
+          "version": "repo-lines-v1:sha256:413c2686e548d5ba124d799a544cfe35636966058d738767306145c63fbb9b38:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3MjY0MWM3ZTZiMzI4OGIwN2ExNWM0YTY5OTY5MGI5MGY3MzIzNTU3NjEwZWMxNjBhMWY0OGNlNGMzYjMyYTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI2YTFlYWYxMmFiZjJlM2IyM2NjNDAxNmIxODIwYTg2NjlhZTY4NjM2N2NiOWNiMTA2MjRiMGIzMjBlNjQ1ZTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZkODkyNzM1NzIxOGM1Mjg2YzMxNGNjNTkyNmQ4NDMzYzMyZmQ4OWUzMDg4NDlhNjE0ZjBiYjk4NTc1YWYzYjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4911bfab5c8d4326adac1c1735842464",
+      "statement": "Spans created through the sanitized path disable automatic exception events and status descriptions, and on a failure they keep only an error.type attribute and an error status.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/tracing.py#L97-L143",
+          "version": "repo-lines-v1:sha256:91c493755e85272ffc9d3303c50421f2c03887140d5f33427a6a6b7a5037ff02:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0OGY2N2VjYTE2ZjA2NTYyZGRkZTRmMTNiNDc0ZTc1MzNlZTMzNTJhMmY3ODk2MDAzYjQ5ZGQzZDAxYzYxZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiNDEyZTNkYTkwYzhiZmIzMmI2MGU4YTUyODI3NmZiZTMxMTMwZGZmOGMwYzQwOTA3NThjNTQyODU5ODk0ZmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhhZmU0YTdmZWIzYzVlN2ZiOGNjZjcwZmE3NzIzNDkxYWMzOTgwOWRmZjE4YWVmMmFiODE1YzExZjc2MzM0YTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE1NWVlYzk1ZjczYTJmZjFiZjRkODU3YjQxZWQ3YzU0NWEyN2QyZTIwYjk0MDI0YmJiOWUwN2Y2ZDFhM2NlMmMifQ"
+        },
+        {
+          "resource": "repo://tests/test_server_tracing.py#L158-L193",
+          "version": "repo-lines-v1:sha256:f5044c056ecd4b98510f6c31a5ec579dd7b81587612bc701738a71062c7f5709:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3NmZmMGMzZTc3YWUxMWM2NzQzZjI2MDk2M2JhODY1NzIwMDUyYjAyNzY5ZWRhNDVmOTQwOTlkOGU4NWY1YmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQxN2YzZDVhZWE0ZDNhYjY0OWNmZTFlNWNjOTliMzdkOWJkMjc0ZjUxM2E5YjRkOGY5YWIzZGQ4ZGVlNTQ2MjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjNmVkMGY5NjhkNTEzYTQ1YjE4NDJiNmNkNGU0YmFjMjdhZGZmNzIwMTUzMjFmMTU2YTVmY2M2MjMzNzQ0MWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3fff07677e7549d8a4effb9c910d9411",
+      "statement": "Inference spans are suppressed while readiness probes run under an unsampled context, and a tracing setup failure does not change the readiness result.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/tracing.py#L250-L277",
+          "version": "repo-lines-v1:sha256:18dd2d8606cb70ade826e33a8aa230bab9de790b895a98af6835a5f49ee20968:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1NjdlYTcxNTM5ZmEwOTRhYmNlNmU3MWU3ZGFlYTllZjQyMTg5YmQ3ZmE5MjExOTZiN2VlYjFkMzY4YmQ5M2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhlNGNmOGEwZDgwODZlNGM5YThkZDMxNWY0Nzg3YTg1NjU3ZjA2ZmNhNWVhMzg3NjI0MGY1MDE4ZjI3ZjRiOGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNlZGE3OWVjZDUzZjFlYjhmMTU4MDdmYzEzOTQyM2MwMTZlYTkxNTdlZmVmYzc3ZDg5NDRhOWMwZWJhNGRlN2QifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/tracing.py#L65-L128",
+          "version": "repo-lines-v1:sha256:0a65b3ff53e1fca10f07e45e397cd93836347aed2060dcc2f3a322ad1a385a7a:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyOWY5NGQ0OTAzMGY1NDNjMGNkYjUyYjAxMWM0NGUyY2U2OGQwMTBjNjM1YmE1NmRlZWFiODQ2MTk5OTBkOWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5YjRjZTk1ZmQ5YTQ0MzZhZjdjMmE1ZmM0OWM1ZTM5OGFiODA2YTkxNjFiMjQwZDA3YjIzZTM0NjZmMTFhYzQifQ"
+        },
+        {
+          "resource": "repo://tests/test_server_tracing.py#L529-L551",
+          "version": "repo-lines-v1:sha256:fb97ec2cda77c25495b07c8ded8a68584068f61b1f006ca5ac17697f022a5e50:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlYTIzZjAyOGUxMjQxM2RjZTMwMDA0ZDk0YTMyNjExYjZkNTgyYjI5NjEyNWM1MDFiZTc5MTQ0MGM4MWM4NzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiZmMzMDA3YjAxOTI1MDFlMWEyMDYxYmJkZDA5ZjY1ZDE5YmFlMzNmZWE3OWNlNzNkYzU0YjZjYjc1ZmM5NTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2ZTRmYTc0NjllZTBkZDBhN2NjZWQyNDFmYTA0NTMxYzUwZDQ3OGE4MTBhMmM3ODk1NzIyOGI1ZjMwNzYxNjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYwZmNhNzU0NDhmOGRmOGMyN2Q5MDEzMjNmYWIyZjJkNWRjY2I2MzQ2ZTM0YjA4YmNjMTMxZDM4ODJhODYwMmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e29d087532ce4450a8f54c526240996d",
+      "statement": "WorkerTracing returns the entrypoint unchanged when tracing is disabled, and when it is enabled it passes only the traceparent and tracestate values to child processes, not arbitrary baggage.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/worker_tracing.py#L26-L50",
+          "version": "repo-lines-v1:sha256:1c31c0329b7d256dbfff193396aa3b3fdc481ba43cc222de2043ca41a920896e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ5NDE0NjNlMmZhNjU2ZGRhMDg1M2JjODExNDQxN2RhOWMzMWY5NzI3MTNhZTg4Y2ZkOWQwNWZhZmQwYmYzZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmMTdjYTg0YWE2YTE3YzI2YjE3OGI0MWFhM2YzOGE2MzgxODdjZWRhNGIxNGMxNzg2MGYwMjU1NGIwYTgzZjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAxMDA1YmY2YzVmMjY5NmM4ZjNiZjZkOTk5YzA4YmUyNTA0YmMyYzg0MzU1N2U0Y2EyMjllNDIyM2EzZmEyNDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA3ZjgxMzA5YmJhNTRlMDg2ODBjMGU4NTgyOTM3ZDcwYjg3MDUzY2VhOTYyMmRjM2VlMjY0OWI3ZDJjOTdiMjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1d4a8af0f3ec4dab875880131a99235b",
+      "statement": "The traced worker isolates its own tracing setup: a setup exception logs observability.worker_tracing_failed and the domain invocation still runs, and the artifact_processing.worker.execute span outcome maps cancellation to cancelled, blocked-policy exceptions to blocked and other exceptions to failure.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/worker_tracing.py#L56-L134",
+          "version": "repo-lines-v1:sha256:22f9d3fd147b82242a999b5de5e56376d0c2cbabe701034fa3abbb2286f89015:eyJzZWxlY3RlZExpbmVDb3VudCI6NzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzMmM2ZWVmYWViNzU0ZjlmOTJhZjZlZTA4MGUxMDAyMTliNDFhYjdhODQ2Yjk0ODlkZWQ1ODg0YWU5YmRlN2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmNmViNWVmMzM3MzExMjFhMWJmOWI4M2UzNDA1YTU5ZDJmMjJmODQ2ZTdkOTc5OTJkYWQ3ODNiNjExZTE1YmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM4NWQxNjg4ODZmYmFhODM3ZWI1MDgzMzUyMjdkOWVkMzE4NTI3MjRmNTczMGM0YTI1NzBkOTRhMzdlMzlmM2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxMWQ5Yzg2MTQyYzM3MDE4NTlhZTAzYWQzYWNjYTI3NzkwYTY1MjliYzNkZTVhNDg2YmVkMDM1N2ExZjU3MmMifQ"
+        },
+        {
+          "resource": "repo://tests/test_server_tracing.py#L194-L231",
+          "version": "repo-lines-v1:sha256:3ccaec856309f9819bbe75e7fdbc268a890103403fd8198bc63cdc83c00e3397:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4NTllMzgxZTM5ZGU3NmQ3OWM2NzdjM2FjZTdjNjQ1MGI3OWUxMGU5MTk2MDlhODFiNzA1Yzk5MThhOTEyZGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIxZmQ2MjMwMjA0ZTE2YjhhZjYwN2U1NWQ3Zjc0MTRiNTM4NWI5NjM0YWEyNTI2ZmEwZWZmMTJlY2RjZGU0ZjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY5MmU0Yzc5MTE4N2QyODQyNmI0MjAyZDNlNDg3NmUzMGNlODI3ZGUwNjAxYTc0NTQxMjE1MjE3ODY2MzU2YTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4dc2407b9b8f440baa6f95898dc9183b",
+      "statement": "configure_server_logging selects a stdout stream handler by default, a file queue handler when logging.file is true, and a socket channel for worker processes, and it uses a JSON or console formatter according to logging.format while keeping the powercontext and uvicorn.error loggers from propagating.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/logging.py#L527-L594",
+          "version": "repo-lines-v1:sha256:357196c3ec61f68845c03c0d14f392bba0ecf7c31973fa4cb3964681f6181da4:eyJzZWxlY3RlZExpbmVDb3VudCI6NjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyOTg5MjQyNWE3YTNiMTM4YWMxMzQzMDgxNzFjNWFjOTEzZThjYjdlZGU1ZTY0MmYwZWJkOTE1NzEwZDQ2NWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY4YTE5YzQ5NGE0NDJkNGUyMzJhMzJkNGE0NzZmNjE1YjVlMDhkZjZiODkzMjhmNmJiNWI1ZjBkZDc1NjU2MjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgyZjk1NmUyNzdjYzZmZDk1ZGVkZDEzZWM3OTcxOWFjMmZjMmQzNzU1NTNlOWU0OTBiM2VhYzY1NzU0YzBkYWMifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/settings.py#L201-L221",
+          "version": "repo-lines-v1:sha256:2a1270de7e402e90e18bbdfe6a7535a19381dca062c767303d59474415cd6855:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5NzU2ZjM1ZWFiNjUzODUxZDM1YzdhZWRkMTY2MWU5ZGVhY2E5Y2Q5NzQyMDI0MTc1OTI1MDA3ODJhYzhjODAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyMGI0NTNmNWUwYzkyZDVmNmMyNTFhNWVhMTk2MGQ3MmYzYmQwNzk1NmFlODU3ZGEyMGUzMWE4OGM1NTk2OWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUxNjQ2YzFkY2YxNDE4YzUyY2Q0YmE3YjY1ZDhmYzY1ZTAxNzRlMjQ2NmQ2ZjZjOTRiY2IzYTU2MGU3YmM3NTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMzNzNmOWU3MzdkNGI2YWM5ODUzNjUwY2RkMjliNjQ3NDRhY2QxNTNlZjg3MDU3MzgzYmNiNWY3MjA1YjQzY2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3097abc72f3f427d945d581907f825ad",
+      "statement": "Only fields on the operational allowlist are serialized into log output; arbitrary record extras are dropped, and code.* events additionally keep the code diagnostic fields.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/logging.py#L167-L174",
+          "version": "repo-lines-v1:sha256:087deb312c7687ee7caa745f79b67b9370c075b7f6596954468ecece0b08cd11:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGE4ZmUzMDA3MGM4MTM3ZmE1MWI0YWQ3ZDY1NWRlYjNlMWVkN2I4ZWJkZGFlYzEyOWNhODA1MTYwMGRiYjM4OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDlmOTMwODNjMTk3MTIxYjk4MjcwMGJhOGFmYWJkMTcyMmNmMWQzZTc0MDQ1MDllODBlZmEyNzI0N2Y2MmYwNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWY1MzhkMDI4YTNkZTMxZDkyOTk0ZDE2NWI5MDkxZGIzZjQ0ZTc5MGQxNGZlMWQyNzE0YzExYmRlNjg3Yjk0YiJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/server/logging.py#L94-L152",
+          "version": "repo-lines-v1:sha256:6996fe05ed904d4c44cd2b5133c6e64e1b2e1cbb2c8c873bdffd75b17b3cdf3e:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmY2JmYjNkZmM5ZmU4NTM4YzNjMTIxNDEzMjk2OGI5YjI0NTA5N2VhNmEyMTkzNTdiNzY0MDMyNGRiMzE0Y2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFjOTQxZTJkNjJhODIyMTNjZWZhZTY5Mzk3Nzc3MmJlZjY4YmFiZjU1M2I1NzhiOGU5NDVmNTM4M2VmNDg4M2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEwOTdmZTdlMjRhMjYxZWZiNjUyN2U1ODkwMGIzNDZlMTViYmU0OWZlMGU4MTc1NTk2NzQ3MWE4MGVkZDM2NWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFmOGNiNDI1MDRmMjBlMTI1NmQ5Y2I3MzBmZjQ4ZDc2NTY4ODA2NDE4OTBmNmI2MzVkNDgyYTcyZWU0Njg1NzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_13ea784e07e843d190a67cc13ab47632",
+      "statement": "The operational logging filter attaches the request ID, the trace and span IDs when the span context is valid even if unsampled, the service identity fields, and an error_category derived from the error code and status when none is set.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/logging.py#L176-L212",
+          "version": "repo-lines-v1:sha256:5bfee7d871af9bf2fc306dc4807032000409b75136730fd0445875fca5f51868:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmNjZiNTJjM2MxMGQzODY4MTk0OTlkYTI3NmEzMjc0YjdkMjFiMDcxZjliNDE5ZWQ5YTFkOTAzYzgzMDk2NGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNiMTg0NGZhZDI3Nzc4N2MzZjhkZjViMzQxZWNmNzIyM2Y1NTQ5Yzg0ZjI3MmUxOTdjYjE0MTI2ZjAyYzc3NjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc3ZDRhNzM0NzQ2MWNmMjE4MmQwZjMwOTM1YWM2ZmQzZjQzMWIyZjkxNGY1ZDZlNTFiNjYwN2M3YWNlY2ZhYTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3ad69bcf115342ce8511691df52d09aa",
+      "statement": "File logging is opt-in: an exclusive per-role file lock rejects a second writer for the same directory, rotation uses max_bytes (default 20 MiB) and backup_count (default 10), and a gzip archive is published before its uncompressed source is removed.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/logging.py#L313-L327",
+          "version": "repo-lines-v1:sha256:13768946c83f27000af73ddf3babd48ae92d660b7fce4ff691908c8b8f7deca8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxOTE5NGIzM2EzMzc2MGVlODU0MjEyNzZmYmQyYWJkZGM1MDU1ZTQ3MDYwNmVmYmZlYzI3YjEwODQzZjkxY2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg1NDEyNzMwOWZkZTJiZWUxOWQzODY1MWRkOWU5ZmJiZmQzM2E5MGM2Yjc1ODk4NjY4MzM3N2U1YmNjNzUyOWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2OGJhNGQ4NWNhZmFkOTlmMzM3YjM3ZDEwNDg3NThhMjkxMjI2NjRmZWY0Y2M4YmIyMmI2Y2E0OTkyMWMwZDEifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/logging.py#L358-L393",
+          "version": "repo-lines-v1:sha256:e05b07e9d3329161c2bce6e33bd2632958248cdf09204e9d070b099039c4eb84:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4ZWYzOGMxNjdlNWFlMmY5MDgyNTI3NjZkZTJjMzMyMTE1OGVkMjQ3NDlmZDQyYWU4MzRlY2ZmNjVkYzdjOWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3OGQzNDAxMDUxNDJiODk3NjA3NzU5YWMxYmI5N2NmZWZiZmVkN2E5YzY5OWRlZDY2OWJkYzNmYTQ0YmQxNDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5MzZmZGM4NDZkODNmNGNkN2UzNWFkYWMxMDk4MTAxNDI3NDc2MjA2NDk2MTBkMGM0YzlhNmZlMjhiYzQ4MzIifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/settings.py#L201-L221",
+          "version": "repo-lines-v1:sha256:2a1270de7e402e90e18bbdfe6a7535a19381dca062c767303d59474415cd6855:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5NzU2ZjM1ZWFiNjUzODUxZDM1YzdhZWRkMTY2MWU5ZGVhY2E5Y2Q5NzQyMDI0MTc1OTI1MDA3ODJhYzhjODAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyMGI0NTNmNWUwYzkyZDVmNmMyNTFhNWVhMTk2MGQ3MmYzYmQwNzk1NmFlODU3ZGEyMGUzMWE4OGM1NTk2OWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUxNjQ2YzFkY2YxNDE4YzUyY2Q0YmE3YjY1ZDhmYzY1ZTAxNzRlMjQ2NmQ2ZjZjOTRiY2IzYTU2MGU3YmM3NTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMzNzNmOWU3MzdkNGI2YWM5ODUzNjUwY2RkMjliNjQ3NDRhY2QxNTNlZjg3MDU3MzgzYmNiNWY3MjA1YjQzY2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ed9677879d6e4ca7b311cb574e0665d3",
+      "statement": "When the Server owns the file sink, each worker's log records travel over a socket pair created before the worker spawn and drained into a bounded queue of 1024 records; the receiver does not listen on a network port.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/logging.py#L329-L346",
+          "version": "repo-lines-v1:sha256:1f13910f5b70c1f726ab0d3a2b3e0bc969eb72ca16eaa53650e5c923b8a4a719:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2YTljNjBhNzQ2OTliOTA5ZjY5ZjAwM2NkNzFiNTNiMTZhMjU2MjJhMTk2NjU5MGIxZjk1ZTRlOGIwY2RmNjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmYmRlZTM4ZmM4ZjdlZjMxODA1ZGQ5MjAzYjQ5NzljYjMzMzg2NDJjMGQwNTU0NTM1ZjNmZmQ1NDlmYjBiZjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI2ZmRkNmMxMzVmMWE4MTcxOTFhNzQ0YzY1ZTk1Njk1YzZkMmI3ZjFjNTM4ZjBmYWU2YmI0NjE0N2ZlNDE1NzQifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/logging.py#L358-L412",
+          "version": "repo-lines-v1:sha256:dc2eeff71cf10e3c23f1c32b907a2351b0cfc0e65250f6d740c181cbfaf4b7a5:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4ZWYzOGMxNjdlNWFlMmY5MDgyNTI3NjZkZTJjMzMyMTE1OGVkMjQ3NDlmZDQyYWU4MzRlY2ZmNjVkYzdjOWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0ZGE5MzUwMDE5ZGMxZTY2NzQ1MjY0Mzg3MzE2MTk5NzIyNWU5Y2U2MDEwN2FmN2I2NGY4NDBkZGVjZmRhNGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3OGQzNDAxMDUxNDJiODk3NjA3NzU5YWMxYmI5N2NmZWZiZmVkN2E5YzY5OWRlZDY2OWJkYzNmYTQ0YmQxNDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0NWVmODlmZDRhOTlhMDkwNTBiYjM2MDdkYmM4N2U4YTJkMjU0NWEyYzg3YjgzNjRmNDFhNTdlYzk3YmRhOGUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/logging.py#L635-L670",
+          "version": "repo-lines-v1:sha256:4342d0a5a2f7b75770b1157251b7c88e8311ba3f0f0963f4c81965823a4f0d15:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwNTBkYzVjMzg0M2I2MmM4YzU3NzJkNjMzYzg1MWVhZWFjYTE5YWE4MDNjYTc5OTZiYmEzOGVlMjM1ZDBmZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MWYzM2MxMzI1NjlhNzQ5NDZiMmZjZjU0NmNhM2M0NDI1ZGEwY2E1Y2Y2YjY4NmMyNjA5MGZhYTlkMTEyYjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcwY2UzZjI0YWI0N2MyZjVhOWQzMzdmMzc3ZWQ4NTczZmE1NjU4NDA3NjQwMmYxYWYwNTRhM2RlZDYxOTQ2MmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhkNzNlZTQ0MThiNDQwODlkMTc2MDVmNmFhMzBjZjBlZjI2ZDZlNmJkMDJkZGQxMTU5NzQwM2EyZGZkMDQwNDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ff0a1b8bdbfc4885bbf7dfc1131f21cc",
+      "statement": "An explicit logging directory without file output enabled adds a per-process JSON file handler that writes <role>-<pid>.jsonl with a 10 MiB threshold, three backups and at most 64 retained process generations.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/logging.py#L431-L450",
+          "version": "repo-lines-v1:sha256:4c70a144950af9293db34828dcbb63cf505a8537bbb2743822028966acbdc7d0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmYmNmYzM0MDgxNzNmNDNiZWY3NjBmYTY3MjJjNzE1NGIyMWMyYjBlYjcwYTZlM2U3NDYyYjg0YjRkNjBjYTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0ZGE5MzUwMDE5ZGMxZTY2NzQ1MjY0Mzg3MzE2MTk5NzIyNWU5Y2U2MDEwN2FmN2I2NGY4NDBkZGVjZmRhNGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcwZDM1ZjIxYzQxOTBjN2VhZDgzNzdkMzFmMjQ1MmVjZWJjOTMzMzc5ZWUzNzJmYTVjMTVhYzg4M2VjZGIyZTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkNzAyZjM5YjEyN2Q3ZTJmOWMyMTAyYjRmNTFkNDU3OTk1NzM1NzkzZjM2MGIzNDc1NWViOTYyZjM1OTUxYzcifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/logging.py#L596-L610",
+          "version": "repo-lines-v1:sha256:e28c91f9af6f71152c92808c9743b3418e9c5d871b5d54816270a6fcc45cf6a3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4NTY4NWZhZTU1NzcxYzliMDg5ODBkZGFiOTk1OTkzNTk4MjhhNDhjMTE5YmMyZDI1MDlmZjRlMjExMWYzMDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIyMjdmMmQzZDZhNzZjMmYxZjQ2NmQ0MjE2N2UxNDc0NjViMWQzMWQxMWFlNzNjYWI3ZTI2MTBkNGY4MzA0MjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmMDQ0OGI4YTJlN2QzOThiOTIyMDNmM2I2Y2VmMGJmYTFiMDU5MWM2ZThjMDFjMzk2OGJjYTAwMjMxZjg1MmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bdaaa701a3f744648c103ce9d5069d8a",
+      "statement": "OTLP log export is opt-in: an OTLP log handler sends the same allowlisted payload through a batch log record processor, and configuration fails with a RuntimeError when the tracing-otlp extra is missing.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/logging.py#L154-L157",
+          "version": "repo-lines-v1:sha256:351ae37c7af249ed39d1f58890c982876c68a8be012437ca948c93550c0f1112:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTg2MDE5ZTIzOTk5MWZlMWM5OWRjOTc3ZmYyOGYwYTk3Y2NiZjFmMWY5ZDg4ZTI2MmMyOTdmMjc0MDdlOTljYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFmYmEwNTI3YzM5NTNjNGI2ZTBlNWI1NzM5YmE4MzYxMmY4MDUzYmNkYzk0NjY3MzAxOTNjZDFkNTkwYjQwOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODIwNzMwYTA0YzFiZWUyYWMwNGFmYTdkNTMwMjVhNzllZjVlNjMxZjg5OWQwMjdiZDkyNjMzZDhmN2U3NGE5MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWMwNzZiMjBjMzY3ZjNlZTAwNWFlYTViMGU3YzI0NmM4NDkzMGNiMTA4YmEwNzEzYjdiNTdjNmZiY2M4ZTBjNSJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/server/logging.py#L473-L508",
+          "version": "repo-lines-v1:sha256:9ab3838787222f49bb1f64df6fa7cd105794bbdd1c54d8868797cc2932867f2d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjOTRjMDBiZDA5Nzg4OWIxZmVhODJkNzc3YWVkOTlkNGExNTFkYzM3OGQ1NWNkZWYxZGFjMmYxMDM0YzM1MTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdkNjk1ZjYzYzRmOTI5ZDVjYjkyZGY1YjM4ZDRhMmM2MWUzM2VhM2FhYjBhODU2ZTAzNWQwNDU1Yzk1ZTdlMmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ1OWZiMGY1MmVmZjA5MzliMmQ2YzdjOTBhMWU2ODEzNjdlZjE1NTk4MTMyMmJkZWIzNDViNTU3ZDAwMDc4ZWMifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/logging.py#L612-L640",
+          "version": "repo-lines-v1:sha256:83cb9eb9b8d9e3677af06b886d7dc00de043547dc120c1df3dcb8fb88a3d6087:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2OTM5ZDZjOTJlN2QzODY4NTNhYTU3ZTlhNDA4NGZhMzllOTJmOTRhNTFjMjFjMGMxMDgzMTVjYTEyYWEyZDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5MDJiNjgxMDRkMTk1YjNiZTAwYjliOTczNzI2OGEyYzZlYTVkYTE4NWNlZTkyMzliZDdkNjVlYWQwMGI3M2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmNWM3OTIyOTk1MzRmZTBmZTQzZDJiNWYyN2ZjNzJkNDI3ZWU3YzhhZGU4YzI0ZDA0ZmIzZDdlZWNjMDRlOTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEwMTkxMTlhNjZlZDc0YjUzMDFmMGQyNDEyNzU2NGRlN2EzY2E2NGVlZTc0MmE5MDNlNjk2M2FlYWY3MTM4Y2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_54a57c42366748dcb55442c73e7d0e23",
+      "statement": "Log handler failures are isolated: failures increment a process-level drop counter exported as powercontext_server_telemetry_log_records_dropped_total, and each handler emits at most one content-free observability.log_failed notice to stderr without dumping the record.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/logging.py#L266-L312",
+          "version": "repo-lines-v1:sha256:8f55a67332e73634ecf5d07e58cda340c39d97a1f42a470d87b4e7aff1f038df:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4ZjlkOWZjMDIwMWNmZjIxMzU2ZDg4MGY5MDE5YjdmZGEwYjIwMGY3Mjk1YjYyZTk3NjBjMDM1OTg0OWRhMGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY5Nzc4NDNiNWVjZDdlNWViNWFlNmEyOGQwNzVjNDA3N2I2NmZiZmRjOWNlZGIyZDQzOTNhOGI5NzdkZjQxNzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI5ODM0MWIzMzlhZDE0MDY1NDI4M2VjNjJjYmRkOTA2OWE2ZmExMTM0ZjM3OTI0NDI3MzQ5ZjlkZjNhOTM1Y2YifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/operational_metrics.py#L146-L175",
+          "version": "repo-lines-v1:sha256:5b4849ea42775f3f71285731f02ebdd1618ed06aec4eb5113376731639b72d04:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2NmJlZTc2NTgxNzg1YjE1YzNmZDgxMDk1MGZjNTRlZWQyMzgwNjBiYmJiODhlYmU0ZjRhYzZjNzM5MDgyNmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE2M2UwZjUyNTI4MmQzYTkwYjFjOGYwNjgxMjY0ZDEyOWRiZTA3NTA0NjJjNTgxNzk2NmUzNzJjNmZjMDIwOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczZTU2NzE1NDA0NmVlYTFjNmNiNGYzMzJjZWFjNzZjMGU5NjU4N2ZlOTk3MDYyNDkzNmM5NDBlZWI5MDI5YTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6729d637b7154fb6b2e9f7de115bfb39",
+      "statement": "The observability CLI is a Typer application with up, status, down, check and connect commands, supports only the docker-compose backend, and stores state in POWERCONTEXT_OBSERVABILITY_HOME or the user data directory's observability folder.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/observability/cli.py#L14-L56",
+          "version": "repo-lines-v1:sha256:83ccce1584738a3ddc1b5141c2f5d56d7d5366ade85c3bf1e466f84487efbe6f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxNjIzODMxNTFkNWFlMDEzMzcwMmQyN2FjODY0MjUwODUzOGQ2MTVmYTViOTZmZWI0MWExMjFjMmQyOTc2MzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE2YTg5ZDM3Y2Q2MmUwODk1OWU2ZDI3ODA2NTUzYjE3N2ZjM2U2YTYyM2ZlZWZhMjY4NzZhZmI4YTRhNGZiOTgifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/observability/deployment.py#L48-L60",
+          "version": "repo-lines-v1:sha256:07c8ca12ce0c3143f86072053aba54303a0a1cb78e1f9e8374829c843112569f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3M2Q1NWU0MzhhMWVkNmQzYWQyYjI5ZjZkYWYyZGIwNjQyYmZjZTFmNjZlZDRmYjM5MzA0MjhmY2VjODU5NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU0ZDIxZWVkZGIzY2JhMDgyMzFlNzhkMmVkY2Y4MzkzNGZkNWFmN2RkYjhkNGRiNWEzNTc4NjMzOTQ4MTQ3YjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMyMzcwMzA0OWY4ZTA2ZDU0Y2FmZjczMTY1YjZhZmY0ZDdkMGM5OTIxYjFhOGIxYzEzMjUyZjUxZGRkNGEzMjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e555679314784ffabc57658f7bcff0ac",
+      "statement": "observability up is managed-only: it refuses when connection.json exists, requires Docker and Compose, generates the deployment on first run with default ports 13000 Grafana, 14318 gateway and 6006 Phoenix, rejects initialization options on later runs, and waits up to 60 seconds for the monitoring backends.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/observability/cli.py#L389-L393",
+          "version": "repo-lines-v1:sha256:4c1c43a7eb169d3cab03dabd4217da960c817f9716f0fdb1711feb56a700bf45:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDhlMzk0NTU3N2QzODJhY2EzYWU1NDdjZTg0MDUxNmQzNDkwYTBhOWM0MTE2ZjQ5MzAxNmJhMDUwYjhmZjUyZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTA2MGUzZWMyYTg0YTBiYjAzYWYzMjJhMTQ2ZmM5M2YxNzM1MjE5ZjFjMDYyOGI1OTdiYzZkZmZlMTNkMzI1ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzY5M2U2NTAwZGIyZDYwYzM5Y2QxMzA5ZDUxNTM1NWE5ODk5YzU0OGRhM2ZkNzQ2ZWVmZmIxOTc2ODMyODY1ZSJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/observability/cli.py#L74-L170",
+          "version": "repo-lines-v1:sha256:4043caf6546d2e523fa3f6d0ec3ea338600c9d35ab34b99c7b18263725e4c214:eyJzZWxlY3RlZExpbmVDb3VudCI6OTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0NDhiZGVjZGIwZmVhZDY4M2YwY2I4NjVkNmM5YThiZDcyYTMxNzZhYThjOWY5YWM2ZWU5ZWU3ODhkYjY1NTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjllY2YxZjQ0Mzk4MTNiYzBlZjFkYjE1ZDk0N2JjZjljNTAwMzQwNDIzMjNiMTg1Yzc2ZTRiN2YyNjAyMzdhZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczNWZjMWZlYTBkNWFjNzViODk2M2Y1NWEzZGNiZGRlYWIxYWEwODAyMWM0ZjM2Yjk3NWJlODZiNzc4YzIxZWMifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/observability/deployment.py#L398-L415",
+          "version": "repo-lines-v1:sha256:81fe03ebd6f600387d196dc8f96d432316dcbff15fea6763b5a01dd35ca5eaeb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIwNjc0MWUxZTRiMmVlNGFmZjI2MzM2ZTJmNzhjYjQxNzMyYWIyYWQ3ZTEyZDFlYmQ2M2JiOGQ0NTE1N2ZjN2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzYjcwNzM5MDMwNDhhZmI5NmIzNjFjZWExYjBkM2YxZjkzYTU5NDFhODE4ZDVhOTFhZTA2YjQzNDFmYjkyYzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_017b4ef1b4144e7e875b3f14bc099609",
+      "statement": "observability down stops only the saved Compose project and keeps monitoring volumes, credentials and business data, and it does not stop the business Server.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/observability/cli.py#L339-L352",
+          "version": "repo-lines-v1:sha256:7037d448fdd0945b025e9c73fc36268fb62872be5f21cead34d93841873b12d7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0NDhiZGVjZGIwZmVhZDY4M2YwY2I4NjVkNmM5YThiZDcyYTMxNzZhYThjOWY5YWM2ZWU5ZWU3ODhkYjY1NTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkwNjBlM2VjMmE4NGEwYmIwM2FmMzIyYTE0NmZjOTNmMTczNTIxOWYxYzA2MjhiNTk3YmM2ZGZmZTEzZDMyNWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczYjBkNzA0ZDUwODUwYzA0NWY0MzAyYzYyMmZiNDM3YTlhYmRlYmE0YjllZThlZWQ2YmRkZGZiNTYxMGI4YWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0de3b42c15a64973a3d196c7731db9ee",
+      "statement": "observability check without --exercise verifies a fresh Prometheus up sample, looks for recent Tempo traces and Loki logs, and checks that Phoenix's default project is queryable; with --exercise it sends one sampled read-only capabilities request and waits for the matching Tempo trace, Loki log and Prometheus exemplar, then for the trace in Phoenix.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/observability/cli.py#L354-L388",
+          "version": "repo-lines-v1:sha256:517c1c2763478a74be2fb0f5f5c4a2547391bdb591d2735ecaf199d3f9371e74:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0NDhiZGVjZGIwZmVhZDY4M2YwY2I4NjVkNmM5YThiZDcyYTMxNzZhYThjOWY5YWM2ZWU5ZWU3ODhkYjY1NTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkwNjBlM2VjMmE4NGEwYmIwM2FmMzIyYTE0NmZjOTNmMTczNTIxOWYxYzA2MjhiNTk3YmM2ZGZmZTEzZDMyNWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhhMjAwOGQxNjZlMWVmYzYzYzMxNTcwNTUwODQ2YzI1YWQ5YjZhYjZmZWRmMmZjOWQzYTcyNGY4Zjg2ZTBhMzYifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/observability/cli.py#L528-L599",
+          "version": "repo-lines-v1:sha256:c3719ff56bde4b88b84fa4f344b04a6df1afcaed58ced900fbd92abab3df085e:eyJzZWxlY3RlZExpbmVDb3VudCI6NzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmMGE1NTgwYWRlNjRlMjZhMzBkOTE2ODgzYTBjYjVkMmMxODE5NDhlYTVmODY5NzQ5ZmU0NTIxZDFhNzdjZDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkwNjBlM2VjMmE4NGEwYmIwM2FmMzIyYTE0NmZjOTNmMTczNTIxOWYxYzA2MjhiNTk3YmM2ZGZmZTEzZDMyNWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1d69c7ea9adb43d58e5973f444a762fd",
+      "statement": "In external mode, status and check read only the saved connection configuration, and observability connect writes connection and import files without running Docker or changing remote systems.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/observability/cli.py#L404-L436",
+          "version": "repo-lines-v1:sha256:987d04c6113698d7a09e7cbd1cb5cf20adfc72086b4a47a67a07e666d48a06fe:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjMzA2NDM5ZjcyNjc2MjQwYzE2ZjUwMWEzNWFkOGI0MmY0NDA4NWExZDk0NzJkZWVhYjkwNzFiYjBhOWJhZTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJiNjk4NTI3NTE2NGQzNzJhYjVkOWY5OGJhOGNlYmFmMDIwYTYzNzdmOGMwZWI1NzAyNTFiZjNkOThmMmVlYjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyOWVkMmJmZTU4ZWI2NWU2YzE3YWEwNmQ2NDBiMGMzNTVmMjNmYjQxMzc2ZmVkMDIxY2Y0NDY3NmY1NzU3ZmYifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/observability/cli.py#L437-L526",
+          "version": "repo-lines-v1:sha256:ff94cb7f0d76587998adfeddb732157f49cc7e551aa038d6008e621b91b5ac14:eyJzZWxlY3RlZExpbmVDb3VudCI6OTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0NDhiZGVjZGIwZmVhZDY4M2YwY2I4NjVkNmM5YThiZDcyYTMxNzZhYThjOWY5YWM2ZWU5ZWU3ODhkYjY1NTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRlNzU3NWMzYjc3NzZjZjJmOWMyYmZiY2E0NGYyMTQ4MTNhNzgyN2VhYTljMzg0NTRjNzAzYjY4OWE3NDQzODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0NzQyYzFkMGZiZTE4YzdjM2ZiYjUyMTcyMWRjYTNiZTc1MjU2ZTBmZjNlYWJiNDU0NDI1Y2E3NTA2Yjk3NmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f39639152987417bb83a6698ae74013b",
+      "statement": "profile_environment is an opt-in for managed telemetry: it refuses when managed and external configurations both exist, accepts only OTEL_ keys and four telemetry keys from the profile, and merges caller-supplied values over the profile after conflict checks.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/observability/profile.py#L28-L82",
+          "version": "repo-lines-v1:sha256:6fd9b03a98b16c0ec3828f133f2092abb46ecb8d0c3fa882c239230e0858e722:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViZjM5MDg5ZjZlY2IxNGZjNzhkNWY3YjUzNmQyMmIwNGFiYTY1YTY1ZDg4OTRlNDdkM2M5YzI0MjRhNGIyZGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQwNmI5MjY5YWVmZGU0Zjk1MTg1YjVjYzc3N2Y5YmFiZjZmOGQwZmZhZjA0YjFlOGMzZDBlOTAyZGVhMjcwYjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiYTRjZjAwZmUxMDEwNDYyMzY5Y2I3NTEwNzUxOWFmYzQ2N2E5NzUzOTgxOTYyMjIxYmJlNDUwNzIxMjY3MzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c7848c7c0aa04e9c9c0d22a5e11fa4d6",
+      "statement": "A conflicting explicit telemetry value, or a signal-specific OTLP override or OTEL_SDK_DISABLED, makes profile_environment fail without printing the configured value, because exporter headers can contain credentials.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/observability/profile.py#L28-L82",
+          "version": "repo-lines-v1:sha256:6fd9b03a98b16c0ec3828f133f2092abb46ecb8d0c3fa882c239230e0858e722:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViZjM5MDg5ZjZlY2IxNGZjNzhkNWY3YjUzNmQyMmIwNGFiYTY1YTY1ZDg4OTRlNDdkM2M5YzI0MjRhNGIyZGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQwNmI5MjY5YWVmZGU0Zjk1MTg1YjVjYzc3N2Y5YmFiZjZmOGQwZmZhZjA0YjFlOGMzZDBlOTAyZGVhMjcwYjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiYTRjZjAwZmUxMDEwNDYyMzY5Y2I3NTEwNzUxOWFmYzQ2N2E5NzUzOTgxOTYyMjIxYmJlNDUwNzIxMjY3MzkifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/observability/profile.py#L84-L106",
+          "version": "repo-lines-v1:sha256:95c7ac69d49965b0a9d4acc4ce6166bdcd9bacf74300be056af727bf93c56d72:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjMjU5ZjgzZDZlOGIzN2MwMDE2NTQxYzcwNjc0OWNjMzUwZTY2MzliMGFlYmJhYTIwY2Q3MjI2ZTUwMGM3NWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhMTFjMDU2N2QwYTVmOWU5YjEzNWY2NWNkMjUzNzJkZmQ2Mjg3NzVmN2MxZWQyNTNmOGJhZDQyZGQyZDY2NjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzNTU4OGZmODMzYTQwYWQ5NTczMjljNjBlNzQyYmIzYmNkYzQ1MGQxYTEzN2NiMmZiMDM2NThiNjg3M2VmMDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_51995758a23a4ed290f455dba07a829e",
+      "statement": "telemetry_environment generates the managed export profile: tracing and OTLP log export enabled, OTLP endpoint through the gateway with Basic authentication, a 2 second OTLP timeout, batch and queue limits of 512 and 128, and a parentbased_traceidratio sampler at 0.1.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/observability/deployment.py#L227-L253",
+          "version": "repo-lines-v1:sha256:cb1e91e5f4c12065467354150ece795a10870bd2244c4ae645111188cdd13710:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwNmY4NmJiYTAzMTZmYWFjZmZmMzdmNWVmYTIwN2QzMGEzYzIwN2RmODVmZGZkNDUwMDJiNTMzZjUyYzQxYzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRmZGQxYzczNjY0NTU0ZTVjOTFkNGJiY2YxMTg3OGUyNTI0MTJhNjllYzU3MzJjNTkxYjhkMjZhOGQxMDI1OTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5NjQxNzlmYzQwMjU0MzVhMTA3MmQzYjRhMWMzMjk0Yjk4MDA5Zjg2ZTQ1MDI0ZGRkZjVkZTBhNjc4ZjNkMzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f40facd94f4f4ff0903abb883722325b",
+      "statement": "initialize writes server.env for local Servers and container.env for Docker Servers; the container profile uses /var/log/powercontext and http://gateway:8080, the gateway password is stored as an RFC 2307 SHA digest, Prometheus targets get role labels api, all or background, and published UI ports bind to 127.0.0.1.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/observability/deployment.py#L186-L209",
+          "version": "repo-lines-v1:sha256:fcc9b442417f143da7f105b7dd9b98f72d85e2af3e71c6a992cddf9b6f53a811:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyNjg2MjFkNTJjOTY0NjU3ZjA1MjI1OGY1NDM2OTcyYTg5ZjRlOTBmMDg2ZDk3YTNjMWQ4ZjBkM2E3ZGEzZjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjZGE0YTM5M2Q5ZWRhMTBlYzgxMjY0Mjc1ZjkxMjQ5NjU3YzRiNTJkOWE5NjgyNTYwNzEzNTNiOTE1NjRlZTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiZGE1N2QxOGVkYzI3ZTI1NTgzNjg5YmIyYjMwZDQ1MGVkNDZmNjk4YTAzNjIyMzA2OTgwMTc0OTJmMGRiMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlkZDk0YzViNzQ0M2I2NGJlOGY4NzhiMGMwMDc3MDJlNjllMjU3ZTVjM2JjZTNmZjU4MTNjYWZkMGE5OWY5NWQifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/observability/deployment.py#L255-L346",
+          "version": "repo-lines-v1:sha256:c457f338581b1e1c31cada2c99aa38377a016691345348808a7716013fb43072:eyJzZWxlY3RlZExpbmVDb3VudCI6OTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyNzEyMjRiNTVlNTgwZWIyNzg3NmM5OWJlOTRmOTZhMWNmZWZkNDEyM2JlZDAyYzhlZjM2OGNiZTA5NjQ0MTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNzI5NTFhYTUwNmFlMjg5MzYxOTY0MWNlZmE0YTkyYjg0MmZhNDk3MGJmOTAwYzUyMTcxNjM0NzY4MWVmNjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNiYzE5Nzc0ODQ3Yjc5NDQxMWNkZTU2MjZhZGU1MDdmY2RhNTM3YjAzOGNiMDM3YzQ4MjQ1OGMyZDk2MzlkZDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b4d91a029fe14e83a94e532f1d905812",
+      "statement": "The OpenTelemetry Collector accepts OTLP HTTP on port 4318, forwards traces to Tempo and Phoenix, and forwards logs only to Loki after a keep_keys transform removes fields not on its allowlist.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/observability/resources/collector/config.yaml#L108-L134",
+          "version": "repo-lines-v1:sha256:67808e9cc563da5f353d1ff6837366ecdd0497803570bee5c9b59f5271f37e40:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5N2JiOWFhYWY1MzFmZDI3MGVjMTJiNzE0NDhiZDc1YTY5MDY2Mzg4ZDRiNzAxNDg0OTU3OTQyMTljNmM3ZGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhZWFmZDVlMjMyYzBhZTJkOWQ5ZDA5MDQyY2U0NjE5NjZkNzYxNWE1MDI1YWZiZDk0MWM1NmQyMzA0YzUyZGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmNWQwYTg5ZGQ4Zjk1MjZmNGVmYjliZjNmNjI0YjcwNjcyYTYwZjE1OTdiODI1OGRmNjZjZDA5NzhhZDA2YmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/observability/resources/collector/config.yaml#L22-L26",
+          "version": "repo-lines-v1:sha256:1134b190fe72fa38d253c12e16a0c76cd34f5990e8005f44f8d3da59abe87135:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTA1MWQxODM3MTY1YTZmZTkwMzQ0YTkyODUwMzY1NDQ3ODVlMGNjZmZkM2MxMmQ5YTYxZmMwZDg4NTRiYzEyNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTkyZWYyMzA4MDA4ZjQ5MjgzNGMxNzNhZTkyZmZkNzVmN2Q0Y2UzYjMxYjFmZTg5MGYxMDcyZWY5ZjA3Mjc5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTUxN2JiNTEyMDNjYzIyODlkNjZhN2IyNmMwMTE0Y2YwMTk1YjgxN2IzYWVhZGVkODkzYzllY2E2Mjc1OTUyZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmRkYTQ3YjM1YmEwODQzZmU3M2NmZTk0MGI4Yzg0M2U1NWY5N2M0ODRiY2NjMWZhOGU3NzRjNTljYWM2ZWI2NiJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/observability/resources/collector/config.yaml#L50-L70",
+          "version": "repo-lines-v1:sha256:bfae155690545efd4bbfd380bd7ee95d3819b0533ab6276ec1cc92539ed344fe:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1ZWQ3YmRkNTQxYTQzODBmNjFkNWNjYzJkYzZmZTcyODliZjU5MGYzMmM0ZDRmNDM1MGUzOWIzMmQ2ZDY5N2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3YmE2NzBkMjkxMTY4ZjQxZjY4MTU2N2RiZTcyODBjZDI0OWQ5MmNhMGUyNmQxYTBiMWI4NzY0NTZkYzZkMGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM4MTkzNTE1MWUyNWFiNDUwMzQ2YzQyOTNmNjEzYzQ0ZDQ0MjYyOTJiZDA1OGRkZmRjY2VlNTU5YTBlMWM4NzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM4OTJlMzFlMWQ4ODgyNmNhY2FkMmZiOTdhNTQxNzhhYjFkNzFkYjkwZGVjZDY1ZDdjNjRmNzYxZTNhY2MwYjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7a95bdb5376b4b80b1bc4b0404fd6067",
+      "statement": "The reference stack pins its component images by version: Prometheus v3.8.0, Tempo 2.9.0, Loki 3.6.0, the OpenTelemetry Collector contrib image 0.141.0, Phoenix 20.1.0, nginx 1.28.0-alpine and Grafana 12.3.0.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/observability/resources/compose.yaml#L18-L129",
+          "version": "repo-lines-v1:sha256:09951b77f1c6b67643b3953699e6bd22d26792c27643c70e1986d794f52e9f18:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEyLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIyNjYyNjM2MzYwNTIyNTExOTU1MmM3OWExYWFiZmQ2MTA2NTVlNTc3OTdjNTI2MWM0YmZjYjI3YzE0OTI3YmVmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJhNjBjM2M1NjRkNDNiMWE2MzY3Nzg3NWNjNWQ5YTk5ODk5Y2JjNDBmNTM1ZjE2YWVhNjBkNWRkYjk2ZWRlMzhkIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJkYzAwODQxZWNmNDU5YzY0NGNlMGZlNTU5OWZhODcyY2RmNTA5ZDlhMzM1YTFkZGNmMjgxZDdmYjIxZWMwZjJkIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIyNGU4MzRkZTQ1Y2Q1NTVjZmRjNGZlNjhjM2Y5OGMzY2U4YzNlNDkwN2UwODYwMTk5NDAxOTA5ZGQ5OTMwMGJlIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_f4c2bc08ccb34e4b9efc5f79add06369",
+      "statement": "The Prometheus alert rules file defines twelve alerts covering target availability, readiness staleness, dependency failure, sustained errors, processing stalls, discovery staleness, collection failure, telemetry export failure and sustained transport errors.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/observability/resources/prometheus/alerts.yaml#L18-L140",
+          "version": "repo-lines-v1:sha256:2299b76d652fc12b0dbd510472d65a87028fc67a4089ea1913798e9df7082e56:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI4ZmE3MzQ2MTM1ZmZiZWQ3MDA0YTNhOThkN2UwMDI4NThiOGIyMTZmZmRhZTlkZDE5MzNiMDJiMTM5MWMzMWQ4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI1YTI1Mzk2YzE3MzBlYTc0YzFkOTgwNWIyNmE5OWY2NGNiNjgzYzcyODAyMmEzMzQ3MjQxOWRmN2I3NzVjZGRmIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIxOWU2YTU1ZGJlODljM2I2YTk4YzhjNjQ5MjFlYTZmYjcyZTIyNmQ0YmJhZmYxMmUxMDRjNWFiM2E1OGM2MDQwIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJmOTY5ZTkyMzcyODJlOThmNmRjNTE5YWY3MDhjYjdlNmM3OGM0NGQ3ZmQzMmI5ZTkwOWE1YWEyMWM2NmYwYjI2In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_bf471bec65434aaca8b29e0465adaaad",
+      "statement": "The repository's observability deployment guide states that the reference stack provisions eight dashboards and that Server exports reach the Collector through the authenticated gateway.",
+      "evidence": [
+        {
+          "resource": "repo://deploy/observability/README.md#L1-L8",
+          "version": "repo-lines-v1:sha256:249b3b4d381ef65a0dc1491651f01e47b70a29dc442cdf780ca43312edf90973:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzVkMjI5NDYyNmRlYzQ2NmEyNzY4ODZmMDgwMjRiYTIwMTE0YzNjYWZjMmVmYzJhYjY0NTE1OWZmMzVkNWM0NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTRiZGI2ODUwMjRjMzJkYjU2NTgzYTkyOTRjZGY5MjEyZDk4ZjljYmQyOWY2YTI3MWU2OWFjNzQ0NTI4ODY1ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTk0ZmNjZjYxN2NjMjhhZWI5NDYxZjVhZDM2MTBmYzI4YTg2MTVkNDI1NDFhOTAyNzY2ODJjNTIyN2ZmMjE3MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bd15ee40baed4734bdc2a1c6d8720263",
+      "statement": "wait_for_phoenix polls the default Phoenix project's spans API on 127.0.0.1 and succeeds on a queryable project within 60 seconds, or, when a trace ID is given, on that trace within 120 seconds, raising an error that points to container logs on timeout.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/observability/phoenix.py#L39-L58",
+          "version": "repo-lines-v1:sha256:3927c0049b48d296122da4d75f628052be85c23c58408c26c6abf9bbb235e81b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmNTA1MmUzMzZmYmYyODhmNTJlOWU4Yzc1NzhkZjkzMDg1ZDQ4MmEyNmY4MjI1NmIzMTNkOTAyNDJjN2U4NTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3ODZlOWEyMjE1NTlmOTc0NDQwZGQ3M2U3ZGRmMGFlNWMyMzkyNTkxODJlMDJiZTM3NDA1MWU2NWZlYjI0MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc5ZGQ1NWMyZTQ2ZTY2N2VlNGE2YzliNGRmNzUxMWNiMjNhNWNhZjRjNDg4N2JmOGQ5ZGY4Zjk2NWNjZTdmZGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6e55affdef914891a38f047b12368123",
+      "statement": "The standalone Phoenix guide sends OTLP HTTP spans to http://localhost:6006 and treats a reachable UI or route as insufficient, requiring a real operation's span to be found in Phoenix as acceptance evidence.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/operate/trace-with-phoenix.md#L100-L116",
+          "version": "repo-lines-v1:sha256:fb44414d180aaec55a6fdd1b81b331a4d74e827a30536b7c71a825312180e4dd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc0NjI1MThkYWM0MmQ3OTU1NWMzMzNmZjFkYzA2ZTViZjNjM2M3NTY5YmJkZjJhYWMwODE1NWVjYmVlNjA3MjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzZWQ5YjkzZGUzNmVlZTJkN2ZiMjVhMWEyNDVhNjBlMTZlMWI3ZTM1M2JlZGMyZDIwZTgxZDA4MzFjMjFjM2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFlOWU1MmRmN2NkM2U2YWVhNzc2ZjY5Y2QzY2RkNDk5NTE3ZjE0MTM0MjI0ZTNlZDMzZTM1M2RhNGIyNTg2ZGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJkZjcyZjE5NmVlYjhkMzNjMDU1ZDRkYWQ4Y2U2MGUwYTQwMDJhOTMyMjMzM2M3NjY0MmVkMGFmZDkzZDZiYmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f57a37f6b8914eb9a47d02e61b9a6b66",
+      "statement": "The Langfuse guide sends PowerContext's OTLP spans to Langfuse by environment configuration only: it sets the OTLP endpoint to http://localhost:3000/api/public/otel, a Basic Authorization header, and x-langfuse-ingestion-version=4, and it requires Langfuse v3.22.0 or later.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/operate/trace-with-langfuse.md#L46-L50",
+          "version": "repo-lines-v1:sha256:eec0e4c7558ce501f2a31837bcf8af65724489b867213a9c3232a7b69c24bcd0:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdjMDZjNTYxZDVjMzI3MzQzNjg1MjY4YTQ2YjMzOTFmMzk5OGVlZTg5MGQyYmU1MWYwZDIxY2M0YTUzYWU2ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2YzZWM4ZmM2ZmQ3ZGQ0MzA4ODFkZWZjZTA2YWM5NDYwN2ZjODg1YmY1Y2Y5NjVkZmJhMjFjOThlODM3MTc3YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjNiNTE1ZTBjNjNmNzU1N2IyNDRjZTI2YzVjMzgzMzk4NjVjZGMyOTFkM2RhYjI3NTMwODFlZjI2MGNiY2U2ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGI5Y2JmNGRiYzE4ZGIyNjk4OWQ0MGMxYTNmNjE0ZGQzYzg5ZGVlNzFlM2I5YWI2YjcyNGYyZmJmMzY5OTdlMiJ9"
+        },
+        {
+          "resource": "repo://docs/en/docs/operate/trace-with-langfuse.md#L96-L116",
+          "version": "repo-lines-v1:sha256:2c3a2a305de29968cde911fc6f99762761b8010cf1bf786c9b6687dc1a33cd1e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5MjBhOWQ4MDkzNGRiMTMxZTAyN2NhOTVkMmE1MDJlNzgzODVlZDJlNDRkODk4Njg2NmRkYWJhZjU0YWRlODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgxOTdjYWJmM2U1ODkxNGJjMmRmNTdhMWU1YTAxNDVhNTAwYzRmMzg5NjFmNTIyYWE4ZjE0OGFjZDhiODE4MDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBhNDRmMWQwMGQxNDY5MzdkY2Y0OTM1NzQyYzdlN2UyYTg4NWYxNjg0NGRmNThlZGUwZTNlZWE3MjI5M2M4MzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a086b837d9c84989ac658264d550e536",
+      "statement": "The Langfuse guide states that the integration needs no PowerContext code change and no Langfuse SDK.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/operate/trace-with-langfuse.md#L8-L16",
+          "version": "repo-lines-v1:sha256:ca1880b8fdbe9e28f94f353d461ec812079a3c0873d13514ff37b9a1f2dc9d2d:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTc5OGRkMjBiNzIwMDM2YjU2ZjA5MTJmN2ZkNjcyMjk3ZDViNmY5MjUxZTg0MjQ3YWZjNGNjMGEyOTQwZmNkZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWQ4ZmVmZGY0MjlkMDg5NzkzNGYzMDZlMmJhYjM5ZDFiNmJlMjdjYWEzNmY4MzRhYjNhYWQ2YzNlY2U5OTc2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWRhNjIxN2UyNjAwZjU3ZGQwODEwNTc3YzE0NGRhNDYxMjQwNmYwYzkzN2VkYWZjN2M5YzMzOWU5NWI1YjRmOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzhhM2E5N2NhY2M2MzVhZmM1YjY1MjIwMGIzMGM2YTk4NmNlNzA2N2MwNWM2YjJhODY1ZGIzZGI1MTdhNWM4OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b487b3c358c547c99a9453e25f5511f0",
+      "statement": "The operator guide defines a stalled-processing alert as one requiring a fresh collection, current pending evidence and no verified acknowledgement progress over the chosen window, and it treats a zero acknowledgement timestamp as never acknowledged rather than as an outage.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/docs/operate/observability.md#L317-L362",
+          "version": "repo-lines-v1:sha256:a9d9642f4d67aaac7467529e2d4c4939e4c5de899f9609d5b3f4309b59526f46:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4NzJhZWViOTQzYTE5NWJjMmQ3N2YwOTM5NTIxZjEyZWEwYjk2MzgxMDk4MzJmYTkxYzRiNmZhMGZhN2RjYmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRkMWIwMjUwMDViYjhkNDg1ZjhjZTVmMTExZjFjODE4NWFlNjA2ZTIyOWM5YjgxOWI4Mzc1ZWIzMzlkNTNjYTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5MDYwODcwMjIxYTZhYjYyZjM2NTlmNDQ3YjE2NjIzNTlkYzQ3MTZiZjExZDIzMDVmZTJjOTMzNTQ1YzBkMjMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T09:04:09.583Z"
+  }
+}
