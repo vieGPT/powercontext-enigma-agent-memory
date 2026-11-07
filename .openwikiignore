@@ -1,0 +1,29 @@
+# OpenWiki read boundary for the PowerContext wiki (commit b8b18909)
+# secrets
+secrets/
+*.env
+*.pem
+*.key
+# marketing posts and site build: no behaviour to document
+docs/en/blog/
+website/
+# benchmark and evaluation results, large generated data
+evaluation/
+docs/en/benchmarks/
+# images and binary assets
+assets/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.svg
+*.mp4
+# lock files
+*.lock
+bun.lock
+package-lock.json
+pnpm-lock.yaml
+# licences and contributor scaffolding
+LICENSES/
+.github/
