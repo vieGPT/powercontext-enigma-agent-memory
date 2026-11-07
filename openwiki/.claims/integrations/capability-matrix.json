@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:e80991c85dbbed2498948800843178f28ac873e7c1be3ca08f5ca0ae5300df17",
+  "pageVersion": "sha256:ee568a131bc8e9f3c26ef60ad19aef0ff764c4b9b8317aecf02c8647632a068f",
   "claims": [
     {
       "id": "claim_d47c1eb835b6497288db6b8ecbe8ab6c",
@@ -278,11 +278,15 @@
     },
     {
       "id": "claim_91f1aec64f7e4e31be5ec503b5e3dc5c",
-      "statement": "scripts/generate_integration_manifest_docs.py runs the directory, evidence, release tag, and tool surface gates before rendering, raises without writing when any gate fails, writes the en and zh matrix pages, and with --check fails when a checked-in page differs from the rendered output.",
+      "statement": "scripts/generate_integration_manifest_docs.py runs the directory, evidence, release tag, and tool surface gates before rendering and raises without writing any page when a gate fails; it renders one page per DOCUMENTATION_PATHS entry, where en maps to docs/en/docs/integrations/capabilities.md and zh maps to docs/zh/docs/integrations/capabilities.md, and with --check it fails when either checked-in page differs from the rendered output.",
       "evidence": [
         {
-          "resource": "repo://scripts/generate_integration_manifest_docs.py#L26-L69",
-          "version": "repo-lines-v1:sha256:f81b3201d0a65eb153bc1fcaf91019f1556acf38eeb6820ced68681d2c633686:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwZTBmZWE4MzdkNmYyODJlMzJkZWRhMzAzOGFjMGNjNzMwYWQyMmQzNzYwZTY3ZDA1MzBmYzE2NjYyNDI1ZWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4ZTk5MjMyY2QzYTMwOWY1MGNiZDZmNjYyMTI3ZWVhYWZjZTFmNzM2MjkyZGVmYjExM2Q5ODFhMjBjN2Q4NTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIzOTE4ZmIxOTUxNTk4NmZkY2FlYmUwMzkzYTYwNGViMWMzNGY1NmM0YzQwNGUwZWZhMWJkYjdiNzNhNDU3NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+          "resource": "repo://scripts/generate_integration_manifest_docs.py#L34-L65",
+          "version": "repo-lines-v1:sha256:75bd3205484e3bc99be33bc1448dca88d64fed35f4bf7ba481c02c43dcc8127c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhODRjNDVhNmZkYmEwM2M2ZDRmYmRkYTRlNjI4OWQ0MWY2YzdkZTY3NjhhMDYwZjc0NDIyZTMzMjhjMDAxNzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1Y2Y0ZWYyYTU5MjY5ZDhkOWIyMDY1NjNkZmI2NmRiOGZmMGViMTNmNjczZDY4ZjJiZmRhNjQ3YjhjYWY3MWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5OGIwNjNkOWI0N2U2NTM3OTYyNTU3MmNjZTE5NzY2OWQ1NzY3ZTEyYzE4YmUwNzU2NTJiOGNkOTgxY2U4ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNkNDEzNDBjYzIzOWExNTljZTliNjAyMmU5ZjYzMjI4MzJlMmVhZDc2Y2FlOWU0NzU0ZDIxMGViOGZiNmQ1ZTgifQ"
+        },
+        {
+          "resource": "repo://scripts/integration_manifest.py#L424-L427",
+          "version": "repo-lines-v1:sha256:9c441bf80b614b5963e215416bab5a2adceb212058950624a3d96fe7709780ee:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzA0MDM1N2IzMDVhNDk5OTI4YjEwYzA1ZGFkMzhlMTgzODVkY2U3M2QxNjgwNmRlMWJkNTI0M2VkZDUxNmZjZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTM3YzE5ZmQxZjY1NzI5OTk3NjUyYzU3OGYwZGNiNTRmZjU3ODFmMWY0NTA4OTU1ZDQwZDU3ZGVhMWJmNTZmNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGEzYWVlYWQwYjJiMDM3NWEzNTVkNWY2Y2JlNGU3MTRhYTJlODhlOGM1ZGJiOTUwZTYxM2M1NDEyYjgzZTZlOSJ9"
         }
       ]
     },
@@ -433,6 +437,6 @@
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T09:04:09.583Z"
+    "at": "2026-11-07T09:43:24.725Z"
   }
 }

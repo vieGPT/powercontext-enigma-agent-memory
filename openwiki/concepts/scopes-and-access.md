@@ -5,7 +5,7 @@ description: Defines Scope as the ownership and isolation unit and explains Serv
 tags: [scope, access-control, authorization, authentication, rbac, owner-recovery, server]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:04:09.583Z
+    at: 2026-11-07T09:43:24.725Z
 sources:
   - id: openwiki-source-f29470b6a16e826f5a684048
     resource: repo://src/powercontext/builtin/scope/application.py
@@ -41,7 +41,7 @@ sources:
     resource: repo://src/powercontext/server/settings.py
   - id: openwiki-source-e88d71bc921e1d285f34c823
     resource: repo://tests/test_access_control.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:04:09.583Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:43:24.725Z" }
 ---
 
 # Scopes and Access Control
@@ -67,11 +67,10 @@ Agents should treat the Scope as a precondition. Before writing content, the age
 
 `ACCESS_MODE` has two values, `disabled` and `enforced`. The default is `disabled`. [`AccessControlConfig`](../../src/powercontext/server/settings.py) carries the mode, the deployment identifier, and an optional background Principal.
 
-<!-- openwiki: mermaid parse failed and this diagram was converted to a text fence so it does not break rendering. Fix the diagram source and restore the mermaid fence. Parser error: Heuristic: a semicolon inside a label breaks rendering; rephrase the label. -->
-```text
+```mermaid
 flowchart TD
   A["Resolve ACCESS_MODE"] --> B{"Mode is disabled?"}
-  B -- yes --> C["No Authentication or Access Provider loaded; checks skipped"]
+  B -- yes --> C["No Authentication or Access Provider loaded, checks skipped"]
   B -- no --> D{"Authentication Provider injected?"}
   D -- yes --> E["Use injected Provider with injected or built-in Access Control"]
   D -- no --> F{"auth.identities_file set?"}

@@ -5,7 +5,7 @@ description: How the PowerContext Claude Code marketplace plugin wires SessionSt
 tags: [claude-code, plugin, hooks, mcp, scope, integration, marketplace]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:04:09.583Z
+    at: 2026-11-07T09:43:24.725Z
 sources:
   - id: openwiki-source-09160a15c85836458c6d2077
     resource: repo://.claude-plugin/marketplace.json
@@ -45,7 +45,7 @@ sources:
     resource: repo://tests/claude_code_plugin/test_contract.py
   - id: openwiki-source-3bdf3579b68b883e6e60a3fa
     resource: repo://tests/claude_code_plugin/test_hook.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:04:09.583Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:43:24.725Z" }
 ---
 
 # Claude Code Plugin Integration
@@ -103,8 +103,7 @@ The plugin does not choose a Scope locally. `resolve_scope_id` sends one `POST /
 
 The Server applies the order in `resolve_binding`: an explicit Scope ID wins and must exist; otherwise the first binding key with a stored binding wins; otherwise the Server's default Scope is used [repo://src/powercontext/builtin/scope/application.py#L272-L292]. The HTTP handler `resolve_scope_binding` passes the explicit ID and keys straight through [repo://src/powercontext/server/app.py#L2524-L2534].
 
-<!-- openwiki: mermaid parse failed and this diagram was converted to a text fence so it does not break rendering. Fix the diagram source and restore the mermaid fence. Parser error: Heuristic: a semicolon inside a label breaks rendering; rephrase the label. -->
-```text
+```mermaid
 flowchart TD
     A["Hook receives cwd and session_id"] --> B{"POWERCONTEXT_CLAUDE_SCOPE_ID set?"}
     B -- yes --> C["Server returns that Scope if it exists"]
@@ -114,7 +113,7 @@ flowchart TD
     F -- yes --> G["Server returns the workspace-bound Scope"]
     F -- no --> H{"Server default Scope set?"}
     H -- yes --> I["Server returns the default Scope"]
-    H -- no --> J["404 scope_not_found; hook exits with no recall or capture"]
+    H -- no --> J["404 scope_not_found, and the hook exits with no recall or capture"]
 ```
 
 Caption: the Scope resolution order seen by the Hook, with the no-configuration fallback on the right-hand path.
@@ -169,7 +168,7 @@ The steps, in order, are:
 4. **Scrub and bound the query.** `scrub_secrets` replaces recognized credentials with `[REDACTED]` in the query only, and the query is bounded as described in [Recall query bounds](#recall-query-bounds) [repo://integrations/claude-code/plugins/powercontext/hooks/user_prompt_submit.py#L157-L166].
 5. **Recall.** `POST /v1/context/prepare` is sent at most once, with `scope_id`, the query, `max_bytes` set to 8,000, and optional `include_code`, `assembly`, and `bootstrap_receipt_id` fields [repo://integrations/claude-code/plugins/powercontext/hooks/user_prompt_submit.py#L219-L242] [repo://integrations/claude-code/plugins/powercontext/hooks/user_prompt_submit.py#L404-L440].
 6. **Capture.** When `capture_prompts` is enabled and the prompt is at most 200,000 characters, the original prompt is posted to `POST /v1/sources/content`. Capture is skipped for prompts that the scrubber changed, and the skip is reported with reason `sensitive_content` [repo://integrations/claude-code/plugins/powercontext/hooks/user_prompt_submit.py#L167-L177] [repo://integrations/claude-code/plugins/powercontext/hooks/user_prompt_submit.py#L243-L277].
-7. **Flush, when enabled.** Only when `POWERCONTEXT_CLAUDE_FLUSH_ON_CAPTURE` is true, the hook calls `POST /v1/memory/flush` up to `flush_max_calls` times until the reported `current_cursor` reaches the captured Source's position; otherwise it raises and the failure is reported [repo://integrations/claude-code/plugins/powercontext/hooks/user_prompt_submit.py#L189-L200] [repo://integrations/claude-code/plugins/powercontext/hooks/user_prompt_submit.py#L278-L297].
+7. **Flush, when enabled.** Flush is opt-in and runs only after a successful capture. `POWERCONTEXT_CLAUDE_FLUSH_ON_CAPTURE` defaults to `false`, both in the settings dataclass and in the environment read [repo://integrations/claude-code/plugins/powercontext/claude_code_settings.py#L87] [repo://integrations/claude-code/plugins/powercontext/claude_code_settings.py#L161-L164], so ordinary prompts do not wait for Memory processing. When enabled, `_flush_through` calls `POST /v1/memory/flush` up to `flush_max_calls` times, returning as soon as the reported `current_cursor` reaches the captured Source's position. If the cursor never reaches it, the loop raises and the failure is reported as a `flush_memory` diagnostic [repo://integrations/claude-code/plugins/powercontext/hooks/user_prompt_submit.py#L189-L200] [repo://integrations/claude-code/plugins/powercontext/hooks/user_prompt_submit.py#L278-L295].
 8. **Emit output.** Diagnostics go to `systemMessage`, and recalled context goes to `hookSpecificOutput.additionalContext` with `hookEventName` `UserPromptSubmit`. Nothing is written when both are absent [repo://integrations/claude-code/plugins/powercontext/hooks/user_prompt_submit.py#L544-L563].
 
 ### Recall query bounds

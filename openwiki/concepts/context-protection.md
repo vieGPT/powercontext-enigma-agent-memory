@@ -5,7 +5,7 @@ description: How PowerContext admits final model bytes through check phases befo
 tags: [context-protection, inference-privacy, check-context, reuse-binding, before-send, before-release, decision-projection, processing-security]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:04:09.583Z
+    at: 2026-11-07T09:43:24.725Z
 sources:
   - id: openwiki-source-0d060442e0f8755edaeee71e
     resource: repo://src/powercontext/builtin/inference/errors.py
@@ -33,7 +33,7 @@ sources:
     resource: repo://tests/test_automatic_prompt_privacy.py
   - id: openwiki-source-9f31641b7b5e454b50b812b3
     resource: repo://tests/test_processing_security.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:04:09.583Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:43:24.725Z" }
 ---
 
 # Context and Inference Protection
@@ -44,9 +44,7 @@ Context protection is the set of controls that decide whether exact model-bound 
 2. **Inference protection** at PowerContext's owned provider transports, which runs the same rule engine on every actual HTTP attempt and refuses delivery when enforcement fails.
 3. **Reuse and projection bindings** that tie a prepared historical context to its current authorization and source state, and that limit what a decision backend sees.
 
-<!-- openwiki: broken internal link [../operate/context-protection.md] file "../operate/context-protection.md" does not exist. Fix the href or restore the target, then delete this comment. -->
-<!-- openwiki: broken internal link [../operate/inference-protection.md] file "../operate/inference-protection.md" does not exist. Fix the href or restore the target, then delete this comment. -->
-The protection is opt-in. Its default mode is `disabled`, and the rule engine never calls a model, never redacts, and never rewrites content. The caller still owns model execution and delivery; a check does not authorize spending. For the operator-facing contract, see the [context protection guide](../operate/context-protection.md) and the [inference privacy guide](../operate/inference-protection.md) in the repository docs. This page explains how the implementation fits together.
+The protection is opt-in. Its default mode is `disabled`, and the rule engine never calls a model, never redacts, and never rewrites content. The caller still owns model execution and delivery; a check does not authorize spending. For the operator-facing contract, see the [context protection guide](../../docs/en/docs/operate/context-protection.md) and the [inference privacy guide](../../docs/en/docs/operate/inference-protection.md) in the repository docs. This page explains how the implementation fits together.
 
 ## Verdicts and phases
 
@@ -97,8 +95,7 @@ Several behaviors follow from this flow:
 
 - Observation modes (`shadow`, `advisory`) never reach the rule engine in `check_context`; they return `withhold` with `enforcement-not-configured`. Observation modes only report on already materialized requests at the transport.
 - A `block` or `withhold` from the rule engine is returned as-is with its reason codes and coverage. It is not converted to `allow`.
-<!-- openwiki: broken internal link [../operate/context-protection.md] file "../operate/context-protection.md" does not exist. Fix the href or restore the target, then delete this comment. -->
-- Structural errors in the carrier, such as an unsupported JSON pointer, a locator that does not cover a whole text block, an overlap, or a non-user message, are not verdicts. They raise and are reported as request errors. The public API maps invalid carriers and locators to 422, authorization failures to 401 or 403, and oversized payloads to 413 ([operate guide](../operate/context-protection.md)).
+- Structural errors in the carrier, such as an unsupported JSON pointer, a locator that does not cover a whole text block, an overlap, or a non-user message, are not verdicts. They raise and are reported as request errors. The public API maps invalid carriers and locators to 422, authorization failures to 401 or 403, and oversized payloads to 413 ([operate guide](../../docs/en/docs/operate/context-protection.md)).
 
 ## Admission of prepared context before send
 
@@ -151,13 +148,13 @@ Caption: the protected transport's send and release states, from [protected_tran
 Details that follow from the transport code:
 
 - In `shadow` and `advisory`, the transport records the decision but never refuses delivery, and it does not inspect or buffer responses. Only `enforcing` buffers the response and refuses.
+- In enforcing mode the release decision is enforced before the SDK receives a response. After the complete raw response is buffered, `_assess` raises `InferencePrivacyError` for any non-allow verdict; only an allowed verdict reaches the code that builds the returned `httpx.Response` from the exact approved bytes ([protected_transport.py](repo://src/powercontext/builtin/inference/protected_transport.py#L177-L190)).
 - In enforcing mode, the transport reads a streaming request body into memory before inspection. A stream it cannot read, a body above `max_payload_bytes`, a target that does not match a trusted profile, or a method other than POST is withheld before send.
 - A response with a non-identity `content-encoding`, a body above `max_response_bytes`, a timeout, or a transport error is withheld at release. Timeouts and transport errors carry the reason `send_or_response_uncertain`, and their usage is recorded as incomplete.
 - The SDK receives only the exact approved decoded bytes; compression and length headers are removed. Streaming responses (`text/event-stream`) use the SSE inspector rather than the JSON inspector.
 - Refusals are raised as `InferencePrivacyError` and are not absorbed by advisory decision fallbacks. Usage known at the failure remains attached and is reported.
 
-<!-- openwiki: broken internal link [../operate/inference-protection.md] file "../operate/inference-protection.md" does not exist. Fix the href or restore the target, then delete this comment. -->
-The Memory write gate and Topic Memory workers inherit this behavior: a refusal leaves the Source window pending rather than publishing or acknowledging it, as described in the [inference privacy guide](../operate/inference-protection.md).
+The Memory write gate and Topic Memory workers inherit this behavior: a refusal leaves the Source window pending rather than publishing or acknowledging it, as described in the [inference privacy guide](../../docs/en/docs/operate/inference-protection.md).
 
 ## Rule engine
 

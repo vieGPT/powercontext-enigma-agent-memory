@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:0df9d70df9794f2da8b6d6a571d06b6c8a6cf8e9daa5d812c90359f4ccf50e81",
+  "pageVersion": "sha256:a4d138ad5dac45035a51d9dd7a5583f91fb1e42fd9a439db9dce927d9d72347b",
   "claims": [
     {
       "id": "claim_b0754ba03de44cfebfec264112e33805",
@@ -466,8 +466,12 @@
     },
     {
       "id": "claim_bdaaa701a3f744648c103ce9d5069d8a",
-      "statement": "OTLP log export is opt-in: an OTLP log handler sends the same allowlisted payload through a batch log record processor, and configuration fails with a RuntimeError when the tracing-otlp extra is missing.",
+      "statement": "OTLP log export is off by default: ServerLoggingConfig.otlp_enabled defaults to False. Only when POWERCONTEXT_SERVER_LOGGING_OTLP_ENABLED=true does configure_server_logging add an OTLP log handler, which sends the same allowlisted payload through a batch log record processor; if the tracing-otlp extra is missing while enabled, configuration fails with a RuntimeError.",
       "evidence": [
+        {
+          "resource": "repo://src/powercontext/observability/profile.py#L50-L60",
+          "version": "repo-lines-v1:sha256:a3a05f27a85dbd62db34759e97028e0363f6f7ebc264d71e5e375f1a58069b75:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyOGFhYjRlZTRkMmVhYzc3ZGVjZDU1MDg1NDQxZTU1YmFlYzIxMzhjMTNhYTE2MGJkZjliNmYzMTIyMjY0NWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmNzU4MWQ4NGQzMDA3Y2VhOGUyN2YyZWI2YjQxYzllNGQ2MTMxYjYwY2JhMDUyMTYzNjJlZGY4MDUzMGYzMjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg1Njc2Zjg5M2M0Mzk5M2ZkYmMyMDY2ODYzODIyZjY0MzVhZWQxNTAyMWZhNWFiOTMzM2M1ZWE5OTQ3N2NhZjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5NGM0ZmFmMDU0MjM2NzllMGNhYmY5NmM5N2ExNGE5NTk4Zjg5ZTY3ZjVjM2RkNTliNjMzZTk2NmQ2Y2U3ZDEifQ"
+        },
         {
           "resource": "repo://src/powercontext/server/logging.py#L154-L157",
           "version": "repo-lines-v1:sha256:351ae37c7af249ed39d1f58890c982876c68a8be012437ca948c93550c0f1112:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTg2MDE5ZTIzOTk5MWZlMWM5OWRjOTc3ZmYyOGYwYTk3Y2NiZjFmMWY5ZDg4ZTI2MmMyOTdmMjc0MDdlOTljYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFmYmEwNTI3YzM5NTNjNGI2ZTBlNWI1NzM5YmE4MzYxMmY4MDUzYmNkYzk0NjY3MzAxOTNjZDFkNTkwYjQwOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODIwNzMwYTA0YzFiZWUyYWMwNGFmYTdkNTMwMjVhNzllZjVlNjMxZjg5OWQwMjdiZDkyNjMzZDhmN2U3NGE5MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWMwNzZiMjBjMzY3ZjNlZTAwNWFlYTViMGU3YzI0NmM4NDkzMGNiMTA4YmEwNzEzYjdiNTdjNmZiY2M4ZTBjNSJ9"
@@ -477,8 +481,16 @@
           "version": "repo-lines-v1:sha256:9ab3838787222f49bb1f64df6fa7cd105794bbdd1c54d8868797cc2932867f2d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjOTRjMDBiZDA5Nzg4OWIxZmVhODJkNzc3YWVkOTlkNGExNTFkYzM3OGQ1NWNkZWYxZGFjMmYxMDM0YzM1MTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdkNjk1ZjYzYzRmOTI5ZDVjYjkyZGY1YjM4ZDRhMmM2MWUzM2VhM2FhYjBhODU2ZTAzNWQwNDU1Yzk1ZTdlMmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ1OWZiMGY1MmVmZjA5MzliMmQ2YzdjOTBhMWU2ODEzNjdlZjE1NTk4MTMyMmJkZWIzNDViNTU3ZDAwMDc4ZWMifQ"
         },
         {
+          "resource": "repo://src/powercontext/server/logging.py#L586-L592",
+          "version": "repo-lines-v1:sha256:66df7c46563fcffc30752eadd88fd1de762ebbd94dac17166a7e55c5f6c0d4a8:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2Y3Y2MxMDM0Y2NkY2M2ODcxYjllMTIxYTFiYjI2NDllMjg0ZWFjZWU3NDgxYjI1NDVhNTFlYmZjZWM5YjRlNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGYyNWIxNTU3NDNkNzI4NGRkMWNkMmIwODI4ZDVmZTFkNWIyMmUyNGNmNjc1NWIwNmEzODkzNDk3OGViYWVlMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDA4OTA3NGE4YWFmN2QwMTYwNGUwMDAwYzE5ODQwMTVlMjE4OGNkZjRiOGRkZjBiNDRkMTJmZDNiNWU3MWYxMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjIyN2YyZDNkNmE3NmMyZjFmNDY2ZDQyMTY3ZTE0NzQ2NWIxZDMxZDExYWU3M2NhYjdlMjYxMGQ0ZjgzMDQyOCJ9"
+        },
+        {
           "resource": "repo://src/powercontext/server/logging.py#L612-L640",
           "version": "repo-lines-v1:sha256:83cb9eb9b8d9e3677af06b886d7dc00de043547dc120c1df3dcb8fb88a3d6087:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2OTM5ZDZjOTJlN2QzODY4NTNhYTU3ZTlhNDA4NGZhMzllOTJmOTRhNTFjMjFjMGMxMDgzMTVjYTEyYWEyZDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5MDJiNjgxMDRkMTk1YjNiZTAwYjliOTczNzI2OGEyYzZlYTVkYTE4NWNlZTkyMzliZDdkNjVlYWQwMGI3M2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmNWM3OTIyOTk1MzRmZTBmZTQzZDJiNWYyN2ZjNzJkNDI3ZWU3YzhhZGU4YzI0ZDA0ZmIzZDdlZWNjMDRlOTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEwMTkxMTlhNjZlZDc0YjUzMDFmMGQyNDEyNzU2NGRlN2EzY2E2NGVlZTc0MmE5MDNlNjk2M2FlYWY3MTM4Y2UifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/settings.py#L216-L218",
+          "version": "repo-lines-v1:sha256:561570bebb016f43bc3c7c65c2fe60d549e6a88a36ea642af8bedbbdb5a064e6:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTBiN2VkMGViZTMzOWU4YTQ5YjBhZjAyNzdjMDUzOGE4ZjgyMWRmNWE3MmI5ZDk1Nzc4MzYzZWI5YzZkNWYwNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmM2ZGVmMzk5NTc5ZGNiNTU4ZTFkOTJlZTk3ZGM0YzIyZjFjYTJlNTBlOTY1ZDEwOTMyYmM4NjEzOTE2NjhkYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTdkZWQyMzE3YzQ3Y2NiZDMxZmY4NjI1Y2U2YzVjMjcxYWJmODdlMDdhNzNlZmE0ZmU2N2MyMGVhYzk0MjJkNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTMwYmFhMmQyMzQ1YzRkNzI5NDFlYjA2MjIyNWRhYTRlOTM4YTE4NGQ1ZTQ2NmM4YzNhYmI4NzNmZTkzZmQ3OSJ9"
         }
       ]
     },
@@ -719,6 +731,6 @@
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T09:04:09.583Z"
+    "at": "2026-11-07T09:43:24.725Z"
   }
 }

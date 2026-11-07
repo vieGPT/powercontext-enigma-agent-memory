@@ -5,7 +5,7 @@ description: Reference for the environment-backed Server (POWERCONTEXT_SERVER_*)
 tags: [configuration, environment-variables, server, client, scope, model-settings, env-file, validation]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:04:09.583Z
+    at: 2026-11-07T09:43:24.725Z
 sources:
   - id: openwiki-source-5f5b95b3d6a215fa02ceb945
     resource: repo://.env.example
@@ -25,6 +25,10 @@ sources:
     resource: repo://integrations/pydantic-ai/README.md
   - id: openwiki-source-b6c39b4dfe5c0c164f97f49d
     resource: repo://integrations/workbuddy/plugins/powercontext/hooks/workbuddy_settings.py
+  - id: openwiki-source-24426d4b33065d18ab6637eb
+    resource: repo://integrations/zcode/plugins/powercontext/scripts/scope.mjs
+  - id: openwiki-source-a5d70912a9db9cc2e6a1aaa7
+    resource: repo://integrations/zcode/plugins/powercontext/shared/scope.mjs
   - id: openwiki-source-ac8fe9f893dca0be8f08899b
     resource: repo://integrations/zcode/plugins/powercontext/shared/settings.mjs
   - id: openwiki-source-d472f9164689f4bc85c897ae
@@ -53,7 +57,7 @@ sources:
     resource: repo://src/powercontext/server/configuration.py
   - id: openwiki-source-35901f0dd38fd94b4898b536
     resource: repo://src/powercontext/server/settings.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:04:09.583Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:43:24.725Z" }
 ---
 
 # Configuration Settings Reference
@@ -343,6 +347,8 @@ Each Coding Agent integration reads its own Scope variable. The variables are op
 | `POWERCONTEXT_HERMES_SCOPE_ID` | Hermes | Read by the Hermes provider ([Hermes provider](repo://integrations/hermes/plugins/powercontext/provider.py#L411-L411)). |
 | `POWERCONTEXT_WORKBUDDY_SCOPE_ID` | WorkBuddy | Read by the WorkBuddy settings ([WorkBuddy settings](repo://integrations/workbuddy/plugins/powercontext/hooks/workbuddy_settings.py#L77-L77)). |
 | `POWERCONTEXT_ZCODE_SCOPE_ID` | ZCode | Read by the ZCode settings ([ZCode settings](repo://integrations/zcode/plugins/powercontext/shared/settings.mjs#L60-L60)). |
+
+`POWERCONTEXT_ZCODE_REMOTE_WORKSPACE` is a ZCode-only switch that turns off local path binding. The ZCode settings loader reads it as a boolean, where `1`, `true`, `yes`, or `on` enable it ([ZCode settings](repo://integrations/zcode/plugins/powercontext/shared/settings.mjs#L59-L59)). When it is on, the ZCode binding keys are empty, so Scope resolution sends no workspace or session key ([binding keys](repo://integrations/zcode/plugins/powercontext/shared/scope.mjs#L56-L57)). A remote workspace therefore needs `POWERCONTEXT_ZCODE_SCOPE_ID`, and resolution fails with `scope_unresolved` without it ([resolve scope](repo://integrations/zcode/plugins/powercontext/shared/scope.mjs#L65-L66)). The scope script refuses `bind` and `clear` with `remote_binding_disabled` ([scope script](repo://integrations/zcode/plugins/powercontext/scripts/scope.mjs#L43-L44)). For plugin installation and configuration, see the [ZCode section of the host adapters page](../integrations/host-adapters.md#zcode). The variable is listed with the other ZCode settings in the [ZCode integration guide](repo://docs/en/docs/integrations/zcode.md#L452-L452).
 
 The guided wizard's agent table records `SCOPE_ID` as a consumed setting for each supported agent, with the agent-specific prefix ([agent metadata](repo://src/powercontext/cli/config_wizard_agents.py#L47-L150)). The pydantic-ai adapter treats an unset value as "selects the Server default" ([pydantic-ai README](repo://integrations/pydantic-ai/README.md#L55-L55)).
 

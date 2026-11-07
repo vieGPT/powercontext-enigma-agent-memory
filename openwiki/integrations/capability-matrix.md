@@ -5,7 +5,7 @@ description: How integrations/capabilities.toml declares which agent hosts and f
 tags: [integrations, capability-matrix, agent-hosts, manifest, generated-docs, tool-surface]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:04:09.583Z
+    at: 2026-11-07T09:43:24.725Z
 sources:
   - id: openwiki-source-7a52dd335117116bd8fe79de
     resource: repo://integrations/capabilities.toml
@@ -35,7 +35,7 @@ sources:
     resource: repo://tests/test_integration_manifest.py
   - id: openwiki-source-8eeb47a743291b70640cfacb
     resource: repo://tests/test_system_cli.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:04:09.583Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:43:24.725Z" }
 ---
 
 # Agent Integration Capability Matrix
@@ -53,7 +53,7 @@ support, adding a host, or interpreting the generated matrix.
 | --- | --- | --- |
 | [integrations/capabilities.toml](../../integrations/capabilities.toml) | Declared contract: directory coverage, availability, toolsets, integrations, evidence | Yes, it is the input |
 | [scripts/integration_manifest.py](../../scripts/integration_manifest.py) | Pydantic schema, validators, tool surface probes, and the matrix renderer | Edit code, not outputs |
-| [scripts/generate_integration_manifest_docs.py](../../scripts/generate_integration_manifest_docs.py) | Writes or checks the en and zh matrix pages | Edit code, not outputs |
+| [scripts/generate_integration_manifest_docs.py](../../scripts/generate_integration_manifest_docs.py) | Writes or checks the en and zh matrix pages, using the `en` and `zh` paths in `DOCUMENTATION_PATHS` ([integration_manifest.py](../../scripts/integration_manifest.py), lines 424-427) | Edit code, not outputs |
 | [docs/en/docs/integrations/capabilities.md](../../docs/en/docs/integrations/capabilities.md) and `docs/zh/docs/integrations/capabilities.md` | Generated matrix pages | **No.** Regenerate them |
 | [integrations/kimi-code/plugins/powercontext/profiles.json](../../integrations/kimi-code/plugins/powercontext/profiles.json) | Generated Kimi MCP profile, written by [scripts/generate_kimi_profiles.py](../../scripts/generate_kimi_profiles.py) | **No.** Regenerate it |
 | [src/powercontext/cli/guidance.py](../../src/powercontext/cli/guidance.py) | Distribution descriptors (`HOST_GUIDANCE`) and guidance refresh; not generated | Yes |
@@ -99,7 +99,10 @@ flowchart TD
 ```
 
 The generator runs the directory, evidence, release tag, and tool surface gates before it renders anything. If any
-gate fails, it raises and writes nothing ([generate_integration_manifest_docs.py](../../scripts/generate_integration_manifest_docs.py), lines 26-69).
+gate fails, it raises and writes nothing ([generate_integration_manifest_docs.py](../../scripts/generate_integration_manifest_docs.py), lines 34-65).
+It renders one page per entry in `DOCUMENTATION_PATHS`: `en` maps to `docs/en/docs/integrations/capabilities.md` and
+`zh` maps to `docs/zh/docs/integrations/capabilities.md` ([integration_manifest.py](../../scripts/integration_manifest.py), lines 424-427).
+With `--check`, it fails when either checked-in page differs byte-for-byte from its rendered output.
 The diagram is a dataflow view of that gate, not a runtime sequence.
 
 ## Capabilities and support profiles
@@ -227,7 +230,7 @@ front matter, the availability definitions, the support profile and lifecycle ex
 columns ID, Kind, Availability, Profiles, Pre-compaction mode, Public surface, and Capabilities. The Chinese page
 uses the same structure with localized labels ([integration_manifest.py](../../scripts/integration_manifest.py), lines 1054-1140).
 
-`DOCUMENTATION_PATHS` maps `en` and `zh` to the matrix files. The directory gate requires each non-waived
+`DOCUMENTATION_PATHS` maps `en` and `zh` to the matrix files ([integration_manifest.py](../../scripts/integration_manifest.py), lines 424-427). The directory gate requires each non-waived
 integration to have both locale pages, and requires implemented integrations to list those pages in their evidence
 ([integration_manifest.py](../../scripts/integration_manifest.py), lines 424-460).
 

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:984a4af4859cef194494bca524594c7c2d9cde9bc06def273f3efc16cfb0277c",
+  "pageVersion": "sha256:7508f88751dbe11a611a0751b6c80c0a48c176bac85c6eaf1c1f9f8370e85764",
   "claims": [
     {
       "id": "claim_0f5933f5b2c6443b8d1cb09fcae08974",
@@ -44,15 +44,23 @@
     },
     {
       "id": "claim_0260f2f08f34487392b8d5f180c73f8b",
-      "statement": "LangChain recall and capture are fail-open: validation errors, ClientError, and unexpected exceptions are handled without raising into the agent, and the first HTTP 401 or 403 per operation is logged once at error level naming the POWERCONTEXT_LANGCHAIN_TOKEN configuration.",
+      "statement": "LangChain recall and capture are fail-open: validation errors, ClientError, and unexpected exceptions are handled without raising into the agent. Each PowerContextMiddleware instance initializes one _configuration_error_logged flag shared by recall and capture, so only the first HTTP 401 or 403 across both operations on that instance is logged once at error level, naming the POWERCONTEXT_LANGCHAIN_TOKEN configuration; later 401/403 responses are logged at debug level.",
       "evidence": [
         {
           "resource": "repo://integrations/langchain/src/powercontext_langchain/middleware.py#L133-L160",
           "version": "repo-lines-v1:sha256:de28c08200974057404f5b6fc11cc82c6ab411dd79d4eb25ddd2d5b51c1d2d37:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1ODM2YWE0MzU3ZmUzMzU3NWUzOTAzMTZiMGNlYWI4ZjZiYmY4YTUyNjg1NzIxNjY2MjQyMjkwZGJiN2I3MjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4N2FlZWM3YWQwNGM4OTUwOTY2YmI1MDhiMzkwOGI5ZWQ1YTM2NDE3ZGExNzhjMjBiYmI4NzhkZGViOTU2NDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczNzJiZTlkZDI3YzZmNGE5M2Q5NDI3M2QwMjJhZTE1YjI1MjkyZjVlZDVkZjUxZDQ4N2MwZjNmNmMxZTM1MzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiYTNkOGNmZjdiN2EwYWFjNDUwZDQyNTFjMWUzNzU3ZDZlNDQ5ZjU5MjMzMGFhMGE4ZWYxNTA5Nzc3ZTgzMjIifQ"
         },
         {
+          "resource": "repo://integrations/langchain/src/powercontext_langchain/middleware.py#L162-L185",
+          "version": "repo-lines-v1:sha256:a85c05ceed0de19f82247915af38e2dfa5ed4c04ae997251046a9c18dfeed81b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4OGMwMzRkZTEyNTI1ZTk1MTY4OWE0NWFkMmYwNmNhOWI4MTRlNjFlZmU2ZjNhZDhmNzU0MzdjNDZlYjAzMDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjZTUyMjkyMTVmOGRlOTcwMDYxNzEyMTFlMzkyZWYzZGU0ZWFjN2EzMzczNzM3NmVhMmYzYjA2NWU2ODI0OGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY2YzBhMzg1NzQwZTI2MjFlM2ZiMzk1NTBjZDNhYjZmNTg5NGNkMDZjM2Y3ZGJjNmZkNmM5NWVjZTY1MGUxZjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYzZGQ5MTAyMjYwYWU0ZWU4YjRkNzk1NTdjYzJlODNjNGJmZGI2NmI2MTlkNTI5MzhhNGQwY2NjNmUyMzFjYTAifQ"
+        },
+        {
           "resource": "repo://integrations/langchain/src/powercontext_langchain/middleware.py#L202-L216",
           "version": "repo-lines-v1:sha256:f483b60c14953308edb9fce8e714775c02102074dce095276820a1a65d0d9ab1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmYzJhZTU5MDlhZTA4MjNhZTc1OTUwYmM3NWI2MjZjMDI0YTAyNDlkZmMyMDYxMzQzNTVmNDhlMzA2MzA2NDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5NWMxNGM3ZTUxNDU5ZDI5MjMwMzIxODU2NzY2MzcyNzA5MjM1NTZlOGNkN2FmOTg3YjBhNTU5M2MyYzE3MTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRkNmM0NTMxODJkNmViMmY0N2RhZDM0MGIwMDQ3MWRhYmIwY2FmMjE4MzU0NTQ3ODg1NTEzYWJmYTFhOGYyYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY5N2VhZTQ1NzY3NmMyZDUwM2IwMmM0MmY3NGUwNDc2NzUxZjE1MTI0NjRlYTMzMzdiYWFlN2IxMWUwODU1MmUifQ"
+        },
+        {
+          "resource": "repo://integrations/langchain/src/powercontext_langchain/middleware.py#L64-L64",
+          "version": "repo-lines-v1:sha256:235ae31020e257d24cd20a46c448ca2030c2eed191d7b15a1fbe21c9fe530aa6:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjM1YWUzMTAyMGUyNTdkMjRjZDIwYTQ2YzQ0OGNhMjAzMGMyZWVkMTkxZDdiMTVhMWZiZTIxYzlmZTUzMGFhNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjM1YWUzMTAyMGUyNTdkMjRjZDIwYTQ2YzQ0OGNhMjAzMGMyZWVkMTkxZDdiMTVhMWZiZTIxYzlmZTUzMGFhNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzcwNTgzZWNhMDNhMjNlMjRhNmM0MzhlOWJhYjE1YzA2MDY2MzQyMWY3NTAwNmNkZWIxYWQ2NWZmM2YyMTRmMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjZjNmU2NTQ5MGIwYmNjMTRlMGFhNjg5YTM3ZjQ0NGQzMzJhNTM4ZWZlMDZlZGRhNDhkNTlmYTUwMTc1NjA2YSJ9"
         }
       ]
     },
@@ -425,6 +433,6 @@
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T09:04:09.583Z"
+    "at": "2026-11-07T09:43:24.725Z"
   }
 }

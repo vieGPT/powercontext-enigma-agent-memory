@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:b238900e68777067f729bdc95635d58ff9878432fd7dc5d338723398d160860f",
+  "pageVersion": "sha256:22e97eb6e604f6581bbd5a57180324141235d97bf5daddb5a0235dadb5bc96ae",
   "claims": [
     {
       "id": "claim_8abfcc75e7354adc942b4d8934016387",
@@ -202,15 +202,35 @@
     },
     {
       "id": "claim_f7edf3afaea34965957f35f47d4c00b7",
-      "statement": "Flush-on-capture is opt-in: when enabled, the hook calls POST /v1/memory/flush up to flush_max_calls times until the reported current_cursor reaches the captured Source position, and failure to reach it is reported as a flush failure.",
+      "statement": "Flush-on-capture is opt-in: the ClaudeCodePluginSettings default and the POWERCONTEXT_CLAUDE_FLUSH_ON_CAPTURE environment default are both false. Only after a successful prompt capture, and only when enabled, the hook calls POST /v1/memory/flush up to flush_max_calls times (environment default 4, validated to 1 through 16) and returns as soon as the reported current_cursor reaches the captured Source position; if the cursor never reaches it, the loop raises and the failure is reported as a flush_memory diagnostic.",
       "evidence": [
+        {
+          "resource": "repo://integrations/claude-code/plugins/powercontext/claude_code_settings.py#L116-L117",
+          "version": "repo-lines-v1:sha256:bbb5bb69d9fd38918a9dc643213552bb507a6c859a8417c21267e8b4933f5c17:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTYxZTZkZjIwZWZiYjRjOWNlOWQwYjYzNzQ2MTRjMjJhMjYxMTEzNDE2MzA5M2ZjNjJmNTM4MWQxMDAyNWI3OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGQyZDYzM2U0OWJiY2I1NjgyNzVlNWI0MjQ1ODQ0YTIxYTA3NjA2NTNjNTFlNGYzNmU2Y2VkN2E5YzNiYjNjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzk1OWQxY2Y5N2NiN2UzMzViNGI4YWRkYWVjODcyMTI1NWM2YzhhYzYwODlmNTE4NTkwODExNzcwMWY1Y2NiZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjg3OGUxOGE0OWIwNzYzMTExZjBkYWQxYzlkZjhiMmNlMmZiZTUwN2JmYjZhZWNhNjQ2NmVhMjk0MmI0ZTJlOSJ9"
+        },
+        {
+          "resource": "repo://integrations/claude-code/plugins/powercontext/claude_code_settings.py#L161-L164",
+          "version": "repo-lines-v1:sha256:98d3a4a489971699ac51a95f4e04a24b33e034e7c4015997d6f327160042b5d6:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzIzODg1MzMxODE5YjZkYzVlNjkxOTEwMzIyNGQ0OTBlYjRiY2Y4ZDgwMGVkMDEzOTgxMmU4MThjMGYzZWQ0NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGQzNGE5ZGY3NzliOTU2NmIwNGFkMmI5ZTZjZGRlM2IxZDVlNmMxYThjOGI5N2FiN2MyOGE3YjEzYTMzYmQ2YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGM5MGM4NWQ1ZmVkMGMwYmQ1ZmQzNzEwZGVhYjg4YzhkZmNkMTUyYTMzMDNjZDRlYTQzYmFiYjEzZTMyNjBhYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWRhZThiYTYzZGVlNDgzYTE0NDlmMTgwMjU1MTUwMGY0ZGVmYzIxY2I0YTJiMDU0NjdjNGEzM2Q0NjU0NmU0OSJ9"
+        },
+        {
+          "resource": "repo://integrations/claude-code/plugins/powercontext/claude_code_settings.py#L173-L176",
+          "version": "repo-lines-v1:sha256:6ae0788807707a9ac6d65f3eaceb6da476028d7ee9f8247555581e94d773930b:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjA3NTg2ODExZmY2ZWU3N2I2YjA0OWMxZmI5NWMyYWQ0Y2YxMDI2MDlkYjJkYzU2ZTg0MjRhZmU3YmY2YTI2YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGQzNGE5ZGY3NzliOTU2NmIwNGFkMmI5ZTZjZGRlM2IxZDVlNmMxYThjOGI5N2FiN2MyOGE3YjEzYTMzYmQ2YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjY0NDdhNjU0YTdjODcxNjdkYjVlYmM3MzQ3YzAzNzNjM2E0MGMwYTk5NjYyMTkxNzI1MTVkNGE3ZWVjZDA3NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjNkZjJhY2YwNmU4YzNmMDNjNzEzNWM2ZThhYzVhOWNhNTQzMmFiZTA2YTc0YWNhMGZkZDlhNTNhMDA4Zjk4NyJ9"
+        },
+        {
+          "resource": "repo://integrations/claude-code/plugins/powercontext/claude_code_settings.py#L87-L87",
+          "version": "repo-lines-v1:sha256:2554fb3deeaced333e1d0bd9060ba64eb9ac9570122138a56024b484d5b39497:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjU1NGZiM2RlZWFjZWQzMzNlMWQwYmQ5MDYwYmE2NGViOWFjOTU3MDEyMjEzOGE1NjAyNGI0ODRkNWIzOTQ5NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjU1NGZiM2RlZWFjZWQzMzNlMWQwYmQ5MDYwYmE2NGViOWFjOTU3MDEyMjEzOGE1NjAyNGI0ODRkNWIzOTQ5NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmJhNmIzMjEyODI1MTBlODZjYmRiNGE0ZmYxZWMyYmE4YjBjZTMwMDJkOTEzNTczYjIyMDNiMzc3ODMxMjNhNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2I5YzIwOTgzODJiMjdmYmU3YjYxMjE2OWViMjAyOTRmMTAxNjkwYjQwODkzMjQxNTBlMWZmODg3Y2Q4ZTE4MiJ9"
+        },
         {
           "resource": "repo://integrations/claude-code/plugins/powercontext/hooks/user_prompt_submit.py#L189-L200",
           "version": "repo-lines-v1:sha256:f08b3f28e8c6a1d339a9e158878c6655d13abbcf4b074f992b3350fe43d493aa:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjMGI3NTQ1MjhmZTBiMTExMGVhNmE2Y2ZhZDVlOTZhOGU0M2RjNzdiYWQ3ZmI4OWEzZDQ2Y2EwMDE1OWU5NzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0MDk3ODIxYzMyODkzNjdlNjlkMzU3MDNiNjhhNmQ4MzUzY2IxOTU3NWY5YzRmNWViYWYyMTY4MTQxYTYzZmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI3OTM4OGZlMjA1NTczMWM1NDZhNDFiMWNjOGIwMTFkODZlZjAxOGM3Y2ZhZmUxZmUxY2ZmYjBkNGJmNGRhNGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ4NGMzYWRhYzI5ZTY5NWU2Zjk0MGZhNThmNDNkMDkyNzczZmQwMTkxMzlkYWM1ODYzM2FkOTA1ODljNjA5YmUifQ"
         },
         {
-          "resource": "repo://integrations/claude-code/plugins/powercontext/hooks/user_prompt_submit.py#L278-L297",
-          "version": "repo-lines-v1:sha256:d4659b636981b95547753a62a454014f7a4145404769a2bed992c4f549f569c5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5M2ZiMWUzOTk1ZDM5NTY1MGNjOWJjNzI3MzU0MWQ5NDQ5NzM1NzE0ZWM2OTAyYjRiMjMyYWMzNWU2NGVkMjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQyNmZiNDZkYzRmZDI3MzJhZjQ5MGIyYmQyNWQ0YTIwNjk2NjU1MTNhN2EwZWE4NzM0ZTZlN2FhN2Y5OWQwNWIifQ"
+          "resource": "repo://integrations/claude-code/plugins/powercontext/hooks/user_prompt_submit.py#L278-L295",
+          "version": "repo-lines-v1:sha256:73b19f86e58b59dd4b5fb3e22c0ada5a2f891fe826e1130b36648cce9e682e46:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5M2ZiMWUzOTk1ZDM5NTY1MGNjOWJjNzI3MzU0MWQ5NDQ5NzM1NzE0ZWM2OTAyYjRiMjMyYWMzNWU2NGVkMjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyZGY3YjA1YzAxMzY5NWU5ZjFhYzM5ODBjNWZkMjVkN2NlMmYxNGE0YzQwZmZmMDllZjk2YzgyMmQ2NmY5NTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwYjM2YWVmYmJiZjRlYTA1NWIzMzI1ZGU5MTk4YjM0OGExZmZlYTkyMjViNjY4N2NkMzQ3MmJhM2RjYTY2MjEifQ"
+        },
+        {
+          "resource": "repo://tests/claude_code_plugin/test_hook.py#L631-L667",
+          "version": "repo-lines-v1:sha256:8ceea0eb9a7250c99682c1d44c6237663a0bac26cd3ba6a4041f0ea3bf1ff5a8:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjYzMxM2E4N2ZlYTYyNjAyNGE1MjY4YWUxYjUwZjRjNjBiYjhjNDQ0ZGMwOTc5OTY1ZmE5YjkwZjU3YjJhMDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImExMGE0MDM2MzZkNTZmZTRhNDJhN2RhZjljZjEwN2YwODAwNGU2Y2FkZTYzZDNmYmVmYjkwZjQ3Nzk0NjkwMGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImExMGE0MDM2MzZkNTZmZTRhNDJhN2RhZjljZjEwN2YwODAwNGU2Y2FkZTYzZDNmYmVmYjkwZjQ3Nzk0NjkwMGYifQ"
         }
       ]
     },
@@ -413,6 +433,6 @@
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T09:04:09.583Z"
+    "at": "2026-11-07T09:43:24.725Z"
   }
 }

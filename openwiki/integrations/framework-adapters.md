@@ -5,7 +5,7 @@ description: Maps each PowerContext Python framework adapter (LangChain middlewa
 tags: [integrations, adapters, langchain, langgraph, pydantic-ai, dify, cindy, minimax, opendal, client]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:04:09.583Z
+    at: 2026-11-07T09:43:24.725Z
 sources:
   - id: openwiki-source-2105e0d1930dd7a02f527f79
     resource: repo://docs/en/docs/integrations/minimax.md
@@ -61,7 +61,7 @@ sources:
     resource: repo://src/powercontext/http/_generated/operations.py
   - id: openwiki-source-c679f009aeb3c68ed320bfab
     resource: repo://src/powercontext/sources/connectors.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:04:09.583Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:43:24.725Z" }
 ---
 
 # Framework and Platform Adapters
@@ -172,11 +172,16 @@ Caption: one model step with recall, then capture at the end of a completed turn
 `auto_capture=True`.
 
 Failures are fail-open. Validation errors, `ClientError`, and unexpected exceptions return `None` for recall, and
-capture logs and returns without raising. The first HTTP 401 or 403 for each operation is logged once at error level,
-naming `POWERCONTEXT_LANGCHAIN_TOKEN` or `PowerContextScope(token=...)`. Other client failures are logged at debug level
-([middleware.py](repo://integrations/langchain/src/powercontext_langchain/middleware.py#L133-L160),
-[middleware.py](repo://integrations/langchain/src/powercontext_langchain/middleware.py#L162-L185),
-[middleware.py](repo://integrations/langchain/src/powercontext_langchain/middleware.py#L202-L216)).
+capture logs and returns without raising. Authentication failures are logged once per middleware instance, not once per
+operation. `__init__` initializes a single `_configuration_error_logged` flag
+([middleware.py](repo://integrations/langchain/src/powercontext_langchain/middleware.py#L64)). Recall
+([middleware.py](repo://integrations/langchain/src/powercontext_langchain/middleware.py#L133-L160)) and capture
+([middleware.py](repo://integrations/langchain/src/powercontext_langchain/middleware.py#L162-L185)) both report client
+failures through `_log_client_failure`, which shares that flag
+([middleware.py](repo://integrations/langchain/src/powercontext_langchain/middleware.py#L202-L216)). The first HTTP 401 or
+403 that either operation receives is logged at error level, naming `POWERCONTEXT_LANGCHAIN_TOKEN` or
+`PowerContextScope(token=...)`. Later 401 or 403 responses from either operation on the same instance, and all other
+client failures, are logged at debug level.
 
 Configuration uses `PowerContextLangChainSettings` with prefix `POWERCONTEXT_LANGCHAIN_`. `max_bytes` must be 512 through
 32768 and defaults to 8000. `timeout` defaults to 10 seconds. Invocation-level `PowerContextScope` values override the

@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:6fc67f2a9c299366b41721ba77632ada0412fa148dd665459cc0310528f4d395",
+  "pageVersion": "sha256:9cacfb4932c480890c4ecf0a10929394a8d3cf91998f51eda80009ac1009ad19",
   "claims": [
     {
       "id": "claim_5e269770c3854d79b1efcf15b5419014",
-      "statement": "The built-in Artifact families are atomic-memory, experience, skill, handoff, profile, prompt, and topic-memory; each concrete Artifact type declares its family identifier as a class-level value.",
+      "statement": "The built-in Artifact families are atomic-memory, experience, skill, handoff, profile, prompt, and topic-memory; each concrete Artifact type declares its family identifier as a class-level value. The Profile class is bound to PROFILE_FAMILY through its family ClassVar, and ProfileDraft uses the same binding.",
       "evidence": [
         {
           "resource": "repo://src/powercontext/builtin/artifacts/atomic_memory/models.py#L116-L122",
@@ -17,6 +17,10 @@
         {
           "resource": "repo://src/powercontext/builtin/artifacts/handoff/models.py#L318-L325",
           "version": "repo-lines-v1:sha256:4d2161e9802793cf99990f154cf8e9905bb9a4cb2a463b7bab0619a58ee4eca2:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2FiNTc0NTE1YmRkOTZhOWYxNzljMDJlYzFlZWJmNDlmMmE1OTQxZWMyYzZmZWYxNDkzMmExZDczNmMyOTRiMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2FiNTc0NTE1YmRkOTZhOWYxNzljMDJlYzFlZWJmNDlmMmE1OTQxZWMyYzZmZWYxNDkzMmExZDczNmMyOTRiMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTUyMTBiZmYxNjExYjI2Yjk0ZDk1NDJmNTA4NjJlY2RmNzhjNTJjYWY4ZmMzYTliODZmNzA5YWMzZWFjMTRhMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjIwY2ZjYTg1NzIzYWExOTc0OWRiYmFjZGUzNTVhYjcwODRkMWIyYzE1MzZjMzcxN2E1Nzk0NjFjMzc2NjlkMyJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/artifacts/profile/models.py#L171-L176",
+          "version": "repo-lines-v1:sha256:bd112389bdd7b88b59257fb6fb6e63380867fd912bd40a2bd0077975b9b2435c:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWMwMmRlZmJhNWIwMDcwMDJkM2FmMjlmOTUwZmFiZTRhYjdlZjM1ODI0ODVjYTcwN2VmMjFkOGVlNTVkMzE0NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2I4OGYzNGY2YTUxMGNmZTY2MGUwYzVkNzc0YTZmZDhiOTYzZjBmMjVhYWRmMzk4MTFjYTMxZmU0NTA2MTk0YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGI1MzBlZGU0ZjNlODgyZDZlODVlOWU2YTc3YmJhMjk1OTk5OTcxZTY1OTk0ZTRlMDQxYmMwMDNiMTU3OGQyZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDU5OWViMmI4OWY2MTcyZTc1MTk0YTViYTg3NDNlNWU4NzAxYjZjNGU3ZjRhN2JkODEzODkyNmFkNzc5NWJlZSJ9"
         },
         {
           "resource": "repo://src/powercontext/builtin/artifacts/profile/models.py#L31-L32",
@@ -395,6 +399,6 @@
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T09:04:09.583Z"
+    "at": "2026-11-07T09:43:24.725Z"
   }
 }

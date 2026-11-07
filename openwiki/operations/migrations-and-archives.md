@@ -5,7 +5,7 @@ description: Runbook for PowerContext Server schema revisions (db-migrate), lega
 tags: [migrations, database, upgrade, archive, operations, sqlite, seekdb, oceanbase]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:04:09.583Z
+    at: 2026-11-07T09:43:24.725Z
 sources:
   - id: openwiki-source-a94249c04ae33f0d631c9044
     resource: repo://docs/en/docs/operate/artifact-processing-migration.md
@@ -61,6 +61,8 @@ sources:
     resource: repo://src/powercontext/builtin/persistence/processing_migration.py
   - id: openwiki-source-0f4a1c14e307b33db7e6138e
     resource: repo://src/powercontext/builtin/portability/bundle.py
+  - id: openwiki-source-f83c558a3774fb051e60cbb0
+    resource: repo://src/powercontext/builtin/runtime/atomic_memory_rebuild.py
   - id: openwiki-source-7ffc4e7ffdd9e56fa4ca3150
     resource: repo://src/powercontext/cli/archive.py
   - id: openwiki-source-bc58b27142b00aeeb91ebfcf
@@ -71,7 +73,7 @@ sources:
     resource: repo://src/powercontext/server/database_migration.py
   - id: openwiki-source-bad9e61f25ada75aaa317ce4
     resource: repo://src/powercontext/server/factory.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:04:09.583Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:43:24.725Z" }
 ---
 
 # Database Migrations, Data Migration and Portable Archives
@@ -271,7 +273,16 @@ Atomic evidence for a revision is stored in a disposable projection, `pc_atomic_
 
 `--bundle atomic-projection` repairs derived current Atomic rows and the SQLite FTS helper on a current managed database. It preserves immutable history, lifecycle, tags, permissions and Source or Processing state. It runs only in the registered no-vector configuration and cannot register vector-profile changes ([repo://src/powercontext/builtin/persistence/migrations/deployment.py#L117-L140](../../src/powercontext/builtin/persistence/migrations/deployment.py#L117-L140)). Invalid authority stops the repair with `invalid_authority`. A failed post-repair check stops it with `projection_verification_failed` ([repo://src/powercontext/builtin/persistence/migrations/atomic_projection.py#L100-L118](../../src/powercontext/builtin/persistence/migrations/atomic_projection.py#L100-L118), [repo://src/powercontext/builtin/persistence/migrations/atomic_projection.py#L175-L185](../../src/powercontext/builtin/persistence/migrations/atomic_projection.py#L175-L185)).
 
-`server atomic-memory-rebuild-projection` delegates to that bundle for managed databases. On an unmanaged database it runs the standalone repair. That repair rebuilds active rows and removes nonactive or orphan current rows ([repo://src/powercontext/server/cli.py#L495-L545](../../src/powercontext/server/cli.py#L495-L545)).
+`server atomic-memory-rebuild-projection` has two branches, selected by storage ownership:
+
+- **Managed databases** delegate `plan`, `verify` and `apply` to `db-migrate --bundle atomic-projection`, and the managed bundle rules above apply.
+- **Unmanaged databases** accept only `apply`. `plan` and `verify` fail with `plan and verify require managed Server storage`. `apply` also requires `--maintenance-confirmed` after writers are stopped; without it the command stops before any database work. It then runs the standalone `rebuild_atomic_memory_projection` through `_atomic_memory_maintenance`, passing the configured embedding model when one is present ([repo://src/powercontext/server/cli.py#L495-L578](../../src/powercontext/server/cli.py#L495-L578)).
+
+The standalone rebuild is not the no-vector bundle. It accepts a configured embedding profile only when the supplied model's profile matches it, and it raises `maintenance-required` or `embedding-profile` before any work otherwise ([repo://src/powercontext/builtin/runtime/atomic_memory_rebuild.py#L474-L484](../../src/powercontext/builtin/runtime/atomic_memory_rebuild.py#L474-L484)).
+
+Current-row selection covers every Atomic Memory head, not only active ones. The rebuild reads head identities in `(scope_id, artifact_id)` keyset batches ([repo://src/powercontext/builtin/runtime/atomic_memory_rebuild.py#L118-L126](../../src/powercontext/builtin/runtime/atomic_memory_rebuild.py#L118-L126)). For each identity it loads the state and the latest revision. An `active` state publishes a freshly prepared current row, and any other state removes that identity's current row. Each identity commits in its own transaction after the prepared content is rechecked against the authority, so an interrupted run can leave partial derived repair and should be repeated while maintenance remains in force ([repo://src/powercontext/builtin/runtime/atomic_memory_rebuild.py#L458-L531](../../src/powercontext/builtin/runtime/atomic_memory_rebuild.py#L458-L531)).
+
+After the loop, one transaction deletes obsolete current rows. A current row is obsolete when no Atomic Memory head for it is `active` and unmerged, which also covers orphan rows with no head ([repo://src/powercontext/builtin/runtime/atomic_memory_rebuild.py#L252-L263](../../src/powercontext/builtin/runtime/atomic_memory_rebuild.py#L252-L263), [repo://src/powercontext/builtin/runtime/atomic_memory_rebuild.py#L532-L553](../../src/powercontext/builtin/runtime/atomic_memory_rebuild.py#L532-L553)). The same transaction rebuilds the evidence projection and runs a verification that requires both evidence and evidence projection. The report's `ready` value sets the exit code. Its counts include `rebuilt_rows`, `removed_rows` and `embedding_calls`.
 
 `--bundle topic-memory-recovery` covers only the registered Topic recovery layouts for unmanaged storage. Its output reports `server_ready=false`. Any database containing `pc_schema_revision` is rejected before backup or writes ([repo://src/powercontext/server/database_migration.py#L44-L48](../../src/powercontext/server/database_migration.py#L44-L48), [repo://src/powercontext/builtin/persistence/migrations/deployment.py#L117-L140](../../src/powercontext/builtin/persistence/migrations/deployment.py#L117-L140)).
 

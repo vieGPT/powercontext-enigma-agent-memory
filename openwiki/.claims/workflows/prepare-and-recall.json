@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:22a2dc72067e094404b524efe50c819946fefbf2b49cab0814b559ca47269b3a",
+  "pageVersion": "sha256:827e9702f1cd03a8382749a50d42b159a66d1544d587280ca8f666e7364955cc",
   "claims": [
     {
       "id": "claim_02e8fa01e23e4249af47fb1d36545330",
@@ -162,15 +162,27 @@
     },
     {
       "id": "claim_148fba4f2a7140ce96d48b97b3a335ff",
-      "statement": "Before each assessment the Runtime runs a budget probe that reuses the builder's own selection code and reports dropped items, truncated items, and unused bytes; the gate treats the budget as binding only with fitting pressure, which yields a budget-floor sufficient verdict.",
+      "statement": "Before the round-zero assessment and before each expansion-round assessment, the Runtime runs a budget probe that reuses the builder's own selection code and reports delivered, truncated, and dropped items plus unused bytes. The gate's budget-floor verdict uses budget_bounded, which is size-dependent: at the 512-byte floor, any dropped or truncated item or delivered content that used all headroom is budget-bound; above the floor, budget-bound requires exhausted headroom together with a dropped or truncated item, so fitting pressure alone is not sufficient for every budget. The budget-floor check runs only after the no-content check.",
       "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/application.py#L1684-L1699",
+          "version": "repo-lines-v1:sha256:4d200972d1a89a5e8ab679d6fdef8eef88947009166db9854cbe65b8a9363eff:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0NWNiZTJlNDMwYjQ3ZGQwNGU4ZGE5NDg4YzY2YTczYjhlZjllNTAzYmUyZGY2NTAzOGI5OGI5ZTc3NDk4NGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MDMyZTk2NGQwOTMyMzUxZTVkMTg1MjY5MjgxYjE3MWEzYTA5YjA4YjI4NmU2NjFlYTQ3MDMyM2M4MmViNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI2MjBmYWI4NGIwMjdkMWZhNWJkZGQwZTQ1YzBhYWE1ZmUzMTViYjYyYjlmZDliNDg4ZmI3ZjkzZjlkODVkYTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ5MmIxYWQ0YzdjMDcwYzg1OGZmNzRkN2VjYjFmYjYwYmIyNjFiNTExNTcwMDYyM2FiMmQyY2Q1MTc4MzAyY2IifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/application.py#L1801-L1816",
+          "version": "repo-lines-v1:sha256:a5ed0186afb0b67637e35aa680425d2aff84da99a818b4809efa0487bfccfe62:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0YjJiNGZhODhlMzk0NDhkYjc5NGUxYTk0MmUyNTVkMWUxZmIwNmFjMzQ3Y2IyMGVjZmVjYmY5ZjdkNDYxMGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxMDM0ODFjNTdkMGYwZGMwZjc2Y2QyY2M4YjM2MDRjNGU4Mjk2ZGE0MTIyYWRkMTllODE3NDVkYzdlMzMxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYwMTI0MGZkM2IxZDBjZGRlYTg2OTU2YTgzYmQ0MGJmZWJjNmYzODZmYmI4NDBhZjhkNjQ3MTg2ZjAyNGJiYmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5Yjc0ODM1MmEzNTYxMzMyMDlhN2ZkYjBkZTBjM2YwM2YwYTI1MDQzNWM4M2IzNzhkNjEwZGE1MjFkNTJhMmMifQ"
+        },
         {
           "resource": "repo://src/powercontext/builtin/runtime/prepared_context.py#L274-L310",
           "version": "repo-lines-v1:sha256:ca4dd885292633e6d1f301b64d98b8fe19e69ed1071785241711ecda4ff05b44:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIwYjI5MjJkNzJjYzg5YmE1MDZhNDkyMzQwZjc2ZmU0MjMwYmQyOWRkZGQzMDVkNGU0NzZjYjU3MzFhMjEwOTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY0NThkYjNlN2NiNGM5ZTEwZGVkMWRkNzY1NTVjMmYyMzY4M2RiYThmYjU1Mjk5ODdlNTI4ZGNlNjBkZGUwMGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmNDEzYzg0YzFhZTBhODIwZWQxYmQwNWJhNzUzNTM1MWUzNGE5NTExMzk2MzYzMWNiMDg0YmM4Y2Q1NDIwMjAifQ"
         },
         {
-          "resource": "repo://src/powercontext/builtin/runtime/recall_sufficiency.py#L248-L266",
-          "version": "repo-lines-v1:sha256:996d3e99b518f95560ca0b12a72f9e1d20367ac83a4ec093dcbec83c1b184558:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2NWJiZmNjYjk1MTBjNGJkYTFhN2U4ZDgwZmUzZjY4OWM3MDg1ZDY5NmZhNzFlMjY0Y2Y4MzdmMzBjODJhNjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwNTViMTcyM2FkN2Q5NzNlY2RkYTk1YzYxNDhkMmIwMjg3NzZhNzZjZDI4MjQ3NGRiMWY5NDUxNjk2NGFmODciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0NTFhNDM3YjlkYWEwNWM1YWM5NzFmZTY1MmVkNmRiYWU3YTA5NmQ0ZjY0MTJmODUwOWIyMmZlMmYxZTkyOTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE1NzE5NWFmZDA0YzM3NmM0N2M2MzlhNzc0YmEyNjM4OGRmYmJhZTIwYmY0N2M0MmEwZWU1Y2FlNDc5Yzg2YmYifQ"
+          "resource": "repo://src/powercontext/builtin/runtime/recall_sufficiency.py#L248-L262",
+          "version": "repo-lines-v1:sha256:39b1bc69cce1425723c7dbb88207f1210ab74a6034df52ab7b713d230b07ae7a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2NWJiZmNjYjk1MTBjNGJkYTFhN2U4ZDgwZmUzZjY4OWM3MDg1ZDY5NmZhNzFlMjY0Y2Y4MzdmMzBjODJhNjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmMDJiMGI4YTUzNDE4ZGRjMDJiMTNlNzJiMzBiODQzZWM1ZWNlMGUyZjQ1ZGYwYjVmNWEyMGZlYTY5MjU2ZjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0NTFhNDM3YjlkYWEwNWM1YWM5NzFmZTY1MmVkNmRiYWU3YTA5NmQ0ZjY0MTJmODUwOWIyMmZlMmYxZTkyOTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwY2UzZjI0YWI0N2MyZjVhOWQzMzdmMzc3ZWQ4NTczZmE1NjU4NDA3NjQwMmYxYWYwNTRhM2RlZDYxOTQ2MmYifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/recall_sufficiency.py#L497-L501",
+          "version": "repo-lines-v1:sha256:50f317cf732dea3f3e421fb306507258cc844ec4faf9497f4887aee0f58a59dd:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGNmZjU5OTE5M2IzZmMxZGRkNWVhMDdjOTdkYTkzYTUzZWRlMDRjMzQwYWI2N2JkMGQ1MTE1M2NiYzkwOWIxMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzRiZDRlYzMyYzEzYzFkZWIxZTcxNWFkYTZhNjgzZWJlYzQ4ZmQ5M2Q2ZjY4ODljZWZjYjcxYzI0YjUwMjFiZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmQ5NzE1MDFjMmZlMzJhNGY1MDBkMjBlYThhYmNmOTE4MmU5NjUyMDE1NzgyZTUwODkxYjBjYmZhODhmNmJlOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzY3ZGI4NWFlYzg3YzkyMjgxNzliZDc4NTllYTlkY2Q5ZGFlYTQzYWIwZWUwNWNlZmZkNTJhYmUwYjY3MDYyNyJ9"
         }
       ]
     },
@@ -299,6 +311,6 @@
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T09:04:09.583Z"
+    "at": "2026-11-07T09:43:24.725Z"
   }
 }

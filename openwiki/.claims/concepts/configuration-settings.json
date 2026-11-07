@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:50dd491d36029dcf7fb95287b061943330065c6040f599529d180b8f41b58ffb",
+  "pageVersion": "sha256:fac632ae56606831fd7b49ed12aae5dc6a2357a37e445deacdc3a4ca0eccd815",
   "claims": [
     {
       "id": "claim_761880cf21ab4b3389b50b73aa973171",
@@ -535,10 +535,44 @@
           "version": "repo-lines-v1:sha256:27cbd223fcbb08ec99170d0f61ebac664e0a591ceea1dff4b1b1690fc0073fd8:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ5NmJiZWQ1N2I4NDQ5ZGY2YzBlOWU0ZDYzNTViYjU3MWE3MTJjNmMyZDkyYWZkNDU0Y2E5MWRmNmIxYmY5OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTkzYTEzMDYyZjEwZWU0ZjEyMThkOTNlMzdhNmY4MWQzNDZmZjExZWM3ZTU1ZGQ1NDJlMmQyZDJlZjA3MTFmMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzEwNzU3YTYxODY5ODNhMzdiYzkzMGYxMDAwZDhhMzZkZmZmMjlkYTdlOTBkMTBhYTE3YmQ0ZDA0ZGY4MjRjYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTA3YjlkYjM1YjY3MTZiMGQ5MDk1OTI4YmQzZTc3ZGQxN2QwYjcxNDA0YzU3YzFjNTE0N2NkNGM2ZTgxN2RmYiJ9"
         }
       ]
+    },
+    {
+      "id": "claim_830f4805e51f4732a227607d23be10f7",
+      "statement": "POWERCONTEXT_ZCODE_REMOTE_WORKSPACE is parsed as a boolean by the ZCode settings loader; the values 1, true, yes, or on (case-insensitive) enable remote-workspace mode.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/zcode/plugins/powercontext/shared/settings.mjs#L59-L59",
+          "version": "repo-lines-v1:sha256:45a765dfbcb27fcd8c594b22f9a253039f539d85588ce7fd1a798b90fcd64bbc:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDVhNzY1ZGZiY2IyN2ZjZDhjNTk0YjIyZjlhMjUzMDM5ZjUzOWQ4NTU4OGNlN2ZkMWE3OThiOTBmY2Q2NGJiYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDVhNzY1ZGZiY2IyN2ZjZDhjNTk0YjIyZjlhMjUzMDM5ZjUzOWQ4NTU4OGNlN2ZkMWE3OThiOTBmY2Q2NGJiYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGIzYjE4YmNmOTBjMDZmZDM1MTBkNGEzMjViMmM0YWVkZWY3ODYwYzM4NzczMDFjZTA4MTc3M2NiMWMxYTQ1ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjljYjE1YjA4ZjdmODE0ZDliNzBlZTM5NzNjZmRjYjhhNDE4YzI1MmQ5YjIwZTFiYTQ5YmMyNDU1NTA4NTNlNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4a25c3d11df541b1880d9b29ff473a65",
+      "statement": "In ZCode remote-workspace mode, binding keys are empty, so Scope resolution sends no workspace or session binding key, and resolution requires an explicit POWERCONTEXT_ZCODE_SCOPE_ID otherwise failing with scope_unresolved.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/zcode/plugins/powercontext/shared/scope.mjs#L56-L57",
+          "version": "repo-lines-v1:sha256:82da738b2b110a20785df2156558960646b5f20f618ceb7976c5b2dd6693fdce:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2I1Yzg1YmVlNzE1MDg5NTM2MTM0M2IzODhmZDc3MTg3NzMwZjczN2ZmOWYzZWU4YmIwYjY0ODhjNDI2MjU4MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTFmMTljNjAyODAyOTM0MmZmNWM0MTRiZDhlNzQzZmIwNzMxMTExNjJmYTE2NzM1OGQ3MTZmNDZkMTU1ZjMxYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTJiNjJiZWM1NmRkZDFiZjkyNGU0MzhmOWU1NjY0ZWIzN2I3MmQyZmE1ODRjNDYwZGY0YzY1ZTdlODQwZmE5MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDk1M2NjNGE2MGI3MGM1YTk1MmExYjYwYmRhNTczMzI3MzNjNmEwZTY2NTg1NmQ1ZDA1ZjNiNzAwNzQ2OTc2YyJ9"
+        },
+        {
+          "resource": "repo://integrations/zcode/plugins/powercontext/shared/scope.mjs#L65-L66",
+          "version": "repo-lines-v1:sha256:b63b0608d2fe5ed97056973ca57d59c02b9e42d04a26bc66f65c3e7f429dd3fb:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzExN2Y4MzcyZDY4NWNhMWE2ZmJjMThiNThhNzFmNTBjMTFjMjhiMTgxYzEzMTBhNjgyYmVhOTRkZWM3M2UwOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGE2ZGZjZDljMzQ0OTA4MDQwNmQzOTJhNWE1NzE5ZTY5ZDAzNWM5ZTNkNmJkMWMyMTMxZTNjNWM3OWZjMDQ4ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmY1NjNkODhhYmQ0YWRiMDI1MmVjMWEyYWVjNDhjOTA1ZTk5OWI2ZGM4Mzc1YTlkNjU5YmMwODE2ZTNiYzkzZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWU3NzgxYjA0YWFkYmViOWEyOWQ4MTE1Y2M5MGRlZTliNWFhMjZjZGU1MjQ2YjZiMTAyNmIyNmJmNTAzZTY0MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_dadd41605d1a4535b4109da174c9baf3",
+      "statement": "The ZCode scope script refuses bind and clear actions with remote_binding_disabled when remote-workspace mode is enabled.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/zcode/plugins/powercontext/scripts/scope.mjs#L43-L44",
+          "version": "repo-lines-v1:sha256:494325907bf2324184047116d85d393a53ec66a6179cb4398552029c31ffe735:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzE5NjA0OGE5OTM1ZmU4ODQ0ZDBhNmQ2YjE2N2ZlNjU5NWYzNjczM2U5Y2ZhNDYzNzBiMjhmN2ViOGY1MDhlYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTc1ZWIwOGI5ODI1YzdiY2JlZTliZDI4MTgwOWRmN2EwYzUzYmJhZDRmOGUyZjBkNGE4YWNhZWExMTExNzQzYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGRjMTU5OTNmMmVmM2E0MjhjMDZlZGNlODBmZmQ2Y2FlMDUyMGVhY2NjNTVkODVjN2M3MDEyYzE4ZGQ4OTM4YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2RlYzZlN2JmYTVjY2Q4OGVjZjYwYzM3YTJlNjVlYWZjYzkxNWY1NzY0Y2M0NGVjNzQzZDVkMjJhMDA2OWNjZSJ9"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T09:04:09.583Z"
+    "at": "2026-11-07T09:43:24.725Z"
   }
 }

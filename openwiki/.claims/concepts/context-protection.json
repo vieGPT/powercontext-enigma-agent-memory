@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:3df739d7ee88dc97299944bb2c544a367257e8854eeebf534ee51a286431a4be",
+  "pageVersion": "sha256:bbd37db18e5ae9a614015f9d2b91523e6a6bb1919d69d3ae4c76d6a3c886366c",
   "claims": [
     {
       "id": "claim_0f0b0d622a804dd4a11fd08aacb8a181",
@@ -128,11 +128,15 @@
     },
     {
       "id": "claim_5ac0324cc049424fab00cf2de9169240",
-      "statement": "Enforcing ProtectedAsyncTransport inspects the request before send and the complete raw response before release, and a non-allow decision raises InferencePrivacyError; in shadow and advisory modes the transport records the decision but does not refuse delivery.",
+      "statement": "Enforcing ProtectedAsyncTransport inspects the request before send and the complete raw response before release, and enforces each non-allow decision by raising InferencePrivacyError before the released response is constructed; in shadow and advisory modes the transport records the decision but does not refuse delivery.",
       "evidence": [
         {
           "resource": "repo://src/powercontext/builtin/inference/protected_transport.py#L126-L172",
           "version": "repo-lines-v1:sha256:4a2930b2fff02c4f6358bf9d6579001db1265b38523370a1db18a10662bfb466:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1NzgwNWMzZmU3YWM2MzA3NGY2OWNkYjI1YjlhY2Q3YTg2NzkyZGZlNTQwODE4YWM0Zjg3NjRiNDllN2QxNGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4MjRjZmIyZWJiMzY5NmQ4NTRhNTZhN2IzYjk5Y2RiOGJjY2ViYzJhNTViZGRkYmE3NzAzZjM3MjVmNzdkY2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjliYmZhZDllZDNlOWJkOWY3MmU1NjA1YWRlYmY1NGY3YmRiNjJmMDVkODc5ZTA1YjdjOWMyZmRiZjQzZDY0NzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgyMGVlMGEwZGI1MGMzYmFjMmZmMGRhODM5MTY4ZGFhMmFjZWY4ZTc2ZTY1Mjk0MDI3ZTExOWE0MzgyYTgzZDgifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/inference/protected_transport.py#L177-L190",
+          "version": "repo-lines-v1:sha256:0420ad8b1958552967a2e9c3ff569835937e83fb8fee9c8e59526eb44e7e9cab:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmZDU3ODAyZTYzOGJhZjIxMzdiYWI0NjZkMzViZjk1ZmViZjZlODNjYjkwMDc1YTEzN2E4ZDJiOTYzOThkN2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0YTQ1ODc5MjFiMzFlN2ViYTRmZWFjNTE0OWJmZTM3MDVjYTYxMjJmMTJlYTdiODM3ZGMyZDI3ZWU0ZmE1ZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0M2E5MTQ3NDgxN2MyMmM1MmM0ZTU4ZmFmNjQ2OTBiNTUwZDM3YjkwYzQ5NWU5ZWE3YTZiOGRkNTM2MjNlNzEifQ"
         },
         {
           "resource": "repo://src/powercontext/builtin/inference/protected_transport.py#L65-L72",
@@ -343,6 +347,6 @@
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T09:04:09.583Z"
+    "at": "2026-11-07T09:43:24.725Z"
   }
 }

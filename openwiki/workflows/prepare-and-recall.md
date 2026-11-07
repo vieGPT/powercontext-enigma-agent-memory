@@ -5,7 +5,7 @@ description: Traces how a host obtains PreparedContext for one Agent turn, cover
 tags: [prepare-context, recall, prepared-context, recall-gate, byte-budget, workflow]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:04:09.583Z
+    at: 2026-11-07T09:43:24.725Z
 sources:
   - id: openwiki-source-2ebf4ae5c1c9695a902c5854
     resource: repo://integrations/codex/plugins/powercontext/hooks/prepared_context.py
@@ -29,7 +29,7 @@ sources:
     resource: repo://src/powercontext/server/app.py
   - id: openwiki-source-7ce6164af7987825d186400a
     resource: repo://src/powercontext/server/mapping.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:04:09.583Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:43:24.725Z" }
 ---
 
 # Prepare Context and Recall
@@ -149,7 +149,7 @@ When `recall_gate_enabled` is true, `RecallSufficiencyPolicy.from_runtime_config
 The gate receives a flat candidate projection and a budget view. It returns one verdict, checked in this order:
 
 1. `no-content`: nothing was retrieved and no selected family had candidates, so there is nothing to recall. The verdict is sufficient.
-2. `budget-floor`: the byte budget, not recall, limits delivery. The verdict is sufficient.
+2. `budget-floor`: the request budget, not recall, limits delivery, as defined by the budget-bound rule below. The verdict is sufficient.
 3. `rerank-enabled`: reranking is on and expansion with rerank is not allowed. The verdict is sufficient.
 4. `thin-candidates`: fewer than `min_candidates` (default **2**) candidates. Not sufficient.
 5. `thin-families`: more than one family was expected but fewer families returned candidates. Not sufficient.
@@ -163,7 +163,12 @@ When the verdict is not sufficient, the expander plans the next round. Round 1 u
 
 Expansion merges new hits by identity. An earlier candidate is never removed, and each committed round keeps the latest round's order within the family ceilings. Every expansion failure is caught. The loop keeps the last committed candidate set, records `expansion-failed`, and lets the preparation succeed.
 
-Before each assessment, the Runtime calls `probe_budget` on the same selection code the builder uses. The probe reports whether the byte budget truncated or dropped items, or whether delivered content used all headroom. That is how the gate separates a budget-limited result from a recall-limited one.
+Before each assessment, the Runtime calls `probe_budget` on the same selection code the builder uses. Round zero probes and assesses its candidates in `_prepare` (`src/powercontext/builtin/runtime/application.py` lines 1684–1699), and each expansion round probes and assesses its staged candidates (lines 1801–1816 of the same file). The probe reports delivered items, truncated items, dropped items, and unused bytes. `RecallBudgetView.budget_bounded` in `src/powercontext/builtin/runtime/recall_sufficiency.py` (lines 248–262) turns those counters into the budget-bound signal, and the rule depends on the size of the request budget:
+
+- At the 512-byte floor (`BUDGET_FLOOR_BYTES`), fitting pressure is enough: an item was dropped or truncated, or delivered content used all headroom.
+- Above the floor, the budget is binding only when headroom is exhausted and an item was dropped or truncated. Exhausted headroom by itself does not count.
+
+So fitting pressure alone is not sufficient for every budget. The gate evaluates `no-content` before the budget check, and the budget check runs only when a budget view was supplied (`assess` in `src/powercontext/builtin/runtime/recall_sufficiency.py`, lines 497–501). That is how the gate separates a budget-limited result from a recall-limited one.
 
 ### 6. The builder selects and renders
 
@@ -215,7 +220,7 @@ On the host, `_recall_context` maps failures to a fail-open result. An HTTP **50
 
 Budget overflow is not an HTTP error.
 
-- **Gate**: when the probe shows fitting pressure, the gate returns `budget-floor` and treats the result as sufficient, so no expansion runs. A 512-byte request with no candidates is not budget-bound, because recall could still recover a short item.
+- **Gate**: when the probe shows budget-bound pressure, the gate returns `budget-floor` and treats the result as sufficient, so no expansion runs. At the 512-byte floor, a dropped or truncated item, or delivered content that used all headroom, is enough. Above the floor, the budget qualifies only when headroom is exhausted and an item was dropped or truncated. A 512-byte request with no candidates is not budget-bound, because recall could still recover a short item.
 - **Assembly path**: items that do not fit whole are truncated down to 64 bytes or dropped. The preparation returns `ready` if anything was delivered, and the omission counts (`truncated_items`, `dropped_below_min_bytes`, `dropped_no_fitting_truncation`) are reported only through the receipt or the trace.
 - **Default path**: the same fitting rule applies per entry. If the final text would still exceed `max_bytes`, the builder raises the `output-budget` invariant, which surfaces as an internal error. The builder's fitting is designed so this does not happen in normal operation.
 - **Host**: the Codex validator rejects a ready response whose `content_bytes` is above **8000**. Because the hook always requests 8000, a valid response stays inside the host's bound.

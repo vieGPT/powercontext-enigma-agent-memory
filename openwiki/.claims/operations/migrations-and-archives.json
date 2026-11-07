@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:f6389fec2c3257a6f0e25eb99b79b43af9de2ac79bb387df94a27b4a7736eaaf",
+  "pageVersion": "sha256:d34a58094114eae4d09caf643da4f5691dce2f36a3afe7c68fa36b98cff74d27",
   "claims": [
     {
       "id": "claim_caf4fab197934db88fca371c06ab1ffe",
@@ -524,11 +524,11 @@
     },
     {
       "id": "claim_abbd0babc91541869563f030c46897e2",
-      "statement": "The server atomic-memory-rebuild-projection command delegates managed databases to the atomic-projection bundle and otherwise rebuilds only active current rows, removing nonactive or orphan current rows.",
+      "statement": "The server atomic-memory-rebuild-projection command has two branches by storage ownership: on managed databases plan, verify and apply delegate to db-migrate with the atomic-projection bundle; on unmanaged databases it accepts only apply, rejects plan and verify, requires --maintenance-confirmed, and then runs the standalone rebuild_atomic_memory_projection.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/server/cli.py#L495-L545",
-          "version": "repo-lines-v1:sha256:ed98d4449c09be1618bb245cd16a3c26421835ec3cceb7fcae61dadfa0a8cdb3:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyZDI1NGUwYjQxMDRlYjgzYTJkZmMyZDkzM2E1MWJkODM4YTlmYmJmNzJlOGFhMjIxNGM2ODdlYTg2MGYwZmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1YjdiMDg5MGQ0ZjEyMGRiNmUzYTc3MDRiMWNkNzg3M2Y5NjE3OTZmYjg3YzUzZjJlYTU0M2UzODJhOWYzYTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiM2I2NTQyMmNiNDA0Njc2NmQzOTUxOTRhNGZjNTA0MTdjMjAxOWI0ODU1Mjc2ZGMyOWViM2RkMThjZDE5MjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM1ZTkzYmM1ODdhZTJjNzljMzU0MTczNDFjZjExMTMzNmQ0NWIwOWFiZmUyNDhmN2EwOGVjYWZlOGQ0YzQ1MDUifQ"
+          "resource": "repo://src/powercontext/server/cli.py#L495-L578",
+          "version": "repo-lines-v1:sha256:054cc7e423eb236372698d9b9cbcc16145362a6482d3fdaa8822236223fe2682:eyJzZWxlY3RlZExpbmVDb3VudCI6ODQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyZDI1NGUwYjQxMDRlYjgzYTJkZmMyZDkzM2E1MWJkODM4YTlmYmJmNzJlOGFhMjIxNGM2ODdlYTg2MGYwZmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyZTQwYzliOGIzODYwMzlhZDdiOWVhMTExY2IzOTlhNTI3NWFiYmYzY2IzNTY4MWIxZDhkYzg4YzcwMWM4NzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiM2I2NTQyMmNiNDA0Njc2NmQzOTUxOTRhNGZjNTA0MTdjMjAxOWI0ODU1Mjc2ZGMyOWViM2RkMThjZDE5MjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ5YzNlYjc0MDhiYzVmNWM0NzBhN2RmZTgxNzg1ZmMyMzM2NmVlMDQxY2Y1MjY0NjhkNjFkM2Y5MTg2N2RjNDAifQ"
         }
       ]
     },
@@ -821,10 +821,52 @@
           "version": "repo-lines-v1:sha256:01c2f11062730a89615bda76ba434eb8bef2b29f042425d943a9e705dfdf6099:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFjMmYxMTA2MjczMGE4OTYxNWJkYTc2YmE0MzRlYjhiZWYyYjI5ZjA0MjQyNWQ5NDNhOWU3MDVkZmRmNjA5OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFjMmYxMTA2MjczMGE4OTYxNWJkYTc2YmE0MzRlYjhiZWYyYjI5ZjA0MjQyNWQ5NDNhOWU3MDVkZmRmNjA5OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWVlNzM4YTZkZGI0NGI5MjRlOTllOTZhMGI5OGE5ZjgxY2ExOTIyMDQ2ZDE3NTA0NTk2NWNjMDY2Mzc4Zjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTY1NTBmZTgwOTM3ZTkwZDhmNzc2YzNlYzZjNzUwYWQyOGRiZjAxYzQ3MDFkZTZmOTRiNDFiZmU3MTIzZjczMSJ9"
         }
       ]
+    },
+    {
+      "id": "claim_ae7977d248ab46da8b21e590f1445a7b",
+      "statement": "The standalone Atomic Memory projection rebuild walks every Atomic Memory artifact head in (scope_id, artifact_id) keyset batches, not only active ones; for each identity an active state publishes a freshly prepared current row and any other state removes that identity's current row, with each identity committed in its own transaction after the prepared content is rechecked against authority.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/atomic_memory_rebuild.py#L118-L126",
+          "version": "repo-lines-v1:sha256:594eabfec7eff14bc07506934571b81216b1c10885ac67c33acfd8cba45ead58:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGZmNWU2NDZiNzZjYzVjOTlhZWNlYjA4NWE3MWYzYTE5NzJiZjc1MmNlOTI2YTg5OTk5YjZlZDI4ODRiMTZlOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWViMDY3NzIzNWVlNzc1YzFjYzE1OGQ5MjY5OGQ3M2ExZDc4NWY4OTU0NDEyNWEwYWU1OWNhMDAyMTM3NzE3YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDZiMjY3YzlmZjk3NDcyMGYwYWFhYjg3NjEwNjM0M2M4ZTM2NjU2YzhlNWU5YzIzMjNlMzJiMzY0NTNjYjI2MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzA4NzY5YTYyMTIzMDZlN2QyMjhkYjJkYzRiODliZTYwNjFjOGU4YmExMTRhZGUxMGRlMThhY2E5NDQ4YTIzYiJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/atomic_memory_rebuild.py#L458-L531",
+          "version": "repo-lines-v1:sha256:75dba88addb4f2b11c6826f1c6f61a21ad1bb22759faa9737a5ee6857e75ffe1:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3ZGYyMjM4OTIwY2Q1YjEzZTA5OGZhMzAwMTNhMTM2ZjE3N2NjNTllZjZkMzQ0ZTYyNWMxMmJkMTdlODg2ODMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiMzg2YTNlNmExOWRmMDY0ZjNhODYxMWNhOTI3M2NkYjczZjg1MDcyNWMwNjA4MDgxMjgwMTljYWNhMjE5ZjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3090fb341bf4483bbc7d33139aa7c04a",
+      "statement": "After the per-identity loop, the standalone rebuild deletes obsolete current rows, defined as current-index rows with no Atomic Memory head that is active and unmerged (which includes rows with no head at all), then rebuilds the evidence projection and verifies current rows with evidence and evidence projection required.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/atomic_memory_rebuild.py#L252-L263",
+          "version": "repo-lines-v1:sha256:c2357fe0e9ef89dcb987194014d702b11577e5af1956ee91b0e05713d04c397c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1NDBlNDg0YmJkYjlkMjE1YTZjOWFlMTM1M2RiNDcwZTA0ZjNmNTBhM2ViMzcwNDBjYWYzNmI4ZWM4NGE4MjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNlOTM0ZDgwNTNkNTQzZjI1Zjg4NTE4NTEwMjdkN2JjNmViNGFiY2M5MTEyYzdlNWI1MTY2MGZmNjU5NThlMGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmZWQ0YTlhN2U3MDUzYzA3YTA3OWExZmU2NGVkY2U3MTQ4ZDRkY2M2ODc0N2ZiYThjMTljMzcxMGM1YmFmODkifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/atomic_memory_rebuild.py#L532-L553",
+          "version": "repo-lines-v1:sha256:2c7fe55c64c025c8dc6cc72d3e3a349c6f988bcbc4aa466120486db429e784b8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyZjg4N2QxZjdkZWJjMDJjZDA1ZTZkMmY2YWI2OGRkMzYwZWU4MzM2MGZiYTMxYTZlYWE0ZmIyZjFhNzdlYzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhODM0YjgwMjJkMWVlM2QwMmNiODI4OWJiMTgzODE1OWQwYTUzOGZiNTk0NmQ0MTg4NTJhMjcwZDAxNjZlMDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNiMjM2N2JkMGRmMGE2MmRmYzNkMTIxOTkxYjI5OGZlNGU5YzNkMzI2NzUyZTY5ODU1OTQzYjZjZjRiMjQ4M2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_651aa10f5bb244e1a4ebad6ce2b38469",
+      "statement": "The unmanaged standalone rebuild refuses to run without maintenance confirmation (maintenance-required) and accepts a configured embedding profile only when the supplied embedding model's profile matches it (embedding-profile); the CLI exits with code 1 when the resulting verification report is not ready.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/atomic_memory_rebuild.py#L474-L484",
+          "version": "repo-lines-v1:sha256:172d7b99a8217b2e5c4766bf2863c4c7f9f715f85947e8d8577929156c0e3aa6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5MmMyZjZiY2U2OGFhMmY3MGZiY2FhMzFmNjE0NjdhODM0NGNiMzllMmZmMTBhNDA2OTUyYWZhZGViNDc1MTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1NTc4YTVhMzBlOTdhZTM5NWRkZTQ5ZDcxZTdjMzljNDg0YWY4YzJiNDljN2VhNmRmYzc1MzBmMzc4NjliM2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlkN2JlZjM3YjkxMjBmYTEyMWU3NGQ3NWQzYzg3MmJiMDA1NTYzNDEzYmVhY2I3YjI0NWQ3NTI1MmRiM2FjYmMifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/cli.py#L559-L578",
+          "version": "repo-lines-v1:sha256:a98a70a74d3f69f31b9c5b60aa86552623aa6e48cebc36523261bd259a00d83e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwODc4YWFiMjk3ODNhODY3YjMzYmZhZjM1ZWIzMDU3ZGVmZDkwOGQzOGExNjUxMGUxOTZkYmM1MGVkNTNhY2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyZTQwYzliOGIzODYwMzlhZDdiOWVhMTExY2IzOTlhNTI3NWFiYmYzY2IzNTY4MWIxZDhkYzg4YzcwMWM4NzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIwY2RhNWFhNTMyMWIwMTFkOWRkOWE4YTc3ZTVmOGEwYWU2NDAwNWNjN2U3MjY4NTZjZDkyNDQ5NTZjY2I1NTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ5YzNlYjc0MDhiYzVmNWM0NzBhN2RmZTgxNzg1ZmMyMzM2NmVlMDQxY2Y1MjY0NjhkNjFkM2Y5MTg2N2RjNDAifQ"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T09:04:09.583Z"
+    "at": "2026-11-07T09:43:24.725Z"
   }
 }

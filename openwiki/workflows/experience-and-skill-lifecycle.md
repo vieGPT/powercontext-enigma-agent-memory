@@ -5,7 +5,7 @@ description: How generated Experience and Skill proposals become pending Candida
 tags: [experience, skill, candidate, review, lifecycle, export, publication, recurrence]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:04:09.583Z
+    at: 2026-11-07T09:43:24.725Z
 sources:
   - id: openwiki-source-5eecc3e578aca29ff28bcd59
     resource: repo://src/powercontext/builtin/artifacts/experience/incubation.py
@@ -57,7 +57,7 @@ sources:
     resource: repo://src/powercontext/server/authz/models.py
   - id: openwiki-source-06620b4e18ab130732d9ab3c
     resource: repo://tests/builtin/review/test_service.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:04:09.583Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:43:24.725Z" }
 ---
 
 # Experience, Candidate Review and Skill Lifecycle
@@ -169,8 +169,7 @@ A replacement names the exact current Revision in both `target` and `artifacts`.
 
 ## Review authority
 
-<!-- openwiki: broken internal link [../workflows/review-candidates.md] file "../workflows/review-candidates.md" does not exist. Fix the href or restore the target, then delete this comment. -->
-Review authority depends on the Server access mode, described in the [review procedure](../workflows/review-candidates.md) guide that operators use.
+Review authority depends on the Server access mode, described in the [review procedure](../../docs/en/docs/workflows/review-candidates.md) guide that operators use.
 
 - **Disabled mode.** Review operations are not bound to a reviewer identity.
 - **Enforced mode.** Review decisions are authorized through the access hook on each decision. The `scope.reviewer` role grants `scope.review` together with `scope.read` ([role map](repo://src/powercontext/server/authz/models.py#L375-L382)). The permission flags returned to clients are computed from the same `scope.review` check and from ownership ([permissions](repo://src/powercontext/server/app.py#L4811-L4840)).
@@ -222,8 +221,7 @@ There are two ways an approved Skill reaches a host, and they have different aut
 
 ### Host-local export (CLI)
 
-<!-- openwiki: broken internal link [../workflows/create-and-export-skill.md] file "../workflows/create-and-export-skill.md" does not exist. Fix the href or restore the target, then delete this comment. -->
-`powercontext skill export` is the operator-driven path described in the [export procedure](../workflows/create-and-export-skill.md). It works like this:
+`powercontext skill export` is the operator-driven path described in the [export procedure](../../docs/en/docs/workflows/create-and-export-skill.md). It works like this:
 
 1. The CLI reads the exact Skill Revision from the Server ([export](repo://src/powercontext/client/cli.py#L1955-L1975)).
 2. If the Skill is text-only, it writes the rendered Skill to a new directory named after the Skill, with a `powercontext.json` manifest that records the exact Artifact reference and a SHA-256 of `SKILL.md` ([projection](repo://src/powercontext/builtin/artifacts/skill/projection.py#L73-L110), [Codex adapter](repo://src/powercontext/client/projections/codex.py#L20-L30)).
@@ -234,7 +232,14 @@ The export targets are `codex` and `claude_code` ([projections](repo://src/power
 
 ### Managed publication and remote delivery
 
-The Server also tracks publication state for configured Agent targets. Local publication records an intent through generation-CAS, materializes the package, and then observes the result with the same CAS ([publish](repo://src/powercontext/builtin/artifacts/skill/publication.py#L105-L165), [CAS](repo://src/powercontext/builtin/persistence/skill_publications.py#L132-L172)). Unpublish moves the existing directory aside first and restores it if the database update fails ([unpublish](repo://src/powercontext/builtin/artifacts/skill/publication.py#L166-L212)).
+The Server also tracks publication state for configured Agent targets. Local publication first records a per-target publication intent, then materializes the package, then observes the result ([publish](repo://src/powercontext/builtin/artifacts/skill/publication.py#L105-L165)):
+
+- **First publication** creates the publication row at generation 0.
+- **Identical intent** reuses the stored row and does not advance its generation.
+- **Changed intent**, such as a different desired Revision, package digest, or compatibility state, replaces the row through replacement CAS, which checks the expected generation and advances it by one ([intent](repo://src/powercontext/builtin/artifacts/skill/publication.py#L265-L308)).
+- **Observation** writes the result of the local materialization through observation CAS. It checks the expected generation but does not advance it ([observation CAS](repo://src/powercontext/builtin/persistence/skill_publications.py#L173-L208)).
+
+Unpublish moves the existing directory aside first, advances the publication generation, and restores the directory if the database update fails ([unpublish](repo://src/powercontext/builtin/artifacts/skill/publication.py#L166-L212), [replacement CAS](repo://src/powercontext/builtin/persistence/skill_publications.py#L132-L172)).
 
 Local inspection classifies a destination as `unpublished`, `current`, `update_available`, `drifted`, `conflict`, or `incompatible`. A directory that the publication does not own is reported as a conflict and is not replaced ([inspection](repo://src/powercontext/builtin/artifacts/skill/publication.py#L315-L455)).
 
@@ -254,8 +259,7 @@ Export and publication both act only on an exact Revision. Neither approves cont
 ## Extension points and operating notes
 
 - Enable scheduled incubation only with a generation model configured, and expect pending Candidates to accumulate for review.
-<!-- openwiki: broken internal link [../workflows/review-candidates.md] file "../workflows/review-candidates.md" does not exist. Fix the href or restore the target, then delete this comment. -->
-- For team review, use enforced access mode with distinct identities and grant the reviewer the `scope.reviewer` role. See [review candidates](../workflows/review-candidates.md) for the procedure.
+- For team review, use enforced access mode with distinct identities and grant the reviewer the `scope.reviewer` role. See [review candidates](../../docs/en/docs/workflows/review-candidates.md) for the procedure.
 - Dream runs and recurrence produce Candidates through the same review path. Operators reviewing a Dream-produced Candidate should check its run lineage, because approval rejects a mismatched origin.
 
 ## Focused tests

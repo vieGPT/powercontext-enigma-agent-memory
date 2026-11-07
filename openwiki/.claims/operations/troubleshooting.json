@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:13b57162fb70c1e775c948517f6692695e4fa200a5509eec47c65c344e7a6bc7",
+  "pageVersion": "sha256:6579553ddcc34bc1a4e4281a4ef40b8e8232d5ae3428bffa1868eb0508fbf5bb",
   "claims": [
     {
       "id": "claim_1eaa241289ae4cba9a99ae2923cab175",
@@ -356,15 +356,15 @@
     },
     {
       "id": "claim_08b42324207b49db92d6baa81d936381",
-      "statement": "The Ops protocol supports the operations register, start, stop, restart, remove_registration, config_apply, install and repair, and its requests are inspect, config_validate, preflight, apply, resume, operation_status and cancel; an apply without an authorization whose plan_id matches the approved plan is rejected with authorization_required.",
+      "statement": "The Ops protocol rejects an apply or resume request with invalid_request when its authorization field is missing or its authorization value is not an object with exactly plan_id and approved; it rejects an authorization that has exactly those fields with authorization_required when approved is not True or plan_id differs from the approved plan's plan_id.",
       "evidence": [
         {
           "resource": "repo://src/powercontext/ops/protocol.py#L228-L231",
           "version": "repo-lines-v1:sha256:b683f164f5666a8196f52b97848899c386fb2fa6a27afb8b0a3f58c1c1b70237:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTQyNTViMWFjMjVkOTczYmY1NjVhMjQ4Mjc1M2JjODM2MDc1MmY4ODg2MjZlMWJlOGUwYWUxNjMzZTdjMGJkZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWVmZTc5ZjFjYjgxYWE0MzZlMWRjODJlYWRjMzdkOTBiZmFmZDY2N2RmNmIyYjcxMzY1ZjE2OTFjZmYxNTg1OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmVjZjljNmIyNWJkYjlmNWZhMDk2MDQ4YTI1MDliOWJjMDkwOTg2MmU3OWY2YWJkNWE3NTI0OGRlZGE5ZmViMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
         },
         {
-          "resource": "repo://src/powercontext/ops/protocol.py#L26-L36",
-          "version": "repo-lines-v1:sha256:bad769a3320779fd86401f87cd2609d2781d2ba5dc04d11e518e2ea05d724e76:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1YjM5MTVmYmIyZTRiNGI4MWQ4YjFlNzE5MzQzNTJhODVmMmI5MzVmODk5ZmVhZThlMTJlODMyZGUxYzFjZjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1NGMyZWRkYjI0YTQ2NWRkMTA5MzkxMDE5MzhhYjk4Mzg3YWYxYTcyMmNkYTQ0ZWVmM2Q2NTFhNGNmNmEzYTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzMjZkZTVjODU2MmU1MDlhMjNhYWFiMzhjYTRhZmY4YzQ4ZjdmMGI1OGU4M2U1ZGJmZWZhMThhODZkMTJmZjcifQ"
+          "resource": "repo://src/powercontext/ops/protocol.py#L84-L99",
+          "version": "repo-lines-v1:sha256:1ab9b451e4cda31f2d35d03c20d20c98adf6056934f6fea3b45e7674352a88df:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxODQ1N2FjYjkzYzcwMzk1YWM1NDFjNTUxODZiNDFiYTc0N2U2OWM3MmE2OGQ1YTY0NDRmNDIzNWRjODI1YjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmNWU2ODY4YzEzZDc0Y2NhNDI4NjM3NzBmOGFhYjQ4MTFhZmI2ZjUxMzk5ZGY3YmI1Nzk3ZDdkMDZkZDM0MzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI5ZWUxOTMyODRlODJmYjc2YWY0ZjRmNTgzZTQzZjA1MDdiNWYxMzJiMTY0ZTZkMzUyM2JhZmI5NGMwYzdiMWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1MmIyYTNjODA1YzgxMGUxOTUzNzVhZTQxNTdhNWM0ZjhiODk2NTZkZDc4MmM2MTJlNjIzZmI1YzkzZTM5MzAifQ"
         }
       ]
     },
@@ -411,10 +411,20 @@
           "version": "repo-lines-v1:sha256:fc424ac921ac83f813003e376c2e3e7fd9de12bd8adf8505e93069b2a45361d6:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlNTQxM2RkZjhhN2FhNGRhNWQ4MmI2NDA3Mjk5ZWNkYWYwNTIwYWY3OTM0NGEwOGYzMWI1NjMyOTc3MGQ2MTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEyYjFjMTM4YjU0NWQ1OWFjN2I3ZTlhYjE3MWYxNThlMzBkOWQ2YTQ5NzYwN2Y0YTcyZWQwZjNkNTA2NmRjMjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg5MDFlN2I3YTU0MWFiZDNmOWMxNmY0YTA3NDI4MDc2NjI1ZWRmNmZjYWEzOWJjYWVkYmQ5MWM1ZGU0NWQ1NDUifQ"
         }
       ]
+    },
+    {
+      "id": "claim_196e46cdf5454c7aa9bf6d83cd875029",
+      "statement": "The Ops protocol's request actions are inspect, config_validate, preflight, apply, resume, operation_status and cancel, and its mutation operations are register, start, stop, restart, remove_registration, config_apply, install and repair.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/ops/protocol.py#L26-L36",
+          "version": "repo-lines-v1:sha256:bad769a3320779fd86401f87cd2609d2781d2ba5dc04d11e518e2ea05d724e76:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1YjM5MTVmYmIyZTRiNGI4MWQ4YjFlNzE5MzQzNTJhODVmMmI5MzVmODk5ZmVhZThlMTJlODMyZGUxYzFjZjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1NGMyZWRkYjI0YTQ2NWRkMTA5MzkxMDE5MzhhYjk4Mzg3YWYxYTcyMmNkYTQ0ZWVmM2Q2NTFhNGNmNmEzYTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzMjZkZTVjODU2MmU1MDlhMjNhYWFiMzhjYTRhZmY4YzQ4ZjdmMGI1OGU4M2U1ZGJmZWZhMThhODZkMTJmZjcifQ"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T09:04:09.583Z"
+    "at": "2026-11-07T09:43:24.725Z"
   }
 }

@@ -5,7 +5,7 @@ description: Reference for the Hermes, OpenClaw, ZCode, OpenCode, Kimi Code, Wor
 tags: [integrations, agent-hosts, cli-setup, hooks, plugins, host-adapters, hermes, openclaw, zcode, opencode, kimi-code, workbuddy, pi, dsh]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:04:09.583Z
+    at: 2026-11-07T09:43:24.725Z
 sources:
   - id: openwiki-source-7a52dd335117116bd8fe79de
     resource: repo://integrations/capabilities.toml
@@ -29,10 +29,16 @@ sources:
     resource: repo://integrations/zcode/plugins/powercontext/hooks/hooks.json
   - id: openwiki-source-d5aaa59e5d20226c0c9d303e
     resource: repo://integrations/zcode/plugins/powercontext/hooks/stop.mjs
+  - id: openwiki-source-24426d4b33065d18ab6637eb
+    resource: repo://integrations/zcode/plugins/powercontext/scripts/scope.mjs
   - id: openwiki-source-9444a8c845b3f11175f77016
     resource: repo://integrations/zcode/plugins/powercontext/shared/pending.mjs
+  - id: openwiki-source-a5d70912a9db9cc2e6a1aaa7
+    resource: repo://integrations/zcode/plugins/powercontext/shared/scope.mjs
   - id: openwiki-source-ac8fe9f893dca0be8f08899b
     resource: repo://integrations/zcode/plugins/powercontext/shared/settings.mjs
+  - id: openwiki-source-aaaf5f3e8037dc7155035ca5
+    resource: repo://integrations/zcode/plugins/powercontext/tests/scope.test.mjs
   - id: openwiki-source-c6f4f45314eb4026e64484ae
     resource: repo://src/powercontext/cli/dsh.py
   - id: openwiki-source-880358173658ffe6e9063545
@@ -69,7 +75,7 @@ sources:
     resource: repo://tests/test_opencode_cli.py
   - id: openwiki-source-714a7a9a39f9a75829542a60
     resource: repo://tests/test_pi_cli.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:04:09.583Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:43:24.725Z" }
 ---
 
 # Other Host Adapters
@@ -244,6 +250,20 @@ the MCP URL to `<origin>/mcp`. The Authorization header is written as the placeh
 `POWERCONTEXT_ZCODE_BOUNDARY_FLUSH` overrides the saved value. When the setting is off, the Stop hook records a
 skipped `boundary_flush_disabled` result. Stop hooks that reenter, or that exceed the deadline, skip or finish
 without blocking the host.
+
+**Remote workspace.** `POWERCONTEXT_ZCODE_REMOTE_WORKSPACE` turns off local path binding for a workspace whose
+files are not on the machine running ZCode. The loader treats `1`, `true`, `yes`, or `on` (case-insensitive) as
+enabled; an unset variable is false ([settings loader](repo://integrations/zcode/plugins/powercontext/shared/settings.mjs#L27-L28),
+[flag parsing](repo://integrations/zcode/plugins/powercontext/shared/settings.mjs#L59)). When it is disabled, the
+plugin builds the normal session and workspace binding keys, and the resolve request sends a null explicit Scope ID
+unless `POWERCONTEXT_ZCODE_SCOPE_ID` is set ([binding keys and resolve](repo://integrations/zcode/plugins/powercontext/shared/scope.mjs#L55-L72)).
+When it is enabled, `bindingKeys` returns no keys, so no session or workspace key is sent. `resolveScope` then
+requires `POWERCONTEXT_ZCODE_SCOPE_ID` and raises `scope_unresolved` without it
+([required explicit Scope](repo://integrations/zcode/plugins/powercontext/shared/scope.mjs#L64-L66)). The scope
+script refuses `bind` and `clear` with `remote_binding_disabled` ([scope script](repo://integrations/zcode/plugins/powercontext/scripts/scope.mjs#L43-L44),
+[test](repo://integrations/zcode/plugins/powercontext/tests/scope.test.mjs#L116-L117)). The Scope model itself is
+described in [Scopes and Access](../concepts/scopes-and-access.md), and the setting is listed with the other
+variables in [Configuration Settings](../concepts/configuration-settings.md).
 
 **Diagnostics.** `verify` checks five things independently: the CLI or desktop app, plugin registration in
 `plugins.dirs`, hook modules through `node --check`, MCP URL and authorization consistency, and a server probe

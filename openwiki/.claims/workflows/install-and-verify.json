@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:4e218fd08da70d1f03f10da35385ed9bd2c077a3a964238e55dc132388bd6312",
+  "pageVersion": "sha256:5eb92418787ee7367e6b7099cad6ad2b44068c83a5a0e584e707be98624d39f5",
   "claims": [
     {
       "id": "claim_5d937b14f32640a89a11fe25d1cc0b49",
@@ -142,11 +142,11 @@
     },
     {
       "id": "claim_96c9fd8da0664d80b6cf74e4e6bf8ccd",
-      "statement": "`powercontext service install` refuses to install over a listener it does not own, registers the native personal-service definition, starts it when it is not live, and waits for liveness; a failure after registration is reported as a post-commit error with the log location.",
+      "statement": "On the ordinary path with no maintenance guard, `service install` refuses to install over a listener it does not own, registers the native personal-service definition when it changed (otherwise enables the existing one), starts the service when the definition or loaded manager changed or the service is not live, and waits for liveness; a failure after registration is reported as a post-commit error naming the log location.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/service/controller.py#L185-L261",
-          "version": "repo-lines-v1:sha256:d459cbfb08fc91b56661e1257a8ceee95a19413daa00d6f1a32a1f1b346d1ac7:eyJzZWxlY3RlZExpbmVDb3VudCI6NzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmYzBjZmNjNzc1Y2JjOGY3OTg1ODQ4OTVmNzI0ZTFmYWVhNGQ2NGRiNDQ0ZmE4Y2JmNzE5NjVhZjAwODE5OTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3YWVhZDVjZWQzYjIwYmQ0YmJhN2MyN2UyNjc4Y2ZmMmY3MzkwZDljNDg0Yzc0NjlmY2Q3Nzg1OWExMGVhNGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgxYjY2NGE0NTU3NWJhMjQyNjU5NGY4MTVjZDViMzYwZDIwNmUxMWI3ZTlkNDA3OTNmOTAxNGE1MTIwNmFiZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgwM2E3NzI5M2U3NDc4YmNmZmZlZDAwNWIwYzk2OWY5NjgyODc4NWY0N2ZjY2Q2YWM0MTM2NDEzNDg2MjlhYmEifQ"
+          "resource": "repo://src/powercontext/service/controller.py#L185-L260",
+          "version": "repo-lines-v1:sha256:a47e3e051e0e60e0cd4faf5346a5ae7c128d213f603e0d7227a4eb201700fe27:eyJzZWxlY3RlZExpbmVDb3VudCI6NzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmYzBjZmNjNzc1Y2JjOGY3OTg1ODQ4OTVmNzI0ZTFmYWVhNGQ2NGRiNDQ0ZmE4Y2JmNzE5NjVhZjAwODE5OTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwMDEwNWUwYTY4NTIxYzNkMzMyNjE1MzkwZTg1OWUzOWNmMjQxMjc0YTdkNzgxZDE5NmEzYWRhMDdiMTBmZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgxYjY2NGE0NTU3NWJhMjQyNjU5NGY4MTVjZDViMzYwZDIwNmUxMWI3ZTlkNDA3OTNmOTAxNGE1MTIwNmFiZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM5ZDA0ZDhmYjQ4MDliYzRmZTcwZmQ0MDFhN2UwNDNlZTNlZjgwYzFmYzY4NzA1ZmEwNTI0MmQxYWU5MWE2YTYifQ"
         }
       ]
     },
@@ -363,10 +363,46 @@
           "version": "repo-lines-v1:sha256:ca3cd96363eb328bf663af0b55079617b985db6f2556754aac62e53f781918b3:eyJzZWxlY3RlZExpbmVDb3VudCI6NzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwNjM5MTQzZDY2NjdhZjMwYjYxZTAzYzViNzNiZmFhOGQwMGQzN2Q2ZTYxYjNiZjU2ZGE5ZWFlYjE4NDQ0ZDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2MDE1MWE0ZDc3NWZlY2JhZjQwNDVjMGIyNDY0OTE0NDYxNzBjMDE0ZDFiY2IxZDYxZjZlZjA5OTQ1M2ExNWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg3NDAxODE5YTMwZTQ1MmU3OGM5ODUyODJjMjJlZDMxNWJkMzk2MDFjNmQwZWZmZWI4ZDQ5MTU4NGYyMGQ4NzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIwMzk3MDc3NGYzYTI4OGU5NWJiYTg5ZWI2YmY1N2FkZTY1Njg1YzI1ZTZjZTUyYzQ4NDU5OGVkMDdmNmFjN2QifQ"
         }
       ]
+    },
+    {
+      "id": "claim_45335b1f6d5b4d3c8435716057e148ee",
+      "statement": "When the registration carries a maintenance guard in phase `manual_stopped` or `manual_switching`, `service install` recovers any pending definition switch and updates the stopped registration, then returns status without starting the service or waiting for liveness; any other maintenance phase makes install refuse and direct the operator to finish migration or use `service start`.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/service/controller.py#L205-L215",
+          "version": "repo-lines-v1:sha256:5bb255d1309f444947687fb8fbbd81b7998cd0e76a62f1bbe256c316dac9cae8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1YTczZjUwYzRkZTdmZmVhM2UyODNiMTlkZTBiY2IzOWZiMzZmYjJkOWU1MzNlMGM2M2Y2NDUyMmE1MWRkMDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmMTAwNTM1NWYzNWJhZWYyYTBhYmI5YzIwNmY0M2M1MWI1NzYxYTE1ZWQ4YmU2NTIwODA2NWY0Y2FiMjA3NjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlkOTNkNjhjZjMyZTI3M2I3NTYxMmMzNDRkYTM3NGVmMmU1M2Q2NDExMzZlNGU3Mjk2MWYwZmFmZDM5N2MzZjAifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/service/controller.py#L638-L665",
+          "version": "repo-lines-v1:sha256:7b3f3a7df1afefd66df68fd23fd3c8f8466304aee3a8c8e703d25bf92bbf7e67:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5OWY2NWFkMzg3NDUyYzhhYWI4NzNhYTMwMjI2NjE3Y2RhZDAyODEyNWIwNjBiMjNiYWE4ZTk1Y2FjZTkyNWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlYTBjZjY3Nzk0OTlkMzhjZmIwNzIwOWRiOGYxMDhlYzFkODkyMWYzYmUxMmMxZjNmOTM0NWY2N2FkMGU3MzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIwY2Y1NDE0NzQ4YTBkM2NkOWZlMTM1YmQzYTZlMjBjZDUzMGJjMWJlOTcyMDI2M2I0NDRkZjZiMjk3N2NmOTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM4Y2Y0ODRkNmYyNWViMzMwOGQ2YmRhNzc2MjE4YjM5NDkzODdkYzcxMDcyOTZiOGI3YTAxMmQ1ZGUxMWVmZmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cbe6a701c152493d935da3ebe9b344e0",
+      "statement": "`service install` with `require_ready` (used by the Ops installer and runtime, not the CLI) delegates to `_install_ready`, which writes a `start_failed` guard, stops and rewrites the service, starts it through the registered start path that waits for business readiness, and clears the guard only afterwards.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/ops/installer.py#L564-L570",
+          "version": "repo-lines-v1:sha256:546e084d30f996eaccd3da9b69b1aeda6e7c65b0f79031eb95ffddd41e6d5e54:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWQ1ZTU5YWI4ZWYwMWI1NDIwYzg4NDIwMWMwNjM1NWE0ZTEzNTNiZWE3NTIxNGVlNGUyNzZkNGYyZTE5ZmUyMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjVjNTkwYzZlNjRmNmVmMTM4NmQ1ZWZjYTMyNGNlNWNiYWU3ZTYzMzY3OGJjYzM2OTBmZWYzMGVjNzZjZDg0MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWJjNTdlNDc0ZmI2OWEyMzVlMDliYTliNmZhMjdkNGFlMjNiYjdmMjE0YWNmM2I3NzJiYmFkYjZjOTZiZDY4OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZThmYzFkYjc1Y2M5NDlhN2JiMWZlY2NjNjQyYzgyZDg5ZjcyMDA0NTJhMmEyOWFiYjY1MTQ5ZTU2NTQxZDc1MyJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/service/controller.py#L227-L235",
+          "version": "repo-lines-v1:sha256:7709416dd1d4c9309cd74bb43fe07fc430eb360ee1eb8fd6645e39142ad81536:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDZlOTYyYmZlNzk0MTFlOTVkNDFlMzQyZmVmZjY5Zjk2MmQ1NTZhZDk5YmQ5OGVlYTMwNTU0NzRmYmU2ZTM5YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTEwMzQ4MWM1N2QwZjBkYzBmNzZjZDJjYzhiMzYwNGM0ZTgyOTZkYTQxMjJhZGQxOWU4MTc0NWRjN2UzMzFhNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWJhMDBiNjM0YTM3MGVlOWVmY2ZlYjA3ZmExMDdjM2Q5NjA4MTU3OThiYmQ0YWE2NWZlZmEwYTA3OGQ5OTk1NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTRiNzJlMjFmNjc0YTIzZmJjYzE3YjQ1ZmZlOTZhMDMwMTEwOGMxMDZjZGEwMmE0NjFiNjhhM2JhM2EwNzA4YiJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/service/controller.py#L263-L300",
+          "version": "repo-lines-v1:sha256:38b02544a938f8fd1fa548e167cb0d30a7c5f33273223eff5851409301a6fec8:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3NjRmM2RhYzMwMGM0YmFkMDU5NzQ2MGY1OTA4ZjlhMTA1ZWJmMjA3MGJmMmRlZDAxYzdkMjlkNmM1MDBmZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5ODA0YWE1ODkzNGI2Mzc1ODgyZjIxMWQzMGM2MDdkZDZlM2EyODQ1MzM0MjVlNzA3ZGNiOGFmMDkxOTk2YTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRkN2U1ZWZmZDRjMGZkNmUzMzUyOWJjNzAyMTQ4YTM1ZjFkZWM4ZDljZTI1YzRiMDkwODk2OGM3YWFkMjNmZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk5MWIwM2Q3YjE0MTRmYWQ4YTc4MDEyMzljN2M1NTUwYjcyYTNiMzNmYjllNDBmNzk0NDY0YmQ2ZTczYmYwNWQifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/service/controller.py#L800-L821",
+          "version": "repo-lines-v1:sha256:1cdc292c4b63ddfb43e06eeffcc0958fd91ea7c02e1ec40c143d0fd4c1d22ead:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhMTA1YTIxMTM4NTgxYjY5N2ZlOGYzNDQ0NjliMzA4NDZkOTkxNWQ0ZjI5NDAzODlmZTU5MDU3M2IyNmUzNWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlOTRjZDBiNDM2YThmMTQxNzg1MGRlZTI0ZmYwMzcxODBhYjUyZTgzYWQxMjhlZDBkZTU2ZmQ2ODQwZDkzZDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVjMzQ5NzY2MTIxZjdmYWRhNDU4YmE2OTc4Nzk5YjMyNWIyMWUwYzZmNGMyMGY5M2RhNGRhMzgwN2E3YWU3NDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhYjI5M2Y3MjAwMWRlNjk2MzRmZTliNjg3ODA1ODQxZDFkOWUyNzNhZGI1OTAzOTZiYmIxNTczZWExZTQwZmYifQ"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T09:04:09.583Z"
+    "at": "2026-11-07T09:43:24.725Z"
   }
 }

@@ -5,7 +5,7 @@ description: Diagnostic procedure for PowerContext operators. Covers which comma
 tags: [troubleshooting, readiness, recovery, topic-memory, migrations, operations, diagnostics]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:04:09.583Z
+    at: 2026-11-07T09:43:24.725Z
 sources:
   - id: openwiki-source-b2080e834e81820ea7240aa1
     resource: repo://docs/en/docs/operate/local-server-ops.md
@@ -57,7 +57,7 @@ sources:
     resource: repo://tests/test_runtime_readiness_observations.py
   - id: openwiki-source-f06ae5de980d258c1e68bf8a
     resource: repo://tests/test_service_runtime_repair.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:04:09.583Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:43:24.725Z" }
 ---
 
 # Troubleshooting and Recovery Runbook
@@ -273,7 +273,7 @@ An older deployment may use a case-insensitive collation such as `utf8mb4_genera
 
 ## Ops tool recovery
 
-The Ops tool is a non-interactive boundary for a personal Server. Its requests are `inspect`, `config_validate`, `preflight`, `apply`, `resume`, `operation_status` and `cancel`. Its operations are `register`, `start`, `stop`, `restart`, `remove_registration`, `config_apply`, `install` and `repair` ([protocol.py](repo://src/powercontext/ops/protocol.py#L26-L36)). `apply` requires an authorization whose `plan_id` matches the approved plan, and the protocol rejects any other authorization with `authorization_required` ([authorize](repo://src/powercontext/ops/protocol.py#L228-L232)).
+The Ops tool is a non-interactive boundary for a personal Server. Its requests are `inspect`, `config_validate`, `preflight`, `apply`, `resume`, `operation_status` and `cancel`. Its operations are `register`, `start`, `stop`, `restart`, `remove_registration`, `config_apply`, `install` and `repair` ([protocol.py](repo://src/powercontext/ops/protocol.py#L26-L36)). `apply` and `resume` require an `authorization` field, and the protocol rejects authorization problems in two distinct branches. The first is `invalid_request`: the `authorization` field is missing from the request, or its value is not an object with exactly the fields `plan_id` and `approved` ([request and object checks](repo://src/powercontext/ops/protocol.py#L84-L99)). The second is `authorization_required`: the object has exactly those two fields, but `approved` is not `True` or its `plan_id` differs from the approved plan's `plan_id` ([authorize](repo://src/powercontext/ops/protocol.py#L228-L231)).
 
 For a lost response or an interrupted mutation, query `operation_status` first. Do not repeat the mutation automatically. The Ops reference documents three execution states: `finished` when a final result is saved, `interrupted` when an unfinished attempt's executor has exited, and `unknown` otherwise. A present process identifier is not proof that the executor is still running. While a previous native command may be alive, new mutations, including stop and removal, remain blocked ([local-server-ops.md](repo://docs/en/docs/operate/local-server-ops.md)).
 

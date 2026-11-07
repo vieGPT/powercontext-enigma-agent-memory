@@ -5,7 +5,7 @@ description: How PowerContext's Server emits Prometheus metrics, OpenTelemetry r
 tags: [observability, metrics, tracing, logging, opentelemetry, prometheus, phoenix, langfuse, operations]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:04:09.583Z
+    at: 2026-11-07T09:43:24.725Z
 sources:
   - id: openwiki-source-f413c744331a974ad784e136
     resource: repo://deploy/observability/README.md
@@ -49,7 +49,7 @@ sources:
     resource: repo://src/powercontext/server/worker_tracing.py
   - id: openwiki-source-e41297fefa8fa2328b2fcc46
     resource: repo://tests/test_server_tracing.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:04:09.583Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:43:24.725Z" }
 ---
 
 # Observability, Metrics and Tracing
@@ -190,7 +190,7 @@ When a directory is set explicitly but file output is not enabled, the Server ad
 
 ### Log export and failure isolation
 
-When `POWERCONTEXT_SERVER_LOGGING_OTLP_ENABLED=true`, the Server adds an OTLP log handler. It sends the same allowlisted payload through a batch log record processor. If the `tracing-otlp` extra is missing, configuration fails with a `RuntimeError`.
+OTLP log export is off by default: `ServerLoggingConfig.otlp_enabled` defaults to `False`. Only when `POWERCONTEXT_SERVER_LOGGING_OTLP_ENABLED=true` does `configure_server_logging` add an OTLP log handler. That handler sends the same allowlisted payload through a batch log record processor. If the `tracing-otlp` extra is missing while the handler is enabled, configuration fails with a `RuntimeError`.
 
 Formatting, queue, write, and compression failures increment a process-level counter, which `powercontext_server_telemetry_log_records_dropped_total` exports. Each handler emits at most one content-free `observability.log_failed` notice to stderr and does not dump the failed record. Logging failures never change a business result.
 

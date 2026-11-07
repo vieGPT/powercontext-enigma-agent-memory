@@ -5,7 +5,7 @@ description: Defines the seven built-in Artifact families, immutable Revisions, 
 tags: [artifacts, revisions, artifact-families, stable-handles, concurrency, tags, candidates]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:04:09.583Z
+    at: 2026-11-07T09:43:24.725Z
 sources:
   - id: openwiki-source-5d527dc21363023c24fa90ac
     resource: repo://docs/en/docs/workflows/manage-artifact-tags.md
@@ -53,7 +53,7 @@ sources:
     resource: repo://src/powercontext/limits.py
   - id: openwiki-source-f25c1b3c7f796f0c6487a9cb
     resource: repo://src/powercontext/server/app.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:04:09.583Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:43:24.725Z" }
 ---
 
 # Artifact Families, Revisions and Handles
@@ -64,7 +64,7 @@ This page covers the shared model. Family-specific behavior is in the workflow p
 
 ## The seven families
 
-The built-in families are `atomic-memory`, `experience`, `skill`, `handoff`, `profile`, `prompt`, and `topic-memory`. Each concrete Artifact type declares its identifier as a class-level `family` value, for example `atomic-memory` in the Atomic Memory models, `topic-memory` in the Topic Memory models, and `profile` as the Profile family constant.[^families]
+The built-in families are `atomic-memory`, `experience`, `skill`, `handoff`, `profile`, `prompt`, and `topic-memory`. Each concrete Artifact type declares its identifier as a class-level `family` value, for example `atomic-memory` in the Atomic Memory models, `topic-memory` in the Topic Memory models, and `profile` on the `Profile` class, whose `family` ClassVar is bound to `PROFILE_FAMILY` and whose `ProfileDraft` counterpart uses the same binding.[^families]
 
 The legacy `memory` family is not a writable Artifact family. Legacy Memory collections were archived, and their entries are cited as Atomic Memory revisions instead.[^legacy]
 
@@ -207,7 +207,7 @@ Tags are discovery metadata, not permissions or model instructions. They are not
 - [Sources and processing](sources-and-processing.md) explains the evidence that Artifact lineage records.
 - [HTTP and MCP API](../architecture/http-and-mcp-api.md) lists the routes used here.
 
-[^families]: Family identifiers are declared on the concrete Artifact types. repo://src/powercontext/builtin/artifacts/atomic_memory/models.py#L116-L122 ; repo://src/powercontext/builtin/artifacts/topic_memory/models.py#L64-L70 ; repo://src/powercontext/builtin/artifacts/profile/models.py#L31-L32 ; repo://src/powercontext/builtin/artifacts/prompt/models.py#L114-L114 ; repo://src/powercontext/builtin/artifacts/skill/models.py#L121-L127
+[^families]: Family identifiers are declared on the concrete Artifact types. repo://src/powercontext/builtin/artifacts/atomic_memory/models.py#L116-L122 ; repo://src/powercontext/builtin/artifacts/topic_memory/models.py#L64-L70 ; repo://src/powercontext/builtin/artifacts/profile/models.py#L31-L32 ; repo://src/powercontext/builtin/artifacts/profile/models.py#L171-L176 ; repo://src/powercontext/builtin/artifacts/prompt/models.py#L114-L114 ; repo://src/powercontext/builtin/artifacts/skill/models.py#L121-L127
 [^legacy]: The Artifact reference layer rejects the legacy family and the operation mapper names the Atomic alternatives. repo://src/powercontext/artifacts/models.py#L37-L37 ; repo://src/powercontext/artifacts/models.py#L45-L61 ; repo://src/powercontext/server/app.py#L6250-L6300
 [^candidates]: Candidate review uses an expected_version contract and Family-owned approval paths. repo://src/powercontext/builtin/review/service.py#L658-L664 ; repo://src/powercontext/builtin/review/service.py#L700-L735
 [^repo-insert]: Body rows and the head row are written in separate statements, and the body is keyed by the exact revision. repo://src/powercontext/builtin/persistence/artifacts.py#L800-L845 ; repo://src/powercontext/builtin/persistence/artifacts.py#L190-L245
