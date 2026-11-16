@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:4cbedda342237adefbb35c442807886695775611bd5dc3c50efa377e7ff16bb5",
+  "pageVersion": "sha256:2be5c8c7800e6d09c6fc4c2d8442dac851c3841fb8ca2bc350b94b0cc4ef466d",
   "claims": [
     {
       "id": "claim_761880cf21ab4b3389b50b73aa973171",
@@ -35,7 +35,7 @@
           "version": "repo-lines-v1:sha256:df10333fd47378c44aea1bf18018b001bcddd33eb9f98589def3686a2cc8825c:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNjZTk2YzJmNWI3MTI3OWE4NWQwY2UzOWMyNmY0MWVhNmQ3OTgzNGYyNzJmOTlmOWQ0MWI2ZjdlMjA5YTMwYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGI1ODlmYTJjZjM2YzE0OThhZTI5NmExYjM1ZDM4MjhjMGRjMTNmZjA5ODkwNTQ2MmM4NDkwYjBhNWUzYWY0NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWY0MDEyYmQ2ZjFhMmYyNmIyNDg0NDg3MWYzMDBmZmUxM2VjODViOTNmZDU2MTQ0ZjUwOWM2MmJkMzYwZTIxZiJ9"
         },
         {
-          "resource": "repo://src/powercontext/server/settings.py#L383-L421",
+          "resource": "repo://src/powercontext/server/settings.py#L389-L427",
           "version": "repo-lines-v1:sha256:7546965b39d3af1a5af9bcb3d94787468d88f237cc0590399dfc2e4215ee21cd:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwYjhkYjBiOGU2YmE1YzgyNDQzMmMyOGI1ZjcxYzVjMDAwN2NkMzIxYzMxNmNkMzIxNzI2NmM0OTBmMTFkNmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyYWIwOTBiY2QxNjIwZmE2MmVhZWUxNTdhNzRmY2E2MzVhYTI5ZTEyY2JmZmQ2MThiNTc5MmQ4N2JjMDNhM2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ1NmY1MDMyZjRiZDhhZDU0Mzc4Njc2NjkwMTZlMWU1ZjY1M2NhNWQzYTA2OGQ4OGYyY2VjNzY0NWM0M2QyNGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNiMjM2N2JkMGRmMGE2MmRmYzNkMTIxOTkxYjI5OGZlNGU5YzNkMzI2NzUyZTY5ODU1OTQzYjZjZjRiMjQ4M2QifQ"
         }
       ]
@@ -45,7 +45,7 @@
       "statement": "A non-loopback bind is refused when authentication is disabled and ALLOW_UNAUTHENTICATED_NON_LOOPBACK is false; the check is skipped for a UDS listener and for the background role when metrics are disabled.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/server/settings.py#L383-L421",
+          "resource": "repo://src/powercontext/server/settings.py#L389-L427",
           "version": "repo-lines-v1:sha256:7546965b39d3af1a5af9bcb3d94787468d88f237cc0590399dfc2e4215ee21cd:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwYjhkYjBiOGU2YmE1YzgyNDQzMmMyOGI1ZjcxYzVjMDAwN2NkMzIxYzMxNmNkMzIxNzI2NmM0OTBmMTFkNmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyYWIwOTBiY2QxNjIwZmE2MmVhZWUxNTdhNzRmY2E2MzVhYTI5ZTEyY2JmZmQ2MThiNTc5MmQ4N2JjMDNhM2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ1NmY1MDMyZjRiZDhhZDU0Mzc4Njc2NjkwMTZlMWU1ZjY1M2NhNWQzYTA2OGQ4OGYyY2VjNzY0NWM0M2QyNGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNiMjM2N2JkMGRmMGE2MmRmYzNkMTIxOTkxYjI5OGZlNGU5YzNkMzI2NzUyZTY5ODU1OTQzYjZjZjRiMjQ4M2QifQ"
         }
       ]
@@ -55,7 +55,7 @@
       "statement": "Cross-field rules reject HTTP_UDS with the background role, a background principal description without a principal ID, an identity file combined with a legacy token, an identity file or source management without enforced access, and a dashboard in enforced mode without AUTH_TOKEN.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/server/settings.py#L383-L421",
+          "resource": "repo://src/powercontext/server/settings.py#L389-L427",
           "version": "repo-lines-v1:sha256:7546965b39d3af1a5af9bcb3d94787468d88f237cc0590399dfc2e4215ee21cd:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwYjhkYjBiOGU2YmE1YzgyNDQzMmMyOGI1ZjcxYzVjMDAwN2NkMzIxYzMxNmNkMzIxNzI2NmM0OTBmMTFkNmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyYWIwOTBiY2QxNjIwZmE2MmVhZWUxNTdhNzRmY2E2MzVhYTI5ZTEyY2JmZmQ2MThiNTc5MmQ4N2JjMDNhM2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ1NmY1MDMyZjRiZDhhZDU0Mzc4Njc2NjkwMTZlMWU1ZjY1M2NhNWQzYTA2OGQ4OGYyY2VjNzY0NWM0M2QyNGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNiMjM2N2JkMGRmMGE2MmRmYzNkMTIxOTkxYjI5OGZlNGU5YzNkMzI2NzUyZTY5ODU1OTQzYjZjZjRiMjQ4M2QifQ"
         }
       ]
@@ -65,7 +65,7 @@
       "statement": "PUBLIC_URL must be an absolute HTTP or HTTPS URL without credentials, query, or fragment, and a non-loopback public URL must use HTTPS unless ALLOW_INSECURE_HTTP is true.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/server/settings.py#L325-L364",
+          "resource": "repo://src/powercontext/server/settings.py#L331-L370",
           "version": "repo-lines-v1:sha256:e8f1609a2da38d5f30fad6ee0ac9361df7ed30c2dd03c67b3c67876b55402364:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyMGI0NTNmNWUwYzkyZDVmNmMyNTFhNWVhMTk2MGQ3MmYzYmQwNzk1NmFlODU3ZGEyMGUzMWE4OGM1NTk2OWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyMGI0NTNmNWUwYzkyZDVmNmMyNTFhNWVhMTk2MGQ3MmYzYmQwNzk1NmFlODU3ZGEyMGUzMWE4OGM1NTk2OWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUwYzA2NmNjODc3ODBiMTI5ZDFkYTE0NTgyM2FiMmQ1NGJmOWQ4N2JlMzQ2YzkwZDkwNjlhNGU4Y2RmNTg2NmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyZDZhYTU1YjZmMjIwZDMwMzA1N2U4NjZmZWExYzNiZjRlZTAwZGZhYjlkY2I0YTJiNmZjMTljOGNiMzdjZTEifQ"
         }
       ]
@@ -75,7 +75,7 @@
       "statement": "CURSOR_SIGNING_SECRET must contain at least 32 bytes, and each handoff generation verification secret must contain at least 32 bytes with at most 8 secrets.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/server/settings.py#L296-L312",
+          "resource": "repo://src/powercontext/server/settings.py#L302-L318",
           "version": "repo-lines-v1:sha256:c92aec68d1bec23895a53143965209ef7941b4dd39f41403fc1f904574d27e97:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3OGRlOWU3MmE3YjYyZmYyMTEwMTRiNmI0MTI2YTExMmEzYTdmZWU2M2I0YTk2MjE3Y2M0ODRjYWRmZjQxY2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1YzZkMGZjMWJiNDZjMGQyM2E0YTc5ZDE5NTA4MTIzYmEwYTVhNWVmNGJmZDFkY2VlY2FjMDM0NDcwNmE2NWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVhOGUyZTE3MzJiNDk5MWYzMDdjNmVhN2IxOTI3ZGM1ZDlmYWFmY2UzOWFhNjY5MzNjNTEzYTYyNTg5NTRkNjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg2NTNjMWViMGMwNmE2ZjQ3ZDliN2I5MmU0ZGUyY2NkMTk4NTA2Y2ZmOGE3NGJiZGVjNjUzMjczODE2ZTNmNmEifQ"
         }
       ]
@@ -99,7 +99,7 @@
           "version": "repo-lines-v1:sha256:30b0a155c2ce2c6f3b4e4af8f7e7d8fcca50340cc1e42d73f5f42a67477f4e00:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxMmVjMDExZDY1YzcxNmQwNmUyZjRiMjhlY2YwYmZjZTU5N2VmYWZkYjdiNGQ2Y2YyZjUzNTk5ZWRjZDE1YTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUwOWU0YTI4YTc2ODhiZTJlOTgxYjFkMGQxYjRmZTc2OTYwZDFkOThjMmRkYWI2ZWRhM2FhNGJhNDZhYTQxYTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk5MTcwZGVjOTBjY2VkMjMyYTk4MWRlZGYzZGQyNDA5MjBkMGZlOTU0MjBkNjNjZDUzYzFiYWMxMjBlNGQ1YzgifQ"
         },
         {
-          "resource": "repo://src/powercontext/server/settings.py#L375-L381",
+          "resource": "repo://src/powercontext/server/settings.py#L381-L387",
           "version": "repo-lines-v1:sha256:a614fe7c68260e642cefc0c26fe09264d29ca624af218c86fb8c8e54c6ca4867:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjczMzJlNDFmYTNhMDQzZGJiZWIzMDM1M2M0OWI0YTFiNTA4Y2E2MzU5MDQ0ZWNmNzQzNzE2YjFkYTk1MDBlNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzNkMjkyZWU0YTQ0ZDAzODI4YjM1MzIyNGY2ODJjMGE4N2VlYjk1Y2JiN2QwOTNiZGQ2NjdkZDEyNjcxYWMxYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2FlYWZmYTM1NDYyYmU5MTgxMzVhNDFiMDEwOTk5N2Y0NTNiNzFmZjYwZWNjZGI5ZWRhMDcwNzc0YTQ0ZmMwMiJ9"
         }
       ]
@@ -109,7 +109,7 @@
       "statement": "When external_skills is not set explicitly, the Server registers project Skill targets .agents/skills (Codex) and .claude/skills (Claude Code) under the workspace with host identity local-workspace.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/server/settings.py#L318-L324",
+          "resource": "repo://src/powercontext/server/settings.py#L324-L330",
           "version": "repo-lines-v1:sha256:e11acc126d075656c3e573367ff736aa5809570e7f51eaf7428ccddd13f89583:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWVmMWNkZDBmNTc0MzNjZTUwNzc5MDcyMmUyZjUxZDk3MzU2Y2JmZmE3YjI0ZGQ3Y2ExMzQ0ODMyZDRlNTI0OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTU3ZDRjZTE5NTQ2YjAxYTBjYWZiMzdkZmIzOGUzMDc2YTAxNWMyZWU2Yzc2MmQ1NjM4YmI3ZWI5ODRiOTkxYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDNiMjhiOWVkNjQzMzk0M2ZlNzhkZDlmZjA2YTZjMDRmM2YyYjU0ODcyMTgzN2JjMzc0MTAwZGEyNmU2MDQzMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjc5ODc1YTk4MDY5MmE4NWU5ZWNlZDY5ZTkwOWU3ZWFhOWFiYzA4YzZiNmRmZDQ4ZjRkNDk0MmI0OTgzMDM2NiJ9"
         },
         {
@@ -165,11 +165,11 @@
           "version": "repo-lines-v1:sha256:1445be73d1b5c31b1c1ae514f3780dcdd0595c3e5743d90df6a5289d074d4aba:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTQ0NWJlNzNkMWI1YzMxYjFjMWFlNTE0ZjM3ODBkY2RkMDU5NWMzZTU3NDNkOTBkZjZhNTI4OWQwNzRkNGFiYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTQ0NWJlNzNkMWI1YzMxYjFjMWFlNTE0ZjM3ODBkY2RkMDU5NWMzZTU3NDNkOTBkZjZhNTI4OWQwNzRkNGFiYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmE5NjIxODZhMzRiZjgzMzY1ZGMxZjFlZjQyODZlMWIwNjIwYzAzMzM4OWNjNWZhNmE0ZmJmNzAzN2I5YmQzMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmI4YWZjYTczMTMwMjEwMmUzMmNjZWE4NTdmYjcxNDAxZjc3NjI1OGZkN2FjN2VhMDNhZWUzYjc4NWM5OTcwZCJ9"
         },
         {
-          "resource": "repo://src/powercontext/cli/env_file.py#L120-L183",
-          "version": "repo-lines-v1:sha256:477ec62952551ebe4084791a4ceabdb7bd1b886be442ea8d36726ffbbaed2e82:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1YjIzYzQ5MzI4YWIwNmJkYmQ3MjhiMDA1NmQzZmE5Y2ViYTFiZDVkMTc5NDhjOTcyNmExZGEyMWNjNTNjMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVjYTAyYzlhNDhiNDYxNmZjYmQyNmViMjA3ZWI0ZGY1OTk0ZjdkODMzN2IwZTdhYjFmMzI1OWUzNDZiZWVjZGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE4ZmMwYTMwMWQyNTdkY2YzOGFjMmZlZDIyZWE2YWZmYWRiNjc1MmMwYmI4MGU4YjgwNDVmMmE0NjMwMDRkMjYifQ"
+          "resource": "repo://src/powercontext/env_file.py#L120-L173",
+          "version": "repo-lines-v1:sha256:19012d37ca3db7c2574821a297ada6ada8402407bf27c56b114a19769c6da6af:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1YjIzYzQ5MzI4YWIwNmJkYmQ3MjhiMDA1NmQzZmE5Y2ViYTFiZDVkMTc5NDhjOTcyNmExZGEyMWNjNTNjMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVjYTAyYzlhNDhiNDYxNmZjYmQyNmViMjA3ZWI0ZGY1OTk0ZjdkODMzN2IwZTdhYjFmMzI1OWUzNDZiZWVjZGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJhNWEzMmRiOTE4ZjczNDdiMTA3NDQ2ZTcxNDgzZjQzMmUzNzM5NGE3OTA4YWZjZDUzNWQ3MDFlMzIxNWM5ZTQifQ"
         },
         {
-          "resource": "repo://src/powercontext/cli/env_file.py#L36-L73",
+          "resource": "repo://src/powercontext/env_file.py#L36-L73",
           "version": "repo-lines-v1:sha256:a002cda970a71da6c768d891c8af06c91a9292d5ae84182f0182f5645e149542:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlOTczMDZkNTVmYjZlM2JkZmY2MzI5MTY4MjcxMGEzYWViMjI3MDdiMjkwZmI0YzUxZjNhMzg5NTU5ZmFkMDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM1MWFjYTU4ZmM5ZDhmOTI2N2Y5OTA2Mjk5NTI1ODMxYzdkMmViMmVhMWU3NDUzMzk2ODdiNDQ2ZDhhMjQzNmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE4NmQ5MWRiYjNkNmI2ZjVhMzQxNDliOTI4MWJlMWE0MDBjYmQ1NDkzMTlmYWU3MGEyOTlmMmM1MWRhNzY5NDkifQ"
         }
       ]
@@ -189,7 +189,7 @@
       "statement": "Processing defaults are source window 100, a single memory worker, 10 topic-memory workers, 4 profile workers, 600-second worker timeouts, artifact processing role all, and supervisor mode global.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/builtin/runtime/config.py#L266-L290",
+          "resource": "repo://src/powercontext/builtin/runtime/config.py#L275-L299",
           "version": "repo-lines-v1:sha256:d3cdc933e3590d5b934ff7733850145c0a6e4db421e022288f2ac37e4c6fb413:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlYzUxNzYwZGYwMTI0M2VjODcyZjBiNzRmODVmOTg0NDkxODYwZGM0NWRiYjZiODE1NjU2ODMzZTNkMWE3MTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxZWI5NDU0NGEyZmY5Y2ZkNjZhYjk5NTZkZmU3NmNiOWQ1ZmQyZjAxYzhjYzBkMGEwOWMxZjRhNjVkNmRkOWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlkZDVmMjIzMmFjZDk5Zjk5ZDYwY2E2OGY2MjAxNzIzMmYyMWI1MjM3YWY5NDRiNDcwYmI3MmU5MWFlNjQ5NzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUzYjY2NTQ2ODBhYTZlNTJlN2M0NGI1MGU2NjlkYzlhNjU5NDI1YjQ4Yjk1OGY4MTExOTc0NGM1ZjQ5MjE0ZTEifQ"
         }
       ]
@@ -199,11 +199,11 @@
       "statement": "Memory reranking, decision assistance, the memory write gate, the recall gate, and Profile scheduling are all disabled by default; the write gate defaults to shadow mode and the recall gate to two maximum rounds.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/builtin/runtime/config.py#L150-L178",
+          "resource": "repo://src/powercontext/builtin/runtime/config.py#L151-L179",
           "version": "repo-lines-v1:sha256:659b580ca5727b6d3a52ca865e2bbc38928e0f47042f6b02de737690016fdd6e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0MWIxNGIyMDVlZGRkMTk4NDg5YWI3OWRlMzc5OTU3NTAwMDFmN2Q5YjNmNmRjZWMwZTg1YmY0OTM3NjM5NWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5MmQ5YTI3M2ZiZjBkZmZhZWI4ZTVkNTQzMjJjNTIxMGE5NWY2NTFmYzQwOTQ2ZjFhZmI1NzRmNzJkOTg0MjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ4YzU2MjA1OWEzMzY5YjE0YTliNGQwNzcyOTIyZjU3YTU1ZWViZTUxOWVkYjJlNDYxNWMzMzAxYjM2MmVmNmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE0YTg3ZjRmMzc3NjQ4ZWE2MzAwODE4YWQyMTc0MzM3YjNiOGNkOTc2MTM4NzM0YTE2MDY2NjYwZTU5OTc4NmIifQ"
         },
         {
-          "resource": "repo://src/powercontext/builtin/runtime/config.py#L194-L194",
+          "resource": "repo://src/powercontext/builtin/runtime/config.py#L195-L195",
           "version": "repo-lines-v1:sha256:680f9924e7234647d36057675b8f37873e9b616298163e118530056c2a977773:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjgwZjk5MjRlNzIzNDY0N2QzNjA1NzY3NWI4ZjM3ODczZTliNjE2Mjk4MTYzZTExODUzMDA1NmMyYTk3Nzc3MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjgwZjk5MjRlNzIzNDY0N2QzNjA1NzY3NWI4ZjM3ODczZTliNjE2Mjk4MTYzZTExODUzMDA1NmMyYTk3Nzc3MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjg4Y2EzYWM1ZWZmODYwMWZjNmIwOGNjMWJlNjU2OThmOGFlNjg5N2E4NTM0YjljMDA5OGYyYzMyNDVmMzdlNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGE3NGIyZjE2MmU1ZTg1ZGE3ZGM1YWMyMmM4ZmY3MjViZGJhMzA1YTkwNDVmMjA0ZmE5MTgyZTY4ZThiZWI3ZSJ9"
         }
       ]
@@ -213,7 +213,7 @@
       "statement": "The Profile cron expression and timezone are validated at startup even when Profile scheduling is disabled, so an invalid value fails configuration loading.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/builtin/runtime/config.py#L199-L210",
+          "resource": "repo://src/powercontext/builtin/runtime/config.py#L200-L211",
           "version": "repo-lines-v1:sha256:046769800cbf2dff60b7b86d08044a1c96f52cd6eab443ef04f5cc2dd44a3c64:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkNzg2NTgzMzI1YmRkYTBkM2JhNjg1YTIyYzZmYTY2YzhjNWU2ZDVjMDc2MTk4ZTJkMzRkMzYwMjAwZWIzMGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdiODA1NTVjZWI0ZjU4NGRmOGFiMzZhMDg0YjM2NDBiNTAyOGM4ZGE4NzZhYmJiOGRkYWUxZDU4OGY0N2FkY2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE4YjZhMTIwNzE2ZjI1NGNhZjA1N2E0Y2U1N2NkZjhlMDhjZWViYmIyYTViZTIwNDkwNzFiOTUwZmU2NGUzZTAifQ"
         }
       ]
@@ -223,7 +223,7 @@
       "statement": "Old and new artifact-processing setting names are aliases; if both are present with different values the configuration fails with a conflict error.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/builtin/runtime/config.py#L86-L128",
+          "resource": "repo://src/powercontext/builtin/runtime/config.py#L87-L129",
           "version": "repo-lines-v1:sha256:e51dce142215f6601d21aae6651d9d7821f6a509d434faa285a944eae7a7a44f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxZTEwNTQzYWUzOTgzM2M2YmU4MDNiMDVmOGE4ZDMyZWU1NDFhODkzMDdkNDU0ZmE1YjI1NmMyYWJhMzkyY2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgxY2Q3ODhiNzg3MDZkNzhkYTgzZTIwZDQ5ZjNmNDdiMjBmYjU1YTZiMTY4NDg0ZThjZmE0MjYxZjI5OGRmZDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0YjZiNWJlMDMyMjYxMWJkMWZhZmRlNTJlODg2NGZkMWIzOGViOWUxYTcwOTEwNmYwMTRmZDMwNmY2ZDI2NGQifQ"
         }
       ]
@@ -233,7 +233,7 @@
       "statement": "Inference defaults are generation timeout 30 seconds, two generation requests, streaming disabled with a 60-second idle timeout, a 125000-token context window, embedding timeout 30 seconds, embedding batch size 10, unit normalization, and send-dimensions enabled; all model identifiers are unset by default.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/builtin/runtime/config.py#L317-L352",
+          "resource": "repo://src/powercontext/builtin/runtime/config.py#L326-L361",
           "version": "repo-lines-v1:sha256:ef09ce84d4a818c8189829b7589ea9d9cb3bbb0e277adc36315d74f695da71b1:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmOWUzZWNhOGEzOGU3MzVmN2M1YWVlZTdlYTYyZjNjYmNhNDZmNTJkYjNjYjFjMmIwODZiMzgyNWJjYjQzNDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhNWRjM2ZjNzIxNDdlM2E2MGEwNmExMmJjNWJmNzA4NDgzYTJhYjg3ZTljZjIzYzg4YmY5NjU3YjAzYmJmNTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIyMmVhOWU5MjliZjI3ZDI1ZWE1NGNkNTY2MzNlZjMzNjM3ZTlmNTk4YjU1MjhlODQ1NTNkNDIzZGIxODE1YjQifQ"
         }
       ]
@@ -243,7 +243,7 @@
       "statement": "The embedding model, profile ID, and dimension must be configured together; setting one without the other two fails validation.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/builtin/runtime/config.py#L411-L418",
+          "resource": "repo://src/powercontext/builtin/runtime/config.py#L420-L427",
           "version": "repo-lines-v1:sha256:3d6c1d75fff543b40ffcafdefc3e0d62b39b6b0080b4b98ee80711cf6ab5d116:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWZmMGM0MWQ2MmY4MWUzOGM1ZjAzMGZlZjBhNGM2NzY1Y2NlMzRkZTU4MDI3NGE4YWFiNjFhN2U5MjQxNmY5NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTFmYTZkNjVhMDRlZWM2YjI4MWZhOGY2OGVlZGJlMjM3NWYwYWJhM2UzOTI5ZjcxZjc1Y2EzZmFkZTc4MmY3OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGUyMmMzNjc3ODNjZDdkN2E3ZjFkYmUwNjRjMDNkYzg4YzliNzBjMzlhNWVmY2JiOWE1Yjc1ZDU3MmMyZTE1NiJ9"
         }
       ]
@@ -253,11 +253,11 @@
       "statement": "Rerank and decision models fall back to the generation model when unset, and their base URL, headers, and model settings require a corresponding model or the generation model.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/builtin/runtime/config.py#L340-L346",
+          "resource": "repo://src/powercontext/builtin/runtime/config.py#L349-L355",
           "version": "repo-lines-v1:sha256:b9d29f0e7b4d2e203f00af56c2e35843cc2c0d5dc6cb226a3e27b5711ffc34cb:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjMzMzc3MWU0OWVhZTk0ZWIyY2RhOTExMDA1Y2I3NDcwZDczZWYzYTc2NTZjNGYxNTgwZjRjZDAwYjZmZWYxZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzgyODEzOTgxOTg2YWM3MWY0ODZlMDZjZDBiZDc1NWRlNmFmOGNiOWRmMmIwZTE3MTdkM2FjMThmNThkYzBmOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDkxNzcxMTRjZjEzZDIyNzg4YzUwYzAyNjk2MzFmMjhkODRhYzZiMzlmMTYyODhiZDM2YThhOWRlMWNjMzJiMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjE1YTI3NTkzOWFhZWQzZTU1Y2RmOWVmOTg1OWM1YjhiYmZhMGQ0YjZkZWE3YWViZjNlZmI2YTgzNzZjNjExYSJ9"
         },
         {
-          "resource": "repo://src/powercontext/builtin/runtime/config.py#L420-L456",
+          "resource": "repo://src/powercontext/builtin/runtime/config.py#L429-L465",
           "version": "repo-lines-v1:sha256:2436888d9a71a2aa9cd041f529da5f481c2ab05bea0db4e837238ca1036d9ba3:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkZDVlZjJiMDQxZDNiOTA0YjA0OTI4OTgxYzdhYmVhNzE0OGYwMzZiMzM4NWEzYTEwY2YwZmZmZDNhNWY5NWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE4YjZhMTIwNzE2ZjI1NGNhZjA1N2E0Y2U1N2NkZjhlMDhjZWViYmIyYTViZTIwNDkwNzFiOTUwZmU2NGUzZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY0YTUzZTBiMmE0YWVmMWE0ODgyMzQ0YWRjNmI2NTViNjY2MDY3NWI2NjUyZmJmM2E2Njg1MjMwNGQ0YTVhMTIifQ"
         }
       ]
@@ -353,11 +353,11 @@
           "version": "repo-lines-v1:sha256:41b9a0eee9945486b129ad416ac40730375d695840b50a2c86299d8a0a6003c7:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDFiOWEwZWVlOTk0NTQ4NmIxMjlhZDQxNmFjNDA3MzAzNzVkNjk1ODQwYjUwYTJjODYyOTlkOGEwYTYwMDNjNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDFiOWEwZWVlOTk0NTQ4NmIxMjlhZDQxNmFjNDA3MzAzNzVkNjk1ODQwYjUwYTJjODYyOTlkOGEwYTYwMDNjNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjhmNGU0ODEwYzk5MDQ4NmQzZDlhZTgzODlkNzAxZTJkODIyYzNkOThhMTZjZTY1NGY0MmE2MWRmNzlkZmU0ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGQ2N2MyMmI4M2E4ZDU0NDI1OTQ2OGY3MzdkN2E3YjUwMDRjZTk5MDBhNTQ2Y2JjNWFlY2NhMjg3NmVmMDY5NCJ9"
         },
         {
-          "resource": "repo://integrations/dsh/plugins/powercontext/src/config.ts#L132-L140",
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/config.ts#L155-L163",
           "version": "repo-lines-v1:sha256:baecc6b1a60d6a20586f262b69fcd2c11896cdd0ec9f47709e82623b1c3e60bb:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGMyNjUwMDFhMjE4YzBlMjgzNDM1MzQxMjIzNzA4YTI0NDhkZjgyMGJhMjBkYmU2MmFjYTM2NjUwOGNkY2MxZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzNlNTgwNmJlODI3ZDNkMGI0NTlmMDNmZjRkYmYxZGNkNzE2OGFmZTkyNmY3MTgwNWExNmYzMGIwNzVjODY0ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTRmNmRjNWEwYTQ4MjU4YzVjYzI3YTk1ZTI5OTc0OGUyOWFhMjIwMGZkMTYwZmQ4NDU1MTQ5NGU4ZDBiNzcxNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTQ3NmJlYmJjYjVlNzBjOGZmMzBjY2E1OWJmOTI0Nzc3Njg3Yzc4ZWI5NDJmYTliMzRhNmRiN2Y5OTcxM2ZmYSJ9"
         },
         {
-          "resource": "repo://integrations/hermes/plugins/powercontext/provider.py#L411-L411",
+          "resource": "repo://integrations/hermes/plugins/powercontext/provider.py#L434-L434",
           "version": "repo-lines-v1:sha256:6c9f18cf58e630a738b517a4731fe88bfb3de9d64e93032f9dbc372bd9874e88:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmM5ZjE4Y2Y1OGU2MzBhNzM4YjUxN2E0NzMxZmU4OGJmYjNkZTlkNjRlOTMwMzJmOWRiYzM3MmJkOTg3NGU4OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmM5ZjE4Y2Y1OGU2MzBhNzM4YjUxN2E0NzMxZmU4OGJmYjNkZTlkNjRlOTMwMzJmOWRiYzM3MmJkOTg3NGU4OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTkxNjY1ZWFmMDkzNjBjZDJiMDI4MGRiMTlkOWZlYTlkMzJlY2NhZDk1MjM4MGM5NTY2NjQ5Mzg3ZjQ0OWZmYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDY0ZTVlYWYxYWI1YzJkMGVlZGM4NmY4MWE1MjFhNTBkMzhhZWY3Y2E3YjdlN2E3MzhlN2UyZDE0YWFlZjE3MSJ9"
         },
         {
@@ -609,6 +609,6 @@
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T10:00:10.628Z"
+    "at": "2026-11-16T11:46:19.799Z"
   }
 }

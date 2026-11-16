@@ -5,18 +5,28 @@ description: Runbook for PowerContext Server schema revisions (db-migrate), lega
 tags: [migrations, database, upgrade, archive, operations, sqlite, seekdb, oceanbase]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:43:24.725Z
+    at: 2026-11-16T11:46:19.799Z
 sources:
+  - id: openwiki-source-679d9a050811e33a337efc88
+    resource: repo://docs/en/docs/get-started/install-and-run.md
   - id: openwiki-source-a94249c04ae33f0d631c9044
     resource: repo://docs/en/docs/operate/artifact-processing-migration.md
   - id: openwiki-source-ef9b50c9ef8b9abe11967085
     resource: repo://docs/en/docs/operate/atomic-memory-migration.md
   - id: openwiki-source-bbe5d9794e77b49d99514414
     resource: repo://docs/en/docs/operate/database-migrations.md
+  - id: openwiki-source-eca9b9767b196e124d9df912
+    resource: repo://openapi/powercontext.yaml
   - id: openwiki-source-4b90f25d9bacdfbc4b1b79e1
     resource: repo://release/upgrade-support.json
   - id: openwiki-source-418f2306f338afdfcbadc89a
     resource: repo://scripts/check_atomic_memory_migration_shards.py
+  - id: openwiki-source-9c1c1ce5625159dcb4a67be0
+    resource: repo://scripts/ci_legacy_upgrade_rejection.py
+  - id: openwiki-source-04ffce01f77db68370dba1eb
+    resource: repo://scripts/run_atomic_memory_clean_migration.py
+  - id: openwiki-source-0d0a7ef4bfc7b1269f1095b0
+    resource: repo://scripts/run_upgrade_release_gate.py
   - id: openwiki-source-e5db5e5c2b9bc4c5d9f21de1
     resource: repo://scripts/upgrade_release_gate.py
   - id: openwiki-source-7eabfb50d3b9e4892935a078
@@ -33,6 +43,8 @@ sources:
     resource: repo://src/powercontext/builtin/persistence/migrations/atomic_projection.py
   - id: openwiki-source-0d017396c93839baace10d2b
     resource: repo://src/powercontext/builtin/persistence/migrations/backup.py
+  - id: openwiki-source-6beafc40f33d258b3917f395
+    resource: repo://src/powercontext/builtin/persistence/migrations/bundle.py
   - id: openwiki-source-5219e76482ced55f611abb64
     resource: repo://src/powercontext/builtin/persistence/migrations/connections.py
   - id: openwiki-source-f746b1a78d620cdeccf02874
@@ -41,6 +53,8 @@ sources:
     resource: repo://src/powercontext/builtin/persistence/migrations/historical.py
   - id: openwiki-source-1ed8342d177e20367e6db6c2
     resource: repo://src/powercontext/builtin/persistence/migrations/locking.py
+  - id: openwiki-source-ade172efee8fee5611ef5ce6
+    resource: repo://src/powercontext/builtin/persistence/migrations/maintenance.py
   - id: openwiki-source-37139bc207aafc946226f16c
     resource: repo://src/powercontext/builtin/persistence/migrations/mysql.py
   - id: openwiki-source-5df7b4318f27c661ca64090c
@@ -53,6 +67,10 @@ sources:
     resource: repo://src/powercontext/builtin/persistence/migrations/server_readiness.py
   - id: openwiki-source-6aa28a45ee4a6ebef960ed38
     resource: repo://src/powercontext/builtin/persistence/migrations/server_resources/versions/v1_5_0_003_atomic_memory_evidence_projection.py
+  - id: openwiki-source-6923d64830d80730103786f1
+    resource: repo://src/powercontext/builtin/persistence/migrations/server_resources/versions/v1_5_0_004_source_locators.py
+  - id: openwiki-source-91e15fb2d2f065311674b49b
+    resource: repo://src/powercontext/builtin/persistence/migrations/server_resources/versions/v1_5_0_005_plugin_interfaces.py
   - id: openwiki-source-f09a1660968a29408fd9a932
     resource: repo://src/powercontext/builtin/persistence/migrations/sources.py
   - id: openwiki-source-cb31c904a2a4c0bd7dc1036b
@@ -73,7 +91,7 @@ sources:
     resource: repo://src/powercontext/server/database_migration.py
   - id: openwiki-source-bad9e61f25ada75aaa317ce4
     resource: repo://src/powercontext/server/factory.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:43:24.725Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-16T11:46:19.799Z" }
 ---
 
 # Database Migrations, Data Migration and Portable Archives
@@ -86,7 +104,7 @@ This runbook separates three mechanisms that operators often confuse:
 
 ## Support status
 
-The installed release gate is in `upgrade-required` mode for target `1.5.0`. The gate's notice tells operators that upgrades from 1.3.0 and 1.4.0 require passing full Server acceptance on SQLite, seekDB and OceanBase, that these paths are not yet verified, and not to upgrade existing databases ([repo://scripts/upgrade_release_gate.py#L63-L66](../../scripts/upgrade_release_gate.py#L63-L66)). The policy file records the same mode ([repo://release/upgrade-support.json#L1-L4](../../release/upgrade-support.json#L1-L4)).
+The release policy is in `upgrade-required` mode for `target_version` `1.5.2`, which must equal the `version` in `openapi/powercontext.yaml` ([repo://release/upgrade-support.json#L1-L4](../../release/upgrade-support.json#L1-L4), [repo://scripts/upgrade_release_gate.py#L100-L111](../../scripts/upgrade_release_gate.py#L100-L111)). The public notice in the gate says that database upgrade support is limited to source-version, target-artifact, backend and configuration combinations that pass full Server acceptance ([repo://scripts/upgrade_release_gate.py#L63-L66](../../scripts/upgrade_release_gate.py#L63-L66)). The install guide repeats that text between its `upgrade-support` markers, and the gate's `check_docs` step rejects the docs when they differ from the policy-derived text ([repo://docs/en/docs/get-started/install-and-run.md#L317-L319](../../docs/en/docs/get-started/install-and-run.md#L317-L319), [repo://scripts/upgrade_release_gate.py#L192-L205](../../scripts/upgrade_release_gate.py#L192-L205)). The notice itself does not name individual source versions; the 1.3.0 source appears only in the policy's `automatic_sources` declaration.
 
 Treat existing databases as not upgradable until the exact target artifact passes the required automatic matrix and the reviewed support declaration changes. The code paths below exist and are tested locally, but local tests do not establish installed-release acceptance.
 
@@ -109,14 +127,19 @@ Treat existing databases as not upgradable until the exact target artifact passe
 
 Migration names use `v<major>_<minor>_<patch>_<sequence>`. Stored IDs for older revisions are opaque aliases. The release-based names are presentation metadata only ([repo://src/powercontext/builtin/persistence/migrations/revision_names.py#L19-L55](../../src/powercontext/builtin/persistence/migrations/revision_names.py#L19-L55)). Frozen resources, plan IDs and recovery evidence keep their original IDs (`s1300`, `r1400`, `s1400` to `s1402`).
 
-Two registered source histories reach the same head `v1_5_0_003`. The default source is the 1.3.0 baseline. The 1.4.0 source runs through a separate frozen bridge ([repo://src/powercontext/builtin/persistence/migrations/deployment.py#L46-L57](../../src/powercontext/builtin/persistence/migrations/deployment.py#L46-L57)).
+Two registered source histories reach the same head `v1_5_0_005`. The default source is the 1.3.0 baseline. The 1.4.0 source runs through a separate frozen bridge ([repo://src/powercontext/builtin/persistence/migrations/deployment.py#L46-L57](../../src/powercontext/builtin/persistence/migrations/deployment.py#L46-L57)). The bundle loads the source overlay, walks the revisions, and rejects any history that is not a single linear chain. It then sets `head` to the last revision ([repo://src/powercontext/builtin/persistence/migrations/bundle.py#L86-L93](../../src/powercontext/builtin/persistence/migrations/bundle.py#L86-L93)).
 
 ```text
-1.3.0: v1_3_0_000 -> v1_4_1_001 -> v1_4_1_002 -> v1_4_1_003 -> v1_4_1_004 -> v1_4_1_005 -> v1_4_1_006 -> v1_5_0_001 -> v1_5_0_002 -> v1_5_0_003
-1.4.0: v1_4_0_000 -> v1_4_1_001 -> v1_4_1_002 -> v1_4_1_003 -> v1_4_1_004 -> v1_4_1_005 -> v1_4_1_006 -> v1_5_0_001 -> v1_5_0_002 -> v1_5_0_003
+1.3.0: v1_3_0_000 -> v1_4_1_001 -> v1_4_1_002 -> v1_4_1_003 -> v1_4_1_004 -> v1_4_1_005 -> v1_4_1_006 -> v1_5_0_001 -> v1_5_0_002 -> v1_5_0_003 -> v1_5_0_004 -> v1_5_0_005
+1.4.0: v1_4_0_000 -> v1_4_1_001 -> v1_4_1_002 -> v1_4_1_003 -> v1_4_1_004 -> v1_4_1_005 -> v1_4_1_006 -> v1_5_0_001 -> v1_5_0_002 -> v1_5_0_003 -> v1_5_0_004 -> v1_5_0_005
 ```
 
-Each step has a file in the bundled `server_resources/versions/` directory. For example, `v1_5_0_003` registers the disposable evidence projection ([repo://src/powercontext/builtin/persistence/migrations/server_resources/versions/v1_5_0_003_atomic_memory_evidence_projection.py](../../src/powercontext/builtin/persistence/migrations/server_resources/versions/v1_5_0_003_atomic_memory_evidence_projection.py)).
+Each step has a file in the bundled `server_resources/versions/` directory and a `revision_resources` entry in `server_resources/manifest.json` ([repo://src/powercontext/builtin/persistence/migrations/server_resources/manifest.json#L1-L60](../../src/powercontext/builtin/persistence/migrations/server_resources/manifest.json#L1-L60)). For example, `v1_5_0_003` registers the disposable evidence projection ([repo://src/powercontext/builtin/persistence/migrations/server_resources/versions/v1_5_0_003_atomic_memory_evidence_projection.py](../../src/powercontext/builtin/persistence/migrations/server_resources/versions/v1_5_0_003_atomic_memory_evidence_projection.py)).
+
+The two newest steps have different effects:
+
+- **`v1_5_0_004`** creates the optional `pc_artifact_source_locators` relation with the empty table from its registered schema resource. It does not rewrite lineage, payloads or Source identities ([repo://src/powercontext/builtin/persistence/migrations/server_resources/versions/v1_5_0_004_source_locators.py#L22-L28](../../src/powercontext/builtin/persistence/migrations/server_resources/versions/v1_5_0_004_source_locators.py#L22-L28)).
+- **`v1_5_0_005`** drops the empty storage of the removed Artifact plugin framework and adds the nullable Artifact metadata column. Its domain preflight refuses the upgrade while the previous framework still holds any registration, declaration or index row. Native maintenance refuses registered native vector spaces, so no data is dropped silently. Revision reads omit `metadata` so that earlier registered domain steps still run ([repo://release/upgrade-support.json#L7-L7](../../release/upgrade-support.json#L7-L7), [repo://src/powercontext/builtin/persistence/migrations/server_resources/versions/v1_5_0_005_plugin_interfaces.py#L22-L28](../../src/powercontext/builtin/persistence/migrations/server_resources/versions/v1_5_0_005_plugin_interfaces.py#L22-L28)).
 
 ## Admission and legacy rejection
 
@@ -149,7 +172,7 @@ Branches, in the order the code applies them:
 - **Recorded evidence.** If a maintenance journal exists, its recorded release checksums must still match. A changed checksum is `checksum_conflict` ([repo://src/powercontext/builtin/persistence/migrations/sqlite.py#L95-L120](../../src/powercontext/builtin/persistence/migrations/sqlite.py#L95-L120)).
 - **Source selection by journal.** A journal selects its recorded source chain. Two source chains that both claim the same journal are `recovery_required` ([repo://src/powercontext/builtin/persistence/migrations/sources.py#L36-L53](../../src/powercontext/builtin/persistence/migrations/sources.py#L36-L53)).
 
-Startup uses the same classification but never migrates managed storage. See [Startup and readiness](#startup-and-readiness) below.
+Startup uses the same classification. It never upgrades an existing managed database; it initializes only an empty local SQLite or seekDB database. See [Startup and readiness](#startup-and-readiness) below.
 
 ## Applying a schema migration
 
@@ -186,6 +209,8 @@ Key rules:
 - **Plan binding.** The plan is recomputed after the lock is acquired and again before the write transaction. Any difference raises `plan_changed` ([repo://src/powercontext/builtin/persistence/migrations/sqlite.py#L241-L275](../../src/powercontext/builtin/persistence/migrations/sqlite.py#L241-L275), [repo://src/powercontext/builtin/persistence/migrations/mysql.py#L430-L444](../../src/powercontext/builtin/persistence/migrations/mysql.py#L430-L444)).
 - **Recovery point.** SQLite uses the Online Backup API, verifies integrity and creates the manifest exclusively. A partial file is kept as evidence and never reported as complete. `create_backup` refuses unless writers are declared stopped ([repo://src/powercontext/builtin/persistence/migrations/backup.py#L131-L200](../../src/powercontext/builtin/persistence/migrations/backup.py#L131-L200)).
 - **Completion.** The journal is marked `complete` only after schema, data and domain validation succeed ([repo://src/powercontext/builtin/persistence/migrations/mysql.py#L470-L526](../../src/powercontext/builtin/persistence/migrations/mysql.py#L470-L526), [repo://src/powercontext/builtin/persistence/migrations/sqlite.py#L296-L316](../../src/powercontext/builtin/persistence/migrations/sqlite.py#L296-L316)).
+
+Managed domain operations, namely Processing state, the Atomic Memory conversion and the Atomic projection repair, share `ManagedMaintenanceRunner` in `maintenance.py`. Its `apply` returns `ready` without changes when the plan is ready or has no domain steps. Otherwise it reads or creates the maintenance journal, takes a backup unless the policy is `manual` or `skip`, and begins the write transaction. It then compares the locked state with the initial plan and raises `plan_changed` on any difference. After the operation it runs `check_server_schema` and the domain validation, and only then marks the journal `complete` ([repo://src/powercontext/builtin/persistence/migrations/maintenance.py#L160-L262](../../src/powercontext/builtin/persistence/migrations/maintenance.py#L160-L262)).
 
 ### Journal and interrupted runs
 
@@ -235,12 +260,18 @@ Embedding profiles are admitted strictly. A configured model requires a profile 
 
 ## Startup and readiness
 
-The Server calls `prepare_server_storage` before serving ([repo://src/powercontext/server/factory.py#L221-L230](../../src/powercontext/server/factory.py#L221-L230)). That function never migrates managed storage:
+The Server lifespan calls `prepare_server_storage` before serving ([repo://src/powercontext/server/factory.py#L221-L230](../../src/powercontext/server/factory.py#L221-L230)). That function never upgrades an existing managed database. Its branches run in this order ([repo://src/powercontext/builtin/persistence/migrations/server_readiness.py#L123-L161](../../src/powercontext/builtin/persistence/migrations/server_readiness.py#L123-L161)):
 
-- Empty local persistent SQLite or seekDB storage is initialized through the registered chain. A non-ready plan raises an error that tells the operator to stop writers and run `powercontext server db-migrate apply` ([repo://src/powercontext/builtin/persistence/migrations/server_readiness.py#L123-L163](../../src/powercontext/builtin/persistence/migrations/server_readiness.py#L123-L163)).
-- OceanBase requires an explicit `db-migrate` job for an uninitialized remote database. Startup then validates the exact layout, the stored profile and the domain state ([repo://src/powercontext/builtin/persistence/migrations/server_readiness.py#L139-L152](../../src/powercontext/builtin/persistence/migrations/server_readiness.py#L139-L152)).
-- A full-Server check requires exactly one revision at the bundle head. It verifies retained objects, runs a live foreign-key check, and validates the domain ([repo://src/powercontext/builtin/persistence/migrations/server_readiness.py#L26-L48](../../src/powercontext/builtin/persistence/migrations/server_readiness.py#L26-L48), [repo://src/powercontext/builtin/persistence/migrations/server_readiness.py#L50-L91](../../src/powercontext/builtin/persistence/migrations/server_readiness.py#L50-L91)).
-- An unfinished portable restore receipt blocks normal startup and workers. Only the explicit restore path may open it ([repo://src/powercontext/builtin/persistence/migrations/server_readiness.py#L35-L47](../../src/powercontext/builtin/persistence/migrations/server_readiness.py#L35-L47)).
+1. An in-memory SQLite database returns without any check.
+2. A file-backed SQLite database with a plain path and no URL query is probed for a maintenance lock. An active lock refuses startup as `migration_locked` ([repo://src/powercontext/builtin/persistence/migrations/server_readiness.py#L129-L134](../../src/powercontext/builtin/persistence/migrations/server_readiness.py#L129-L134), [repo://src/powercontext/builtin/persistence/migrations/locking.py#L64-L96](../../src/powercontext/builtin/persistence/migrations/locking.py#L64-L96)).
+3. When an embedding profile was injected but none is configured, the optional-profile check runs and startup returns without adopting managed storage ([repo://src/powercontext/builtin/persistence/migrations/server_readiness.py#L163-L185](../../src/powercontext/builtin/persistence/migrations/server_readiness.py#L163-L185)).
+4. OceanBase: a connection with no `pc_schema_revision` table is refused as `migration_required`. Otherwise the exact layout is checked, a stored embedding profile that differs from the configured one is refused as `embedding_profile_mismatch`, and the full Server schema check runs ([repo://src/powercontext/builtin/persistence/migrations/server_readiness.py#L142-L152](../../src/powercontext/builtin/persistence/migrations/server_readiness.py#L142-L152)).
+5. Other backends build a plan. An `uninitialized` plan on local SQLite or seekDB is applied with the plan's own `plan_id`, which initializes empty storage. Any other state that is not `ready` raises `MigrationError` with that state, and the message tells the operator to stop writers and run `powercontext server db-migrate apply` before startup.
+
+Version mismatch is handled by the full-Server layout check. `check_server_layout` requires the `pc_schema_revision` table to hold exactly the bundle head. Any other content raises `migration_required` ("The full Server revision chain is incomplete.") ([repo://src/powercontext/builtin/persistence/migrations/server_readiness.py#L50-L61](../../src/powercontext/builtin/persistence/migrations/server_readiness.py#L50-L61)).
+
+- The full-Server check requires exactly one revision at the bundle head. It verifies retained objects, runs a live foreign-key check, and then validates the domain ([repo://src/powercontext/builtin/persistence/migrations/server_readiness.py#L26-L48](../../src/powercontext/builtin/persistence/migrations/server_readiness.py#L26-L48), [repo://src/powercontext/builtin/persistence/migrations/server_readiness.py#L50-L91](../../src/powercontext/builtin/persistence/migrations/server_readiness.py#L50-L91)).
+- An unfinished portable restore receipt blocks normal startup and workers. `check_server_schema` raises `BundleRecoveryRequiredError` when a `pc_portable_restore_receipts` row has `projections_ready = false`. Only the explicit archive restore path, which passes `_archive_recovery`, may continue ([repo://src/powercontext/builtin/persistence/migrations/server_readiness.py#L30-L40](../../src/powercontext/builtin/persistence/migrations/server_readiness.py#L30-L40)).
 
 The managed Ops snapshot admission (`powercontext`'s private admission entry) validates a private copy of the main file and WAL. It is read-only. Its errors return only safe reason codes and never database contents or configuration ([repo://src/powercontext/server/database_admission.py#L79-L143](../../src/powercontext/server/database_admission.py#L79-L143)).
 
@@ -261,13 +292,21 @@ The conversion task `powercontext.memory.v1-to-atomic-memory.v1` converts legacy
 
 - **Identity.** A new identity is a UUIDv5 of the canonical JSON `(scope_id, memory_artifact_id, entry_id)`, prefixed `mem-`. Entry IDs shared by different containers stay distinct ([repo://src/powercontext/builtin/persistence/atomic_memory_identity.py#L1-L30](../../src/powercontext/builtin/persistence/atomic_memory_identity.py#L1-L30)).
 - **Blocking custom prompts.** A custom `memory.extract` Prompt blocks the task until it is explicitly converted to the Atomic contract ([repo://src/powercontext/builtin/persistence/migrations/atomic_memory_v1.py#L700-L722](../../src/powercontext/builtin/persistence/migrations/atomic_memory_v1.py#L700-L722)).
-- **Archive, not delete.** Legacy collections are copied to `pc_memory_artifact_archive` ([repo://src/powercontext/builtin/persistence/migrations/atomic_memory_archive.py#L30-L40](../../src/powercontext/builtin/persistence/migrations/atomic_memory_archive.py#L30-L40)). They leave public tables, search and online reads. The archive has no online read surface, and the task does not downgrade the database.
+- **Archive, not delete.** Legacy collections are copied to `pc_memory_artifact_archive` ([repo://docs/en/docs/operate/atomic-memory-migration.md#L9-L10](../../docs/en/docs/operate/atomic-memory-migration.md#L9-L10), [repo://src/powercontext/builtin/persistence/migrations/atomic_memory_archive.py#L21-L40](../../src/powercontext/builtin/persistence/migrations/atomic_memory_archive.py#L21-L40)). They leave public tables, search and online reads. The archive has no online read surface, and the task does not downgrade the database.
 - **Reference decisions.** Candidates that cite only whole collections need a decision file. Only `replace` is accepted, and its replacement evidence must be existing exact Atomic revisions, not a legacy collection ([repo://src/powercontext/builtin/persistence/migrations/atomic_memory_references.py#L174-L190](../../src/powercontext/builtin/persistence/migrations/atomic_memory_references.py#L174-L190)).
 - **Owner decisions.** Ownerless legacy entries under enforced access need an explicit operator attestation through `--owner-decisions`. The CLI parses the decision file before any database work ([repo://src/powercontext/server/cli.py#L369-L449](../../src/powercontext/server/cli.py#L369-L449)). The decision format is validated in the conversion module ([repo://src/powercontext/builtin/persistence/migrations/atomic_memory_v1.py#L133-L165](../../src/powercontext/builtin/persistence/migrations/atomic_memory_v1.py#L133-L165)).
 
 The CLI routes by storage ownership. On a managed database, it delegates to `db-migrate --bundle server` and rejects `--decisions` and `--owner-decisions`. On an unmanaged legacy database, it runs the domain-only conversion with those files ([repo://src/powercontext/server/cli.py#L369-L449](../../src/powercontext/server/cli.py#L369-L449)).
 
 Atomic evidence for a revision is stored in a disposable projection, `pc_atomic_memory_evidence`. Invalid or missing declarations are kept as neutral evidence. Trust is never backfilled from the current registry ([repo://src/powercontext/builtin/persistence/atomic_memory_evidence.py#L58-L109](../../src/powercontext/builtin/persistence/atomic_memory_evidence.py#L58-L109), [repo://src/powercontext/builtin/persistence/atomic_memory_evidence.py#L118-L130](../../src/powercontext/builtin/persistence/atomic_memory_evidence.py#L118-L130)).
+
+### OceanBase and seekDB acceptance runner
+
+`scripts/run_atomic_memory_clean_migration.py` runs the Atomic Memory migration suites for one backend, `seekdb` or `oceanbase`. Its default suites are `tests/e2e/test_atomic_memory_migration_evidence.py`, `tests/e2e/test_atomic_memory_grant_migration.py` and `tests/e2e/test_atomic_memory_migration_vector.py` ([repo://scripts/run_atomic_memory_clean_migration.py#L31-L36](../../scripts/run_atomic_memory_clean_migration.py#L31-L36)).
+
+- Each collected node runs in its own pytest process under a GNU `timeout` (`--test-timeout`, default 180 seconds). A node passes only when the exit code is 0 and its JUnit report has exactly one test case with no `skipped`, `failure` or `error` child. Failed nodes are not retried ([repo://scripts/run_atomic_memory_clean_migration.py#L104-L145](../../scripts/run_atomic_memory_clean_migration.py#L104-L145)).
+- `INDEX/COUNT` shards are validated before collection. Without `--durations`, nodes are assigned round-robin by index. With OceanBase durations, the expensive nodes are packed first under an equal per-shard case ceiling, and each shard keeps collection order ([repo://scripts/run_atomic_memory_clean_migration.py#L39-L49](../../scripts/run_atomic_memory_clean_migration.py#L39-L49), [repo://scripts/run_atomic_memory_clean_migration.py#L67-L86](../../scripts/run_atomic_memory_clean_migration.py#L67-L86)).
+- `summary.json` is written as incomplete at the start, and `complete` is set only after every assigned node has passed. The shard verifier in the release gate then checks these summaries ([repo://scripts/run_atomic_memory_clean_migration.py#L147-L228](../../scripts/run_atomic_memory_clean_migration.py#L147-L228)).
 
 ## Atomic projection and Topic recovery bundles
 
@@ -288,7 +327,7 @@ After the loop, one transaction deletes obsolete current rows. A current row is 
 
 ## Portable archives
 
-A `.pcb` bundle is a logical ZIP that carries complete scopes in portable form. It holds a `manifest.json` and a `records.ndjson` stream. Format version `1` is the only version writers produce ([repo://src/powercontext/builtin/portability/bundle.py#L127-L140](../../src/powercontext/builtin/portability/bundle.py#L127-L140), [repo://src/powercontext/builtin/portability/bundle.py#L1181-L1240](../../src/powercontext/builtin/portability/bundle.py#L1181-L1240)).
+A `.pcb` bundle is a logical ZIP that carries complete scopes in portable form. It holds a `manifest.json` and a `records.ndjson` stream. The export writer sets `format_version` to `FORMAT_VERSION`, which is `1`, and that is the only version writers produce ([repo://src/powercontext/builtin/portability/bundle.py#L129-L137](../../src/powercontext/builtin/portability/bundle.py#L129-L137), [repo://src/powercontext/builtin/portability/bundle.py#L580-L589](../../src/powercontext/builtin/portability/bundle.py#L580-L589)).
 
 ```mermaid
 sequenceDiagram
@@ -311,23 +350,23 @@ Caption: restore validates first, stages records outside the target transaction,
 
 ### Export
 
-- **Authorization first.** The selected scope IDs are validated and authorized before any database query. For this offline command, the authority is the OS and database permission to read the configured deployment. It never uses Server bearer tokens ([repo://src/powercontext/builtin/portability/bundle.py#L526-L560](../../src/powercontext/builtin/portability/bundle.py#L526-L560), [repo://src/powercontext/cli/archive.py#L150-L152](../../src/powercontext/cli/archive.py#L150-L152)).
-- **Consistent snapshot.** One consistent-snapshot transaction streams rows to a temporary NDJSON file. The archive is published with a replace only after its structure and dependencies pass. A failed export keeps any previous file at the destination ([repo://src/powercontext/builtin/portability/bundle.py#L560-L590](../../src/powercontext/builtin/portability/bundle.py#L560-L590)).
-- **Destination guard.** On SQLite, export refuses a destination that is the source database or a file with its `-wal`, `-shm` or `-journal` names, case-insensitively ([repo://src/powercontext/builtin/portability/bundle.py#L1132-L1149](../../src/powercontext/builtin/portability/bundle.py#L1132-L1149)).
+- **Authorization first.** The selected scope IDs are validated and authorized before any database query. For this offline command, the authority is the OS and database permission to read the configured deployment. It never uses Server bearer tokens ([repo://src/powercontext/builtin/portability/bundle.py#L547-L579](../../src/powercontext/builtin/portability/bundle.py#L547-L579), [repo://src/powercontext/cli/archive.py#L152-L153](../../src/powercontext/cli/archive.py#L152-L153)).
+- **Consistent snapshot.** One consistent-snapshot transaction streams rows to a temporary NDJSON file. The archive is published with a replace only after its structure and dependencies pass. A failed export keeps any previous file at the destination ([repo://src/powercontext/builtin/portability/bundle.py#L566-L611](../../src/powercontext/builtin/portability/bundle.py#L566-L611), [repo://src/powercontext/builtin/portability/bundle.py#L980-L1002](../../src/powercontext/builtin/portability/bundle.py#L980-L1002)).
+- **Destination guard.** On SQLite, export refuses a destination that is the source database or a file with its `-wal`, `-shm` or `-journal` names, case-insensitively ([repo://src/powercontext/builtin/portability/bundle.py#L1156-L1172](../../src/powercontext/builtin/portability/bundle.py#L1156-L1172)).
 
 ### Inspect and validate
 
-`inspect` verifies the ZIP structure, the manifest, per-record digests, the record count, record classes and the scope list. It never opens the target database ([repo://src/powercontext/builtin/portability/bundle.py#L592-L595](../../src/powercontext/builtin/portability/bundle.py#L592-L595), [repo://src/powercontext/builtin/portability/bundle.py#L1181-L1240](../../src/powercontext/builtin/portability/bundle.py#L1181-L1240)).
+`inspect` verifies the ZIP structure, the manifest, per-record digests, the record count, record classes and the scope list. It never opens the target database ([repo://src/powercontext/builtin/portability/bundle.py#L612-L616](../../src/powercontext/builtin/portability/bundle.py#L612-L616), [repo://src/powercontext/builtin/portability/bundle.py#L1205-L1262](../../src/powercontext/builtin/portability/bundle.py#L1205-L1262), [repo://src/powercontext/cli/archive.py#L91-L102](../../src/powercontext/cli/archive.py#L91-L102)).
 
-`restore --dry-run` validates against the target without domain writes. It reports `already_present`, `conflicts`, required and unsupported Source types and Artifact families, and whether a projection rebuilder exists ([repo://src/powercontext/builtin/portability/bundle.py#L597-L646](../../src/powercontext/builtin/portability/bundle.py#L597-L646)). A missing SQLite target is validated without creating its file or parent directory ([repo://src/powercontext/cli/archive.py#L154-L178](../../src/powercontext/cli/archive.py#L154-L178)).
+`restore --dry-run` validates against the target without domain writes. It reports `already_present`, `conflicts`, required and unsupported Source types and Artifact families, and whether a projection rebuilder exists ([repo://src/powercontext/builtin/portability/bundle.py#L618-L668](../../src/powercontext/builtin/portability/bundle.py#L618-L668)). A missing SQLite target is validated without creating its file or parent directory ([repo://src/powercontext/cli/archive.py#L156-L180](../../src/powercontext/cli/archive.py#L156-L180)).
 
 ### Restore
 
-- **Confirmation.** `restore` without `--dry-run` requires `--yes` ([repo://src/powercontext/cli/archive.py#L104-L122](../../src/powercontext/cli/archive.py#L104-L122)).
-- **Pre-write conflicts.** Restore revalidates and aborts before any write when validation finds conflicting target records. It also aborts when the target is incompatible with the bundle's source types or artifact families ([repo://src/powercontext/builtin/portability/bundle.py#L681-L700](../../src/powercontext/builtin/portability/bundle.py#L681-L700)).
-- **Staging and transaction.** Verified records are staged in a temporary disk index before the write transaction opens. Records replay in dependency order inside one transaction. An integrity error at write time becomes a conflict and rolls back ([repo://src/powercontext/builtin/portability/bundle.py#L1241-L1257](../../src/powercontext/builtin/portability/bundle.py#L1241-L1257), [repo://src/powercontext/builtin/portability/bundle.py#L895-L925](../../src/powercontext/builtin/portability/bundle.py#L895-L925)).
-- **Idempotency.** Identical records count as `already_present`. A different payload at the same identity never overwrites the target ([repo://src/powercontext/builtin/portability/bundle.py#L895-L925](../../src/powercontext/builtin/portability/bundle.py#L895-L925)).
-- **Receipt and projections.** A durable receipt keyed by `bundle_id` moves from `authoritative_restored` to `ready` only after projection rebuild completes. If rebuild fails, rerun the same restore. `projections_ready=false` keeps the target out of normal serving until recovery ([repo://src/powercontext/builtin/portability/bundle.py#L728-L775](../../src/powercontext/builtin/portability/bundle.py#L728-L775)).
+- **Confirmation.** `restore` without `--dry-run` requires `--yes` ([repo://src/powercontext/cli/archive.py#L105-L126](../../src/powercontext/cli/archive.py#L105-L126)).
+- **Pre-write conflicts.** Restore revalidates and aborts before any write when validation finds conflicting target records. It also aborts when the target is incompatible with the bundle's source types or artifact families ([repo://src/powercontext/builtin/portability/bundle.py#L702-L707](../../src/powercontext/builtin/portability/bundle.py#L702-L707)).
+- **Staging and transaction.** Verified records are staged in a temporary disk index before the write transaction opens. Records replay in dependency order inside one transaction. An integrity error at write time becomes a conflict and rolls back ([repo://src/powercontext/builtin/portability/bundle.py#L710-L725](../../src/powercontext/builtin/portability/bundle.py#L710-L725), [repo://src/powercontext/builtin/portability/bundle.py#L1265-L1280](../../src/powercontext/builtin/portability/bundle.py#L1265-L1280), [repo://src/powercontext/builtin/portability/bundle.py#L919-L948](../../src/powercontext/builtin/portability/bundle.py#L919-L948)).
+- **Idempotency.** Identical records count as `already_present`. A different payload at the same identity never overwrites the target ([repo://src/powercontext/builtin/portability/bundle.py#L950-L978](../../src/powercontext/builtin/portability/bundle.py#L950-L978)).
+- **Receipt and projections.** A durable receipt keyed by `bundle_id` moves from `authoritative_restored` to `ready` only after projection rebuild completes. If rebuild fails, rerun the same restore. `projections_ready=false` keeps the target out of normal serving until recovery ([repo://src/powercontext/builtin/portability/bundle.py#L725-L748](../../src/powercontext/builtin/portability/bundle.py#L725-L748), [repo://src/powercontext/builtin/portability/bundle.py#L749-L796](../../src/powercontext/builtin/portability/bundle.py#L749-L796)).
 
 ### What is and is not portable
 
@@ -337,31 +376,41 @@ The following classes are excluded: access bindings, audit records, credentials 
 
 ### Limits and exit codes
 
-The archive file is limited to 512 MiB. The manifest is limited to 256 KiB. Records are limited to 2 GiB uncompressed, 2,000,000 records, and 8 MiB per NDJSON line ([repo://src/powercontext/builtin/portability/bundle.py#L127-L140](../../src/powercontext/builtin/portability/bundle.py#L127-L140)). Bundle IDs must be canonical lowercase UUIDs ([repo://docs/en/docs/operate/portable-archive.md](../../docs/en/docs/operate/portable-archive.md)). A manifest with an unknown `format_version` is rejected before any target write ([repo://src/powercontext/builtin/portability/bundle.py#L1341-L1360](../../src/powercontext/builtin/portability/bundle.py#L1341-L1360)).
+The archive file is limited to 512 MiB. The manifest is limited to 256 KiB. Records are limited to 2 GiB uncompressed, 2,000,000 records, and 8 MiB per NDJSON line. The container check rejects a records member above the 2 GiB limit, and the record reader rejects lines above 8 MiB and counts above 2,000,000 ([repo://src/powercontext/builtin/portability/bundle.py#L129-L137](../../src/powercontext/builtin/portability/bundle.py#L129-L137), [repo://src/powercontext/builtin/portability/bundle.py#L1317-L1345](../../src/powercontext/builtin/portability/bundle.py#L1317-L1345)). Bundle IDs must be canonical lowercase UUIDs ([repo://docs/en/docs/operate/portable-archive.md](../../docs/en/docs/operate/portable-archive.md)). A manifest with an unknown `format_version` is rejected by `_validate_manifest` during inspection, before any target write ([repo://src/powercontext/builtin/portability/bundle.py#L1365-L1382](../../src/powercontext/builtin/portability/bundle.py#L1365-L1382)).
 
 Exit codes:
 
 - `2`: invalid or unreadable bundle, or an uninspectable SQLite target filename.
-- `3`: incompatible target, conflict, or pending recovery.
+- `3`: incompatible target, conflict, or pending recovery. A dry-run that reports an incompatible target also exits `3`.
 
-These are raised by the archive CLI's error-to-exit mapping ([repo://src/powercontext/cli/archive.py#L230-L268](../../src/powercontext/cli/archive.py#L230-L268)).
+These are raised by the archive CLI's error-to-exit mapping ([repo://src/powercontext/cli/archive.py#L256-L293](../../src/powercontext/cli/archive.py#L256-L293)).
 
 ## Upgrade release gate
 
-`scripts/upgrade_release_gate.py` validates the policy, runs every required backend case against the target wheel, and writes a `result.json` into a fresh output directory. Each case failure is recorded, and the run fails if any required backend fails ([repo://scripts/upgrade_release_gate.py#L521-L558](../../scripts/upgrade_release_gate.py#L521-L558)). Local regression tests do not replace this run.
+`scripts/upgrade_release_gate.py` validates the policy, runs every required backend case against the target wheel, and writes a `result.json` into a fresh output directory. Each case failure is recorded, and the run fails if any required backend fails ([repo://scripts/upgrade_release_gate.py#L516-L549](../../scripts/upgrade_release_gate.py#L516-L549)). Local regression tests do not replace this run.
+
+Policy fields. `release/upgrade-support.json` must contain exactly these top-level fields: `format` (must be `2`), `target_version`, `mode`, `schema_review`, `cases` and `automatic_sources`. `schema_review` contains `persistence_sha256` and `rationale`, and `automatic_sources` contains `strategy` (must be `fixed-version`), `source_version` and `profiles`, where each profile has `backend`, `configuration` and `suite` ([repo://scripts/upgrade_release_gate.py#L100-L125](../../scripts/upgrade_release_gate.py#L100-L125)).
 
 Policy validation:
 
-- The policy `target_version` must match the OpenAPI release ([repo://scripts/upgrade_release_gate.py#L100-L125](../../scripts/upgrade_release_gate.py#L100-L125)).
-- The 1.3.0 baseline must cover SQLite, seekDB and OceanBase. Every acceptance suite must live under `tests/release_upgrades` ([repo://scripts/upgrade_release_gate.py#L100-L170](../../scripts/upgrade_release_gate.py#L100-L170)).
+- The policy `target_version` must match the `version` in `openapi/powercontext.yaml` ([repo://scripts/upgrade_release_gate.py#L100-L111](../../scripts/upgrade_release_gate.py#L100-L111)).
+- `mode` must be `upgrade-required` or `supported-upgrades`. Any other value is refused.
+- The 1.3.0 baseline must cover SQLite, seekDB and OceanBase. Every acceptance suite must live under `tests/release_upgrades` ([repo://scripts/upgrade_release_gate.py#L112-L170](../../scripts/upgrade_release_gate.py#L112-L170)).
 - The automatic 1.3.0 matrix lists twelve configurations: no-vector, Code, vector and vector-plus-Code on each backend ([repo://release/upgrade-support.json#L10-L76](../../release/upgrade-support.json#L10-L76)).
-- A persistence-input change requires a refreshed compatibility review. The digest covers every managed persistence file, with CRLF normalized to LF ([repo://scripts/upgrade_release_gate.py#L82-L98](../../scripts/upgrade_release_gate.py#L82-L98)).
+- A persistence-input change requires a refreshed compatibility review. The digest covers every managed persistence file, with CRLF normalized to LF. A mismatched `persistence_sha256` fails policy loading until `schema_review` is updated ([repo://scripts/upgrade_release_gate.py#L82-L98](../../scripts/upgrade_release_gate.py#L82-L98), [repo://scripts/upgrade_release_gate.py#L118-L124](../../scripts/upgrade_release_gate.py#L118-L124)).
+- The notice in the install guide must equal the text derived from `mode`. `check_docs` compares it with the `upgrade-support` region in the English and Chinese install pages and fails on any difference ([repo://scripts/upgrade_release_gate.py#L171-L205](../../scripts/upgrade_release_gate.py#L171-L205)).
+
+Release wheel check:
+
+- With `--release`, the gate requires the wheel's version to equal the policy `target_version`. A mismatch raises `Wheel version differs from upgrade policy target` before any case runs ([repo://scripts/upgrade_release_gate.py#L507-L514](../../scripts/upgrade_release_gate.py#L507-L514)).
+- `mode` is recorded in `result.json`, which the gate writes in its `finally` block. The `mode` value does not by itself block acceptance or publication. The `run_upgrade_release_gate.py` publisher calls `gate` (line 109) and copies the validated distributions. Its `uv publish` step (line 158) runs only when `--publish` is given, which requires `--release`. The success line prints the mode ([repo://scripts/run_upgrade_release_gate.py#L101-L118](../../scripts/run_upgrade_release_gate.py#L101-L118), [repo://scripts/run_upgrade_release_gate.py#L151-L160](../../scripts/run_upgrade_release_gate.py#L151-L160)).
 
 Acceptance evidence:
 
 - The JUnit report must contain every named full-Server phase, including `test_legacy_startup_is_rejected` and `test_fresh_upgrade_equivalence`. Any failure or skipped test rejects acceptance ([repo://scripts/upgrade_release_gate.py#L49-L58](../../scripts/upgrade_release_gate.py#L49-L58), [repo://scripts/upgrade_release_gate.py#L207-L214](../../scripts/upgrade_release_gate.py#L207-L214)).
-- OceanBase shard reports must have matching collections and disjoint, exactly-once coverage. A missing or duplicate node fails verification ([repo://scripts/check_atomic_memory_migration_shards.py#L28-L76](../../scripts/check_atomic_memory_migration_shards.py#L28-L76), [repo://scripts/check_atomic_memory_migration_shards.py#L78-L86](../../scripts/check_atomic_memory_migration_shards.py#L78-L86)).
-- Publication requires `mode` to be `supported-upgrades`. In `upgrade-required` mode, a release run fails even when every case passes ([repo://scripts/upgrade_release_gate.py#L521-L558](../../scripts/upgrade_release_gate.py#L521-L558)).
+- OceanBase shard reports must have matching collections and disjoint, exactly-once coverage. A missing or duplicate node fails verification ([repo://scripts/check_atomic_memory_migration_shards.py#L30-L78](../../scripts/check_atomic_memory_migration_shards.py#L30-L78), [repo://scripts/check_atomic_memory_migration_shards.py#L80-L89](../../scripts/check_atomic_memory_migration_shards.py#L80-L89)).
+- The historical rejection regression, `scripts/ci_legacy_upgrade_rejection.py`, asserts that unsupported upgrades are rejected. Passing `--respect-policy` retires those assertions only when the loaded policy `mode` is `supported-upgrades`. In that case the script writes a `not-applicable` result and the supported matrix must pass instead ([repo://scripts/ci_legacy_upgrade_rejection.py#L133-L146](../../scripts/ci_legacy_upgrade_rejection.py#L133-L146)).
+- The 1.4.0 source bridge is registered but is not one of the automatic cases. Passing the gate does not certify it ([repo://release/upgrade-support.json#L7-L7](../../release/upgrade-support.json#L7-L7)).
 
 ## Operator checklist
 

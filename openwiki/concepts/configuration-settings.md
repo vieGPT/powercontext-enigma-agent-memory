@@ -5,7 +5,7 @@ description: Reference for the environment-backed Server (POWERCONTEXT_SERVER_*)
 tags: [configuration, environment-variables, server, client, scope, model-settings, env-file, validation]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T10:00:10.628Z
+    at: 2026-11-16T11:46:19.799Z
 sources:
   - id: openwiki-source-5f5b95b3d6a215fa02ceb945
     resource: repo://.env.example
@@ -43,12 +43,12 @@ sources:
     resource: repo://src/powercontext/cli/config_wizard.py
   - id: openwiki-source-ad594ac825526ba9840dab04
     resource: repo://src/powercontext/cli/config.py
-  - id: openwiki-source-77fa62201d438bd31e90dfc1
-    resource: repo://src/powercontext/cli/env_file.py
   - id: openwiki-source-717f292f0afa1b89075ad654
     resource: repo://src/powercontext/client/settings.py
   - id: openwiki-source-b624210e9826c2c6dfc85219
     resource: repo://src/powercontext/client/transport_policy.py
+  - id: openwiki-source-907a54b7e3a5105d7e7e09fa
+    resource: repo://src/powercontext/env_file.py
   - id: openwiki-source-9f117ec4ff6042fb63ca27eb
     resource: repo://src/powercontext/paths.py
   - id: openwiki-source-bc58b27142b00aeeb91ebfcf
@@ -57,7 +57,7 @@ sources:
     resource: repo://src/powercontext/server/configuration.py
   - id: openwiki-source-35901f0dd38fd94b4898b536
     resource: repo://src/powercontext/server/settings.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T10:00:10.628Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-16T11:46:19.799Z" }
 ---
 
 # Configuration Settings Reference
@@ -121,7 +121,7 @@ flowchart TD
 Validation branches of `config validate`, in order. The diagram shows the decision flow; the list below gives the content of each check.
 
 1. Read the file. A missing or unreadable file, or invalid UTF-8, fails through the OS or Unicode error path.
-2. Parse strictly. Syntax errors, duplicate names, invalid names, NUL characters, unclosed quotes, and unquoted or double-quoted `$`, backtick, or leading `~` expansions fail ([parser](repo://src/powercontext/cli/env_file.py#L36-L73), [shell word scanner](repo://src/powercontext/cli/env_file.py#L120-L183)).
+2. Parse strictly. Syntax errors, duplicate names, invalid names, NUL characters, unclosed quotes, and unquoted or double-quoted `$`, backtick, or leading `~` expansions fail ([parser](repo://src/powercontext/env_file.py#L36-L73), [shell word scanner](repo://src/powercontext/env_file.py#L120-L173)).
 3. Run generated-configuration checks only when all four keys `POWERCONTEXT_SERVER_INFERENCE_GENERATION_MODEL`, `..._EMBEDDING_MODEL`, `..._EMBEDDING_PROFILE_ID`, and `..._EMBEDDING_DIMENSION` are present, or when a managed block exists ([gate](repo://src/powercontext/cli/config.py#L704-L713), [validate command](repo://src/powercontext/cli/config.py#L433-L449)). These checks cover the config version, the `provider:model` format, the embedding triple, a schedule of at least one second, the database kind, OceanBase requiring a URL, an absolute seekdb path, and an absolute SQLite path ([validate configuration](repo://src/powercontext/cli/config.py#L616-L640), [storage location](repo://src/powercontext/cli/config.py#L642-L660)).
 4. Validate `ServerSettings` against the file values. Process `POWERCONTEXT_SERVER_*` variables are cleared for the check ([server validation](repo://src/powercontext/cli/config.py#L1069-L1076)).
 5. Run `preflight_builtin_runtime`. This composes the generation and embedding pipelines and checks the scheduled, reranker, and decision requirements, but it "validate[s] Runtime composition without opening persistence or making requests" ([built-in preflight](repo://src/powercontext/builtin/runtime/composition.py#L2012-L2052), [runtime check](repo://src/powercontext/cli/config.py#L673-L696)).
@@ -153,6 +153,8 @@ Defaults are those of the `ServerSettings` classes. "Unset" means the field is `
 
 ### Listener, transport, and public URL
 
+Reader: `HttpConfig`, `McpConfig`, and the top-level fields of `ServerSettings` in `src/powercontext/server/settings.py`.
+
 | Variable | Default when unset | Notes |
 | --- | --- | --- |
 | `POWERCONTEXT_SERVER_HTTP_HOST` | `127.0.0.1` | Ignored when `HTTP_UDS` is set. |
@@ -170,6 +172,8 @@ Defaults are those of the `ServerSettings` classes. "Unset" means the field is `
 The listener and HTTP-field defaults are in the [HTTP config](repo://src/powercontext/server/settings.py#L114-L131). The public URL rules are in [the public URL validators](repo://src/powercontext/server/settings.py#L325-L364). The MCP defaults are in [the MCP config](repo://src/powercontext/server/settings.py#L140-L152).
 
 ### Access, authentication, and secrets
+
+Reader: `AccessControlConfig`, `BearerAuthConfig`, and the secret fields of `ServerSettings` in `src/powercontext/server/settings.py`.
 
 | Variable | Default when unset | Notes |
 | --- | --- | --- |
@@ -189,6 +193,8 @@ The access defaults and cross-field rules are in [the access config](repo://src/
 
 ### Storage
 
+Reader: the `database` field of `ServerSettings` (`DatabaseConfig` variants in `src/powercontext/builtin/runtime/config.py`) in `src/powercontext/server/settings.py`.
+
 | Variable | Default when unset | Notes |
 | --- | --- | --- |
 | `POWERCONTEXT_SERVER_DATABASE_KIND` | `sqlite` | `sqlite`, `oceanbase`, or `seekdb`. |
@@ -199,6 +205,8 @@ The access defaults and cross-field rules are in [the access config](repo://src/
 The default data directory is `POWERCONTEXT_HOME` when set, and otherwise the platform user data path. The default SQLite file and seekdb directory are derived from it ([paths](repo://src/powercontext/paths.py#L25-L37)). The SQLite default is applied in [the database default validator](repo://src/powercontext/server/settings.py#L375-L381).
 
 ### Logging, metrics, tracing, and skills
+
+Reader: `ServerLoggingConfig`, `MetricsConfig`, `TracingConfig`, and the `handoff_report` and `external_skills` fields of `ServerSettings` in `src/powercontext/server/settings.py`.
 
 | Variable | Default when unset | Notes |
 | --- | --- | --- |
@@ -221,7 +229,7 @@ Logging, metrics, and tracing defaults are in [the logging and metrics configs](
 
 ### Runtime
 
-Runtime variables use the prefix `POWERCONTEXT_SERVER_RUNTIME_`. Unless noted, these are the defaults in the runtime configuration.
+Runtime variables use the prefix `POWERCONTEXT_SERVER_RUNTIME_`. Reader: `RuntimeConfig` in `src/powercontext/builtin/runtime/config.py`, reached through the `runtime` field of `ServerSettings`. Unless noted, these are the defaults in the runtime configuration.
 
 | Variable | Default | Notes |
 | --- | --- | --- |
@@ -282,7 +290,7 @@ Old and new processing names are accepted together only when they agree. Conflic
 
 ### Inference
 
-Inference variables use the prefix `POWERCONTEXT_SERVER_INFERENCE_`. The model identifier is a `provider:model` string, such as `openai:gpt-4.1-mini` in the template ([.env.example](repo://.env.example#L187-L187)).
+Inference variables use the prefix `POWERCONTEXT_SERVER_INFERENCE_`. Reader: `InferenceConfig` in `src/powercontext/builtin/runtime/config.py`, reached through the `inference` field of `ServerSettings`. The model identifier is a `provider:model` string, such as `openai:gpt-4.1-mini` in the template ([.env.example](repo://.env.example#L187-L187)).
 
 | Variable | Default when unset | Notes |
 | --- | --- | --- |
@@ -315,7 +323,7 @@ Inference defaults are declared in [the inference config](repo://src/powercontex
 
 ## Client settings
 
-`ClientSettings` reads the `POWERCONTEXT_CLIENT_` prefix ([client settings](repo://src/powercontext/client/settings.py#L37-L56)).
+`ClientSettings` in `src/powercontext/client/settings.py` reads the `POWERCONTEXT_CLIENT_` prefix ([client settings](repo://src/powercontext/client/settings.py#L37-L56)).
 
 | Variable | Default when unset | Notes |
 | --- | --- | --- |

@@ -1,0 +1,320 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:5fde47777128a5fa746150c4ae38c1ddffcd5d367cff570a451284129d7b9734",
+  "claims": [
+    {
+      "id": "claim_56db89e82f00427fa3f4b0684402988b",
+      "statement": "The Desktop is an internal Windows and macOS Tauri 2 preview whose packages are unsigned and not a supported or signed release; it does not close issues #1654 or #1428, and signing, published resources and clean-machine acceptance remain under #2108, #2109 and #2112.",
+      "evidence": [
+        {
+          "resource": "repo://desktop/README.md#L1-L5",
+          "version": "repo-lines-v1:sha256:8dfd1d52813e7c6ef5c238c6f03671e676fbecab4c3d6926cdfebbe6e0f3d92f:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTMyZGE2M2I3NWM0M2JjODZlMjAzZmM5MmIzN2UyZjQxZDQ0ZDQ4NTU3ODY3OTk5OWE2MTJjOTE1NGJlMWQ2YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjRiNTAwYjgzMzY1M2QyNTRjYjdjMGZkMDBhMTFmM2M0OTAwNzdiZjA1Y2VmY2RiYzZlZjlkOWM2MTRkZmQwZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDdkZGZlODc0NDFlOTc1Mzc0YzBlMzQ2Y2Y4NzM4YTUzYTFhNDcyYzZjYTVkNDhjOGZiM2JmNGMzNDAzYzBhYyJ9"
+        },
+        {
+          "resource": "repo://desktop/README.md#L66-L66",
+          "version": "repo-lines-v1:sha256:ded85aba5f3bf724589c8cf08fe19a1fb948ef2337611150ece822a535c26213:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGVkODVhYmE1ZjNiZjcyNDU4OWM4Y2YwOGZlMTlhMWZiOTQ4ZWYyMzM3NjExMTUwZWNlODIyYTUzNWMyNjIxMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGVkODVhYmE1ZjNiZjcyNDU4OWM4Y2YwOGZlMTlhMWZiOTQ4ZWYyMzM3NjExMTUwZWNlODIyYTUzNWMyNjIxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDNkMjJkY2Q0YzAzNTMzNDZhZTc3MzJkYzQ0NTU2MjljMzQ2MWY4MGU2NThkNDA2MDQwNDBhNmYyOTI4MTIzMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjI4MDg2MjA4NWQ4ZDgxM2JlYzMzNTRlYWYzMjU5NGMzNDk1NTVlN2Y2YWQzOGFiOWY2NTAxZDE3ZGNmMGI3YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_da0e0ddabe6348bcb6f2c3ebce2b016f",
+      "statement": "The native host setup opens the secret-free profiles.json through ProfileRepository with the native vault, fails setup closed when another process owns the profile storage, and manages HostState, DiagnosticHost and OpsHost as Tauri state before creating the single main window with a navigation callback.",
+      "evidence": [
+        {
+          "resource": "repo://desktop/src-tauri/src/lib.rs#L83-L121",
+          "version": "repo-lines-v1:sha256:4005b6044c5bd63f0c45a636549652ce2394cfc7646d0c2ed29e444c64fbd970:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxZjY4MDk5NDNkM2QyMGQzYzExYmFjNzc1Y2MyYjdlZGM0ZjVkYjI2MjJiNGFmNzg1NGI5MzkwODZlODU0YjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3Zjc3ZmU1ODFmMzU5N2UxN2YxZTAwZTliOGVmZjlkYWE2YmEwMDM0NzYwNzFhN2E5MTljZjljOWQ5Yzk4ODQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhkZDQ1MDMyMGFjNDhmMTlhYzJmMmFmM2E5M2QzZDkwZDY1ZWQ2MDAyODg0ZjRmYTEwNTVkNjc3NzNlMjcyMmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIxZGU0ZjUwZDJlZTUxZGE3MWE5YjY5MmU4ZGZiY2RkNDM1NmJlYjA2YTdiZWIxZjZhMTQ3NDMwMGNiZjVjYzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a438e4c0eaac42e196037fed31f13fc6",
+      "statement": "On process exit the diagnostics host and the Ops host are shut down; Ops stops admitting new IPC but never signals a service-manager process.",
+      "evidence": [
+        {
+          "resource": "repo://desktop/src-tauri/src/lib.rs#L127-L141",
+          "version": "repo-lines-v1:sha256:57c0e6a85d782c7d5e69dbd6b39b78c046553a6dd576a319dbded3b52bc521b6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2MGY1ZTU4NjY2OGZjMmE0MWIxNjc2OTEyOTY0NDFkMTczZWFjZWZhNDg0NDFkYmQwYjYyMzcwMzdhYjE4ZDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5YzEzNTkwNjY1NjMyM2QxYzVlYTQxNjU0ZWU2NmFmYjU4NWFjZGNmYWVhY2ExMjFkNWUzMGJmMTkzZWVkZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhMmMzYjEzMDEzNjkxY2JmNWU4MTY5NDg5Mzc1MzE1NmZkMWE3MjNhNzk4ZWExY2U3ZjQ0YTlhMDIyZDIyMDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://desktop/src-tauri/src/ops_bridge.rs#L132-L143",
+          "version": "repo-lines-v1:sha256:33149e02c2536a7ceee0db55883aa3481868ca5497be24c64685793feaf51f19:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkNTgxODMxN2Q5ZWFkMzEyOWMxZTM3YjNkMGNiN2NlZjRhNmNiMThiYjZjNDg0MTY0Y2ZmMGFkNWVhZjMyMmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjZjA0MjEyMWE3MWU1YmZmYWQ3YzMzN2Y5YjZmODZhYzNjNmM5MjhkZWQzMzE1YjgxMjgxZWQyZTNhODU0NTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMzYWQyMGY5NTQyMDcwYTg1NWQ4ZTRkY2RiNzIzMzgyMzY1ZmUwMjM3ZDFkNGYxNjQxN2ViYjllYjA1YmIwY2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6adc62c90f564ee4ac9bb4d67dc92a35",
+      "statement": "The IPC capability main grants only the main window and an explicit list of typed connection, Scope, Memory, runtime, statistics, session, diagnostics, connect_local_server and Ops commands plus ops-progress event listening; no generic fetch, shell, filesystem, database, notification or credential-read permission is granted.",
+      "evidence": [
+        {
+          "resource": "repo://desktop/src-tauri/capabilities/main.json#L1-L48",
+          "version": "repo-lines-v1:sha256:86258af99af5a091bc0deaa9e6dd385be87cba0aaf6374439501576381232347:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_496996a125f84f03a41d7df4efb9f0a9",
+      "statement": "Every typed command checks the window label through authorize_window, which accepts only the label main; Ops commands map a rejected label to Forbidden.",
+      "evidence": [
+        {
+          "resource": "repo://desktop/src-tauri/src/commands.rs#L319-L340",
+          "version": "repo-lines-v1:sha256:753d6263e96f0ee33d2ab35de599af012817e4f7c564ef749e0549effa33e4fd:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlZDdhNTQ3YTExNzBiYjcyZTA3OTUzNWMxYTczNDljNjk4NjRjZTU1ODk5NTM0MGJkYWNiZDJlZjA0MmQ0MjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllMWVlMzNlZTk1ZmFlZTFjMTBlOWViZjNkM2RlNDFiYjE5MjUxNWNhZDc3Y2RhMjA1ZTU0NmRhMTcwMDFhNjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlYzA5YTk5MGFhODBmMjE3YWJhYjE0YWZkYTcxZjc5Yzk0OTc3ZmI3MjZjYjMzZjcwZGZkMzczNWFmNjAwODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZjNDJhYTUwMWI4MTdjZDA5Mzk2ZmMzYTJhNzU2NDI5NWUzZWY0ZWYwMThmZDJkMjUwNTcxNTM5YjU2ZGMzZWMifQ"
+        },
+        {
+          "resource": "repo://desktop/src-tauri/src/commands.rs#L60-L65",
+          "version": "repo-lines-v1:sha256:09ce79d1c25692c41ba32d13695bcdd122456663c57cd152eba76b0290cc1429:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTQ3YTc2MGRiNjA5ZjdkODk4OWQxYjNmNWZmNjNjMmMwZjYzMDE2YWQyZmE4ODU2NmQ4NDM5MDdlMDlkZTAxOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDAxNDBhYzJiYzQ1ZDJlYTE5NzdkNzA3ZjM2MmQ1NzNmMWM1NzE4ZjZlZjFiMzI2ZmIxMjJlNDBmZTRjODkwOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGI5NDRiY2M2N2ZlNDk2YmZhMjEyNjhhMzlkYWVhNWUyZTNiMzNiMzA0NGU5NDdjNGZhOTg2ZDVhZTA0MTZkMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmVjMDlhOTkwYWE4MGYyMTdhYmFiMTRhZmRhNzFmNzljOTQ5NzdmYjcyNmNiMzNmNzBkZmQzNzM1YWY2MDA4OCJ9"
+        },
+        {
+          "resource": "repo://desktop/src-tauri/src/ipc.rs#L31-L37",
+          "version": "repo-lines-v1:sha256:af85a70b9cfcff9ed0c73383aa58b5f65fe63665f1ffc581ef4653baff764805:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTVlNjRkNDhkYTExOTVkNjUzZjg3NTE0ZjExOTkyNmM3N2Q2Y2M1ZDFmZWJlNzk0ZWQ1ZDdiZWM4NDYzN2IxNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjVmMTVjYTY0OTQ4M2ZkOGE0MWYwZjdkNGE0ODViNTM4ZjViMTE1NzljZjliNTUyN2YwYmZmMDI0Mjk0YTlkNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGUxODc4ZDFlNjY2ZGQ2YjgyMmUwMGZjZGY3OWNkNDdkNmE2Y2Y5M2Y0MzY3ODYzMDdiMDVlMTUwMDhiMDFlNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b4441c5f4f1042a0bd4c7a62bc975c3b",
+      "statement": "Navigation is allowed only to the packaged origin and, in debug builds only, the exact Vite origin; the production CSP restricts connect-src to IPC and disallows frames and form actions.",
+      "evidence": [
+        {
+          "resource": "repo://desktop/src-tauri/src/ipc.rs#L91-L98",
+          "version": "repo-lines-v1:sha256:d4fb3dbd7d638eb1e6d1f8a34f80204c5f06d26e6904a91120e36d21694782a8:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDI2OTYwMjBmNWFiZjY4ZTE5MzE3NzkzNmJlM2FlZDc5MTA4ZTVjZDg3MGEwZjY0NmVmNjNiYzQ0YjliYTI5NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjVjZjVmYzIzZjJhNmQyM2MzZWE1MWU3MmY1ZTg5NmM3NTU1ZmJhYTA1Y2Q1YjFlYTE4MmJmOTYxOGE4ZTgxYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjA2M2M0ZDFhZjhjZDg5YmIwYmRkNzY1N2ZmY2JmNjgwNmE2MTBkNzlkNmM4ZDRjMzA3YzI0MWRmMzkwMDUyMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTQzZDQ1MmQ0YWY5MDUxZDVmMmZhZWZhNmMwNDI5ZjVhYzQzMjI5NmEwOTE3NmY4MTQ5NDQ5ZTFlZTE1YTZjMiJ9"
+        },
+        {
+          "resource": "repo://desktop/src-tauri/src/ipc.rs#L99-L128",
+          "version": "repo-lines-v1:sha256:39c798464e1f0942026490d6202fa49adb4c5c0f9c103f025acd2f0662523ede:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlMGFmM2ZkNGE0YzNhMWQ0N2M3ZjQ3MGVkMGQ4NmQ5MGQ5ZGUyMTBhNWViMTQ1NWZiZDk0NDgyYTQ3NjViNzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1MjE2MDRiMzVmYzQwYWYwMGNiYTRlZWEyZmQ1ZTJjM2FmMTg2M2IzOTExODVkN2JmNGJiMDllNzJkMGM4YjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://desktop/src-tauri/tauri.conf.json#L30-L30",
+          "version": "repo-lines-v1:sha256:ccf32c8e204e09678a00263622c868123b23356572fdf26044d9278d600ec044:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2NmMzJjOGUyMDRlMDk2NzhhMDAyNjM2MjJjODY4MTIzYjIzMzU2NTcyZmRmMjYwNDRkOTI3OGQ2MDBlYzA0NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2NmMzJjOGUyMDRlMDk2NzhhMDAyNjM2MjJjODY4MTIzYjIzMzU2NTcyZmRmMjYwNDRkOTI3OGQ2MDBlYzA0NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDA5NGM3ZGVkMTdjZTQ4N2U4ZDQwNDEwZDZhMDljZjJhY2Y2MzBiOWFmNWIwYjBmY2NjZWUxMDdlMmIzNzdlOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjlhYWRlNTdhYjA5MjQ2NzQ4Yjg3Mjg2OGVjNzM4ZGUwOGUwNThkMmU4MTk2YzdlNmNkYTc2YzQ3ZjlkODI5MyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c43a7cfc3cc7453ca69c31d200a8af54",
+      "statement": "Connection profiles move through Saved, Checked, Activated and ScopeSelected states: saving never checks or activates, a check without activation stores a report, an activating check publishes the active context only after success, and select_scope stores an exact Scope on the active context.",
+      "evidence": [
+        {
+          "resource": "repo://desktop/src-tauri/src/connections/session.rs#L324-L378",
+          "version": "repo-lines-v1:sha256:4aef8e276ed42f6e8b86aab69b242523e3115e750e28cc78138be0eb1bb428fe:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiNWM2MzViNjYwYTJmYWZkOGE3MjU3YTczYzlkNzdlNjdjNzcwMmM5MjA2MmI2ZDc3YzY2OGViZjI1NmE5M2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM0NGE5NjAyNTliN2RiZGRmOTk5ZmU5ZDkzZDM1ZDRhYTljZGJiNDU3ZWNiYWJlNGZiYWQ3MjI2YmJkMzZlNzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0M2ZlZDZkOWRiODU0OTM2M2JmMmIyZGMxMjdiZTAyNDBkYjI2MTU4OGY5ZGVlMWJkNGJjNDYwYWJkYzY5ZGEifQ"
+        },
+        {
+          "resource": "repo://desktop/src-tauri/src/connections/session.rs#L443-L500",
+          "version": "repo-lines-v1:sha256:134bca3fd342d5ac827e9cd556f36d7c434e76ba453aa794f4c3f72034665f29:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4ZjUxZjFmNjJjYjBmNWQzNzkxOWFjMGVlZmNhY2JlODQ4NWEwNTMzMjJhMmY2NmUxMTg5MzlmNzQwNmI3NDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MDMyZTk2NGQwOTMyMzUxZTVkMTg1MjY5MjgxYjE3MWEzYTA5YjA4YjI4NmU2NjFlYTQ3MDMyM2M4MmViNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJlZjg2ZmNhZGI0NGVhM2Y1NWJkZmYxOTJjOGRhMjM3YTgxYzU1NjdkNjA2NDU4ZGEwOGZlYjBhMjVjMmNhMzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU1OTU3MWI4ZGFlZjVmZjFlYTJjYTk5Zjc2MjIzNzE3MDA3ZmE1NGU4MjVmMzE2NDJkODRlZTVjZmI2MjVmNjAifQ"
+        },
+        {
+          "resource": "repo://desktop/src-tauri/src/connections/session.rs#L760-L781",
+          "version": "repo-lines-v1:sha256:4135386415bcfe5fd67271a6ac40ce699b8317e24c75f30e4ee0c122b161a6cf:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjZmEwMWFiMDU0NTdhNjkzOTljODAxZTQyNzRkYWQ1ZWZmM2M5YjBhYWExNWFmYjY2YjIwYjc2ODM3OWEyNzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJmZWUyOTNlNTkzZjIzZWMwNjgzYmQ1ZGQ1NGJiMzI3NzgyMDcxNTk3MzdhZjkyYjk0MmFlMWJiNjkwYTQ5OTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdmMTA2YzY2ZDExMGVlNDdkMTdmNmI3NWI4ZDZhY2I2YzY2OGZkOWZiYzFhMmY2ZDgzZTc5ZGJmNzc3MTkwOGIifQ"
+        },
+        {
+          "resource": "repo://desktop/src-tauri/src/connections/session.rs#L994-L1030",
+          "version": "repo-lines-v1:sha256:f5831a487b37cb02b36ad377b9a40ebc5220743cdcd3a31f43ea564dd0aedfe8:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyZWUzNWRkY2U2NjViZWY2NDAyMDQyNmEwMWY0ZDM3MmU0MmRmZWM3OTFlOGQ3M2E1MzhiNTdmOWU4YTAzNmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzODI5MDkwYmM5YzBjOTg3YjVhYzczMjg0MzQ1MGFhMmNhYTZkZjliZDVlMzYyMzIyODE1YWY3M2YxOTMyYWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyODZhNzk3ZTlkYTY2NzU0MmNhMzA5YzE5NTE4NjFkYWQ5OGEyN2Y2MTAwZGRmMDgwNjY0MDIzM2Y2YzI1ZjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ0ZjRiMmNjNGVkYWYzNTY3Y2NjOTE3MWE4MjM1Y2QwNThjNGU1ZTk5YmI2MWM1NDFkM2JkNWI1NmNkOTdlZTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b8a160aca1e44ce090f3c0eb4a489279",
+      "statement": "Local setup connects only through a native Ops-supplied endpoint and a bundled qualification whose contract digest matches the current operation manifest; it publishes an active context only after the discovery package version, the required Memory operations and the exact public default Scope are verified.",
+      "evidence": [
+        {
+          "resource": "repo://desktop/src-tauri/src/commands.rs#L429-L465",
+          "version": "repo-lines-v1:sha256:16d30cf57d9bc1ef2858d226de28f67745fbd9399f93145ec42c4b3c1d4adb07:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ2MjQwNGEwZmY0MjhiODE5NDRlMTNkOTY2ZTNlZjMwZmE0MWU3ZWQ0ZGY0YTRkNWQ0MTUzMmZjZTkzNWJlZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://desktop/src-tauri/src/connections/session.rs#L383-L441",
+          "version": "repo-lines-v1:sha256:660d4a32f329eb4cb6d707bc015fe07dfe7681e971874679bf116811f7874303:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0ODE1NTUyMDdmMDkxZGRjZmJhYjNhODJjYWI5MDQ3N2E2YjZlYTY2NWYxN2UxN2M4YzI4MjNhNTg1ZjMxYjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzODI5MDkwYmM5YzBjOTg3YjVhYzczMjg0MzQ1MGFhMmNhYTZkZjliZDVlMzYyMzIyODE1YWY3M2YxOTMyYWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUxNjBhMGZlODQxYWY1NDBmOTgwMWQzOTkxMGRmNDVjNjJmZDM0M2UyYTZkOGE1MjcyZWEyMmM3OGU1ZTIzZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFlZGJhYTA3NTVlYTlkYjBlYTI3ODVmMGU0OTBiM2JiYTY1NGY4ZTNlZmEzNzc5ZTBlZjBiNmM1NTZjN2VkNDcifQ"
+        },
+        {
+          "resource": "repo://desktop/src-tauri/src/connections/session.rs#L635-L690",
+          "version": "repo-lines-v1:sha256:107c25fbe36e38a643d8325a2536ac856d3f7eb4398902ff6b299faa4b56ab84:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkMWMwMDAxMDQ0MjZkYzFmNWNiZjE1ZTE4OWE1MWM2MTZmZjkzY2Y3ZTNjOWFlYjlkMDlmMDJiNTQ3YWIyZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjYWQyYTE0OWRmOWIwOGU3YTIyMDM2Yjk5M2M0ZmY1NWVlODU1NjZiZGNkNzdmY2Y4YjRkMjk1ZWRkNmM0OTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU0MmMxZjkwMDEwOGQwZTNjYmFlNjNiYTk2NDUzOTZhZTAyYTc4NTE4OGYzYjkzYWE2NGUxOTM4ODU2YmY5NzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwMGY0MzY0NmU4YjhlNmE3YWZlZTNkMTQ1MzI1NDc4ZTE5NDI3ZjliYzA2MmYzNWMwMzJlNGFjOWYzNjlkYjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8ce103ee03914f7b8be47a35c383c7cc",
+      "statement": "A healthy Server does not grant operations: readiness is excluded from the compatibility verdict, compatibility_verified requires a non-empty supported operation list from a bundled qualification, snapshot refuses operations not in that list, and the Server's 401, 403 and 404 responses map to Unauthorized, Forbidden and NotFound.",
+      "evidence": [
+        {
+          "resource": "repo://desktop/src-tauri/src/connections/session.rs#L510-L530",
+          "version": "repo-lines-v1:sha256:888dd1c3331d18ecf3832fec1d92406be4a22d2b235cc607093670bf701c6c36:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3MThlM2FjNzgyMDFlYmJkNGUxMTU3Y2RkYmY3NzIwZThhOTc3MTE5ZjY4ZWQ0MzAzNDA4YjBjZTRmMGZkNmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiZTU0MDIxNWYzMmRjZmUzNjIyNjNkMTE1MDgxZGYxM2YzMmZiNmE4Nzc0Y2Q2ZmI1ZGE0NDYwOGYyOTQ2YTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3ZTdiYTI4YmViMjlkZjRiNTA5OWMxMDU5MDU5MmM3Zjg2OTFlNDE4NzVmNTBlMjVkZGNkMDc4ZmU1NWZiMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUwYzFlMGFhNzMyMzAzOGVlNzNjMDU3YTliYzAwOGE5Yzc3NjFkMTg2OGNkNGJjMzEyMTQyMGI5MjUwOTcxNjgifQ"
+        },
+        {
+          "resource": "repo://desktop/src-tauri/src/connections/session.rs#L628-L628",
+          "version": "repo-lines-v1:sha256:a21310b96c80afc8bcf8c6970e0872f49691fbb1f2890f173550d18da52213d6:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTIxMzEwYjk2YzgwYWZjOGJjZjhjNjk3MGUwODcyZjQ5NjkxZmJiMWYyODkwZjE3MzU1MGQxOGRhNTIyMTNkNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTIxMzEwYjk2YzgwYWZjOGJjZjhjNjk3MGUwODcyZjQ5NjkxZmJiMWYyODkwZjE3MzU1MGQxOGRhNTIyMTNkNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjNhNjBiMDgwODczOGQ5ZWUyNjZmNmVhNWEzNjBlNWM5NDQ1M2I4MzQ1OTJjNWE4NzE1NTQzYjQ1ZTM1MTk1NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDYwMjVjNzBkMGE5Nzc4OTE5ZTE3Y2MyNmIwOTA3MzQ0OTU1YTE0NmJkNDU1MGVkMWVhNmRhNWExODE1MGNhMSJ9"
+        },
+        {
+          "resource": "repo://desktop/src-tauri/src/connections/session.rs#L847-L869",
+          "version": "repo-lines-v1:sha256:dec293844f300c428a546ef58929f5da0ed8097faeecbb885fbf47b0591342e5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1ODkxNjIwYzk3NDJlYzY2NDk1OGExNmM3ZTc3OTBjNWY0MDNlNzk2N2Q3MDlkN2YwZjBmYjM0YTY0MmQ3ZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5YjE5ODJlOGRkNzQ4MTE4MTQ2YjM5YTJkMDA2MmY0MDgxZTM0Nzc5Yjg2NzVjMjM0YzRmYjEyNGRjMzkzOTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJlNDRjNjY1MDIxNmZkZWZiOTZiMTdjZmE0ZGViYTE1NmE2Y2JmMmMyNmE5NTliMjI4ZmIxYmI4MWEzOGJlNWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2YWUwNzVmOWZlYWUxYjYyNmFjNWVkNzdiN2UxYzYxMTZkMDM4MjQxYjNmY2M4MTFkM2VhYWQ1NDI4YjY2NDUifQ"
+        },
+        {
+          "resource": "repo://desktop/src-tauri/src/transport/api.rs#L308-L322",
+          "version": "repo-lines-v1:sha256:f51f9a42b1ee663f09b1372d2a63584265ddde77f33549c58d72b3cc8b72bc70:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyMjZhY2RkYTk5MmIyMjMxOWMzZWFmNGFmNDQ2MTNjMzZjZTU1ODU3NjFkYjg1N2E3OGU5OGE1YmJkN2FiZjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1NzI4OTExMDViZDE2ZTQwODUyM2Q1YTkyN2Y4YzY3NzIzZDBiMDc0NzJlYzdkOTliZjY1NjI3ZDhiZjBhMTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhiYmI0MTIzMjcwNWQ3NDhiNjg2Y2U1Y2ZmODVhYTA4M2RkODNhZGZiNjQ5ZWFjYmRmMjhiMjdmNGUyY2JmZjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEzZjBmYjQ2NmMwYjA2MjJmNTliNGMwODc3YTM2Y2MxODk0ZDExMjg2YTVlOGZmYjg4NmM3NTI3M2I3YmY0ZGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1606332bdebc46808711e634c9282f40",
+      "statement": "Each business read verifies the native identity (Principal or connection identity and deployment ID) before and after dispatch; an identity change clears the active context and its report and advances the generation, invalidating old Scope selections and pending reads.",
+      "evidence": [
+        {
+          "resource": "repo://desktop/src-tauri/src/connections/session.rs#L182-L214",
+          "version": "repo-lines-v1:sha256:dd84b13da25c1a9c50188f9d796ba627c48831a3637a90c90434466a2776f01f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2NjhmN2ZhYjRjYjIwZWVhZGViNjVlZGU3MjQ0OTFkOGVkODkwZmFlN2VlNmYxNDk1MmEwOGQ5MzNmMDM4ZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiYWVlMDQyZTIyYzMyZTkxMzUwMDEzY2FjOTFlZWMyNDI3ZDRkNzY4YjBmN2RhYjFhODlmODQ1YTlmZDQzYTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg3MTRiM2E5YzhmZGQyMjEwZmMyYThjZmQ0ZTcxMTEzNDMyNzZlMDY5N2IzMzIyM2JlOTU0ZTQ4NDFmMDM1NjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY3NmQ0NjRkZGNmODVjZmFjNGFkY2QwZDNhYmY3YzNmZmQyMWQzMTZjZTMzMWViNmNmYzhhYWFhYzM2MzZkMTQifQ"
+        },
+        {
+          "resource": "repo://desktop/src-tauri/src/connections/session.rs#L895-L919",
+          "version": "repo-lines-v1:sha256:e0976302242dbf446f1b664d0d2a50915a4e2968eb27affd45120ce239283ef3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViYWQ3OTU5MGExMDBlYTA4MDdhMTcwYjg2ODNlNjRmODZmMWZhZWI1ODcwNDI1MWE0ZmQ1ODc0ZWY1ODA0NzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1MDY4NjUwZDg0OGY0ZTAzYmQ4ZmIzNGViZDFmMjY1YTM0ZjBmYWNkMjc5MGFiYWFkOThmN2RkZTZmNWE4OGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ1ODg2ZWZmNGMyZmUwMDgwOGJmYjJjNDRhNTM3MjVkNmQ0YWMwYWViNTFmN2QxNDUwMWQxOWM5N2RlZmE4MTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3b819895398c487f93c52e15592641b0",
+      "statement": "Memory save is never replayed: it takes a single write permit, dispatches one remember call, marks a dispatched non-rejection error as Unknown, marks a successful reply Unknown when the post-write identity check fails, and marks the record Unknown if the write future is dropped while armed.",
+      "evidence": [
+        {
+          "resource": "repo://desktop/src-tauri/src/connections/session.rs#L1196-L1302",
+          "version": "repo-lines-v1:sha256:56f7bfc12f9176ab69b8659c8e9af326a8790c9b3bd82579948d3d73fc3b8fcf:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJjNTQ3NGEwMDE3NzBhY2I3ZmIzNzRhMmZkOTlmMjhmNTg4ODQzMmU0YTQ0ZWM0OGNjNTg1Y2YwNjE0NzVhZWY0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJlNmIwNDQ5MTQ2OTcyMmU4MzYzYTk0ZTQwNDQ1MzhlMDEzYTJhMjE3ZTM2YjFlNTY4YmE2MGFjYjdiNGM4ZjJlIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI0Mjg2YTc5N2U5ZGE2Njc1NDJjYTMwOWMxOTUxODYxZGFkOThhMjdmNjEwMGRkZjA4MDY2NDAyMzNmNmMyNWYzIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI4OTdhNmU4YTMwNjVjMGUyM2RjMjdhMjExZTYzM2I2ZWU5OTlmNmExMzhkYWFkNjk5OWM0MTZiMmIxZWYyNDUyIn0"
+        },
+        {
+          "resource": "repo://desktop/src-tauri/src/connections/session.rs#L161-L175",
+          "version": "repo-lines-v1:sha256:0cc9f2caffed547937d7e6a73070f58117ea228fec8d0828cb57e1070e0e2819:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImExNTcxZmVjNWUyODg0YTE4ZjFiOTNiYzViZTBjN2QwNGNkZTY1NmVjYjM0NTlmMWVkZTE0N2RkMDY4OTZlOGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhMTlhMjdjMDMwOTU1NmEwOTRkNGZhMjNmYzJkMWM2NzIzOWQ2ZDk3ZGU5ZDVkNzNiOTVhMGY5NGM5ZGNhMzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d332f794e563427588d785b40ab62144",
+      "statement": "The HTTP transport disables proxies and redirects and retries, uses a 5-second connect timeout and 15-second request timeout, caps response bodies at 1 MiB, allows at most four concurrent reads, and accepts plain http only for a literal loopback host.",
+      "evidence": [
+        {
+          "resource": "repo://desktop/src-tauri/src/transport/api.rs#L203-L215",
+          "version": "repo-lines-v1:sha256:09ee4d91ceed8a796b79b1b4d6e804907c39a17b748ae66efbd795adef6cabe0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkZmIzZjA1NTJhMDU3NTg3MWU0NzE1YTMxYjc5Y2JmMzlkNThhZDdkNWUxYjUyMjY4ODBkNzRkNzA1ZDUzMmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkYjVhYmEwMWFmYmMwZWZmOGI0NTg0YWU1Y2M1YWZmZjRlMmQ4MjJiODU2MThhNWU2MGVjNGIwOTFhOThiNzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwNDkyOTQwM2I1ZGMwN2YxZDk1MTc1M2FmOTNkNmQ0YjQ4NGQwNGYxNjJkOWQyYTk1ZmI3NmQyOGYzZTYxODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEwYTc3MTVhOTE1OTczMzVjNWI1NjI4ZTJhNjI1ZDc2YmUwODZjZDY1NGEyMDk5NjZiZDFlMThmYjFiYzhjZWYifQ"
+        },
+        {
+          "resource": "repo://desktop/src-tauri/src/transport/mod.rs#L127-L146",
+          "version": "repo-lines-v1:sha256:88181b2ecba97e3651096da00e8cfea9986459a24139fdc11472c5a231728eaa:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlMDk4OGQ2ZmM4Zjc1YjM4NGQ4NjRmMGI3NTU5ZGY1MGI0MjljNjA5YTkzMDU3Y2VmODE4N2JiMTA5MTE5YTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhiMmQ4MjBlZmM4Y2JlZjQ5MDFkNzljN2ViZDE3MzdjNGY4ZDI0MmI4OTBjYmYyNWRlZTQyOTNkYjJhYjNlMjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY0OThjZjMxODc0NzhjZDViNTI0OTNhYWFhOWZjZTAwYWZiZTU5NGQzNjFhNzEzYzA5ODg2YzcyM2RjMDMxMDYifQ"
+        },
+        {
+          "resource": "repo://desktop/src-tauri/src/transport/mod.rs#L35-L40",
+          "version": "repo-lines-v1:sha256:fd269ab5901c840e4578be54db26e47f78e2bb63d24e5ef049f4ad84a9883c6c:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzYwZTllY2QyMmJjYmRiZDA5OTg3ZTVmYmM0NzJiNzRiODNjMWFkN2JkNTUxZmQ5ODk4ZmVjZTAxMTc4ZmYyZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzY5NjQ3ZDhkZTY2MjBkZWI4NGNkNTcwY2E0YzVmN2Q4Njg5YmNmMmZjNjIxOGFhODNiYTVjYTQ1MTFjYWQxZCJ9"
+        },
+        {
+          "resource": "repo://desktop/src-tauri/src/transport/mod.rs#L44-L97",
+          "version": "repo-lines-v1:sha256:83fa197bc3b9e073cf81304aa8f264a2462223c568df1f753d6e05a46891c61a:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3YTVmMzFjNDkwZWMxNzFjODMxOTE1M2QwOTUxMjJlNjNhYjdlYzJiZjU2NGFkY2I2NDQ1NjI4ZjAzYWI1ZGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2OTY0N2Q4ZGU2NjIwZGViODRjZDU3MGNhNGM1ZjdkODY4OWJjZjJmYzYyMThhYTgzYmE1Y2E0NTExY2FkMWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZjMGFiMDZmZjMzMGRjNjU4MTc4YTMyYzYyNjY5Nzg1N2NlZWQ0NWFhZDMxZGZhYmVmMjU5ZTM0MTUxYjg1MGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ce6d63a5034c4b82ab671948a7f51f39",
+      "statement": "The session observation window holds at most 512 content-free terminal records; when full the oldest record is evicted and counted, contention or pre-reset records increment the process-lifetime dropped count, and reset clears the window but not that dropped count.",
+      "evidence": [
+        {
+          "resource": "repo://desktop/src-tauri/src/session_observations.rs#L222-L257",
+          "version": "repo-lines-v1:sha256:877a8e6f81f99f721401ccfa0f7be342a0449bc7d7448fa4ad159090a6d319c0:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhYjlkNWFiMGU2NWEwNmJmZWExOTA1ZDAwZTJkZTg5N2NmMzU3ZjZlODFjNjExNjQwMzU1OTc5ZWQzODljNDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczYzZlNzkwOTRhODkwY2YwZGZhNTI1ZTk2ZTU2YzE5YzE0YzQwMmE4MmQwNTY1MjM1YjA1MmYwZWZkNTI1OTUifQ"
+        },
+        {
+          "resource": "repo://desktop/src-tauri/src/session_observations.rs#L35-L35",
+          "version": "repo-lines-v1:sha256:f6d585b6af9e1da780cf4131254fa86abf2312ecc9d7e66b38f786fc750f675d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZkNTg1YjZhZjllMWRhNzgwY2Y0MTMxMjU0ZmE4NmFiZjIzMTJlY2M5ZDdlNjZiMzhmNzg2ZmM3NTBmNjc1ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZkNTg1YjZhZjllMWRhNzgwY2Y0MTMxMjU0ZmE4NmFiZjIzMTJlY2M5ZDdlNjZiMzhmNzg2ZmM3NTBmNjc1ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTIwYWYyN2IwMWQ3ZTcxMWZhOTc2MTQxMzkxZDZlMTdjNjdlMmI2MTMzNmQ5YTFlMjI4NWNhYTY1YjVhMTU2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDY3ZTczNzdmN2VlODNhMWJjM2E5YTZlYjNiZDBmMWUzOGYyYmU4MmRjYjA1MzhiNmU4YzM1NWI2OTMyNjE2NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_41e3b935920245d98c25f4ef67ae2c98",
+      "statement": "The Ops bridge exposes seven fixed commands plus ops_references; preflight stores a plan under a native approval that expires after 600 seconds and is capped at 32, and apply or resume consumes the approval once only if the TTL, binding, plan_id and resume mode still match.",
+      "evidence": [
+        {
+          "resource": "repo://desktop/src-tauri/src/commands.rs#L317-L430",
+          "version": "repo-lines-v1:sha256:20f781928e53421d60dabc218e1c586b92ee4c42308a1069c273b22e04099755:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwZWJmYzYwYzQ5YWU5ODIxMjk2ZDFlY2Q5NTJkZDQ1MGJkOWQ5YTYzOThmOTA0NTNkOTcyYjQ4MWIwM2FjYmM5IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJhOTNkY2UxZTE5ZWE1MmY3ZjM0NDVkZDUwMmUzMjI2NmNjZDgyYWJkNDBhNDc2YzcyMmZkYzhmMDE4ZWJjNjg4IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIwMDZlMzlhMWZhN2FjMDNmMzcyOTNiN2RlZDA2ODUzMzI0ZTFkNDU5MDQ1OGNmOTI4YmFkMGM4ZWMxNTk5OTEyIn0"
+        },
+        {
+          "resource": "repo://desktop/src-tauri/src/ops_bridge.rs#L273-L380",
+          "version": "repo-lines-v1:sha256:260fce631bd5d43ebe9afaf0ea12fb6941cc44652c6fc3ba3d96602d3a86fdac:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI5YmVjMWRkMzc5ZmQ5MjFiMmExMWVmOGEzMjc0ODVlMDQxMmRlN2ZkZDRkNmRjYmZmMmUyNDY0Zjk0YmE4YjI0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJmOWIxOTgyZThkZDc0ODExODE0NmIzOWEyZDAwNjJmNDA4MWUzNDc3OWI4Njc1YzIzNGM0ZmIxMjRkYzM5MzkwIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI4MWE2NDhjOTk2NThhZTQwOTc3MzBkMjJhMDE0ZDk4MTkxOGMxYzkxNjIxNDYyN2MyNDE3OTNmYjI2MWNkNjIxIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIzMjE3Njg5ZDdlNWZiNjIzNDlmMjVmZmJkMzhhYzYxZTkyZGMyYTMwNjFhYmRkYjE1YmI4ZjFlMTE5YjNlODhkIn0"
+        },
+        {
+          "resource": "repo://desktop/src-tauri/src/ops_bridge.rs#L38-L39",
+          "version": "repo-lines-v1:sha256:20d3f6f4ae8f3daff0489e013a9d0da3af1e23e7e51ed469bbf04e191045ddcb:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWZlYzYwNmU0YTIzYzIzNDgwZjI4ZDY0YjlmZWI1NmEwMDcxYjNjNmQ4ZTM5MWZhMWY2NDlmZDJjMGYxM2Y3MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYThlNGEwNmQwM2ZlYjE4NmY0NzljZjYwMmFhNDk0OTI5YWRjMWM4NDgwMDQxY2M3N2YwMDI1ZWM4MWZhZGZjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2IzNmI2NDBjYjg2ZDY3OTY0OTFhNmNlNmFkZjFjMzIxODQ2YjBiNGFlNjdkZTI4OTgyNWQwNTljYjI5Zjg0MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGY5ODk0ODA0NTY2OGFiNWYyMmVkYTEwYzU2MThkMWIxMWU4NjRmOWYyYTFhNTk1NWNhODU2OTlhMzVkOTcyNiJ9"
+        },
+        {
+          "resource": "repo://desktop/src-tauri/src/ops_bridge.rs#L396-L453",
+          "version": "repo-lines-v1:sha256:eb10cc6ab994665fa981fc8beeaaf01345e084787f6e196f1ff5a48f906be26e:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyOTU4NzZmZGY4NjFkNjY2YzIxNDIzZmIwMTc2ZjJkYzdhMDY4YWJhZDViMDRjYTRmNTA4NDM2NjI4YzcxODQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5YjE5ODJlOGRkNzQ4MTE4MTQ2YjM5YTJkMDA2MmY0MDgxZTM0Nzc5Yjg2NzVjMjM0YzRmYjEyNGRjMzkzOTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFkNmEyZDdkZmI0MmUzNDI4MzYyZjA2MjY5NmEyNDcyNjZlNDZjODQxMTZhOTU3YTRkYzQ5ZGZjN2E2ZjkyOTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE0NDliMjM2ZmNiNGViYmI3MDA4NjU4MDIzZDZhZjdlYWU1NjJlYjFjNTIxYzc4ZjZhM2ViZmJhNmUyZDhmZWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c0939585fbf6467e9f2b3b75df1aeb1f",
+      "statement": "Ops calls use separate concurrency lanes (four ordinary slots and two reserved status and cancel slots) and fixed deadlines of 1800 seconds for apply and resume, 180 seconds for preflight and 30 seconds for other actions.",
+      "evidence": [
+        {
+          "resource": "repo://desktop/src-tauri/src/ops_bridge.rs#L144-L166",
+          "version": "repo-lines-v1:sha256:022031d27d1eeaaae45938d8eaeb98a5dc02e1c2583c34cb0e877d630ae6429d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlOTJjYjJmMTgzMmUwODZhNTlhMGZiZTA1OWQ2ZGIxOGM2NTA0ODI1MWE2NzM2ZTJlYzc4NTlhNGMzYjBjM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5YjE5ODJlOGRkNzQ4MTE4MTQ2YjM5YTJkMDA2MmY0MDgxZTM0Nzc5Yjg2NzVjMjM0YzRmYjEyNGRjMzkzOTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNjMmUzNzc0MjUwNDYzYzc2MmNkNDI2ZWY4MDQzOGRiMjcxMmE4NDlmYjZjZGY0NDZlOWZkNWFhMTc0MGZhOTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM4MzFjNmNhNDFkZTBiYzU3YTIyYzVlNmY5ODFjNTQ1ZDQ2ZjFjMzE5NTQ2NDkxNDU3NGE5ZDNiZDUwMmVlZmQifQ"
+        },
+        {
+          "resource": "repo://desktop/src-tauri/src/ops_bridge.rs#L532-L551",
+          "version": "repo-lines-v1:sha256:d602f08dadb428c77688b73663c5801a1dd6956e2c6fc802a45888f773b1a6b4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRjNjJhMzEzZjAxZmM5YmU1NTg3OTZkYzA1ZDdlZTEwMDBlMmNkZmJiMzg4ODljYTM2OTNhMmI1ZGJkYzYzOTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEyZjM2ZGI5MGUzZTVjMjI1Zjk0NDEzM2UxYmFiZjk4ZTNlNGU5YzZkZjQ2NzNlOGM4Mzk2NGM1YTYwNWRhYmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU0N2JjNzcyNTRjNGI5ZTY2N2VmNGE5NzkzZDQ3Y2IzNTExNTljZTJiNjE4Yzc4ODY0MGEyNGIwNTM3MTYwMzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_de35d82c96994bfb8a5242c7502b2901",
+      "statement": "The native reference file records only operation IDs, binding fingerprints and approved action and options, never outcomes, raw plans, endpoints or credentials, and Ops journals remain the recovery authority.",
+      "evidence": [
+        {
+          "resource": "repo://desktop/SECURITY.md#L54-L89",
+          "version": "repo-lines-v1:sha256:7c81ed445395ee058799f62c66b5bddcebb1146245eab23a71036108d1353ad0:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmOWMwMTAzYzBjNjE5ZmI2YmE3MzNjY2YxMWEzMDVhZDMzZDhmNmEzODMwODdhZDczZGE5YzA5MTc3YzAwYjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkxM2I3NTI2MmE4MWUyYzFlNjZlMTAzNTQyMWJlN2JkYWMyNWU4N2IwNmYzMjUxNGFhMzJmMzk2YjI0Njc3ODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhM2Y3ZmRhMzk3YTU2OTFmODI1YjJjODY1NDc5ZTczMGY0MGEwNDY4MDExNDBlNTBiZGVlNTI0ZTM3ZTdlZDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4ca9566e23104c88b036999c5b0f05c1",
+      "statement": "Local CLI diagnostics run only two fixed argument sets against a registered executable whose SHA-256 is verified first; output is capped at 256 KiB and only allowlisted status fields reach the UI.",
+      "evidence": [
+        {
+          "resource": "repo://desktop/README.md#L232-L232",
+          "version": "repo-lines-v1:sha256:a3d366027237164409d44ed37d6e4632926b403527c60bc9b447c8f17365d24c:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTNkMzY2MDI3MjM3MTY0NDA5ZDQ0ZWQzN2Q2ZTQ2MzI5MjZiNDAzNTI3YzYwYmM5YjQ0N2M4ZjE3MzY1ZDI0YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTNkMzY2MDI3MjM3MTY0NDA5ZDQ0ZWQzN2Q2ZTQ2MzI5MjZiNDAzNTI3YzYwYmM5YjQ0N2M4ZjE3MzY1ZDI0YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGI0NGZkYTA2MWQzNmNmMjFmOTExOTYzODFlNWZjNTc2YzY4OTRmZTk4OTAyN2E5MWFiYjVhNWFjNzMzNTg0MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGFhMzY3Nzc3NDNhMGRhYjM3MTQyZmVhNzQ2NzQ1NGYzNDk5YTMzN2YwYzk5NTk2NjQxZTVkMzcyZTI5NmMyYSJ9"
+        },
+        {
+          "resource": "repo://desktop/src-tauri/src/diagnostics.rs#L24-L43",
+          "version": "repo-lines-v1:sha256:ea9bc06122b5821b50399fef42a8cea7b1275b401f8952ae462040e35ce27567:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0MjUwZTM3Mjk3OTBhOTgzMmU4NDg5MWE0NTkwNzNiMmFhMWExYWE3NTVkMzFiMGIyNGRhZTFlODYzOTUxMWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxOTNjMDE1Y2U4ZTc0YWYzNmI4NjNhYTVmMTEwY2EzZTVkNDQ1ODI3OGJhODRiZDhkNGEzMWVhMThlZGI0YmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY2ZTM3ZDYzY2U3NGUyMGUyYjc0NjRjYWMxY2NhMDgxNjQxMWJiYmM4YmZiZGM0ZjJlNmEyN2MwY2VmZTVhMDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE0MGQ5M2FhMGZmYjUzYjhiZmZlOWRlZDEwZDIyYTc0M2E1ZDVlYmE2NGFmMTMxMjI4NGVmNmVlNjIyNDRlNjIifQ"
+        },
+        {
+          "resource": "repo://desktop/src-tauri/src/diagnostics.rs#L288-L300",
+          "version": "repo-lines-v1:sha256:a6b34726db9d7cdca98bb8dbaad23899fc3a68278b00cc29e9c4213b0b1e68c7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3ZWJhNmJhYmFhYzhkNTkyZmZiZmQ3NmQ5YWUwYTc1OWFhMjAwMGQ4YWNlNzk4NjBjYzc0MDYzMGI1ZmIwMTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlYWMyYjVjM2RjNzgxNjg5NDY1NzQzZWI5OWRlZjJlNTk2NjdjNDE4NTZmZTgyOTk1NjQ1ZTJlMjU3YjNlMDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU4ODQyNjQ0M2U1M2NiYTljYjJkNTQyYWI5NjA0NTk0ZjU3NDZmNDJlNjM2NTFkOGQ4MDJmZGRiZDRiZjU2NDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAyNjBiOGJkMTQwOGU0MWNkMzc0ZThkNGY4OGY1YmMxNzYzOTRhM2ZhMzQ0ZmMwNWI0YzcwMTRlYTY1NWJiODkifQ"
+        },
+        {
+          "resource": "repo://desktop/src-tauri/src/diagnostics.rs#L77-L110",
+          "version": "repo-lines-v1:sha256:dbe4aaff83e77259f51f647d04925eb582db48e70ecf1257b7bad809a585b87c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwMjZlODIxOTRiMGQ3M2JlNTM0MWJjYTI3MjE3Y2U2YzdiOThkMTczNzUxM2RjNDk5N2Y3ZWJiNWFiNzlmOTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1YjFhODkxMDM2ZWRjMzZlMjk4YjY3ZWFiNzE2MjYzODMyYTRhMThlY2MzNjNjYTgxZDc1MzlmNDhlNmE3YTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1ZGZjMTFmYTRmY2JlZjJlM2E3NTFiNjU5ZDQ4ZmE2MzQ3Mzk3MmM5ZjFmYWU1ZGE1ZWQ0MjYyMGZjODdkMmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMzZDZkZmU1MzFkNGM1ZjBkYmYzODM1MmE0MWY3YmEyMWQ4M2ZlMTg2MzMxYjIyYjhhNTg1ZWEzZGFlM2I0ZDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2173d844da054903a489bf71f7f741b1",
+      "statement": "The Rust wire module, the TypeScript API types, the operation descriptor file and the native operation manifest are generated by desktop/scripts/generate.mjs from openapi/powercontext.yaml for exactly thirteen public operations, with a --check mode that fails on drift; the IPC types in ui/src/generated/ipc.ts are generated by the export_ipc example and checked by ipc:check.",
+      "evidence": [
+        {
+          "resource": "repo://desktop/package.json#L11-L22",
+          "version": "repo-lines-v1:sha256:e85100e2162ae25bc512626ddfa2ce68a5c28442fdd00dfe88bbd2fc90a28cc7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwYmFlMGY4ZTI2ZjgzZjUwYmNkNGNjMmY5ZDBiNDFiMTFmYjU2ZGY2ZjRkNDU0ZGUwODI3OTgwY2Q2YmNjMjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4MjY2ZWZlNGQxZDZhOTFjZmQ0N2I3NDlhMDhhODQyNjhkZmJjNDJkOGE5YmEzMDI1MjA0YjkyYjRmY2E2OWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY2MTEwYTVlYTZmZTg1YzAyNWQ0YTE5Njc5NTZiNmJkN2NjZWY0MjM1MDQ2Yjg3ZmUzOTQxM2Y4MTEyZjU0MzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4YjRhYTU5OTg2NDkxMGExNGYzYzQ5NzRhZGYyZjZjZjIwY2MyZmFiN2EzM2RjZDAyOWZhMDJhYTQyMmVmY2QifQ"
+        },
+        {
+          "resource": "repo://desktop/scripts/generate.mjs#L273-L300",
+          "version": "repo-lines-v1:sha256:3e347b8dbb7742375a1a1a3308cf71a3110a068d67639f8b09db0209da8ca678:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5MjM3NzE5MTE3YzVkYzZiOGU5NTc4YmFiMDkwNDc3YTVkMDU1N2U0ODJlOWEwODJiZjJlZGUwMWNhMzlhMjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2OWRlMTE2YWExOTRlZDE0Y2ZhNzE4OGEwYmYyMGE4ZWU5YjA2OGM0ZmZjOWQ1M2M5MGVhZjU1ZTI5NTM5MDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcwYmI0NmYzYjM1ZTRjYTlmZGVjNmMxYWI0ZWZkN2UwNDlmMDU1ZTJlZjNlODVmNGZmYjBiODBmZmUzYjE0MzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3NzU2MWVmODM0ZWNkYjNmMjIxNzJlYTQxMDkzYzgyNGJhZGEzMTU0OGUxYTJiYjdlMjYwZGE3NGI1YjczZDEifQ"
+        },
+        {
+          "resource": "repo://desktop/scripts/generate.mjs#L31-L58",
+          "version": "repo-lines-v1:sha256:d30027dd3036f79ad1d75f2cf39bc5fcc3475b35d19bee0c1b22222e535370fd:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwZmExMmRhZWMwOGE5NjU5NmFmNGE4OGZhN2RmNjBjMDhiYzFkZGFiZjEyNzVkMmMyZjMzYTk1OGI5OThmMGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0MjExOWFjODIwMDE2NzlhZmRjYTgzMDUzZjZhYzM4YjRlZTg2YmJjZTM2Y2VmNWQ4NTdiNWNkNDhlNWY2YTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViZjY5NmIwM2YwMmQ5N2IxMmY2N2I3MGEwMWI1MDcyMTg5ZDYzYzg1OTExNWVhM2IxMDUzYzVlMzQ2NTIyNGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRlYzQwNDk3NzllNzQxYjU1ZDA5MDUzNjg0NGRkNWZkYmIyMjBlMGQ3OTQ1NjI4YjMxNTIzZWI5NDJlNWVlZGEifQ"
+        },
+        {
+          "resource": "repo://desktop/ui/src/generated/ipc.ts#L16-L16",
+          "version": "repo-lines-v1:sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzg5NDM3ODVmYTQ1YjBhMGY0ZjdiNzFjMTRmYWYyNDg5N2MzZWIwMjViNzRjOWUxOWU0NzdlZTdkMDJlNTc4YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWU0NDg4NDExNmNmZTE1N2NkNGU0NjkxNjIzZDk0NTJhMTU4ZWQ4OTBjMGM5ZDlkZTYwZDljNjQ5MmZmZTY5NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5ac0ba6381ba4710b2761f0e199da321",
+      "statement": "The UI keeps a submitted Memory draft in window memory as a recovery copy until it is explicitly discarded or its save receipt succeeds; a successful receipt removes only its own copy and closing the window loses all copies.",
+      "evidence": [
+        {
+          "resource": "repo://desktop/ui/src/app/App.tsx#L84-L106",
+          "version": "repo-lines-v1:sha256:cf7f0b6ad5641998ca09e4727186fabf239ab27d3673ae45ae9589a1c650fc9b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4ZmI3YzlmNTY2NGQzMzg1YzBmYTBhNjAyN2YyODExN2Y1ZDhkNTFjNjEzODg5NDI1OTJhZjdlMzE0NDA0Y2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkOWUxMjU0NjQyNTU3NmQzZGVhZThjOWI5ZGJmMTI4ZDVkNmRkYWY1ZDdmZTg1NzkzNDkyN2RlZmZhM2I5ZGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiNDc2YzkwZTJkYmU2NDIxM2FjYWRlNGY5YTc0MWU4NmNiYTgwNjNhNzlmZjY2ZWFjY2I3MWRjNDc0MzBlZjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhN2M2NGZiODRkNjY2ZTdlNGNhNGVjY2NjMTE2ZjFkMDZiMmNhNDc1MDBmMzc2NmY1MDk1NjA2NmQ5YjRmYTgifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:46:19.799Z"
+  }
+}

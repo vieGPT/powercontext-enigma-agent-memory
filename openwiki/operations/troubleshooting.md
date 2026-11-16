@@ -5,16 +5,20 @@ description: Diagnostic procedure for PowerContext operators. Covers which comma
 tags: [troubleshooting, readiness, recovery, topic-memory, migrations, operations, diagnostics]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:43:24.725Z
+    at: 2026-11-16T11:46:19.799Z
 sources:
   - id: openwiki-source-b2080e834e81820ea7240aa1
     resource: repo://docs/en/docs/operate/local-server-ops.md
   - id: openwiki-source-1817285ec5169d3a5e159430
     resource: repo://docs/en/docs/operate/troubleshoot.md
+  - id: openwiki-source-75dc5fd1c5ff7364145abedc
+    resource: repo://src/powercontext/builtin/persistence/migrations/mysql_schema.py
   - id: openwiki-source-43be88e4925118368b28b02c
     resource: repo://src/powercontext/builtin/persistence/migrations/topic_memory_recovery.py
   - id: openwiki-source-c925caf620bdcce1682e5a3b
     resource: repo://src/powercontext/builtin/persistence/processing_migration.py
+  - id: openwiki-source-ebfb90c0b2be0ebbf941aa39
+    resource: repo://src/powercontext/builtin/persistence/tables.py
   - id: openwiki-source-e40160e83a69788454971eff
     resource: repo://src/powercontext/builtin/persistence/topic_memory_budget.py
   - id: openwiki-source-094f61536b4c9bc008c0303c
@@ -29,14 +33,26 @@ sources:
     resource: repo://src/powercontext/builtin/runtime/composition.py
   - id: openwiki-source-e5ae8b4583f232402e100a61
     resource: repo://src/powercontext/builtin/runtime/readiness.py
+  - id: openwiki-source-d37a6a98f983904386ead9b1
+    resource: repo://src/powercontext/builtin/runtime/relational.py
   - id: openwiki-source-1220c0d5685a8b0db305a3d4
     resource: repo://src/powercontext/builtin/runtime/topic_memory_recovery.py
+  - id: openwiki-source-ec6e9400c5b184014b8f4d36
+    resource: repo://src/powercontext/cli/hosts.py
   - id: openwiki-source-e5374e477de7d6683f8772c8
     resource: repo://src/powercontext/cli/system.py
+  - id: openwiki-source-fa41a059aa6c88d17678d124
+    resource: repo://src/powercontext/client/cli.py
+  - id: openwiki-source-ada48487ce77f173d033229e
+    resource: repo://src/powercontext/client/client.py
+  - id: openwiki-source-815ca134a01fc509f5f560ab
+    resource: repo://src/powercontext/client/errors.py
   - id: openwiki-source-6e423d23f5768d9310faf5f4
     resource: repo://src/powercontext/http/_generated/operations.py
   - id: openwiki-source-27a3101c1f2b72744699a00a
     resource: repo://src/powercontext/ops/protocol.py
+  - id: openwiki-source-1f00aa56ac5d6da6909b04d4
+    resource: repo://src/powercontext/ops/runtime.py
   - id: openwiki-source-f25c1b3c7f796f0c6487a9cb
     resource: repo://src/powercontext/server/app.py
   - id: openwiki-source-bc58b27142b00aeeb91ebfcf
@@ -57,7 +73,7 @@ sources:
     resource: repo://tests/test_runtime_readiness_observations.py
   - id: openwiki-source-f06ae5de980d258c1e68bf8a
     resource: repo://tests/test_service_runtime_repair.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:43:24.725Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-16T11:46:19.799Z" }
 ---
 
 # Troubleshooting and Recovery Runbook
@@ -68,9 +84,9 @@ This runbook tells an operator or agent which command reports which state, how t
 
 | Question | Command or endpoint | What it reports | Source |
 | --- | --- | --- | --- |
-| Is the installed package and the selected Server usable? | `powercontext doctor` | Package, Server liveness and Server readiness as `ok`, `degraded`, `failed` or `skipped` | [system.py](repo://src/powercontext/cli/system.py#L270-L342) |
+| Is the installed package and the selected Server usable? | `powercontext doctor` | Package, Server liveness and Server readiness as `ok`, `degraded`, `failed` or `skipped` | [doctor](repo://src/powercontext/cli/system.py#L312-L376) |
 | Is the Server process answering? | `GET /health/live` | Liveness only; it never checks dependencies | [app.py](repo://src/powercontext/server/app.py#L1747-L1748) |
-| Are the Server's bindings ready? | `powercontext ready` or `powercontext --json ready` | The `GET /health/ready` body: aggregate `status` and per-dependency `checks` | [client/cli.py](repo://src/powercontext/client/cli.py#L628-L630) |
+| Are the Server's bindings ready? | `powercontext ready` or `powercontext --json ready` | The `GET /health/ready` body for HTTP 200 responses (`ready` or `degraded`): aggregate `status` and per-dependency `checks`. An HTTP 503 is raised as a client error and the command exits 1 | [client/cli.py](repo://src/powercontext/client/cli.py#L628-L630); [client.py](repo://src/powercontext/client/client.py#L1409-L1418) |
 | What behavior does the remote Server enable? | `powercontext capabilities` | The `/v1/capabilities` contract, including Context versions and memory-extraction state | [client/cli.py](repo://src/powercontext/client/cli.py#L594-L597) |
 | Is a configuration file valid before start? | `powercontext config validate --env-file <path>` (default `.env`) | Syntax, configured model adapters and Server settings, with no Server contacted | [config.py](repo://src/powercontext/cli/config.py#L433-L449) |
 | Is the personal service registered and live? | `powercontext service status` (add `--json` for JSON) | Registration, definition, manager ownership, manager state and liveness; exits 1 unless `ok` | [service/cli.py](repo://src/powercontext/service/cli.py#L121-L136) |
@@ -79,6 +95,8 @@ This runbook tells an operator or agent which command reports which state, how t
 | Is the processing schema ready for a Server? | `processing-migrate --action plan`, `verify`, `apply` | Offline artifact-processing migration plan, verification or apply | [server/cli.py](repo://src/powercontext/server/cli.py#L132-L160) |
 
 `powercontext ready` and `powercontext doctor` are the two entry points most often used. `doctor` combines liveness and readiness, while `ready` returns the readiness body directly.
+
+Automation must read the top-level `status` of `powercontext --json ready`. The `ready` command has no degraded-specific exit code: an HTTP 200 response with `degraded` still returns normally and exits 0 ([_execute](repo://src/powercontext/client/cli.py#L1808-L1826)). To make a degraded result fail a check, use `powercontext doctor --json`, which exits 1 unless the overall status is `ok`. `powercontext capabilities` prints `Memory extraction: disabled` when the Server has no generation model. The generation-pipeline setup returns no pipelines when no generation model is configured and no rerank or decision model needs it, and the Relational context reports `memory_extraction` as true only when a candidate pipeline exists ([_print_capabilities](repo://src/powercontext/client/cli.py#L2146-L2152); [generation pipelines](repo://src/powercontext/builtin/runtime/composition.py#L1546-L1576); [memory_extraction flag](repo://src/powercontext/builtin/runtime/relational.py#L731-L731)).
 
 With no names and no server option, `doctor` checks the saved agent connections when any exist, and otherwise checks the package and the Server. Explicit names such as `powercontext doctor codex` select host integrations, and `--server-url` cannot be combined with agent names. The doctor function and its status helpers implement that selection (see the sources above).
 
@@ -96,13 +114,13 @@ Caption: the order `doctor` uses to classify Server health. Readiness is only at
 
 ## Doctor outcomes
 
-`doctor` collects one diagnostic per check. The overall status uses this precedence: `failed`, then `degraded`, then `skipped`, then `ok`. The command exits 1 unless the overall status is `ok` (see [system.py](repo://src/powercontext/cli/system.py#L1003-L1008)). A `degraded` readiness result is therefore not a complete diagnostic success.
+`doctor` collects one diagnostic per check. The overall status uses this precedence: `failed`, then `degraded`, then `skipped`, then `ok`. The command exits 1 unless the overall status is `ok`. The default path (no agent names) checks `_diagnostics_ok` and raises `typer.Exit(code=1)` ([doctor](repo://src/powercontext/cli/system.py#L373-L376); [_diagnostics_status](repo://src/powercontext/cli/system.py#L1134-L1146)). The agent path exits 1 when any selected row is not `ok` or `configured` ([report_agents](repo://src/powercontext/cli/hosts.py#L165-L207)). A `degraded` readiness result is therefore not a complete diagnostic success.
 
 For the Server, the checks run in this order:
 
-- If the Server URL cannot be resolved, the liveness result is `failed` and readiness is `skipped` ([server_diagnostics](repo://src/powercontext/cli/system.py#L392-L431)).
-- If liveness fails, readiness is `skipped` with the detail "not checked because Server liveness failed".
-- Readiness is read from `/health/ready`. HTTP 200 with `ready` is `ok`, HTTP 200 with `degraded` is `degraded`, and HTTP 503 or any other shape is `failed` ([_server_readiness_diagnostic](repo://src/powercontext/cli/system.py#L953-L975)).
+- If the Server URL cannot be resolved, the liveness result is `failed` and readiness is `skipped` ([server_diagnostics](repo://src/powercontext/cli/system.py#L503-L546)).
+- Liveness is read from `/health/live` ([_server_liveness_diagnostic](repo://src/powercontext/cli/system.py#L1059-L1073)). If liveness fails, readiness is `skipped` with the detail "not checked because Server liveness failed".
+- Readiness is read from `/health/ready`. HTTP 200 with `ready` is `ok`, HTTP 200 with `degraded` is `degraded`, and HTTP 503 or any other shape is `failed` ([_server_readiness_diagnostic](repo://src/powercontext/cli/system.py#L1077-L1098)).
 - Insecure remote HTTP that has been explicitly allowed is reported as `degraded`, because credentials and content are not encrypted in transit.
 
 ## Readiness outcomes
@@ -221,12 +239,12 @@ Caption: the Topic Memory processing states as the status and retry paths define
 
 A block is recorded only when the frontier's work budget is exhausted and there is work beyond the cursor. The observation is idempotent per attempt: a second read for the same attempt returns the same block ([observe_topic_memory_block](repo://src/powercontext/builtin/persistence/topic_memory_recovery.py#L50-L120)).
 
-The budget limits are server-owned and shared by all attempts at the same cursor: 3 attempts, 512 provider requests and 64,000,000 tokens ([budget constants](repo://src/powercontext/builtin/persistence/topic_memory_budget.py#L41-L51)). `exhausted_reason` decides which code is recorded ([exhausted_reason](repo://src/powercontext/builtin/persistence/topic_memory_budget.py#L60-L80)):
+The budget limits are server-owned and shared by all attempts at the same cursor: 3 attempts, 512 provider requests and 64,000,000 tokens ([budget constants](repo://src/powercontext/builtin/persistence/topic_memory_budget.py#L47-L63)). `exhausted_reason` decides which code is recorded ([exhausted_reason](repo://src/powercontext/builtin/persistence/topic_memory_budget.py#L80-L96)):
 
 - A recorded rejection that is not recoverable ends the frontier immediately and becomes the block code.
 - The recoverable rejections are `related_history_limit`, `invalid_topic_placeholder` and `invalid_topic_coordination_content`. They spend the attempt and provider ceilings, and are recorded as diagnosis, but they do not end the frontier by themselves.
 - When the attempt ceiling is reached, the block code is the recurring rejection, or `window_attempt_limit` if none was recorded.
-- When the request or token ceiling is reached, the block code is `window_provider_budget_exceeded`.
+- When the attempt ceiling is not reached and the request or token ceiling is reached, the block code is `window_provider_budget_exceeded`. The attempt check comes first, so an exhausted attempt ceiling is reported with the recorded rejection or `window_attempt_limit`.
 
 ### Inspect and retry
 
@@ -269,13 +287,13 @@ The Topic Memory recovery migration is a separate, versioned, offline conversion
 
 ### OceanBase identity collation
 
-An older deployment may use a case-insensitive collation such as `utf8mb4_general_ci` for opaque identity columns. The current Server refuses to start when it finds such a mismatch, and the error lists each `table.column`. Do not alter these columns in place. Follow the documented procedure: stop writers, take and verify a backup, export the data without DDL, create a new empty database so the current release creates the tables with `utf8mb4_bin`, import the data in four ordered layers, then compare row counts and identity collations before accepting writes. See the full steps in [troubleshoot.md](repo://docs/en/docs/operate/troubleshoot.md). If records were merged by the old collation, a schema change cannot reconstruct them.
+An older deployment may use a case-insensitive collation such as `utf8mb4_general_ci` for opaque identity columns. The current Server refuses to start when it finds such a mismatch, and the error lists each `table.column`. The identity column type pins `utf8mb4_bin` and the OceanBase profile rejects incompatible existing schemas before the Server accepts work ([identity_string](repo://src/powercontext/builtin/persistence/tables.py#L61-L84); [identity collation](repo://src/powercontext/builtin/persistence/migrations/mysql_schema.py#L993-L994)). Do not alter these columns in place. Follow the documented procedure: stop writers, take and verify a backup, export the data without DDL, create a new empty database so the current release creates the tables with `utf8mb4_bin`, import the data in four ordered layers, then compare row counts and identity collations before accepting writes. See the full steps in [troubleshoot.md](repo://docs/en/docs/operate/troubleshoot.md). If records were merged by the old collation, a schema change cannot reconstruct them.
 
 ## Ops tool recovery
 
 The Ops tool is a non-interactive boundary for a personal Server. Its requests are `inspect`, `config_validate`, `preflight`, `apply`, `resume`, `operation_status` and `cancel`. Its operations are `register`, `start`, `stop`, `restart`, `remove_registration`, `config_apply`, `install` and `repair` ([protocol.py](repo://src/powercontext/ops/protocol.py#L26-L36)). `apply` and `resume` require an `authorization` field, and the protocol rejects authorization problems in two distinct branches. The first is `invalid_request`: the `authorization` field is missing from the request, or its value is not an object with exactly the fields `plan_id` and `approved` ([request and object checks](repo://src/powercontext/ops/protocol.py#L84-L99)). The second is `authorization_required`: the object has exactly those two fields, but `approved` is not `True` or its `plan_id` differs from the approved plan's `plan_id` ([authorize](repo://src/powercontext/ops/protocol.py#L228-L231)).
 
-For a lost response or an interrupted mutation, query `operation_status` first. Do not repeat the mutation automatically. The Ops reference documents three execution states: `finished` when a final result is saved, `interrupted` when an unfinished attempt's executor has exited, and `unknown` otherwise. A present process identifier is not proof that the executor is still running. While a previous native command may be alive, new mutations, including stop and removal, remain blocked ([local-server-ops.md](repo://docs/en/docs/operate/local-server-ops.md)).
+For a lost response or an interrupted mutation, query `operation_status` first. Do not repeat the mutation automatically. The Ops reference documents three execution states: `finished` when a final result is saved, `interrupted` when an unfinished attempt's executor has exited, and `unknown` otherwise. `_status` sets `execution_state` to `finished` when a result is saved, and to `interrupted` only when the recorded executor PID is observed as exited; otherwise it is `unknown` ([_status](repo://src/powercontext/ops/runtime.py#L316-L330)). A present process identifier is not proof that the executor is still running, because process identifiers can be reused. While a previous native command may be alive, new mutations, including stop and removal, remain blocked ([local-server-ops.md](repo://docs/en/docs/operate/local-server-ops.md#L125-L131)).
 
 ## Host integration diagnostics
 
@@ -292,3 +310,9 @@ These tests describe the intended behavior of the paths above. Run them before c
 ## Related pages
 
 - [Deployment](deployment.md) covers how the Server, its database and its services are configured and started.
+- [Observability](observability.md) for the metrics and logs referenced by the readiness and Supervisor checks.
+- [Migrations and Archives](migrations-and-archives.md) for the schema migration background.
+- [Install and verify](../workflows/install-and-verify.md) for the install path that precedes these checks.
+- [Topic Memory workflow](../workflows/topic-memory.md) for the processing model behind the recovery steps.
+- [Sources and processing](../concepts/sources-and-processing.md) for the Scope and artifact-processing concepts used in the delay table.
+- [Desktop app](../architecture/desktop-app.md) for the packaged desktop entry point.

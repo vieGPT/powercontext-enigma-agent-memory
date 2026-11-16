@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:a4d138ad5dac45035a51d9dd7a5583f91fb1e42fd9a439db9dce927d9d72347b",
+  "pageVersion": "sha256:572de9bfaff6674d9b2397ce13e54bacc716ffeb87ff3f1ebdbf7ea83da20647",
   "claims": [
     {
       "id": "claim_b0754ba03de44cfebfec264112e33805",
@@ -17,7 +17,7 @@
       "statement": "The /metrics endpoint is a FastAPI route whose handler, when access control is configured, requires the server.observe action before rendering; each scrape calls refresh_runtime so the published snapshot is rebuilt from passive Runtime state.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/server/factory.py#L134-L153",
+          "resource": "repo://src/powercontext/server/factory.py#L121-L140",
           "version": "repo-lines-v1:sha256:b9421a47a5b9f8c5b18853c4fb073110d841dd9bbaf29b24b41ce3571a7bdb28:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhYjY4N2VkYThhNmE1MGZmYTA3NTliZDJmOGY1ZWQ3NTM0ODFiNzQ1OTlhZWU0ODE1ODU2NWNkNmRkY2IxZDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MDMyZTk2NGQwOTMyMzUxZTVkMTg1MjY5MjgxYjE3MWEzYTA5YjA4YjI4NmU2NjFlYTQ3MDMyM2M4MmViNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxMDMwMjc0MDMzOTJiZWQxZDJlYTE4NmM0MzVhYzBlNDcyZjNkNGYyMGU5Nzk5Nzg5ZWE4NjQxYzIyMDc3NTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwZmVhNzgzZGUxOGI2ZjA3ZDA5MWMxYjY0Y2I5ODYzMTk4MzNlNTRiZDRmNDkzNGJjODI4NTEyZmZjYjRmMGIifQ"
         },
         {
@@ -31,16 +31,16 @@
       "statement": "The /metrics route and the HTTP metrics middleware are added only when metrics are enabled; with metrics disabled the background role does not start its metrics listener.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/server/background_metrics.py#L36-L46",
-          "version": "repo-lines-v1:sha256:ffc39e35d8f3bd5939116c7233a63485d15b222f6376275762c88cb7acf49254:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAxMGMxYWM5Mjk2ZDYzM2IxMzc0NTlkOWQ3ZjdkODIyYjBhZTdhN2YxZmQ5YmU4MGYwMjM3YTcwZjY0ZjljNzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiZWQzM2IxNzJjNGE3OGY4NjE5NzkwMzYzMDllMDFiMjg5OTQ4Nzg3ZTQyNTMzYzIwZGU2MTRlNTRhODI1NzQifQ"
+          "resource": "repo://src/powercontext/server/background_metrics.py#L47-L51",
+          "version": "repo-lines-v1:sha256:feee0bab4f4c9ce645bafc7c19b3d58767059956ddc3d1ceea28e042d58a6f9c:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjA2ZmJlYWQyMWEzZjNjOGZjZjljZWU3NjY4MTUyM2JhZmYxZjkxZjQ3ZjMwZGJjZDllZjE5NTgxNjhhMzg5MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWI1YzgyNjMyZmM4MmQ0YjJjMzQwZjQyNTU4YmEzZGZhMzFjNzY1NWRmNmZjYzE2OGI0ZmRjZTU3ZmFjNjA0MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGE3ZjY1MzAxOGJiZTlmMzAwM2Y1ZmEyNGNhMTA1MmRiOGNhNTE4ODcwN2E0NTQ4Zjc1MTAwOWRiNzZlMTVjMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDZkOWIyNTZkZWE4NDM2NzQ4MDlmZDRiMjkzNWRkNTQ5ODNmYTY1NGU5OGU3MGZkOWNlNjU0OWM4Yjk2MjE1MSJ9"
         },
         {
-          "resource": "repo://src/powercontext/server/factory.py#L476-L491",
-          "version": "repo-lines-v1:sha256:5ed71cd07f644c55c9cbf7cfe43d7934c3804a03512011a23fb717b97906032d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmMjkyYzU2ZTA4YWY5OGE4ZTI4YWU0NjQ2NTlhOWM5Mjk1ODI4NGVkNWQ1NTY3MTc0NGZhYTdhNDgxM2FmNjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmNDI2NDJkZWNkOWQ0NmY0MWNkYWE1OWM3N2YzYzI1MmZmZjgyNjQ1NmNjZmYyZjY3ZWJmOGM5Njg0YWFiMTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwZDkxY2ZkN2ZmOWY0YjZlM2NiNTU2N2M1MGUxYWFiNWZlODI1YjhhYWFmZTg5YmJjNTViZjA3MzY4NTA0YzYifQ"
+          "resource": "repo://src/powercontext/server/factory.py#L486-L497",
+          "version": "repo-lines-v1:sha256:2df3e88b0b2422b13035f6ea5f115c1476aa52cbde9c1c1391f08a16f344b690:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmM2MwMTJiMGZjYjgyNmJmNGM0NWIyN2E2M2M0MmIzNTBhZGQ2OGI5YWQ2N2EzMDBjYmZkYWMzNGM4YzRlMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1MmY1MDVjZWNiODM2Zjc1MjBiNTM1NDM5YTI2NTIwNWZhMTZiMGExZmYzNGI2OGY4ZTg4N2QyZWY3Y2NiMjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZmOWFmM2Y4OTZjNDNiNmU3ZWY2OGQ5ZDc4ZWJlOWY2N2MyZTQ4YmVhYmEzYjhiMmVjYWZmNWFjNWYwMWY0NDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVhN2NjNzQ4YjUxZjQzN2NiZWViZWM5M2I4ZjllZjY0MTBhMTM5MzQ0YTE4OTkwZGE3Y2JhYzQ2YjNiMzM2Y2YifQ"
         },
         {
-          "resource": "repo://src/powercontext/server/settings.py#L222-L231",
-          "version": "repo-lines-v1:sha256:ebb82f943cf2ccb78a839acaaca7c75db121b1a50d9005904a4702c5caa9a927:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3M2FmZDljZmFlMjk1ZDE1YTQ5OThmYWMzZDQzMzliNDNiYzE2MzAzNmJjZDZjZDg2NWZiMjlkOGUzY2QzMmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzMGJhYTJkMjM0NWM0ZDcyOTQxZWIwNjIyMjVkYWE0ZTkzOGExODRkNWU0NjZjOGMzYWJiODczZmU5M2ZkNzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIxYWIxYzVjN2RmNzEyMDA3MWJmNzdjMjExY2IxY2Y1ODMyY2MyYWY2MzY4MjkzNWRiMDQ2NzE4NTc3YmUwYWYifQ"
+          "resource": "repo://src/powercontext/server/settings.py#L226-L231",
+          "version": "repo-lines-v1:sha256:d75facc047ef2da1de565f45f84109f71d6504057c435ad73832713765da53ef:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWJiY2QwZmIyYTgzMDgzZDRlYWVkYmY4MmYxZDBkMzIzNGI0ZWUyZjkzOGM5ZjI2YmFmYWM5NjMwYTcyNmYxZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWE4YWM3ZTVjZTZjZWRkZTM1OTc0NjUyZWNmZDMxMzU2YTVkMjI2MTBkMjJmZmQ2YjhkOGEzMGQ1MDZmN2M2YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjFhYjFjNWM3ZGY3MTIwMDcxYmY3N2MyMTFjYjFjZjU4MzJjYzJhZjYzNjgyOTM1ZGIwNDY3MTg1NzdiZTBhZiJ9"
         }
       ]
     },
@@ -95,7 +95,7 @@
       "statement": "Freshness timestamps are kept separate: the telemetry collection timestamp is 0 before the first collection, readiness observation timestamps are distinct from actual dependency probe timestamps, and probe timestamps are not updated by cache hits.",
       "evidence": [
         {
-          "resource": "repo://docs/en/docs/operate/observability.md#L184-L261",
+          "resource": "repo://docs/en/docs/operate/observability.md#L190-L267",
           "version": "repo-lines-v1:sha256:38c40a840d621bea2d7812573fe402e7fc2b54ceed1831b1c78840d8e96ef4d4:eyJzZWxlY3RlZExpbmVDb3VudCI6NzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5MWM2YmQ3YWY5OGJkMDJiMzFkZjc2MWQ0OTBhNWZkMDg4Y2ZkZDQ4YjhmMGY3ODdmNjM4MGRmOTYxZTQ1ZGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxMmY2OTEwZjliZmU1ZDA5Y2M5NWYzYzBjMzIzZWVmMDM5NjMwODVhMjJiNjViYzg1ZDcxOTg4OTJkN2UzZTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg0NzM0MTgwMmU3NGZkYTg3ODlhNmMwOThlYjI3MjBjNDE5OTBhYWQ5NGJiNWM1Njk4ZjUyMmI2MTdhZTI3ZTgifQ"
         },
         {
@@ -131,7 +131,7 @@
       "statement": "Exemplars are attached to application and transport duration histograms only when tracing is enabled with a tracer and the current span is sampled; the exemplar carries the trace_id and is never a metric label.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/server/factory.py#L203-L207",
+          "resource": "repo://src/powercontext/server/factory.py#L201-L205",
           "version": "repo-lines-v1:sha256:1f71f66029a74f778a94ebf2e612dd7540a39b892b0c4f764ce737c6732add54:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTQ4OWNmOTNhOTEzMTc1OGRiZjRiZTg1OWU5NTUxNjg0NTM2YjA5Y2MzNTYzNmEyYmRjMDkzNzZmZDQ0ZGNlZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTkwOWE1M2E2MThkMDI4ZTFkMzAwMGMwYTdhYmNlZWNiZTVmYjM3ZjRlNTExZWZlNDY2NDNmYWQ2ZTY2ODcyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODE1M2JjYTM2N2M0MDg0NzhiMTRmMjFhZTBiNjQ4YTU1YTBkN2E4MzFkZjljYTk4MzhmODk2ZWY5MmE4YmNjYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWFiZmI2NTA5NDBiNTE5ZjA4OWUwNWNjYzMwNTA2MDE5MGIwN2U4OTBiMTBhZGQ2MGEwMzYyMWM3MzU0ZTIyNyJ9"
         },
         {
@@ -145,7 +145,7 @@
       "statement": "HttpMetricsMiddleware labels each external HTTP request by its declared operation identifier or the value unmatched, skips the health, /metrics and MCP paths and internal bridge calls, and records success only when the body completed with a status below 400.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/server/factory.py#L486-L491",
+          "resource": "repo://src/powercontext/server/factory.py#L494-L499",
           "version": "repo-lines-v1:sha256:42d92416537cc6331453b03549ae4a864e747bcce543ea67900f43f69649a76d:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODA3NGE1ZTU2MjdkNjNiNGM0N2Q5MmI3NTA4MmI4MjFiM2FiYjAyZmE2M2U3ZTEzMjBmYzYwYTZjZTk1ZjdkYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmYyOTJjNTZlMDhhZjk4YThlMjhhZTQ2NDY1OWE5YzkyOTU4Mjg0ZWQ1ZDU1NjcxNzQ0ZmFhN2E0ODEzYWY2MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTgyYjMxNjZiYzdjYjIyYmZlY2QwNDg3MDNkMjZiZTAwODI5YWI5ODI5M2VkZjQ4MWNlZGM4M2FlNjE3YWEwOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDBkOTFjZmQ3ZmY5ZjRiNmUzY2I1NTY3YzUwZTFhYWI1ZmU4MjViOGFhYWZlODliYmM1NWJmMDczNjg1MDRjNiJ9"
         },
         {
@@ -173,7 +173,7 @@
           "version": "repo-lines-v1:sha256:fd540fbf0871c3b73df6d155a07ff38ef5e952adb8c0352106980537530c68bc:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3YjdjYTVlNmQ1MGY5ZDcyM2IwYTAyOTgwNGIxNTRlY2U5MmMxYjg2NjZmZDBmMDJmMDU2NWE5MWNiNTY4NGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAxMGMxYWM5Mjk2ZDYzM2IxMzc0NTlkOWQ3ZjdkODIyYjBhZTdhN2YxZmQ5YmU4MGYwMjM3YTcwZjY0ZjljNzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwNDZhNjIyOTdiYmU2OWRkMzEyNDRmZjE1Y2Q5YzYyNWMxMzViZTg5ZTEyYTFkMzNlZGQxNjlhY2FiMjk0OWQifQ"
         },
         {
-          "resource": "repo://src/powercontext/server/factory.py#L946-L968",
+          "resource": "repo://src/powercontext/server/factory.py#L862-L884",
           "version": "repo-lines-v1:sha256:f0b20cfa17c63e34edbfa9440d89b8d26b59880dda3236d2f663b6166ce6ef7b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5ZjJlMjg2ZTlmYjZhYjI2YTZlYzhjZGIwNzRiNmUxNmE1MWUzMmU3NDFlZWI2NTUwYTdhOTAzZGE2MTNhMWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkNjdiNDY2Mzc4NzVjM2JiN2Y5MDNiMWRiODczNGI0YTI5NjY4NWRmNGRiZTY2YTRmNmNlZjdmZGM0MTE2M2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQzZDE3MWRlNzU0MzFhMDIxYTBkOTRmYTc2ZmFiZjBkNzEzOWM4OThjMWEwYjQ0YjQzY2E2MDkwM2ZhMWI4NDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         },
         {
@@ -187,7 +187,7 @@
       "statement": "Provider call metrics use the powercontext_server_provider_ prefix, exclude readiness probes, and keep provider URLs, credentials and content out of labels.",
       "evidence": [
         {
-          "resource": "repo://docs/en/docs/operate/observability.md#L363-L421",
+          "resource": "repo://docs/en/docs/operate/observability.md#L369-L427",
           "version": "repo-lines-v1:sha256:0eccc014e1e10aa59c1e90ff0212a03cbc9d0272db4af727d2b2bef978996332:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkMmIwYTRmMjBiNDlmNTcxMmMxNDM1MGMwYzVhZjJhMjZhNzIzNzc2ZDc1NWU2Y2VhOGQ0YTdlNTA2YTgyODYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI1ZjQ4MDNmOWEwYjBiZWE4MzgzNTM2NTdjYzk3NjdlNGUyZjA3NmM1NzgyNDI2MjFlNTJkZjNkOWE3MmE2YzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjViMzJiNjFmZmNkNDc5ODkyYzNiMmM4ZjcwMjQ3NDc2ZGQxYWE4YjZlYzcyMWFlNGQxNzA1YWRiZWNkOWIyYjMifQ"
         }
       ]
@@ -219,7 +219,7 @@
           "version": "repo-lines-v1:sha256:050f7a4f82ee78c012030fae70d90dff9c599eec90f77a92cfcca60c01f4a1fa:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxZjQ3M2E1N2E4NWY2MDFjMmM2OWM2NDA2OWZiOTU3YzkyY2QwNTRjMmVhMDk1ZjczODRjZDhhODI3MGZjMzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzNGQ0NzUwMjhhNjFmMzZjZDE4N2EzOWMxNWU4NWRjM2NjZjIxYTg2NTc2ZmExNGM5NDYwNzMzZjExNzY0MTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMyMTQzMDJmNWFlMmI5ZjNiOWMyZDEyNjE2YjQwM2M4MzgxODc0OTEyMGY2MjhmZDY0NGJmY2JmYTM5MTI2ZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4NTJlYzNlMmFhOGE3MmRhOGI4OWZmM2UzNDQzNjU5Mzc2MzA4NDNlYTkyMjRiNmJiZWQ1M2Q4YzVmZWE5YjkifQ"
         },
         {
-          "resource": "repo://tests/test_server_tracing.py#L554-L559",
+          "resource": "repo://tests/test_server_tracing.py#L559-L564",
           "version": "repo-lines-v1:sha256:b0e56bbe67718df15a29cd781ca9f2efb8c99cb142966ced78745ed2aff4a5c5:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGI2ZDg2NWFlOTZhNDVlMzJmZmU0NjAwNmEyN2M2OGEyYjRiYjM4ZjVlZTU1MWY2OGNmYTc2OWQ4MzYwOWJlYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTI5ODljYWUyNjc0OGI5MTRiMjRlZGQ2NDVkNzAyYzEzYWExY2VmYmMyMWM5ZmY1NDcxNTFjZjhiNmQ0OTY3MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWZlYTA0ODA0ZmIxMzMwOGZiMTkzYTI4OGFhNjk2ZjA2YjA1ZjAwNDliZmE5MjY5NDMwZjhiNzg5M2U3NjBhZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
         }
       ]
@@ -301,7 +301,7 @@
           "version": "repo-lines-v1:sha256:bed0523ffad453310d14b4c9bb005e92b2d308f8b55f5141fa0ded66942b8860:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1NjdlYTcxNTM5ZmEwOTRhYmNlNmU3MWU3ZGFlYTllZjQyMTg5YmQ3ZmE5MjExOTZiN2VlYjFkMzY4YmQ5M2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1NjdlYTcxNTM5ZmEwOTRhYmNlNmU3MWU3ZGFlYTllZjQyMTg5YmQ3ZmE5MjExOTZiN2VlYjFkMzY4YmQ5M2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2MzM4NmY5YThhZTllMzY4MzI2MzNiM2VhOTdlY2Y3OGU5NzM3NmE1MWEyZjcyMTM2NmNlMTBmZTg5OTY0N2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYzZGRhNzE3YTg1ZTJhZTY1NzI1YzliNDA0OTk0YzQxMTA5ZTE0NDlhYWYxMTc2OWFlZGIyNzE1NWFlNjBiYmQifQ"
         },
         {
-          "resource": "repo://tests/test_server_tracing.py#L472-L497",
+          "resource": "repo://tests/test_server_tracing.py#L478-L503",
           "version": "repo-lines-v1:sha256:4d4ab52c5963b013054bc753203a752f47fe206223182d56668b365193ff6f07:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhNjQyMDViMzE3MTBiMWEzNDQzMTBkODkwZDBmYTAzNzdjZDk5ZDY0MDI3ZDg5MDY0NjFiZTdkOGNjNzY2MTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljYzYyM2MyMWQ3MzQzYjIzNGVmODhmNTQ4N2IyNGMyNjAxYjkwNmI0ZmM5ODMxMWJjMGQ2ZGY2YWJjYzZiYzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI1N2YyN2VlZTc3OTRiOWIyZGM4OTQ5NTM3ZGMxMDJmNzFiNmUwYTI3ZjljYTU3NjNkZGJhNDY5MGQzYzVlZTYifQ"
         }
       ]
@@ -325,12 +325,8 @@
       "statement": "Spans created through the sanitized path disable automatic exception events and status descriptions, and on a failure they keep only an error.type attribute and an error status.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/server/tracing.py#L97-L143",
-          "version": "repo-lines-v1:sha256:91c493755e85272ffc9d3303c50421f2c03887140d5f33427a6a6b7a5037ff02:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0OGY2N2VjYTE2ZjA2NTYyZGRkZTRmMTNiNDc0ZTc1MzNlZTMzNTJhMmY3ODk2MDAzYjQ5ZGQzZDAxYzYxZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiNDEyZTNkYTkwYzhiZmIzMmI2MGU4YTUyODI3NmZiZTMxMTMwZGZmOGMwYzQwOTA3NThjNTQyODU5ODk0ZmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhhZmU0YTdmZWIzYzVlN2ZiOGNjZjcwZmE3NzIzNDkxYWMzOTgwOWRmZjE4YWVmMmFiODE1YzExZjc2MzM0YTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE1NWVlYzk1ZjczYTJmZjFiZjRkODU3YjQxZWQ3YzU0NWEyN2QyZTIwYjk0MDI0YmJiOWUwN2Y2ZDFhM2NlMmMifQ"
-        },
-        {
-          "resource": "repo://tests/test_server_tracing.py#L158-L193",
-          "version": "repo-lines-v1:sha256:f5044c056ecd4b98510f6c31a5ec579dd7b81587612bc701738a71062c7f5709:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3NmZmMGMzZTc3YWUxMWM2NzQzZjI2MDk2M2JhODY1NzIwMDUyYjAyNzY5ZWRhNDVmOTQwOTlkOGU4NWY1YmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQxN2YzZDVhZWE0ZDNhYjY0OWNmZTFlNWNjOTliMzdkOWJkMjc0ZjUxM2E5YjRkOGY5YWIzZGQ4ZGVlNTQ2MjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjNmVkMGY5NjhkNTEzYTQ1YjE4NDJiNmNkNGU0YmFjMjdhZGZmNzIwMTUzMjFmMTU2YTVmY2M2MjMzNzQ0MWUifQ"
+          "resource": "repo://src/powercontext/server/tracing.py#L96-L143",
+          "version": "repo-lines-v1:sha256:981f0aea51a5db56d7e30c30b28380cf3fc8466690b0ced1211bc0f4fae56307:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0ZGE5MzUwMDE5ZGMxZTY2NzQ1MjY0Mzg3MzE2MTk5NzIyNWU5Y2U2MDEwN2FmN2I2NGY4NDBkZGVjZmRhNGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiNDEyZTNkYTkwYzhiZmIzMmI2MGU4YTUyODI3NmZiZTMxMTMwZGZmOGMwYzQwOTA3NThjNTQyODU5ODk0ZmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhZDMzNjQxM2QxOTdkYjVhZTJmM2FhYmU4NmRhODk0MGZiMWRjZDJhZDBmNzcwOWE1MjcwYTY5OWZmMzUyNWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE1NWVlYzk1ZjczYTJmZjFiZjRkODU3YjQxZWQ3YzU0NWEyN2QyZTIwYjk0MDI0YmJiOWUwN2Y2ZDFhM2NlMmMifQ"
         }
       ]
     },
@@ -339,16 +335,16 @@
       "statement": "Inference spans are suppressed while readiness probes run under an unsampled context, and a tracing setup failure does not change the readiness result.",
       "evidence": [
         {
+          "resource": "repo://src/powercontext/server/factory.py#L700-L704",
+          "version": "repo-lines-v1:sha256:bfea6b5eab58e3c7a86acb031a63d946f3f04d8903bdb554964b3a2a685ffd81:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTlhYjVjNDcxMjUwYzAzOTY2YzM1NmY3NGEzMjQ1ZTEyZGExNDBlNDQwZDllYzlhYmRlNDFiZTRlNjc3NWZlYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTE3ZjIyMmZkMzIwYzY3NjNlMjFiMjA1ZDUxYmVhODdhMGU0Y2Q1NDUxNzVhMTY1MmU2Njg1MTA4NDkxMDNmYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDU1MDcxMmIyYzAyOTNmMzYwYzBkOTQwMTM1NWFjYTk4ZWQzNDU1YTU1YjllZTJhOGZmNjY1ZmFkZjlhMThlZSJ9"
+        },
+        {
           "resource": "repo://src/powercontext/server/tracing.py#L250-L277",
           "version": "repo-lines-v1:sha256:18dd2d8606cb70ade826e33a8aa230bab9de790b895a98af6835a5f49ee20968:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1NjdlYTcxNTM5ZmEwOTRhYmNlNmU3MWU3ZGFlYTllZjQyMTg5YmQ3ZmE5MjExOTZiN2VlYjFkMzY4YmQ5M2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhlNGNmOGEwZDgwODZlNGM5YThkZDMxNWY0Nzg3YTg1NjU3ZjA2ZmNhNWVhMzg3NjI0MGY1MDE4ZjI3ZjRiOGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNlZGE3OWVjZDUzZjFlYjhmMTU4MDdmYzEzOTQyM2MwMTZlYTkxNTdlZmVmYzc3ZDg5NDRhOWMwZWJhNGRlN2QifQ"
         },
         {
-          "resource": "repo://src/powercontext/server/tracing.py#L65-L128",
-          "version": "repo-lines-v1:sha256:0a65b3ff53e1fca10f07e45e397cd93836347aed2060dcc2f3a322ad1a385a7a:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyOWY5NGQ0OTAzMGY1NDNjMGNkYjUyYjAxMWM0NGUyY2U2OGQwMTBjNjM1YmE1NmRlZWFiODQ2MTk5OTBkOWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5YjRjZTk1ZmQ5YTQ0MzZhZjdjMmE1ZmM0OWM1ZTM5OGFiODA2YTkxNjFiMjQwZDA3YjIzZTM0NjZmMTFhYzQifQ"
-        },
-        {
-          "resource": "repo://tests/test_server_tracing.py#L529-L551",
-          "version": "repo-lines-v1:sha256:fb97ec2cda77c25495b07c8ded8a68584068f61b1f006ca5ac17697f022a5e50:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlYTIzZjAyOGUxMjQxM2RjZTMwMDA0ZDk0YTMyNjExYjZkNTgyYjI5NjEyNWM1MDFiZTc5MTQ0MGM4MWM4NzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiZmMzMDA3YjAxOTI1MDFlMWEyMDYxYmJkZDA5ZjY1ZDE5YmFlMzNmZWE3OWNlNzNkYzU0YjZjYjc1ZmM5NTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2ZTRmYTc0NjllZTBkZDBhN2NjZWQyNDFmYTA0NTMxYzUwZDQ3OGE4MTBhMmM3ODk1NzIyOGI1ZjMwNzYxNjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYwZmNhNzU0NDhmOGRmOGMyN2Q5MDEzMjNmYWIyZjJkNWRjY2I2MzQ2ZTM0YjA4YmNjMTMxZDM4ODJhODYwMmMifQ"
+          "resource": "repo://tests/test_server_tracing.py#L535-L556",
+          "version": "repo-lines-v1:sha256:d10e100f50cf2faf4f47d570ad2ff2bef99ea404fd33898efac222456474efab:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlYTIzZjAyOGUxMjQxM2RjZTMwMDA0ZDk0YTMyNjExYjZkNTgyYjI5NjEyNWM1MDFiZTc5MTQ0MGM4MWM4NzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiZmMzMDA3YjAxOTI1MDFlMWEyMDYxYmJkZDA5ZjY1ZDE5YmFlMzNmZWE3OWNlNzNkYzU0YjZjYjc1ZmM5NTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2ZTRmYTc0NjllZTBkZDBhN2NjZWQyNDFmYTA0NTMxYzUwZDQ3OGE4MTBhMmM3ODk1NzIyOGI1ZjMwNzYxNjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYwZmNhNzU0NDhmOGRmOGMyN2Q5MDEzMjNmYWIyZjJkNWRjY2I2MzQ2ZTM0YjA4YmNjMTMxZDM4ODJhODYwMmMifQ"
         }
       ]
     },
@@ -371,7 +367,7 @@
           "version": "repo-lines-v1:sha256:22f9d3fd147b82242a999b5de5e56376d0c2cbabe701034fa3abbb2286f89015:eyJzZWxlY3RlZExpbmVDb3VudCI6NzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzMmM2ZWVmYWViNzU0ZjlmOTJhZjZlZTA4MGUxMDAyMTliNDFhYjdhODQ2Yjk0ODlkZWQ1ODg0YWU5YmRlN2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmNmViNWVmMzM3MzExMjFhMWJmOWI4M2UzNDA1YTU5ZDJmMjJmODQ2ZTdkOTc5OTJkYWQ3ODNiNjExZTE1YmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM4NWQxNjg4ODZmYmFhODM3ZWI1MDgzMzUyMjdkOWVkMzE4NTI3MjRmNTczMGM0YTI1NzBkOTRhMzdlMzlmM2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxMWQ5Yzg2MTQyYzM3MDE4NTlhZTAzYWQzYWNjYTI3NzkwYTY1MjliYzNkZTVhNDg2YmVkMDM1N2ExZjU3MmMifQ"
         },
         {
-          "resource": "repo://tests/test_server_tracing.py#L194-L231",
+          "resource": "repo://tests/test_server_tracing.py#L200-L237",
           "version": "repo-lines-v1:sha256:3ccaec856309f9819bbe75e7fdbc268a890103403fd8198bc63cdc83c00e3397:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4NTllMzgxZTM5ZGU3NmQ3OWM2NzdjM2FjZTdjNjQ1MGI3OWUxMGU5MTk2MDlhODFiNzA1Yzk5MThhOTEyZGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIxZmQ2MjMwMjA0ZTE2YjhhZjYwN2U1NWQ3Zjc0MTRiNTM4NWI5NjM0YWEyNTI2ZmEwZWZmMTJlY2RjZGU0ZjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY5MmU0Yzc5MTE4N2QyODQyNmI0MjAyZDNlNDg3NmUzMGNlODI3ZGUwNjAxYTc0NTQxMjE1MjE3ODY2MzU2YTIifQ"
         }
       ]
@@ -381,7 +377,7 @@
       "statement": "configure_server_logging selects a stdout stream handler by default, a file queue handler when logging.file is true, and a socket channel for worker processes, and it uses a JSON or console formatter according to logging.format while keeping the powercontext and uvicorn.error loggers from propagating.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/server/logging.py#L527-L594",
+          "resource": "repo://src/powercontext/server/logging.py#L533-L600",
           "version": "repo-lines-v1:sha256:357196c3ec61f68845c03c0d14f392bba0ecf7c31973fa4cb3964681f6181da4:eyJzZWxlY3RlZExpbmVDb3VudCI6NjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyOTg5MjQyNWE3YTNiMTM4YWMxMzQzMDgxNzFjNWFjOTEzZThjYjdlZGU1ZTY0MmYwZWJkOTE1NzEwZDQ2NWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY4YTE5YzQ5NGE0NDJkNGUyMzJhMzJkNGE0NzZmNjE1YjVlMDhkZjZiODkzMjhmNmJiNWI1ZjBkZDc1NjU2MjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgyZjk1NmUyNzdjYzZmZDk1ZGVkZDEzZWM3OTcxOWFjMmZjMmQzNzU1NTNlOWU0OTBiM2VhYzY1NzU0YzBkYWMifQ"
         },
         {
@@ -419,11 +415,11 @@
       "statement": "File logging is opt-in: an exclusive per-role file lock rejects a second writer for the same directory, rotation uses max_bytes (default 20 MiB) and backup_count (default 10), and a gzip archive is published before its uncompressed source is removed.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/server/logging.py#L313-L327",
+          "resource": "repo://src/powercontext/server/logging.py#L319-L333",
           "version": "repo-lines-v1:sha256:13768946c83f27000af73ddf3babd48ae92d660b7fce4ff691908c8b8f7deca8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxOTE5NGIzM2EzMzc2MGVlODU0MjEyNzZmYmQyYWJkZGM1MDU1ZTQ3MDYwNmVmYmZlYzI3YjEwODQzZjkxY2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg1NDEyNzMwOWZkZTJiZWUxOWQzODY1MWRkOWU5ZmJiZmQzM2E5MGM2Yjc1ODk4NjY4MzM3N2U1YmNjNzUyOWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2OGJhNGQ4NWNhZmFkOTlmMzM3YjM3ZDEwNDg3NThhMjkxMjI2NjRmZWY0Y2M4YmIyMmI2Y2E0OTkyMWMwZDEifQ"
         },
         {
-          "resource": "repo://src/powercontext/server/logging.py#L358-L393",
+          "resource": "repo://src/powercontext/server/logging.py#L364-L399",
           "version": "repo-lines-v1:sha256:e05b07e9d3329161c2bce6e33bd2632958248cdf09204e9d070b099039c4eb84:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4ZWYzOGMxNjdlNWFlMmY5MDgyNTI3NjZkZTJjMzMyMTE1OGVkMjQ3NDlmZDQyYWU4MzRlY2ZmNjVkYzdjOWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3OGQzNDAxMDUxNDJiODk3NjA3NzU5YWMxYmI5N2NmZWZiZmVkN2E5YzY5OWRlZDY2OWJkYzNmYTQ0YmQxNDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5MzZmZGM4NDZkODNmNGNkN2UzNWFkYWMxMDk4MTAxNDI3NDc2MjA2NDk2MTBkMGM0YzlhNmZlMjhiYzQ4MzIifQ"
         },
         {
@@ -437,15 +433,15 @@
       "statement": "When the Server owns the file sink, each worker's log records travel over a socket pair created before the worker spawn and drained into a bounded queue of 1024 records; the receiver does not listen on a network port.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/server/logging.py#L329-L346",
+          "resource": "repo://src/powercontext/server/logging.py#L335-L352",
           "version": "repo-lines-v1:sha256:1f13910f5b70c1f726ab0d3a2b3e0bc969eb72ca16eaa53650e5c923b8a4a719:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2YTljNjBhNzQ2OTliOTA5ZjY5ZjAwM2NkNzFiNTNiMTZhMjU2MjJhMTk2NjU5MGIxZjk1ZTRlOGIwY2RmNjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmYmRlZTM4ZmM4ZjdlZjMxODA1ZGQ5MjAzYjQ5NzljYjMzMzg2NDJjMGQwNTU0NTM1ZjNmZmQ1NDlmYjBiZjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI2ZmRkNmMxMzVmMWE4MTcxOTFhNzQ0YzY1ZTk1Njk1YzZkMmI3ZjFjNTM4ZjBmYWU2YmI0NjE0N2ZlNDE1NzQifQ"
         },
         {
-          "resource": "repo://src/powercontext/server/logging.py#L358-L412",
+          "resource": "repo://src/powercontext/server/logging.py#L364-L418",
           "version": "repo-lines-v1:sha256:dc2eeff71cf10e3c23f1c32b907a2351b0cfc0e65250f6d740c181cbfaf4b7a5:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4ZWYzOGMxNjdlNWFlMmY5MDgyNTI3NjZkZTJjMzMyMTE1OGVkMjQ3NDlmZDQyYWU4MzRlY2ZmNjVkYzdjOWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0ZGE5MzUwMDE5ZGMxZTY2NzQ1MjY0Mzg3MzE2MTk5NzIyNWU5Y2U2MDEwN2FmN2I2NGY4NDBkZGVjZmRhNGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3OGQzNDAxMDUxNDJiODk3NjA3NzU5YWMxYmI5N2NmZWZiZmVkN2E5YzY5OWRlZDY2OWJkYzNmYTQ0YmQxNDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0NWVmODlmZDRhOTlhMDkwNTBiYjM2MDdkYmM4N2U4YTJkMjU0NWEyYzg3YjgzNjRmNDFhNTdlYzk3YmRhOGUifQ"
         },
         {
-          "resource": "repo://src/powercontext/server/logging.py#L635-L670",
+          "resource": "repo://src/powercontext/server/logging.py#L641-L676",
           "version": "repo-lines-v1:sha256:4342d0a5a2f7b75770b1157251b7c88e8311ba3f0f0963f4c81965823a4f0d15:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwNTBkYzVjMzg0M2I2MmM4YzU3NzJkNjMzYzg1MWVhZWFjYTE5YWE4MDNjYTc5OTZiYmEzOGVlMjM1ZDBmZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MWYzM2MxMzI1NjlhNzQ5NDZiMmZjZjU0NmNhM2M0NDI1ZGEwY2E1Y2Y2YjY4NmMyNjA5MGZhYTlkMTEyYjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcwY2UzZjI0YWI0N2MyZjVhOWQzMzdmMzc3ZWQ4NTczZmE1NjU4NDA3NjQwMmYxYWYwNTRhM2RlZDYxOTQ2MmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhkNzNlZTQ0MThiNDQwODlkMTc2MDVmNmFhMzBjZjBlZjI2ZDZlNmJkMDJkZGQxMTU5NzQwM2EyZGZkMDQwNDIifQ"
         }
       ]
@@ -455,11 +451,11 @@
       "statement": "An explicit logging directory without file output enabled adds a per-process JSON file handler that writes <role>-<pid>.jsonl with a 10 MiB threshold, three backups and at most 64 retained process generations.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/server/logging.py#L431-L450",
+          "resource": "repo://src/powercontext/server/logging.py#L437-L456",
           "version": "repo-lines-v1:sha256:4c70a144950af9293db34828dcbb63cf505a8537bbb2743822028966acbdc7d0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmYmNmYzM0MDgxNzNmNDNiZWY3NjBmYTY3MjJjNzE1NGIyMWMyYjBlYjcwYTZlM2U3NDYyYjg0YjRkNjBjYTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0ZGE5MzUwMDE5ZGMxZTY2NzQ1MjY0Mzg3MzE2MTk5NzIyNWU5Y2U2MDEwN2FmN2I2NGY4NDBkZGVjZmRhNGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcwZDM1ZjIxYzQxOTBjN2VhZDgzNzdkMzFmMjQ1MmVjZWJjOTMzMzc5ZWUzNzJmYTVjMTVhYzg4M2VjZGIyZTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkNzAyZjM5YjEyN2Q3ZTJmOWMyMTAyYjRmNTFkNDU3OTk1NzM1NzkzZjM2MGIzNDc1NWViOTYyZjM1OTUxYzcifQ"
         },
         {
-          "resource": "repo://src/powercontext/server/logging.py#L596-L610",
+          "resource": "repo://src/powercontext/server/logging.py#L602-L616",
           "version": "repo-lines-v1:sha256:e28c91f9af6f71152c92808c9743b3418e9c5d871b5d54816270a6fcc45cf6a3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4NTY4NWZhZTU1NzcxYzliMDg5ODBkZGFiOTk1OTkzNTk4MjhhNDhjMTE5YmMyZDI1MDlmZjRlMjExMWYzMDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIyMjdmMmQzZDZhNzZjMmYxZjQ2NmQ0MjE2N2UxNDc0NjViMWQzMWQxMWFlNzNjYWI3ZTI2MTBkNGY4MzA0MjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmMDQ0OGI4YTJlN2QzOThiOTIyMDNmM2I2Y2VmMGJmYTFiMDU5MWM2ZThjMDFjMzk2OGJjYTAwMjMxZjg1MmYifQ"
         }
       ]
@@ -477,15 +473,15 @@
           "version": "repo-lines-v1:sha256:351ae37c7af249ed39d1f58890c982876c68a8be012437ca948c93550c0f1112:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTg2MDE5ZTIzOTk5MWZlMWM5OWRjOTc3ZmYyOGYwYTk3Y2NiZjFmMWY5ZDg4ZTI2MmMyOTdmMjc0MDdlOTljYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFmYmEwNTI3YzM5NTNjNGI2ZTBlNWI1NzM5YmE4MzYxMmY4MDUzYmNkYzk0NjY3MzAxOTNjZDFkNTkwYjQwOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODIwNzMwYTA0YzFiZWUyYWMwNGFmYTdkNTMwMjVhNzllZjVlNjMxZjg5OWQwMjdiZDkyNjMzZDhmN2U3NGE5MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWMwNzZiMjBjMzY3ZjNlZTAwNWFlYTViMGU3YzI0NmM4NDkzMGNiMTA4YmEwNzEzYjdiNTdjNmZiY2M4ZTBjNSJ9"
         },
         {
-          "resource": "repo://src/powercontext/server/logging.py#L473-L508",
+          "resource": "repo://src/powercontext/server/logging.py#L479-L514",
           "version": "repo-lines-v1:sha256:9ab3838787222f49bb1f64df6fa7cd105794bbdd1c54d8868797cc2932867f2d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjOTRjMDBiZDA5Nzg4OWIxZmVhODJkNzc3YWVkOTlkNGExNTFkYzM3OGQ1NWNkZWYxZGFjMmYxMDM0YzM1MTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdkNjk1ZjYzYzRmOTI5ZDVjYjkyZGY1YjM4ZDRhMmM2MWUzM2VhM2FhYjBhODU2ZTAzNWQwNDU1Yzk1ZTdlMmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ1OWZiMGY1MmVmZjA5MzliMmQ2YzdjOTBhMWU2ODEzNjdlZjE1NTk4MTMyMmJkZWIzNDViNTU3ZDAwMDc4ZWMifQ"
         },
         {
-          "resource": "repo://src/powercontext/server/logging.py#L586-L592",
+          "resource": "repo://src/powercontext/server/logging.py#L592-L598",
           "version": "repo-lines-v1:sha256:66df7c46563fcffc30752eadd88fd1de762ebbd94dac17166a7e55c5f6c0d4a8:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2Y3Y2MxMDM0Y2NkY2M2ODcxYjllMTIxYTFiYjI2NDllMjg0ZWFjZWU3NDgxYjI1NDVhNTFlYmZjZWM5YjRlNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGYyNWIxNTU3NDNkNzI4NGRkMWNkMmIwODI4ZDVmZTFkNWIyMmUyNGNmNjc1NWIwNmEzODkzNDk3OGViYWVlMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDA4OTA3NGE4YWFmN2QwMTYwNGUwMDAwYzE5ODQwMTVlMjE4OGNkZjRiOGRkZjBiNDRkMTJmZDNiNWU3MWYxMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjIyN2YyZDNkNmE3NmMyZjFmNDY2ZDQyMTY3ZTE0NzQ2NWIxZDMxZDExYWU3M2NhYjdlMjYxMGQ0ZjgzMDQyOCJ9"
         },
         {
-          "resource": "repo://src/powercontext/server/logging.py#L612-L640",
+          "resource": "repo://src/powercontext/server/logging.py#L618-L646",
           "version": "repo-lines-v1:sha256:83cb9eb9b8d9e3677af06b886d7dc00de043547dc120c1df3dcb8fb88a3d6087:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2OTM5ZDZjOTJlN2QzODY4NTNhYTU3ZTlhNDA4NGZhMzllOTJmOTRhNTFjMjFjMGMxMDgzMTVjYTEyYWEyZDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5MDJiNjgxMDRkMTk1YjNiZTAwYjliOTczNzI2OGEyYzZlYTVkYTE4NWNlZTkyMzliZDdkNjVlYWQwMGI3M2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmNWM3OTIyOTk1MzRmZTBmZTQzZDJiNWYyN2ZjNzJkNDI3ZWU3YzhhZGU4YzI0ZDA0ZmIzZDdlZWNjMDRlOTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEwMTkxMTlhNjZlZDc0YjUzMDFmMGQyNDEyNzU2NGRlN2EzY2E2NGVlZTc0MmE5MDNlNjk2M2FlYWY3MTM4Y2UifQ"
         },
         {
@@ -499,7 +495,7 @@
       "statement": "Log handler failures are isolated: failures increment a process-level drop counter exported as powercontext_server_telemetry_log_records_dropped_total, and each handler emits at most one content-free observability.log_failed notice to stderr without dumping the record.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/server/logging.py#L266-L312",
+          "resource": "repo://src/powercontext/server/logging.py#L272-L318",
           "version": "repo-lines-v1:sha256:8f55a67332e73634ecf5d07e58cda340c39d97a1f42a470d87b4e7aff1f038df:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4ZjlkOWZjMDIwMWNmZjIxMzU2ZDg4MGY5MDE5YjdmZGEwYjIwMGY3Mjk1YjYyZTk3NjBjMDM1OTg0OWRhMGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY5Nzc4NDNiNWVjZDdlNWViNWFlNmEyOGQwNzVjNDA3N2I2NmZiZmRjOWNlZGIyZDQzOTNhOGI5NzdkZjQxNzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI5ODM0MWIzMzlhZDE0MDY1NDI4M2VjNjJjYmRkOTA2OWE2ZmExMTM0ZjM3OTI0NDI3MzQ5ZjlkZjNhOTM1Y2YifQ"
         },
         {
@@ -723,14 +719,52 @@
       "statement": "The operator guide defines a stalled-processing alert as one requiring a fresh collection, current pending evidence and no verified acknowledgement progress over the chosen window, and it treats a zero acknowledgement timestamp as never acknowledged rather than as an outage.",
       "evidence": [
         {
-          "resource": "repo://docs/en/docs/operate/observability.md#L317-L362",
+          "resource": "repo://docs/en/docs/operate/observability.md#L323-L368",
           "version": "repo-lines-v1:sha256:a9d9642f4d67aaac7467529e2d4c4939e4c5de899f9609d5b3f4309b59526f46:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4NzJhZWViOTQzYTE5NWJjMmQ3N2YwOTM5NTIxZjEyZWEwYjk2MzgxMDk4MzJmYTkxYzRiNmZhMGZhN2RjYmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRkMWIwMjUwMDViYjhkNDg1ZjhjZTVmMTExZjFjODE4NWFlNjA2ZTIyOWM5YjgxOWI4Mzc1ZWIzMzlkNTNjYTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5MDYwODcwMjIxYTZhYjYyZjM2NTlmNDQ3YjE2NjIzNTlkYzQ3MTZiZjExZDIzMDVmZTJjOTMzNTQ1YzBkMjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d7ef13c88c01486bb3d963248c74ef7a",
+      "statement": "When tracing is enabled and the OTLP exporter cannot reach its endpoint, the Server's request path is unaffected: spans are handed to a BatchSpanProcessor and exported off the response path, and the repository adds no reachability probe, retry, or backoff of its own.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/server/tracing.py#L477-L496",
+          "version": "repo-lines-v1:sha256:8537ad5823f2e89be8ac00a846b0c79294b843902753d742af8b0d6200048379:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhOGI2NjIxNWE1ZDQyZDVjYzk3MWZlZTBmODAyMDc4MGI1NmM2ZTUwNjQ3NTdiNWJhNGYxMWFjYWM1ZjM3MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRjMzZjODBjNTlhNzI4NTMwZjNiOGY0NWIyMGI2MWYxODIxMWU0ZGE5NTAwMjA5ZGMzNmQ0ODFhYTMwYjdkYmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmNGU4NDUyZDZiYTkxYzQxMDBmZTAzNjU1OGM3OTVhNTFhNjU0NzViNzc0NDMzYTRmNzIwZWYxNmVkYTM2MTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwZTYzNTEwNjM5NjBlZWMxZjViNGUwMzZkZjIyM2U0YTA4NzAyNjlhNzI4NDUwZGU1ZWQ5OWY4YTlmMWM1ZDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1306d1472b7e4bbab74f1e568f901f5a",
+      "statement": "Client-side calls create a CLIENT span named PowerContextClient <operation> with powercontext.operation.unit set to dependency; if span creation fails the client receives a no-op span, and header injection and finishing are failure-isolated.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/client/client.py#L1379-L1379",
+          "version": "repo-lines-v1:sha256:004e14fb74cfc75c72d7e202512fb8138b6eeed94fa25cb089101a018c6e37d0:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDA0ZTE0ZmI3NGNmYzc1YzcyZDdlMjAyNTEyZmI4MTM4YjZlZWVkOTRmYTI1Y2IwODkxMDFhMDE4YzZlMzdkMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDA0ZTE0ZmI3NGNmYzc1YzcyZDdlMjAyNTEyZmI4MTM4YjZlZWVkOTRmYTI1Y2IwODkxMDFhMDE4YzZlMzdkMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGY1MzRiODcwYmVhYjNiMzUwNTBlMmY4NmIwYmYzYmVhMzkxYzFkN2NkZjA4YTRkYzg1ZjMwNDMzOTFjYzI5NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWI4ODJjOTM5NjQwZDFmOTZhNTQ3ZDU5ODQ4NWE1MzRiM2RiM2RhN2RlZTgwZWNkOTkxMjYyOGMwZWZkNzEyOCJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/client/tracing.py#L36-L66",
+          "version": "repo-lines-v1:sha256:825baf644f4299eff7e5496335cdf4eec7c45f3c3dc062e17b4bda211eca5f71:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1OWE0ZTZmYTE0NzBmZjY3ZmYxM2ViMWUxNDUxNjQzZGRjNzk2MDEzNTRkYjIyOTM4NjA3ZTRlMTY4NzAzOGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmNmFhZWZhZWFkZGFmNmI1MjhhNjFmYjhmMmJiYWFhN2VhMWVhY2U5ODA2MWI0YzY1MWQ0M2E2NmNmM2RmNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI1MjM4YWU5OWE3ZDVkNzJjM2Y2M2NjNWZjODI0MmIwMzhiZTNjYWVmNTY4ZmYxZmQzMTVhY2EyM2E0NTcwNDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2c58991d2c2442cba56bc3ee979ca096",
+      "statement": "Provider metrics are published under the powercontext_server_provider_ prefix, and the provider label is a finite set in which unknown or over-long provider names map to other and the OpenAI API variants fold into openai.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/inference/observability.py#L58-L69",
+          "version": "repo-lines-v1:sha256:08205bcd0ab54036e700d9e5074563a6b81110e82ecf00f978fd380414b42920:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5MGViODZlNTBhNGY5MTk4MGNmM2NkZTg0MjdiMzNhZTExOWMzOGM4YTI1MmJlMGM4MjEyNjNlM2NiMDE2ZmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjliYzg5NTZmYmE2MGQ5NjI4MWVmMmU2NzQzMGIyYTQxMmZhMmViNmU0YmI1NWVmOWY4Y2NkNTZiM2I0YzRhYTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ4YmFkOWViYTNjN2NlMGI3MTY4NGYxZDRlNGY1OGVlYjNlMWYxNzY5ODdkMTIwZWM4ZjQzMDA4NzcyZTNmYzgifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/server/provider_metrics.py#L35-L35",
+          "version": "repo-lines-v1:sha256:cfdffb5f99ad9ff61c6b9a644246a320ea50ea8fbc39ce0951fbbc060e88c4bf:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2ZkZmZiNWY5OWFkOWZmNjFjNmI5YTY0NDI0NmEzMjBlYTUwZWE4ZmJjMzljZTA5NTFmYmJjMDYwZTg4YzRiZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2ZkZmZiNWY5OWFkOWZmNjFjNmI5YTY0NDI0NmEzMjBlYTUwZWE4ZmJjMzljZTA5NTFmYmJjMDYwZTg4YzRiZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTJkM2U4NjJjOGVkNmU4NDM1NThjNWMwOWVlNTJlZDFhMjcwYjIxZTMxYWFjZmUyYjBlOWM1ZWU1M2QxOWRmYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWE0ZTAwZTYxMDVhNjFmZTVhOGIyYWIyZTg5MTc4ZGIyMGVjMjEzYWRmYWRlZjhhYmQ1M2VjMzE2YzQ2YjNhZiJ9"
         }
       ]
     }
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T09:43:24.725Z"
+    "at": "2026-11-16T11:46:19.799Z"
   }
 }

@@ -5,7 +5,7 @@ description: How integrations/capabilities.toml declares which agent hosts and f
 tags: [integrations, capability-matrix, agent-hosts, manifest, generated-docs, tool-surface]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:43:24.725Z
+    at: 2026-11-16T11:46:19.799Z
 sources:
   - id: openwiki-source-7a52dd335117116bd8fe79de
     resource: repo://integrations/capabilities.toml
@@ -35,7 +35,7 @@ sources:
     resource: repo://tests/test_integration_manifest.py
   - id: openwiki-source-8eeb47a743291b70640cfacb
     resource: repo://tests/test_system_cli.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:43:24.725Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-16T11:46:19.799Z" }
 ---
 
 # Agent Integration Capability Matrix
@@ -68,10 +68,10 @@ The TOML file has five kinds of table:
 
 - `directory_exclusions` lists `integrations/` directories that are intentionally not declared. The current
   exclusions are `cindy`, `agent-plugin`, and `opendal`; each carries a recorded reason. A directory cannot be
-  both declared and excluded ([capabilities.toml](../../integrations/capabilities.toml), lines 15-21).
+  both declared and excluded ([capabilities.toml](../../integrations/capabilities.toml), lines 18-22).
 - `documentation_waivers` exempts a whole kind from per-host documentation pages. Only `evaluation_harness` is
   waived, because evaluation harnesses document operation in their own README and the shared evaluation guide
-  ([capabilities.toml](../../integrations/capabilities.toml), lines 23-25).
+  ([capabilities.toml](../../integrations/capabilities.toml), lines 25-26).
 - `availability_definitions` gives English and Chinese wording for the five availability states.
 - `[[toolsets]]` names a host-visible surface (MCP server, prompt hook, slash command, lifecycle event, or
   adapter tool list), a `probe` that verifies that surface, and its `[[toolsets.tools]]` entries.
@@ -128,7 +128,7 @@ Support profiles are derived from capabilities. They are not declared by hand:
 The matrix states that `candidate_review` permits listing and reading candidates only. The manifest's own
 `server-mcp` toolset agrees: `approve_candidate`, `reject_candidate`, and `revise_candidate` carry a
 `non_profile_reason` rather than a capability ([capabilities.toml](../../integrations/capabilities.toml), lines
-193-196). The Pi toolset is the exception described under [Known inconsistencies](#known-inconsistencies).
+193-201). The Pi toolset is the exception described under [Known inconsistencies](#known-inconsistencies).
 
 ## Availability rules
 
@@ -191,7 +191,7 @@ For the four `server-mcp` hosts (Codex, Claude Code, WorkBuddy, ZCode), the gate
 `PreCompactionLifecycle` rejects a surface, opt-in, or evidence on an `unsupported` lifecycle, and rejects an opt-in
 on a `best_effort` lifecycle ([integration_manifest.py](../../scripts/integration_manifest.py), lines 168-193).
 Only OpenClaw (`before_compaction`) and Pi (`session_before_compact`) are `best_effort` today
-([capabilities.toml](../../integrations/capabilities.toml), lines 996-1014 and 1029-1047). All other declared agent
+([capabilities.toml](../../integrations/capabilities.toml), lines 997-1015 and 1030-1048; the `best_effort` mode lines are 1005 and 1038). All other declared agent
 hosts are `unsupported`.
 
 ## Current inventory
@@ -218,9 +218,36 @@ This table is a summary; the generated pages hold the full capability lists.
 | dify | Framework adapter | experimental | none | not applicable |
 | bub | Evaluation harness | master_only | none | not applicable |
 
+### Declared capability keys per integration
+
+The rows below are copied from the `capabilities` arrays in `integrations/capabilities.toml`, in the order the file
+spells them. Profile membership is derived from these keys, not declared separately. Each integration's block is at
+`[[integrations]]` lines 941 (codex), 955 (claude-code), 969 (dsh), 983 (hermes), 997 (openclaw), 1016 (opencode),
+1030 (pi), 1049 (workbuddy), 1063 (zcode), 1077 (pydantic-ai), 1088 (langchain), 1099 (langgraph), 1110 (bub),
+1121 (dify), 1309 (kimi-code), and 1323 (minimax).
+
+| ID | Availability | Declared capabilities |
+| --- | --- | --- |
+| codex | master_only | `memory_read`, `memory_write`, `source_capture`, `context_injection`, `flush_or_checkpoint`, `work_contract`, `handoff`, `acknowledge`, `task_outcome`, `candidate_review`, `experience_read_or_generate`, `skill_read_or_generate`, `external_skill`, `scope_organization`, `artifact_publication`, `persistent_scope_binding` |
+| claude-code | master_only | `memory_read`, `memory_write`, `source_capture`, `context_injection`, `flush_or_checkpoint`, `work_contract`, `handoff`, `acknowledge`, `task_outcome`, `candidate_review`, `experience_read_or_generate`, `skill_read_or_generate`, `external_skill`, `scope_organization`, `artifact_publication`, `persistent_scope_binding` |
+| dsh | master_only | `memory_read`, `memory_write`, `source_capture`, `context_injection`, `flush_or_checkpoint`, `work_contract`, `handoff`, `acknowledge`, `task_outcome`, `experience_read_or_generate`, `skill_read_or_generate`, `candidate_review`, `external_skill`, `scope_organization`, `artifact_publication`, `persistent_scope_binding`, `slash_command` |
+| hermes | master_only | `memory_read`, `memory_write`, `source_capture`, `context_injection`, `flush_or_checkpoint`, `work_contract`, `handoff`, `acknowledge`, `task_outcome`, `experience_read_or_generate`, `skill_read_or_generate`, `candidate_review`, `external_skill`, `slash_command`, `persistent_scope_binding` |
+| openclaw | master_only | `memory_read`, `memory_write`, `source_capture`, `context_injection`, `flush_or_checkpoint`, `pre_compaction_capture` |
+| opencode | master_only | `memory_read`, `memory_write`, `source_capture`, `context_injection`, `handoff`, `experience_read_or_generate`, `skill_read_or_generate`, `candidate_review` |
+| pi | master_only | `memory_read`, `memory_write`, `source_capture`, `context_injection`, `flush_or_checkpoint`, `work_contract`, `handoff`, `acknowledge`, `task_outcome`, `experience_read_or_generate`, `skill_read_or_generate`, `candidate_review`, `external_skill`, `topic_memory_read`, `pre_compaction_capture`, `slash_command` |
+| workbuddy | master_only | `memory_read`, `memory_write`, `source_capture`, `context_injection`, `flush_or_checkpoint`, `work_contract`, `handoff`, `acknowledge`, `task_outcome`, `candidate_review`, `experience_read_or_generate`, `skill_read_or_generate`, `external_skill`, `scope_organization`, `artifact_publication`, `persistent_scope_binding` |
+| zcode | master_only | `flush_or_checkpoint`, `memory_read`, `memory_write`, `source_capture`, `context_injection`, `work_contract`, `handoff`, `acknowledge`, `task_outcome`, `candidate_review`, `experience_read_or_generate`, `skill_read_or_generate`, `external_skill`, `scope_organization`, `artifact_publication`, `persistent_scope_binding` |
+| pydantic-ai | experimental | `memory_read`, `memory_write`, `context_injection` |
+| langchain | master_only | `source_capture`, `context_injection` |
+| langgraph | master_only | `memory_read`, `memory_write`, `context_injection` |
+| bub | master_only | `memory_read`, `memory_write`, `source_capture`, `context_injection`, `flush_or_checkpoint` |
+| dify | experimental | `memory_read`, `memory_write`, `source_capture`, `context_injection`, `handoff`, `experience_read_or_generate`, `skill_read_or_generate`, `candidate_review` |
+| kimi-code | experimental | `memory_read`, `memory_write`, `source_capture`, `context_injection`, `persistent_scope_binding`, `work_contract`, `handoff`, `acknowledge`, `task_outcome`, `experience_read_or_generate`, `skill_read_or_generate`, `candidate_review`, `external_skill` |
+| minimax | experimental | `acknowledge`, `artifact_publication`, `candidate_review`, `experience_read_or_generate`, `external_skill`, `handoff`, `memory_read`, `memory_write`, `persistent_scope_binding`, `scope_organization`, `skill_read_or_generate`, `source_capture`, `task_outcome`, `work_contract` |
+
 The `minimax` entry declares no profile even though it is experimental. Its capabilities include `memory_read`,
 `memory_write`, and `source_capture` but not `context_injection`, so the derived minimal profile is empty
-([capabilities.toml](../../integrations/capabilities.toml), lines 1322-1334). The `pydantic-ai`, `langchain`,
+([capabilities.toml](../../integrations/capabilities.toml), lines 1323-1335). The `pydantic-ai`, `langchain`,
 `langgraph`, `dify`, and `bub` entries have no lifecycle block because only `agent_host` may declare one.
 
 ## Matrix rendering and currency
@@ -270,7 +297,7 @@ or the `server-mcp` capability assignments.
 | `make integration-manifest-docs-check` | Fails when the checked-in pages differ from the rendered output |
 | `make integration-manifest-check` | Runs the docs check, then `tests/test_integration_manifest.py` |
 
-`make check` includes `integration-manifest-check` ([Makefile](../../Makefile), lines 22 and 295-305). Gates
+`make check` includes `integration-manifest-check` ([Makefile](../../Makefile), lines 22 and 320-329; the three targets are at lines 320-329). Gates
 that call `git rev-parse` need a checkout that has the release tags they reference.
 
 ## Adding a host or capability
@@ -289,7 +316,7 @@ that call `git rev-parse` need a checkout that has the release tags they referen
 ## Known inconsistencies
 
 - **Pi candidate decisions.** The `pi-tools` toolset maps `pc_review_approve`, `pc_review_reject`, and
-  `pc_review_revise` to `candidate_review` ([capabilities.toml](../../integrations/capabilities.toml), lines 842-850).
+  `pc_review_revise` to `candidate_review` ([capabilities.toml](../../integrations/capabilities.toml), lines 844-851).
   As a result, the Pi `full` profile counts decision operations. The `IntegrationCapability` docstring and the
   generated text say `candidate_review` never grants decision authority, and the `server-mcp` and Hermes toolsets
   classify the same operations as non-profile. Pi's own guidance says decisions require explicit user approval
@@ -297,7 +324,7 @@ that call `git rev-parse` need a checkout that has the release tags they referen
   the manifest and the documented rule disagree.
 - **Host count in prose.** The integrations index says "The 9 Agent Hosts" are `master_only`. That matches the nine
   `master_only` hosts here. The manifest also declares `kimi-code` and `minimax` as experimental agent hosts, so
-  there are 11 `agent_host` entries in total ([index.md](../../docs/en/docs/integrations/index.md), lines 1-125).
+  there are 11 `agent_host` entries in total ([index.md](../../docs/en/docs/integrations/index.md), lines 18-20 and 120).
 - **Codex doctor list.** `_CODEX_FULL_MCP_TOOLS` in [system.py](../../src/powercontext/cli/system.py) (lines 58-63) is
   hand-maintained, and its comment asks maintainers to keep it aligned with the manifest. The doctor test derives
   the Codex `server-mcp` tools from the manifest and checks that doctor requires each one

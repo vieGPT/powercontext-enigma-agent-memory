@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:ee568a131bc8e9f3c26ef60ad19aef0ff764c4b9b8317aecf02c8647632a068f",
+  "pageVersion": "sha256:b99474f92c8b34d8ccca6ee7bd9fec19c4f1111d33dd5b857475054fbcbb569b",
   "claims": [
     {
       "id": "claim_d47c1eb835b6497288db6b8ecbe8ab6c",
@@ -31,11 +31,11 @@
       "statement": "documentation_waivers exempts only the evaluation_harness kind from per-host documentation pages, because evaluation harnesses document operation in their own README and the shared evaluation guide; Bub is the declared evaluation harness.",
       "evidence": [
         {
-          "resource": "repo://integrations/capabilities.toml#L1109-L1119",
+          "resource": "repo://integrations/capabilities.toml#L1110-L1120",
           "version": "repo-lines-v1:sha256:cca3c2d2a1d3d314910527c1e1789b21236c130b5cd738ba08c8f022eb019e5c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3MWNmYzM0MDA2N2Q0M2M4ZWY0NTMwZWY2NWQxYTRmODgwMmQwNWRjNzgwNzY3ZDM2YWU2ZDE4NTAxMjc5ZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE1NWFjMjliNTliM2RhNjBkOGZkMmZkNGY3ZTZhYzczNDk1ZDk1M2Y2MWZlNzdhZGUyZDkwNTdiNWZmODE2MzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiZTY3MTY2ZGMyYjlmMTA0OThkZjRkM2YxYzVlYzhlMjZlNmVmYzY0YmRjZGQ1MjA2ZTY2ODk4Mzc3YWQ4YzIifQ"
         },
         {
-          "resource": "repo://integrations/capabilities.toml#L23-L25",
+          "resource": "repo://integrations/capabilities.toml#L24-L26",
           "version": "repo-lines-v1:sha256:7e1992116df8f7af7a5c53d23395547f2be93b5491e80552419d0b3b61f35732:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWM4OTRhMWI2N2MzZDU3YWYwOTU1NzU1M2NjZWFjNTUxMmU5M2MwZDFkZTczODA0ZmM4NmU4YjU2NzM1OTVkYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmM1ZTE0NmY2NzYwNmM3MmMyOWVjMmQ1MTNhMjg5ZTIzZmU5NGY0ZDZkYzlkNzFkM2U5ZmZmMDA3NWEyMDY3YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjVlYTQwZmZiNTU3YmJlYWQyNjViYzg0MmMzOTM1MDgwYzIzMzRhYTA0NDM1NjBkNDg2OGIxZjFjZmQ0Y2NjMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWJlNjk0ZTM0NDFmMDA5YjQ4MTE1NGRjNGZkZmQ2ZWExZTg2YTE1YTgwNDBhMDVkYmYwZmRhMmI4MWE3YjA0OSJ9"
         }
       ]
@@ -88,11 +88,11 @@
     },
     {
       "id": "claim_58f377b637f144a19d4f0afb2e73ae66",
-      "statement": "A released integration must declare a release_tag, and the release gate fails when git rev-parse cannot resolve refs/tags/<release_tag>; no declared integration is released at this commit, since all implemented entries are master_only or experimental.",
+      "statement": "A released integration must declare a release_tag, and the release gate fails when git rev-parse cannot resolve refs/tags/<release_tag>; no declared integration is released at this commit, since no [[integrations]] entry sets availability = \"released\" or declares a release_tag, and all implemented entries are master_only or experimental.",
       "evidence": [
         {
-          "resource": "repo://integrations/capabilities.toml#L940-L1334",
-          "version": "repo-lines-v1:sha256:a95fc119fcbd0079c4abc1a00f15c2deaed35935339aa4ef215c5a4de2d55a2d:eyJzZWxlY3RlZExpbmVDb3VudCI6Mzk1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI2NzFjZmMzNDAwNjdkNDNjOGVmNDUzMGVmNjVkMWE0Zjg4MDJkMDVkYzc4MDc2N2QzNmFlNmQxODUwMTI3OWYzIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJhNmM2NDM2YjRmNGNmYjY4OTU5OTFjM2MyNzQ4OGE5ZjBmY2Q3ZmI3MzE0YjJjMjI3ZTc0MmQzNjAzZWJiZTE1IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJmMGI4ZTBkMzRjOGZiMWI5YzJmZGFiM2ZlZDg4YmY2YTlhOTU0MTZlZTM4ZDUzNTJjNjU3N2U4NDc5MGNmNmYxIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+          "resource": "repo://integrations/capabilities.toml#L941-L1335",
+          "version": "repo-lines-v1:sha256:785bb07fee5ef31a9f970c150dec303b847fd9b6bed57d3a41986eec488bfdb6:eyJzZWxlY3RlZExpbmVDb3VudCI6Mzk1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI2NzFjZmMzNDAwNjdkNDNjOGVmNDUzMGVmNjVkMWE0Zjg4MDJkMDVkYzc4MDc2N2QzNmFlNmQxODUwMTI3OWYzIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJhNmM2NDM2YjRmNGNmYjY4OTU5OTFjM2MyNzQ4OGE5ZjBmY2Q3ZmI3MzE0YjJjMjI3ZTc0MmQzNjAzZWJiZTE1IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJmMGI4ZTBkMzRjOGZiMWI5YzJmZGFiM2ZlZDg4YmY2YTlhOTU0MTZlZTM4ZDUzNTJjNjU3N2U4NDc5MGNmNmYxIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
         },
         {
           "resource": "repo://scripts/integration_manifest.py#L533-L547",
@@ -221,11 +221,11 @@
       "statement": "At this commit OpenClaw (before_compaction) and Pi (session_before_compact) are the only best_effort pre-compaction integrations, and every other declared agent host is unsupported; no integration uses required_capable.",
       "evidence": [
         {
-          "resource": "repo://integrations/capabilities.toml#L1029-L1047",
+          "resource": "repo://integrations/capabilities.toml#L1030-L1048",
           "version": "repo-lines-v1:sha256:4c8370e6d7c087be2f2d74eb3b9982433117d362354d9449271d315cd4e64903:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3MWNmYzM0MDA2N2Q0M2M4ZWY0NTMwZWY2NWQxYTRmODgwMmQwNWRjNzgwNzY3ZDM2YWU2ZDE4NTAxMjc5ZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0NGQ2OWFiNGVkNWE5YjZiMzRmYzQ2Zjg0MmM4ZjAxYTVmZDVmNjdkY2UwMDBjOTc1NDllNDdjMzkxOGIwZjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1MzJkZWUwNTZlMGZjZDg2NTBmZGQ2NmRjYWNjYTU4Y2VkNWQ0ZGI5YTJiZTZiYzlmNjJhMWE2NDgyNDY1NTkifQ"
         },
         {
-          "resource": "repo://integrations/capabilities.toml#L996-L1014",
+          "resource": "repo://integrations/capabilities.toml#L997-L1015",
           "version": "repo-lines-v1:sha256:8069e8e891019e6dbce10d9e7e5432ccd92fe95b878204995d9bf34c6811d3c6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3MWNmYzM0MDA2N2Q0M2M4ZWY0NTMwZWY2NWQxYTRmODgwMmQwNWRjNzgwNzY3ZDM2YWU2ZDE4NTAxMjc5ZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVkYTFiMzAyYjZmZDczODRlNGQzN2IzMmIyYTc3MzQyNzg1Y2NhODMxYTI4NjgyM2FhZGJlYWU0NzY2ZGZiZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiODhiNTBkZDI0OGVhNTcxNjExNmMxNTZiMTg1OTE3NzI2NzIyNGYxYmRmNTFlYTkzYTI5NjA3YzJjZTUwMWMifQ"
         },
         {
@@ -239,12 +239,12 @@
       "statement": "The manifest declares 16 integrations: 11 agent_host entries (nine master_only hosts Codex, Claude Code, DSH, Hermes, OpenClaw, OpenCode, Pi, WorkBuddy, and ZCode, plus experimental kimi-code and minimax), four framework adapters (experimental pydantic-ai and dify, master_only langchain and langgraph), and one evaluation harness (master_only bub).",
       "evidence": [
         {
-          "resource": "repo://integrations/capabilities.toml#L1308-L1334",
+          "resource": "repo://integrations/capabilities.toml#L1309-L1335",
           "version": "repo-lines-v1:sha256:52bf3a2f2bafd7b8e05ebee026c65e3acb424f484acb27b61295d251c52a3ef2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3MWNmYzM0MDA2N2Q0M2M4ZWY0NTMwZWY2NWQxYTRmODgwMmQwNWRjNzgwNzY3ZDM2YWU2ZDE4NTAxMjc5ZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2YzY0MzZiNGY0Y2ZiNjg5NTk5MWMzYzI3NDg4YTlmMGZjZDdmYjczMTRiMmMyMjdlNzQyZDM2MDNlYmJlMTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUxZWY4NmQzMmI2MzQ3NDc1YjRlYjE5ZTExZGVhZTBkOTNiZDA3NDExMzAxOGZhZjgyMGJmMWZmMTNjZGU5ZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         },
         {
-          "resource": "repo://integrations/capabilities.toml#L940-L1130",
-          "version": "repo-lines-v1:sha256:47de9ec8a03b4b0df85df0b875bf287422b8cce8935734a61a19c21579ec875d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTkxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI2NzFjZmMzNDAwNjdkNDNjOGVmNDUzMGVmNjVkMWE0Zjg4MDJkMDVkYzc4MDc2N2QzNmFlNmQxODUwMTI3OWYzIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJmMGI4ZTBkMzRjOGZiMWI5YzJmZGFiM2ZlZDg4YmY2YTlhOTU0MTZlZTM4ZDUzNTJjNjU3N2U4NDc5MGNmNmYxIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI2N2MxM2ZlMDM2MjU2YjdmZjczNzRhNzVhNzdjYzRhZjA3MDFiZTIxZWRiYTdkZjM5NThjYWE0OWYxZjMyNjlhIn0"
+          "resource": "repo://integrations/capabilities.toml#L941-L1131",
+          "version": "repo-lines-v1:sha256:983da8acb56c64888967a3b451bb2df8a99910050fa7da57e09933b5141daac1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTkxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI2NzFjZmMzNDAwNjdkNDNjOGVmNDUzMGVmNjVkMWE0Zjg4MDJkMDVkYzc4MDc2N2QzNmFlNmQxODUwMTI3OWYzIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJmMGI4ZTBkMzRjOGZiMWI5YzJmZGFiM2ZlZDg4YmY2YTlhOTU0MTZlZTM4ZDUzNTJjNjU3N2U4NDc5MGNmNmYxIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI2N2MxM2ZlMDM2MjU2YjdmZjczNzRhNzVhNzdjYzRhZjA3MDFiZTIxZWRiYTdkZjM5NThjYWE0OWYxZjMyNjlhIn0"
         }
       ]
     },
@@ -253,7 +253,7 @@
       "statement": "The minimax integration declares no support profiles although it is experimental, because its declared capabilities omit context_injection, so its derived minimal profile is empty.",
       "evidence": [
         {
-          "resource": "repo://integrations/capabilities.toml#L1322-L1334",
+          "resource": "repo://integrations/capabilities.toml#L1323-L1335",
           "version": "repo-lines-v1:sha256:5e867d3642c38ac8162c6baf5f337c11b0bbc23ae0c3fdd28e79342cbda1aa47:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3MWNmYzM0MDA2N2Q0M2M4ZWY0NTMwZWY2NWQxYTRmODgwMmQwNWRjNzgwNzY3ZDM2YWU2ZDE4NTAxMjc5ZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2YzY0MzZiNGY0Y2ZiNjg5NTk5MWMzYzI3NDg4YTlmMGZjZDdmYjczMTRiMmMyMjdlNzQyZDM2MDNlYmJlMTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJjYWViODg1MDliNWFmNzkzYjNmZWE0NTE1YTRhN2ExYzJlMWU1ZDQ3OWY4MzgyM2NjYWFiNDc1NzBlMWY0MTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         },
         {
@@ -296,11 +296,11 @@
       "evidence": [
         {
           "resource": "repo://Makefile#L22-L22",
-          "version": "repo-lines-v1:sha256:421400429108700a55676bdc0989eb51aa1c43114a03a6479209012fd959a413:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDIxNDAwNDI5MTA4NzAwYTU1Njc2YmRjMDk4OWViNTFhYTFjNDMxMTRhMDNhNjQ3OTIwOTAxMmZkOTU5YTQxMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDIxNDAwNDI5MTA4NzAwYTU1Njc2YmRjMDk4OWViNTFhYTFjNDMxMTRhMDNhNjQ3OTIwOTAxMmZkOTU5YTQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTE5NmEzYjdhYTMwMTljNWUxYjA4ODY5MGMxYTRiOGM5MDk3Nzc5MTMyNTYzMmFmZWQzMDZmZDMxZTI5ODViZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTUxZGEzMDZkNTVlZDEyMjRlZDI3NzllZmIxODRlZjk0NmIyNDNhYmIwYzlkNzA1MWY4YTUwNjcxZTlmNzc0MSJ9"
+          "version": "repo-lines-v1:sha256:f6557d32ba0df2830fdb66d6e04cb58da163e59d1e0b3f8238a34cfe7dc31e3f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjY1NTdkMzJiYTBkZjI4MzBmZGI2NmQ2ZTA0Y2I1OGRhMTYzZTU5ZDFlMGIzZjgyMzhhMzRjZmU3ZGMzMWUzZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjY1NTdkMzJiYTBkZjI4MzBmZGI2NmQ2ZTA0Y2I1OGRhMTYzZTU5ZDFlMGIzZjgyMzhhMzRjZmU3ZGMzMWUzZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTE5NmEzYjdhYTMwMTljNWUxYjA4ODY5MGMxYTRiOGM5MDk3Nzc5MTMyNTYzMmFmZWQzMDZmZDMxZTI5ODViZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTUxZGEzMDZkNTVlZDEyMjRlZDI3NzllZmIxODRlZjk0NmIyNDNhYmIwYzlkNzA1MWY4YTUwNjcxZTlmNzc0MSJ9"
         },
         {
-          "resource": "repo://Makefile#L295-L305",
-          "version": "repo-lines-v1:sha256:144f44103cf70197262ad89001f83cc423499c69d2db5469a5b556eb7b189277:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3NmZjYzVmMzVkMzQ1OWQyNjZhN2IzODMzMzZlZjFlZGNiZDZiN2U2MGYyMWU0ZDA5ZjNkMWQ1NjMxYWQ5NjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3MjNiOWJjMTI0ODgwYTRkYTcyYTRiMDY0ZmYzN2ZjZDAxOWNiYjQ3MDgxNDUwODc4MjMyNGFmZjhjZTM1NzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY0NWIzMTJiODE2M2MyMTA4ODM0MDdiNTQ2ZjVjNWYzMjg3YzNjY2RmY2FmY2U3YjU3MDI1Nzc4NmJiYWRkMWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiODExN2UxZTYzYTAyZTI2ZmVhNDU4MTU0ZWIxZjgzY2ZhYzFlMWNjMGI4ZDBkMTlhZTg2ZDdjZTY1ZGZjY2IifQ"
+          "resource": "repo://Makefile#L320-L329",
+          "version": "repo-lines-v1:sha256:04036acc0fc891eba107b98f3bb36ce72a1b7dc274a5fed28fac3b8335072761:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3NmZjYzVmMzVkMzQ1OWQyNjZhN2IzODMzMzZlZjFlZGNiZDZiN2U2MGYyMWU0ZDA5ZjNkMWQ1NjMxYWQ5NjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4MWE5YjVhMGY0MzE0Y2ZjZGIzY2IzYjA4NDZlNDUyYTI0ZjMyOWQ0MDMwNjBjYWVkMzJlNzZkZDk0MWU5YjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY0NWIzMTJiODE2M2MyMTA4ODM0MDdiNTQ2ZjVjNWYzMjg3YzNjY2RmY2FmY2U3YjU3MDI1Nzc4NmJiYWRkMWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJkNjU2ZTk0N2U4ZTRmYThiOTA5NzY0NTE3ZTg3ZWU3ZTRlMzkyYjkyOGFjMTJjNmVkMTU3NmY2YWYyOTQzYzgifQ"
         }
       ]
     },
@@ -389,12 +389,12 @@
       "statement": "The pi-tools toolset maps pc_review_approve, pc_review_reject, and pc_review_revise to the candidate_review capability, so the Pi full profile counts candidate decision operations, which contradicts the documented rule that candidate_review never grants decision authority and the server-mcp and Hermes toolsets' non-profile classification of the same operations.",
       "evidence": [
         {
-          "resource": "repo://integrations/capabilities.toml#L193-L196",
-          "version": "repo-lines-v1:sha256:50d077d994f17210f5e022b4947f28cebd4ea2b7601d41dc0d34aac38902f028:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWNhZGI1ZjQ2ZTk1ZDVkOWUyYjVhMmRjY2Y1MGFkMTllMDJjNzQzYzllODk3MThlYzU5M2UxYWE5YWRhNjBiMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTU2YmE5YzdhOTFhZmNhNTdlYjU4ODhmYjAxNWY2OWZhNTA3NDRjZTdmYTA0ODI4NThmMzgzNjM0Zjk4MjRjOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDYyMWE0MGIzNzgxNzU3NGE2NzJjZjM4ZTkzZTE5NjJlNjdmMjhlNzQ0ZTg4ZTBjNzRkMGZhZDJjMDNmZDlmMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDZiYzhjN2E1ZTVjNWJkNGM1ZDZiNjU4MWIyMGNiZjE2ZTU2MmMzNmE4Y2FmNDk3ZWNhNzAzYTMxYzRhMmY3ZSJ9"
+          "resource": "repo://integrations/capabilities.toml#L193-L201",
+          "version": "repo-lines-v1:sha256:07bc86bc402e4404303e3df22869e305e902627901b99a0d7e808719e07f2200:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTg4YTYzYmJhZDgyZGM1ZmMwMDliNjk2MDE4YzgwMTY2Njk3NTEyNjU5ODE4YWQ5N2MxMTM1ZGI0MDhhMDU3YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjFkMzk1YmVmZjdkYWFkN2VkMTc0YTc3YTY4N2FjMDdhMGM1NzllOWE3N2Q4ZDZhNDIyYTQzOWQ3YjFhMjA3NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWU3NzM5MDAxYzk3N2JjYzNiYTEyNTQzMmM5Y2QyN2Q2N2M3Y2JjMmIyZDgwNjI5Yzc2Y2NkM2QxNmM2ZmI1MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWNkZjBhYTVjMDVlNmMzYTkzYTU2MmZhZTYzZDFlMmFlYmUwYmFjNWQ3NDlhZjljZmU4NTIwN2I2ZTIxODAxZiJ9"
         },
         {
-          "resource": "repo://integrations/capabilities.toml#L842-L850",
-          "version": "repo-lines-v1:sha256:892d8e310bc582eb9a213fd776bcc987de04809a10007a192a21787717ac3a72:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTg4YTYzYmJhZDgyZGM1ZmMwMDliNjk2MDE4YzgwMTY2Njk3NTEyNjU5ODE4YWQ5N2MxMTM1ZGI0MDhhMDU3YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjQ5NDQyZjNhZjM1Y2YzM2I3MGNmYjhjMTZlOWQ0YmU4MjgxNWM3ODhiMGNiOTRlZGFlZDBjYjU5MzczMzFlYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjVkYmY1NTIwODg1NzAzNWFiOGNhODg3ZGQ2NTE3MjY0NTQyMzgwNjQ2MjM2MGNlNjgyNzVmNDYyNjM2NWFjNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmQxNTRkZmVmNzM0MmQ2MTU0Y2Q2MTM2NzczMjYxZTQwZTQxNzZmNjBmZWZhNmExNTZkODMyNGIzNTE1NzFmMSJ9"
+          "resource": "repo://integrations/capabilities.toml#L844-L851",
+          "version": "repo-lines-v1:sha256:7b7fe15262e32b5ab903295afbffea86bc773aecf8b97f7d47ca49b6c261b1ce:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjFjYTkzNTZkZmExNzUxNzdmNzMzNDBlNTYyNTAyNzk5YzYwMWZjNTVjMWZhZjg5ZTgwZTMyMDhlNTA3NjhmMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjQ5NDQyZjNhZjM1Y2YzM2I3MGNmYjhjMTZlOWQ0YmU4MjgxNWM3ODhiMGNiOTRlZGFlZDBjYjU5MzczMzFlYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjE5YWYyYWIyZDE0NjRjZDY4Y2RiMDY0ZTIzMzI0MmNkOWM3NzM5YmM4MDU3NGU1YjRjODM2ZjU0ZTY3MmI3MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmQxNTRkZmVmNzM0MmQ2MTU0Y2Q2MTM2NzczMjYxZTQwZTQxNzZmNjBmZWZhNmExNTZkODMyNGIzNTE1NzFmMSJ9"
         },
         {
           "resource": "repo://integrations/pi/plugins/powercontext/src/guidance.ts#L29-L29",
@@ -411,11 +411,11 @@
       "statement": "The Codex doctor required-tool list in system.py is hand-maintained with a comment asking maintainers to keep it aligned with capability-bearing server-mcp tools, while the doctor test derives the Codex server-mcp tool set from capabilities.toml and checks that doctor requires each one.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/cli/system.py#L58-L63",
+          "resource": "repo://src/powercontext/cli/system.py#L59-L64",
           "version": "repo-lines-v1:sha256:ab5b4739f96b4f2bbbe7901e96024470b2ae321e333aa3b44540bcbf7604e67e:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGFhNmZlYzFmZThiMjJkZjFiYzVlYjMxNmNhMjViNzdhMWU1MDg0YWRiOWE5MTE4NDdhMGM4NTY5OGI3MjAzMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjFiZmE3ZDlhMWQ4ODgyZTdiY2ZkMjhiNDE5OWQyNTI5ZDJmZTZjY2VkZGRkZjI2ZjI3MDM1OWRjZjVjMTgyMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGUxNWI2ZDFiNDlmMjYyZmJjYzQ3ZGZlZWM2MGJkYTY3OWYyMDNhMWQzNWQzNzFiMjQxYmQ0OGFjMjNiODU2NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTQxN2NlYmFiZjgxOGIyZWU2NjIyNjdmZjJmZjIzM2FhZWU3MWE2Y2QwZDFiMGU3YWJlNWE1Nzg4NjY0YmIzYyJ9"
         },
         {
-          "resource": "repo://tests/test_system_cli.py#L233-L247",
+          "resource": "repo://tests/test_system_cli.py#L243-L257",
           "version": "repo-lines-v1:sha256:47c77f39bf00437f9e6c343cc0bad390e700edce4c780e77d2b5ef112c5c9eda:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1MzM0YTZhMmU3MTdmMjg2NTk4YTQwZDIxYjlkMjkyNTZlZmRmODYyOTA5Y2NjMmVkYjg2YzRlMzRhNWE2N2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIzNmZmZTM5NjJlZDZkYzRlMjYxMTNjMTE2YzUwZGYyOTkxZWZkMzgwZTA2MjkyNWNkOTUzZmU2Mzk3ZjA4MjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg4MDg5ZTUwYWQ0ZWIyMzdmYzdiOTcxYTM5YTEzODhmOWI5ZmFjYTBiOTI3YmYxOTRhMmM2ZjQwNDJiNzgwNTAifQ"
         }
       ]
@@ -433,10 +433,20 @@
           "version": "repo-lines-v1:sha256:2d56364674f5a13eab287962fa80f88b4460757014771ae5d89ca92ae9fbcf6b:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2ZjAwM2E2YTljM2ZhMWYzYjU2YzcxODVkZmY3YmM4ZjdiOGM4ZmY1MDU2YmI2OWJmOWFjZGFlZWQzNTc4MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyYzM3NDIwNjkzYTQ0N2ExM2YzOTc2NDNhZDZjNWM1Mzc5ODE2ZjYzYzMxMGUyN2U3NzgyODMyOGQ5YTAwMjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhmNWUyZWQzYjY3ZTJmMzAzNWMwODIzZDgwYWVmODhmZmRmNzE5NDJmMzYyZmM3MWM1MzQwZTA4NjkxNDgxZjYifQ"
         }
       ]
+    },
+    {
+      "id": "claim_b6e0baae0fdd43a6a8487c3156907c4c",
+      "statement": "The per-integration capability table reproduces the capabilities arrays of the sixteen [[integrations]] entries in integrations/capabilities.toml, in file order, so a reader can see which capability keys each host, framework adapter, and evaluation harness declares.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/capabilities.toml#L941-L1335",
+          "version": "repo-lines-v1:sha256:785bb07fee5ef31a9f970c150dec303b847fd9b6bed57d3a41986eec488bfdb6:eyJzZWxlY3RlZExpbmVDb3VudCI6Mzk1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI2NzFjZmMzNDAwNjdkNDNjOGVmNDUzMGVmNjVkMWE0Zjg4MDJkMDVkYzc4MDc2N2QzNmFlNmQxODUwMTI3OWYzIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJhNmM2NDM2YjRmNGNmYjY4OTU5OTFjM2MyNzQ4OGE5ZjBmY2Q3ZmI3MzE0YjJjMjI3ZTc0MmQzNjAzZWJiZTE1IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJmMGI4ZTBkMzRjOGZiMWI5YzJmZGFiM2ZlZDg4YmY2YTlhOTU0MTZlZTM4ZDUzNTJjNjU3N2U4NDc5MGNmNmYxIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T09:43:24.725Z"
+    "at": "2026-11-16T11:46:19.799Z"
   }
 }

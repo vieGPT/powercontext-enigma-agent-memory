@@ -1,18 +1,22 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:6579553ddcc34bc1a4e4281a4ef40b8e8232d5ae3428bffa1868eb0508fbf5bb",
+  "pageVersion": "sha256:7ed2302791463c16bcf77fa4adfc0f4d335df4259db2c520037b1393124a5bd0",
   "claims": [
     {
       "id": "claim_1eaa241289ae4cba9a99ae2923cab175",
       "statement": "`powercontext doctor` exits with code 1 unless its overall diagnostic status is `ok`, and the overall status takes the worst of the check statuses in the order failed, degraded, skipped, ok.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/cli/system.py#L1003-L1008",
-          "version": "repo-lines-v1:sha256:060139e53ac9f54915e452b325564355e895163d0294784d919a9f004921683d:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmI2NmEwNGI5OTFkNDIwMzhlNjUwOTA4NGY0ZDk4MTRmYjk3MGZmNDVjMzlhMjc5NzAyNjY2YjYzZjhkYzU0YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmFkNjc5ZDcxMTBhZjVjY2U2OGZlM2Y2OTM4MjBkZTg1ZWQwY2Y4MzYyNDJjYTEzMDBmOGJmNDQ5MjJlNDU4OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGJiMTM3ZmNhZDc1NWJmNDE3ZTE5ODFkMTQ0NWFhY2RkN2Q3OWRhOTA1ZTYxZjhiNTMwMWI4MjM2N2E2MGQ0MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmIxYWUxYzRhM2Y2ZWEyMzUwZThjYTZjYTBhN2U0YTA1MTczOTQ3NmYyMjRhZDY0YWZlNTI5OGE2ZDM1YWM2MCJ9"
+          "resource": "repo://src/powercontext/cli/hosts.py#L165-L207",
+          "version": "repo-lines-v1:sha256:2877a6aad7102b575330632264a45f3bbc74adb15a72cdcb338189067faf508f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlOWE1OTAxMzVlODhmYjQ5M2E2ZDQyZGRlYjkzYWQ5NzM1NDQ2ZTEyYjQyMDVkMDIzOTE4NDU2MmMwMTQ3MzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhYjQ5NTFmMjAxZDU0MDUzYTQ1OWZlMjAxYjJmYjQzNWUxYmM0YzJmOTY5ZDE4YmYwZWMzYzg5ZmI5OTAwMjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFlYjhiYzc2OTczZTgyOGYzZjM4YmU2MGUyOGUzMzg4NzhmYTUxMTY2NDI3N2FkMmRmMmE5ODRhM2M4NTk4N2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         },
         {
-          "resource": "repo://src/powercontext/cli/system.py#L270-L342",
-          "version": "repo-lines-v1:sha256:d591906a73d3513f6ab2d000d98f2bd1c176a7aac5a6235d7b0df127c3d7255e:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFjMTZkY2FhNmQzYzk3ZmU0NWI0ZmE1MGEwODVkMGU0ZTk2ODg0MjAwODU1N2E1ZDlmMWE0NTBlMTczZDgwNTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyZDkzMGU4YTZkZDQwMmE4NDFkY2Q3NzA3N2NhYzVmOWMxZGM1Y2I4MTQzODQ3NWZlMWNkODczOTM4OWEyOGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhhYTM2N2I1MWNjNzY5YmI2NGNlMDllN2RlMmIwZjBjMTViMjlhNmVhNjFlYWI5MzIzZGQwZWY2Y2JkYzUwMWIifQ"
+          "resource": "repo://src/powercontext/cli/system.py#L1134-L1146",
+          "version": "repo-lines-v1:sha256:f1955c7e7de6d69f3764cc15b1b51b198b3a616e3551d6c2b9cbd1df7366904e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhY2UwY2UwZWUyZDlmOTAzNDk4NTQ0NmI3ZGE1NTQ0ZWM2YzI4MjQ3YmZlN2M1ZTQzZTY4ZWE4NjNhMDRkNmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmNWVlNGMyODFlMjRlMTZhMDI5NDZiMmMxYjRhMTc3MzdlNDA0ZWNmNzE5MzI4NWQ4OTMyNzg2ZDNiODE5ZTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczM2U4NDg3Yzg1ZGZkY2Y5ZmE3YjkzYzc0NmM5NDYyNWFlNDdlMTIwYzc5N2U3OTFlNzM3ZjllZDdmZmM3M2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkwMzMwNmUzMmM4YzFjMjNiNTg1ZjkxMjU1NzdiMDc0MDdlZWY0Y2ZmNGQwOGRjZTZmZWM0MzZhNDI5YmQyMTQifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/cli/system.py#L373-L376",
+          "version": "repo-lines-v1:sha256:416188c06684a875917005cb23a61c73e15e3ef1da5565d91e61d5c72ba41ac0:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWZiMTc3MTI1NTA3MjIzMmM4ZDgxYjUzYjg3MTI4ZmI0NWQ2NjQ5ZGEyNTMyMThmNjg1ODcxODFkMWQ4MjNiNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWI1YzgyNjMyZmM4MmQ0YjJjMzQwZjQyNTU4YmEzZGZhMzFjNzY1NWRmNmZjYzE2OGI0ZmRjZTU3ZmFjNjA0MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTE4YjM2MzM5OGM3ZmRiNzBmYjUwMmQ2MWEwNjM1ZmUxZGEzYWYzZjgyMzBlMTcyNzRkZTI0NWE1M2U0ODdiZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWUxNGI1N2NmZWY1ZDkwMDAwY2UwNWYwNjA3MWUxMDIwZjJkMDQyOTQ2N2NkMjcwNjQ1YzIwNDBhZWQ1MjhlNiJ9"
         }
       ]
     },
@@ -21,12 +25,16 @@
       "statement": "Doctor's Server diagnostics check liveness at /health/live first and mark readiness `skipped` when liveness fails; when liveness passes, readiness HTTP 200 with `ready` is `ok`, HTTP 200 with `degraded` is `degraded`, and any other readiness result is `failed`.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/cli/system.py#L392-L431",
-          "version": "repo-lines-v1:sha256:e398851891e232f65f13d06b0c776776ab08dd00cb4bce9b49427209fd5702a4:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2M2Q5ZGFkYmVhMjQ2NGQ2NGM0MDllZWFlOGVjYTQzNjdkZDQwNTQxM2M3ZGRhZDdlZTRiY2VjYjFhZjY3MmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhlNmUwZjBiMDVlYmUyMmUzMTZjNDA5MTE3MWUxMGM3MjljMDdiMzk4N2EwY2Y2Nzg3ODMwYWIyZTg4ZTM0ZjkifQ"
+          "resource": "repo://src/powercontext/cli/system.py#L1059-L1073",
+          "version": "repo-lines-v1:sha256:4e954fea6d1585c49713faedc2603757a995194585ee837541b87b7e4ee8222e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiM2RmY2I2YzE0OTFjNDZjODZjNWNjYzdmNzUwOTU2NTM1OGRiODA5YTZlNjgyNTI0NGVhMzJhOTFjOWU2MTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAzY2VlOWI1OTdkZTYzYzc5NDMzNjM3MTk3Y2NkM2ZkNDc4NWQ5MzRmYTdiMzZmYWM3NDkwMjNmNWQyOWUyMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkifQ"
         },
         {
-          "resource": "repo://src/powercontext/cli/system.py#L953-L975",
-          "version": "repo-lines-v1:sha256:a0eee704d45da831f6199d7948dbd60a5bc2e5ab60dca826d87d37b7d7aa6516:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0Y2JhMjMyMWUwYWViZmRkZTNlY2VmNjg4ZTc4NTkzNzk3OTYyNGZiZTA5MTRjMzhiYTE1NWQwODBmMTJjOTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg3YzYyZjMxZGE1ZWRkZmMwNzllNjQ1NmU5Y2I2M2RlMWM4MDlhNjlhZmM5OGZjYmM4YzJkODk5Yjc1MGU3ZTgifQ"
+          "resource": "repo://src/powercontext/cli/system.py#L1077-L1098",
+          "version": "repo-lines-v1:sha256:71a190b54f9baf115813eff5556c661ab1ef283d9588fcbaa2b2e996e4f22f0e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0Y2JhMjMyMWUwYWViZmRkZTNlY2VmNjg4ZTc4NTkzNzk3OTYyNGZiZTA5MTRjMzhiYTE1NWQwODBmMTJjOTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZmOTUyMTRjODgzZWIxOWY3MzhjOWViNGQ3YmUzZTQ2MjMzZWM3NzdlNDMyMDRhNzM2NTZmM2UwZjJhYzUxOGUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/cli/system.py#L503-L546",
+          "version": "repo-lines-v1:sha256:7fd00f4c0b5272c1a3fea17abe143efc42ff1322c389ad61ffa9378d610047f5:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2M2Q5ZGFkYmVhMjQ2NGQ2NGM0MDllZWFlOGVjYTQzNjdkZDQwNTQxM2M3ZGRhZDdlZTRiY2VjYjFhZjY3MmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmNzA4OTA1Njc4NWNhNmRkZjM0MmU0ZjQ3YWUxNzk5MmRhNzIzNGQxNjM2ZDdjYmNhZjk1NWE0YThjMjdjYjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNkZjBhZTZlMzJmZjRjYzgyZjMyNWFiNzZkMTk1M2JjMjk3NzJlYzJhNTU5ZGM4ZjJlYTY0MTQ5ZjczNGEzYzcifQ"
         }
       ]
     },
@@ -35,7 +43,7 @@
       "statement": "The `/health/live` endpoint returns a `HealthResponse` with status `ok` and performs no dependency checks.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/server/app.py#L1747-L1748",
+          "resource": "repo://src/powercontext/server/app.py#L1765-L1766",
           "version": "repo-lines-v1:sha256:158e9e24d6a7345cd137bb97bdf4e640e4c2c82a9428c3cb9f655670c4af9b52:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjliMzdmNDA0YTliOTVmOGNhMTc2YzBiMjlkMWZmZGY5MmQ4ODA4YWFhMDZlMTgzYjZmNmNkM2JmMDZlNDkwOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODk4ZTdkMmJlZjY0ZDJkYjQ5M2JkNDA0M2YyOWRkNTllOWM4MmE1NzlhM2M5M2EyOGI1NDQxNzU3YjAxMmRiYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGNjNGE3ZDFjYzc5NmFiYTNlNDY3MjMzMjdmNTE3ZTlmODExOTgyZDI1MGYwNzAyOTg2ZTRiNTc2NGFkOTU4OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmFmZDFkYzU2YTMyNGUwZGE1ZmM2YTA0OWY3OGMxYzZjN2FmYTY0NTc0NjQ5MWMyNTEyYzMxZTUyZWI4YTNjMyJ9"
         }
       ]
@@ -69,7 +77,7 @@
       "statement": "The database dependency is a blocking readiness probe that calls the database ping, while generation, rerank, decision and embedding inference probes are non-blocking and are registered only when configured.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/builtin/runtime/composition.py#L747-L765",
+          "resource": "repo://src/powercontext/builtin/runtime/composition.py#L756-L774",
           "version": "repo-lines-v1:sha256:adada2d926e757aecfb9f8a3b424f69ed61516ff1eb0c4d740ba94823bbe7fe4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4NDc0M2FiOTg0MDYxMmJjZTBiNGJhMmNjY2JmZGMyMDg5ZjcwODEwMTAxNjFiNDg1NmUyM2Q3YWI1ZjdkM2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2NDdmYjVkM2NhYWU0NWIwNWE4MDlmZmMxYzE2YmM0MjFjNTBkYjgyZGFiZTIxZDQ0N2ZhNTU4YWIxYzUzMjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIwODJiMzk3Y2I4MmRiNDc1YmY0NjM0MDY1ZjRiYzNiYzM0ODdlYTUyZjQ3MzRiNmJlZDlhMmQ4MDA5ZGE4ZGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM0ZTM0NjkwNTQ0NzNjNjM2MGNjNWRhNDU0YmI3MDdlN2YyMzcyNDU3Yzc4ODJhMDljNzEzYjBlNGNlNDZhYWIifQ"
         }
       ]
@@ -89,7 +97,7 @@
       "statement": "Runtime readiness reports `not_ready` whenever the artifact-processing Supervisor reports `degraded`, and its checks include `runtime`, `artifact_processing_supervisor`, and one `artifact_processing.<family>` entry per processing family.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/builtin/runtime/application.py#L4551-L4575",
+          "resource": "repo://src/powercontext/builtin/runtime/application.py#L4462-L4486",
           "version": "repo-lines-v1:sha256:110d06d865ae28c6b822f90e5db1310cd9f5a9aa5068ae9952f9f4c5e8e6bce9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmMmVjYzBkODUxYmNlNTg2YzY1N2JlMGE5ZTljYTdiYTdlZTU1NmViNjQ4MzRmMzJmMDhmMWU4ZDExN2Y4YjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkZWJiNGMwNjFjODllMzgxM2FiNDM1MjU2YTdjOTU1Y2NmNWM1NjUzOGNjY2MzODVlYTdlZDlhMjZlNDc4NDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2YmE5NDFkMDc5NDFkOTA4OTIzNzNhMTVmOWEyNTRmNGIxOTQ5ZWU0M2FkYTc5Njk1NmUyOTdhNzQ3ZmMzYTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxMWEwMWI5MzU4NzM1NThiNzc3ZGJhOTM2MmFhYWY0YzE4ZjJlNWNmMTViOTY2Y2ExYWM4MWYxOGMyYTZlMjYifQ"
         }
       ]
@@ -99,7 +107,7 @@
       "statement": "The `/health/ready` route returns HTTP 503 with `not_ready` when the Runtime is `not_ready` or when the authentication or access provider check is `not_ready`, and returns HTTP 200 for both `ready` and `degraded`.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/server/app.py#L1751-L1770",
+          "resource": "repo://src/powercontext/server/app.py#L1769-L1788",
           "version": "repo-lines-v1:sha256:ef2c00125e4a2110caecee2fbd51ade48e2af155adb79ec5d4df57a793073de8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1NGQyOTNjYTdkNTM5OTMyNDcwZDgyODMwZTZlNzRjNWY0ODBhYmYxYmQ5NjhlMmVmOWNlOTViNTkyNzNkY2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYxNWMwOTQ1NThlNGI4NTY3MzIyZWI0ZTFkNjNiZDUyY2M1NmViOGUzOGI1YjI1MTEyZTgwOGQwMjkxMjNlMTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3Y2M0ZjgwMDcwN2UxN2ZlOWM4OGNjNDRhZmI0OTY5OGIxZGVhNDVkZjY0N2VjZDdjM2RkZjQyNTUwYWEwM2EifQ"
         }
       ]
@@ -109,11 +117,11 @@
       "statement": "When no Runtime is bound the readiness observer reports `not_ready` with the check `runtime: not_ready`, and when the runtime readiness call raises it reports `not_ready` with the check `runtime: unavailable`.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/server/factory.py#L785-L799",
+          "resource": "repo://src/powercontext/server/factory.py#L701-L715",
           "version": "repo-lines-v1:sha256:98dd41c83cceb666db09a52896e154b20ae93856f4afed4eae85ceff0991f4d0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzNDY4YjBlNzdiYWI3M2U2NTRkYTFiNmZhYjRkYmRjYzlmMzUyYmM2MmRkYmZlMjI3Y2VmM2NkNjViZGNlN2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlOGU3MWMwZDg4YmU0NTQxZDkzMjhjZThhZjAwMzk4YTlhNGEyZTRlNmQwODNlNDc1MzAwYTQyMWZkYjM1YzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYzZTAxOWMyOTdjNTdlNjU0MTY1MWE0Yzk2YmM1ZGZmOTk5YjgxMDcyMWM0NWQ1ZWVlY2Y1NmQyMzlmNWYwZWMifQ"
         },
         {
-          "resource": "repo://src/powercontext/server/factory.py#L834-L846",
+          "resource": "repo://src/powercontext/server/factory.py#L750-L762",
           "version": "repo-lines-v1:sha256:f7acc8531fb17aa5fc488905585d5e2c991cf4289536b63df5011b457ff10f59:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxYjYyMmRjOTY3MjMxMTY2NTQwNjViMjI2MjU5MTNiOWFkYjM4MTY0NjM3ZjgyODlmMjcyYTk4N2ViNzk0MDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5ODA5M2Q2MmI0YjdiZDNiOTA4YTAzMGEzMjQ5ODhmNmRiNmE0ZWU2ZDQ2OTMyNzg1MGVlZWMzMDE5NWJjYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM0OTc1MzkzODg4ZWQ4Yjg0NmY1MDA0MWJkMzdkYTY4ZWM0MWJkYzcwMTNiNTlmYjUyMzdmN2RkMzc4ZjQyNWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEyYTI4NzAyNjVkYTEyOWYzNTI0NDc1ODk4YjM1NTYyMzJhMDZhOGZiMzcwMTI3ZGE1ZTI2ZTIyZTM0NjFiZTAifQ"
         }
       ]
@@ -123,7 +131,7 @@
       "statement": "The Server re-runs its readiness observer every 30 seconds in a background monitor and publishes the readiness aggregate, including access and authentication checks, to metrics.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/server/factory.py#L800-L832",
+          "resource": "repo://src/powercontext/server/factory.py#L716-L748",
           "version": "repo-lines-v1:sha256:ea4ea32b918f791d9c15c2393a26e2d3bbfa087306a6fee20009572e6af9396a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE3YWRkYWRmNWE5OWFkMTMyOWIyM2Y4NzA2MmFmOGUxODdhNzc5MjY3YWU1NzBjMjRmZGI5ZjY3MDhiZjUwM2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkOWM0YmM3YmM4MDc2YWU4NWRhNTlmODNlZjY0NjdhNGQyMjU3ZTA5ZGVlZjAyOTRmMTEwOTE0ZDUxOTE3NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUxZDNkYWZlM2U2M2M4Y2IyNWRlMGM3OGJlZGM5NTUxZTZlYTQ5YTJiMDc3NjdmMGY4YmRmNjJkN2NkNjFmYzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRhNTZkOTdiYmU4ZmEyMTQ1ZjY5ZTQyZjA5ZmZhMGZkMjAzNzBkNWQ1MTI1MjA2ZmZjYzlhOTAyZDhhMGMwMzQifQ"
         }
       ]
@@ -173,7 +181,7 @@
       "statement": "The artifact-processing Supervisor reports `degraded` only while it holds leadership and at least one processing family is degraded, and reports `disabled` when no family is registered.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/builtin/runtime/artifact_processing.py#L587-L594",
+          "resource": "repo://src/powercontext/builtin/runtime/artifact_processing.py#L592-L599",
           "version": "repo-lines-v1:sha256:0655b2cf31b2ff72f496fa26cb1130dcc41d64f2342d9ab66f1ce4d3227c2d86:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODYzYTlmNDVjOTliYWU0NDY4NzMzMjNmZGY5MDkwZjU3MTMxM2JhZWQyNTg1MzUyYmU0MWQyMTJlMmRiOTc1NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjNkMDBjZjI3MDk2NGQ0NGExM2RmYWM4NzUyYjA5ZmNjNDM1YjBmMTliMzE2YWJjZjgxYTdhYTY0YmIxMjJkNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDBjZGQ1MWU1MWZkMDBjOTM1N2E2ZGE4ODIyY2U5NjRiNzI0MmVkNjRmZGJjOWZmZmZkMDNhYjU0NWFmY2M0ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzk0ZjhmMWQ1MzNhODVhNzE4NWZhZmVkNmRlOTY1OTI0N2M2MmMxMzgwOTRjZTU1NGUyZDk1YjRjNTVjYjQ2YSJ9"
         }
       ]
@@ -183,7 +191,7 @@
       "statement": "A failed processing scope discovery marks its family degraded and schedules the next discovery one tick later, and a successful discovery clears the degraded flag.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/builtin/runtime/artifact_processing.py#L889-L906",
+          "resource": "repo://src/powercontext/builtin/runtime/artifact_processing.py#L894-L911",
           "version": "repo-lines-v1:sha256:337655bcd0f2b612d72d776b414dbd2258c72f6f8a3b28ebaa1f17da09fe2247:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxMmYwZTc5ZWVhNDJkNTIwNDgzMTFjNWI0NGI4ZjNjMTBkMTNiOGY4Yjc4NDRjYzQ2NDgxMmQyNmMyNmIzNTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwNjk2ZjQxZjM2MDBhYjRkNjU2N2MyNjY2M2E4ZTQ1OTVjNDM1NzYxNjQzZWVlYjZjZTk2YzViZWQ1ZGU5NzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUyZWEyOTYxMDc4MTYzNGY4Nzg3N2I4MmUxZTFhMzI4NTdjOTM2N2JjYzFkOTAzMmQwMzQ3YjczNmVlMGI2NTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVlNTg3ODAwNTYzNDIxMjU2NjkxYTk2YzUyNTljZjY2ODI4ZWU3OTIzZTFjZDVjOTM0MTIzYTI3YmYyMzhjYjEifQ"
         }
       ]
@@ -193,7 +201,7 @@
       "statement": "The scheduler observes each Scope as running, queued (waiting_capacity or waiting_dispatch), retry_wait (retry_backoff), blocked (policy_block), or idle, and reports the next check time for scheduled and retrying Scopes.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/builtin/runtime/artifact_processing.py#L676-L700",
+          "resource": "repo://src/powercontext/builtin/runtime/artifact_processing.py#L681-L705",
           "version": "repo-lines-v1:sha256:494e99cde211ab8e1b2fc2b1be495612cc648f34e5420a60015b3f94779394ce:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkYzY3N2MzNTlmNDhiZWQ5OGQ0MmQwNTA1N2U5NmZiYjMzNTRlMTNlYjE0MWM4YTJhYjg2MTk2ZDg1YTZiOWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxNjE4MTY4YjlhY2Q3NWY4MDJkMDNjYzExYWVjM2M4NGIwYzc2ZmUxMTViMDQxNjgyY2QxODE3ZTFlMDUwYzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkNjM4ZWY4MDI4YTIxYWFhNDE1ZDNkMmNiMmUxMjE1ZDcxODhhMzU3YzRlYWQ3MGYxMTQ4NmJmYWZlMmYyMGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwYmZiY2M3ZDEwNGU5ZDEzNGVjYjFiMTI1NjRlZDExYzI3YTk5ZGJjYjRiYWIxZmNmMzY5NzUyZjQ5YzYzNzEifQ"
         }
       ]
@@ -203,11 +211,11 @@
       "statement": "Artifact processing uses a 30-second base retry backoff capped at 1800 seconds, a 2-second discovery timeout, and a default Worker timeout of 600 seconds per binding.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/builtin/runtime/artifact_processing.py#L120-L131",
+          "resource": "repo://src/powercontext/builtin/runtime/artifact_processing.py#L125-L136",
           "version": "repo-lines-v1:sha256:977fad4f293b4fad3d7eccc1916c7b28dc4643196a87eadaab19a4d73f999f3f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZDE5YWMxMjU0OGUwNWYyZjJhZjI3MmIzMGQ3ZGFjYzc2YTcwODE4ODlkZGJmYjFmNWYyZGFlOTIzNDFlZWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIxMDZjYWQwNzhkNjY1YmM4ZDk3MTQ4N2JlMTdmMjYyM2VjMGNiN2Y4YWZlOTJiNTIzOWU2Mzg4ZTdlM2UzYzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiYjZhMGEzYjJiMzE0YWQzM2E2NjMyNjVmNzZmMGQyM2U2OGVkM2QyOGU1MTYxODA2MDA5YWRmNGNhZjc5MTUifQ"
         },
         {
-          "resource": "repo://src/powercontext/builtin/runtime/artifact_processing.py#L90-L103",
+          "resource": "repo://src/powercontext/builtin/runtime/artifact_processing.py#L95-L108",
           "version": "repo-lines-v1:sha256:3c13cdd23bb45d482162fab097c137d5b354fa520eae97145ead9fa2e0acb713:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkNTVjODcwMTA4MjhhOWI3ZWFiNDA1YWIxMzliOGU0Nzg2MDE0MDQ4MWIyMDkyMjYzMjQwNWNiZDk5NTQxNzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxODllMTA3OTE5OGVhYWUwOTMwYjMwMTI0NDM2MjJiZGJiODQ5N2VhMDU3NjVlNWQwODlmNWQ5NmEwMmIxNjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU2OWNhMmZhODM0NjM0MTA1ODJiNzkyMjI2NjVjZWU5ZDg3OTljM2VlYjg1MDA1OTc2ZGZjYmQ2YmIyNDgyMTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjExMTdkYWNkYzViZDAxN2JlNjVkNmE1OWQyMzc5MWY0MTFhNDEwMDNhMWQ1NDJjYzYxMGZiOGUxNTg4ZWE1ZGIifQ"
         }
       ]
@@ -217,7 +225,7 @@
       "statement": "Retries are admitted to the ready queue only after their deadline has passed, only when the Scope is neither running nor queued, and only within a bounded per-channel allowance.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/builtin/runtime/artifact_processing.py#L1088-L1099",
+          "resource": "repo://src/powercontext/builtin/runtime/artifact_processing.py#L1093-L1104",
           "version": "repo-lines-v1:sha256:893848c5d721388358ef873370a61f2935401cf6b645cc0284d45ac4d1aa1021:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwYWU2YTI0NDA2MTI5MzVkZTVlMTg1MTYxZmVjZTcyNmNlNTNmNTExOThkOTNjZWFhNmVkMjExNzFlOGU2MzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1YWNlZjU3YjExNjljM2RkMjZhNTRmZWU4MDljZmVjODYyYWI3ZmQwNzI2ZDQxNTJjODNhYmFmZjJlNTk3YmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNiMzJlYWM2NjExN2ViOTIxM2FmNjFlZjhmNTYwMmM5OWMzMGQ3ODA3OTAzODc0YmVhNjNkY2E3NjU4ZWMwNzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgwMGU2Y2U2OGY5OTcyYzVjMzk3NmU2MmFmMWU2OGM5YjVhYjI0MGMyYWZjYThmNGVjYjZjY2ZlMzFlNzdiYjMifQ"
         }
       ]
@@ -247,18 +255,18 @@
       "statement": "Topic Memory work budgets are capped at 3 attempts, 512 provider requests and 64,000,000 tokens per frontier, and three rejection codes (related_history_limit, invalid_topic_placeholder, invalid_topic_coordination_content) are recoverable and do not end the frontier by themselves.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/builtin/persistence/topic_memory_budget.py#L41-L58",
-          "version": "repo-lines-v1:sha256:bf1e0a21583c6b20ea3b9e9a0c1b96b480ca2486eceb436e9484e1fc24a31b69:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkM2NiZDRjMDU3ODlkYjYwYWJiZThmNmVlYjk4MDM2N2NiOTRiNTIwYzBhN2Y2YjA0MTFiZDExN2E2MzNkZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNlYTM0OGVmYWVjMzVlNGM1NDJkYzM3M2YwNmU4MmRhOGVjNDEwZDYyYjc0ZWU1OTNjOTBlM2NhNTkwNGE0NTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0ZTU1MDNhZjZhYWU1ZTkyNzFkZmI0MzY2NDQzOGFmNmI2ZTVkNWNhOGQyNjI5ZjBhZTBlYjRlYTQ2ZTY1ZjUifQ"
+          "resource": "repo://src/powercontext/builtin/persistence/topic_memory_budget.py#L47-L63",
+          "version": "repo-lines-v1:sha256:c3cccf05281c2dac3803c0fdb54be8c2f2b68b2cfd91d1d403517c846687935d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkM2NiZDRjMDU3ODlkYjYwYWJiZThmNmVlYjk4MDM2N2NiOTRiNTIwYzBhN2Y2YjA0MTFiZDExN2E2MzNkZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1ODBiNzY1MThkYWU5NzlmYWViZDAyMzY3YTI5MjkyYTUwZDk3NjA5MjI1MWEzOGE2Y2UzMDg4MGJhNDI4MjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1NDRlZTI0NWE3MzgwNGM2ZDkwYzE4Nzg4MTYzNTQyNzhmOGI0ZjA2ZjE2YWMzYTIwYTU5ZWY5MWVmOGRjNWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZkOWFmZmRjYzc0M2I5MTM2YzJhMTBkMjQyMjY5OTNhYTVlODhhYmM3Zjk5ODZlMTRkMWYyYmZkYzFjYjZjYjEifQ"
         }
       ]
     },
     {
       "id": "claim_c842e528605f4a318b1efc84b834b37c",
-      "statement": "The exhausted reason is the recorded non-recoverable rejection code if any, otherwise the recurring rejection or window_attempt_limit at the attempt ceiling, or window_provider_budget_exceeded at the request or token ceiling.",
+      "statement": "The exhausted reason is the recorded non-recoverable rejection code if any; otherwise, at the attempt ceiling it is the recorded rejection code or window_attempt_limit when none is recorded, and only when the attempt ceiling is not reached does the request or token ceiling yield window_provider_budget_exceeded.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/builtin/persistence/topic_memory_budget.py#L60-L80",
-          "version": "repo-lines-v1:sha256:87570bf2564af38a6e5e3a2d572cb5f0dd3e2cf86effa64d42c7b2473b1b3293:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5NmU1MTJkMGM2MmJiYTdmOGM3MmY3MGE1NGYzNWZiMzM1YjA0MTU4ZTExNzAzMWNhNTliYjU4OTc4MjVkNWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2MDJlZGY5M2FmNDQ5ZGYxNTNiOWNlM2E2NTdmMjQ4MGEyY2I2ZjFlYjk2MjViOTA0NTRkMjUxZGMwMGI3ZDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYzNjdjOGE4OWY2NGYwZDAyOTMzZDkwYjgxOWQxZjk5OGIzOGQzMjExMGMwZTE2MjVlOThiMDFjNGUzMWFkZjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNkYzYzZDZlYzA4NWI4NjFiNjA2ZTZlZTQ0ZDQzODcwZjlhNzcwNGU2OTFjZjQzZDhiMzhiMWFjNjg5MzI0NzgifQ"
+          "resource": "repo://src/powercontext/builtin/persistence/topic_memory_budget.py#L80-L96",
+          "version": "repo-lines-v1:sha256:a578dccbdc0cb81bb8303c1aff239a85bed174fef56afc3066cc6902eeea3dfb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5NmU1MTJkMGM2MmJiYTdmOGM3MmY3MGE1NGYzNWZiMzM1YjA0MTU4ZTExNzAzMWNhNTliYjU4OTc4MjVkNWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1MTIyZDNlYjdmZTA0NDM5YjJmYmJkZDU2MGZmZTc1OWM1OTFiZmNkYzhhYmY2YzNmOWFmMWViYWUyOTMwZmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4MjJjZWRmNjhhOWMyNzhiN2U4NjM5MjIzMDE1MDY1N2U3YmVkYjJlNmJjOWI2MmI5YTg5OGNkYTRiYTg0YWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBlOWJkNTRjOGUyODc1MjhkODQ4M2JjMDZhZDA4MTUyODM2YTM2YTc2Njc1M2YyZDY0OWE5MTg3NDcyMzQ3YjMifQ"
         }
       ]
     },
@@ -277,7 +285,7 @@
       "statement": "The runtime Topic Memory retry fails as unavailable when processing is not configured unless the block was already retried, and after an accepted retry it wakes the Supervisor for the Topic Memory binding, logging but not undoing the acceptance if the wake fails.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/builtin/runtime/application.py#L4051-L4085",
+          "resource": "repo://src/powercontext/builtin/runtime/application.py#L4131-L4165",
           "version": "repo-lines-v1:sha256:80b095996c98e444e1234d06fc336d66d58b2193001b99f2224ef8e467fd530f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkYTc1MzQ5NGRjMTUzMTMzNjc3MTdhNjFjZDViODk5YWUwNDEyMjNmZjFjNDcxZjk4ODM4Y2Q0OGMwZmMxOGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5N2UwZTQxM2JjNDgyMTgwYzgyNjAyNDFiMjcxZjk3N2RmMDEyMDhiNjkxMWMxZTgxNWI0NGJmN2IzYzJjYzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVkZGNmMjhiYmE0YTcxNjJhMDY0ZThjMGYwMDRiMDNmMzI3YTJjMGQyMWFmMTRmYjU0ODNlMWRmNjA5OTcwNTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhNzg0N2MyNjM5MjFkNjY5MTM3OTg1ZmFiMDU1MjQyOGY2N2Y1YzM2NDk5MGIzNzczNzIyMmNjMTI5NWRkZTUifQ"
         }
       ]
@@ -287,11 +295,11 @@
       "statement": "The Topic Memory processing HTTP operations are POST /v1/topic-memory/processing/status, POST /v1/topic-memory/processing/blocks/get and POST /v1/topic-memory/processing/retry, and retry declares 200 for accepted and duplicate acceptance plus 404, 409, 422, 503 and 500 error responses.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/http/_generated/operations.py#L1769-L1843",
+          "resource": "repo://src/powercontext/http/_generated/operations.py#L1761-L1835",
           "version": "repo-lines-v1:sha256:94636f6bb3034a687a823996923488affb4c0ebfec6920b818fef8f50b9177fc:eyJzZWxlY3RlZExpbmVDb3VudCI6NzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhN2NhZTE5MTRkODNjZDIzZTFiNThmOGI3N2Y0ZDVhNzI2ZmI5ZTdmOWEwYzJjZWU1ZTZjNDM3Y2YzZTg1MDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc5ZDZlNDM3ZTY3ZTY1NzU0NmU1NTFlYTdhYzUzZjMyMDdiM2E4OTZkYmUyMmQwOTAxNGU4NmI2OTU1YjJhNGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE2ODg4NTgzMTdiNWVhYzIwODMwOGM0N2M0NmFjOTM1Njg1MmUzYzcwNTE3NTgwYjdmNDA2ZjRhN2Y2MTAwYzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkN2IzMzNkMmI2ZmFkYTQwYTIxODI0MDhhOTAyMzgzMDNkZjA1MzZjYTllMDhiMDU5MjkwNjA0Njg3NDBmYTIifQ"
         },
         {
-          "resource": "repo://src/powercontext/server/app.py#L1644-L1644",
+          "resource": "repo://src/powercontext/server/app.py#L1662-L1662",
           "version": "repo-lines-v1:sha256:96231a47483ef8f7dcb36153798f3ae378fcdbd95a82df6bc26e117e6692d3c6:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTYyMzFhNDc0ODNlZjhmN2RjYjM2MTUzNzk4ZjNhZTM3OGZjZGJkOTVhODJkZjZiYzI2ZTExN2U2NjkyZDNjNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTYyMzFhNDc0ODNlZjhmN2RjYjM2MTUzNzk4ZjNhZTM3OGZjZGJkOTVhODJkZjZiYzI2ZTExN2U2NjkyZDNjNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDc3ZDRkMDY0NmEwNDM0NjE1ZDA4Yjk4MTZmMzNkOTMwNmI0ODYzNThlYzJlYjQ1ZDllNzI0OTc1YjNhYjExMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTU1YzEyZDc5NzRmY2Y2ODU3OGEzMjRiOGMwYzM2OGNjYjkyZjhjMGJkOGU5MTRhOWYyNzUzNzlmMmVhZGU5ZSJ9"
         }
       ]
@@ -373,8 +381,12 @@
       "statement": "Ops operation status reports finished, interrupted or unknown execution states, and an operator must query operation_status before repeating an interrupted mutation because a present executor PID is not proof the executor is still running.",
       "evidence": [
         {
-          "resource": "repo://docs/en/docs/operate/local-server-ops.md",
-          "version": "repo-file-v1:sha256:135990f8e7c034267e1afc5630338f295a6da0e3e114a483a0892ac28f40acbc"
+          "resource": "repo://docs/en/docs/operate/local-server-ops.md#L125-L131",
+          "version": "repo-lines-v1:sha256:365ef3fbc2b7ee3c23a401164c74b45dda2f8e52b32598a6832647bdef86fcf1:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODRiMjgyMjQ1ODFjZDkyYzZlNDhlYzU2ODc1MWYzMDNiZTg2ZjJjMDRjZjc1Njk5YzY1ZGI1ZWEwZmQ4N2RlNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzBmYzllNThhOTAyNDdjN2IwYTRhMTM5ZThhOTAzMTkyMGE2ZGQxZjM0MTFmMjI1OTkwNzUxNWJiNjdmNjM2YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDIwNDY3MDNkMjlmZTY4NDljYWY4YzZlNDAyYjI5ODFkNTVjMmFhOWVjMmIxZDI1MjQwNWY2MmViMTAyMWQ3OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGRlOTg3N2ZkNjMzMmQ2MGM1ZGQwNDRkZDAwYWY2ODdhMzQyMmFmYzc5Y2MzNmJiYTcyZjQ3M2QzMDlkZTUzOSJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/ops/runtime.py#L309-L330",
+          "version": "repo-lines-v1:sha256:cf95390194ab5ebe66861f239551065a1dccf2af2e9e079aa49d8ea2c55b50b0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5NDM3OGZjZWRmY2YyZTY2MmY4ZDkyN2NlMjNjNzhmY2UwOTVmMTQzOWYxOGE5NzNkMmUxYTJlNmI5NzQ0NzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEzMGE3NDAwODNmNzYwNDU4N2QxOTI1ZTIwMmY1ZTAyNzdkNTBjODg3MDI3NmE1M2FmYWExZDczNDc4YjQ2YjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRkNTAwODM3ZDllZmVjMTM1YzJlZjEyYTVmODRjNWUyMTI5ZThhYmViYTkwYWEyMGIwNzJhMmQ5MWU4MmRiOTAifQ"
         }
       ]
     },
@@ -383,8 +395,16 @@
       "statement": "Starting a Server with an OceanBase identity column that uses a case-insensitive collation is refused, and the recovery procedure requires exporting data without DDL into a new empty database created by the current release, importing in ordered layers, and never altering identity columns in place.",
       "evidence": [
         {
-          "resource": "repo://docs/en/docs/operate/troubleshoot.md",
-          "version": "repo-file-v1:sha256:31351a6cab386f2beb4cc8fcd222b9746e4971ad26bd50fa10b9aa9b54069900"
+          "resource": "repo://docs/en/docs/operate/troubleshoot.md#L232-L256",
+          "version": "repo-lines-v1:sha256:407ad766ad03c8bb7336d48e1239e5e68495487d98b25264d88120be13a21935:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5OTljODdlY2RmNTQ1NmRiM2U4M2VkMTc4NzdlZWQ3MDFjNmVmMWZkZjIwZjFmZjI2MDRmYWFmOWMyZjAxMzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmY2NjNDVkYzEyMDczYWFmYzIxODk3NWU2M2M3MzRiY2RhZTRmYzY3MGQzNTc4ZDFjY2M0OTdhZTNhMDI5MDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJmMTNmMzk5MjI5YTZhYWI0M2VkOTlkZjU1MTNiZDNiNGZhNGU4ZmQ4YmQ2NTZhZDIwOWM0NDNkMDkzZGQyNjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM4ZWEzZGIyZDlhZjYwNzM4Mjg3NzQyODdmYjdjMTg4MWQyNTM4ODQ1NGZiYWM2ZGQzYzNjZjk5YjcwZjQ4NjYifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/migrations/mysql_schema.py#L993-L994",
+          "version": "repo-lines-v1:sha256:4115ad1f9e8f24642bf954e08898593ed3dac97843eb5ba9870d0fb3eb33cc75:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzIwODI4ZTFmZGExNDkzYmVhOGEzYzJmNGMyNDZiYzE4YzcwM2Q5MzhhZDhiYzdmNGQzNjAzM2JhOWU5YmVhYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTJjNjk3MmI2YWE0NWY5NmExOTBhOWNiZGYyNDBlN2I0ZmVmMjdmYTljYmExZjliNGNlMjRjMjUyZTY0ZDE1NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjc4MjEzMGI2ZDRmOTMwZjZmOTJlMzk1YTU3NTk2NzEyZWY2NWU3YmZiMDQxYzZjOGIyYzI5Mjg3ODg5NjYxZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTI5ZGE1Mzg0ZDQwNDZhYmE4NWNlZjRiMDJlN2NmMTE1YTlmYzBmNWJiYWUzMjQzODJkMWI3MTgzNTlkMzkwZCJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/persistence/tables.py#L61-L84",
+          "version": "repo-lines-v1:sha256:0a6dc8343e6d81c17c6e53f22f7b64a8eced3616ad5b3a7019c4ec2f0635a8ee:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkYjExOGVmYzdhN2U2YTRhZTRmYzRiZGE3MDFiZmM0NjllNzM0YWU1NmIxMzYxMDAxMWY0MDdjMGRlOTg5ZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA3NDI5MjQxNmI0ZmUzYmNhYTBjYjk3MzFlM2JhMzIyMzhjOTMwYjJlOTVkYTc2Y2E0NGEzNGNmZGExZmRjMTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjExZjFlMWNhMjUxNTA4Njc3MjM3NzU5NmYyNTE5MWU0MTM5ZTcwZjVkZjcyOWQxMWQzODViZGJiM2YyNzA4MjEifQ"
         }
       ]
     },
@@ -393,8 +413,24 @@
       "statement": "Automation must read the top-level `status` of `powercontext --json ready` because a degraded readiness response with HTTP 200 still exits 0, and `powercontext capabilities` reports Memory extraction as disabled when the Server has no generation model.",
       "evidence": [
         {
-          "resource": "repo://docs/en/docs/operate/troubleshoot.md",
-          "version": "repo-file-v1:sha256:31351a6cab386f2beb4cc8fcd222b9746e4971ad26bd50fa10b9aa9b54069900"
+          "resource": "repo://docs/en/docs/operate/troubleshoot.md#L333-L336",
+          "version": "repo-lines-v1:sha256:fc1afd1ade14e9d198bb0166d58a9bd437779f7dab05b2ad5105b9ea798e1312:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdjMDZjNTYxZDVjMzI3MzQzNjg1MjY4YTQ2YjMzOTFmMzk5OGVlZTg5MGQyYmU1MWYwZDIxY2M0YTUzYWU2ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmM3MjBjM2I2MWQzZGUzOTJmNWNmMTVkYzM1YTA4YzYxZGM5ZmNmYzY5NWNjOTRhNDFmYTAwZjI5ZDQyNWU0NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjA0ZmQ1NTQ1ZTViNWNhNGRjNDRhODY2MGQ2NDczZjgwM2U0NDY3MWZlOGNkNGM5NmYzZjFmZGFmMjhkOTE4ZSJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/composition.py#L1546-L1576",
+          "version": "repo-lines-v1:sha256:690d7e1fae46b470930ba7bd5b4ef81221d4891a26819309d1407fb040ee8e25:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI3YTc2NjA3OGM4MDVlNmRmMGE2YzY5NmJiZTg5ZGU3M2IzOWIyM2UyZmI2YTk0ODZlZWU0NzQ0YzUzZDA0NTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk1Mzg4Y2FhOTYyZmM5YmI0ZTAwNTUyYjk3MDViMTc2OWZmOGM0YTFkMWI4ZGI2OGQzNTA4ZmQ3M2FkOGQwNzYifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/runtime/relational.py#L731-L731",
+          "version": "repo-lines-v1:sha256:e9414179a0dff168466f824291259e4e2d1a06ba8e6d111d0c826bded25f2222:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTk0MTQxNzlhMGRmZjE2ODQ2NmY4MjQyOTEyNTllNGUyZDFhMDZiYThlNmQxMTFkMGM4MjZiZGVkMjVmMjIyMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTk0MTQxNzlhMGRmZjE2ODQ2NmY4MjQyOTEyNTllNGUyZDFhMDZiYThlNmQxMTFkMGM4MjZiZGVkMjVmMjIyMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2E4YzE3ODgyM2Y1NThlOGU0ZjI0ZjM3NDJiYTZkYWFmYmM1M2E4MWJkYzIxMTg0NzhhNTZmNGRlNGYwZmExOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2UzNjhhYzM5ZGE4ODExYWMzYjZlMmVkYmIwNjQ5NzkxZjk2N2JmMTgzODc4YzQ3OTVjOWRmNzZkODJmYzlhZiJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/client/cli.py#L1808-L1826",
+          "version": "repo-lines-v1:sha256:a3f3c2c7cd8ff3e17553eb25da36579f0235830c084940fd6dec2f8c032d9908:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5OWIwMzJjMjM0Y2MzNDNmNzUxZTA0MmE3MmJmN2FiZWQ0MTY5MzFkYmU5YTM1ZmU1OGE5M2Y3MDAxYjQ3YTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3MDExZTNkNWU0MDcwNWE1NGNhYTM0YWU5ZjdiYmEyODg1YmU1ODM2MmYxYjVhMzNkOGM3MzY1NDgyZDI5ZWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyYTNmZWI5ZjczN2FjYWZlYzdlMjJkMDcxNGQxYmY4NWJmOTkyN2I0YmUwMDk5YjQ4YjQ1MzhlZGNjYzUyZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYxZDI2YzhhM2FkZDdiMzAzYmVlOTQzMWEzNzlkMDZiMGEyYzcxZmYwODg2ZWYzOTIwNjMyYWI2YWM1MTA5OTYifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/client/cli.py#L2146-L2152",
+          "version": "repo-lines-v1:sha256:b6ab99d1cf8551a7d9ed974154cc502290fb20fcb06156ca420440b644265669:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjhhZDMwOWVmYzk4N2NiY2FmOWRkMTk1ZjRlNzA2ZTIwNmZjMmJhOTY4ZGMxMjRhZjdjNGU2MWFhM2RhNmJjNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGZhNzE4YTQ2MTM5ZmVlOWUxZWVlMWMzYWZmOWM3MjRkN2NjYmY0NGIzMDZkZDAwZjFmNjAxZjVjYTNiOTc2YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjhiZGRkYTYzMjhjOTM1OGMxMjUwNGQzOGVlNWEzNTUyMTIyMjg0YWUyMGM5OGIyZWVkNjMxNzQxMmU3NTZjOSJ9"
         }
       ]
     },
@@ -421,10 +457,28 @@
           "version": "repo-lines-v1:sha256:bad769a3320779fd86401f87cd2609d2781d2ba5dc04d11e518e2ea05d724e76:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1YjM5MTVmYmIyZTRiNGI4MWQ4YjFlNzE5MzQzNTJhODVmMmI5MzVmODk5ZmVhZThlMTJlODMyZGUxYzFjZjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1NGMyZWRkYjI0YTQ2NWRkMTA5MzkxMDE5MzhhYjk4Mzg3YWYxYTcyMmNkYTQ0ZWVmM2Q2NTFhNGNmNmEzYTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzMjZkZTVjODU2MmU1MDlhMjNhYWFiMzhjYTRhZmY4YzQ4ZjdmMGI1OGU4M2U1ZGJmZWZhMThhODZkMTJmZjcifQ"
         }
       ]
+    },
+    {
+      "id": "claim_9c2afcf6d82440e187b94791d766f952",
+      "statement": "`powercontext ready` does not print the readiness body for an HTTP 503 response: the client raises a ServerResponseError (an UnavailableResponseError for 503), and `_execute` prints the error message to stderr and exits 1.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/client/cli.py#L1808-L1821",
+          "version": "repo-lines-v1:sha256:5e3231ece288a9b29cc9e6790e31f42d7bed997e3599f5a756af7e5db7220545:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5OWIwMzJjMjM0Y2MzNDNmNzUxZTA0MmE3MmJmN2FiZWQ0MTY5MzFkYmU5YTM1ZmU1OGE5M2Y3MDAxYjQ3YTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzNThmMjRjZGUwOWU3ZThjMzJmODE4YTc4YjEwZDJmMzg4OTM2YWFlZjViMjJiMmU2NGY3NzFlNDAwZGJhMmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyYTNmZWI5ZjczN2FjYWZlYzdlMjJkMDcxNGQxYmY4NWJmOTkyN2I0YmUwMDk5YjQ4YjQ1MzhlZGNjYzUyZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM1YzYwZmVhNjIxOWM3NmYwNDE5MzY5NTkzZDgyNjNiOTRhYTQ3YWQzM2FiMjk4ZTAwYWMzZDQxMzg5YzE2YWYifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/client/client.py#L1409-L1418",
+          "version": "repo-lines-v1:sha256:891719fe9ce7c7ec561e2e3a68dcb7f3ea2333fdbde2f098b7f2ce84e88ad601:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkZGExZjQwMTE4NWM0MGNkZWRmZTdkODAyNDZjMjM1NjVmZGQ0OWFjZmI4ODRlMDhjNDE3ZDNjYjI0ODI5ODkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNmYmYwNmNiZTAxYjNlYzEwZjcxYmE5ODE0MmFkYWUxYjA2OWUxZDQzMjBlMDcyOGE1ZGU0MjlmODAzN2UzNmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjViNDJhMDIwZWVkNzBkZDMyYjM4NGEyODFmM2EwNjE0MzA5OTcyMjEwNzIzYzM2NmE2MzhjMDNhZDhkNTczZTEifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/client/errors.py#L45-L45",
+          "version": "repo-lines-v1:sha256:b79b0f1130e40be637de9b483c1372c587acaf0e69a1878479f280a79b42edd4:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjc5YjBmMTEzMGU0MGJlNjM3ZGU5YjQ4M2MxMzcyYzU4N2FjYWYwZTY5YTE4Nzg0NzlmMjgwYTc5YjQyZWRkNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjc5YjBmMTEzMGU0MGJlNjM3ZGU5YjQ4M2MxMzcyYzU4N2FjYWYwZTY5YTE4Nzg0NzlmMjgwYTc5YjQyZWRkNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2FjMzY3MzRkOGNjOWE3YzBjZDYwMDhlOTExYzE2NmRkOWRjOGRkMzExOGY2YmFjNDg3YTdiZjY0ZjM5M2IyNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGNhYjY3MjI1Y2EwMjYyYTE1OTAzMjM2NzUwNmRjZTJmOWM4MDg5OTBiODU0OWE4NjBiY2Q3YTM0YzkwNTVlZCJ9"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T09:43:24.725Z"
+    "at": "2026-11-16T11:46:19.799Z"
   }
 }

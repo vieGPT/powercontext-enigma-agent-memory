@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:610685e8ad9ef0e857604442a217a658196ce764d0be180acddead11b2a09148",
+  "pageVersion": "sha256:6642d37d46a71bde0b89ee4f8de1bc46a5d12c03226f608d4fbee306e9ded48d",
   "claims": [
     {
       "id": "claim_32af43a9afb74b518033b2e444cb3e9f",
@@ -54,14 +54,18 @@
     },
     {
       "id": "claim_aff22030253c4057be2c87529c792830",
-      "statement": "Prepare requires a configured generation pipeline, resolves the requested evidence before generation, and rejects a generated draft whose objective differs from the request, whose citations fall outside the requested evidence, whose serialized content exceeds max_bytes, or that violates the rollover rules when rollover reasons were supplied.",
+      "statement": "Prepare requires a configured generation pipeline, resolves the requested evidence before generation (in one batch when the resolver supports it, otherwise per citation), and rejects a generated draft whose objective differs from the request, whose citations fall outside the requested evidence, whose serialized content exceeds max_bytes, or that violates the rollover rules when rollover reasons were supplied.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/builtin/artifacts/handoff/service.py#L101-L126",
-          "version": "repo-lines-v1:sha256:7bd90c1e573ad893e2df8de40288bd4fe7b0204b358ead11b19f51ca99f0dced:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzMDk2MGIxZTMzZGZmNTYzODQ3NDMzNTFlZWZhNTFhMDgyYTk0ODMzM2U1OGMyZmVhNjQyM2U4NDRhZDMyZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzNWM4NjJmYzIwNjNkYmIxNGU5NDljYTA1MWIwNDhlYTQ0MjllODU4MGM5MWEyZmFiZTY3OGFiZDk5Y2ViNjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjYTQxMDU5OWExYTJlM2I0YWRiNzllMzZmMTE0NjA1YTc3ZTc5ZGY0MDkwMjg4MzU0OWE3NzM3NThiZTU1MjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU0NTJlNzE5MmI2MDZhNWMzMTJmN2ZkMTU0YzhhNTRjOWI3MDliNDJkYzc1YThjY2VmZWFhZWZkZGM2MzAwN2IifQ"
+          "resource": "repo://src/powercontext/builtin/artifacts/handoff/generation.py#L184-L201",
+          "version": "repo-lines-v1:sha256:5c49d16c716013f6cb48a48a81fb0a809a0318e9d2aa550d7b8668eeda591ee7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0MGQ2YzE3YjFmNGUwNDkxNDc3ZjE3NmZjMWFmZGFlMzk3MjcxMTY5NjE0YjFiOWQxZjBkMTBmMjA4YmZkYjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTYwMGE3M2QyZTAyZjM1MmI5MGZlZjFkOGQ2MzgxMWJhNGE4ZWUwYzFiZWFhN2FlNDY1OGYzNmFhMmUxOTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5OGIwNjNkOWI0N2U2NTM3OTYyNTU3MmNjZTE5NzY2OWQ1NzY3ZTEyYzE4YmUwNzU2NTJiOGNkOTgxY2U4ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk0ZDE3OTJhZDI3NDIwNzQxYmNlNWI1ZDI4YmY3ZTU1NDAyNDk2ODY5OTBkOGU1MDUxMDNiNzIxYTQ2MTliYTkifQ"
         },
         {
-          "resource": "repo://src/powercontext/builtin/artifacts/handoff/service.py#L394-L406",
+          "resource": "repo://src/powercontext/builtin/artifacts/handoff/service.py#L101-L132",
+          "version": "repo-lines-v1:sha256:604fb5c5905ef48f3f344bad739887372a0c35a409ec2ae68a859e57a7486fb8:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzMDk2MGIxZTMzZGZmNTYzODQ3NDMzNTFlZWZhNTFhMDgyYTk0ODMzM2U1OGMyZmVhNjQyM2U4NDRhZDMyZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzNWM4NjJmYzIwNjNkYmIxNGU5NDljYTA1MWIwNDhlYTQ0MjllODU4MGM5MWEyZmFiZTY3OGFiZDk5Y2ViNjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2OTNkZjY3YWJlNTE2NTI1ZTFlYjdjMDg5OWRmMTNkYzBlMzNiOTQ0MjQyZjM1Y2U0MWQwYjIxZmUyYzRmN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU0NTJlNzE5MmI2MDZhNWMzMTJmN2ZkMTU0YzhhNTRjOWI3MDliNDJkYzc1YThjY2VmZWFhZWZkZGM2MzAwN2IifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/artifacts/handoff/service.py#L404-L416",
           "version": "repo-lines-v1:sha256:daeca11afc5f5a4edd6d4aa626a5ca929a14a145bef27e306a858a8313f657ab:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkMDVlOTY3NjkyOWRiMjYyODQxZGIyNDZhMWU3ZGI1Yzg5YThjOGUyNWM4MGFmYTVmOTMwYjM0ODM5NzA3ZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhNTdmZGNlYmZhZTg1Y2Q0MTkyY2FiOWRlYzE3ZWQ1NjQyNDc5OTEyNmZkZjkwNzZiZTRhMjM2ZmFkZThhZjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJlNmFiZjg5ODE1NzY5NGE2NTJlODc2NjEwYzAzOTg2NzFmNjFjNTgyZmE4N2VkMzZmYmEwMDI1OGYxMmFmZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM1MzM4OWY5MDYxNzNkZTAxZWY0YTkyZTdkZTNmZWVkODcwMTEwOGEzZDk3YWIwODdjODQ1ZWU4NzBjMDBmZWEifQ"
         }
       ]
@@ -71,46 +75,54 @@
       "statement": "The rollover check rejects a continuable draft with no next action (rollover_next_action) and a statement that directly instructs reliance on a prior transcript (rollover_quality); a blocked draft may have no next action.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/builtin/artifacts/handoff/generation.py#L170-L190",
+          "resource": "repo://src/powercontext/builtin/artifacts/handoff/generation.py#L184-L204",
           "version": "repo-lines-v1:sha256:1a983e8ff4f11d229a42b4584f1f8372ca85da3d1524ff493b534a3afad32946:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0MGQ2YzE3YjFmNGUwNDkxNDc3ZjE3NmZjMWFmZGFlMzk3MjcxMTY5NjE0YjFiOWQxZjBkMTBmMjA4YmZkYjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmNDczNzYwOWFjZmY5MmI1Yzk3ODhlMTc0MTNkNmZkMGUzZDFlMzc3MGIzZTU2NWFkZmM3ZmU5MzRmY2Q3NGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5OGIwNjNkOWI0N2U2NTM3OTYyNTU3MmNjZTE5NzY2OWQ1NzY3ZTEyYzE4YmUwNzU2NTJiOGNkOTgxY2U4ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEwZGI4MDQ2Nzc4MTIyNGQxMmViM2ZhYmExZTlkOWU3ZmJjZmM4ZjI0ODdjODc4YjgzZDI5NWQwMzUzOTI4OGYifQ"
         }
       ]
     },
     {
       "id": "claim_0db22bfd1289472797728c124db03894",
-      "statement": "The LLM generation pipeline maps schema-valid model output back to exact operation-local citations and rejects a statement without evidence or a citation to unknown evidence.",
+      "statement": "The LLM generation pipeline maps schema-valid model output back to exact operation-local citations and rejects a statement without evidence or a citation to evidence outside the request.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/builtin/artifacts/handoff/generation.py#L123-L150",
-          "version": "repo-lines-v1:sha256:e6b3e2d880e12084c06cf8357153366798cf7def98ce73847d1cadbc90d2931a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlZjgwNTYyOWRjZDc0NjlkNTc2NjE0MzkzYzMyMjQwYTBjZTVkZjk3YzZmZWM1ZDkwMzM0NDdhNDQzNzBmZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3YmRhNWZmZmJmMDJiMDAyNmFlYTljYjMwZmNmMGI5M2E3ZTg2MjU4M2IzN2FlNmZkMjkwMWY4YWVhMjUxMzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRjMGFhMWM3ZDdjZjQyYmQwYjM3YTlmODg0NmYwMTRjMDFiZmI1ZDNiYjUwZmY3NDFjZjBkYzk5ZWVhNTFmODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQyNzBjZDQ3NGUzZGQ2ZTJmYmE1YjlmOWJlMjM2YTg5ZGJjNThhOTEzZjgxYzU3ZDFmMmIwYmE2MzFkMzE2YTYifQ"
+          "resource": "repo://src/powercontext/builtin/artifacts/handoff/generation.py#L143-L168",
+          "version": "repo-lines-v1:sha256:1365653544a6923f4003d6787a2424aebbd07cd7001dad484c1b31d32f8aeb3c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhODc2MzdkODdkNzI2NDM3ZTViMzkxZjRmYjRiZTI1OGRlMzZjOGMwNjZlMGExNjAzNmQ1MDRiZjNmZTg0YmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2ZjE1ZTRjYjQ2ZTAwYmYyNTg2ZGE3MzE2NTRiZDgzNGZhNTdhMTQyOGE1NDdjYTBiZDM4MGQ2NGYzZjVmNDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhM2FkYzEyZDdmNmVmMjUzY2M5Y2RlZGZkYTgzODliZTQxYTE3NjFhZThiNTgwMzZlYTBiYTkzOTYzMmU2MjAifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/artifacts/handoff/generation.py#L242-L272",
+          "version": "repo-lines-v1:sha256:d6e9e81e8771ba643bd8b002bd9f2abc378fea5eace2b100e9cef86f882b9e9a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg4YzE4NzcwMzU3NTZhYzQ2MTRhZmM0MzNkNDk0MjkzNWY0ODA2ZWNhNmRmOTEzYzM0NmYyZjhmNGEzNzI0M2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg1YWVjYTQ4NTkwZTI4MzI1MDdkYTI2YjM3NGJmM2VlMTQzODExMTIwZTM4MGY1ZGY0NDIxYmI4YjVmNWE0NTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ1MzE0Y2U1NDRlMTBlZGI2OTMyMzE3OTA4YmVlYjI2YmMyNjNiZGM2N2M0MTZhYzE5MGI0NmUzMWY4ZDMyYzQifQ"
         }
       ]
     },
     {
       "id": "claim_5a49e00bef824a3cbbdb770930aeb08e",
-      "statement": "Finalize validates each direct citation against the scope's evidence resolver and returns a PreparedHandoff bound to the scope and the current committed head as its base (None for the first milestone); finalizing does not create an Artifact Revision.",
+      "statement": "Finalize verifies any generation receipt carried by the draft, validates each direct citation against the scope's evidence resolver, and returns a PreparedHandoff bound to the scope and the current committed head as its base (None for the first milestone); finalizing does not create an Artifact Revision.",
       "evidence": [
         {
           "resource": "repo://src/powercontext/builtin/artifacts/handoff/models.py#L329-L345",
           "version": "repo-lines-v1:sha256:1e9f1702f453cacb31030acd8354da1dd2fbee256f26876a2e99b690a79b5d35:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlZGFmMGJlYTFhZDViZGJjYmEyOTVmYWRhMGEzNDY5OWFmOThmYzU0NDQ1ZTAzMGYxNGRiMDQ0ZWJlN2NhNDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkMzY4NTAwMGU3MDI5OTQxYjM3MjU1MmExYjdiODU4NTIzYTQ5Yzk5YWU3OTkwOTVjYjA3Y2RiMzlhMmFjZTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIyMGNmY2E4NTcyM2FhMTk3NDlkYmJhY2RlMzU1YWI3MDg0ZDFiMmMxNTM2YzM3MTdhNTc5NDYxYzM3NjY5ZDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM0ZTBjNTk2NzM4NDg2YzZhOTY1ZjYwYmU0YTkzMzYwNzExNDdiMTllMWQyMzUzMjk4NTk1YTRjMGJiNjIzOWMifQ"
         },
         {
-          "resource": "repo://src/powercontext/builtin/artifacts/handoff/service.py#L128-L145",
-          "version": "repo-lines-v1:sha256:6deb9682d7566a48d9381463c8799188de9fd21e7b19ec900cca39754dc62cab:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjNGQxYzZjNTViYjc3NjM5NTZjODgxZmY5MGZkNWNhNWE5NWM1M2M1ZmMyYzZlMGM4YmJhNWRlMThhOTIzNWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiYmQyNDEzMjc0YzlkNjVhMmZmNGUxYWM2YWVjY2MyYjRmNzBjYThmMzI1NzVkOWFmOWU0N2Y5MTc1ZWZhNTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNkNDA1MjhiYjVjMTBkNTQwNWQ0YjY5NjFhNmI4NmFhODZlZjQwMzI3YjI4YjQ4ZjcwMzYzYjdiMTcyYWRiNzEifQ"
+          "resource": "repo://src/powercontext/builtin/artifacts/handoff/service.py#L134-L152",
+          "version": "repo-lines-v1:sha256:d9b1c856868b84811288d780d40e44618a5bf95d45b17eb13b20a5738c8ce257:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjNGQxYzZjNTViYjc3NjM5NTZjODgxZmY5MGZkNWNhNWE5NWM1M2M1ZmMyYzZlMGM4YmJhNWRlMThhOTIzNWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MDMyZTk2NGQwOTMyMzUxZTVkMTg1MjY5MjgxYjE3MWEzYTA5YjA4YjI4NmU2NjFlYTQ3MDMyM2M4MmViNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiYmQyNDEzMjc0YzlkNjVhMmZmNGUxYWM2YWVjY2MyYjRmNzBjYThmMzI1NzVkOWFmOWU0N2Y5MTc1ZWZhNTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNkNDA1MjhiYjVjMTBkNTQwNWQ0YjY5NjFhNmI4NmFhODZlZjQwMzI3YjI4YjQ4ZjcwMzYzYjdiMTcyYWRiNzEifQ"
         }
       ]
     },
     {
       "id": "claim_6e8d248b41b448e4ab292d3b863c2d88",
-      "statement": "Commit is the only transition that creates a Handoff Revision; committing content equal to the current head is a no-op unless force_revision is set, a prepared base that differs from the current head raises RevisionConflictError, and commit re-validates evidence before creating or revising the Artifact.",
+      "statement": "Commit is the only transition that creates a Handoff Revision; committing content equal to the current head returns that head as a no-op before any base comparison unless force_revision is set, a prepared base that differs from the current head otherwise raises RevisionConflictError, and commit re-validates evidence before creating or revising the Artifact.",
       "evidence": [
         {
           "resource": "repo://docs/en/rfcs/0048_handoff_artifact.md#L252-L253",
           "version": "repo-lines-v1:sha256:8e4df563ca436323e1e3298417975d611bda941eac1abb63f2757c4ecc5166f2:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWQyZDZmNjMxMTI0ODBjNzg4YzRjNTcwMDMwYzdiNmMxNDg4NWE2NjRjMWEyODZlZTZhMTRmZDYyMWVjMzFjMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmNkNzBmMjkyZmYxMjhlMGI3OGFmZWRiZGNkNDEwNWUyZTUwMWY0ZjM4Y2M5MWIwYjY3ZjEyZmNhMDEwOTU2MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2NmZGNlOTM0MWZjOGQyM2QzYjFlNjEwNGRlMmNlN2RiNzAyZGI5ZjgyODNlNDYzNzNiODZkZmFjYjlhY2QwNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmM4MTMwYzg0YmEzMDVlNDVjNjQ1ZTgwNTE1ZDliNmE5MjNiYzBiMGY1NWRhYWI1OTQwMDYyYjdjMjQxNTc3NCJ9"
         },
         {
-          "resource": "repo://src/powercontext/builtin/artifacts/handoff/service.py#L147-L185",
-          "version": "repo-lines-v1:sha256:6b42852c1b5591aadc471684da10d9e1766a97f4ab13dbe03699d6d4fc42624c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzYmIzMzA3YWU3ZGViOThiNDVjYjhjYWY5ZjMyZDNlOWZkMTVkZDQ3OTk0MjI0MjZmYmM0MjdlOWM3YzZjMjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhZmNlYmY5YjU0ODMwMDBhZTM1NDI2ZGUwNTI5ZTJlYmMxOWYzMjMxYmVlZjdiZDgzMDA1NmFjNTkxOTFmNDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhZGI3MGZlMmFkMzE3M2MyOGIxYWNmNmIxZmE0Y2M5MGUzNDBhMmUzY2RhNjZmZjljODMwNzA1NWYzYTg5OTAifQ"
+          "resource": "repo://src/powercontext/builtin/artifacts/handoff/service.py#L154-L190",
+          "version": "repo-lines-v1:sha256:b5041a858657cd538dce177b1b1f773f22b2f73c2d34b63f547f3b5c8ad1fe7f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzYmIzMzA3YWU3ZGViOThiNDVjYjhjYWY5ZjMyZDNlOWZkMTVkZDQ3OTk0MjI0MjZmYmM0MjdlOWM3YzZjMjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyMDBhODA0N2I0ZDUwZjJiZTk2YmQyMjk3Y2Q0ZTE1YWJmYjQ2YTY4MDM4ZjY1YzFmYTFiOWJhNmU4MWY0MWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVkODZiNWY3NTQxMDdkOTgzNTAzMzdjY2FhZGE3OWYzZmVhNzUzYjI3ZWJkMjQyNmU1ZDI4YzEzNmI0NTMyNGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdjMmVjNzlmZTMxNzI5OGUwM2U1MmZmZjg2M2FkNGI2ZmE5YzU1ODA3NGE5ODZlZjIyMDgwZGFiYjYwOTBlODUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/builtin/artifacts/handoff/service.py#L393-L397",
+          "version": "repo-lines-v1:sha256:0191f2be68bd811f90239b005afb799802c6427677aa73c898b52c30e379b674:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDFhYmNkMGNjNjkxM2Q0ZjUxZWIyMWU0ZjVhZmMyZTkwZjg2ZDM2YTQ1MGJiNDJjYjA1YzZmM2UwZDcwNmY4YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzg3MjExYjc5NmM5MGY5MGU3YmNhNmMyNmYwZTljZTJhZDQ3NmQ2NTJkYWMxOWE3NzhhMjEzY2FlNDg2Nzg0ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmU5OGQ0ZWYyNjZmNzZiYzIyYzU4YTMwN2EzNDUzYjlmMWZjMmVmNjc5MGExZjE3MmZlYTUyOWFmM2Q0ZjRlOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTYzNmY5NmZmMDA2NTI1NDNiNTFkYTQ1YWU5Y2Q4YmQ5MTFhZWI3YzM2NjVjMjU2YjAzZjU0NDYzZDI1MjFhMCJ9"
         }
       ]
     },
@@ -119,7 +131,7 @@
       "statement": "A committed Handoff records source and artifact lineage taken from its direct citations, plus the generation artifact when present.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/builtin/artifacts/handoff/service.py#L477-L495",
+          "resource": "repo://src/powercontext/builtin/artifacts/handoff/service.py#L487-L505",
           "version": "repo-lines-v1:sha256:cf9a21a998c6f5672442b3cfc003fdc68fb9c441b399274149b70ffc19a2a549:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyY2IwOWM0ZTI0MzA4ZTYzMzllNDFmZjYwMzQxMWUyOTJiZGJiYzUyN2UxZmFjYjk1YmMzYjQ4ZTY1YTkyMGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3MzQ4MTliNzQzNWQ5N2UxZDdmYjUwNzMzZjhiMGI2NTQ0Nzk3Zjg3ODA0ZDllNmRkZjYyY2YxMGJlNjA1MzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc4ZTA0NTFiNWU5ZDFjYTcyZjhlNzkwMGQ3YmMyZTVlMTZlZGFjYmFhMmJlY2JmYmQ4NDk0MDhjZTBiMzliMWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         }
       ]
@@ -139,7 +151,7 @@
       "statement": "On the server, the first committed Revision of a Handoff Artifact establishes the owner of that Artifact.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/server/app.py#L3795-L3832",
+          "resource": "repo://src/powercontext/server/app.py#L4363-L4400",
           "version": "repo-lines-v1:sha256:8aec3202c8ba4143b09213c86df0e1f77e3fce625346913efbb25b6d2e4bb9ca:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjNjg1NDM2OGVhNThkZGE4ZjI4ODkyZGQ5N2I1MzUzNWJjMWZiZTQ5OWM4OGU5NGUyNmIzODBhNTZmYmU2NjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkMzRhOWRmNzc5Yjk1NjZiMDRhZDJiOWU2Y2RkZTNiMWQ1ZTZjMWE4YzhiOTdhYjdjMjhhN2IxM2EzM2JkNmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM3ZjlmZGM1NmY1ODBlZGI5MmQ4YzNmM2ViOTNjNWFjN2RiYzI4NjEyY2UwZTY0ZjVmOWRjYTQ1ZmMyMDFkYzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRjMWMwNDBiMGM1ZWEzMTA4NzA0NDVhMjliOWVlY2Y0ZjYzNzQyM2MzYzllNzI3NDM4MzZhMGZiZjNmNzVkNjQifQ"
         }
       ]
@@ -149,7 +161,7 @@
       "statement": "Continue from a Prepared Handoff reports selection prepared with no committed Revision, continue from an exact Revision uses the publication source scope for evidence when present, and continue_latest returns status empty when no committed Handoff exists.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/builtin/artifacts/handoff/service.py#L205-L256",
+          "resource": "repo://src/powercontext/builtin/artifacts/handoff/service.py#L215-L266",
           "version": "repo-lines-v1:sha256:cd31d6bb0c7f73de05d5fd5f476b184a946b808ebd888e6d24499c309930a08a:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxNzA3ZWI3ZjI1Zjc3MWI0ZTIxZDUzMWU2ZDZiZGU3MGJkZmQwYzE2ODBmYTU5ZDgxNmIyN2I4YTYwOWUzZGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmYTUwNzhkNDdlYzI1NGM4ZDMzODYyODIxNmFmNzk2ZDYyNDhhNGQ1N2IyMWYwM2EyN2M5NzBiMGMyY2Y2ZWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5YjcyN2JjZTYxZWU3OTdlYWM1MjliZGYyMmE3OTIzMWFjYTQ5MzAxOGYwMzdlNDNmNTE0MmI4ZmZkN2RmMDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJmZDY0NjYwMTRlMGE3MjQ3ODk2MTY0ZmZkNjA2ZjU1Y2Y5ZDA4NmJlMzM0MGI0M2ExZmM5ZTYzN2IwMWM0N2UifQ"
         }
       ]
@@ -167,7 +179,7 @@
           "version": "repo-lines-v1:sha256:525503102d7690998ae14b81162af440a784333b9e0227f3f3dad4e19a4a2765:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwMDgwZDg2ODUwYmZmYjEyZWUxMmI2NDdhNGUxYjUwNDhiZTBiNjQ3NGNhODkyNzcxNjUwYjU3MzM1Nzc4NTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzYzc4MGU4ZWRlMTU4YWQyNmVkNGZiMjRhNjM1MmQ4YzAzOGQxYmRmYTFhZDU3ZjRmNWJlMTBhMTFhYmRkMzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiNTMwZWRlNGYzZTg4MmQ2ZTg1ZTllNmE3N2JiYTI5NTk5OTk3MWU2NTk5NGU0ZTA0MWJjMDAzYjE1NzhkMmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA3ODdjNmEwZTlkMmVkYmZkYTFlZDViZTE4MzM1YWQ5YTU5Mzk4NGNmMTU5MDVjZTUxMTA2NWVkY2RiNWZhMzIifQ"
         },
         {
-          "resource": "repo://src/powercontext/builtin/artifacts/handoff/service.py#L408-L440",
+          "resource": "repo://src/powercontext/builtin/artifacts/handoff/service.py#L418-L450",
           "version": "repo-lines-v1:sha256:2d651a211778c3b2d9458cd071b6a7a34ada6a6fc80fd3143226844163af50a4:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0ZTg0MmFlOTAxZDZkYTY2MjY2M2EwMGE1MzdkMmUyNzdiZDkwMGQxOWE4ZTQ5MzZiYzVlMTQzNTBmYWYwMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmYjk3YzZjN2FhNWU0N2EzMjJhNTY1MmExY2Q4YTI2NjU2YzgxY2I3NTVkNTQ1MjlhZDY5NTNhMzZhOGMzMjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgxNThjOWZlYmQyNTY5M2QwN2MzNjgzYzg2N2M5MjhlZjlhZDdiMWZjYzZhMmE0OGQ2ZmI3ZTQ4OGE0YjM1ODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3NDVkN2YyYmNmMjliYzY1YWI4ZGY4ZDA0YjhkZjI3OTY4NDNmM2JmMTQ3MTcwYTBlMDkyNzE5NWFjODJhN2UifQ"
         }
       ]
@@ -177,7 +189,7 @@
       "statement": "The Work acknowledgement resolves the Handoff, refuses an empty resolution, refuses an accepted receipt when any cited evidence is unavailable, and records the receipt as Source evidence.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/builtin/runtime/application.py#L3451-L3478",
+          "resource": "repo://src/powercontext/builtin/runtime/application.py#L3510-L3537",
           "version": "repo-lines-v1:sha256:fdd53a82e26497f01f0636464ef8b32d0ad6ee397073dcacda6382f55f28991a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmYTFhNDllOWIyZGMzNjhjY2NlMWZlMDU4N2Q0NjA5Njk5M2E0ZjBhNThmOTdjZTRkOTVmNDVjZjU3MTAxOGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjOTVlZmIxNGQ5MWNkNjUyYThlYWFiNjJhYmQ3NmYxNTdmNWVmZTNmZmUxOWEzZmY1MWYwOGZjMzRkNmQxNTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk2MzNmNDRjYmI3MjU1MTE0NmZlOTkxNWViYTcyMmRmYmNhOTAyMmVlMTRhYzkzNDhhOTYwYzRiMGM5YzRlMjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxMDZlNTY5YmZmMGQ1ZmQ2ZjE5ZDQ1MjhiMWQ4MjAxM2E3NTMxM2I5YzAyMzVhYjBkZjljNzExNGE0ZWUyNDEifQ"
         }
       ]
@@ -187,11 +199,11 @@
       "statement": "An accepted Handoff receipt requires all three receiver checks, live_state, capability, and authorization, to be confirmed.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/builtin/work/models.py#L248-L256",
+          "resource": "repo://src/powercontext/builtin/work/models.py#L287-L295",
           "version": "repo-lines-v1:sha256:02066369350974e6d32f6ba5ec3beaf4c4ffd60de8a105c4017a5b51f38462b3:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDQ5MzRkNjkyYzE1YjdjMjliMGI3OTMzYjQxZDY2YzEwOWJmNjZjODViZTEyMzNmZjI4MzlhYTMwMWYzYjQ0ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDI2NjM1NmU0ZmFjOGVkYjcwM2RiZTM4NWZjYmIwZWRlZTliY2I4NWVlY2QzMDI5OGVkNGIxOTUyZmI1MjQ3ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDc0OTY2ZDViZTBmMGIwZjgyZTIyNGE2NGIyMTBkMTFhYTJmMDI2OTVlZGMxNjA2YTQ5OWM4NGMyZWU0NjIyYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWNlNzA1YjM1ZmY0ZDAyZTYwOTQ1MTdjN2FiZDY0ODZkNjUxOGMyMGNlYTM3NjY0ZjQzOWEwZjdmOTMwOGU5MCJ9"
         },
         {
-          "resource": "repo://src/powercontext/builtin/work/models.py#L316-L345",
+          "resource": "repo://src/powercontext/builtin/work/models.py#L355-L384",
           "version": "repo-lines-v1:sha256:475c9f9d2e6ea5bd5b1106b0316d6cef0dad8ebecefff2b6c04fc4cb3b09aaa0:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5YTU3MTQxNDgyNWUzMWQ5NWExYzc3NjhlMzRmNzhhYWU5NzA1ZTEzOWY4ZjlhMGI3ZjhkMDQ2MDNlZDljZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0YTZmY2VlZTUwZjgwMDE2NTU5MDA3MWZjN2VkMWExNGM5N2RjNjdhNDRiOTdlMjk3YTJkYzQzMWRmYWYzOGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQzZDE3MWRlNzU0MzFhMDIxYTBkOTRmYTc2ZmFiZjBkNzEzOWM4OThjMWEwYjQ0YjQzY2E2MDkwM2ZhMWI4NDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI2MWZlYzA3M2YyYjNkOWViOTBiMTQ4MGNkNDVjY2VmYjU1MzI1YmI4OTlkYjdkZmY0ZGMwNDZmNDQxNWMwNmMifQ"
         }
       ]
@@ -201,7 +213,7 @@
       "statement": "handoff_current captures the current boundary as a Source, cites that boundary for every statement and the next action, finalizes the draft, and returns a PreparedWorkHandoff without committing.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/builtin/runtime/application.py#L3433-L3450",
+          "resource": "repo://src/powercontext/builtin/runtime/application.py#L3492-L3509",
           "version": "repo-lines-v1:sha256:ec28cf59201d668e9eac9b8b16614ea44fd19ae820a49c32f10cc5728de31778:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwMjUzNDQ5OGEyNmVhMjY1OWJmOGUzYzBmOGVhMDczZDU5YTVlYTM5NzZiY2VmNTZlOWVhODI2NWE1M2E1YjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiMzEwMzFiMWYxN2EyNDA3YTliZmMzNzJiNDViODRkYjMzNjYyNmNhMjViMGY3MzA5NjEyYzRhOTNkOWMxODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQzOWM1NTY2Y2ZhMTE5ZTkzMDJkZGIyNjIwZmVhZTgyYTA5OTQyMjU3NjMwYzBjZDcwOGE3MTNjYThjNmRhYTMifQ"
         }
       ]
@@ -231,7 +243,7 @@
       "statement": "The hint path never generates, persists, or truncates content; it returns no hint when the selected Handoff is missing, when any statement evidence is unavailable, when an omission citation fails validation, or when source eligibility rejects a citation.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/builtin/artifacts/handoff/service.py#L285-L346",
+          "resource": "repo://src/powercontext/builtin/artifacts/handoff/service.py#L295-L356",
           "version": "repo-lines-v1:sha256:c7304afb3ac97a11321dad3db3fbb6338fd3a10153e7af3fca5712038281a801:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlODUwMGM0MjRmMWI5NTZjZDNiMmZkMzhkYTBiY2YyZDIwMWM0Mjg2MGQ3ZmIyNjhlOGM2ZTMzNzNlOTA3MzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkZmFlODQ2ZGQxNzRhZmQ5MTBiYzk0OTA5NmRlMzU5ODI4MTQyMGM4YWQzMWUxYWY5NTViZDZiOGQ0MTI1MTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRlYWI2YzQ5ZjMwNTBlZWNmMzBmODRlNTQzYTEwZmY2NzhiM2I2YTNjMmI1YzBjNGI3MjUwZDBlMDVhZTU2NTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVhOTE2OGExZDllYzcyZmM5MjI0N2E5ZGI2ZDllNTY5NDQzOTQ0ZDFkODVkMzZjYTE1YmNhMTg0NGU1ZjVhMmEifQ"
         }
       ]
@@ -255,7 +267,7 @@
           "version": "repo-lines-v1:sha256:b98209155b512316a168499a4a5c15fe228f5b41af9eae2ea470104bf48a8020:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjk4MjA5MTU1YjUxMjMxNmExNjg0OTlhNGE1YzE1ZmUyMjhmNWI0MWFmOWVhZTJlYTQ3MDEwNGJmNDhhODAyMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjk4MjA5MTU1YjUxMjMxNmExNjg0OTlhNGE1YzE1ZmUyMjhmNWI0MWFmOWVhZTJlYTQ3MDEwNGJmNDhhODAyMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWViYWFkZThlNWJmYzY4ODA3NDUzOGMyM2I4ODQyZmM1NTMxNGJkYzEzZmQyYWM4MGJlYWYzNDIwNTYzYjE5MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
         },
         {
-          "resource": "repo://src/powercontext/server/app.py#L3867-L3881",
+          "resource": "repo://src/powercontext/server/app.py#L4435-L4449",
           "version": "repo-lines-v1:sha256:559e810bbe5b2225805319076515c5d4bc3e9dce96eb8f4822f50652c424566b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyODJmYTljNDYwNDdkYmViMzg4ZDUxNWIyYzg4NDE2ODJmMGViZWNlYTNkMDk3YmUyNGM2ZjY5MTc1YzJlYzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhNDI2NDA1MzViYmUwZWRkYzI2YzgyOGE4ZDU0ZjUzNmExNGZmMzZhYTRkNTMxM2EyOGMzZmJhMzc5NDU3MTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI1MzdhMmE2NWVjZGE4MjBiZTAxZDU1OGM3YTcyYzFlM2Y0NGJmMmMyMDZjMWUyYWMyNTk2ZWI1ZWJmM2E5NzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJhN2IzYzk4MDMwZmY2NTEyODA5YjczZmJmMjJmNmI3ZTljZjNiOWJiZTFiMzAwNzg3Yzg0NWIzN2JhNzViNjcifQ"
         },
         {
@@ -283,11 +295,11 @@
       "statement": "Hint access reuses the Continue resolver: exact and latest selections require artifact.read and handoff.evidence.inspect on the selected Handoff, while a prepared selection requires scope.read.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/http/_generated/operations.py#L1714-L1714",
+          "resource": "repo://src/powercontext/http/_generated/operations.py#L1546-L1546",
           "version": "repo-lines-v1:sha256:92ec926c0b863835a494985ec8a78ac57fd58b2f082399a682cb7315bebcdf35:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTJlYzkyNmMwYjg2MzgzNWE0OTQ5ODVlYzhhNzhhYzU3ZmQ1OGIyZjA4MjM5OWE2ODJjYjczMTViZWJjZGYzNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTJlYzkyNmMwYjg2MzgzNWE0OTQ5ODVlYzhhNzhhYzU3ZmQ1OGIyZjA4MjM5OWE2ODJjYjczMTViZWJjZGYzNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWQ3YjMzM2QyYjZmYWRhNDBhMjE4MjQwOGE5MDIzODMwM2RmMDUzNmNhOWUwOGIwNTkyOTA2MDQ2ODc0MGZhMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWU4YjllNzVjZDdhMTc2ZWY1MTJmOGIxZmQ5ODE2MTRlODJiNDE0ODM5MTBhOGFhZDI1Zjc2ZTU5NTVkOTQ2NCJ9"
         },
         {
-          "resource": "repo://src/powercontext/server/app.py#L5387-L5399",
+          "resource": "repo://src/powercontext/server/app.py#L5950-L5962",
           "version": "repo-lines-v1:sha256:8cf2162d5bab600c293cb18f8409103ed7e28616c9bac0b676f6bf7aa75f25e9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjODZkMjFmZDg5Y2MwOGM2MGUyODAzYTQ5Yjg0NjdhMzU4MWNiYTZiOGM3NGU1YmQ1YTFhMGU4OTlkMWYwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzMzE4YTQ4ZWRjNzMwMzlmYzIwNWIwZmM0Zjk5NzRkMjhjOTBiNDExOTkwMDk3NTY0ZTMxODUyODUwZDQxZWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE0ZjJjYjVmZGU3YzAzNWE0NDkwZTM1YzAzOTQ0NzI2NTU3M2NmNDk5YjdmZjZkOGNiNDAxNjc4NTRlYzczNmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkifQ"
         }
       ]
@@ -297,7 +309,7 @@
       "statement": "Acknowledgement access for an exact Revision requires handoff.acknowledge on that Artifact, and for prepared or latest selections requires scope.contribute on the Scope.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/server/app.py#L5403-L5410",
+          "resource": "repo://src/powercontext/server/app.py#L5966-L5973",
           "version": "repo-lines-v1:sha256:61eff890ad84e78dd1ba6c292447f1544b8544e74c5c5d16ee9ffa945ec17543:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjI2MDk4ZGExMDcyNzMyNzA3NjZjY2VkNzQ2YzkxM2VlOTA3NjkyNzRkNmJjNjgwN2Y1ZTkwMDYxODVmMjRmMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGNjNGE3ZDFjYzc5NmFiYTNlNDY3MjMzMjdmNTE3ZTlmODExOTgyZDI1MGYwNzAyOTg2ZTRiNTc2NGFkOTU4OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTM5YWUzY2I1NzY5MDhmYTNhZmJiOWY0NGViMTg5YWVkZGI1YTM4N2Q4ZGM5ODU0NjQ2MDc5MjI3OWRmMzhjNSJ9"
         }
       ]
@@ -307,8 +319,8 @@
       "statement": "The handoff Artifact family profile makes only committed Handoffs shareable and grants artifact read together with handoff.evidence.inspect and handoff.acknowledge, with manifest transitivity.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/server/authz/profiles.py#L68-L80",
-          "version": "repo-lines-v1:sha256:322a9b72f301855ed7a52c3dae629e1727be0662379fc03f29c0fc9a50575fc9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwNWMwN2NlMThhMzI4ZTM2NTcxNmYxMGE2ZmY0NDBjMGUzN2ExYmMzOGJkYjhhZDU5NWU5ZDIzY2E0MGMyMDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5ZmI3MTlkNjM3ZWE2ZDJkYTM2OGFjZWZkZDdkYzQ3ZmQzYWM0ZjVhMjkyN2E4YTVkNTc1YzgwZTcwYzJiY2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA3ZmZlNmFlZmU0NWYyNDkzNDdmMTdjYjk3OGIxY2IxZjVmNGYwZTAzYmUwZTRmYjVmNmRjMTEwNmIxZWVkZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVlYWUyM2E3NGFlMmQ1OGVkZjU4ZTJiNWJlNjlhMzdjMWU4OTBjMjIwYzllZmI0NTE5MDVmZGQ2NmY1NDgyYzYifQ"
+          "resource": "repo://src/powercontext/builtin/authz/profiles.py#L68-L82",
+          "version": "repo-lines-v1:sha256:8126f056923807cdc434004ab7fd67fd59475745c0caed7a78ce7afddea7cdc8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwNWMwN2NlMThhMzI4ZTM2NTcxNmYxMGE2ZmY0NDBjMGUzN2ExYmMzOGJkYjhhZDU5NWU5ZDIzY2E0MGMyMDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwMmM0MTRiNTRjZjg2ZGZiNGY5MGRmZTdkN2JkYmZhNjY2YjdkZGRkMzJmMTI4NmYyMzBhNWI1MzI0MTgxOGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA3ZmZlNmFlZmU0NWYyNDkzNDdmMTdjYjk3OGIxY2IxZjVmNGYwZTAzYmUwZTRmYjVmNmRjMTEwNmIxZWVkZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNlMWRmZTMyNTIxZmIzYjA1ZjBkYjAyM2ViZTkxYjI4ZmZiMjZlNzgwZjJiYzZkM2VhMTE0NGZjODIzN2RiOWEifQ"
         }
       ]
     },
@@ -375,28 +387,62 @@
       "statement": "A runtime test confirms that a hint omits a lineage-only Source as empty while Continue still raises SourceNotEligibleError for the same Handoff.",
       "evidence": [
         {
-          "resource": "repo://tests/e2e/test_handoff_runtime.py#L395-L425",
+          "resource": "repo://tests/e2e/test_handoff_runtime.py#L438-L468",
           "version": "repo-lines-v1:sha256:1966c7af33eb3eeb97ebcc9d9c73fb5d29d7eafaaba99bd7618fd04caf2a340a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkZTkxMDJiZWMwYTNmNDA3ZWNmNzdkOTQwZDQxNjhlNGU5MmEwYTIyZjIzY2EwN2ZlNjBlMDBlNjNkYmUwYmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY2NmM0ZGM5N2YyNjM0N2ViMWE3ZDc4ZTc4MWU3OWFmODI3NDc3NDQ3OGMwNzBiMjAxYTgxNDk2ZGRlNTc0YzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQzMjhkOGI3YzRmYWFhOTRjNWYxNjhiMjA3OWZlZjQxOTExMTNiMGVmOTBkYjI2ZGMwMDA4NmQxOGNiNGU2ODQifQ"
         }
       ]
     },
     {
       "id": "claim_51bfa5b38c324bcb8f1d68ce0ccebc4d",
-      "statement": "The Handoff Report tests verify subtree and exact selections, a no_handoff result for a Scope without a committed Handoff, and that the number of SQL statements does not grow with the number of selected Scopes.",
+      "statement": "The Handoff Report tests verify subtree, exact, and all-Scope selections, a no_handoff result for a Scope without a committed Handoff, and markdown exact addresses; the statement-count test bounds the SQL statements of a report request for 16 Scopes at no more than twice the selected Scope count plus three, rather than proving a constant count.",
       "evidence": [
         {
-          "resource": "repo://tests/test_handoff_report.py#L157-L185",
-          "version": "repo-lines-v1:sha256:dd5040d885117530e24242de82993023b632f2e228568bd4d7ef5eb8f71155fe:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmOThhYzdiODhkYjkyNWNhZmUxYzNiNjYxMDVkNDMzYzI5NDAxMWE1NjQ1NTZkNDQxMTE0M2M3YjM3ZjE0NGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllZTYwNDE5NDFlODJlMDk0ZmY1MGNkYWVmYzk0OTU0ZjJiMTVjMzAxODZjMTU5MDFiN2NhZTgwOTkxMGJiOWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyZTlkYWNiNzY2ODA1OWEzZmRiMmUxMWVkYjg1OTE5MzYwZDRlY2UzNTc3MzdkYTgwMzMzMGQxZWNmMDBkMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzMzAyZWE2MWZjMDk2M2RlZDdiMThiYjljYTZiZWUwNzhjZjEyOGE4NTA3NTI3NGEyNWYyYjUyY2MwNzgxZmYifQ"
+          "resource": "repo://tests/test_handoff_report.py#L159-L210",
+          "version": "repo-lines-v1:sha256:b02ee72eb9601f3f6b506063edb30ae70a005b8551cec8c2ec3d15e1a328d9db:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmOThhYzdiODhkYjkyNWNhZmUxYzNiNjYxMDVkNDMzYzI5NDAxMWE1NjQ1NTZkNDQxMTE0M2M3YjM3ZjE0NGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhYzEwMWUwOTI1NmNjZmE4NGIzOGMyMjE4ZjQ1NTllZGM5Y2RmYzczOTdiYjk4YTQyMmVlMDFiYjM2N2JkMWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyZTlkYWNiNzY2ODA1OWEzZmRiMmUxMWVkYjg1OTE5MzYwZDRlY2UzNTc3MzdkYTgwMzMzMGQxZWNmMDBkMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         },
         {
-          "resource": "repo://tests/test_handoff_report.py#L27-L88",
-          "version": "repo-lines-v1:sha256:9f0cbbce960bf53ea6caf5abc56d5fb70599945eb40df31bfe05496943a33785:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViMzYyNmJjYzBiYjZiOWM5OTc1ZWNjNTI2YTdiOGY3OGJiOGVlNmNiNmExYTU3MDA5MjRjYWU4YmM1ZDEyMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQwZDAwMGY2Yzc1NGIwYWNkMTU3M2ZkZmE4YmIxOWRlMjA0NDQ3MGY2YmFlOTNlZjZmY2IxZDBlMzNkNTQ1NzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNkYjk2MjIxOTJmMjJlY2U4NjJiYmFkMDhhZWNhOWJlMzQ2ZmVjMDVlZGI1Njk2MjIzOWVmYjM2MzUyN2NiMTQifQ"
+          "resource": "repo://tests/test_handoff_report.py#L29-L113",
+          "version": "repo-lines-v1:sha256:82e2231888d4322c90cf4a90e79d98719665d9fcd3259f8c2bbf79f634910959:eyJzZWxlY3RlZExpbmVDb3VudCI6ODUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViMzYyNmJjYzBiYjZiOWM5OTc1ZWNjNTI2YTdiOGY3OGJiOGVlNmNiNmExYTU3MDA5MjRjYWU4YmM1ZDEyMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhYzY0MmU0NjQ2YWYxMDlmNDkwYmI3ZDBjNmJjMGVjYjA4MGM5ZmVhOWNmOTg3MGJjNTg5MWRmMTlmNWNmMzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQwZDAwMGY2Yzc1NGIwYWNkMTU3M2ZkZmE4YmIxOWRlMjA0NDQ3MGY2YmFlOTNlZjZmY2IxZDBlMzNkNTQ1NzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhkM2JiYmM3ZTdkNTlkMDUwMDVhNzdjZWRjZTIzNjkxYTAxMmIyNTc5ZmVkZThjYmY5YTE2N2FjNmFkNWZjMjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_80e4aab66930409eaac5c7185784295b",
+      "statement": "A commit whose prepared base no longer matches the committed head raises RevisionConflictError and leaves the existing Revisions unchanged, and continue_from rejects a Prepared Handoff from another Scope with HandoffScopeMismatchError.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/artifacts/handoff/service.py#L154-L190",
+          "version": "repo-lines-v1:sha256:b5041a858657cd538dce177b1b1f773f22b2f73c2d34b63f547f3b5c8ad1fe7f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzYmIzMzA3YWU3ZGViOThiNDVjYjhjYWY5ZjMyZDNlOWZkMTVkZDQ3OTk0MjI0MjZmYmM0MjdlOWM3YzZjMjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyMDBhODA0N2I0ZDUwZjJiZTk2YmQyMjk3Y2Q0ZTE1YWJmYjQ2YTY4MDM4ZjY1YzFmYTFiOWJhNmU4MWY0MWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVkODZiNWY3NTQxMDdkOTgzNTAzMzdjY2FhZGE3OWYzZmVhNzUzYjI3ZWJkMjQyNmU1ZDI4YzEzNmI0NTMyNGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdjMmVjNzlmZTMxNzI5OGUwM2U1MmZmZjg2M2FkNGI2ZmE5YzU1ODA3NGE5ODZlZjIyMDgwZGFiYjYwOTBlODUifQ"
+        },
+        {
+          "resource": "repo://tests/e2e/test_handoff_runtime.py#L667-L721",
+          "version": "repo-lines-v1:sha256:8827312ba8d2ed222c5bae45b869ce1a1c265ea074484b5ee5bf2186854048d5:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5YTFmOTBiMGE0YTY1ZjY5ZmJkNDBmNmZhNDVlMzkxOGI5YzBlZTVjNjY1OTA0OTA4MWJkYzVmODUwZmUwNzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY2NmM0ZGM5N2YyNjM0N2ViMWE3ZDc4ZTc4MWU3OWFmODI3NDc3NDQ3OGMwNzBiMjAxYTgxNDk2ZGRlNTc0YzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4ZjhlNGU3ZmRkN2Q3NzNhY2IzYzBjZDZmZGI3ZWRiMTkyN2MzYjdhODM2M2Y4YTcxNTdiZDRkMGQ3MjBlODgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e5dded984fe34bc2a1645586cf625f88",
+      "statement": "Memory is written through the remember_memory operation at POST /v1/memory/remember, which requires scope.contribute on the request scope.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/http/_generated/operations.py#L1925-L1952",
+          "version": "repo-lines-v1:sha256:d2fc7d0125da181ad9449376398ff0b76893c597924347bb1697dc29b7cefb72:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwODhmMjE5MGJiZGU0M2FhMDY4OTQzNTc5ODIzYmUyN2M5ZTgyNjNlOWUwMDlhMTkwMjA2NDNhMDlhNzRkNDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3MzIxY2Y5ZjE4NmY0M2RhYjM1YjA3OTYxZGQyYmNlNTliNDI4YTU4N2Y4MmU1YTg5MTY1ZTdjMWNiNjMxN2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ0OTc3ZWZmNDkyMWY5MDA5ZjMzMjFkZmY5NzE0YjM2ZGI5MmQ3OGMzYzE3ZjU2MGE5YWRlMzdmNmUxODAwZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5MjdhMGE4MzAwZTY5ZmQ5NzIxNTk3MTdlNDhhNmQ1N2FkM2QwOTkxOWIxMjg4NjQxMmMwM2RjNDIxODQyMTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_89a07e140dde4690abc378678ac74d7f",
+      "statement": "A ready continuity hint reports selected_evidence as the citations of the first state statement only, and a blocked hint additionally carries the full recorded state as historical_blocked_state.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/builtin/artifacts/handoff/hints.py#L36-L55",
+          "version": "repo-lines-v1:sha256:8b9ceb5e42addad55a0e97bf026ed61b30ce854f3fe96220fd2a164633b211e9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdhMjM5OGI5YmZmNTViZDA4ZjQ5NjBkOTRiMmQzYjk4Y2Y0NDBkZjZmNzc0MWI2MWM0NjFlMGZjMjBmZDVhZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0MzdmOWRjNWUwNDExYWFlMjcxZjRkZmM5OTdlNjdmMDA5NTgxOTQ5ODU1MTQ2ZjFiYmJkOTExZjY4NzA4YWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1YzczMzY5OWRiZjc5ZTA0MGNmZGVkM2VkN2JiODlmM2E5NTU2ZGZkNGNjNmUzZGY0ZThkMGZiOTdhYzQ3NzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgyNTU2OGZjMzYzNWFlM2FmNTgyN2ZmYWUxMWE1YWNjMDEyM2Q1ZjkxZDJjNjExMmQxMWNhZjc4YmU5MDE0MjMifQ"
         }
       ]
     }
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T09:04:09.583Z"
+    "at": "2026-11-16T11:46:19.799Z"
   }
 }

@@ -5,7 +5,7 @@ description: Runbook for deploying the PowerContext Server as a foreground proce
 tags: [deployment, server, systemd, launchd, windows, docker, helm, kubernetes, uds, authentication, operations]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:04:09.583Z
+    at: 2026-11-16T11:46:19.799Z
 sources:
   - id: openwiki-source-23a6d5005dd53cd7bf8939de
     resource: repo://deploy/helm/powercontext/templates/_helpers.tpl
@@ -23,8 +23,18 @@ sources:
     resource: repo://docs/en/docs/operate/deploy-server.md
   - id: openwiki-source-c359a07a6763df089ec8492f
     resource: repo://docs/en/docs/operate/kubernetes.md
+  - id: openwiki-source-f7d9a38ab06bf7afc0d016c6
+    resource: repo://gateway/crates/pc-gateway-app/src/main.rs
+  - id: openwiki-source-ab4315d8e7fbd3ec4a7ecc17
+    resource: repo://src/powercontext_service_bootstrap/__main__.py
+  - id: openwiki-source-f7ab4575aaaa78731fffce99
+    resource: repo://src/powercontext/ops/installer.py
+  - id: openwiki-source-1f00aa56ac5d6da6909b04d4
+    resource: repo://src/powercontext/ops/runtime.py
   - id: openwiki-source-bc58b27142b00aeeb91ebfcf
     resource: repo://src/powercontext/server/cli.py
+  - id: openwiki-source-ef4342397609c4d176aafd7d
+    resource: repo://src/powercontext/server/configuration.py
   - id: openwiki-source-bad9e61f25ada75aaa317ce4
     resource: repo://src/powercontext/server/factory.py
   - id: openwiki-source-17200cb0d01a7fb4e5bd5b5f
@@ -59,7 +69,7 @@ sources:
     resource: repo://tests/test_helm_chart.py
   - id: openwiki-source-695cc88265da2e0a7beb9b26
     resource: repo://tests/test_service.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:04:09.583Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-16T11:46:19.799Z" }
 ---
 
 # Server Deployment (Local Service, Docker, Helm, Remote)
@@ -81,6 +91,28 @@ this page covers the server side.
 
 Remote clients should reach the Server over HTTPS through a reverse proxy, or through an SSH tunnel. The built-in
 command serves plain HTTP and has no TLS options.
+
+## Server settings used by this runbook
+
+`ServerSettings` reads `POWERCONTEXT_SERVER_`-prefixed variables; nested groups use `_` as the delimiter, so
+`POWERCONTEXT_SERVER_HTTP_HOST` maps to `http.host` ([server/settings.py](../../src/powercontext/server/settings.py#L114-L137)).
+The defaults below are the ones the code defines when a variable is unset.
+
+| Variable | Default when unset | Effect |
+| --- | --- | --- |
+| `POWERCONTEXT_SERVER_HTTP_HOST` | `127.0.0.1` | TCP bind address |
+| `POWERCONTEXT_SERVER_HTTP_PORT` | `8000` | TCP port, 1 to 65535 |
+| `POWERCONTEXT_SERVER_HTTP_UDS` | none | Unix socket path; no TCP listener is opened |
+| `POWERCONTEXT_SERVER_HTTP_UDS_EXTERNAL_SCHEME` | none | `http` or `https`; requires `HTTP_UDS` |
+| `POWERCONTEXT_SERVER_HTTP_MAX_REQUEST_BODY_BYTES` | 16 MiB (`16777216`) | Request body ceiling |
+| `POWERCONTEXT_SERVER_HTTP_MAX_CONCURRENT_REQUESTS` | `64` | Process-local request admission |
+| `POWERCONTEXT_SERVER_ACCESS_MODE` | `disabled` | `enforced` turns on authentication |
+| `POWERCONTEXT_SERVER_AUTH_ENABLED` | `false` | Legacy switch; when `true`, access mode becomes `enforced` |
+| `POWERCONTEXT_SERVER_AUTH_TOKEN` | none | Static bearer token |
+| `POWERCONTEXT_SERVER_ALLOW_UNAUTHENTICATED_NON_LOOPBACK` | `false` | Opt-in for an unauthenticated non-loopback TCP bind |
+| `POWERCONTEXT_SERVER_DASHBOARD_ENABLED` | `false` | Enables the Dashboard |
+| `POWERCONTEXT_SERVER_METRICS_ENABLED` | `true` | Enables metrics |
+| `POWERCONTEXT_SERVER_METRICS_BACKGROUND_PORT` | `8001` | Port of the background-role metrics listener |
 
 ## Foreground `server run`
 
@@ -149,13 +181,81 @@ sequenceDiagram
 ```
 
 The installer fails before writing anything when the endpoint is not a loopback TCP listener, when the environment
-file is invalid, or when another listener already answers on the endpoint. The launcher (`powercontext.service.launcher`)
+file is invalid, or when the initial probe finds a foreign listener (`CONFLICT`) on the endpoint. A PowerContext Server
+that is already live on the endpoint does not block installation. The launcher (`powercontext.service.launcher`)
 runs the Server only when the configuration still resolves to the registered endpoint and loopback host. It exits
 successfully without starting a second Server when the endpoint is already live, and exits with an error when the
 endpoint belongs to a different listener.
 
 Caption: the install path. The controller checks support and the endpoint first, writes the native artifact, starts
 it through the manager, and reports status only after the endpoint answers.
+
+### Runbook as the code runs it
+
+Service install (`powercontext service install`):
+
+1. The CLI resolves login auto-start. On Windows without a flag it prompts, defaulting to no; elsewhere it defaults to
+   yes. `--no-start-on-login` on a non-Windows platform exits with code 2 before any other work
+   ([service/cli.py](../../src/powercontext/service/cli.py#L50-L76)).
+2. The CLI loads the optional env file through `server_settings_context` to validate it and read the model names. A
+   `ServerConfigurationError` exits with code 2 ([service/cli.py](../../src/powercontext/service/cli.py#L78-L99)).
+3. `ServiceController.install` repeats the auto-start rule, then `_require_support()` raises the adapter's detail if the
+   platform or manager is unsupported ([service/controller.py](../../src/powercontext/service/controller.py#L185-L199)).
+4. `preview_definition` builds the target without writing. An invalid env file exits with code 2. Without an env file,
+   inherited `POWERCONTEXT_HOME` or `POWERCONTEXT_SERVER_*` variables exit with code 2. A UDS setting or a non-loopback
+   host exits with code 2. `_server_target(require_exists=True)` requires the Python executable, and on Windows
+   `pythonw.exe` ([service/controller.py](../../src/powercontext/service/controller.py#L1002-L1068),
+   [L175-L183](../../src/powercontext/service/controller.py#L175-L183)).
+5. The initial probe of the endpoint runs. A `CONFLICT` result refuses installation
+   ([service/controller.py](../../src/powercontext/service/controller.py#L200-L205)).
+6. Under the controller mutation lock, a pending maintenance record stops installation unless its phase is
+   `manual_stopped` or `manual_switching`. In that case the stopped registration is updated and the Server is not
+   started ([service/controller.py](../../src/powercontext/service/controller.py#L207-L221)).
+7. The current registration and loaded definition are compared with the target. A changed definition is written,
+   reloaded, and enabled by `_commit_definition`, which rolls back on failure. An unchanged definition only re-enables
+   the job ([service/controller.py](../../src/powercontext/service/controller.py#L222-L240)).
+8. If the manager was active and the definition changed, or the endpoint was not live, the adapter starts the job. A
+   start failure becomes a post-commit error. `_wait_until_live` then waits for liveness only
+   ([service/controller.py](../../src/powercontext/service/controller.py#L241-L261)).
+9. The CLI prints the status, the environment-file location, and the inference notice
+   ([service/cli.py](../../src/powercontext/service/cli.py#L100-L119)).
+
+Controller start (`powercontext service start`):
+
+1. `mutation()` takes the lock, `_recover_definition_switch()` finishes any verified switch, and `_owned_registration()`
+   checks support, the installed artifact, the loopback HTTP endpoint, loaded ownership, and the probe
+   ([service/controller.py](../../src/powercontext/service/controller.py#L325-L331),
+   [L749-L775](../../src/powercontext/service/controller.py#L749-L775)).
+2. A `runtime_repair` record is refused. Any record phase other than `manual_stopped`, `database_ready`, or
+   `start_failed` is refused because its migration is not verified
+   ([service/controller.py](../../src/powercontext/service/controller.py#L332-L338)).
+3. If the service is already running with no record, readiness must be `LIVE` and the loaded definition must match.
+   The method then returns without changing state ([service/controller.py](../../src/powercontext/service/controller.py#L339-L346)).
+4. When no record exists, a `manual_stopped` guard is written ([service/controller.py](../../src/powercontext/service/controller.py#L347-L348)).
+5. `_start_registered` checks that the executable exists, resumes activation, starts the job, waits for liveness, and
+   then polls readiness. On any failure it re-suspends activation, stops the job, and re-raises
+   ([service/controller.py](../../src/powercontext/service/controller.py#L800-L838)).
+6. Only after success is the maintenance guard removed ([service/controller.py](../../src/powercontext/service/controller.py#L349-L350)).
+
+Launcher (run by the native job):
+
+1. On macOS only, `powercontext_service_bootstrap` runs first and counts the attempt in a retry-budget state file
+   before importing the launcher ([powercontext_service_bootstrap/__main__.py](../../src/powercontext_service_bootstrap/__main__.py#L42-L132)).
+   Linux and Windows invoke the launcher directly.
+2. `launcher.main` reloads the env file and compares its identity with the registration. Mismatch exits with code 1
+   ([service/launcher.py](../../src/powercontext/service/launcher.py#L55-L127)).
+3. It rejects UDS, and any endpoint that does not match the configured loopback host and port, with code 1.
+4. It probes the endpoint. `LIVE` exits 0 without a second Server. `CONFLICT` exits 1. Otherwise it runs the Server
+   runner in the same process.
+
+Health gating:
+
+1. Liveness (`GET /health/live`) gates install and start. Readiness (`GET /health/ready`) gates only `start`, `restart`,
+   and Ops installs that pass `require_ready=True`. The CLI `install` does not pass that flag.
+2. `_wait_until_live` waits 60 seconds, then keeps waiting while the native manager reports the job as active, up to a
+   further 120 seconds ([service/controller.py](../../src/powercontext/service/controller.py#L1123-L1145)).
+3. A readiness failure or a readiness timeout after 60 seconds fails `_start_registered` and triggers the guard
+   restore and stop described above.
 
 ### Platform adapters
 
@@ -214,7 +314,9 @@ after a stop, a reboot, or an interrupted maintenance step.
 ### Status and probes
 
 `status` distinguishes four facts: whether the registration is valid, whether the loaded manager definition matches it,
-whether the manager reports the unit as active, and whether the endpoint answers. Liveness is `GET /health/live` and must
+whether the manager reports the unit as active, and whether the endpoint answers. The CLI exits 1 unless all six
+conditions hold: support is `SUPPORTED`, registration is `INSTALLED`, definition is `CURRENT`, manager ownership is
+`OWNED`, manager state is `ACTIVE`, and liveness is `LIVE` ([service/model.py](../../src/powercontext/service/model.py#L280-L289)). Liveness is `GET /health/live` and must
 return a JSON `status` of `ok` with a PowerContext request-ID header. Readiness is `GET /health/ready`; HTTP 503 or a
 `not_ready` status is reported as unreachable rather than as a listener conflict. A different response on the port is
 reported as a conflict, and install refuses to replace it.
@@ -227,7 +329,8 @@ the database, configuration, or logs. Recovery commands for each stage are shown
 ## Fallback when no native manager is available
 
 The native adapter reports `UNSUPPORTED` when the platform is not Linux, macOS, or Windows, or when `systemctl`,
-`launchctl`, or `schtasks.exe` is missing, or when the current user has no reachable manager domain. In that case
+`launchctl`, or `schtasks.exe` is missing, or when the current user has no reachable manager domain. On Windows it also
+reports `UNSUPPORTED` when the current user is a service account ([service/adapters/windows.py](../../src/powercontext/service/adapters/windows.py#L97-L108)). In that case
 `install` and the lifecycle commands fail before changing anything. The error carries the adapter's detail, for example
 that the current user has no available systemd user manager.
 
@@ -317,7 +420,7 @@ Two forms matter for deployment:
 
 Gateway body and concurrency limits are deployment settings. `PC_GATEWAY_MAX_BODY_BYTES` defaults to 16 MiB, and
 `PC_GATEWAY_MAX_CONCURRENT` defaults to 64 per call class (model calls and fallback calls each). A response buffer
-overflow returns HTTP 409 with `response_buffer_limit_exceeded`, and the call is not retried.
+overflow returns HTTP 400 with `response_buffer_limit_exceeded`, and the call is not retried.
 
 ## Docker image
 
@@ -450,7 +553,10 @@ bind address. Keep Server authentication enabled for any remote use. An example 
   out of the box with the image's bind and opt-in.
 - `tests/test_helm_chart.py` covers role separation, service selection, secret references, rejected configurations, the
   acceptance profile, and metadata and security overrides.
-- `tests/test_service.py` covers the `service` CLI, including the loopback-only install path.
+- `tests/test_service.py` covers the `service` CLI, including the loopback-only install path, UDS rejection before
+  registration (`test_service_install_rejects_uds_before_registering_or_starting`), and launcher preflight
+  (`test_service_launcher_does_not_start_over_an_existing_powercontext_server`).
+- `tests/test_service_bootstrap.py` covers the macOS retry-budget wrapper, including exhausted, error, and cleanup exits.
 - The lifecycle, maintenance, and runtime repair behaviors are covered by `tests/test_service_maintenance.py`,
   `tests/test_service_runtime_repair.py`, and `tests/native/test_personal_service_lifecycle.py`.
 

@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:c90546a78b7c35df72b611e02f258428a48d5258ee30059c07ae20319d49dfcb",
+  "pageVersion": "sha256:03296d0f6ca4f1cf0c316a41818b851a4b73ad216a61e4621a49c921da5095eb",
   "claims": [
     {
       "id": "claim_c6edbc5207fb4ccd84f4f61c0746d4d3",
       "statement": "make test runs the whole pytest tree in parallel with doctest modules enabled, and runs the serial Hook-deadline file tests/e2e/test_zcode_service_chain.py afterwards with no workers so unrelated parallel work cannot starve its deadlines.",
       "evidence": [
         {
-          "resource": "repo://Makefile#L44-L55",
+          "resource": "repo://Makefile#L51-L62",
           "version": "repo-lines-v1:sha256:6b89f9f64a8922446242f48b22ada1affabee5a7e325b84cf2e0f457b4e14908:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxYmI4NzNmOTY4MWFjMTgzODNjZDAyYzU2NjY0YWQzZjQxNjlkNTI1ZTBiNjk5ZmEwNzI2MDA1ZmZjYzgzMzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUxMjcwZTI0ZjQ3ZTdmNDFlNDMzMDE1MDlhZGRmZjVjZDRmNTUwM2RkNzIzM2M2MzQ4OTE3ZjdhMDA5ZWYwNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxMGE2ZmY1NTI3ODFiOTc5ZDYwZDVlYzJmYzExNDUzOTA1Y2UwN2MwZTBlYjQ2NmY1NWFhNDEzMDY2OWUxYmEifQ"
         }
       ]
@@ -17,7 +17,7 @@
       "statement": "make unit-test excludes tests/e2e, while make e2e-test runs only tests/e2e (CLI to client SDK to Server scenarios), with the same serial Hook-deadline file handled separately.",
       "evidence": [
         {
-          "resource": "repo://Makefile#L57-L64",
+          "resource": "repo://Makefile#L64-L71",
           "version": "repo-lines-v1:sha256:261ab1b0c40689d033ff003b92493951b41ca837d500ea30f479ec791e04eb90:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDgyYTUzZjQyMjUwNzc4MTczODIzNWUxZmJjODkyZWExYzhlMmRmMmZkMDA0YzllOGYzNTQ2MTkzZjg4Mjg5YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGE3NWIzNzVjNWU0NzhmNmIxY2ExZmM3NWZmMzFlZGU1OWEwMmNlZmE4ZmJmYjEyMzM4ZmNkN2QzODk0NDRlYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTdlODc1NGIxZTZjMmE4MzlkODQxYjU5ZjY3ZWQwOTViOGMwNDY1NTVhMzM5NDkzYTU1ODlhZDg3OTZiMjdlMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjFjZmM4ZTg0Y2E0ODllMDgwYzc1ODM0OTkyYmFmOThkYmM5YjY2ZDU5NmNlZjA4OWYwMWRmNmE0YWI3NjQ2ZSJ9"
         }
       ]
@@ -27,11 +27,11 @@
       "statement": "make contract-test first verifies that generated Python API code and JavaScript operation tables match openapi/powercontext.yaml, then runs the API contract, JavaScript operation, and desktop contract tests.",
       "evidence": [
         {
-          "resource": "repo://Makefile#L153-L171",
+          "resource": "repo://Makefile#L172-L190",
           "version": "repo-lines-v1:sha256:f68f5a1456a760e5ff8409a92253650bd9eb131be6af59f66d569172607ac7af:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkMDgyYjA4ZmUyOTdiZjg4M2M0MzQ0ZWZkYmYwYWIwN2I0NDE2Yzg5NmZkYjdiOTQ5NDU2ZjcxYTVmNjk5M2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiYjgwMWM0ODA0NGZjMjJiM2U2NWI0MzZkNDIwMjk5ZWU2MTQxNTUwMzgzMjgyZjVlZGNiNjcyNzQzZTk3YTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBiOWZmY2E1Nzk4N2EwOTQwOGEzYWM1ZjBmNTY5MWY0MjU3MzIzYzliNTY5ZGNmM2I5ZThkNjM1ZTdiZTkzMDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRkZTIyOTVlNDBkY2Q1YjJiNGRiZjcxZjdmYzU3MjNlZTY4Mjc0MzFkMzBhNjBkMTgxOGUxMGYzZDcyYTcyZjQifQ"
         },
         {
-          "resource": "repo://tests/test_api_contract.py#L188-L193",
+          "resource": "repo://tests/test_api_contract.py#L191-L196",
           "version": "repo-lines-v1:sha256:4c23885125c6d40b26cd97f4230f4f90b313ea09e87026ab8426d73a34bcb545:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWM1NzQ4NWQ5ZTNmNjgxMDUyNTc5N2YxNjUwNWI2ODYwYjg3YzczNTJiNjcwOGEyYjE2ZTcyM2QxYWRhODdhNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWEzOGQyNjgxMTE5MjVhZjI1OTExYmU4MTE4NTAxOTY0YjBkNTUyYjI3YzM0ZTUxNDFiNTQyNDViYzZlOTQ2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGI4OTdkNWViMGRjZTAwMDUyZjgyYTE5YmU0MmQ2YTk0MTdhOGQwOTM3OTM4ODRhYzhlNmZmZTJjNzQ5YzZkMCJ9"
         }
       ]
@@ -51,7 +51,7 @@
       "statement": "pyproject.toml sets default pytest collection to the tests tree and the atomic extraction evaluation tests, and registers opt-in markers for native services, real end-to-end runs, ZCode host acceptance, live ZCode models, and cross-host acceptance.",
       "evidence": [
         {
-          "resource": "repo://pyproject.toml#L270-L278",
+          "resource": "repo://pyproject.toml#L280-L288",
           "version": "repo-lines-v1:sha256:45e19785a44526f1a9f0729d6ed286fffb9e730619c2c9fe8b41062abef96836:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODY3NmU2NDE0NjVhNjU1MWU5ZTljZmZkN2ZhYTFlNmE0MmY5YjcyNDgwOTgxM2M5MDNkN2VkY2I1MmYzMDA2ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGZiOTMxMDAxYzkyZDAyYjE0NmY0ZGQzZDYwMTNlMDRkYjRlOTE0YzA4ZDQwODE2N2Y4M2FmMTUzNWQyNTQ2YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjYxNWI1YzAyOTE0OWQ0ZGJlODhlM2RmNzhhZDVkY2Q5NTZhMmEzZDY4MjBmYjE5MjMzYTU1NDk0YTg3ZDExYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWY4OGUxYmYxMWViMWVjOTBlMmI4YmQ1OGFlZThlODI2MjgyZjYwZTJmNGRhMmJiY2MwMDRjMjllNTQ4ZTdiOSJ9"
         }
       ]
@@ -91,7 +91,7 @@
       "statement": "make real-e2e-test runs the real Codex Experience and Skill tests only with --run-real-e2e and configurable mode, timeout, and env-file options.",
       "evidence": [
         {
-          "resource": "repo://Makefile#L83-L88",
+          "resource": "repo://Makefile#L96-L101",
           "version": "repo-lines-v1:sha256:3015e5ff0f3e5c6ee4a076c3cbb13a5096c1bf5f3d02ebe1af422b912f9ffb54:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzAwOTliNDljZmMyNzE5ODk0M2Q3YzhiNWQwYzBkN2IyYTYxMmUzZTYwMmZmODg1OGIxYjVhNTc4YjQ1MTVjZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmYyMDFkYzJjZjE2NTg2NWQyZTNjZTEzOTY5YzhkMDRlNWUzNTY2NzcxZjRkMGUxNWU1MDM4MjI3Zjg0ZWY2ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjk3NjY0MzdkNmVkMjBiYjgzNGZmODc3MWE0ZmJjYjkzNGViY2VjNGNjM2U5Yjk2MmVmOTE0NWVlODg3MTFiZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTkwZjk3NDc2YTQ4ZDNlNDNlNDViZWUwNWNkNjZkZWY0NzcwODgwMTgwN2M3YWI1ZGViYTY1NTAwNzkxN2QzMiJ9"
         }
       ]
@@ -164,15 +164,19 @@
     },
     {
       "id": "claim_dd7d76b9fdb9448699ae93cac23b00c0",
-      "statement": "The handoff report suite checks that handoff report scope selection reuses common scope selection, that Markdown reports keep scope organization and exact addresses, and that the statement count does not grow with the number of scopes.",
+      "statement": "The handoff report suite checks that handoff report scope selection reuses common scope selection, that Markdown reports keep scope organization and exact addresses, and that the SQL statement count for an all-scope report stays within 2 times the selected scope count plus 3 as the number of scopes grows.",
       "evidence": [
         {
-          "resource": "repo://tests/test_handoff_report.py#L157-L170",
-          "version": "repo-lines-v1:sha256:91dc4dd0f6be6e872384d699e04576b0c6b265be5233fd435407dcff04566893:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmOThhYzdiODhkYjkyNWNhZmUxYzNiNjYxMDVkNDMzYzI5NDAxMWE1NjQ1NTZkNDQxMTE0M2M3YjM3ZjE0NGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5YWJjZjRjOWQxYjYzYjAwNjQ0YTFlZTY1ZWI1ZWU4NGFlNTM0ZmFkY2RmZmE4MzJkNzk3YWI4OTljODhkMmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyZTlkYWNiNzY2ODA1OWEzZmRiMmUxMWVkYjg1OTE5MzYwZDRlY2UzNTc3MzdkYTgwMzMzMGQxZWNmMDBkMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3ODQ4ZTRiMWVhN2YwNjkzYTE3YmZmMmJkODliNzgzNzMzYTM3NmFhNWZlOTU0MTMzZmY1YjI5YjYwNmI2NzMifQ"
+          "resource": "repo://tests/test_handoff_report.py#L159-L210",
+          "version": "repo-lines-v1:sha256:b02ee72eb9601f3f6b506063edb30ae70a005b8551cec8c2ec3d15e1a328d9db:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmOThhYzdiODhkYjkyNWNhZmUxYzNiNjYxMDVkNDMzYzI5NDAxMWE1NjQ1NTZkNDQxMTE0M2M3YjM3ZjE0NGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhYzEwMWUwOTI1NmNjZmE4NGIzOGMyMjE4ZjQ1NTllZGM5Y2RmYzczOTdiYjk4YTQyMmVlMDFiYjM2N2JkMWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyZTlkYWNiNzY2ODA1OWEzZmRiMmUxMWVkYjg1OTE5MzYwZDRlY2UzNTc3MzdkYTgwMzMzMGQxZWNmMDBkMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         },
         {
-          "resource": "repo://tests/test_handoff_report.py#L27-L60",
-          "version": "repo-lines-v1:sha256:3f62f833083b0e3715d847c0e20d7ffa260d58b432efdbc0e276ce7d6710581d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViMzYyNmJjYzBiYjZiOWM5OTc1ZWNjNTI2YTdiOGY3OGJiOGVlNmNiNmExYTU3MDA5MjRjYWU4YmM1ZDEyMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwNzc1NDVlMGJiZDYzYzYyYzFkY2Q3MzU5OGQ0YTEzMDAzMTQ4ZDIxZjNjZTVlNDcyNWJkNzNiYjJkZTcyZDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQwZDAwMGY2Yzc1NGIwYWNkMTU3M2ZkZmE4YmIxOWRlMjA0NDQ3MGY2YmFlOTNlZjZmY2IxZDBlMzNkNTQ1NzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjliNTdmNzAwZGNjNTRjNzFlOTI0NDgxYjUyOWRkZTZlMGUyMjgzNzIyZjAxNTFlOTFiMzEwYzJlYzQyZmZhN2YifQ"
+          "resource": "repo://tests/test_handoff_report.py#L29-L88",
+          "version": "repo-lines-v1:sha256:5b8a077098a6ed707b3739466c78623d89f92219ddb6a0c2c5850a5210492366:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViMzYyNmJjYzBiYjZiOWM5OTc1ZWNjNTI2YTdiOGY3OGJiOGVlNmNiNmExYTU3MDA5MjRjYWU4YmM1ZDEyMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3YjkyMDZkMDliNGJmMGFiMjA5N2JiMmE5OTM1OWMzOGQwNTIxOTZmY2Q3OWU0ODBkM2UxYmNjYWU2NGZhY2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQwZDAwMGY2Yzc1NGIwYWNkMTU3M2ZkZmE4YmIxOWRlMjA0NDQ3MGY2YmFlOTNlZjZmY2IxZDBlMzNkNTQ1NzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBkMmY1NmRhODQ3MDEwZDY2ZmIzMzZhZTc2ZjU4NWM0N2NkNmU4N2ViMWQ5MGFmZTIyNGQyZDRhMjEwYzNjMjMifQ"
+        },
+        {
+          "resource": "repo://tests/test_handoff_report.py#L92-L100",
+          "version": "repo-lines-v1:sha256:c578c21a8fe75ed8ec6be78e7c006f985195d51410692c4c1a14f5e121142a30:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGE2NmRiODUzNTAwMGJiZTZlZDA5YzNmMTczYTQyZWQxMDYyNzBiMTZhY2FmZWI0OTg2OTVmNWMyODQ3OTViZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGQyZjU2ZGE4NDcwMTBkNjZmYjMzNmFlNzZmNTg1YzQ3Y2Q2ZTg3ZWIxZDkwYWZlMjI0ZDJkNGEyMTBjM2MyMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWM0YTIxYTZlNDk5NThhMjM0OTRlZmExZTM1OTE5MmQ4YzVmY2Q4ZGJmMTQxNTRkY2JiNThiM2EwYTEyYzNjNSJ9"
         }
       ]
     },
@@ -181,7 +185,7 @@
       "statement": "The integration manifest suite checks that agent-host integrations in the manifest match the setup installer catalog and that integration directories, evidence paths, and tool surfaces are consistent; make integration-manifest-check runs it after the generated capability docs check.",
       "evidence": [
         {
-          "resource": "repo://Makefile#L303-L305",
+          "resource": "repo://Makefile#L328-L330",
           "version": "repo-lines-v1:sha256:e0f1036ddcc7d90c4df7cfe2ecda5cfba3b067a5b8ba7913259b31fa1b1d636a:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjgyZWU4MzBlZTNjOGQ0MTBlOTUyZmMwYzJlNjg3MThjMTkzZDUyZjBjMWNmYjlhYjllZGJlYjM5M2IzMjkwMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDcyM2I5YmMxMjQ4ODBhNGRhNzJhNGIwNjRmZjM3ZmNkMDE5Y2JiNDcwODE0NTA4NzgyMzI0YWZmOGNlMzU3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzI4Mjg4MzNiMGFkOGFlOTNmMWI1N2Q0MjI2NzI5ZWI3NDJiZDNlODc2YjBmM2ZiZTMzNmVhYzY0NjE1MGRjYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGI4MTE3ZTFlNjNhMDJlMjZmZWE0NTgxNTRlYjFmODNjZmFjMWUxY2MwYjhkMGQxOWFlODZkN2NlNjVkZmNjYiJ9"
         },
         {
@@ -222,41 +226,169 @@
     },
     {
       "id": "claim_9e217bdb27014ed9924a2bd116ab1731",
-      "statement": "make js-test rebuilds the DeepSeek Harness plugin and fails if the committed generated operations or build output differ, before running its unit and e2e tests; the OpenCode target similarly fails on a committed bundle diff.",
+      "statement": "make js-test installs the DeepSeek Harness plugin with its frozen lockfile, runs its unit tests and build, and then fails with git diff --exit-code if the committed operations.generated.ts or lib output of the DSH and dsh-pet plugins differ; only after that check does it run the dsh-pet Node tests, the unit tests again, and the test:e2e suite. The OpenCode target similarly fails on a committed lib bundle diff.",
       "evidence": [
         {
-          "resource": "repo://Makefile#L173-L182",
-          "version": "repo-lines-v1:sha256:8b0602a4c3f935f1acf2b0cd56eebb546397db08f4010a01c1d74815217ca7de:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3ZWE4OWJjZmQzNTEyNWU2NGJjMzQ4ZTQ4OTliOGVmYTMwYWRhMTYxYmJlMWFkYzI5Y2IzMDY2YTc0ZjQ2MWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhMzU0ZTFmYTNhNDYzNmEyYTFkY2QxNGQ3NWVjYTFhYWJjN2U0YWU3OTEwMTJjNjE0ZGQxZjYwYThkN2FmZDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImExZGRkOWFlMGM3NjcwMjQ2MGRhOTQwYWQzY2Q2MDAzNGUzNjFlZDJkODgwMWUyMDU2MTBiOGVhMzg3OGZiOTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjMGRmZDVlNjJiMTFjOTlkZDM2ZDllOTdhYjA1ZDM0NzJhYmQ3YmJjOTI1YmNjYzhiM2VlYzc5ZDBiNzI3NDkifQ"
+          "resource": "repo://Makefile#L193-L203",
+          "version": "repo-lines-v1:sha256:ca7527bc019581f6219a759be49c9f2a90102e692804017e26f157065810668d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3ZTgyMzg0OGZlZTFkNjUxN2VmNDI4OGIxZTU5ODU2OTNhMTU2MjYyNjA2YmUwMGRhNGQzYzdlOTFjZTQzYWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhMzU0ZTFmYTNhNDYzNmEyYTFkY2QxNGQ3NWVjYTFhYWJjN2U0YWU3OTEwMTJjNjE0ZGQxZjYwYThkN2FmZDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU2NDUyOTY4OTg5OGQ5ZWEwZTM4MDg0MWYwZThkMWQ0ZTYwNDFhZjE2OGUwMGEzNzNhNzUxOTAyNDliOGM3NWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI1YTg3NGJkM2EwNDRmMmM3ZmYxOTA2ZjVmYjlmMWM0NmFlMzkwNTEzMzc2ZGI0NzEyZmZjOWY2MDEyNjFkZTQifQ"
         },
         {
-          "resource": "repo://Makefile#L212-L218",
-          "version": "repo-lines-v1:sha256:3be651e4f919a8899e4c582d74f30ea9a7de39f14deb63bda1d297ce5f37cd97:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTczZjZhYzM4NGRjZGRlNDBiNjAxNjkwNzgzMzJmYTNkNGRiMjk1NDNmZTUxZTFkZDNkNDg2NGJjMjczMjRiNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmQ2NWE5YzlmZjI1MThmMGIxMDU3YWE1YWFkZDgwNzkyZTY0NzA0ODk1OTI2Yjc0ZTJhOTE2ZDQ2MzZmMThlMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDNhMDE2YWY5MDE2NjJhNTI2ZDUyOTVhOWEzNDM1ODUzOWFjYmY5MzI1NjlkODMwYzdhOGFiYzBkY2I0ODY4ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTM3MDY5YTdiNjg4Yjk0MWY5ODZlYmFkMDBiMzYyMDEwZjEzNGE0NWU3ZjM3OTgzYjAzOTc0NmY3NjM0MzJmZSJ9"
+          "resource": "repo://Makefile#L238-L243",
+          "version": "repo-lines-v1:sha256:ccbff1dca25035f847439a71c555ec7f4e2490a1fae50bac9130e4e47e403478:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTM4MWYyNjdhY2FmMWQ3NjEwMzczODExZWE3MTQ0NGNiNzIzY2IwMWQzMGMxYzBmZTdmODVlOWZkMmI1ODYwNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmQ2NWE5YzlmZjI1MThmMGIxMDU3YWE1YWFkZDgwNzkyZTY0NzA0ODk1OTI2Yjc0ZTJhOTE2ZDQ2MzZmMThlMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTUxYTgzNDNjZjI2ODA3N2NkMWVhYWRjOGIxNDYyMzg2Y2YxZTdiNTM3MzY4ZmUzZDBlZDhkNTY5MjFmMWVkYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTM3MDY5YTdiNjg4Yjk0MWY5ODZlYmFkMDBiMzYyMDEwZjEzNGE0NWU3ZjM3OTgzYjAzOTc0NmY3NjM0MzJmZSJ9"
         }
       ]
     },
     {
       "id": "claim_96b6c668d9d947a0b8c857315e6f1fb6",
-      "statement": "The release upgrade gate's required mode executes its cases but cannot publish as a supported release, and release notes cannot omit the support limit.",
+      "statement": "The release gate's required mode publishes a passed upgrade-required result when every case passes, and release acceptance does not require support declaration prose in the release notes (None or empty notes still pass).",
       "evidence": [
         {
-          "resource": "repo://tests/test_upgrade_release_gate.py#L94-L110",
-          "version": "repo-lines-v1:sha256:2e849db297cce063f4e81a8f84d434064bf80f598006b6eaf6268b8d9e178a42:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzYzEzYzY4MWY2YWVlMzU3ZTBiN2E1NGIzOWM2Y2M4ZGYwNGVmOGIxMGI0YTkxM2ZkOTk0NjRmZDRkOTU0NGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRmMGIxZWM3YTMzNDAzMmY0MTdmZGZmNTUxYWQxMjg4NTk1NTMzMGE4MWYxMGEwNTc3ZDk0N2U3MjRlMDVhODQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk3MTJkNDg0NjdhYWJmNGZjMmIxNDc2NWUxNzEwYmZjZTk2ZTFlMWI1YTJiY2FmYjk1OTZjZjQyNzZiMGRmZjgifQ"
+          "resource": "repo://tests/test_upgrade_release_gate.py#L94-L124",
+          "version": "repo-lines-v1:sha256:5a6e44cc0b2ecc894b1603ed4e3a08dfbed040d7d5170ae609ad75d6469c8e9c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5OTM0NDcwOTkzYWY4N2I5MGFiZGNkZjI1ZTgyZjkyYjU3M2UyZTAwNDE1ZGNiM2FiMzVlNGFmNzFjODNlMWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRmMGIxZWM3YTMzNDAzMmY0MTdmZGZmNTUxYWQxMjg4NTk1NTMzMGE4MWYxMGEwNTc3ZDk0N2U3MjRlMDVhODQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk3MTJkNDg0NjdhYWJmNGZjMmIxNDc2NWUxNzEwYmZjZTk2ZTFlMWI1YTJiY2FmYjk1OTZjZjQyNzZiMGRmZjgifQ"
         }
       ]
     },
     {
       "id": "claim_804a6864b01e4fc3be410ce0dcfb1d8d",
-      "statement": "make check aggregates version, upgrade-policy, workflow-action, integration-manifest, and integration-guidance checks, and the workflow-actions-check target also runs prek, the lock file check, and ty.",
+      "statement": "make check aggregates the version, upgrade-policy, workflow-action, integration-manifest, integration-guidance, and integration-lifecycle checks; the workflow-actions-check target also verifies lock file consistency with uv lock --locked for the root, e2e/bub, and evaluation projects, and runs prek and ty.",
       "evidence": [
         {
-          "resource": "repo://Makefile#L21-L40",
-          "version": "repo-lines-v1:sha256:8dd43eafbe6287af233b6c209be9c3d1ced407d4642cfe4a8e3c7b6669de7e00:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiZjIzOWYwMWI0MjE3MDAxNGRlYTQ0YmM3NmJkNDIyNDMxZGM3Mzk2NWQwNDNjMWEwZDM3Njc2NjcwOGY3ODMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzMDYwMTJhNTA3YjkzNzVhODdlYzE5NzkzNWI5YTFkYTQzZTkwMzRmZTJiZWNmMzQwNjE0ZmVhNjY4ZDFhZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIwNWVmYzFhYzYwY2YyMDM5M2FiMzM0NTEyZGJjODY5MjhmNjFlNDY0MGI5NGE4MjdhZGY0NDhlMTUwNjUzMGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUxMjcwZTI0ZjQ3ZTdmNDFlNDMzMDE1MDlhZGRmZjVjZDRmNTUwM2RkNzIzM2M2MzQ4OTE3ZjdhMDA5ZWYwNTkifQ"
+          "resource": "repo://Makefile#L22-L22",
+          "version": "repo-lines-v1:sha256:f6557d32ba0df2830fdb66d6e04cb58da163e59d1e0b3f8238a34cfe7dc31e3f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjY1NTdkMzJiYTBkZjI4MzBmZGI2NmQ2ZTA0Y2I1OGRhMTYzZTU5ZDFlMGIzZjgyMzhhMzRjZmU3ZGMzMWUzZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjY1NTdkMzJiYTBkZjI4MzBmZGI2NmQ2ZTA0Y2I1OGRhMTYzZTU5ZDFlMGIzZjgyMzhhMzRjZmU3ZGMzMWUzZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTE5NmEzYjdhYTMwMTljNWUxYjA4ODY5MGMxYTRiOGM5MDk3Nzc5MTMyNTYzMmFmZWQzMDZmZDMxZTI5ODViZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTUxZGEzMDZkNTVlZDEyMjRlZDI3NzllZmIxODRlZjk0NmIyNDNhYmIwYzlkNzA1MWY4YTUwNjcxZTlmNzc0MSJ9"
+        },
+        {
+          "resource": "repo://Makefile#L39-L50",
+          "version": "repo-lines-v1:sha256:3277e755fd4b328b3a5ab8cc7fda8c9e8690fd95aed9f8a593819f9529894df0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3NmZjNDYxMjI2MjQ0ZWI0NTE5ZWQ2NTY3Njk0ZGY0NmZiNjEzYTYzOTJiZmJkMzgzNWUwNTlhN2NmMjBiODUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2ODk2NDI5MmI0YTY5YmFmOGYwMDY2ODgyMTNlMDRjNGE1ODAyZTJkMWZmMjliYmFjZTQ1MTViNzJjZDc5YzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJiZmQyZmZjZTI0N2E3NmQwMDI3NWZhYmM1YzNjNDJkNmQxMjdjNjliMzAzOTFmMmE3YmFmM2Q0MGU5OGFjOTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkYjZiNGY0MWFiOGZmNmE5MmNlNGRjNmY5OGJjMzNkOWJhMGUzNzViOGQxM2ZlZTBlMTBhZDIyNGViOTM2MDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9a128171ab564e11adeb5864ac37beff",
+      "statement": "The desktop UI suite in app.test.tsx mocks the IPC layer and checks that, with no connected Server, the shell shows the not-connected state, Memory save and search controls are disabled, and language and theme settings switch without the native host; it runs in jsdom and needs no Server.",
+      "evidence": [
+        {
+          "resource": "repo://desktop/package.json#L16-L16",
+          "version": "repo-lines-v1:sha256:fae3368593ad714ee57ead9169830cc2b56237925fa93c949d6f96f8151b477b:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFlMzM2ODU5M2FkNzE0ZWU1N2VhZDkxNjk4MzBjYzJiNTYyMzc5MjVmYTkzYzk0OWQ2Zjk2ZjgxNTFiNDc3YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFlMzM2ODU5M2FkNzE0ZWU1N2VhZDkxNjk4MzBjYzJiNTYyMzc5MjVmYTkzYzk0OWQ2Zjk2ZjgxNTFiNDc3YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmFiZjI2Nzk3YTU0YmQwMTg3NTMwZjhkNWQzNjE2NzRmY2Q1ZjkzYzY5NTg0ZjM0MThhMzI4ZjFmYTViNTJjZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWVjNmEyZWUxMWJhNTQxOThiODY4Mjg0MmRlYjhkODc4MDBhNjU3MWVkZjIwNDRjNmYzMDljYjk4ODA0Yzc5NyJ9"
+        },
+        {
+          "resource": "repo://desktop/ui/tests/app.test.tsx#L19-L75",
+          "version": "repo-lines-v1:sha256:d69017de1d2a04d21339d3e91337070eba4b08528c50e31508a30b016f34a498:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc0ZTBjYTdlNmU5OTk5MTBlMmU4NDQ2MDRlZDhlNTc4ZmQxMmZhMDlkY2RmZmI4NDUyZGJhODdmNzY5MzA0NGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRkYWRmZTUzNGI0MzU2NjRlNWUzZGM2YjYxNDdhYzBhMjIxZjc1ZGUxNDQwNjQ0NWJmMzUxN2UyMDY0MWJiMDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6fe369136083450f8879cdb3787af4bc",
+      "statement": "The desktop Rust api.rs test starts a loopback fixture peer, builds a ServerApi against an endpoint with a path prefix, and checks that scope paging is bounded and preserves the opaque cursor and prefix, without contacting a real Server.",
+      "evidence": [
+        {
+          "resource": "repo://desktop/src-tauri/tests/api.rs#L26-L80",
+          "version": "repo-lines-v1:sha256:17d6d3014b2e3502ab04bc6f33bf35045e264299014ac18b984486438c9565ec:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkNTA5YWUyYzc3NWQxNzIzZTgxYTI5MzA5ZWZjZTI0NTA2NGFiMWQ2MWU3ZGRiM2E2YjBhMTc5YTU0ZGRiOTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiN2RjNjAwZGI1ODU0NTA5MGI3Y2QxZjE0NWM5N2UzNmVjYzIyNDI4ZGViMDA4NmZhMDViMDc0ZjAzNWZiYjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM1MGQyOWNjMDY3MDE2ZDljZDliOGNlNWVkZTI4ZGQxNTE4MmIzNjFhYjUzODUwYjNhNjdlODg2MGVmZGRkZGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c8ff02903ff54c5a8c6073cb06b4038e",
+      "statement": "The gateway behavior test suite starts the built pc-gateway binary as a subprocess against loopback HTTP peers standing in for the upstream provider and scripted Core, so its ten async tests exercise the real proxy; denied or withheld send and release cases must never return recorded content or resend it.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/crates/pc-gateway-app/tests/gateway_behaviors.rs#L132-L200",
+          "version": "repo-lines-v1:sha256:3895787af968daa6d648bb63066f2a3e2e9f273bc6ba0a817dcf3fd02deabfb4:eyJzZWxlY3RlZExpbmVDb3VudCI6NjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5MzhjNjBmMzhkNGY4N2YyYzVmMzU3ODhjNmJiZDgyNDVlNzc0MzNlNjNkYTZmZTliYWJkMTExOTg4N2RhNDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwYTVhN2FhMmIzNDFiNjY5ZjY4Mjg1M2NkNGU2NmE3NTk0YmU5Y2QxODY1NDlkOWRmYzdkODVmZTcxNWU4NjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk2OGY5MTFlYmZkMzY2YTE4ZjZlMTc0NzZjY2VlZmE1ZGY2ZWRmN2EzMTk4ZjYxMTJjNDM2MWJmYjMwYmQ1NzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhkMjRhZmI5MGExYjA4MTdhNDgzNzUwNzZhYTNiOWVmNjE2NjM0M2RkNzIwYWZhNDllZWFmZTdiYzc5ZWFiYjQifQ"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-app/tests/gateway_behaviors.rs#L436-L484",
+          "version": "repo-lines-v1:sha256:e164a816d3bad3736ccf0d0003a8da4d012758df0b3426042c64c64e1fd61a92:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmMmU3MDA5OWMwMDdiZGZmNjRiYWRhODJmMjIxMGI0MmZmZTU5NTRiYzk1MjNjODRlOTU0ZDI3YTJiOTU2ZTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlY2JjMmZiYTk0OGIyNDA3MGEwZjk3N2MyYzMwMjczMjAwODM4MWJlZmQwNmM2OTE3YmJiODc3OTE4ZGNmZDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc3NzJlOTI3NWNiNmEyNGZmYTg5NTJjY2E3N2U2YTRhNWEyYWRlNjNjZWQ0MzUxYzZiYzU4NjBhYWZlNTIyZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4OGNmYzEzMmI1YzVhYjcwYmM0OWE1ZmM4MzM2NjlkNjc2YzAyYzhjZDNkZjcyYTlhZWI4ZTRmY2UwOTg3MTgifQ"
+        },
+        {
+          "resource": "repo://gateway/crates/pc-gateway-app/tests/gateway_behaviors.rs#L623-L674",
+          "version": "repo-lines-v1:sha256:a1a9970c525887e159bd9e107a8ae116282cc111e4061a7a63ea0b87bb6ab702:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3NTg2NTY5MTI0MTk1ZmU0ZjU3OGM4ZDUyMTA0Yzc5MWRmNGExMmExZWQ4N2RiZTFjNDRkMzQzNzI1YjdjMDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2MzIxYmUyMGViY2IzZGFiZTI4NzMyNWE1YzYyZDI3MzdlNTJkMjZmNDkxYzVmM2I5NTkyZDUzNTRlYjdkYmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc3NzJlOTI3NWNiNmEyNGZmYTg5NTJjY2E3N2U2YTRhNWEyYWRlNjNjZWQ0MzUxYzZiYzU4NjBhYWZlNTIyZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJiNDJhYTg3MGFhOTVmM2ExNWI3NTQ4NzliMTMzYTFkNjlkZjEwYThlZGY0NTFjZjJmZjllOGQ1NTQxYjVmNTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a2520e54c3854231a4287cd2b942747b",
+      "statement": "make gateway-tck runs each pinned upstream compatibility suite first against the controlled upstream directly and then through the built Rust gateway, and breaks out of the loop without running the gateway target when the direct baseline fails; the run exits nonzero if any result fails and writes report.json.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L74-L77",
+          "version": "repo-lines-v1:sha256:96056c16ad052c4155c101076faec58480395598509b9e00a73b240158d441c1:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzcyOWNkNDNkMmJjNzRlY2U2NDY4YmY1NWVmNDE0NzIxOWYyZWQxZmY1OGZlMjRiMDA4YTQ5OTEwNGU2NmFiMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTk1ZThhN2Y3YTcxZGM4MTgzYzMwMGFmZjhkODFiODdjMTE4MGNhZWQ0MmVjMmQ1ODI2MzY4Yzg2ZmZlOGU5MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzY4NzNkOGY5MTI2MjFlZTY0ZDcxZTg4ZDZkMDhlMjBjYTM3NjFkNGU2YWRjZjZjMDZiZTcyMDcxODdiYzkzZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjFjZmM4ZTg0Y2E0ODllMDgwYzc1ODM0OTkyYmFmOThkYmM5YjY2ZDU5NmNlZjA4OWYwMWRmNmE0YWI3NjQ2ZSJ9"
+        },
+        {
+          "resource": "repo://tests/e2e/gateway_tck.py#L208-L303",
+          "version": "repo-lines-v1:sha256:d61c8c2217d0b712fbb34361e732179046d897356ce21f05f63af154715004df:eyJzZWxlY3RlZExpbmVDb3VudCI6OTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyZTMxMjU3ZGMwYWUxZDU5MzAzN2MyODBjOWFkNTA4MTliOGE2YzhjZjcyOGJlMDcxNmQwMGEzZWVjYzA0YmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4ZTk5MjMyY2QzYTMwOWY1MGNiZDZmNjYyMTI3ZWVhYWZjZTFmNzM2MjkyZGVmYjExM2Q5ODFhMjBjN2Q4NTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmNDIxZDJmZWI5NTBlYzA3MGYwZDQ0YTgyZWQyNGI4NWRmNmU2YzM5OGQ0MzMxMTUyNjZlMzY1MzI1ZWIyNDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4840117cbdd64d8e8cb0909dea255c46",
+      "statement": "The gateway TCK uses scripted Core capabilities and context-check verdicts and replayed recorded provider bodies, so it verifies gateway protocol correctness only and does not establish real Core authorization, model quality, or provider compatibility.",
+      "evidence": [
+        {
+          "resource": "repo://gateway/tck/README.md#L1-L34",
+          "version": "repo-lines-v1:sha256:99ef4e5c0871dee9eef18bb3da84c29a99daff9661b9757f9bed984db7fe3be5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyYzg0ZGIyMTcwYmU4MjBiN2Q5MjI3MWZmNzEwMGQxNTMwNGQ1NTg3MDNhZjI3OTY2ODQ4YjQ0ZWU3YTBlZDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzMTQyYWIyMjA3NjBlMTE3MjU5YTA5NjZmMTM4N2JlZDEyMzhjZjVjZTg5YmE1YjgyZTFkYmVlZDg4MTI4ZDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://tests/e2e/gateway_tck.py#L99-L172",
+          "version": "repo-lines-v1:sha256:34e303904fbb6cef198a0b40c578b8dc250c10f9888acb8595448ef8a167fa1a:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjYjcyZTI5NGE0YmM2YzE3MGNlMTE1NzcxNWY4ODg3MGU5YWI1ZTM5NWIwNzNmMjZlZjgzMzY0M2IwNzM1OGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc5N2I4YTg4ZTYzYTY2NGQwM2U1NzU2YWJjOGJhMTkwYTcyZWRjNDU1OTMwN2YzYWZiNDJhNzFhZjNjYzMxNzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUzNjM3YWVmMzQxOTVkNzNlMWU1MTY3ZDkzZGRkMmY0YTcwZWFjN2UzNmU4N2Y5OGMxYTgzNDNhMzc0NmFmZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9bdf7c8a8a8a4a7f8deebfc0d1a27a58",
+      "statement": "The DSH handoff delivery spec drives LocalDeliveryService with a mocked fetch and stubbed preflight gate: gate rejections cause no connection resolution, remote request, or delivery-directory write; a missing gate fails with integration_unavailable; invalid input fails with payload_invalid before dispatch; and a prepared delivery persists and reopens without remote work while keeping its acknowledgement identity.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/tests/handoff-delivery.spec.ts#L121-L180",
+          "version": "repo-lines-v1:sha256:28e572dc8a32a2431b383a4da7502860a9802af746dcf7bd1f98a2ec704d89aa:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyN2Q5NjU3M2YyMjE5OGY0OWRjOThmZmJiZTgzNGIwOGNhN2UwMzJlYTVhZDU1YmY5NzI1MGUxNjQyMmQ1M2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyNGFhOTY0ZGY2NjNmODNkZTQ4MmIwZjEzNjlmNjQwYzdmMGI1ZDdhMzZkNGIyYmE0YzEyZjQ2ZTAwZGY0Y2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg4MjlhY2VmNGNmNzFkOTk4NmM4MGIwODc1NTk4YjBiMzRjZTQyMmMzZGI4OWRjMmRlMmI5NjI3M2Y0M2U2YjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_eff0a78f53424077a1191d5ac803235a",
+      "statement": "tests/plugin_support.py invoke runs a plugin manifest through the real execute_plugin executor under a single-process processing lease and intent for a scope, using the caller's open database rather than the configured one, so plugin suites exercise the executor path.",
+      "evidence": [
+        {
+          "resource": "repo://tests/plugin_support.py#L59-L80",
+          "version": "repo-lines-v1:sha256:d7b9871c598e1ac1a887781fdb93c8de1405f322157237e85eddc6ab919fb12c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4YjA0ODNmMmQ5NTJlNTc2M2VkMGRhMGIzNjRhM2VkNTljM2MxMjhlNTViMTZmNzE4ZTQxY2ZlMTc1MjFjMTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmMTkwMWFlODk3ODM1YTY2MjA2ZTBkNzBkZTE2ODJkOWU1M2EwNjIxNDE2NWI4NzAyMzMyY2Y4ZmUwMGRhZjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxMTBiMDllYWZlOGQwYzNmNmQyOWFkYWNjZDdkNzkyMGUxZjUzMTBkNGU4YzYyMjVmOTM1NjNlNjFmMDQ4YjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5f7138f24d724b7183a5fc5c344cc70a",
+      "statement": "scripts/ci_changes.py select_suites selects every suite when a path matches a full rule or when a non-ignored path matches no suite, so new or unclassified directories cannot bypass CI checks before they have an owner.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/ci_changes.py#L34-L54",
+          "version": "repo-lines-v1:sha256:cb1c96770b43b7067cf181740cb33d3e53cfea4d6fd04779cad08cab1c874f6e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3ZTMzZmExMDFjM2FmMmJkYmVmNmRlM2UxN2ZlYzlhMzU1M2RkNDQwMTYzZDNhMjgzODFlOWUwNDkwNGFhMmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU0MzNmM2Q4YmE5YjI5MmIzOTRhNTgzZTg5ZDhkZTdlNmZjNmI4OTdmYWE1ZjBjMzA1YWNlMDQ3NzgwNzE2YmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3ZGI2N2Q3YTBkYjYzZmVjNGFiNzI0ODUwMTc5ODI5OWIyZWI1OWY1M2U0NWFhYTFiZGU4YTQ3ZjNkYWZkY2EifQ"
+        },
+        {
+          "resource": "repo://tests/test_ci_changes.py#L171-L183",
+          "version": "repo-lines-v1:sha256:740165b6dc00d6f7c440883ac8f839641e9b04d832c55282041e65a8115fab68:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzZWUwM2NkMjM1YThhOTNmMzg5MjM2MzFkMGJiNjgwMzYyZDc3MGE5Yzg2YjVmMDM2NjU0NmIyYTY3ZTE1OTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhZmJhMDUyN2MzOTUzYzRiNmUwZTViNTczOWJhODM2MTJmODA1M2JjZGM5NDY2NzMwMTkzY2QxZDU5MGI0MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVhMDUxMjk4Y2MyYTEzM2VkNjVkMjg4MGYzMGU0OGI3YjA2OGY2ZjA3NGJmOTYzNmYzN2UwZDQwNTU4MjIxMzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljMjhlMGEwNzdlODdiMzk0NDE5NjIyOGRlY2IwNmNkYWUzZGQzMTQxNzE5N2RhMDkzY2M0NjYzN2RlYjg0Y2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b369956c1b3048d295e44afb67cffd66",
+      "statement": "The macOS build retry test runs the build script against a fake hdiutil and expects retries only for Resource busy disk-image failures: exit status 0 after two busy attempts, and exit status 17 after three busy attempts or after a non-busy failure.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_ci_pipeline.py#L37-L60",
+          "version": "repo-lines-v1:sha256:25a27ee56403231cfa8f41e0ff9899acbddd1bd06503da971f32f4034a98502f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlMmYwZDQwZTRiNDRkODZmZjhhNTQ0NDBlMDNiNjYyNzZmMThmY2QzODllODY3ZTQ1MTRlZDg2NGQwZmIzNjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjYTcxOGIxYmU3ODcwZjNiYjZhMDY0NDBiYjA0NTA2ZmVhYzc3M2IyZDUzNTI5NDM0MWJjZTM5NTc4ZDU2OTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc3ZWM4YjJiM2IwM2QyN2NkMjkwNjZlYjFlYmRhZGYzNzAzYTY3MjYzMmVmM2Q5OTA4ZDBmY2IzNzFhZDAzY2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdhYzg3M2QzZGY3NmVmOTdlMDE5MDQzNjc0MGJiZGZiMjU2YWExZTE3ZTNhNjEwZTg3NTRkY2VlOTRjZDNmZGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5dd9964e3fa148d8904b8575b4ad07ce",
+      "statement": "Many e2e runtime scenarios run the Server in-process: the SDK handoff lifecycle test enters the app lifespan and sends requests through an httpx ASGITransport to http://testserver, so they do not require a separately started Server.",
+      "evidence": [
+        {
+          "resource": "repo://tests/e2e/test_runtime_server.py#L552-L592",
+          "version": "repo-lines-v1:sha256:52ca4cdfddbc0f41f2086b927b2dfdef9f9b7cc3e1407949362af31048406ae8:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdhMDUwNWQ5ODZiNDFhYmE4ODZmYWM1NjFlOTk2MjhhYTU4YTY5ZjYxYTlhMjk4N2Y1MjdlOWU5ODBmMDk4NGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkNmViZjkzNDFhMzFlNDU0MGY0OTUyOThjZmQwMGMxOWI4YWU1NTUyNjQzZjNkM2M4ZGM0Mzc2MTAwOTExZjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY2NmM0ZGM5N2YyNjM0N2ViMWE3ZDc4ZTc4MWU3OWFmODI3NDc3NDQ3OGMwNzBiMjAxYTgxNDk2ZGRlNTc0YzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE1Y2Q5Y2E2MWE3NzM2NGNmZmUxOGY3OWM1MjY1NmE4NjAyMzhmZDM3MTRkZGQzNzdhMWNlMGZkYjNhOTljZjEifQ"
         }
       ]
     }
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T09:04:09.583Z"
+    "at": "2026-11-16T11:46:19.799Z"
   }
 }

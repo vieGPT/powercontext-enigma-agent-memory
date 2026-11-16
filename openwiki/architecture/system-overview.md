@@ -5,7 +5,7 @@ description: Explains PowerContext's owned systems (Scope, Source, Artifact fami
 tags: [architecture, overview, scope, source, artifact, candidate-review, server, runtime, workers, client, cli, ops, gateway, host-integration]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:04:09.583Z
+    at: 2026-11-16T11:46:19.799Z
 sources:
   - id: openwiki-source-fb0b7a5723c9e31bad4ca97e
     resource: repo://gateway/README.md
@@ -59,9 +59,11 @@ sources:
     resource: repo://src/powercontext/server/cli.py
   - id: openwiki-source-bad9e61f25ada75aaa317ce4
     resource: repo://src/powercontext/server/factory.py
+  - id: openwiki-source-9ae6bf2ac1378e31683e9e02
+    resource: repo://src/powercontext/server/plugins.py
   - id: openwiki-source-35901f0dd38fd94b4898b536
     resource: repo://src/powercontext/server/settings.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:04:09.583Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-16T11:46:19.799Z" }
 ---
 
 # PowerContext System Overview
@@ -90,23 +92,28 @@ flowchart TD
   Host["Agent host and integrations"]
   Gateway["Optional Rust Gateway"]
   Client["Python Client and CLI"]
-  Server["PowerContext Server HTTP and MCP"]
-  Runtime["Built-in runtime and Scope services"]
-  Workers["Artifact processing Supervisor and Workers"]
-  Store["Persistence SQLite OceanBase or SeekDB"]
+  Server["Server: create_server_app, HTTP and MCP"]
+  Plugins["PluginManager: plugin families and dispatch"]
+  Runtime["Built-in runtime: open_builtin_runtime"]
+  Supervisor["ArtifactProcessingSupervisor"]
+  Workers["Spawned processing Workers"]
+  Store["Persistence SQLite, OceanBase or SeekDB"]
   Models["Generation and embedding model services"]
   Ops["Ops and native service management"]
   Host -- "CLI and SDK calls" --> Client
   Host -- "OpenAI-compatible model traffic" --> Gateway
-  Gateway -- "check prepare capture" --> Server
+  Gateway -- "check, prepare, capture" --> Server
   Client -- "HTTP JSON" --> Server
-  Server --> Runtime
+  Server -- "lifespan opens" --> Runtime
+  Server -- "lifespan opens" --> Plugins
+  Plugins -- "dispatch plugin Workers" --> Supervisor
   Runtime --> Store
-  Runtime --> Workers
+  Runtime --> Supervisor
+  Supervisor --> Workers
   Workers --> Store
   Workers --> Models
   Runtime --> Models
-  Ops -- "service registration" --> Server
+  Ops -- "manages the native service that runs" --> Server
 ```
 
 Hosts reach PowerContext either through the Client and CLI, or through the optional Gateway that sits on the model path. The Server is the single application boundary. Background Workers are a logical responsibility that can run in the same deployment or in a separate `background` role. Model services are called only by the runtime and workers, never by the Client.
@@ -150,7 +157,8 @@ Background processing is a separate lifecycle:
 
 - `runtime.artifact_processing_role` selects `all`, `api`, or `background`. SQLite and embedded SeekDB accept only `all`. The `background` role is served by a runner that does not expose HTTP.
 - An `ArtifactProcessingSupervisor` runs one Lease and scheduling loop, with independent worker capacity per Family. Work is launched in spawned child processes. Failed work is retried with capped backoff and jitter. Supervisor groups can be dedicated to a single Family.
-- The set of Families a deployment can process comes from `processing_capabilities`. Dream-backed Families are only declared when Dream is enabled and a supported provider is configured.
+- The set of Families a deployment can process comes from `processing_capabilities`. An explicit `artifact_processing_families` declaration is used as-is; otherwise, with a generation model configured, the built-in set is `memory`, `experience`, and `profile`, plus `topic-memory` when its provider settings validate. The Dream-backed `skill`, `handoff`, and `prompt` Families are only declared when Dream is enabled and the generation model's provider is a supported Dream provider.
+- The lifespan also opens a `PluginManager` over the relational records database. Plugin Workers are dispatched only when the supervisor mode is `global` and the role is not `api`; the `api` role registers plugin families for reads only.
 
 ## Client, CLI, and host integrations
 

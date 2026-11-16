@@ -1,11 +1,11 @@
 ---
 type: integration-reference
-title: Other Host Adapters (Hermes, OpenClaw, ZCode, OpenCode, Kimi Code, WorkBuddy, Pi, DSH)
-description: Reference for the Hermes, OpenClaw, ZCode, OpenCode, Kimi Code, WorkBuddy, Pi, and DeepSeek Harness (DSH) host adapters. Covers the CLI installer modules, the plugin, hook, and extension files each host ships, native activation, doctor checks, host-specific constraints, and focused tests.
-tags: [integrations, agent-hosts, cli-setup, hooks, plugins, host-adapters, hermes, openclaw, zcode, opencode, kimi-code, workbuddy, pi, dsh]
+title: Other Host Adapters (Hermes, OpenClaw, ZCode, OpenCode, Kimi Code, WorkBuddy, Pi, DSH, MiniMax)
+description: Reference for the Hermes, OpenClaw, ZCode, OpenCode, Kimi Code, WorkBuddy, Pi, DeepSeek Harness (DSH), and MiniMax host adapters, and how Dify differs as a framework adapter. Covers the CLI installer modules, the plugin, hook, and extension files each host ships, install and configure steps, native activation, doctor checks, host-specific constraints, and focused tests.
+tags: [integrations, agent-hosts, cli-setup, hooks, plugins, host-adapters, hermes, openclaw, zcode, opencode, kimi-code, workbuddy, pi, dsh, minimax]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T10:00:10.628Z
+    at: 2026-11-16T11:46:19.799Z
 sources:
   - id: openwiki-source-7a52dd335117116bd8fe79de
     resource: repo://integrations/capabilities.toml
@@ -49,16 +49,22 @@ sources:
     resource: repo://src/powercontext/cli/installation.py
   - id: openwiki-source-c5dd0345a3e275dc5dfd7ce9
     resource: repo://src/powercontext/cli/kimi_code.py
+  - id: openwiki-source-25381ecb444a61faf5a361a6
+    resource: repo://src/powercontext/cli/minimax.py
   - id: openwiki-source-1a649f772901b1801cc046e3
     resource: repo://src/powercontext/cli/openclaw.py
   - id: openwiki-source-e0221780cc90eb9b31f2cbcf
     resource: repo://src/powercontext/cli/opencode.py
   - id: openwiki-source-b1258c7ceb1f80572a8ed60d
     resource: repo://src/powercontext/cli/pi.py
+  - id: openwiki-source-e5374e477de7d6683f8772c8
+    resource: repo://src/powercontext/cli/system.py
   - id: openwiki-source-df56535e250f6f397644291a
     resource: repo://src/powercontext/cli/workbuddy.py
   - id: openwiki-source-d8284a836729e2664bfad603
     resource: repo://src/powercontext/cli/zcode.py
+  - id: openwiki-source-d9757b4d2d09315ad4d2ed9f
+    resource: repo://src/powercontext/server/plugin_hosts.py
   - id: openwiki-source-4ff540bc94ffe679deb59f66
     resource: repo://tests/test_cli_kimi_code.py
   - id: openwiki-source-883e6600b3b6ab5fc80f1cf7
@@ -75,26 +81,28 @@ sources:
     resource: repo://tests/test_opencode_cli.py
   - id: openwiki-source-714a7a9a39f9a75829542a60
     resource: repo://tests/test_pi_cli.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T10:00:10.628Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-16T11:46:19.799Z" }
 ---
 
 # Other Host Adapters
 
 This page covers eight agent-host adapters beyond Codex and Claude Code: Hermes, OpenClaw, ZCode, OpenCode,
-Kimi Code, WorkBuddy, Pi, and DeepSeek Harness (DSH). Each adapter has two halves. A Python installer class in
+Kimi Code, WorkBuddy, Pi, and DeepSeek Harness (DSH). MiniMax, a native plugin host, has its own section below, and
+Dify is a framework adapter with no CLI installer. Each adapter has two halves. A Python installer class in
 `src/powercontext/cli/` copies or registers host files, writes connection settings, performs native activation
 where the host supports it, and reports diagnostics. Host-native files under `integrations/<host>/` supply the
 plugin, extension, hook, MCP, and Skill content that the host loads.
 
 [Capability Matrix](./capability-matrix.md) explains the capability vocabulary. The declarations for these hosts
 live in `integrations/capabilities.toml`. Seven of the eight hosts are declared `master_only`; Kimi Code is
-declared `experimental`. Only OpenClaw and Pi declare a best-effort pre-compaction checkpoint. The other six
+declared `experimental`. MiniMax is also declared `experimental`. Only OpenClaw and Pi declare a best-effort pre-compaction checkpoint. The other six
 declare pre-compaction as unsupported.
 
 ## Shared installer contract
 
-The CLI maps each host name to its installer class in one place. `setup` then runs the same sequence for every
-host, so the per-host sections below describe only what differs.
+The CLI maps eleven installer names to installer classes in one place: `codex` and `claude-code`, which have their own
+pages, the eight hosts on this page, and `minimax`. `setup` then runs the same sequence for every host, so the
+per-host sections below describe only what differs.
 
 ```mermaid
 flowchart TD
@@ -113,7 +121,9 @@ publish helper, which snapshots every target before writing. If a write or an in
 restores the previous contents in reverse order and removes directories it created. A failure in `configure`
 or `enable` is raised after the plugin files were already published, and the error is annotated to say so, so
 a retry must account for the installed files. Setup does not start the PowerContext Server; these installers only
-write host-side files and configuration.
+write host-side files and configuration. After a host's setup completes, the `setup` command runs `doctor_checks` for
+that host and includes the resulting diagnostics in the per-host result, so a setup report already contains the
+verification output described below.
 
 Several installers refuse to overwrite a path that does not carry a PowerContext ownership marker. The marker
 scheme differs by host, but the rule is the same: an unowned directory with the target name stops setup rather
@@ -154,9 +164,11 @@ prompts.
 | WorkBuddy | `cli/workbuddy.py` | `integrations/workbuddy/plugins/powercontext` | none; merges hook and MCP settings | unsupported | minimal, recommended, full |
 | Pi | `cli/pi.py` | `integrations/pi/plugins/powercontext` (extension and Skill) | installs a managed package through `pi install` | best effort on `session_before_compact` | minimal, recommended, full |
 | DSH | `cli/dsh.py` | `integrations/dsh/plugins/powercontext` | `dsh plugin add` in the selected profile | unsupported | minimal, recommended, full |
+| MiniMax | `cli/minimax.py` | `integrations/minimax/plugins/powercontext` (native package with Skill and `powercontext.mcp.json`) | none; `mcode` discovery is checked by doctor | unsupported | none declared (empty `profiles`) |
 
 The profiles column reflects the `profiles` field in `capabilities.toml`. Profiles select which Server MCP tools a
-host exposes; OpenClaw and OpenCode currently declare only the minimal profile.
+host exposes; OpenClaw and OpenCode currently declare only the minimal profile, and MiniMax declares an empty profile list with the
+`server-mcp` toolset.
 
 ## Hermes
 
@@ -175,8 +187,8 @@ publish transaction. `configure` writes non-sensitive connection fields to `powe
 **Native activation.** `enable()` checks Hermes' native configuration. It runs
 `plugins enable powercontext-command --no-allow-tool-override` only when the companion is neither enabled nor
 disabled. It runs `memory setup powercontext` only when `memory.provider` is absent, so an explicit provider
-choice, including an empty value, is preserved. After the commands run, `enable()` requires the provider to be
-selected or raises an error that points the user to `hermes memory setup`.
+choice, including an empty value, is preserved. When the provider was absent before the commands ran, `enable()` re-reads the native configuration afterward and
+raises an error that points the user to `hermes memory setup` unless PowerContext is now selected.
 
 **Command routing constraint.** The companion selects the provider only through the interactive CLI reference.
 Its docstring states that Hermes 0.20.4 does not pass the caller's session, user, workspace, or scope to plugin
@@ -215,8 +227,10 @@ PowerContext tool names to `tools.alsoAllow` without removing existing grants. I
 the plugin system or plugin entry is disabled, when the plugin is denied, or when another plugin owns the memory
 slot. It enables the plugin and restarts the gateway only when something changed.
 
-**Lifecycle.** The plugin handles OpenClaw's `before_compaction` event as a best-effort checkpoint. Failures there
-are caught by OpenClaw and do not block compaction, so the integration is not declared as required-capable.
+**Lifecycle.** The plugin's `before_compaction` handler (`src/lifecycle.ts`) runs a best-effort pre-compaction
+checkpoint. It resolves the scope, captures the messages OpenClaw passes when there are any, and flushes pending
+positions under a closing budget. Failures in these steps are reported as diagnostics instead of propagating, so
+compaction is not blocked, and the integration is not declared as required-capable.
 
 **Diagnostics.** `verify` lists enabled plugins with `--json` and reads `plugins.slots.memory`. It reports the plugin
 as ready only when it is enabled, loaded, and selected for the memory slot. It explicitly records that the running
@@ -253,7 +267,7 @@ without blocking the host.
 
 **Remote workspace.** `POWERCONTEXT_ZCODE_REMOTE_WORKSPACE` turns off local path binding for a workspace whose
 files are not on the machine running ZCode. The loader treats `1`, `true`, `yes`, or `on` (case-insensitive) as
-enabled; an unset variable is false ([settings loader](repo://integrations/zcode/plugins/powercontext/shared/settings.mjs#L26-L28),
+enabled; an unset variable is false ([settings loader](repo://integrations/zcode/plugins/powercontext/shared/settings.mjs#L27-L29),
 [flag parsing](repo://integrations/zcode/plugins/powercontext/shared/settings.mjs#L59)). When it is disabled, the
 plugin builds the normal session and workspace binding keys, and the resolve request sends a null explicit Scope ID
 unless `POWERCONTEXT_ZCODE_SCOPE_ID` is set ([binding keys](repo://integrations/zcode/plugins/powercontext/shared/scope.mjs#L56-L63),
@@ -296,7 +310,7 @@ line are rejected. The config directory comes from the `config` line of `opencod
 plugin bundle as `plugins/powercontext-opencode.js` with an ownership manifest, `.powercontext-opencode.json`. It
 stages the Skill with its own `.powercontext.json` marker and deletes the legacy `powercontext-opencode-tui.js`
 file. It rewrites the plugin array in `tui.json` or `tui.jsonc` in place, so comments and surrounding formatting
-survive. Entries that point at PowerContext TUI bundles, or at stale OpenCode checkouts under the PowerContext data
+survive. If the file has no top-level `plugin` array, the whole file is rewritten as JSON and its comments are lost. Entries that point at PowerContext TUI bundles, or at stale OpenCode checkouts under the PowerContext data
 directory, are replaced by the current bundle path. `configure` only checks that the plugin file exists and then
 applies the shared transport settings. The plugin has no separate native activation step.
 
@@ -399,7 +413,8 @@ transport helper. It does not register anything natively beyond the package inst
 best-effort pre-compaction capture.
 
 **Diagnostics.** `verify` runs `pi list`, and it reports the package installed when a listed path is recognized by
-the host guidance registry. It does not check the running session.
+the host guidance registry. It also reads the package's memory protocol when exactly one recognized path is listed. It does not check the running
+session.
 
 **Tests.** `tests/test_pi_cli.py` covers setup, rejection of a filtered legacy migration without changing the host,
 keeping the existing package when a refresh fails, and doctor output. The plugin package has `extension.spec.ts` and
@@ -431,6 +446,62 @@ returns a generic message, and it withholds raw host output because that output 
 doctor, and redaction of config-dump failures. `tests/test_dsh_profiles.py`, `tests/test_dsh_transport.py`, and
 `tests/e2e/test_dsh_http_chain.py` cover profiles, transport, and the HTTP chain.
 
+## MiniMax
+
+MiniMax is a native plugin host. Its files live under a MiniMax data directory and are managed by the `mcode` launcher
+rather than by a fixed host home. `MiniMaxInstaller` in `cli/minimax.py` is the only installer that setup constructs
+before transport preparation, because it can derive the native MCP endpoint from the private configuration or the
+bundled manifest. Setup then passes the resolved package into `install`.
+
+**Locating the host.** The launcher is `--minimax-command`, then the saved `minimax_command` when the saved data
+directory matches, then `mcode` on `PATH`. The data directory is `--minimax-data-dir`, then `MINIMAX_DATA_DIR` or
+`MAVIS_DATA_DIR`, then the saved `minimax_data_dir`. Without a saved value and with a launcher available, setup reads
+the parent of the `local` marketplace path from `mcode marketplace list`, and it fails if no single `local` entry
+exists. A read-only doctor without a saved directory fails and asks for `--minimax-data-dir`. Without a launcher,
+`MAVIS_PROFILE` requires `--minimax-data-dir`; otherwise the data directory defaults to `~/.minimax`.
+
+**Package and install.** The package must have a schemaVersion 1 manifest at `.minimax-plugin/plugin.json` named
+`powercontext`, and its manifest must list the `powercontext-project-context` Skill and `powercontext.mcp.json`. Every
+listed resource must be a portable relative file, and the MCP entry must use `streamable-http` with an endpoint ending
+in `/mcp`. `install` refuses symbolic links, a plugin path that is a symbolic link or a file, and an unmanaged plugin
+directory whose files differ from the incoming package. It stages a copy under `<data dir>/plugins/powercontext`,
+removes files that the new package no longer ships, and publishes the copy together with an install record at
+`powercontext_data_dir()/installations/minimax/<sha256 of the data directory>.json`. The record inventories the managed
+files and their digests.
+
+**Configure.** `configure` writes the private `<data dir>/mcp.json` entry as `streamable-http` with the normalized
+Server origin plus `/mcp`. The Authorization header comes from the setup authorization for `minimax` when one is
+supplied, and the file is restricted to owner-only permissions outside Windows. Setup also updates the bundled
+`powercontext.mcp.json` entry when its connection changes, which requires the recorded digest to match the installed
+file. It saves `minimax_data_dir` and `minimax_command` under `hosts.minimax` in the client configuration. A disabled
+private entry keeps its endpoint unless the user supplies an explicit one, and setup refuses to move existing headers
+to a different endpoint without new authorization.
+
+**Native activation.** None. MiniMax enables the plugin itself, and doctor only reports whether the local
+`powercontext` plugin is installed and enabled.
+
+**Diagnostics.** `verify` checks the package first. When no launcher is available it reports `native` as DEGRADED with
+the message to install the CLI or set `--minimax-command`. Otherwise `_native_snapshot` copies the plugin and the local
+runtime state into a temporary directory, disables `powercontext@local` only inside that copy when the snapshot marks it
+disabled, and runs `mcode plugin list --marketplace local --json` there. `_verify_discovery` then requires exactly one
+installed local `powercontext` entry that is enabled, has the package's version, and reports enough Skill and MCP
+resources. `_verify_connections` fails when the private and bundled MCP connections disagree. `server_checks` probes
+Server info with the native headers only, never a global token, and reports that MiniMax MCP and model calls were not
+tested. `doctor_checks` runs MiniMax with `read_only=True` and does not use the generic native transport resolver.
+
+**Tests.** `tests/test_cli_minimax.py` covers the installer. The capabilities manifest also names
+`tests/e2e/test_minimax_host.py` as the host acceptance path.
+
+## Dify
+
+Dify is declared as an experimental `framework_adapter` in `capabilities.toml`, not as an `agent_host`. Its plugin under
+`integrations/dify/plugin/` exposes `pc_*` tools to Dify, and no module under `src/powercontext/cli/` installs it. The
+installer map has no Dify entry, so `powercontext setup` and `doctor` reject `dify` as an unknown agent. Read
+[Framework Adapters](./framework-adapters.md) for the Dify plugin.
+
+Server-side plugin hosts are a different mechanism. `src/powercontext/server/plugin_hosts.py` manages the spawned
+processes that run Server plugins, and it is not used by the agent-host installers on this page.
+
 ## Constraints to remember
 
 - Each host has its own ownership check and rollback path. Refreshing an installation is safe only when the target
@@ -438,7 +509,7 @@ doctor, and redaction of config-dump failures. `tests/test_dsh_profiles.py`, `te
 - Native activation exists only for Hermes and OpenClaw. For the other hosts, a successful setup means files and
   connection settings are in place. Running-session behavior has to be checked in the host itself.
 - Doctor results separate installation from running behavior. Hermes, OpenClaw, ZCode, Kimi Code, and DSH all label
-  live-session evidence as not observed or historical.
+  live-session evidence as not observed or historical. MiniMax's native check reads a snapshot and is not a connection test.
 - Plain HTTP to a non-loopback Server needs an explicit opt-in. Kimi Code's endpoint parser enforces this rule
   directly, and OpenClaw and Hermes store an explicit insecure-HTTP setting in their native configuration.
 

@@ -5,7 +5,7 @@ description: Public wire surfaces of the PowerContext Server (versioned /v1 HTTP
 tags: [api, http, openapi, mcp, authentication, concurrency, etag, server]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:04:09.583Z
+    at: 2026-11-16T11:46:19.799Z
 sources:
   - id: openwiki-source-012f2c78e3b1446dfc35803f
     resource: repo://Makefile
@@ -35,11 +35,13 @@ sources:
     resource: repo://src/powercontext/server/middleware.py
   - id: openwiki-source-e9db81f118ec1c9980bbb119
     resource: repo://src/powercontext/server/request_id.py
+  - id: openwiki-source-41b531afc24e2e370f8bba52
+    resource: repo://src/powercontext/server/tracing.py
   - id: openwiki-source-c614587b21b95bb1d1e0025a
     resource: repo://tests/test_api_contract.py
   - id: openwiki-source-eee1bce266acc01dd48829e0
     resource: repo://tests/test_mcp.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:04:09.583Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-16T11:46:19.799Z" }
 ---
 
 # HTTP and MCP API Surface
@@ -53,15 +55,17 @@ Artifact families referenced by routes see [Artifact Families](../concepts/artif
 
 ## Contract ownership and generation
 
-The checked-in contract is `openapi/powercontext.yaml` (OpenAPI `3.0.3`, API version `1.5.0`). It is the source of truth for
+The checked-in contract is `openapi/powercontext.yaml` (OpenAPI `3.0.3`, API version `1.5.2`). It is the source of truth for
 every path, schema, header, and status code. Two downstream artifacts are generated from it and must not be edited by hand:
 
 - `src/powercontext/http/_generated/` (`models.py`, `operations.py`, `schema.py`), produced by `scripts/generate_api.py`.
+  Each generated module starts with the comment `generated from openapi/powercontext.yaml; do not edit.`
 - The runtime OpenAPI document served by the Server, which is built from the generated `OPENAPI_SCHEMA`.
 
-The generator reads the YAML, validates it, and writes the three generated modules. `make api-generate` writes them and
-`make api-generate-check` (run by `make contract-test`) fails when the checked-in code has drifted from the YAML. A change
-to a route therefore starts in the YAML, followed by `make api-generate`, then review of the regenerated code.
+Agents must not hand-edit the generated files: a manual change is overwritten by the next generation and fails
+`make api-generate-check`. The generator reads the YAML, validates it, and writes the three generated modules. `make api-generate`
+writes them and `make api-generate-check` (run by `make contract-test`) fails when the checked-in code has drifted from the YAML.
+A change to a route therefore starts in the YAML, followed by `make api-generate`, then review of the regenerated code.
 
 ```mermaid
 flowchart TD
@@ -102,10 +106,12 @@ Agents send the user credential as:
 Authorization: Bearer <token>
 ```
 
-A rejected credential returns `401` with a `WWW-Authenticate: Bearer` challenge. When the authentication provider cannot be
-reached or raises an unexpected error, the middleware returns `503` with the code `authentication_unavailable`. Both use
-the standard error envelope `{"error": {"code", "message", "details"}}`. The contract declares `BearerAuth` as the default
-security requirement, with an empty alternative that marks the public operations.
+A rejected credential returns `401` with the code `unauthorized`, the message `A valid credential is required.`, and a
+`WWW-Authenticate: Bearer` challenge. When the authentication provider raises `AuthenticationUnavailableError`, or raises any
+other exception, the middleware returns `503` with the code `authentication_unavailable` and no challenge header. Both use
+the standard error envelope `{"error": {"code", "message", "details"}}`, with `details` set to `null`. Requests that reach the
+Server through the MCP internal bridge skip this middleware, because the outer `/mcp` request was already authenticated. The
+contract declares `BearerAuth` as the default security requirement, with an empty alternative that marks the public operations.
 
 The connection identity operation is the supported way to verify which Principal the deployment established. It reports
 `authentication` as `disabled` or `authenticated` and never grants resource permissions. A `401`, `403`, or `503` is an
@@ -188,7 +194,8 @@ The branches an agent must handle are:
 - **Missing `If-Match` on a replacement: `428`** with code `precondition_required`. The request is not attempted.
 - **Stale ETag: `412`** with code `revision_conflict`. The error details carry `provided_etag` and `current_etag`. Read the
   head again and decide whether to replay the change; do not drop the precondition to force the write.
-- **Tag replacement with a stale tag ETag: `412`** with code `tag_precondition_failed`.
+- **Tag replacement with a stale tag ETag: `412`** with code `tag_precondition_failed`. A tag replacement without `If-Match`
+  is rejected with `428` `precondition_required`, the same code as the Artifact replacement.
 - **Handoff Create when a Handoff already exists: `409`** with code `artifact_already_exists`. The Handoff is a Scope
   singleton; the details include `use_replace: true`, and the caller must update it with `PUT` plus `If-Match`.
 - **Lifecycle or merge state conflicts: `409`**, for example an idempotency conflict. These are not ETag failures; re-read
@@ -203,28 +210,36 @@ already exists, and the server maps that error to `409` with the `use_replace` f
 
 ## Dream contract negotiation
 
-The `X-PowerContext-Dream-Contract: 2` header gates the extended Dream and Candidate shapes. A middleware stamps every
-negotiated response with `2`. When a client without the header asks for an operation whose response would contain a
-Dream-only type, the server answers `426 client_upgrade_required` instead of sending a shape the client cannot parse. The
-legacy operations `refine_experience` and `derive_skill` remain compatible without the header. The Python Client, the MCP
-bridge, and the first-party integrations send the header automatically; external integrations must send it after they
+The `X-PowerContext-Dream-Contract: 2` header gates the extended Dream and Candidate shapes. `DreamContractMiddleware` stamps
+`X-PowerContext-Dream-Contract: 2` on every HTTP response. Projection to the legacy shape applies only on a fixed set of
+legacy response paths: `/v1/capabilities`; `/v1/scopes/...` paths containing `/dream` or `/artifacts`; `/v1/context/prepare`;
+`/v1/profile/flush`; and the experience, skill, and external-skill import routes. On those paths, a request without the header
+is projected to the legacy shape. The projection runs only for 2xx JSON responses. Error responses (status 400 and above) pass
+through unchanged. When the projection finds a Dream-only type it cannot express, the server answers
+`426 client_upgrade_required` with `details` `{"required_dream_contract": 2}`, instead of sending a shape the client cannot
+parse. The legacy operations `refine_experience` and `derive_skill` remain compatible without the header. The Python Client,
+the MCP bridge, and the dashboard API proxy send the header automatically; external integrations must send it after they
 update their closed operation enums and proposal types.
 
 ## MCP surface
 
-MCP is mounted at `/mcp` only when the MCP configuration is enabled. The transport is stateless Streamable HTTP, so it does
+MCP is mounted only when `POWERCONTEXT_SERVER_MCP_ENABLED` is true (default `true`), at the path set by
+`POWERCONTEXT_SERVER_MCP_PATH` (default `/mcp`; a trailing slash is stripped, and a path that is not absolute is rejected).
+The transport is stateless Streamable HTTP, so it does
 not issue MCP session identifiers and cross-request SSE resumption is unavailable. Each request carries its own
 authenticated identity.
 
 The MCP projection is generated from the same OpenAPI document. Only operations whose `operationId` appears in the curated
-`_MCP_OPERATION_IDS` set become tools, and every other route is excluded. The tool name equals the `operationId`. Notable
-exclusions are `prepare_context`, which is HTTP-only, and memory flush. Read-only tools carry `readOnlyHint`, and writes
+`_MCP_OPERATION_IDS` set become tools, and every other route is excluded. The tool name equals the `operationId`. For example,
+`prepare_context` is an HTTP-only operation and is not in the set. Read-only tools carry `readOnlyHint`, and writes
 carry destructive or idempotent hints so that hosts can apply their own confirmation policy. These hints are not an
 authorization boundary, and the Server enforces the same Access checks as it does for HTTP.
 
 MCP calls are proxied in-process. The bridge calls the same FastAPI application through an ASGI transport, marks the
 request as an internal bridge, reuses the logical request identifier, and sends `X-PowerContext-Dream-Contract: 2`. Because
-the call traverses the same routes and middleware, MCP results match HTTP results for the same operation.
+the call traverses the same routes and middleware, MCP results match HTTP results for the same operation. The internal flag
+makes the Server skip authentication, the HTTP body limit, HTTP admission, and the HTTP access log for the bridged call, so
+each logical MCP call is authenticated and logged once at the `/mcp` boundary.
 
 Two MCP Artifact tools deviate from the raw HTTP shape:
 
@@ -245,7 +260,29 @@ invalid bearer token, `403` for an unauthorized Principal, `404` for missing imm
 exposes no details. Readiness reports `not_ready` with `503` when the Runtime readiness probe fails or when an enforced Access or
 authentication provider is not ready.
 
-Each response carries `X-PowerContext-Request-ID`, which the Server reuses for the matching access-log completion record.
+Request validation failures use the code `invalid_request` with the message `The request violates the API contract.` and
+`details` `{"errors": [...]}`. The status is `422`, except that a validation error on a `/v1/scopes/` path whose location starts
+with `query` returns `400`. For the context-check route, the detail list is replaced with a fixed `context_check_invalid` entry.
+Any unhandled exception returns `500` with the code `internal_error` and the message `The Server failed.`, with `details` set to
+`null`.
+
+### Limits and admission
+
+Two process-local limits run before route handlers. Both return the standard envelope, and neither applies to internal bridge
+calls.
+
+| Limit | Default | Setting | Branch when exceeded |
+| --- | --- | --- | --- |
+| Request body size | 16 MiB (`16777216` bytes) | `POWERCONTEXT_SERVER_HTTP_MAX_REQUEST_BODY_BYTES` | `413` with code `request_too_large`. A declared `Content-Length` above the limit is rejected before the body is read. A streamed body that exceeds the limit is rejected at the chunk that crosses it. |
+| Concurrent external requests | 64 | `POWERCONTEXT_SERVER_HTTP_MAX_CONCURRENT_REQUESTS` | `503` with code `server_overloaded`, message `The Server is at HTTP capacity.`, and header `Retry-After: 1`. The slot is released when the response body completes. |
+
+`factory.py` registers the body limit first, then authentication (when configured), so authentication runs before the body
+limit. The concurrency limit is added after the application is built, so it runs before authentication, and the request-ID
+middleware is added after it so that the `503 server_overloaded` response still carries `X-PowerContext-Request-ID`.
+
+Each response carries `X-PowerContext-Request-ID`, a 16-character lowercase hexadecimal identifier. The value comes from the
+bound request identifier, when the call is an internal bridge call, or else from the current tracing span. An inbound
+`X-Request-ID` header is never read. The Server reuses the same identifier for the matching access-log completion record.
 Access logs record one completion per external HTTP request and skip health probes, metrics, the MCP path, and internal
 bridge calls. MCP requests are logged once per logical tool call.
 
@@ -254,7 +291,9 @@ bridge calls. MCP requests are logged once per logical tool call.
 The focused tests that guard this surface are:
 
 - `tests/test_api_contract.py` checks the contract's security boundaries, the public-path allowlist, ETag and `If-Match`
-  declarations, and that the served document equals the checked-in YAML.
+  declarations, and that the served document equals the checked-in YAML (`test_server_publishes_the_canonical_openapi_schema`).
+  `test_contract_uses_the_namespaced_request_id_header` asserts that the contract uses `X-PowerContext-Request-ID` and not
+  `X-Request-ID`.
 - `tests/test_mcp.py` pins the exact MCP tool set, the read-only and destructive annotations, the Artifact envelope, and the
   internal bridge request identity.
 - `tests/test_dream_review_transport.py` exercises the Dream contract header on capability, Candidate, and Artifact reads.

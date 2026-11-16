@@ -5,7 +5,7 @@ description: How PowerContext's Server emits Prometheus metrics, OpenTelemetry r
 tags: [observability, metrics, tracing, logging, opentelemetry, prometheus, phoenix, langfuse, operations]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:43:24.725Z
+    at: 2026-11-16T11:46:19.799Z
 sources:
   - id: openwiki-source-f413c744331a974ad784e136
     resource: repo://deploy/observability/README.md
@@ -15,6 +15,12 @@ sources:
     resource: repo://docs/en/docs/operate/trace-with-langfuse.md
   - id: openwiki-source-d1ccb16c04fcb19b77913099
     resource: repo://docs/en/docs/operate/trace-with-phoenix.md
+  - id: openwiki-source-71c64a2100e86dfb42cd4910
+    resource: repo://src/powercontext/builtin/inference/observability.py
+  - id: openwiki-source-ada48487ce77f173d033229e
+    resource: repo://src/powercontext/client/client.py
+  - id: openwiki-source-5a1b83b54624d02d44cd265b
+    resource: repo://src/powercontext/client/tracing.py
   - id: openwiki-source-d2b2b6076b89b1402c1f9f1b
     resource: repo://src/powercontext/observability/cli.py
   - id: openwiki-source-1ef4551540e77b7f0117d34d
@@ -41,6 +47,8 @@ sources:
     resource: repo://src/powercontext/server/metrics.py
   - id: openwiki-source-7be44c3fb816111d969dff34
     resource: repo://src/powercontext/server/operational_metrics.py
+  - id: openwiki-source-82d6f2a164d40111a439bcc0
+    resource: repo://src/powercontext/server/provider_metrics.py
   - id: openwiki-source-35901f0dd38fd94b4898b536
     resource: repo://src/powercontext/server/settings.py
   - id: openwiki-source-41b531afc24e2e370f8bba52
@@ -49,14 +57,14 @@ sources:
     resource: repo://src/powercontext/server/worker_tracing.py
   - id: openwiki-source-e41297fefa8fa2328b2fcc46
     resource: repo://tests/test_server_tracing.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:43:24.725Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-16T11:46:19.799Z" }
 ---
 
 # Observability, Metrics and Tracing
 
 PowerContext's Server emits three signal families from its own process: Prometheus metrics, OpenTelemetry spans, and structured operational logs. The Server modules under `src/powercontext/server/` own the instruments, middleware, and log handlers. The `src/powercontext/observability/` package provides an operator CLI that can provision a local Docker Compose reference stack or record a connection to components that already exist. Signals describe service behavior. They do not prove that stored Memory or Source evidence is correct, and a missing series is not the same as a healthy zero.
 
-For how the Server process is assembled, see [Server runtime](../architecture/server-runtime.md). For installation and host layout, see [Deployment](deployment.md). For recovery steps, see [Troubleshooting](troubleshooting.md).
+The source references in this page are at repository commit b8b18909. For how the Server process is assembled, see [Server runtime](../architecture/server-runtime.md). For installation and host layout, see [Deployment](deployment.md). For recovery steps, see [Troubleshooting](troubleshooting.md).
 
 ## Signal map
 
@@ -81,7 +89,7 @@ Families the page relies on:
 - Runtime and readiness: `powercontext_server_runtime_ready`, `powercontext_server_runtime_scopes`, `powercontext_server_readiness_state`, `powercontext_server_readiness_evaluated_timestamp_seconds`, and `powercontext_server_dependency_state`.
 - Processing: the `powercontext_server_artifact_processing_*` family, including `powercontext_server_artifact_processing_invocation_duration_seconds`.
 - Model usage: `powercontext_server_model_usage_queue_depth`, `powercontext_server_model_usage_queue_capacity`, `powercontext_server_model_usage_dropped_records_total`, `powercontext_server_model_usage_write_failures_total`, and `powercontext_server_model_usage_worker_reports_total{outcome}`.
-- Provider calls: the `powercontext_server_provider_*` family, described in the operator guide's Provider call observations section (`docs/en/docs/operate/observability.md`, lines 363-421).
+- Provider calls: `powercontext_server_provider_operations_total`, `powercontext_server_provider_operation_duration_seconds`, `powercontext_server_provider_http_responses_total`, `powercontext_server_provider_worker_reports_total`, `powercontext_server_provider_http_observation_supported`, and `powercontext_server_provider_observations_dropped`. The `provider` label is a finite set: `provider_name` maps unknown or over-long values to `other` and folds `openai-chat` and `openai-responses` to `openai`. Provider observations are content-free and never carry model names or URLs as labels. The operator guide's Provider call observations section (`docs/en/docs/operate/observability.md`, lines 363-421) describes the same family.
 
 Labels are bounded. Scope, worker, request, trace, and content identities are never metric labels. A processing family name must pass a shape check (lowercase letters, digits, and hyphens, with a length limit) before it is exported. Exemplars carry only a sampled `trace_id`. They are attached only when tracing is enabled, a tracer is supplied, and the current span is sampled.
 
@@ -147,6 +155,8 @@ When `POWERCONTEXT_SERVER_TRACING_ENABLED` is false, `configure_server_tracing` 
 
 When tracing is enabled but the `tracing-otlp` extra is not installed, startup fails with a `RuntimeError` that names `powercontext[server,tracing-otlp]`. The Server does not fall back to silently disabled tracing.
 
+When tracing is enabled and the exporter cannot reach its endpoint, the request path is unaffected. Spans go to a `BatchSpanProcessor`, which exports them off the response path. The repository adds no reachability probe, retry, or backoff of its own; retry and dropped-batch behavior belong to the OpenTelemetry SDK exporter. Operators detect the gap from outside the Server: `observability check --exercise` reports missing delivery, and the `TelemetryExportFailure` alert covers the managed stack.
+
 When tracing is enabled and no endpoint is configured, the source adds no fallback. The OTLP exporter is constructed with no arguments, so it takes its endpoint from the standard OpenTelemetry environment, such as `OTEL_EXPORTER_OTLP_ENDPOINT`, or from the OpenTelemetry SDK's defaults. PowerContext does not validate the endpoint at startup. The Phoenix and Langfuse guides set `OTEL_EXPORTER_OTLP_ENDPOINT` explicitly, and the managed profile generated by the CLI does too.
 
 ### Spans the Server creates
@@ -155,6 +165,7 @@ When tracing is enabled and no endpoint is configured, the source adds no fallba
 - `McpTracingMiddleware` creates a `SERVER` span named `MCP mcp.<method>` with `powercontext.transport` set to `mcp`.
 - `ServerTracing.stage` traces one bounded Runtime stage as an internal child span. A cancellation sets the outcome to `cancelled`. Any other exception sets it to `failure`, unless the outcome was already `blocked` or `cancelled`.
 - `ServerTracing.background` starts a fresh trace root for each scheduled activation. It attaches an empty context first, so child stages cannot join an ambient HTTP or MCP trace.
+- Client calls: `ClientSpan.start` in `src/powercontext/client/tracing.py` creates a `CLIENT` span named `PowerContextClient <operation>`, with `powercontext.operation.unit` set to `dependency`. When the GenAI client context flag is set, it also adds `gen_ai.provider.name` set to `powercontext`. `ClientSpan.start` is called from `src/powercontext/client/client.py` (for example at line 1379). If span creation raises, the client returns a no-op span, and header injection and finishing are wrapped so they cannot fail the call.
 
 The request ID returned to clients is the ingress span ID formatted as sixteen lowercase hex digits. If no valid span exists, the code generates an ID of the same shape.
 

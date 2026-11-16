@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:ec1b776a94ea78a6bfb3b2e354a8179e707b8e5a6f0bd288350b4421c67533c0",
+  "pageVersion": "sha256:a9cd48b0198b71475ceff39940de891d6d2571784fd06f65a7ce17759d487280",
   "claims": [
     {
       "id": "claim_040370e28c854a9c8aedee5660a7d36d",
       "statement": "The product CLI is the console script powercontext, which maps to powercontext.cli.app:main; the separate powercontext-ops script maps to powercontext.ops.__main__:main.",
       "evidence": [
         {
-          "resource": "repo://pyproject.toml#L118-L121",
-          "version": "repo-lines-v1:sha256:59db73e0c407db9b37ee129fff90f0dd3e3374264db61c459fcc27215a2214fd:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGVhYjRlYzYzZGU1MTdkYTRjZDhlNWM4MzA3ZmIyYzc3MzdkMzkxOTBhYjY5ZjMyYTVlOWVmODFlYTQ0MTZkZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTNjMjE5ZDk1OTQzN2JhMzQxY2FiOTFlZWZhNTk4OTMxNzE5YmRmODM3YTFiZDBjNzdhZGQ2M2Y0MWY1YjQ1ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDE4NGJlYzY1ZDc5N2NhMWY1OThiMWE4NjRkZGRkM2JhMjQ5OTQ1NmRlNjYyMGU3NmU1NGRjMDhlYWQxNDZhZiJ9"
+          "resource": "repo://pyproject.toml#L122-L124",
+          "version": "repo-lines-v1:sha256:76d624e1746b9e1b0da6bc7493433a795f1924418a767e70aa4e03ee69ac96f7:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGVhYjRlYzYzZGU1MTdkYTRjZDhlNWM4MzA3ZmIyYzc3MzdkMzkxOTBhYjY5ZjMyYTVlOWVmODFlYTQ0MTZkZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzBjNTY5N2JhODNmYzg3NTY4MGM2ZTc3YzliMzY0MjU4ZDhkOTFmODU1Yzc4N2E2NzYyN2JmMTE4Njk4OTM4YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTNjMjE5ZDk1OTQzN2JhMzQxY2FiOTFlZWZhNTk4OTMxNzE5YmRmODM3YTFiZDBjNzdhZGQ2M2Y0MWY1YjQ1ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmIwMmUxZDBiZDRmZDg2MWY2NTUzZDgwOGY5ZDU5ZWEwZjcwYzI2YzM1MjZjYWQyZGNmZGU5NmFiYWI0N2Y1OSJ9"
         }
       ]
     },
@@ -17,8 +17,8 @@
       "statement": "The powercontext.cli entry-point group registers the code, config, doctor, observability, service, server, setup and archive command providers.",
       "evidence": [
         {
-          "resource": "repo://pyproject.toml#L122-L130",
-          "version": "repo-lines-v1:sha256:63f557e0154aca8320a8e2a4bb2892b4f2b2534734b2d626ee91a2066e9df7f0:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDBiOTJjOGI0MTZhYzJiZWQzY2ZkYWFhZDM1MGY1MGY2ZjkzMTllZjAxYzUwYWJiNzVmNzVjYTUyYTc0NGM1NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjFkZGVhY2I5ZGE1ODE0MWQ2MWU4OTBlNzMzMmY1ODBiNzlkMGJjY2NkZTc3MmZhNmQ5YjI1ZmE4NmIzZmM3MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDcxYzRiNTlkODQ1NWU2NGE0NGY1MTEyMWI1NGY4YzY4ZTA2NTg2ZmRhMTQ5YjBiZjhlNGUyN2FkNTZlYzg4OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzk2N2Q2NDc4NjRhNWY3ZDVmYTM4NDE3NmM1MDZiNWY5OThhZTkxNmIyNTFlNmNhNzY5YTFlZTM4YzgyNGFjNCJ9"
+          "resource": "repo://pyproject.toml#L126-L134",
+          "version": "repo-lines-v1:sha256:caff3b85690fb96ad64a32f0aa8474dbbb5d186090180083f38a5fb6f215a1a9:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDBiOTJjOGI0MTZhYzJiZWQzY2ZkYWFhZDM1MGY1MGY2ZjkzMTllZjAxYzUwYWJiNzVmNzVjYTUyYTc0NGM1NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjFkZGVhY2I5ZGE1ODE0MWQ2MWU4OTBlNzMzMmY1ODBiNzlkMGJjY2NkZTc3MmZhNmQ5YjI1ZmE4NmIzZmM3MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDcxYzRiNTlkODQ1NWU2NGE0NGY1MTEyMWI1NGY4YzY4ZTA2NTg2ZmRhMTQ5YjBiZjhlNGUyN2FkNTZlYzg4OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzk2N2Q2NDc4NjRhNWY3ZDVmYTM4NDE3NmM1MDZiNWY5OThhZTkxNmIyNTFlNmNhNzY5YTFlZTM4YzgyNGFjNCJ9"
         }
       ]
     },
@@ -27,8 +27,12 @@
       "statement": "create_cli builds the root from content command groups first, then from entry-point providers sorted by name, and rejects a provider whose command name is already registered.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/cli/app.py#L69-L125",
-          "version": "repo-lines-v1:sha256:ca438e797699b55dfde51f39233ecc4c8bb3bd81462a98f4a1f0385f0033c43d:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4MmM4MTg2ZjAzZmZmZTNjMmNkOTU2ZDhiYjFiYzM0Mjg3YjE3ZTg1MjBmYmVkYjEzMjk0NzY2ZjAxYTg1YzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkM2RjZWVhOTUwZmNkNzU2Yjk4OWEwODgxZDExZjVjOWVjMmIzYmQ4M2YxNzlkNGUwMDlmNDFhNTNiYzk4M2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjODYwNjg5MmIxNmUyMmQxNWUxYTc1Mzc4OWM0Y2Y4ODk4NDQ2MzcxNWVmMTIyOTkwOTYyYTU0MjM0YTg1Y2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzZTFkMmY0Y2NmMWYyZDRhMDFmZGQ1MmVjNGE2MzY4OTE5NjA3ZTRkMmFjMjdjNWVmYmNkMWE3ZTIzZDQ1NDEifQ"
+          "resource": "repo://src/powercontext/cli/app.py#L149-L168",
+          "version": "repo-lines-v1:sha256:863e220e2f4131a292ca5a0832d103a4403d0be62ef7e8297f11cd2a58702e0b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM2N2IwOTk3NTgzMDI4NDZiZTBhZmRmYmJhNGMwOWYxYTM1MWUwN2VmNzg1Mjk4NzRlYTljMTJkZTk4ODY5YmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwOTVhOTM3YjljMmIxMzhmY2I3ZTllZWUxMzk2YzdjNzE1ZmVlYjg4MGQxZjhjYTQ0MjAzZTgwZmI2ZTBmM2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQxYzMzZDFhYWE4OGJlNDJmZWU3MzlmNTg5YzI3MGE5NDljMWU2YmRhM2U0MWNjZjZjODQ0NDgyNzFhY2I2ZjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZkNGEzMmIyNTcxN2YyYmU5NmYzMGRkZjhkZDk1NTI3NzQ2ZDFkNjJjOGI3Nzc5OWNkOWVlNjBmNTZkYzEyZTYifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/cli/app.py#L69-L96",
+          "version": "repo-lines-v1:sha256:cf7dcc7c3bd86c1062b5c42afd75bd333bf76756db56bd4af6cbae82f8c7ba41:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4MmM4MTg2ZjAzZmZmZTNjMmNkOTU2ZDhiYjFiYzM0Mjg3YjE3ZTg1MjBmYmVkYjEzMjk0NzY2ZjAxYTg1YzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjODYwNjg5MmIxNmUyMmQxNWUxYTc1Mzc4OWM0Y2Y4ODk4NDQ2MzcxNWVmMTIyOTkwOTYyYTU0MjM0YTg1Y2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNkOWYwZTk3Yzg1NGUxZTZhOTI1OTlkYTVlYjVjYWM4MWMyODA2NjYyMTFiOWE3ZTRlNGFmYzczNGYzMDg1MWYifQ"
         }
       ]
     },
@@ -37,8 +41,8 @@
       "statement": "Optional command providers for the builtin and server roles are skipped, not failed, when the role's declared requirements are not installed at compatible versions; requirement checks follow powercontext extras recursively.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/cli/app.py#L30-L61",
-          "version": "repo-lines-v1:sha256:de7b497bb11e11829fc3ead83accddd25ca6787bc566307291ca3c4a44959a1b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNiNmIyYTNkMzRjNjFjNTM2MjY5Mzg1ODFhOGE3Mzc1MzEwNmM0ZWYwOTc0ODMzM2JlNzU5MjdjMmMyZmYzMjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0ODJiMGFmZjVmOGExYWRmYWM3YWZmZmI3Nzc2ODQ4MWI5NzBlNGM2Njk4YjQ5MDIzM2M3YjczNzM3YzE5MmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlMjEyZDgyMTExMjM2MmFmZTFkZDQxMDZiNTFhMGI4MzJjMzdjNThhMDFiZjRjMWJiMjAxNWNmMDhkMjk3N2UifQ"
+          "resource": "repo://src/powercontext/cli/app.py#L35-L61",
+          "version": "repo-lines-v1:sha256:bb2cc65bac0b3b74a43f1c0501e64a85197954387b3f6357c2e28822d54df5ca:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzOTc3NzE3NGQyZWM1NDM2Y2UzZDY1MmZlZmI2YWViMzQzZmY1Mjk1MjJhZDE5MWVjMWNiNGJlNzFhZTkyYTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE0ZTNjYjg4NTUzZTEyOGU3OTUyMGQxMDc3NGVkOTE2MTFiOGQxZThiZTFmNTM4MGZlYmE0MDg3Njc1OWVlZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlMjEyZDgyMTExMjM2MmFmZTFkZDQxMDZiNTFhMGI4MzJjMzdjNThhMDFiZjRjMWJiMjAxNWNmMDhkMjk3N2UifQ"
         }
       ]
     },
@@ -177,7 +181,7 @@
       "statement": "Every facade request sends the X-PowerContext-Dream-Contract header with value 2, adds a Bearer Authorization header only when a token is configured, and injects tracing headers; the response request ID is carried into errors.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/client/client.py#L1349-L1400",
+          "resource": "repo://src/powercontext/client/client.py#L1362-L1413",
           "version": "repo-lines-v1:sha256:b06527be3d34d609c93657dd8a2fda29b712cb40e3d197b2ad8440a9cfd0afaa:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2OWM0NWExYTRlMTBlZDAxZGE4MjQxZGQ4NTU4OTk2OThiMTk0M2ZlNzJlOWJkNjAyZDEzNDUyYWNjYTc5MTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmODJjZjExMGFiNTcwMjgwYzFiOTdmNTBmMGM5M2Q4MGZiY2Q0OTc4ZTk2YzU2YmQzYWU0ZjQzYzdiNTEyOGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmMmI0YjdlZmUzOTAxMDhlZjZjZTQwMmM5NWNmODg2OGM2YmEwZTM2NGZmZmFiNGI0M2JkNmE2YzJjMjk1OWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIyMTBkYTZlYzkxZmY3M2M4OTk1YzIxN2RjMjAxN2JkZDg1ODM1YzI3NTFhZDlhYTMyNzJhYmM1NTNlMDdkZjgifQ"
         },
         {
@@ -191,7 +195,7 @@
       "statement": "Facade request failures are classified: an httpx error becomes a TransportError, an undeclared status becomes a ServerResponseError built from the Server error body, and a success body that fails validation becomes an InvalidResponseError.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/client/client.py#L1349-L1420",
+          "resource": "repo://src/powercontext/client/client.py#L1362-L1433",
           "version": "repo-lines-v1:sha256:148b559bf9bb3065c6e4977b81fd1c1eca66ceeae30b4acb805f3092ac61ec7a:eyJzZWxlY3RlZExpbmVDb3VudCI6NzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2OWM0NWExYTRlMTBlZDAxZGE4MjQxZGQ4NTU4OTk2OThiMTk0M2ZlNzJlOWJkNjAyZDEzNDUyYWNjYTc5MTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNiZTc2MGI4ZWUxYjUxMmRmZTYwMDU1ZTNhMWJkMTUzNmYwZDQwNjhmZjNkYTIzNWZiNjhlMDllYjliN2JiYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmMmI0YjdlZmUzOTAxMDhlZjZjZTQwMmM5NWNmODg2OGM2YmEwZTM2NGZmZmFiNGI0M2JkNmE2YzJjMjk1OWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1NmVmYTA3ZTYzNzZlYmQ3MzdiZmUzNTNjMTZkZmQ2MzJhYjc5ODg4N2M4MGY2NGMwYzMwNzJkZWU3YjNjYWQifQ"
         }
       ]
@@ -201,8 +205,8 @@
       "statement": "PREPARE_CONTEXT omits assembly when unset and omits include_receipt and include_reuse when false, so that a newer client does not send fields an older Server would reject.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/client/client.py#L1418-L1470",
-          "version": "repo-lines-v1:sha256:02650cd7396f2e5468d35d86b31c79ed7ea27c2b3582a406b09ae8aebfe20cce:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0NWVlM2YxMzg2ZDZlZDdlZTg2ODg2Mjg0NGE4NzBiY2Q3Y2VmZTgyOTI1YTUzZWUzYzc2MTA2N2FjMzI3ZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3OTcyOGYyNDgyZjdkNzkzMjRhYmNjYzlhNjFmZmMzZWUwNWNkOTg1NjNmNzIyMWE2NDkyYzk3OWQ2ZDZhMzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjMjcxYTQ5MjY5ZDJkYjg2YjU4Yzc5NGMzZTE0OWM1YTYyYzM0OWMxZWIxZTg4MTM0ODg2MzU4M2YwODI4YjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3Mjk0MWU1YWZkNjkwOWU5OTFkY2Q5NGIwNWY3NDgyZTdlOTljZTQ4NGM4NGFhYjlkNWVkYjc4YjIyYmQ3MmYifQ"
+          "resource": "repo://src/powercontext/client/client.py#L1431-L1481",
+          "version": "repo-lines-v1:sha256:58969ab2ccdc693dee86338c15d98780915c842745a4937c4539b5a57355d1ff:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0NWVlM2YxMzg2ZDZlZDdlZTg2ODg2Mjg0NGE4NzBiY2Q3Y2VmZTgyOTI1YTUzZWUzYzc2MTA2N2FjMzI3ZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjMjcxYTQ5MjY5ZDJkYjg2YjU4Yzc5NGMzZTE0OWM1YTYyYzM0OWMxZWIxZTg4MTM0ODg2MzU4M2YwODI4YjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiZTU4ZTA3MWE5NzdhOGZjN2E1YTg3MWNhZGJlNGZlNWQ4NzUxYmI5OGZiN2VjYjk1OTM5NmEzODg4NDgxMmQifQ"
         }
       ]
     },
@@ -256,7 +260,7 @@
     },
     {
       "id": "claim_78ecc154df5643978c0de898dbe397b1",
-      "statement": "Native consent overrides the shared consent only when no host environment consent is set and the native consent applies to the same endpoint; OpenClaw and DSH require the native consent value to be a boolean.",
+      "statement": "Native consent overrides the shared consent only when no host environment consent variable is set; the result is false when the native value is false, and true only when the native URL equals the chosen endpoint (Claude Code and Hermes always apply the override); OpenClaw and DSH require the native consent value to be a boolean.",
       "evidence": [
         {
           "resource": "repo://src/powercontext/cli/native_transport.py#L192-L241",
@@ -269,8 +273,8 @@
       "statement": "Doctor resolves each installed host's endpoint through the native resolver and records a failed transport diagnostic when that resolution raises, without hiding completed installation checks.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/cli/hosts.py#L108-L140",
-          "version": "repo-lines-v1:sha256:ec61ddb2acb03963752b7aa753e3f0a20b3e41396c152a9ed088ba2861a5ed85:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyY2Q5OGVkODE2NmNiMTdhZGQzYjg2NjVlOGZlOTA5YWNhNjY2MDBlZDE4YmRlYzNlN2ViNjdhMmNlODczNWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI2ZTk2YTQ5OTgwYzQ2NTJmYjg0YjYxN2QxNGFjMmY0MzRjZDUwY2Q3NjIzNmQ4MTlmYzY0NjRkMzdhNjBkZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4MmU2YzZiNDNmMmU4N2ZjMTVkMWJjNjFiNmVhNjU3Zjc3ZjRiNDQ3M2I5ZTJmMzEyN2QyNGQwN2I2NzFjNmUifQ"
+          "resource": "repo://src/powercontext/cli/hosts.py#L133-L151",
+          "version": "repo-lines-v1:sha256:bd3450717ce6772818b533b2d3e1028d172a1ae65834242a2d4dc7a511fb95d7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjY2Y4MmI1MTQ3YjBjNzJlNGQyYmYyZmY5ZTQxYmM2NGNjMDlkYTI5OWJhODhmNGQ1YWVjNTQ2NGZhM2Q4YzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0MTg0ZjFlYjVlNjlhMWU1MmIyMmY0ODQ1ZjkxYmU3M2RhNmFkZGFkNDZmNzViOTZmNzc4ZmU0NjI1ZjdiYjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE3NjMwMjAzNWFhZmIxODlmZTg2ODFlNDA2NTEzMTlkOGM5ZmJjMGI2ODcwNjgxOGQxZTBjYzhlY2YwMTBhZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFiZGY1NzZiZDlhODcwMWE5ZDIxM2VjMDRjNjcxOTI0ZDNlYzdmMzVkNzQ5ZGU3NDEzYjgxZGFiM2FlYjBiN2UifQ"
         }
       ]
     },
@@ -303,12 +307,16 @@
       "statement": "import-sessions supports only the codex host, scans CODEX_HOME sessions JSONL files, and extracts only user message prompts while excluding host-generated synthetic messages and prompts without a working directory.",
       "evidence": [
         {
+          "resource": "repo://src/powercontext/client/session_import.py#L181-L200",
+          "version": "repo-lines-v1:sha256:1c88db4a0f3a8639c313d8678b99d7c405e62f6b0f2c763f4cffc798e1099192:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjNjUwNzEyNzc2OWExMjc1NDRjMjc5MTNmNjY4MTkwYjNjMGM4MjVhZjQ2YjliYTRjZDgxN2ZiYTI3ZDE0ZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyZTYxYzM0OTY0NmI2Y2RkMTM5MWQwM2IwNDY3NzFmZThkMmVhODZmNjgyMGVlNzI2NDk0ZGI4MGZjNGIzZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZkOTMxNTJmZjk4NjZjZGM1MDUyMDMyYTFlYzZlN2Q2ZWUzYjJiZGYxNjRiYjk4MGMyNWZhYzBlYTc1OWIzZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxMmNjMzBhYjA5Y2Y1MDY5OWJmNDJjZTVhNjIzNzM0Y2E5ODZlOTc1OTU0N2ZhY2IxNTU3MTMzMDk5YjM4NDIifQ"
+        },
+        {
           "resource": "repo://src/powercontext/client/session_import.py#L329-L402",
           "version": "repo-lines-v1:sha256:3811adee9ad5a89b840291072ccb4e965cac4837d69b621771016f03a417faa4:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4MmRkYWUyMTg0OWU3OTM0ZjA5YjgxZGVlNjY4YTlmMThlZTJjYWQzZTk0NDQ5YzBmYTA1MDNmMWMyMTk0ZDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZlYzVkZDY0YTVlODUzMTQ0NmI4MDVjNzAzOWRkMmVhNmJjMmQ0ZDU0MGViNTU2Nzg4ZTg0NWNhYTBmMzRiY2MifQ"
         },
         {
-          "resource": "repo://src/powercontext/client/session_import.py#L36-L40",
-          "version": "repo-lines-v1:sha256:d70b42abd30577c2506d644097a0f8155726dffc71e5eadd5764226b174ca8be:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTFjOTE2YzkwYmFiZjk5MGNkYjlkMDRhMzZkZTg0NGUwYjA1Yjc2YWEzMGMzMmFkNjUxZmRlYTdlNzdhNDliNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjZkN2VmYWVkZmE3ZWVlNTdiZGFlZjU5ZWFiMzVmMTRjOTk0YWRkMjBlNmQyZDY1MGQ5M2RjNGY3MTllNjI2MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDEzMDFmYjYxMjA4MTAxMDliZDgzOWE3Y2M0Y2FhN2NhZTIzYTc3ZjYyMDA5YTE1NjA5MjU5ODM3OTk2ZDJlOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWE2ZmE3NjYxODVmNDRmMmE1ZGQ2MDhlMjJjZTcxMjk5NGM4ODVmN2NlNzJmMGI0MDNkYzUxZjlmMGRkZTQ2YyJ9"
+          "resource": "repo://src/powercontext/client/session_import.py#L40-L40",
+          "version": "repo-lines-v1:sha256:b6d7efaedfa7eee57bdaef59eab35f14c994add20e6d2d650d93dc4f719e6261:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjZkN2VmYWVkZmE3ZWVlNTdiZGFlZjU5ZWFiMzVmMTRjOTk0YWRkMjBlNmQyZDY1MGQ5M2RjNGY3MTllNjI2MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjZkN2VmYWVkZmE3ZWVlNTdiZGFlZjU5ZWFiMzVmMTRjOTk0YWRkMjBlNmQyZDY1MGQ5M2RjNGY3MTllNjI2MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjhkYTAwMmYwYTRlMmMyNTI3Mzg1MWYyMmE0Y2IzY2QwZDg1MzYyMzc2NTdiMzEzOTcxYTJiYTViOTRhZjZiOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWE2ZmE3NjYxODVmNDRmMmE1ZGQ2MDhlMjJjZTcxMjk5NGM4ODVmN2NlNzJmMGI0MDNkYzUxZjlmMGRkZTQ2YyJ9"
         },
         {
           "resource": "repo://src/powercontext/client/session_import.py#L416-L446",
@@ -336,19 +344,23 @@
     },
     {
       "id": "claim_fb07674af2fc4765aa6a659416d9e625",
-      "statement": "Session import redacts known secrets before capture, skips prompts that are empty after redaction or longer than 200000 characters, and gives each captured prompt a deterministic Source ID derived from scope, session, turn and content so reruns address the same Source.",
+      "statement": "Session import redacts known environment and Codex auth secrets before capture, skips prompts that are empty after redaction or longer than 200000 characters, and gives each captured prompt a deterministic Source ID derived from scope, session, turn and the original unredacted content so reruns address the same Source.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/client/capture.py#L140-L170",
-          "version": "repo-lines-v1:sha256:a67f905d2c6843a0064055ffa29da7f962bd9283a83471f69376f30547e63b1e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5ZTBkYWM0OGE0ZTZlMGVjYjljYmY4MzVlYmQ2ZjI4OWI1Y2Q2Yjc4ZWI4YWYyYTczZDRhYjZlMWU5ZjkyZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyYTgxZTAzZTU1MmViMGQ1MGJkMjhhZDQxNWQ0MmE2Yjg0YWVjZjVkMjc5OGEwNGIyMTNlMGZmMjFjYTkxMjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ5MWQ3ZmI0OGFjZGE1NGM1YmI1MzUyYmQ0NjE3OThmYzE2NjVlMDU2NWI4NDBiY2E4MmNiMzQyMTIzOWYyNDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNmYmVjNmQwNTU1YzllOGQ0MzFhMGYyOGNjNWQxYTQwYjBiYTcxNGQxN2JkYzQxZDdjNGY4YzRkMDIwMGUxYmUifQ"
+          "resource": "repo://src/powercontext/client/session_import.py#L250-L256",
+          "version": "repo-lines-v1:sha256:0927a6890b7b7507ddcd4e999ef22c2b70d105ba4aead4d08c113f31c60e8182:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjk0MTU3ZjUzM2NhOGY4MjgzZDg3YTQ4MmJlYzBiZTEyMmZkZWI2ZmMxZWY0YjFiNjFmZjNiN2M3ZDk2NjQwOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTYyZWM4NTYyYWM3YmRlZDA4M2NhNzRjODE2MDM5YjJlZDkwNWNhYzNmYWRiNzg3ZWIxMDMyNDVmMGE5OWM0OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODUxZDc4YTJhYTE2NWE4NmM0YWJiMDU0ZTQ0OWMyNTgzMWRkNWZmNmJhZDRlMDdlMGFlODQzZWY0YTdlNzUyYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2I3OTJkZTZlMjZlZWU0OWUyNzc2ZjNkOThhYTgyMWVlMzRkZjRhODY5NWI5YTNjMTk5MWQ0YWY4NGE5NDc1NiJ9"
         },
         {
-          "resource": "repo://src/powercontext/client/session_import.py#L240-L270",
-          "version": "repo-lines-v1:sha256:dc2375519f4e6356b44d607b5b47899182f76aa66f8756c0f0a90ed4989e990b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiYzI0MTg4MDAzZjcyOTFmYzYwOTJkOGMxNTNhMTBhZGQ2NDhjNGZiM2ZlOTY5Mzk0ZDJkM2ZmZmRlZmU3M2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MDMyZTk2NGQwOTMyMzUxZTVkMTg1MjY5MjgxYjE3MWEzYTA5YjA4YjI4NmU2NjFlYTQ3MDMyM2M4MmViNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM1MDZkMTU0ZjJkNzVkMDM0MDczM2FkMDNkMjljNjk3M2NjMGVhNWIwM2Y4ZjBmY2M3YjVkOWQyMjEwZjJlMTkifQ"
+          "resource": "repo://src/powercontext/client/session_import.py#L94-L96",
+          "version": "repo-lines-v1:sha256:5920d39b2201d6ef80bee9392698cb2570e5b870f8020af90f64ddcb98069e98:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGUzYjM4Y2MyNTEyNDYyYTkzZjdmNGYzZjJlYjUyODkxMmY0ZDkwNGI0OTdkZDU0ZjMzYTE1NzU0MTVjMDc5NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTY1YTIyYmU5NmVlOGRkYzI4MDYwM2NjMTdjYTFiY2RlZjUxOGUyMmQ2M2Y4ZTc4YzMyY2NkNmZjMjBkMWE5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDdiOTU4NjIyNmVkNzgwYzA3ODM5ODA4OGEyMGEwNWU2YzdiNTI4NWY4ZDFmY2FiYzIwMGY5NzM1ZDBhZDhiZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2JmNTY0ZjdmNDliM2NhYzkwODk2YmIwNGM3OWRmZWE2NTUzYzNmM2YwNjI5NTRhMzMyMmRlYWQ4NWQwZTFiOCJ9"
         },
         {
-          "resource": "repo://src/powercontext/client/session_import.py#L92-L96",
-          "version": "repo-lines-v1:sha256:43856cd8f07312cf7d0a83ca14dd6529846b32608d7ba99e596996af6addf0c2:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDk4YWYyNDVlNjFkODcyMWNhMzZjMmNmOWE2YTAyOTJiMWNjMDJmZGZjZTY2NTMyYjVkZjU0NDQ1ZDVjNDVkMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTY1YTIyYmU5NmVlOGRkYzI4MDYwM2NjMTdjYTFiY2RlZjUxOGUyMmQ2M2Y4ZTc4YzMyY2NkNmZjMjBkMWE5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGU1NzY1YWJhYWFmNTI5ZjcyN2NiZjE2MmY0ODU0YzFiYTA2NmY3YjdhMGQwY2U0NDNlNWQ2MzMwMmI3Njg3NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2JmNTY0ZjdmNDliM2NhYzkwODk2YmIwNGM3OWRmZWE2NTUzYzNmM2YwNjI5NTRhMzMyMmRlYWQ4NWQwZTFiOCJ9"
+          "resource": "repo://src/powercontext/redaction.py#L31-L56",
+          "version": "repo-lines-v1:sha256:c9074fa5639c51ad56030024b3e1c2596a694a608e86457e08740ac3a706b32e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5ZTBkYWM0OGE0ZTZlMGVjYjljYmY4MzVlYmQ2ZjI4OWI1Y2Q2Yjc4ZWI4YWYyYTczZDRhYjZlMWU5ZjkyZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImExYjcyZmY2MzYwZDBjMzBiNTVkOWVjMTIyMzZhMzc5ODc5YWRhMmYxOWQ0MmVjOWM3OTAxNzM3YTFjMzI5YzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY2ZGIzZWY3MzIzZjQwYzEzOThkZTRjZTI5ZDI1NzNmNGQzNTE0ZDQzMThhNTIyNTczN2E3M2RmZmZlMDVmZWQifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/redaction.py#L65-L104",
+          "version": "repo-lines-v1:sha256:e93fef79477b07ba126c50fe448565738580a24e3cc03313cded9b565cba1558:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0NjJmYmNmMjEyZTI1NTc5NGM4MmYxNTAyYjBmZTdjZjE2NGUyNDg4ZGQ2MDFlYzNjNTdmMmNmZTU5NjBlZmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3ODY2MDI0ZTMzZDkwMzJjYzBiNzU3M2RjODBiMGQzNjRhNGUxNmQ4ZTQ2OGQ5ZjQ3YmQ0NDBkZTMzZTQyYTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmYmVjNmQwNTU1YzllOGQ0MzFhMGYyOGNjNWQxYTQwYjBiYTcxNGQxN2JkYzQxZDdjNGY4YzRkMDIwMGUxYmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         }
       ]
     },
@@ -371,12 +383,12 @@
       "statement": "Session import dry-run performs discovery, redaction and scope checks without capturing Sources or writing the checkpoint, and reports no checkpoint file in its summary.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/client/session_import.py#L181-L237",
-          "version": "repo-lines-v1:sha256:515bf713e9410f1ffa31ab9ebc1cf8c14b3641e68a2f9958c808e69554745e38:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjNjUwNzEyNzc2OWExMjc1NDRjMjc5MTNmNjY4MTkwYjNjMGM4MjVhZjQ2YjliYTRjZDgxN2ZiYTI3ZDE0ZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZkOTMxNTJmZjk4NjZjZGM1MDUyMDMyYTFlYzZlN2Q2ZWUzYjJiZGYxNjRiYjk4MGMyNWZhYzBlYTc1OWIzZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImViZjBhZmNmZGMzM2ExODZmOTgzM2I2YzIxYzRiMTY1MjU4ZDIxYjQ1NTU5ZGU2NTM0MDdjMzRhNThmZTgyMjYifQ"
+          "resource": "repo://src/powercontext/client/session_import.py#L181-L238",
+          "version": "repo-lines-v1:sha256:5e1c0e1999e47eacc09c1caff70aa911dacbdf75ee5940340bb324ecfe015716:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjNjUwNzEyNzc2OWExMjc1NDRjMjc5MTNmNjY4MTkwYjNjMGM4MjVhZjQ2YjliYTRjZDgxN2ZiYTI3ZDE0ZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZkOTMxNTJmZjk4NjZjZGM1MDUyMDMyYTFlYzZlN2Q2ZWUzYjJiZGYxNjRiYjk4MGMyNWZhYzBlYTc1OWIzZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU3YjBjMDFiMjU5YTJlOWJkZTg5ZTdmOTYzZWRiMTdmN2RjNmIwMjM1OTlmNDgzYjViY2Y0OGYwOTBkYjI1MWIifQ"
         },
         {
-          "resource": "repo://src/powercontext/client/session_import.py#L258-L268",
-          "version": "repo-lines-v1:sha256:1b0df36aaaae375f79c222a6c1fe271e7b5d2e8073128b9285716e8540760fee:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczYTU0NzhkNmZjMDFhNWYzZTI4OTQwNWZkZjgxOGU0NzE0NmE4YWJiYzQ5ZTRhNTNmZDJhY2ZmNjY5YmM4OTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlNTlhZDkwYzVjMmMxYjJiNTEzZTBjZDQ5ZjIwMDVmOTI4YmVmYjAzMTdhNWUxZGVjOWE1NWQyM2UxYWMzODkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5YTc2YmE4MWQwMGE3MDcxYTE4ZTQzYjExNzQ4NzcxYjM1YTAyY2JiYzMyZmM0NzY4OWRjZjJiNDUzMTFiYTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkMzE1Y2ViZTYzNmVmNmRhMzE5ZTQxMWRkNjQ4YjU0YTdjMzM2Y2Y1NzZhYWEzOTc5ZTgwZDYxYzQzNmE3MjkifQ"
+          "resource": "repo://src/powercontext/client/session_import.py#L272-L274",
+          "version": "repo-lines-v1:sha256:0d003c9d8829167362864163ab1671f56b4c0b597128fa936ede75a6544cbac9:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGZlOGZhNjAwMDVhYzQxNjcwM2MyOWU5NDVmYzU3NjU3ZDc0YTdhYmY5MWY0ODBmOTJmMDRlNzJkMzQ0MGYxMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTNlNzRiYThkNTU3YTk5Y2FmNTkzYzU1N2QzMDliMTRhYjhiOWU3MWJkODkyMjY0MTAxOWRjNzg1ODBlNGIyNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWQzMTVjZWJlNjM2ZWY2ZGEzMTllNDExZGQ2NDhiNTRhN2MzMzZjZjU3NmFhYTM5NzllODBkNjFjNDM2YTcyOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2RjM2U4ZGExZDJjNzY2NWExZjQ1NDI1ZmYwYWYzMDBkNzFkNGNiZTBhMWYwYjE1MmIzMDEzZTI5NjRkY2VkMSJ9"
         }
       ]
     },
@@ -385,14 +397,144 @@
       "statement": "Client-facing CLI commands exit with code 1 on a ClientError and session import exits with code 2 on a SessionImportError.",
       "evidence": [
         {
-          "resource": "repo://src/powercontext/client/cli.py#L1771-L1825",
-          "version": "repo-lines-v1:sha256:381dc743c51e45a508d66b352c6b1bd51cf8848cefe46706d87982489859edcc:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiNjE1YzZkN2E0MjFiMmNlMTYzZGMxMWM2MjExMzZmMDkzMjZiZTY0MmE3NjBhODhkNWYyMjNhYWNlYzBmN2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyYzlhYTE5OGQ1YTI3NWVkMGNmZGRlNTVmNDQ2OGMwNjMwYTVlMTgzYjY3NzM1MmMwOGM1MDAwOTE1Y2IwNmQifQ"
+          "resource": "repo://src/powercontext/client/cli.py#L1795-L1800",
+          "version": "repo-lines-v1:sha256:9d2ac8ddadf92458e04aa9d7e26a6b97c538468dbebe64097421d8268123f9e3:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjFiZDRmYTk1ODM4Y2I3NDUwNGI2NzY1ZmE5NzZjYjNhOWIxNjVmN2ZjYmE0ZjBkODMwYThhNjQ3NWNhNWIxMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGRkOGUyYTdjOTZkNjEwN2I2NzMwOWI0ODk3Mjc5YmVkMDI5MDk0ZjYyNzNlNTFlZjUxZTcyYmFlMDYyMmM3MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTJmM2FhZGVmZjA0NGY5MTc1YTY4MzBkZGZhMDk0MjI1YmEyNDg2MWI2ZGE5NzJiMzk1Y2MwNjBlNzQwNWYyNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmRhZmNmNDQ1YzgyMjMxMGI0NmU5NDIwYmNiZjBmNGQxODU1ZGI3ZTUwOGM0NTIyNWE4Mjc0MjllZGVjOTY3OSJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/client/cli.py#L1816-L1818",
+          "version": "repo-lines-v1:sha256:9b26e58e69560ed66aa57d9f84499ed189af7599fa3ba73b07e2e120240d88bd:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWVjYTY5ZGNjYzU3ZWVlYjA2MGU5NTNlYjA4N2FlYjNkMDJhMjUzNTBiYmRhYWU2NzM0ZmZmNmRiMTg5ZjJmNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGRkOGUyYTdjOTZkNjEwN2I2NzMwOWI0ODk3Mjc5YmVkMDI5MDk0ZjYyNzNlNTFlZjUxZTcyYmFlMDYyMmM3MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTllMmRjMDcyNmViNTgyZDA4YzA0YTVjYWJmM2M0MGVmYTZmZjlmZWVmMzk1YWJiMTRiZTNiZjIwMjMwZDRhZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGRlMWE2ZDU4ZTFhOTZiZjQyZGRhNDQ3NzVhNmJjNTExNWY1ZjI1NGZlZjYyODJjYTJkZGE0YTEyYjQ2MGY1YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c5bf085fb22c4152bbf15574bd041a3f",
+      "statement": "Root options --server-url, --allow-insecure-http and --timeout default to unset and --json defaults to false; unset values defer to environment variables, saved settings and ClientSettings defaults (127.0.0.1:8000, consent false, 10.0 seconds).",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/cli/app.py#L108-L146",
+          "version": "repo-lines-v1:sha256:d56b81c03428cc2fff3260e08a60c1359684deca28789fec9f02f070ae03a30a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjNmQyOWQwNTU4NGY1OWE2Yzk1N2JkZGQyMTk4MTYyMGNjOGExNDVhM2U2ZWU0MDk1MzBlM2FmNWY0ZDUwMTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2MDE1MWE0ZDc3NWZlY2JhZjQwNDVjMGIyNDY0OTE0NDYxNzBjMDE0ZDFiY2IxZDYxZjZlZjA5OTQ1M2ExNWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5YWU3YjI5ZDE5ZDUzM2U2OTU3OWJhNTE3ODNiMWU5M2EyNDY2ZDljNDk5MzhhMTBkZTU5ZDFjNDRhMmRjNjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMzN2ZhMTQ1NzU1NTQ2ZGI0MjQ4ZTFmYjZhNWY0NDU2MThmZDhjZWNmZTczM2VkMjNlZDhhZWNmMDg5ZmUyYTkifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/client/cli.py#L1717-L1731",
+          "version": "repo-lines-v1:sha256:7304528e4ec09b0a2ac858d5b41bfdbbbbe36b0acb0d4a124421d0af6455114d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlNGE0MjBhMjE5MzY5ODgyOTA5MzFlYmEwNjMxNGM4MGMyOGRlOGY0ZjhlZTJjNTkyMzY0OWFjNzYwMjhkMTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0NmZhOGUxZTJlYWM4OGE1YzM0MDQxMmQ4ZWYzOGYwODdlNTM4MjU5YzkyM2JhZmVlOWM5OGNmMDBjM2EzNzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNlZTRkODNjNzFhOWYyY2U4OGVhNWI2YzY5YmMxZjEzY2RjMWY3ZmMyZjEyOTM4YTNhZGQ0OWYyMzdkZTZhYjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_718af41116314d469f7cd19c4a1ac010",
+      "statement": "The source-management registration adds the source and credentials command groups to the same product CLI root.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/cli/app.py#L149-L151",
+          "version": "repo-lines-v1:sha256:6a2d61578ab1d81f89a0c99812e3be428796dfc8ccd395263df508f767734e36:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzY3YjA5OTc1ODMwMjg0NmJlMGFmZGZiYmE0YzA5ZjFhMzUxZTA3ZWY3ODUyOTg3NGVhOWMxMmRlOTg4NjliZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDFjMzNkMWFhYTg4YmU0MmZlZTczOWY1ODljMjcwYTk0OWMxZTZiZGEzZTQxY2NmNmM4NDQ0ODI3MWFjYjZmMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTU4YmMwYzc0Mjc1Y2MxODAxNTkwYmRkOTk2NmZkNzU4ZmFlZGUxOWJiMjZlY2NkZWVjMmZiM2I2ZGU0NjE1NyJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/source_management/cli.py#L234-L237",
+          "version": "repo-lines-v1:sha256:fe63d8806b09cdcfce49e37093e165e1d80b1ca0f69c393af1fa8488991e79d1:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjQwMDEwZTBkOGU1NzAwMjA4NDk2NDYyZjI0M2ZjMzExZGUxNmJkZjBhODdhOWI1MWFkODhkZGQyODVlYzAwZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWQ2YzQyZjM0ZTVkNzA0MTg2YTJkYzc3YjhmZWYzN2RjNTExY2YyMDhmMGQxNzQ0YTU4Y2M1OGI2Njk3MWM4MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTYwYzJmYzU4OWQ1NmRmNTg0YjRkZTZiZDIxYTY5NTA1ZGQxMmFjY2UzMDIyMDFiN2VhYWYyZGI2OTBjYjc4ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2Q0MTM0MGNjMjM5YTE1OWNlOWI2MDIyZTlmNjMyMjgzMmUyZWFkNzZjYWU5ZTQ3NTRkMjEwZWI4ZmI2ZDVlOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_dd701f813bed42459398d868ffbd6339",
+      "statement": "Content commands with --json write the operation's full response model as JSON; without --json they print a human summary through the response renderer.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/client/cli.py#L1808-L1823",
+          "version": "repo-lines-v1:sha256:de875f095e5275fc9d27c3012530d24bcf386c9c4138f17f7295501fdf38397c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5OWIwMzJjMjM0Y2MzNDNmNzUxZTA0MmE3MmJmN2FiZWQ0MTY5MzFkYmU5YTM1ZmU1OGE5M2Y3MDAxYjQ3YTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlOGIyYzAzMTkxOTk5YTJjODRhYjI5NDZmYTZlYzAzZTgzMmVmZDBjNmQwZTljZmEwZDVkODhmMDNkZjRjNGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyYTNmZWI5ZjczN2FjYWZlYzdlMjJkMDcxNGQxYmY4NWJmOTkyN2I0YmUwMDk5YjQ4YjQ1MzhlZGNjYzUyZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ1ZGQyZjhjN2VhM2NjNjA0ODcwYWIzNzAxZTQ0NmJjN2Q1NzM2YWI5NDExOGYxNzYwZWI2ZmUyNzM5ZGE1MTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_26baa44cc56e44119ae5f0844ac5e94c",
+      "statement": "When import-sessions runs with an explicit scope and the Server is unreachable, each prompt is recorded as failed with capture_failed and the run still exits 0; without an explicit scope, the transport error during scope resolution aborts the run with exit 1.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/client/cli.py#L1798-L1800",
+          "version": "repo-lines-v1:sha256:9b26e58e69560ed66aa57d9f84499ed189af7599fa3ba73b07e2e120240d88bd:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWVjYTY5ZGNjYzU3ZWVlYjA2MGU5NTNlYjA4N2FlYjNkMDJhMjUzNTBiYmRhYWU2NzM0ZmZmNmRiMTg5ZjJmNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGRkOGUyYTdjOTZkNjEwN2I2NzMwOWI0ODk3Mjc5YmVkMDI5MDk0ZjYyNzNlNTFlZjUxZTcyYmFlMDYyMmM3MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmE3ZTYwMDgxNGQyNDgzMmI2ZDlmM2I0YWFhNzhjNGE1MGRmZjY2NTQzYTlmZGI1OTg3ZDZiOTgzOTdmMTE0MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmRhZmNmNDQ1YzgyMjMxMGI0NmU5NDIwYmNiZjBmNGQxODU1ZGI3ZTUwOGM0NTIyNWE4Mjc0MjllZGVjOTY3OSJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/client/session_import.py#L257-L258",
+          "version": "repo-lines-v1:sha256:22bfcb714736cd11b4186701dbc6ab5909353817676a7e55480505761c77b99d:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzExNGI4OTRiNTUyOWUxNmE5N2UxN2U0MGQxOGQ4YTdkZWZkOWUwYTZjMjI4YTFmMWE3NGQ0MjcwMjQ3YWY3OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzNhNTQ3OGQ2ZmMwMWE1ZjNlMjg5NDA1ZmRmODE4ZTQ3MTQ2YThhYmJjNDllNGE1M2ZkMmFjZmY2NjliYzg5MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmU3YmU3N2QwNGYzNGQ0ZTU0N2EwMmQyM2QxMGFlMTJiZmJhZDAyZWI4MzliYjdhNTA5ZDZmNzhkZTc5N2UxZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDA3OWRkNmFlYjI4OTI5Njk0MTk0MTg0ZWYwMzhkMDM2NDJiNmIzODBjODY3YTUwYmViYTdjZjc3MDg0YWQ2MiJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/client/session_import.py#L276-L306",
+          "version": "repo-lines-v1:sha256:af1cc5c0cd7a9720f4d621a870efc38e8feace443a17fce87df506882527a2b1:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3ZDEwODY1NDgwZDVhYTIyNzE0NzY2OTAxZjRmNjM5YmRiYWNkZjVlNDA5ZGRiMmEyNzQ3YzAyM2I1YzU4OWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1MzYwYzU0MjBjY2E4YzlkZTMyMDAwMTE3NWFiY2Q2OTExZWRkNWI5ZDdhOTVkZDZlNWExN2JhNWU2ZDJkZTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZjZWIxNjcxYWFmNGMwNjI0NzcwNzJkMWIwOTVkMjJhNTlkZWZlOGUyNmM1YTRmMjNlNWIyZTMwYTM0YjM3MTUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/client/session_import.py#L448-L464",
+          "version": "repo-lines-v1:sha256:9a3772ce16cf4ce36fa3f5ac403f8ebea3a44503b842d548ecb8be647a19ae64:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YmYzODEwNWY0ZjEzZTVmM2U4MGUzMjNlYmI5ZDJhNzE5ZmMzNjM2YWRhOGFjYTIwMDhmZDcxMGFhYzcwMDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3MmJhZWM3NThhMzVhZTIwNTEzNjBlYTNjYjEzZThmNzY3ODFiZWU0NjViYTdmMzVkMjk5N2NjZjY4OTgwNTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_283c6169c7e54f97adbeaf70ace48837",
+      "statement": "With an explicit --scope-id, import-sessions skips per-prompt Scope resolution and captures every discovered prompt into that Scope; without it, scope-resolution errors other than 404 or 422 propagate and abort the import.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/client/session_import.py#L257-L259",
+          "version": "repo-lines-v1:sha256:7b792de6e26eee49e2776f3d98aa821ee34df4a8695b9a3c1991d4af84a94756:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzExNGI4OTRiNTUyOWUxNmE5N2UxN2U0MGQxOGQ4YTdkZWZkOWUwYTZjMjI4YTFmMWE3NGQ0MjcwMjQ3YWY3OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzAwZTMwZjllZWQ0YjNiODMyZDE4N2UxZDkzOWFiMDQ5YWIyZjZlNjZlMTQ5Yzk2MGUwNWU5M2FiYzY5ODM3OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmU3YmU3N2QwNGYzNGQ0ZTU0N2EwMmQyM2QxMGFlMTJiZmJhZDAyZWI4MzliYjdhNTA5ZDZmNzhkZTc5N2UxZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWNjNzQwMDU3NTA2NWJhN2UxOTUxYzAwZWI0MjFkZGU3MWJiNTMwZmVhNDYyMjY2NDAzM2Y3ZGQwZWYwYTJmYSJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/client/session_import.py#L448-L464",
+          "version": "repo-lines-v1:sha256:9a3772ce16cf4ce36fa3f5ac403f8ebea3a44503b842d548ecb8be647a19ae64:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YmYzODEwNWY0ZjEzZTVmM2U4MGUzMjNlYmI5ZDJhNzE5ZmMzNjM2YWRhOGFjYTIwMDhmZDcxMGFhYzcwMDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3MmJhZWM3NThhMzVhZTIwNTEzNjBlYTNjYjEzZThmNzY3ODFiZWU0NjViYTdmMzVkMjk5N2NjZjY4OTgwNTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cf9329fd5e4641aa8560c43ce06ab773",
+      "statement": "import-sessions leaves --dry-run off by default and stores its checkpoint at CODEX_HOME/.powercontext/session-import/codex.json unless --checkpoint-file names another path.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/client/cli.py#L1734-L1768",
+          "version": "repo-lines-v1:sha256:1ccf775c1e3850e0cca65c48a5fe7aabf7e5091ddb3b4ae7fdf4dc11036c0c3a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5MzM2NjQ4YzI1ZWViMDdmY2Y1OTc1NmM5NjMzYjI2ZmQ5ZmMxNzZlMzUzNWU2ODJlN2U2NDI2YmQ0MWY3ZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ5MmIwYWQwMzU4MjQ1NGU4NjZmNmY5NGY3MGJiNjM5ODg4MjMxYmYyYzU5OWY1YjRkYzk1Mzc1ODgwM2UzZmEifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/client/session_import.py#L490-L494",
+          "version": "repo-lines-v1:sha256:180afa302cb6b9e4c933c2544304eb48a486c4c07f421b82f252941538009097:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTg5Y2NiMzU0YWRjMGFhODkyYzFhZGU2MDIwZTQ3MDNhNTgzNTRjZmU5ZDA3OWJjNzdjMjJhNDJjNWI4NWVlOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGNjNGE3ZDFjYzc5NmFiYTNlNDY3MjMzMjdmNTE3ZTlmODExOTgyZDI1MGYwNzAyOTg2ZTRiNTc2NGFkOTU4OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGZjOWI3MjJlYTkzMzEyMTBmM2RiZTFkOWZmMzQwYTc4OGJlMTg3ZDAzMmM2ZjljNzA3ZjVjODgwMWQxNDUzYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a99b5aadd1b24a8892d6e1f916d990f5",
+      "statement": "Setup treats only non-loopback http endpoints as remote plaintext, so loopback HTTP needs no consent, and setup rejects a UDS-only listener because it has no TCP endpoint for an agent.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/cli/transport.py#L218-L264",
+          "version": "repo-lines-v1:sha256:725a28412e777cd54ef1b1724ca5f8ed2855052bc66077912def919b4ac7950a:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkMWQ4MGY4MTA1Y2NiMjNjOWU5OWVmNzBmOTMwNjMyNjZlMTYyZTk2NDBiNWNhN2I4MjAyZTFmOWYyNTU1MjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhODJlYmU5ZWQ0MDdjM2E2YmE0YjAwMzQyOTJiYWE1MmMxMWNlNWFlMjg2MTA3NDAyZGU0NzkyZWVlY2FjZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM2YWEyOTZkYjhiNDE3N2FmMGI1YmU4MmRjYjM2MjkyZGYzYTAwOWY1MDg3ODY5NTFlYWQ1NTNiZTM4ZjU0MGQifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/cli/transport.py#L61-L65",
+          "version": "repo-lines-v1:sha256:741f4f004629008f51d4ece828297ea2063fb04f51aeffc2a18ac85a47b4ae4c:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGE5ZjMyYjhjMjJlYzg4ZjdlOWZlOGQ5MWEzMzUyMThjMTIxYmUyNDI3OTA5NjU4NzQyN2VhYTU0ZGUyYmVjZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTc5ZmJjODk2MWE1Yzg4N2VhYWMyMDk5NGQ1MDM4OGRiZjFlZTdjN2U3YTRmYjFhMTZmNzM4MzUwN2E0M2EyYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODZmMmU4YWJjYzA0NGI3NGYzYTc4NDdjODU0MmJmYTgxNTViN2M0MThiNDU4ZmE0ZTYzNWRiNTE1YTM0Y2E4NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWY4ZTI1MTY3ZjBhNjI2Y2Q5ZjU0Yzk0ZjAwYjNlYWFiMTE3YzQ4NGRlM2Q5NTZjYTg4YzExMTFhMDZjY2I2MyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ae17ba91ba50423e839ca6e9f6855456",
+      "statement": "Setup consent takes an explicit flag first, defers to process environment consent overrides, then uses the setup environment file and DSH native consent before the shared resolver applies saved consent that matches the endpoint.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/cli/transport.py#L159-L176",
+          "version": "repo-lines-v1:sha256:517e02162ee9084c4198ff76653717b6512d53df9dc2ad07265b50a37f6afd02:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExYzNmYjdhNDk0NzE4OWRmYTI2OTQ0ZjI1NjMzNDAzNmQzNjJhNDg5OTE0YjY5YmYxMzEwYmZjNGZhZTUyZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY2ZTU1MTljNzdhNzFlYTVkZDJkMjBkZDc1ODA3MjAzNGJjYTQ1ODhmYTA4MzdhZjgzZTFmMjY3YzM1NDEyMjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFmZDQ1MmI4YTBlOWU3MmYyZWNjNGRiNTQ2ZmMwY2ExMTg0MGUwZDI3YzIxYTU5YmI0NWIwMGNlNGRlZGFlOTMifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/client/transport_policy.py#L129-L161",
+          "version": "repo-lines-v1:sha256:2caf92f36425c6dcb4f9d5ffd02ecbebb862a982fef903ccbab9613aa99eb90a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExN2IyOTg3YWIxNTQyNzNjMTQ5OGExY2FiZmJiYjg5ZDI3MDIxNzM5NmIyM2QxMGRhM2ExMTUwNmVkN2U5OWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmZWUxMzc5Yzc4Y2YzOWM0YWM1ZmJkOTI3NmRhNjRkN2Q4ZTM2OTNmNzJkZjlhNTQ3Njk2NTBhMGU5NGUwODMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3MDE0OWUwNjlhZDY3ZWNjZjQ3MzY0NmZmMWM3NTAwNTBkMzI5ZDExMDAxOGRjNTc2Njg3OGVhZmExZDYwN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiYjEzMzUwMTQ1ZTk3NGViMjEzMTRlYTk3NjIwYmRjNmQ1YjAyMWI5ZTRhMDdlZmE0YWYwYmNhNDU3MGRkN2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f3625cc43b7847a882588d6e2f1bd6c6",
+      "statement": "Undeclared 401, 403 and 503 responses map to UnauthorizedResponseError, ForbiddenResponseError and UnavailableResponseError, which are subclasses of ServerResponseError; other undeclared statuses map to ServerResponseError.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/client/errors.py#L45-L99",
+          "version": "repo-lines-v1:sha256:08ecd752383f321659a48df7e6a1ae48a8c3ed506fa05c0bd3a96378b0e40055:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI3OWIwZjExMzBlNDBiZTYzN2RlOWI0ODNjMTM3MmM1ODdhY2FmMGU2OWExODc4NDc5ZjI4MGE3OWI0MmVkZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdhYzM2NzM0ZDhjYzlhN2MwY2Q2MDA4ZTkxMWMxNjZkZDlkYzhkZDMxMThmNmJhYzQ4N2E3YmY2NGYzOTNiMjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEyMWU0MWRjMzkzYjZmZTRmMTQyYmUwYzIyZWQ3NTYzZTZkMzRmMWEyYmQ4MmI3ZmEzYWQ1ODUzMzA4MzQ5MmYifQ"
         }
       ]
     }
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T09:04:09.583Z"
+    "at": "2026-11-16T11:46:19.799Z"
   }
 }

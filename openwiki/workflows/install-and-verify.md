@@ -5,16 +5,22 @@ description: First-installation workflow for PowerContext. Covers the config ini
 tags: [installation, configuration, server, service, verification, scope, workflow]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T10:00:10.628Z
+    at: 2026-11-16T11:46:19.799Z
 sources:
+  - id: openwiki-source-8e71e2a5ae23a278e285e5cd
+    resource: repo://src/powercontext/builtin/runtime/application.py
   - id: openwiki-source-e5ae8b4583f232402e100a61
     resource: repo://src/powercontext/builtin/runtime/readiness.py
+  - id: openwiki-source-8bb3f901dd76f0b1aef41e33
+    resource: repo://src/powercontext/cli/config_wizard_installation.py
   - id: openwiki-source-27dc933d22dfaf67f7d7c278
     resource: repo://src/powercontext/cli/config_wizard_seekdb.py
   - id: openwiki-source-a55b890d0773dc5d328dfc4e
     resource: repo://src/powercontext/cli/config_wizard.py
   - id: openwiki-source-ad594ac825526ba9840dab04
     resource: repo://src/powercontext/cli/config.py
+  - id: openwiki-source-ec6e9400c5b184014b8f4d36
+    resource: repo://src/powercontext/cli/hosts.py
   - id: openwiki-source-e5374e477de7d6683f8772c8
     resource: repo://src/powercontext/cli/system.py
   - id: openwiki-source-fa41a059aa6c88d17678d124
@@ -43,7 +49,7 @@ sources:
     resource: repo://src/powercontext/service/probe.py
   - id: openwiki-source-5f3a6523bc098b86ceaeae39
     resource: repo://tests/test_config_wizard.py
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T10:00:10.628Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-16T11:46:19.799Z" }
 ---
 
 # Install, Configure, Start and Verify
@@ -65,6 +71,52 @@ flowchart TD
 ```
 
 Workflow from first file to verified Server. Saving files and installing dependencies does not start the Server; a start step is always a separate command.
+
+```mermaid
+sequenceDiagram
+  participant Op as Operator
+  participant CLI as PowerContext CLI
+  participant Svc as Native service manager
+  participant Srv as Server
+  participant Host as Agent host
+  Op->>CLI: config init then confirm Save these files
+  CLI-->>Op: env file and next-steps file written
+  Op->>CLI: config validate --env-file
+  CLI-->>Op: Configuration is valid
+  alt Native service manager supported
+    Op->>CLI: service install --env-file
+    CLI->>Svc: register definition and start when needed
+    Svc->>Srv: run the server process
+    CLI->>Srv: wait for liveness
+    opt Optional: inspect service status
+      Op->>CLI: service status
+    end
+  else Unsupported platform or foreground choice
+    opt Optional: foreground fallback
+      Op->>CLI: server run --env-file
+      CLI->>Srv: run configured roles in the foreground
+    end
+  end
+  Op->>CLI: load env file then ready and capabilities
+  CLI->>Srv: GET /health/ready
+  Srv-->>CLI: ready or 503 not_ready
+  CLI->>Srv: GET /v1/capabilities
+  Srv-->>CLI: capabilities
+  opt Optional: create a Scope
+    Op->>CLI: scope create --title --summary
+    CLI->>Srv: create Scope
+    Srv-->>CLI: opaque Scope ID
+  end
+  opt Optional: connect an Agent
+    Op->>CLI: setup agent then doctor agent
+    CLI->>Host: install plugin and write connection
+    CLI->>Srv: doctor probes liveness and readiness
+  end
+  Op->>Host: manual cross-session memory check
+  Host->>Srv: save a decision then recall it in a new session
+```
+
+Sequence of the install, config init, server start, Scope creation, host setup, and verification steps. Steps marked `opt` are optional; the foreground fallback applies only when no native service manager is used, and the memory check is manual and is not performed by any command.
 
 ## 1. Generate the files with the wizard
 
@@ -155,11 +207,17 @@ powercontext capabilities
 
 Loading the file supplies `POWERCONTEXT_CLIENT_SERVER_URL` and, when authentication is enabled, the token. A local unauthenticated configuration needs no token ([next steps](repo://src/powercontext/cli/config_wizard.py#L1283-L1340)).
 
-`powercontext ready` calls `GET /health/ready`. The server returns HTTP 503 and `not_ready` when the runtime is not ready, or when the authentication or access provider is `not_ready` ([get_readiness](repo://src/powercontext/server/app.py#L1751-L1765), [access_readiness_checks](repo://src/powercontext/server/app.py#L1772-L1800), [client get_readiness](repo://src/powercontext/client/client.py#L426-L429), [ready command](repo://src/powercontext/client/cli.py#L627-L632)).
+`powercontext ready` calls `GET /health/ready`. The route uses the readiness probe installed on the application state when one is present; otherwise it uses the runtime aggregate. It then adds the access and authentication checks to the response. It returns HTTP 503 with `status` `not_ready` when the runtime status is `not_ready`, or when the `authentication_provider` or `access_provider` check is `not_ready`. A `degraded` runtime status still returns HTTP 200 ([get_readiness](repo://src/powercontext/server/app.py#L1769-L1786), [access_readiness_checks](repo://src/powercontext/server/app.py#L1790-L1821), [runtime aggregate](repo://src/powercontext/server/app.py#L5566-L5576), [client get_readiness](repo://src/powercontext/client/client.py#L426-L429), [ready command](repo://src/powercontext/client/cli.py#L627-L632)).
 
-`powercontext capabilities` calls `GET /v1/capabilities`. It reports the behavior enabled by the assembled runtime, including artifact families that custom declarations can extend ([get_capabilities](repo://src/powercontext/server/app.py#L1878-L1893), [capabilities command](repo://src/powercontext/client/cli.py#L593-L597)).
+`powercontext capabilities` calls `GET /v1/capabilities`. The Server returns the capabilities of its assembled runtime. When its plugin manager provides artifact families that the set does not already list, those families are appended to `artifact_families`, so custom declarations extend the reported behavior ([get_capabilities](repo://src/powercontext/server/app.py#L2048-L2056), [route registration](repo://src/powercontext/server/app.py#L1581-L1583), [capabilities command](repo://src/powercontext/client/cli.py#L593-L597)).
 
-For a single diagnostic pass, `powercontext doctor` checks the installed package, server liveness, server readiness, and, for a loopback URL, the local service registration and manager. It exits non-zero when any check fails ([doctor](repo://src/powercontext/cli/system.py#L270-L333), [server_diagnostics](repo://src/powercontext/cli/system.py#L392-L430), [readiness diagnostic](repo://src/powercontext/cli/system.py#L936-L975)).
+For a single diagnostic pass, run `powercontext doctor` without agent names. Without `--server-url` or `--allow-insecure-http`, it first reads the saved agent connections. An unreadable saved file fails with `Cannot read saved agent connections` ([doctor](repo://src/powercontext/cli/system.py#L312-L383)).
+
+- When saved connections name installed agents, it runs each agent's checks ([doctor_checks](repo://src/powercontext/cli/hosts.py#L108-L143)) and does not run the bare Server checks.
+- When no agent is saved, or `--server-url` or `--allow-insecure-http` is given, it runs the installed-environment diagnostics ([run_diagnostics](repo://src/powercontext/cli/system.py#L494-L500)). These report the package version and the Server checks ([server_diagnostics](repo://src/powercontext/cli/system.py#L503-L550)). Server liveness runs first. Server readiness and the memory-protocol check run only when liveness passes; otherwise they are reported as skipped.
+- For a loopback URL, the personal service registration and manager are also correlated ([local service diagnostics](repo://src/powercontext/cli/system.py#L553-L641)).
+
+The command prints each check and exits with status 1 unless the overall status is OK. A degraded check, or a skipped check other than the memory-protocol check, therefore also fails the run ([_diagnostics_ok](repo://src/powercontext/cli/system.py#L1134-L1137), [_diagnostics_status](repo://src/powercontext/cli/system.py#L1138-L1148)). The Server readiness diagnostic maps HTTP 200 with `ready` to OK, HTTP 200 with `degraded` to DEGRADED, and any other response, including HTTP 503 `not_ready`, to FAILED ([server readiness diagnostic](repo://src/powercontext/cli/system.py#L1077-L1100)).
 
 ## 6. Create a Scope
 
@@ -169,7 +227,7 @@ A Scope is the isolation boundary for memory, sources, and recall. Without a bou
 powercontext scope create --title "my-project" --summary "Memory for my project"
 ```
 
-`scope create` calls the Server to create the Scope. When no `--idempotency-key` is supplied, it generates a random one, so repeating the command with the same key returns the same Scope ([create_scope](repo://src/powercontext/client/cli.py#L398-L421)). The command prints the opaque Scope ID and reminds the operator to place it in the matching `SCOPE_ID` environment variable.
+`scope create` calls the Server to create the Scope. Repeating the command with the same `--idempotency-key` returns the same Scope. When the flag is omitted, the command generates a random key, so a repeated run without the flag is not matched to the earlier Scope ([create_scope](repo://src/powercontext/client/cli.py#L398-L421)). The command prints the opaque Scope ID and reminds the operator to place it in the matching `SCOPE_ID` environment variable.
 
 The wizard's planned Scopes use the same endpoint. The next-steps document gives a `POST /v1/scopes` request per planned Scope. It uses the planned title as the idempotency key and tells the operator to write the returned `scope_id` into the environment file. The title is never used as an ID ([_scope_creation_steps](repo://src/powercontext/cli/config_wizard.py#L1562-L1600)).
 
@@ -177,22 +235,22 @@ Editing the file does not update a process that is already running. After saving
 
 ## 7. Connect an Agent
 
-When the wizard configured an Agent, its next-steps document contains a `powercontext setup <agent>` command followed by `powercontext doctor <agent>` ([_agent_installation_steps](repo://src/powercontext/cli/config_wizard.py#L1524-L1560)). The Codex path is:
+When the wizard configured an Agent, its next-steps document lists, for each Agent, `powercontext setup <agent>` followed by `powercontext doctor <agent>`. The `--source` value is the checkout or Git source that this installation came from, and `--ref` is added when that installation requested a branch or tag. Agents whose setup takes a server address also receive `--server-url` with the address the wizard configured. When the wizard cannot identify the installation source, it prints only `powercontext setup <agent> --help` for each Agent and no doctor line ([_agent_installation_steps](repo://src/powercontext/cli/config_wizard.py#L1524-L1560), [installation_source](repo://src/powercontext/cli/config_wizard_installation.py#L36-L72)). The Codex path is:
 
 ```bash
 powercontext setup codex --source oceanbase/powercontext --ref master
 powercontext doctor codex
 ```
 
-`setup` validates authorization, installs the plugin, writes the connection, and then runs the doctor checks for that host ([setup_agents](repo://src/powercontext/cli/system.py#L190-L260)). See [Codex plugin](../integrations/codex-plugin.md) for host-specific details.
+`setup` runs the host installation for each selected Agent, and then runs the same `doctor_checks` that `doctor <agent>` runs for that host. Those checks combine the host's native verification with the Server checks from section 5 ([setup_agents](repo://src/powercontext/cli/system.py#L210-L308), [doctor_checks](repo://src/powercontext/cli/hosts.py#L108-L143)). See [Codex plugin](../integrations/codex-plugin.md) for host-specific details.
 
 ## 8. Readiness is not a successful memory check
 
-The checks in section 5 answer whether this Server can accept requests and whether its dependencies and access providers are ready. They do not run an extraction, write a memory, or recall one. Readiness aggregates runtime dependency statuses and the access and authentication checks ([RuntimeReadiness](repo://src/powercontext/builtin/runtime/readiness.py#L27-L70), [_check](repo://src/powercontext/server/factory.py#L834-L849)).
+The checks in section 5 answer whether this Server can accept requests and whether its dependencies and access providers are ready. They do not run an extraction, write a memory, or recall one. Readiness aggregates runtime dependency statuses and the access and authentication checks. The Runtime readiness aggregate reports `not_ready` when the artifact processing supervisor is `degraded`; its snapshot form also reports `not_ready` while the Runtime is closing or closed ([RuntimeReadiness](repo://src/powercontext/builtin/runtime/readiness.py#L27-L70), [Runtime readiness](repo://src/powercontext/builtin/runtime/application.py#L4447-L4490), [_check](repo://src/powercontext/server/factory.py#L750-L764)).
 
 Configuration saving does not verify memory either. The wizard reports "Static configuration passed" and states that database and model connectivity and actual memory processing remain unverified ([_finish](repo://src/powercontext/cli/config_wizard.py#L1139-L1152)). Even with the basic model-free setup, explicit Agent-saved memories work, while automatic extraction requires model settings.
 
-The real memory check is manual and cross-session:
+The real memory check is manual and cross-session. Memory and handoff behavior is described in [Memory and handoff](memory-and-handoff.md):
 
 1. Open a new Agent session.
 2. Explicitly save one decision as a memory.
@@ -209,6 +267,7 @@ Tests cover the wizard's file and seekdb behavior. The base wizard test verifies
 | `service install` refuses, citing another listener | Stop the process that owns the endpoint, or choose another port in the wizard |
 | `service status` exits 1 | Read the detail and action lines, then run `service install` to reconcile the definition |
 | `ready` returns 503 or `not_ready` | Inspect the checks in the response and the Server logs before retrying |
+| `doctor` exits 1 with a `degraded` or `skipped` check | Read the check line; a skipped readiness check means liveness failed, so fix liveness first |
 | seekdb install failed | Run the printed manual command, then start the Server |
 | Server is started but ignores new settings | Restart the process; editing the file does not reload it |
 

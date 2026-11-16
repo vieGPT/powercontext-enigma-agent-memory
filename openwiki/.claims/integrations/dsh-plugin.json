@@ -1,0 +1,520 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:27ae189396538f94a2200408d74d80a038d1ff2f2d43821842df497adb2d6bf5",
+  "claims": [
+    {
+      "id": "claim_c9485f3874d8437e9468d06fdd267b07",
+      "statement": "The DSH plugin exposes PowerContext model-facing operations only as native MCP tools named mcp__powercontext__<operation>; it registers no direct HTTP operation tools, and a tool name is accepted only when its suffix is in the generated MCP catalog.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/README.md",
+          "version": "repo-file-v1:sha256:633560e4763fa5cd7e204ca4c3e3eb5040e1dd93c5cf9a76fea6dc413cbe28eb"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/mcp.ts#L151-L162",
+          "version": "repo-lines-v1:sha256:46757808cd9634553e432487ad6782b06deecbfebfce02b61de8f027c3a6a347:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0YTdlMTkyODk5MTJlZTNkODlhYjkxZjY4NzkwMDZkZDdhNjI2ZmJjNDZmZDVlM2NiMGJkY2I1NTc3YmI0YjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjNzM3MDgzODg5NDQ3YzhjZWI2YjM5MDNmNDQzMGJmMWVlMTc3MjdhODNiM2VmZTUxN2JkZmEwMWQ3ODM0YTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImExOTM1YTI1ZGU1ZDk3ZTkyN2FiNjNjMDcyZDE2ZTYwMjk4MGI4YjYwYmQ3MThhMTJhZDNjYmQ0M2E0YjAyZTIifQ"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/mcp.ts#L68-L72",
+          "version": "repo-lines-v1:sha256:04ef25e6ceaafd8fe035c7460d0658d5d38882252214d99dafeb4649981ce596:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDIxMDFjNjE4YWI0YWYzY2M4NjlkMGY3ODc4ZDk0NzczMzYyYTdkOGRlMzE1YWQwMmRkNjljYzc1ZmFmMmU0NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmVlZmZmYjE4ZjgzOWZhOGI0YzlmZmMwNmNlYzc4ZTZkNjc3NWVmYzY2ZGJmNjBlNWJlOWQ2NjdkNTcxNjE3MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzllZmJjYjYzZTBlNDRmNTAyMDNhNzJhYzFjZjM4MDkyMDM4OWViMjIwYzMxNGI1ZTNhYTQyZGEyZTNjOGFmYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2468912d5de441e8ad61acafbb8a3c0b",
+      "statement": "registerMcp races the native MCP initialization against a 5000 ms deadline; if the deadline wins it logs mcp_connect as pending with recovery /pc doctor and returns, while the initialization promise is not cancelled and the native client keeps connecting and publishes tools later.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/mcp.ts#L163-L188",
+          "version": "repo-lines-v1:sha256:6eb734a59f1408fe4db63691e8e288bf6f01b78e33a4dcc24b3ebc6921924f00:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4OTViOGUxMjU4YjU0MTc4MmNhZjcyOWU4NjRhZmRiYTEzMjZmZTgwMzBkMzgxMTQ4MWQzYjg3OWIwMDk4MmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/mcp.ts#L51-L51",
+          "version": "repo-lines-v1:sha256:b42863a25c9db2cba2bdbe73005b1f85b84eb0cb95860f1e69c92b0689e31115:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjQyODYzYTI1YzlkYjJjYmEyYmRiZTczMDA1YjFmODViODRlYjBjYjk1ODYwZjFlNjljOTJiMDY4OWUzMTExNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjQyODYzYTI1YzlkYjJjYmEyYmRiZTczMDA1YjFmODViODRlYjBjYjk1ODYwZjFlNjljOTJiMDY4OWUzMTExNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2I3ZTk1ZWVmY2ZlNjFmMTUwYWJjZDY4YzI5N2FmYjdkNWU5NjkzZWIzODdlOGFmNGJhZGIzY2JlNzQzOTRjZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjRlNzIzMThjZWMzYTY0NjU0NGU3ZjFlY2UxOTc4NDVlOTM0MzA1NTA0ZjMxZWU5NGFmMjJhOWM4MjIyYjIzMSJ9"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/tests/runtime/runtime.test.mjs",
+          "version": "repo-file-v1:sha256:0a99d68d52ae29c5e72d58da48372b322dc68137c707845d9e85a0ffb1fd8d37"
+        }
+      ]
+    },
+    {
+      "id": "claim_4ddd82b58ca44edd88e80b276f84856a",
+      "statement": "An MCP initialization failure is logged as mcp_connect and does not reject registration, and the MCP config sets failOnStartupError to false and toolCallTimeoutMs to 60000 so the host stays usable while the Server is unavailable.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/mcp.ts#L151-L188",
+          "version": "repo-lines-v1:sha256:1268bbee62cc239113bd69bbff84be44f2b308034c5e66183bea1282e973d223:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0YTdlMTkyODk5MTJlZTNkODlhYjkxZjY4NzkwMDZkZDdhNjI2ZmJjNDZmZDVlM2NiMGJkY2I1NTc3YmI0YjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjNzM3MDgzODg5NDQ3YzhjZWI2YjM5MDNmNDQzMGJmMWVlMTc3MjdhODNiM2VmZTUxN2JkZmEwMWQ3ODM0YTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fa20e1d2793b4589ae893f8267052bea",
+      "statement": "The native DSH MCP client does not reach the Server directly: protectMcpEndpoint opens a relay on 127.0.0.1 with a random path that accepts only GET, POST and DELETE, rejects redirects, and replaces upstream HTTP error bodies with fixed error codes.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/mcp-transport.ts#L53-L112",
+          "version": "repo-lines-v1:sha256:e441f8ee172416407024d649523d6ca0327c444b3d023bf501d4697a119413d5:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0ZjMyYmFiMjc4N2ZiYzNhNThmODFhOTkzODcwMWI1MzE5YjRmMDczMDJjMTlkODhiYWJmZDFhNDUwMWE2NTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkwZmVkNDcxYzg3NTBjZGExNzlkYmM2Njk1NjZjYWIxNDg4NGM3NDZjNzk4OWI2MzQ0ODE2NjUxMDM4MjA3NTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c2450c26ff85433aad6db3934876bd72",
+      "statement": "The tools/pre-execute policy denies unknown mcp__powercontext__ names, denies arguments containing likely secrets, denies a call when the host Scope cannot be resolved or the arguments do not use that Scope, and returns an approval request for every non-read-only catalog operation.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/mcp-operations.generated.ts#L1-L20",
+          "version": "repo-lines-v1:sha256:e68c9d2a2a85c13e9eff2967e4cd0aea7709c76a619854c4bb5ac1f95eba9069:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3MzI3NzVlZWU3NzAwMThkYjdkNzlkMDM1YTAxNjMwMTVhMDE2ZGUxN2ViYmY4ODg0OTAyZWM2ZDFkOWZjZjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4YjVjNjgyOTFmZWY3Y2JhZGIxNmQ0ODlmOGRlNTk1OTU4MmRjMzUzYThlMTM1MDc3ZGU0ZGU0ZGRkZWRkYWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjMDVlODkyNzRhYjg5ZDZlNmM5OTRmOTZhYTE2ZmJlZDE4NjM2MzllYTdkNTg3ZTk4MWYwZDc5ODcxNzc1YzQifQ"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/mcp.ts#L92-L150",
+          "version": "repo-lines-v1:sha256:6eb4b68e40e35208df0be8e4cb751f45754406662508de843f21c73512327f74:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdhOTY5MzBhZGY4NzQ1MDg1NDc5YjUzN2ZjNzEyOGU3MzUxZTBhNWJmYjJhYjViM2Y1ZWY4OGQ4YzRjMmE5MTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRhNDU4ZTY0Y2VjZGNiOTE0ZGNkNjY4NTc1YWFlNTBjZmYxZGI2Zjk4ZmE0OTNjMjYyZWFkMzcxN2EwZDA0NDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQyYTFiZWJlOGFiOTBlNWJjOTc0M2RhYTk4YTFkNjc4MWU2ZWJhYjgzYTVlYmUyMDI1MmRjZTgyNmY0NGJlYzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fdc96874330e460aa2f532a4cc16cecf",
+      "statement": "Resolved defaults are baseUrl http://127.0.0.1:8000, allowInsecureHttp false, timeoutMs 4000, requestTimeoutMs 1000, maxBytes 8000, capturePrompts true, flushOnCapture false, flushMaxCalls 4, with scopeId and authorization unset by default.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/config.ts#L61-L73",
+          "version": "repo-lines-v1:sha256:2ae18b21148a7d8409d6b437b86b7a37e944d3859c4f5ae73cbe1c7d3257445d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwYmVlNjVhNzcxNWZmY2FlMWVjM2YzZGYxMjIxNTg1YzI3YTUyMjYwNGJjNDVhYjcyMjliZjUzMWViZjdkMDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhNjAzYmJhZGYyZDMxMTA5ZWQ5NzRiNDBiMDAxZWEyY2UzOWNmYTVhNjM0MDNmNGJlZDMxMWI5OTkzNWFiOWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEzMjZjNWNkOTAzMmJjYzRjY2NkN2ExMDRiNWU0YTczZDA4NDkwOWIxYWZjNTk0OTM2ZmQ1YzY5MzNlMGI1OTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwOGFkOGM5ZTg1ZmI1OTljY2FiOWE2NTI3ODUyOWUwYWJhNTY5ZWE0ODM5NDBiYWM3OGM3OTI4NThiYjgyMDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_30f9787a260d4efaae2c70fdc368b31f",
+      "statement": "Configuration precedence for capturePrompts and flushOnCapture is the environment variable POWERCONTEXT_DSH_CAPTURE_PROMPTS or POWERCONTEXT_DSH_FLUSH_ON_CAPTURE when set to a recognized boolean, otherwise the plugin patch value, otherwise the default; maxBytes outside 512 to 32768 is rejected.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/config.ts#L135-L174",
+          "version": "repo-lines-v1:sha256:2a56f9b95beab0effcf139287aaa04a1e5cecf5e3db07b2205afc6693bd1f8e9:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmZjljNTQzMGMxNGVmYjdkYTdlOTkwZWE3ZGNmMWUwYjVjNTBmNTBlYzBiN2E3MDJlZThkOThmNzc0OTUwNmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f1e2a9921f464196889427235aaaff38",
+      "statement": "The authorization is taken from POWERCONTEXT_DSH_AUTHORIZATION first, then the plugin patch, then the stored credential file under DSH_HOME; the stored file is ignored when its permissions grant group or other access on non-Windows, when its server_url does not match baseUrl, or when the value is not a single Bearer token.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/config.ts#L116-L134",
+          "version": "repo-lines-v1:sha256:a074c515607b5f126065533e1ac4541723713c6bc0163cc55f064aab01df02e4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2OGQ2ZDExMjg5YzliYzRjOTkzNjRlYTkxYjYwNDg3ZTA3ZjU4ZjQ4ZjZiZWNhZjM4MTNmOWYxY2NlY2IxMjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE2YzBhMDIxNmFiMjQwZTIxN2FhYTgwYmE3ZjM1MmZjZWJkMzk3YWE4OTk1YjVhMjIyMmJiODRhZTBkYTI5NDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiYmMzYTJkY2I3MGFlNTcxYzRiMTg1NDI0ZjYxN2FkMzEwNTJjYWEyYmRlNDU3MzZmNjI4MmMzYjdjZDAxODkifQ"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/config.ts#L135-L174",
+          "version": "repo-lines-v1:sha256:2a56f9b95beab0effcf139287aaa04a1e5cecf5e3db07b2205afc6693bd1f8e9:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmZjljNTQzMGMxNGVmYjdkYTdlOTkwZWE3ZGNmMWUwYjVjNTBmNTBlYzBiN2E3MDJlZThkOThmNzc0OTUwNmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/cli/authorization.py#L36-L46",
+          "version": "repo-lines-v1:sha256:a93c68835d90c6504cc6ea5910a47b467914a728f981cb7c6b486b2d14709c3e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkYzc2Y2Q2YzhjYWY0YjA4YmYwM2RiNjgxY2JlYjU2ZDM3YzE4YzJlMjU0Yzg1MDRmOGUzOWUyZWRmMTkxYzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiZjc5YjViMGE4MzkzN2IxMDkyNmQ5MDJhYzY0OGQwMGNlMDUzZjQwYjIxMjZjY2QzMjVhZGFlZjIwYjFmOTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRlOTdkYTQxMTE3YWMxYTFmYTdiYmMwYzA5MmRjNjI2ZGQ5MTllZTVlM2JlMDkzZTMyOTk0YjgwZDk1NzM5ODcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d08042b65d8342238ca44722c2247c16",
+      "statement": "The ownerLocal setting takes POWERCONTEXT_DSH_OWNER_LOCAL when set and otherwise the plugin patch ownerLocal; a non-boolean value fails configuration validation, and an unset value stays undefined.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/config.ts#L108-L114",
+          "version": "repo-lines-v1:sha256:263b53a5b349639cfe8281df6a9fd1fc5954c8fb04567214c3d6a59cb7075cbb:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmE2MTEyMGFlZWI1YjkxY2FkNjgyZmY0ODNkNDJiYThhYjVhYzJkNDg2YmU4MzY1MmQ5OThkNDgxMjUzNjMxMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTQ0ODRlMjU3ODM0YWZiMTAwMDI3OGRlYjE5OTEzMzhjZmExZTYwZGRhYWVmNDcyZGMzYTJjY2Y5YWQwZTIwNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjAzYWQ4NzBhMjY4ZmViYzBhOTRlMzMwYTdmYTE3MWNjM2EzY2U2NDFhMzgyZGM1MThlODg3NTZjZjAyYWMxMyJ9"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/index.ts#L42-L58",
+          "version": "repo-lines-v1:sha256:3f1752f05db288fe026a7e721a151c3e58a20974ae375ed4739016f8adaaaa2d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmYmFkMGNlZmE4N2QxYzI2MzQ1YThhZTAxYzE0ZWY2NzU4NWJhNTIxODljNDc5YzZmYzc2YWU4MzViNGM0NGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM1OWUwZTQwYWZiMjEzOTliMzY1MWM0ODI5NDdlMTBmNjMzYTgwNzIzOTE5M2YzZTZiMTQ5ZWE2ODZiNWRkNzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA3NTczMWFkMGE4YWVhMWY3M2ZlYTc4MTQ5YWFlMzdkNzJjNTRjMzFhOWI4YTI1YzZmNjRiZjViMjAzMzFjOGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4bab65de4935484aad2236b1b031d062",
+      "statement": "Each model step runs the automatic pre-step: if the downstream pre-step throws, the error is rethrown with no PowerContext message appended; if the downstream decision is not enter, has no messages, or has no non-empty query, it is returned unchanged.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/recall.ts#L151-L213",
+          "version": "repo-lines-v1:sha256:255e8f760dadd4e66c79316374495c04e8d45ad5ac48bc71e22e3218c4fd68d3:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkN2FjMTVkOTlmYTg0ODc5ZDIyNWQ5YjBiYzU2NThjNmM4MGZjYzM3NTRlOWZmNTA0OGM4NDUxYzE2Yjc2NDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5YjgxYzk2MTkxN2ExMjc2MDAxOTUxZTczYmE3OTgwYzZlY2ZkYzA4OGQ5YmRkN2EzMzZmMGNhZDdjNDkwOTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f9d6f505679b436eb42336a3cbfbf2df",
+      "statement": "The automatic pre-step budget combines the host signal with AbortSignal.timeout(timeoutMs), and an already-aborted signal returns the downstream decision unchanged.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/recall.ts#L151-L213",
+          "version": "repo-lines-v1:sha256:255e8f760dadd4e66c79316374495c04e8d45ad5ac48bc71e22e3218c4fd68d3:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkN2FjMTVkOTlmYTg0ODc5ZDIyNWQ5YjBiYzU2NThjNmM4MGZjYzM3NTRlOWZmNTA0OGM4NDUxYzE2Yjc2NDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5YjgxYzk2MTkxN2ExMjc2MDAxOTUxZTczYmE3OTgwYzZlY2ZkYzA4OGQ5YmRkN2EzMzZmMGNhZDdjNDkwOTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_43b4519e69ec4517ac7f3c3ce68c2716",
+      "statement": "Scope for the pre-step is resolved every turn through resolve_scope_binding; if resolution throws or returns nothing, prepare, capture and flush are skipped, and an unresolved Scope returns the downstream decision without recall.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/index.ts#L93-L115",
+          "version": "repo-lines-v1:sha256:e3d249f15b36e4a05463a580f1b2cfaf614671314619789d5a9f8abf19b07ea1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2MwYjNkNGJkYWRiZWZhOGQ5ZGNjMzZiNmJjOTYxOGJiNGIxOWI0Mzc5YmY2MjA1ZWJmMzdmOGZjM2RmNmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY1NDg4NDgwNTI4M2E4YWU2MTQ5NWRiMWFlMGI4OGU2NzE4OGJlY2ExNmU2NTM5YmIwMzM2ZDdhZTY0M2E0NzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY4MzlmNzBmYzQ3MzIyN2Y1NzUzN2RiNDE0NTQ0OWRiN2UyMmEyZmI1MGI2NmExYjk5YjM2OWY4MGNiMTA3MjUifQ"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/operations.generated.ts#L44-L44",
+          "version": "repo-lines-v1:sha256:901b18f625503fda92cc55c92382a849673fcb985b2c313097cbb905942bafc1:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTAxYjE4ZjYyNTUwM2ZkYTkyY2M1NWM5MjM4MmE4NDk2NzNmY2I5ODViMmMzMTMwOTdjYmI5MDU5NDJiYWZjMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTAxYjE4ZjYyNTUwM2ZkYTkyY2M1NWM5MjM4MmE4NDk2NzNmY2I5ODViMmMzMTMwOTdjYmI5MDU5NDJiYWZjMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmIzZmY4MDIxMWE4ODAxNDMzMzZhOGI5ZjNkYWNhNDBkMTA3ZWViZDBhNDQ5OWQ0N2JhNzZlMzZlY2M3NzVhZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTU3MDhkY2VlYTkwM2RkYTFjZjk3MzRjMTQwOWE5MTQ4OTVmMWFmZmU0MGQ2YzQyNGM4YmNiNTNjNDkzOWFmMiJ9"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/recall.ts#L216-L263",
+          "version": "repo-lines-v1:sha256:a50709455600ead68e3e028950cba90b954fbac74a74bbde48555d1918303350:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxNDg4NmRiMjZmOTk5ZjRjMjJhNDU0YTcyNjExNjBlMWNmZmVkZGVjOTQwNjUwZDc3ZjQ4MTA3MmQ4YzkzMTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/scope.ts#L50-L64",
+          "version": "repo-lines-v1:sha256:eef52761346bcc35f3dd0753bf20d246e53e886311fe11ba6ec354a39bf4b024:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4ZDc5ZWQ0MmI2N2NiNTU1MjhhZWEzNTk4Y2I0ZjlmNjdhYjc5YmVkMzFhMjQ5MjhmNGE2MjlhYjYzMTFlODkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhlZWQ0OGUzNWI1Njk0NzkyOTRmN2Q1MzdkZjkzMGJkMzJjMTI3YmJhZWM1MzQ3NDAzMWQwZGIzOTgyYjRhOTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_afee4f5d45ae4e57879f58c06be024c7",
+      "statement": "Context recall posts a body with scope_id, a query bounded to 8192 characters and bytes, max_bytes, and an optional assembly to POST /v1/context/prepare, and accepts only a strictly shaped prepared-context object whose status is ready with byte-exact content or empty with null content.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/operations.generated.ts#L54-L54",
+          "version": "repo-lines-v1:sha256:d7b994cabc117f338ecae1b099fa16bb587f225498e8229ab672a29cc1fc50db:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDdiOTk0Y2FiYzExN2YzMzhlY2FlMWIwOTlmYTE2YmI1ODdmMjI1NDk4ZTgyMjlhYjY3MmEyOWNjMWZjNTBkYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDdiOTk0Y2FiYzExN2YzMzhlY2FlMWIwOTlmYTE2YmI1ODdmMjI1NDk4ZTgyMjlhYjY3MmEyOWNjMWZjNTBkYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjViNTMzZGQ1MjVkZWJhZmM3NDcwNzQ0NzU3OTExNDM1Mjc3YTNkOTFkNWY0MzlhMGY5ZTRhZGFiMTczNWExYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODhjNDc5ZmQ2YWQzYmM0ZmJlMzlhYTRlZWRiMjJmYjhiZWNlMGIzMjFkOGFiMGY4MjQ0Y2E3NzVjM2VlMjg4YSJ9"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/prepared-context.ts#L75-L86",
+          "version": "repo-lines-v1:sha256:483d20b15289bbf1b3888d76d619428b4ead6ad0e48f68e9839a1d977866963d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhMWI1YjljNzE2N2QxNjVkMDQ0NGYzNTM5OTdmY2JhMTk1MjQyYmE2MTkwYmYyOGZkM2RjZDlhMjNkOWNkNDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZlODUyY2M1MjhjZGUwNmU2OWU2YzE5Y2U1MzA5YmUyYWRhY2UyMjQ2YmNjNmI4MDUwZTFhYTAxOWNiYzcxMzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/recall.ts#L115-L150",
+          "version": "repo-lines-v1:sha256:e386d0c4d0bf4f056c2c86b81f19a4d606cba715f5f32ddc39cdb1391ed98b0e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5MGViYjdmNTRlMjI5OGU0MDc1YzJjZDI5ZTk3OTU0YTRlZWIyZmUxMGE2MWUwODk3ODMzMjI2NTAwM2QwMGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRhYmJkMGY2ZmRmMWZjM2ZkYjJmODYxMDFlNDgxNDE5OGY1ZjQwZDNmOTBiYTdlZjczYTQyNTEyNjNkMDNhOTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlYWUxNzdmYzhlNWI2OWY1NTQ0Y2I0MjcyY2M2MWEwNzllYWIxMjUxZmRiMzk0MzY3MTQ0NzE2ZTA1YWY1MmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_20e66e0157274fddb911c831ecdaca99",
+      "statement": "The user prompt is captured in the same pre-step, after the prepare request and before the model step, regardless of whether prepare produced content, unless the signal is aborted or the prompt is empty.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/recall.ts#L216-L263",
+          "version": "repo-lines-v1:sha256:a50709455600ead68e3e028950cba90b954fbac74a74bbde48555d1918303350:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxNDg4NmRiMjZmOTk5ZjRjMjJhNDU0YTcyNjExNjBlMWNmZmVkZGVjOTQwNjUwZDc3ZjQ4MTA3MmQ4YzkzMTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f43b99176a8f42efaa97e58eb4a1fc65",
+      "statement": "Prompt capture is skipped when capturePrompts is false, when the prompt exceeds 200000 characters, or when it contains the authorization value or a secret; otherwise it posts to POST /v1/sources/content with a source_id that is the SHA-256 of scope, session, turn and prompt, and the metadata origin dsh and event user_prompt_submit.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/capture.ts#L38-L40",
+          "version": "repo-lines-v1:sha256:a7e4ec110227d864c751a5a8879cd5d2d3ccfdfa928ce9213c3ca656d500e0c7:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmI0NWQzMGZjODBmZDEyYTNmOTJiY2MzOGFiNzQyOWRhOWU0NmRkNDNhYjlhZWQ5NjAyNzJmOTkyMjEwZDI2MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzExYzgwY2UzM2YxZTFlMWVkNzEzNmMxNGZiM2ZiM2QxYWM0YTNhYWExZDc2YjQ2MjY3MzdjNzNiM2U2ZmI0YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmIzZmI3ZTk3OGE0MjlhYTI4Yzg0ZjNlMGM5ODk4OTIzMmYwMjY3MGE2ODc2MWRhZWUxMDk5ZTE4MjkzMzljMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2ExNjY0YWIyYzQ5MjkyMWU4NmMzNjk2NDYyN2Y1ODNmMGQ1MTM0MGFmNjc0NzRjODkwM2I2YzYzMmVlNmI1ZSJ9"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/capture.ts#L68-L129",
+          "version": "repo-lines-v1:sha256:cc420be924dda1724f5b7a6b913c25ceeb5054ae22aca739e8ef7b1367745382:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwMTJjM2E3YWNhYzRjMzM1OTE0M2FmZGFiNjNjNjdhMGIwY2UzZTE4NzlmN2IxY2I3YmZhNDVkNGY4NGRiYjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY5NGYzNmVjZmM0MGU2YjY3OTJiYzA3ZDcwNzk4ODYzZjA4Njk5NTdmODc3ZmE5NjMyZjNhZmMzZmJjNDVjZjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/errors.ts#L22-L22",
+          "version": "repo-lines-v1:sha256:55dec69b001d952d8ebbd1634e7c64ded23279a703517a6b024eb49ff86f6eb3:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTVkZWM2OWIwMDFkOTUyZDhlYmJkMTYzNGU3YzY0ZGVkMjMyNzlhNzAzNTE3YTZiMDI0ZWI0OWZmODZmNmViMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTVkZWM2OWIwMDFkOTUyZDhlYmJkMTYzNGU3YzY0ZGVkMjMyNzlhNzAzNTE3YTZiMDI0ZWI0OWZmODZmNmViMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTE3OWI4YzMxMDRhMmY1ZjQzYzA3NDM2MTgxNGNjM2M4YTc2ZDFhODcwMGQ3MTNjY2IwMzFlMWRjNzk2ODE3ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWY3ZmI4NThkNjU3MWVmZGYwZDdjZTJhYmVkZDRmM2I1OWYzNjM5NzRhN2MyNjZiYzI2NTk0OGJlM2JjNTBjNSJ9"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/operations.generated.ts#L47-L47",
+          "version": "repo-lines-v1:sha256:67c211189ba67a1a2f5961cbe947ee40bd9cdd770e1bb6ee9c57fb9955b58a66:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjMjExMTg5YmE2N2ExYTJmNTk2MWNiZTk0N2VlNDBiZDljZGQ3NzBlMWJiNmVlOWM1N2ZiOTk1NWI1OGE2NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjMjExMTg5YmE2N2ExYTJmNTk2MWNiZTk0N2VlNDBiZDljZGQ3NzBlMWJiNmVlOWM1N2ZiOTk1NWI1OGE2NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTIzOGQwMTJlNjM0NTFjOTJlYjE5ZDY3NGY1N2ZmZDE4MDUwMzUyN2YyNGM0MjMwOTBjYjQ0ZmZjZjVkZjdjNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWZkOGZmZWViMDViMGI2YWJkNjdmOWYxYjk3YTA3MDA0MDdlNzQyZmFkOThhZGEwY2IzN2QyZDMxOTMwMzc0MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_610b43c0d6094067b4362d0f1a8e58f2",
+      "statement": "When flushOnCapture is enabled and the capture returns a valid source position, the plugin polls flush_memory up to flushMaxCalls times until current_cursor reaches that position; reaching it reports only that the cursor was reached, and running out of calls reports flush_budget_exhausted.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/capture.ts#L68-L129",
+          "version": "repo-lines-v1:sha256:cc420be924dda1724f5b7a6b913c25ceeb5054ae22aca739e8ef7b1367745382:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwMTJjM2E3YWNhYzRjMzM1OTE0M2FmZGFiNjNjNjdhMGIwY2UzZTE4NzlmN2IxY2I3YmZhNDVkNGY4NGRiYjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY5NGYzNmVjZmM0MGU2YjY3OTJiYzA3ZDcwNzk4ODYzZjA4Njk5NTdmODc3ZmE5NjMyZjNhZmMzZmJjNDVjZjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/operations.generated.ts#L82-L82",
+          "version": "repo-lines-v1:sha256:6155b781b292cf30c94e4425c3f46381d758322858ae9296a6c7edc54f06bb08:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjE1NWI3ODFiMjkyY2YzMGM5NGU0NDI1YzNmNDYzODFkNzU4MzIyODU4YWU5Mjk2YTZjN2VkYzU0ZjA2YmIwOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjE1NWI3ODFiMjkyY2YzMGM5NGU0NDI1YzNmNDYzODFkNzU4MzIyODU4YWU5Mjk2YTZjN2VkYzU0ZjA2YmIwOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzk5YjU5YTdlMjZjNDg3ZWY0NmI2YWRjMGNjN2I0NmJhZGRkMDAxZWI5NzZhY2ZkYjFlYWVhOTgwZjYxNWI4ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDI2MWJhZWY0ZjgzN2UzNDBlOGYxZmE3ZDlmYTY3Y2IzZTg0OTE1MDcwYTI3ODQ1NmU1ZTc0NjRlYmMxYzAwYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f6f38a1188164932bc58849a9f5075e7",
+      "statement": "A failed prepare leaves the turn running as ordinary conversation with no PowerContext context content; the Scope routing message is still appended whenever the Scope resolved, and the downstream messages are otherwise returned unchanged.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/recall.ts#L115-L150",
+          "version": "repo-lines-v1:sha256:e386d0c4d0bf4f056c2c86b81f19a4d606cba715f5f32ddc39cdb1391ed98b0e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5MGViYjdmNTRlMjI5OGU0MDc1YzJjZDI5ZTk3OTU0YTRlZWIyZmUxMGE2MWUwODk3ODMzMjI2NTAwM2QwMGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRhYmJkMGY2ZmRmMWZjM2ZkYjJmODYxMDFlNDgxNDE5OGY1ZjQwZDNmOTBiYTdlZjczYTQyNTEyNjNkMDNhOTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlYWUxNzdmYzhlNWI2OWY1NTQ0Y2I0MjcyY2M2MWEwNzllYWIxMjUxZmRiMzk0MzY3MTQ0NzE2ZTA1YWY1MmIifQ"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/recall.ts#L151-L213",
+          "version": "repo-lines-v1:sha256:255e8f760dadd4e66c79316374495c04e8d45ad5ac48bc71e22e3218c4fd68d3:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkN2FjMTVkOTlmYTg0ODc5ZDIyNWQ5YjBiYzU2NThjNmM4MGZjYzM3NTRlOWZmNTA0OGM4NDUxYzE2Yjc2NDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5YjgxYzk2MTkxN2ExMjc2MDAxOTUxZTczYmE3OTgwYzZlY2ZkYzA4OGQ5YmRkN2EzMzZmMGNhZDdjNDkwOTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_11b5fb036ea34faf9fe741c051248e6a",
+      "statement": "Prepared context is appended as untrusted context that supersedes earlier PowerContext snapshots, and the Scope routing message states the host Scope is authoritative for mcp__powercontext__ operations.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/recall.ts#L151-L213",
+          "version": "repo-lines-v1:sha256:255e8f760dadd4e66c79316374495c04e8d45ad5ac48bc71e22e3218c4fd68d3:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkN2FjMTVkOTlmYTg0ODc5ZDIyNWQ5YjBiYzU2NThjNmM4MGZjYzM3NTRlOWZmNTA0OGM4NDUxYzE2Yjc2NDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5YjgxYzk2MTkxN2ExMjc2MDAxOTUxZTczYmE3OTgwYzZlY2ZkYzA4OGQ5YmRkN2EzMzZmMGNhZDdjNDkwOTAifQ"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/scope.ts#L24-L40",
+          "version": "repo-lines-v1:sha256:d4a6c7ea5260b0581cb567f165e75d71e56609832c7ca422df6d0ceedaec3943:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0ZTBmYjYxODEwZDEyMzAwZjY3MWEyOWU4YzNkYjRkNGU0N2UxZGZiODMzN2NjOWIwNDJmMDljYzk3NjI0ZGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwMGRkZTJiMDVjMzRmM2JhYTRiZDQ1NTNjZjBkZjdhZTkzZWVlZGM0ZTdiYjY4ODgwZGZlY2FlYmNhMWU4ZmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhYjc4ZWQ2YjU2NGM2OWI0NjI2ZjYyOGFiYmJiYzc2MDJiM2VkNzQ5ZjQ1MzAyOTQ4YTMwZDE1ZDA3ZTBjYmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZkZDYzNDg4ZDdmMTlmODZhYWMxYWJhYmFlODYzNjYwNzQ2YmRlYjRjYjBhYWM0NmEzOTU5YmE1OTc3ZGRjZjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a67488bc5c9a4a95b667ee6dbf25cb05",
+      "statement": "The /pc command set (status, doctor, search, remember, flush, review, stats, capabilities, skills scan) calls the Server directly through the command handler and does not pass through the MCP tool policy; commands that need a Scope return unscoped when none resolves.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/commands.ts#L153-L174",
+          "version": "repo-lines-v1:sha256:1778345ff3845c64c775a5183da7fe42de494acbc79e3fc3bb3ae09df6fddba5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5ZjNmMDZjMDc4ZjBmNzUwY2M5OGFmNDRkNWQ1N2NiOTBjMzkxZjQ5MzAyNmQwMmZmN2Y4YzlhZjU3N2U3ZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhNGIzMzdmM2E5M2Q2N2Q4NmEwMTE3NDc3NDI5YjE2MDRmNTcwZTg3YzE4Yzk5NjE5YjAxMTFhMDI3ZGNkZjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/commands.ts#L99-L151",
+          "version": "repo-lines-v1:sha256:46a970c8ed6ba9e3c8b4d1fc607b767982e3d22a2a41280ec7ab4dff568c3266:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczNDc0MDI4ZTRiNjIxNWEzZWY1MDg5M2I1ODJmZDMyY2EzZDZlZTBiZjBlODEyM2YyM2VkODVmYjM0MTVhMDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1YjU4MzhmOTE5YWI4Mjg3M2FjMGYwNjU4YWNmOGE1ZDIxN2ZkOGFmNWE2YjhlN2Y0MjBlYmFkZWQ1MTVjMmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4d3c372e748144b1a0d6f2b440fe2ad3",
+      "statement": "The owner-local deployment gate rejects a request in order: a non-loopback socket with local_only, an SSH launch with ssh_untrusted, then allows Desktop or ownerLocal true, rejects ownerLocal false with owner_local_disabled, and otherwise rejects with owner_local_unverified.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/status-bridge.ts#L182-L209",
+          "version": "repo-lines-v1:sha256:cd6ab437ea004a9302bb61e63cfffb91a7380432c7b6a7466164407d83a85997:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1ZjAzMzhlNTNiNDYzZDk4ZjQ2YzExYmFmNGY4NmE0MmJjNTBiMjk5NzlhZWRmZTZmMjI2MDY0NWI3YTUxOTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU4ZjRmOTc0MmFhODI5OTZhYmQ4NGM4NjI4NjcwODZmNmI1NGI2YzAyODdmZGZlZGMwMmZmZTNiODhhYTI4NzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA3ZjcyNzM1MzcwZDZjNzNhOWIyNDEwMTkxZGFlNTA1YzJlYjU5OTA2OWY0MTNkOTQ5MDNkMDkxNTc1M2I1ZDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_14082221b6ca45ca93e494298623a7a7",
+      "statement": "Desktop is identified by the managed desktop profile context name, not by Electron, and the SSH launch fact is read from SSH_CONNECTION or SSH_TTY; resolveDeployment returns null when the host is SSH or is neither Desktop nor explicitly owner-local.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/status-bridge.ts#L169-L174",
+          "version": "repo-lines-v1:sha256:da8102488eb4fd051e7e648d0270e6a5031920b0d55faec90ef66312f61d72f3:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQzZDIwMjg4ZWIzNWZjNGYzMzI3ZDY1OGViOWIwMzFiNzY0ZDgyODQ2NmYwOGIwNjZmNWIzN2I1M2Y1ZmNmMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjYyNjM3OWUwNjU0M2E0YjI5YWNmMDMxNTJjNGE1NTljMjQwZTczOWM4MTZhZjViMmRkNjY1NjE0MTE4ZGJjYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2RhNWVmZTlhNjAxYWY0MTIzNDM3ZWJkODI0YjRlMTRjMzc0MWEzMzg4OWFhMzhhOWVhZTc1NGY1ZWUyY2RiNSJ9"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/status-bridge.ts#L212-L239",
+          "version": "repo-lines-v1:sha256:304d272e2284e61654b32c41946e0aabc7e31dc9d452e69ab6536b03298979b0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxMTA5ODYyNjY4MjYxNjk3YjI1OTJlYmEwZDUxNTcyMjA5MGIyZWYwNmJjNzE5OGNiMDVkMDBhODU5YWFiMzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1MDczZjFjZjBiNGQ0ZjExODJkNzYzMTRmNjM3N2Q5MDYxMTRlZTNkMTdjYTI4NGRmYjQzMDBiODgxMDRiMDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI2N2Q3OTI0YTQ3YjgwMDk1NmQzN2Y2NTE0YTQ4YjZkODIzYzMyNWM4NWQ5ZjFjNjFiYzc2NTg3NTQyMDUxOTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiMGQ0NWEzNzgyNjFiN2E2YmY1Y2UzNGY5ZWM5ZjA5MDgxZmViZmM2ODhmN2UwZjI5MDEwZGNmMmQzYzBlZWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_96f21998569d45458457aca1230f1538",
+      "statement": "Loopback is the IPv4 127.0.0.0/8 range or ::1, including IPv4-mapped IPv6 forms; loopback alone is not treated as proof of a local owner.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/status-bridge.ts#L182-L209",
+          "version": "repo-lines-v1:sha256:cd6ab437ea004a9302bb61e63cfffb91a7380432c7b6a7466164407d83a85997:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1ZjAzMzhlNTNiNDYzZDk4ZjQ2YzExYmFmNGY4NmE0MmJjNTBiMjk5NzlhZWRmZTZmMjI2MDY0NWI3YTUxOTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU4ZjRmOTc0MmFhODI5OTZhYmQ4NGM4NjI4NjcwODZmNmI1NGI2YzAyODdmZGZlZGMwMmZmZTNiODhhYTI4NzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA3ZjcyNzM1MzcwZDZjNzNhOWIyNDEwMTkxZGFlNTA1YzJlYjU5OTA2OWY0MTNkOTQ5MDNkMDkxNTc1M2I1ZDgifQ"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/status-bridge.ts#L238-L246",
+          "version": "repo-lines-v1:sha256:772ad1503ff049f5c6c2d071f5761820d927d7c1b1a0384ff0e3bf8d6d24c580:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTgwOGI4Y2E4ZTc3MThlMjU2MjMxNTAxZGJjZDRlZGZjNDA5MjVmZDc3NDUzZWJkZGViMTA3ODNjNGU4NDY0NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmI1ODBlOTY0ZjgzYTQ3M2Y0M2Q0NDM4NDYyOTQ5ZDY4YjU2MDBmZGE3ODdmMTYzNzQ1ZDAwZGU4OWNiZjM2YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzg3ZWNlNzhiODNlNzJjYTZjZDJmNDkyMmIxNzM3N2Y5MjQ0Y2I3Nzk4MDQ1NWVhNmNiNjc3ZTg5MDMyYjY0NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ef6b7c41d02c449fb9c1fca701875fd3",
+      "statement": "The status and dashboard routes first apply the DSH connection rejection (401 or 403), then the owner-local gate, accept only GET (other methods get 405), and return status JSON with no-store headers.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/dashboard-bridge.ts#L75-L112",
+          "version": "repo-lines-v1:sha256:93103962b4c0cf003c99c266fdf441202f9a999ec5030b4855dd1c52a3136ab3:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1MDc1ZWI2YjI3ZWU2ODVhNjM5ODllNzFjNGM2MGVlN2M4OGE3ZmRmZjkzMGMzYWQwNGVmZWE2ZTVlNmIzODUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmZTI0MzNkMjgxOTVkYWY1MzMxNWE4ZWE5MDFlMjE0NzYxNGZlN2I5MDQyNWM2ZGQ2OWE1MjE1NzhiNDQyODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNmOWIzZjUzMDY3ZGE1ZDM5ZmNhNGNhMjk4N2FkY2IwMDA3NmIxNTYwNTc1NjI1Zjc3Y2M2YWFlNjVkNTk1ZGEifQ"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/status-bridge.ts#L633-L674",
+          "version": "repo-lines-v1:sha256:4517be8335f026bbe66792a64d80c122ca620a18882bb5d96fc160fe7e784562:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlMzgwZTE2ZGJkNTdmM2M2ZjZkYzc3Y2MyMjg2MzFmYmMwMGFmOGUyOWJjNDU3MjYxNTY3NDFlOWI0ZTlhNTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRhODljYTNkMTJhMmI2MjY5ZmQ3NTQ5ZWIzZTcyZjU3MjBiMWI1ODQxNjAyZDU2ZDJiNWRkZDhkOWZlZjczMWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_96de5684a290457f88127d3c71c78352",
+      "statement": "The status bridge performs only read-only probes: get_liveness, get_server_info for the package version, get_readiness and get_capabilities; it never calls prepare, capture, generation, MCP or /pc doctor, and a failed liveness probe skips readiness and capabilities.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/status-bridge.ts#L256-L262",
+          "version": "repo-lines-v1:sha256:dd8608d91f1d58866a5a8cb949d72665dc3ee2418b694b9c455c730d86b8c1d2:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmE1NWU2OGE3MjFkZWZkNWFmMTZmYzQ3OWNjM2JlZGY2ZmUyNzAyZmUxODU0NTBlZmIwYTlhM2JjYjQwOTgwNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTRhZDQxNzliM2M4ZjZmZWFlMzYzNjQyMmVlYjIyNzcxODU1ZGNiMDc3OTkyY2I1ZDgxNzhlMDZkOTI1NTBjZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDA0ZGQwOWJhMDg5OGUyNjliYzNmODE5MzFjN2E4ZmNhMmUwMzIyMmNjYjQ4YzBhZTc3ZjYxNjAxYWIwMzAyZiJ9"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/status-bridge.ts#L444-L520",
+          "version": "repo-lines-v1:sha256:1e1d1544ee52775c17773fe207570f92298fc6757e41ead329fd5a5fb0a15e99:eyJzZWxlY3RlZExpbmVDb3VudCI6NzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhYTJlNjQ3OTcwYzgzZTM2MGU2MzM0NmIwMDVmNGI3ZDdhZGVkMWMyNzQ1ZTk0YTM1MTg1NDA1ZmI1MDM1NTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExZGY4N2E0NzMxNmM3MDhjNTUwMjA5OGU5YWY2YzQ0NTM0ZWI4MGJlYWRjZjYwNjMwMjhlZmNhODU5MzdhYmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3ZDg2MzJlNTRlOTI5OGFiYjk1ODcyN2UyZDUxNDA4YWJhZjEzNjYwMzUzNzkxMDE0MGFiZjY1YjMwYWI2MTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjNzRmY2IwZDU0ZTk3ZTQyMDkwODkyMjJiZWYzOWY4NTBjODQ1OTY3ODJmYjg1YzYwZjk5OGVjYWEzOTI0ZjEifQ"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/status-bridge.ts#L518-L575",
+          "version": "repo-lines-v1:sha256:baa984a5bb8251985e02d496913fbeab56fde628ebd08b9e12f0273554ce0e3c:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1YWYwOGRhMThjYjU4NDU3Mzg1NDJkN2VkYzYwMTA5YWU4NGRhZGZiYmRiNGFhMDgyYWEwMWViZjg4NTRmNDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmMDkwMmQxNTcyYjk0ODYxYzVmYmZkNThjNzQyMjJhNjgxZGZmYWRhZWYxNDYyN2Y3NTIzYzdkMjQ0NmYzMTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3ZDg2MzJlNTRlOTI5OGFiYjk1ODcyN2UyZDUxNDA4YWJhZjEzNjYwMzUzNzkxMDE0MGFiZjY1YjMwYWI2MTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ5ODM2MGFlMTMwM2RlNGRjYzU5MTZlYzNjZDdiMjhiNDg4OWJhNDA5NDhiMmNlM2MyMWY4YjgwYTdjYThlYzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5faa14a4c5654e99aee5588d4ab68b0e",
+      "statement": "The sidebar routes are registered only when the host provides webServer and connection services; a headless host skips the registration so tools and hooks still load.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/status-bridge.ts#L675-L705",
+          "version": "repo-lines-v1:sha256:6015b810250b6b290033eafc71211065e4e32c4f5ddfe7ea1972243dfad16e09:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0YTk1ZjQ1MTc5NzMwZDhjNjM5NGE5NjBiMTRkMDM2OWEyODg4OTRjNmNjMzBjMzNjMzJhNWZkYjY4Y2NlNTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzZmJmODViMGUyMWQ1ZjJmY2RiOTVmYzMyMmRkM2FjYThjNWU2NWQ5YWU2ZmI0YmY4NzU3NTZmOGJjOGE5ZjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f3b591ac339f4d8fa3807ceee10626db",
+      "statement": "The dashboard route reads the Server's /dashboard/home once per request with a timeout between 1 and 8 seconds and reports disabled, authentication, load_unavailable, scope_unresolved, available, or server_unavailable states.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/dashboard-bridge.ts#L35-L73",
+          "version": "repo-lines-v1:sha256:4f1ab7667fdb0215cd354fc8508ae21922027df163b0cef02770c050125b820a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3NjcxNmRiN2JjMzM0MTkzYjc1MjNjMThkZWJlOTZmNWNmNzUzMjkyMzUwNjhmZGE2YmY5OGJmNmJiZTk2MDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJlN2JkYTJiM2Q5NmIxZWM3ZDNiNjk5MjkxOTRmZjljZTYwMDgzYzEzYzQ1NzRjYjAxMTcxYzZjNTQwNzUwNzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkxMDBhZmUyNGQ3MGVmNzQzNWU0MWFmYTFmZGY3YzRjMmM4ZmE2NmM1NGI2YTIwNDM1NDJmNTVjNmYwZjk4NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3413dfa801f44236aedab0e54ade5b43",
+      "statement": "The /pc command set is registered under the pc name, and a Scope-less status call still reports the automatic-path status.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/commands.ts#L153-L174",
+          "version": "repo-lines-v1:sha256:1778345ff3845c64c775a5183da7fe42de494acbc79e3fc3bb3ae09df6fddba5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5ZjNmMDZjMDc4ZjBmNzUwY2M5OGFmNDRkNWQ1N2NiOTBjMzkxZjQ5MzAyNmQwMmZmN2Y4YzlhZjU3N2U3ZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhNGIzMzdmM2E5M2Q2N2Q4NmEwMTE3NDc3NDI5YjE2MDRmNTcwZTg3YzE4Yzk5NjE5YjAxMTFhMDI3ZGNkZjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3e612114fa8744219a550191dff1cbf0",
+      "statement": "The internal LocalDeliveryService prepares handoff packages from inspected work, a configured generation, or an exact Handoff revision, and it does not add a browser route or enable delivery in the DSH UI on its own; recovery marks an interrupted delivery unknown rather than re-running the original Source.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/development/dsh-handoff-delivery.md",
+          "version": "repo-file-v1:sha256:49ca2c8c3602ac81ee31a1c11a70a4adbb54e0272d6bb6332f85183f90d2b064"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/handoff/delivery.ts#L97-L127",
+          "version": "repo-lines-v1:sha256:d7365e1efa7196d52da7312b02c1fc94ac9cf44cae5ef1cd48ccf14c07bcf059:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyYzA0MTc1MDkzMGQ0YTc3NTc3N2JkNmRmNTA1YWViZGYwMWNlNjZkNTg2ZmM2ZmRiN2YzMzRjYTNiYWRmMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4ZGI3NDYwODE4MmNiN2NhNGQ5ZmJhNDlhMzk0OTlhN2YzOTA3YjRlYTAzM2IxNDkyYWQ1Y2YwYmVlZWVjZWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZhNThmNDkwY2Q1YWIwZjg1ZDliMjQxZTc2OGEyMmI2NzhlN2RhYjBjM2FlMmI0MTgxM2Q5ZjE0Yjk4ZWQ4ZmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM4NzA1OThiOTljZjY4MDcwZWI2N2E5YWY0ZDA4ZmQ0YjdhNWQ3Njc3YTIzMjViNzkzOWVkMDMwM2U0ODU2NGYifQ"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/handoff/prepare.ts#L44-L100",
+          "version": "repo-lines-v1:sha256:43f8e78836b24f55e163a03d596bb26d0f1641ee8c20c118220a4f7f15cc9563:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxMzBjMmFmYjE3Y2IwY2NmZDQ5YTYyNDczOGM5ZWFhMjhlODdlYjBiOTNhZmQ2MzJkMWYwOWRhYWU3MjI4OGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0NmMyYTkzNGQwM2MxYTY4ZDNhMDY2MmExYWM3YjUxMDg2YjU2MjNkMjUxYzA0NWE0YzY1ZDM0ZDhkNmRjMGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg0M2Y1MTllYmI3MGE5NGY2ZmU2ODIxYjdkMzg1ZjM1NzRhZmZhNjlmZDk3ZTU2MmY4MmFhN2EzNjMwOGRlMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU5MjRiZjZlZWUzMjdhNjNjMDA0ZDE0MTM5YWFiZjM4MGI0ZjdmZjAxNGJkYmNmNmMxZTA1NzVjOTZmZjRmYWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_38ef4221447b48f7b1938db32eb7fd9a",
+      "statement": "The handoff package store keeps 100 carrier slots or 50 MiB by default, never evicts pending or pinned packages, keeps a 30-day tombstone after deletion, and can expire an unpinned confirmed package after seven days.",
+      "evidence": [
+        {
+          "resource": "repo://docs/en/development/dsh-handoff-delivery.md",
+          "version": "repo-file-v1:sha256:49ca2c8c3602ac81ee31a1c11a70a4adbb54e0272d6bb6332f85183f90d2b064"
+        }
+      ]
+    },
+    {
+      "id": "claim_a261b5e943f148b6b46b4236f78e0b5e",
+      "statement": "The dsh-pet companion applies only for the web or desktop profile when the host exposes its pet memory slot, and it registers a recall and capture provider in that slot.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/dsh-pet/src/index.ts#L28-L35",
+          "version": "repo-lines-v1:sha256:f4e599ecf00fb15561f9a4590fcc2327199ce65ef89ab0fce19538b6a7279d08:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDc3ZmY0NzRiOWNmNDVhYTg1Y2FjN2MxZDNkNGZiZDU4NzIwMjQ3NWFjN2JjZjNiNzEyODZmZTQ3ZGI5MDYwMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQ5YjFiYzI0ZDZiZDY0ODA2YzI5ZGFkMTgzYTk1N2E3OTUxNTg1YjYxNzdkYmJmMmNmYzM0NGUwYWEzNzMzMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTRiNGVlMjZhZTc3NTNiZjdhN2E2YmIyMGEzMzUyNGZiMWE3MDIwNWZkZjliY2QyNjNlMWE1OTU4NTc1MWRhOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTNjZmQ1ZmI4ZDMxMDZiMmI4NzhkNzI2Yzc0OWY1OWExZjI2NDVkMGZhYzEzY2VhYzQzNmQ5NzNjZTkyY2E2NyJ9"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/dsh-pet/src/index.ts#L331-L340",
+          "version": "repo-lines-v1:sha256:6b5d4b21511dbe6de713d1c1787225893c2513d988d761f7aaf144bb7255712e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2YjYxNjAwNDZhNzJmOGJkOTE2M2Y4MjA3MTMzOGEwMTAzMTNiOTM0YTAyOGU5ZDhhMTkwMGM4MmI3NGRjNDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e7bebc6c9d634c8aa81c726f922b6c9a",
+      "statement": "dsh-pet recall runs a text search with limit 3 inside a 1200 ms budget, wraps the results as untrusted historical evidence capped at 3072 bytes, and backs off for five seconds after a failure.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/dsh-pet/src/index.ts#L172-L197",
+          "version": "repo-lines-v1:sha256:601839a80193d88b71ceb7e86a6847b6fcbe21383a63356fb80e3d5abca3ac45:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyZDQxMTAzODNmNjhiYmQ0MDQzZjliMjAyYmZkOTJkOTMxNmE4NTUzNGViMWFmYjNkNWEwZTRmMjYyY2U3ZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwMDVkZmZmODAxYzdiY2FkMzNkNGZmMTkxNTY4NWFmNGM2NzFhNWJmNjU4ZTA2YjQ2YjI4ODc4MTQ4YjNjMzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM2N2JkNGY0ZTNmMjk1YTg2MjRjZDI2Y2I2NWIzMTgxNGVkZWUyMjlkOGZkZTIxMzY1OWRiNDg0NmJmMGUxMDIifQ"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/dsh-pet/src/index.ts#L28-L35",
+          "version": "repo-lines-v1:sha256:f4e599ecf00fb15561f9a4590fcc2327199ce65ef89ab0fce19538b6a7279d08:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDc3ZmY0NzRiOWNmNDVhYTg1Y2FjN2MxZDNkNGZiZDU4NzIwMjQ3NWFjN2JjZjNiNzEyODZmZTQ3ZGI5MDYwMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQ5YjFiYzI0ZDZiZDY0ODA2YzI5ZGFkMTgzYTk1N2E3OTUxNTg1YjYxNzdkYmJmMmNmYzM0NGUwYWEzNzMzMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTRiNGVlMjZhZTc3NTNiZjdhN2E2YmIyMGEzMzUyNGZiMWE3MDIwNWZkZjliY2QyNjNlMWE1OTU4NTc1MWRhOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTNjZmQ1ZmI4ZDMxMDZiMmI4NzhkNzI2Yzc0OWY1OWExZjI2NDVkMGZhYzEzY2VhYzQzNmQ5NzNjZTkyY2E2NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0d7d3e67bc494b0a873cec0791c9c792",
+      "statement": "dsh-pet captures each dialogue turn into a per-generation local queue and drains it through capture_content_source on a one-second tick with a five-second timeout; a successful capture is removed, a conflict or rejection blocks the item, and other failures retry with exponential backoff.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/dsh-pet/src/index.ts#L198-L236",
+          "version": "repo-lines-v1:sha256:6f5ac323aa6af8eeda669f5a8825dbf7738ad7a8e6d3c4e3ae881cedc576cb00:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1ODk3NDRkZGVkNmJkOWE3NjgxNGQ4ZmQ1ZGMzOTIxNzI4ZTllNzEyYjhlYjgzOWIwZjc2ZDI2ZmNiOWI4OWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3ZDg2MzJlNTRlOTI5OGFiYjk1ODcyN2UyZDUxNDA4YWJhZjEzNjYwMzUzNzkxMDE0MGFiZjY1YjMwYWI2MTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5MjRjNWQwOTQzMmQzYjkxZWEyNTgyY2QzOTA0YTUyNTk5OGRiNjE0Y2U5ZTc5OTUxMGE3Nzc1NjA5Yzk0MDUifQ"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/dsh-pet/src/index.ts#L237-L286",
+          "version": "repo-lines-v1:sha256:20ecfda1fda706142c5b0b4e57cfe6171d6abda59c5bf8c7bdd10a3df4d31254:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwNTEyZDE2M2RhNmQ5ZWViNjY0ZjY0NjAyOGJmNDA0NmFkY2Y3MDMwYjdlYzVkNWRlMTk0MzQ4ZmMzMWFmMDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3ZDg2MzJlNTRlOTI5OGFiYjk1ODcyN2UyZDUxNDA4YWJhZjEzNjYwMzUzNzkxMDE0MGFiZjY1YjMwYWI2MTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkMTAxY2EzNjk3ZTFhODllNzA3ZGI0MzZiMmJmNmM3NjkyNzY2Y2FmOTczOGRiNjQ5M2JmMTk4OTFlNTU4ZjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_76217801a10e480dada15d948b84f83f",
+      "statement": "Pet memory bindings must be between one and sixteen unique PET_ID=SCOPE_ID pairs with a different existing Scope for each pet, and the setup flags --dsh-pet-memory on or off, --dsh-pet-bind and --discard-dsh-pet-pending are validated together.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/cli/dsh_pet.py#L55-L73",
+          "version": "repo-lines-v1:sha256:919ae78049cb8b803fe38eb052f4d8f4223307b75a3f1bd82e7b2871a5ec3256:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2N2ViZjZkMjJlM2Y3ODdmN2YzOGExYjA3Mjk4M2JlMjY5YWMxZDFmNTMxZjYwMWZlYmRiNmRhNDY2ZDljOWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4ODliMTQxNGI0ZWJjZTFiMzVmMzIyZWRiYjk3MzJhZGZiYjEwZjNjMzM0YjYxOGE1YjA1Nzk5ZWUyODY3NDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwMmFkOWNjNWQzZjFmMTdlYjJiZGRlNTU0ZTg5YzFmZjRmYjI4Mzc0NzQ4MWEzZTgwYzEzMDA2NzE1MjA5YTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0ZDFmZDMyMjU5MDRkZWM3MzMzNzI2MzJhYmUyZGViZjY0MWU2YTFjMmVhZTNiOGY3YjcyY2MwNWJhYWViN2YifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/cli/system.py#L189-L206",
+          "version": "repo-lines-v1:sha256:a5daaa922aad1c356118b24befa6a63c90829fc1f5d69ad21a9d7b57ec9ab4c0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2NjA2MzZhZGY4ZmI5MmE4YjY1OTJkNWE3M2NlY2UyZGFhZWM2ODEwYjM2NGFkOTNlNzQ5MzY2OGU2N2RiZDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk1ZTRjZDAyZTE3ZmM2OGNhOWIyODdiZGViZjk4YTgyZGE0ZGU5YzMyOTFmNGQ0NTI3OWI2YTEwYTQyN2FiYjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg3NDAxODE5YTMwZTQ1MmU3OGM5ODUyODJjMjJlZDMxNWJkMzk2MDFjNmQwZWZmZWI4ZDQ5MTU4NGYyMGQ4NzEifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/cli/system.py#L227-L245",
+          "version": "repo-lines-v1:sha256:124f10723a3e7f3d41caf02e98636e2acf6c2a1fd808c49e3a01daf46e4b5cab:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyZDFhNGFjMTFhNjg5NzdmZTM3NzE3MzRjOWM5ZjA3Yzg4OTA5OGI5OWQ0MTgyNTQ0ZWE0YTczMjY3ZmU0ODkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlYzgwM2RiYjhhNzBhN2UwZTA0NjFiYjVmOTA4ZjE4OGIwOWQzZDhhYjViYTk5MWIwODk3ZmZiNTdjZjU1YWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlNjAzNDA2NDE0ZjYxZjkwNmVkZGY5NjFkYTUxNTUwNDlhMTUyMDdlNzFlOGMxZWZiZDQ2YTI5ZTQwODk0M2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5MGRjM2ZiMGQ5ZmI4N2Q0N2Q1YmJhNjQ3M2Q0YTBjNWU3MmQ0ZTRlNWFlMmZjNWY2MGFlZGM5YjZlZjA2YzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a68b7ec2d00a4d4189993daf9910df2f",
+      "statement": "Setup requires a built lib/index.js, stages the powercontext-project-context Skill, runs dsh plugin add for the selected profile, and defaults the profile to web; the Desktop profile requires the Desktop-installed dsh command.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/cli/dsh.py#L152-L157",
+          "version": "repo-lines-v1:sha256:2c4c1d85edcaf8f3edf68adfcc8ba17da61cda27ddd35123d926cca0e97f5dd5:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjA1ZDQ1YTFhOGVhMjU4Yjk3ZThkYTlmMmFhZWY0NTJmYWQ4YjBmMmI3ZWVlOTIyYzJkZGNkOGZhNDhkMmU3ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGY4Y2Y2ZTYyMGMwODZkMDMxMjJjMjE1OGQxNjY4NmQyYjNjMGRkYTdiNjVkN2QyNzhiNWQ1YWU4YTYwMzEyYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjE0YTY5ZThiZmQ5YWFmNzI1MmUyMGZmZjcwNWIyN2Q0MTczMjZlYWViM2QwZmE4ZTE2MDkyNTMwODQ3NTM4NyJ9"
+        },
+        {
+          "resource": "repo://src/powercontext/cli/dsh.py#L266-L296",
+          "version": "repo-lines-v1:sha256:325ba1f252b35917e5f4dc684b2c1ac738c779610e6a16cf1a1b89eb2c90c78e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4ZjQ1Mzc1ODE4NmJmZjZkY2YzYzNmZDk5NGNhY2E5NjNhMDNjZmI4NWJhYjExMGIwN2FmZmU2YTE1YzhhMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjMWYwMmZkN2VjMWQ0NjJjMGNiODE4Yjk0OGZmZTRmNzE1YjJjMmM0MzI2MzBjMjMyZGZlMzRkNDI3NDNmYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJhNTU0OTU0YmYyYzNlYmFmZTM0ODY2YzA4M2M4MjRjZDM1ZDEwMGQ4ZDM3NjM3MGViOTI5ODYyNzIwODEzZmUifQ"
+        },
+        {
+          "resource": "repo://src/powercontext/cli/system.py#L227-L231",
+          "version": "repo-lines-v1:sha256:a293ec607b031b9e92d85f1df2421d0f26e86484a8cbe132fd7aed11e4e09bec:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDJkMWE0YWMxMWE2ODk3N2ZlMzc3MTczNGM5YzlmMDdjODg5MDk4Yjk5ZDQxODI1NDRlYTRhNzMyNjdmZTQ4OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2ZlNWM2NDljNjMxMzE0YjY5ZmFiNzQ3MTdhMTAyMzgyYWI4NWRhNzU0YmU3YzEwYWQ1N2RhYjZlZTk0NDg2NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmU2MDM0MDY0MTRmNjFmOTA2ZWRkZjk2MWRhNTE1NTA0OWExNTIwN2U3MWU4YzFlZmJkNDZhMjllNDA4OTQzZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWRhMjJlMmNhY2VhZGNiNzY2ZWQyOWNhMmI2NTBjNWFhZWQ2NThhMDZkYWEwMDhhMmVhYzUxNDI4MGNkZDkzYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c1ab616907164383bedc86cf80f3837d",
+      "statement": "The DSH verify step inspects only registration through dsh --profile web --dump-config and reports running host configuration, Server liveness and readiness, route compatibility and session Scope as not observed or not checked, leaving /pc doctor as the runtime check.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/cli/dsh.py#L312-L402",
+          "version": "repo-lines-v1:sha256:ee235de013b30e541c5b866564bc5a50298cc77484923ad69e60cfb671a25458:eyJzZWxlY3RlZExpbmVDb3VudCI6OTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzYzIzNGYzZGQ1MTdiODA1YTlkZmEyMzA3NjRhYzYyMmJkNjNmN2VjMDAyZjBhMGJhODBjZTVkODFhZGEyNjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiY2IyOGEwNGY2MDA1YTBjNDMyNzA1Mzg4ZjRlYjJkYjkwOTY3MzQ3YTI2NWY4YmY5YTA4ZDA4OTg5MTQ2ODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dbb496c2f8e44ba9b3bb8c1f0d137fac",
+      "statement": "The HTTP client refuses unknown operation ids, sends requests with redirect set to manual, and gives the readiness operation at least a 40 second timeout.",
+      "evidence": [
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/client.ts#L221-L223",
+          "version": "repo-lines-v1:sha256:1dd7d56394f716f6a105b9e6015733c3808c11077aa5d06b1e0c35187b56ec7f:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGY3ZGI5Mjk2NWNhOWViZmViMDM5NTc5MWY2NzMwZDFiNTIyOWJmMDIzZjQ2NTY1YjYxZTBhMTI5ZDU5OWUzOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjVlZWEwNzIzNzAwMDUyM2M2NWUzMTNiYjcxYzBhZDU5ZTgyY2U0MWY4MjFlZDZlYzlkNGVkMmVjNzNiYmY5YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTA4NGE3YzRhNjVmNjhmMzI1Njg4NmZmYTNjMzgyZjRhYjNjY2EwN2ZjNmUxMWRmN2E1YWJjNTY1NWQ3NzBmMyJ9"
+        },
+        {
+          "resource": "repo://integrations/dsh/plugins/powercontext/src/client.ts#L34-L34",
+          "version": "repo-lines-v1:sha256:f4f442420b7d62efd98df84f5087cc3dccf1cd37b30a13df2e9c2b8a6fb4b303:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjRmNDQyNDIwYjdkNjJlZmQ5OGRmODRmNTA4N2NjM2RjY2YxY2QzN2IzMGExM2RmMmU5YzJiOGE2ZmI0YjMwMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjRmNDQyNDIwYjdkNjJlZmQ5OGRmODRmNTA4N2NjM2RjY2YxY2QzN2IzMGExM2RmMmU5YzJiOGE2ZmI0YjMwMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjUxOTU1Y2QzYjM3Yzc5ZDQzNzFmNTVmZTdlZWNkNjVlYjUzY2ZmMDFlZWVmYzY1MWRhZjMxMzhlODY1MDNiMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmM0YTI3MzdmZmVlMTk2MWY1ZTA5YTU2YjZhZGYxMjljMGI1NDdlZDIyMWVlNTU3NDViYjJlMjIzMmE0ZmNmOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e92e0e5de3a842b9939ea99244b0499e",
+      "statement": "Plugin installation writes the connection transport and then runs the installer's enable step when present, and a failure during setup is reported as a connection or native activation failure with the install already complete.",
+      "evidence": [
+        {
+          "resource": "repo://src/powercontext/cli/installation.py#L146-L207",
+          "version": "repo-lines-v1:sha256:6610930255fb57e97c8d81007c991c5af2fc2873f6641f0d76e4db9e971484af:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwOTc2MGM1ODI5MGIyZTUzZjNmMzdhZjUzMmEwZTJjZDNkZTZlMzkxODYxODcwMTRmMjMzYzliMzU4MGE4MmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxYTE3NjBhNjdkZjQ2NmQwODllYWJmZmFmM2I3MDQxYzdmYTUyYjlkNmUzMDNlMzc0NTU4YWNjNTRkMTk2MWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:46:19.799Z"
+  }
+}
