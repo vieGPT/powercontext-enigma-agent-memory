@@ -27,6 +27,7 @@ use serde_json::{json, Value};
 use std::{
     collections::VecDeque,
     convert::Infallible,
+    io::BufRead,
     pin::Pin,
     process::{Child, Command, Stdio},
     sync::{
@@ -109,7 +110,12 @@ async fn provider(State(state): State<Arc<Receiver>>, body: Bytes) -> axum::resp
     let body = if size == 0 {
         b"{\"ok\":true}".to_vec()
     } else {
-        vec![b'x'; size]
+        let mut body = vec![b'x'; size];
+        let marker = b"SYNTHETIC_CAPACITY_RESPONSE_SECRET";
+        if body.len() >= marker.len() {
+            body[..marker.len()].copy_from_slice(marker);
+        }
+        body
     };
     let body = if state.chunked_response {
         Body::new(Chunks(
@@ -126,6 +132,8 @@ async fn provider(State(state): State<Arc<Receiver>>, body: Bytes) -> axum::resp
 
 struct Gateway {
     process: Child,
+    evidence: Arc<Mutex<Vec<Value>>>,
+    evidence_reader: Option<std::thread::JoinHandle<()>>,
     server: tokio::task::JoinHandle<()>,
     state: Arc<Receiver>,
     base: String,
@@ -136,6 +144,9 @@ impl Drop for Gateway {
     fn drop(&mut self) {
         let _ = self.process.kill();
         let _ = self.process.wait();
+        if let Some(reader) = self.evidence_reader.take() {
+            reader.join().unwrap();
+        }
         self.server.abort();
         if let Some((task, path)) = &self.uds {
             task.abort();
@@ -147,6 +158,23 @@ impl Drop for Gateway {
     }
 }
 impl Gateway {
+    fn take_stderr(&mut self) -> String {
+        let mut output = String::new();
+        if let Some(mut stderr) = self.process.stderr.take() {
+            let _ = std::io::Read::read_to_string(&mut stderr, &mut output);
+        }
+        output
+    }
+
+    fn assert_running(&mut self) {
+        if let Some(status) = self.process.try_wait().unwrap() {
+            panic!(
+                "gateway exited during startup: {status}; {}",
+                self.take_stderr()
+            );
+        }
+    }
+
     async fn start(
         caps: Value,
         deployment_limit: usize,
@@ -189,9 +217,13 @@ impl Gateway {
         let mut command = Command::new(env!("CARGO_BIN_EXE_pc-gateway"));
         command
             .env_clear()
-            .stdout(Stdio::null())
-            .stderr(Stdio::null())
+            .stdout(Stdio::piped())
+            .stderr(Stdio::piped())
             .env("PC_GATEWAY_LISTEN", address.to_string())
+            .env(
+                "PC_GATEWAY_UPSTREAM_API_KEY",
+                "SYNTHETIC_CAPACITY_PROVIDER_KEY",
+            )
             .env("PC_GATEWAY_CORE_BASE", format!("http://{receiver_addr}"))
             .env(
                 "PC_GATEWAY_UPSTREAM_URL",
@@ -240,8 +272,22 @@ impl Gateway {
             command.env("PC_GATEWAY_STEERING_FILE", &path);
             path
         });
+        let mut process = command.spawn().unwrap();
+        let stdout = process.stdout.take().unwrap();
+        let evidence = Arc::new(Mutex::new(Vec::new()));
+        let records = evidence.clone();
+        let evidence_reader = std::thread::spawn(move || {
+            for line in std::io::BufReader::new(stdout).lines() {
+                records
+                    .lock()
+                    .unwrap()
+                    .push(serde_json::from_str(&line.unwrap()).unwrap());
+            }
+        });
         let mut gateway = Self {
-            process: command.spawn().unwrap(),
+            process,
+            evidence,
+            evidence_reader: Some(evidence_reader),
             server,
             state,
             base: format!("http://{address}"),
@@ -251,17 +297,17 @@ impl Gateway {
         let client = reqwest::Client::new();
         tokio::time::timeout(Duration::from_secs(10), async {
             loop {
-                assert!(
-                    gateway.process.try_wait().unwrap().is_none(),
-                    "gateway exited during startup"
-                );
-                if client
-                    .get(format!("{}/healthz", gateway.base))
-                    .send()
-                    .await
-                    .is_ok()
-                {
-                    break;
+                gateway.assert_running();
+                if let Ok(response) = client.get(format!("{}/healthz", gateway.base)).send().await {
+                    if response.status() == StatusCode::OK
+                        && response.json::<Value>().await.unwrap_or(Value::Null)["service"]
+                            == "pc-gateway"
+                    {
+                        // The reserved port is released before spawn. A different
+                        // receiver's HTTP response is not this child's readiness.
+                        gateway.assert_running();
+                        break;
+                    }
                 }
                 tokio::time::sleep(Duration::from_millis(10)).await;
             }
@@ -452,13 +498,21 @@ async fn increased_configuration_cannot_bypass_compatibility_ceiling() {
         false,
     )
     .await;
-    assert_eq!(
-        gateway
-            .request(CHAT, chat(&"x".repeat(CONTEXT_CHECK_BODY_LIMIT)), false)
-            .await
-            .0,
-        413
-    );
+    // The middleware rejects Content-Length before reading a body. Read that
+    // response before uploading: a racing 1 MiB reqwest write can hit BrokenPipe
+    // after the server has already returned the expected 413 and closed.
+    let body = chat(&"x".repeat(CONTEXT_CHECK_BODY_LIMIT));
+    let mut socket = TcpStream::connect(gateway.base.trim_start_matches("http://"))
+        .await
+        .unwrap();
+    socket.write_all(format!("POST {CHAT} HTTP/1.1\r\nHost: localhost\r\nContent-Type: application/json\r\nContent-Length: {}\r\nConnection: close\r\n\r\n", body.len()).as_bytes()).await.unwrap();
+    let mut response = Vec::new();
+    tokio::time::timeout(Duration::from_secs(5), socket.read_to_end(&mut response))
+        .await
+        .unwrap()
+        .unwrap();
+    let response = String::from_utf8(response).unwrap();
+    assert!(response.starts_with("HTTP/1.1 413 "), "{response}");
     assert_eq!(gateway.state.sends.load(Ordering::SeqCst), 0);
 }
 
@@ -486,10 +540,64 @@ async fn response_ceiling_is_independent_of_input_capacity_and_never_releases_a_
             .state
             .response_bytes
             .store(CONTEXT_CHECK_BODY_LIMIT + 1, Ordering::SeqCst);
-        let (status, result) = gateway.request(CHAT, chat("hello"), false).await;
-        assert_eq!(status, 409);
+        let (status, result) = gateway
+            .request(CHAT, chat("SYNTHETIC_CAPACITY_PROMPT_SECRET"), false)
+            .await;
+        assert_eq!(status, 400);
         assert!(result.contains("response_buffer_limit_exceeded"));
         assert!(result.len() < 256, "no response prefix released");
+        // Read the real process's JSONL, not only its HTTP result or local snapshot.
+        tokio::time::timeout(Duration::from_secs(5), async {
+            loop {
+                if gateway
+                    .evidence
+                    .lock()
+                    .unwrap()
+                    .iter()
+                    .any(|r| r["event"] == "call" && r["evidence"]["terminal"] == "withheld")
+                {
+                    break;
+                }
+                tokio::time::sleep(Duration::from_millis(10)).await;
+            }
+        })
+        .await
+        .unwrap();
+        let records = gateway.evidence.lock().unwrap().clone();
+        let calls: Vec<_> = records
+            .iter()
+            .filter(|r| r["event"] == "call" && r["evidence"]["terminal"] == "withheld")
+            .collect();
+        assert_eq!(calls.len(), 1);
+        let call = &calls[0]["evidence"];
+        assert_eq!(call["sending"], "possibly_sent");
+        assert_eq!(call["attempts"], 1);
+        assert_eq!(call["upstream_status"], 200);
+        for field in ["input", "output", "cache_read", "cache_write"] {
+            assert_eq!(call["usage"][field]["completeness"], "unknown");
+            assert!(call["usage"][field]["tokens"].is_null());
+        }
+        let attempts: Vec<_> = records
+            .iter()
+            .filter(|r| r["event"] == "attempt" && r["evidence"]["call_id"] == call["call_id"])
+            .collect();
+        assert_eq!(attempts.len(), 1);
+        let attempt = &attempts[0]["evidence"];
+        assert_eq!(attempt["outcome"], "buffer_limit_exceeded");
+        assert_eq!(attempt["upstream_status"], 200);
+        assert!(attempt["response_first_byte_ms"].is_number());
+        assert!(attempt["response_complete_ms"].is_null());
+        assert!(!records
+            .iter()
+            .any(|r| r["event"] == "delivery" && r["evidence"]["call_id"] == call["call_id"]));
+        let output = serde_json::to_string(&records).unwrap();
+        for marker in [
+            "SYNTHETIC_CAPACITY_PROMPT_SECRET",
+            "SYNTHETIC_CAPACITY_RESPONSE_SECRET",
+            "SYNTHETIC_CAPACITY_PROVIDER_KEY",
+        ] {
+            assert!(!output.contains(marker));
+        }
         assert_eq!(
             gateway.state.sends.load(Ordering::SeqCst),
             2,
@@ -639,4 +747,60 @@ async fn fallback_unknown_length_overflow_is_an_error_and_next_request_works() {
         gateway.state.fallback_seen.lock().unwrap().last(),
         Some(&(2, true))
     );
+}
+
+#[tokio::test]
+async fn shutdown_bounds_an_indefinite_fallback_sse_in_the_real_gateway_process() {
+    let mut gateway =
+        Gateway::start(capabilities(json!(4096)), 8192, false, false, false, true).await;
+    let mut response = reqwest::Client::new()
+        .get(format!("{}/sse", gateway.base))
+        .send()
+        .await
+        .unwrap();
+    assert_eq!(response.status(), StatusCode::OK);
+    assert_eq!(response.headers()["content-type"], "text/event-stream");
+    assert!(
+        response.chunk().await.unwrap().is_some(),
+        "confirm active streaming before signalling"
+    );
+    let started = std::time::Instant::now();
+    assert_eq!(
+        unsafe { libc::kill(gateway.process.id() as i32, libc::SIGTERM) },
+        0
+    );
+    tokio::time::sleep(Duration::from_millis(50)).await;
+    assert_eq!(
+        unsafe { libc::kill(gateway.process.id() as i32, libc::SIGINT) },
+        0
+    );
+    let status = loop {
+        if let Some(status) = gateway.process.try_wait().unwrap() {
+            break status;
+        }
+        assert!(
+            started.elapsed() < Duration::from_secs(32),
+            "fixture kill cannot supply product exit evidence"
+        );
+        tokio::time::sleep(Duration::from_millis(5)).await;
+    };
+    let elapsed = started.elapsed();
+    assert!(
+        status.success(),
+        "ordinary connection owners must join successfully: {status}; {}",
+        gateway.take_stderr()
+    );
+    assert!(
+        (Duration::from_millis(24_900)..Duration::from_secs(27)).contains(&elapsed),
+        "{elapsed:?}"
+    );
+    assert!(
+        tokio::time::timeout(Duration::from_secs(2), response.chunk())
+            .await
+            .unwrap()
+            .is_err(),
+        "an unfinished stream must not be reported as complete"
+    );
+    assert_eq!(gateway.state.sends.load(Ordering::SeqCst), 0);
+    eprintln!("linux HTTP/1 controlled UDS SSE budget=25/30s elapsed={elapsed:?} exit={status}");
 }

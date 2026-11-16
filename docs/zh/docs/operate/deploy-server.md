@@ -192,6 +192,17 @@ Server 使用 UDS 时，通过 `POWERCONTEXT_SERVER_SOURCE_PLUGINS_DIR` 或
 Rust 可执行程序、联合 launcher、网关配置、私有通道认证、私有路由和网关状态表仍需单独实现。设计中的网关负责原有
 公开 TCP 端口，并携带通道认证与用户认证通过 UDS 调用 Core。
 
+### 网关认证边界
+
+`PC_GATEWAY_API_KEY` 仅适用于 `/gateway/v1/chat/completions` 和 `/gateway/v1/responses`。
+非 loopback 网关监听要求配置有效的非空 key，但该启动校验不负责其他路由的认证。
+组合部署（`PC_GATEWAY_CORE_UDS`）转发到 Core 的请求会保留客户端凭据，Core API、MCP 和 Dashboard 请求
+继续遵循 Core 自身的认证与访问控制规则。Gateway key 不授予 Core API 权限，UDS 也不能替代 Core 认证。
+
+组合部署对外开放前，须设置 `POWERCONTEXT_SERVER_ACCESS_MODE=enforced` 并配置有效的 Core 认证凭据，
+如上文的 UDS 示例所示。访问受保护 Core 路由的客户端必须使用 Core 凭据。
+`PC_GATEWAY_CORE_TOKEN` 用于网关主动发起的 Core 调用；反向代理不会用它替换客户端凭据。
+
 ### 网关上下文注入
 
 网关通过 UDS 连接 Core（`PC_GATEWAY_CORE_UDS`，即同机组合部署）时，默认向属于某个会话的 Chat 和 Responses 请求注入
@@ -257,7 +268,7 @@ Responses steering 和协议渲染后，检查最终 UTF-8 JSON 正文字节数�
 Core 的响应配置、内容检查以及 JSON/RPC 包装仍有各自的限制，因此低于 1 MiB 的正文也可能被拒绝。
 UDS 客户端的 8 MiB RPC 响应解析上限属于另一个传输方向，不是模型正文容量。
 
-响应缓冲超限时丢弃响应，返回 HTTP 409 和 `response_buffer_limit_exceeded`。
+响应缓冲超限时丢弃响应，返回 HTTP 400 和 `response_buffer_limit_exceeded`。
 不会释放 provider 正文，也不会自动重发。执行观察保留 `PossiblySent` 与 `Withheld` 终态：
 provider 可能已经计费。这不代表收到了完整响应，也不承诺零费用。
 该观察仅在进程内可见；本阶段尚未导出含尝试次数、执行终态与发送状态的可读取调用记录。
@@ -268,7 +279,20 @@ G5-A 的“可能已计费进入调用证据”仍待接入 [#2506](https://gith
 透明 Core/MCP 转发继续使用部署正文上限，不消耗模型输入额度。
 `PC_GATEWAY_MAX_CONCURRENT`（默认 64）分别限制模型调用与 fallback 调用，
 活跃的 fallback SSE 连接不会耗尽模型并发许可。两类合计最多可持有配置值两倍的许可，
-不含豁免的健康探测；该设置不是进程全局并发上限。每个许可随响应 body 持有，直到 body drop；
+不含豁免的健康探测；该设置不是进程全局并发上限。
+模型许可由实际 HTTP/1 连接 owner 持有，覆盖本地响应交付及相关请求工作结束，
+包括 body EOF/drop 后仍由框架缓冲的待写数据。模型响应声明 `Connection: close`；
+连接正常完成表示本地完成，不证明客户端已经读取或接受响应。
+原始 180 秒单调期限覆盖入口、执行和本地交付；到期直接结束连接，不另加交付或清理窗口，
+部分响应可能截断，错误 JSON 仅尽力返回。框架实际观察到断连时以 `request_cancelled` 停止本地工作；
+没有观察到断连的网络失联由原期限收束。交付中断保留已完成的执行终态和模型发送事实，
+包括 `ReleaseAuthorized` 与 `ResponseReceived`；取消不证明 provider 回滚，也不代表可以安全重发。
+进程内 `ExecutionSnapshot::local_delivery` 用 `NotStarted`、`InProgress`、`Completed` 与
+`Interrupted(reason)` 表示模型内容的交付状态；拒绝和生命周期错误响应不启动模型内容交付。
+它独立于执行终态，不持有响应字节或并发许可。
+fallback 许可仍随响应 body 持有，直到 body drop；fallback 保留认证、keep-alive 与流式行为，
+不继承模型期限或强制关闭连接策略。provider 发送与 HTTP Core RPC 使用全新 HTTP/1 连接，不复用空闲连接；
+UDS Core 客户端保留有界空闲连接池。Gateway 从首个停机信号起最多排空 25 秒，并将进程退出限制在 30 秒内。
 `/healthz` 豁免两类并发限制。已知 Content-Length 的 fallback 超限请求在转发前返回 413。
 未知长度超限会产生 body error：前缀可能已经到达 Core，转发失败时代理返回 502。
 这不是成功截断，Gateway 不会通过完整缓冲 MCP 流来强制统一错误状态码。

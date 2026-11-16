@@ -14,22 +14,15 @@
  * limitations under the License.
  */
 
-import {
-  access,
-  readFile,
-  writeFile,
-  mkdir,
-  mkdtemp,
-  rm,
-} from "node:fs/promises";
+import { readFile, writeFile, mkdir, mkdtemp, rm } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { spawn } from "node:child_process";
-import { createRequire } from "node:module";
 import { tmpdir } from "node:os";
-import { dirname, join } from "node:path";
+import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import YAML from "yaml";
 import openapiTS, { astToString } from "openapi-typescript";
+import { prepareGenerator } from "./prepare-openapi-generator.mjs";
 
 const root = new URL("../", import.meta.url);
 const contractUrl = new URL("../openapi/powercontext.yaml", root);
@@ -154,31 +147,35 @@ async function generateRustModels() {
   const modelNames = [...schemaNames]
     .filter((name) => !stringAliases.has(name))
     .sort();
-  const generatorCli = createRequire(import.meta.url).resolve(
-    "@openapitools/openapi-generator-cli/main.js",
-  );
   try {
-    const generatorConfig = JSON.parse(
-      await readFile(new URL("openapitools.json", root), "utf8"),
-    );
-    const jar = join(
-      dirname(generatorCli),
-      "versions",
-      `${generatorConfig["generator-cli"].version}.jar`,
-    );
-    try {
-      await access(jar);
-    } catch {
-      await run(
-        process.execPath,
-        [generatorCli, "version"],
-        fileURLToPath(root),
-      );
-    }
+    const jar = await prepareGenerator();
     // Discovery minor versions may add optional fields, including in nested contracts.
     const input = structuredClone(contract);
     for (const name of ["ServerInfo", "ContractVersion", "FeatureContract"]) {
       input.components.schemas[name]["x-rust-allow-unknown-fields"] = true;
+    }
+    // Child singleton enums already validate the discriminator. Let them own
+    // its serde encoding too: an internal tag would consume the required field
+    // on decode and emit it twice on encode.
+    for (const schema of Object.values(input.components.schemas)) {
+      const tag = schema.discriminator?.propertyName;
+      if (!tag || !schema.oneOf?.length) continue;
+      const tags = schema.oneOf.map((variant) => {
+        const child = input.components.schemas[variant.$ref?.split("/").at(-1)];
+        const values = child?.properties?.[tag]?.enum;
+        return child?.required?.includes(tag) &&
+          values?.length === 1 &&
+          (!schema.discriminator.mapping ||
+            schema.discriminator.mapping[values[0]] === variant.$ref)
+          ? values[0]
+          : undefined;
+      });
+      if (
+        tags.every((value) => typeof value === "string") &&
+        new Set(tags).size === tags.length
+      ) {
+        schema["x-rust-untagged-discriminator"] = true;
+      }
     }
     const inputPath = join(temporary, "openapi.yaml");
     await writeFile(inputPath, YAML.stringify(input));

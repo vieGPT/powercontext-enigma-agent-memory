@@ -36,8 +36,8 @@ from urllib.parse import urlsplit
 import typer
 from pydantic import ValidationError
 
-from powercontext.cli.env_file import EnvironmentFileError, parse_environment
-from powercontext.cli.inference_notice import write_inference_capability_notice
+from powercontext.env_file import EnvironmentFileError, parse_environment
+from powercontext.server.inference_notice import write_inference_capability_notice
 
 if TYPE_CHECKING:
     from powercontext.server.settings import ServerSettings
@@ -132,7 +132,7 @@ API_PROTOCOLS = (
         credential_name="ANTHROPIC_API_KEY",
         base_url_name="ANTHROPIC_BASE_URL",
         default_base_url="https://api.anthropic.com",
-        default_generation_model="claude-sonnet-4-5",
+        default_generation_model="claude-sonnet-5-5",
         default_embedding_model=None,
     ),
 )
